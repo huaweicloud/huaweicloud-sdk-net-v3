@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 资源分组总数
+        /// **参数解释** 资源分组总数。 **取值范围** 在[0,1000]区间内。
         /// </summary>
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
         public int? Count { get; set; }
 
         /// <summary>
-        /// 资源分组列表
+        /// **参数解释** 资源分组列表。
         /// </summary>
         [JsonProperty("resource_groups", NullValueHandling = NullValueHandling.Ignore)]
         public List<OneResourceGroupResp> ResourceGroups { get; set; }

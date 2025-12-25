@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     {
 
         /// <summary>
-        /// 一个或者多个资源分组信息。
+        /// **参数解释**： 一个或者多个资源分组信息。
         /// </summary>
         [JsonProperty("resource_groups", NullValueHandling = NullValueHandling.Ignore)]
         public List<ResourceGroupInfo> ResourceGroups { get; set; }

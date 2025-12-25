@@ -80,7 +80,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public string JobId { get; set; }
 
         /// <summary>
-        /// 任务类型。 * AUDITION:试听任务 * ASYNC_JOB：异步任务 * WEBSOCKET：websocket接口合成任务
+        /// 任务类型。 * AUDITION：试听任务 * ASYNC_JOB：异步任务 * WEBSOCKET：websocket接口合成任务
         /// </summary>
         [SDKProperty("job_type", IsQuery = true)]
         [JsonProperty("job_type", NullValueHandling = NullValueHandling.Ignore)]

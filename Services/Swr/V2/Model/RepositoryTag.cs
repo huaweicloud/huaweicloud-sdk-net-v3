@@ -86,7 +86,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// 制品大小，单位：Byte
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Size { get; set; }
+        public long? Size { get; set; }
 
 
 

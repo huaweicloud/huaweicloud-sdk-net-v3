@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// **参数解释**： 策略信息。 **约束限制**： 策略信息数量最多为50个。 
+        /// **参数解释**： 策略信息。 **约束限制**： 包含的策略信息数量最多为50个，最少为1个。 
         /// </summary>
         [JsonProperty("policies", NullValueHandling = NullValueHandling.Ignore)]
         public List<UpdatePolicyReq> Policies { get; set; }

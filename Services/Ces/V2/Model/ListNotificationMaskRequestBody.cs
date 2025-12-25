@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class ListNotificationMaskRequestBody 
     {
         /// <summary>
-        /// dimension: 子维度,product: 云产品
+        /// **参数解释**： 资源层级。 **约束限制**： 不涉及。 **取值范围**： - product: 云产品   - dimension: 子维度 **默认取值**： 不涉及。 
         /// </summary>
-        /// <value>dimension: 子维度,product: 云产品</value>
+        /// <value>**参数解释**： 资源层级。 **约束限制**： 不涉及。 **取值范围**： - product: 云产品   - dimension: 子维度 **默认取值**： 不涉及。 </value>
         [JsonConverter(typeof(EnumClassConverter<ResourceLevelEnum>))]
         public class ResourceLevelEnum
         {
@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         }
 
         /// <summary>
-        /// 屏蔽状态,可选。MASK_EFFECTIVE：已生效，MASK_INEFFECTIVE：未生效。
+        /// **参数解释**： 屏蔽状态,可选。 **约束限制**： 不涉及。 **取值范围**： - MASK_EFFECTIVE：已生效。 - MASK_INEFFECTIVE：未生效。 **默认取值**： 不涉及。 
         /// </summary>
-        /// <value>屏蔽状态,可选。MASK_EFFECTIVE：已生效，MASK_INEFFECTIVE：未生效。</value>
+        /// <value>**参数解释**： 屏蔽状态,可选。 **约束限制**： 不涉及。 **取值范围**： - MASK_EFFECTIVE：已生效。 - MASK_INEFFECTIVE：未生效。 **默认取值**： 不涉及。 </value>
         [JsonConverter(typeof(EnumClassConverter<MaskStatusEnum>))]
         public class MaskStatusEnum
         {
@@ -252,7 +252,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("relation_type", NullValueHandling = NullValueHandling.Ignore)]
         public ListRelationType RelationType { get; set; }
         /// <summary>
-        /// 关联编号（目前是告警规则ID）
+        /// **参数解释**： 告警规则ID列表，用于查询对应的告警通知屏蔽。 **约束限制**： 当relation_type为ALARM_RULE、RESOURCE_POLICY_NOTIFICATION时，应通过alarm_ids查询。当relation_type为RESOURCE、EVENT.SYS时，不支持使用alarm_ids查询，此时alarm_ids为空或不选，表示查询所有的RESOURCE、EVENT.SYS类型的告警屏蔽。 **取值范围**： 包含的告警规则ID数量最多不超过100个，最少为0个。 **默认取值**： 不涉及 
+        /// </summary>
+        [JsonProperty("alarm_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> AlarmIds { get; set; }
+
+        /// <summary>
+        /// （已废弃，不推荐使用）关联编号（目前是告警规则ID）
         /// </summary>
         [JsonProperty("relation_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> RelationIds { get; set; }
@@ -264,29 +270,29 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string MetricName { get; set; }
 
         /// <summary>
-        /// dimension: 子维度,product: 云产品
+        /// **参数解释**： 资源层级。 **约束限制**： 不涉及。 **取值范围**： - product: 云产品   - dimension: 子维度 **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("resource_level", NullValueHandling = NullValueHandling.Ignore)]
         public ResourceLevelEnum ResourceLevel { get; set; }
         /// <summary>
-        /// 屏蔽规则ID,可选
+        /// **参数解释**： 屏蔽规则ID,可选。 **约束限制**： 不涉及。 **取值范围**： 以nm开头，后跟[0,62]个英文或数字。 **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("mask_id", NullValueHandling = NullValueHandling.Ignore)]
         public string MaskId { get; set; }
 
         /// <summary>
-        /// 屏蔽规则名称,可选，只能为字母、数字、汉字、-、_，最大长度为64
+        /// **参数解释**： 屏蔽规则名称,可选。 **约束限制**： 不涉及。 **取值范围**： 只能为字母、数字、汉字、-、_，长度为[1,64]个字符。 **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("mask_name", NullValueHandling = NullValueHandling.Ignore)]
         public string MaskName { get; set; }
 
         /// <summary>
-        /// 屏蔽状态,可选。MASK_EFFECTIVE：已生效，MASK_INEFFECTIVE：未生效。
+        /// **参数解释**： 屏蔽状态,可选。 **约束限制**： 不涉及。 **取值范围**： - MASK_EFFECTIVE：已生效。 - MASK_INEFFECTIVE：未生效。 **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("mask_status", NullValueHandling = NullValueHandling.Ignore)]
         public MaskStatusEnum MaskStatus { get; set; }
         /// <summary>
-        /// 资源维度值,提供一个维度的资源ID即可,可选
+        /// **参数解释**： 资源维度值,提供一个维度的资源ID即可,可选 **约束限制**： 不涉及。 **取值范围**： 长度为[1,700]个字符。 **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceId { get; set; }
@@ -298,7 +304,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string Namespace { get; set; }
 
         /// <summary>
-        /// 资源的维度信息
+        /// **参数解释**： 资源的维度信息 **约束限制**： 包含的维度信息数量为[1,4]个。 
         /// </summary>
         [JsonProperty("dimensions", NullValueHandling = NullValueHandling.Ignore)]
         public List<ResourceDimension> Dimensions { get; set; }
@@ -313,6 +319,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ListNotificationMaskRequestBody {\n");
             sb.Append("  relationType: ").Append(RelationType).Append("\n");
+            sb.Append("  alarmIds: ").Append(AlarmIds).Append("\n");
             sb.Append("  relationIds: ").Append(RelationIds).Append("\n");
             sb.Append("  metricName: ").Append(MetricName).Append("\n");
             sb.Append("  resourceLevel: ").Append(ResourceLevel).Append("\n");
@@ -341,6 +348,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             if (input == null) return false;
             if (this.RelationType != input.RelationType) return false;
+            if (this.AlarmIds != input.AlarmIds || (this.AlarmIds != null && input.AlarmIds != null && !this.AlarmIds.SequenceEqual(input.AlarmIds))) return false;
             if (this.RelationIds != input.RelationIds || (this.RelationIds != null && input.RelationIds != null && !this.RelationIds.SequenceEqual(input.RelationIds))) return false;
             if (this.MetricName != input.MetricName || (this.MetricName != null && !this.MetricName.Equals(input.MetricName))) return false;
             if (this.ResourceLevel != input.ResourceLevel) return false;
@@ -363,6 +371,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             {
                 var hashCode = 41;
                 hashCode = hashCode * 59 + this.RelationType.GetHashCode();
+                if (this.AlarmIds != null) hashCode = hashCode * 59 + this.AlarmIds.GetHashCode();
                 if (this.RelationIds != null) hashCode = hashCode * 59 + this.RelationIds.GetHashCode();
                 if (this.MetricName != null) hashCode = hashCode * 59 + this.MetricName.GetHashCode();
                 hashCode = hashCode * 59 + this.ResourceLevel.GetHashCode();

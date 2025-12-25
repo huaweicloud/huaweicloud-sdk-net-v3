@@ -11,25 +11,25 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V1.Model
 {
     /// <summary>
-    /// 资源分组中的资源信息统计。
+    /// **参数解释**： 资源分组中的资源信息统计。
     /// </summary>
     public class InstanceStatistics 
     {
 
         /// <summary>
-        /// 该资源分组中当前处在告警状态的资源个数。
+        /// **参数解释**： 该资源分组中当前处在告警状态的资源个数。  **取值范围**： 在[0,2147483647]区间内。
         /// </summary>
         [JsonProperty("unhealth", NullValueHandling = NullValueHandling.Ignore)]
         public int? Unhealth { get; set; }
 
         /// <summary>
-        /// 该资源分组中资源的总个数。
+        /// **参数解释**： 该资源分组中资源的总个数。  **取值范围**： 在[0,2147483647]区间内。
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }
 
         /// <summary>
-        /// 该资源分组中选择的资源类型个数，如资源分组添加了弹性云服务、弹性公网IP和带宽则值为2。
+        /// **参数解释**： 该资源分组中选择的资源类型个数，如资源分组添加了弹性云服务、弹性公网IP和带宽则值为2。 **取值范围**： 在[0,2147483647]区间内。
         /// </summary>
         [JsonProperty("type_statistics", NullValueHandling = NullValueHandling.Ignore)]
         public int? TypeStatistics { get; set; }

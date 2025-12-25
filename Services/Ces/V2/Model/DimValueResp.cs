@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// **参数解释**： 指标维度值 **取值范围**： 最小长度1，最大长度256 
+    /// **参数解释**： 资源维度值 **取值范围**： 最小长度1，最大长度256 
     /// </summary>
     public class DimValueResp 
     {

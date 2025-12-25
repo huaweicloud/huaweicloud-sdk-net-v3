@@ -269,6 +269,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string Partition { get; set; }
 
         /// <summary>
+        /// **参数解释：** 覆盖节点默认组件配置。  [当前支持的可配置组件及其参数详见[配置管理](https://support.huaweicloud.com/usermanual-cce/cce_10_0652.htmll)。](tag:hws) [当前支持的可配置组件及其参数详见[配置管理](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_10_0652.html)。](tag:hws_hk) **约束限制：** 若指定了不支持的组件或组件不支持的参数，该配置项将被忽略。 
+        /// </summary>
+        [JsonProperty("configurationsOverride", NullValueHandling = NullValueHandling.Ignore)]
+        public List<PackageConfiguration> ConfigurationsOverride { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("nodeNameTemplate", NullValueHandling = NullValueHandling.Ignore)]
@@ -306,6 +312,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  hostnameConfig: ").Append(HostnameConfig).Append("\n");
             sb.Append("  serverEnterpriseProjectID: ").Append(ServerEnterpriseProjectID).Append("\n");
             sb.Append("  partition: ").Append(Partition).Append("\n");
+            sb.Append("  configurationsOverride: ").Append(ConfigurationsOverride).Append("\n");
             sb.Append("  nodeNameTemplate: ").Append(NodeNameTemplate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -348,6 +355,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.HostnameConfig != input.HostnameConfig || (this.HostnameConfig != null && !this.HostnameConfig.Equals(input.HostnameConfig))) return false;
             if (this.ServerEnterpriseProjectID != input.ServerEnterpriseProjectID || (this.ServerEnterpriseProjectID != null && !this.ServerEnterpriseProjectID.Equals(input.ServerEnterpriseProjectID))) return false;
             if (this.Partition != input.Partition || (this.Partition != null && !this.Partition.Equals(input.Partition))) return false;
+            if (this.ConfigurationsOverride != input.ConfigurationsOverride || (this.ConfigurationsOverride != null && input.ConfigurationsOverride != null && !this.ConfigurationsOverride.SequenceEqual(input.ConfigurationsOverride))) return false;
             if (this.NodeNameTemplate != input.NodeNameTemplate || (this.NodeNameTemplate != null && !this.NodeNameTemplate.Equals(input.NodeNameTemplate))) return false;
 
             return true;
@@ -384,6 +392,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.HostnameConfig != null) hashCode = hashCode * 59 + this.HostnameConfig.GetHashCode();
                 if (this.ServerEnterpriseProjectID != null) hashCode = hashCode * 59 + this.ServerEnterpriseProjectID.GetHashCode();
                 if (this.Partition != null) hashCode = hashCode * 59 + this.Partition.GetHashCode();
+                if (this.ConfigurationsOverride != null) hashCode = hashCode * 59 + this.ConfigurationsOverride.GetHashCode();
                 if (this.NodeNameTemplate != null) hashCode = hashCode * 59 + this.NodeNameTemplate.GetHashCode();
                 return hashCode;
             }

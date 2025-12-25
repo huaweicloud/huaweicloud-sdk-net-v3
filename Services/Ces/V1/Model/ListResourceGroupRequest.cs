@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     public class ListResourceGroupRequest 
     {
         /// <summary>
-        /// 资源分组健康状态，值可为health、unhealth、no_alarm_rule；health表示健康，unhealth表示不健康，no_alarm_rule表示未配置告警规则
+        /// **参数解释** 资源分组健康状态。 **约束限制** 不涉及。 **取值范围** - health: 表示健康 - unhealth: 表示不健康 - no_alarm_rule: 表示未配置告警规则 **默认取值** 不涉及。
         /// </summary>
-        /// <value>资源分组健康状态，值可为health、unhealth、no_alarm_rule；health表示健康，unhealth表示不健康，no_alarm_rule表示未配置告警规则</value>
+        /// <value>**参数解释** 资源分组健康状态。 **约束限制** 不涉及。 **取值范围** - health: 表示健康 - unhealth: 表示不健康 - no_alarm_rule: 表示未配置告警规则 **默认取值** 不涉及。</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -138,34 +138,34 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
 
 
         /// <summary>
-        /// 资源分组的名称；长度为1-128，只能包含0-9/a-z/A-Z/_/-或汉字；如：ResourceGroup-Test01。
+        /// **参数解释** 资源分组名称。 **约束限制** 不涉及。 **取值范围** 包含字母、数字、_、-或汉字，长度为[1,128]个字符。 **默认取值** 不涉及。
         /// </summary>
         [SDKProperty("group_name", IsQuery = true)]
         [JsonProperty("group_name", NullValueHandling = NullValueHandling.Ignore)]
         public string GroupName { get; set; }
 
         /// <summary>
-        /// 资源分组的ID，长度为1-128，只能包含0-9/a-z/A-Z；如：rg16063743652226ew93e64p。
+        /// **参数解释** 资源分组ID。 **约束限制** 不涉及。 **取值范围** 以\&quot;rg\&quot;开头，后面跟着22个字母或数字。 **默认取值** 不涉及。
         /// </summary>
         [SDKProperty("group_id", IsQuery = true)]
         [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string GroupId { get; set; }
 
         /// <summary>
-        /// 资源分组健康状态，值可为health、unhealth、no_alarm_rule；health表示健康，unhealth表示不健康，no_alarm_rule表示未配置告警规则
+        /// **参数解释** 资源分组健康状态。 **约束限制** 不涉及。 **取值范围** - health: 表示健康 - unhealth: 表示不健康 - no_alarm_rule: 表示未配置告警规则 **默认取值** 不涉及。
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
-        /// 分页起始值，类型为integer，默认值为0。
+        /// **参数解释** 分页起始值。 **约束限制** 不涉及。 **取值范围** 在[0,9999999]区间内。 **默认取值** 0
         /// </summary>
         [SDKProperty("start", IsQuery = true)]
         [JsonProperty("start", NullValueHandling = NullValueHandling.Ignore)]
         public int? Start { get; set; }
 
         /// <summary>
-        /// 单次查询的条数限制，取值范围(0,100]，默认值为100， 用于限制结果数据条数。
+        /// **参数解释** 单次查询的条数限制。 **约束限制** 不涉及。 **取值范围** 在[1,100]区间内。 **默认取值** 100
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

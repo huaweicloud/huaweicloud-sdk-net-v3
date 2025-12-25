@@ -93,6 +93,32 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         }
         
         /// <summary>
+        /// 批量删除元数据迁移任务
+        ///
+        /// 批量删除元数据迁移任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchDeleteRocketMqMigrationTaskResponse BatchDeleteRocketMqMigrationTask(BatchDeleteRocketMqMigrationTaskRequest batchDeleteRocketMqMigrationTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteRocketMqMigrationTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/metadata/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteRocketMqMigrationTaskRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<BatchDeleteRocketMqMigrationTaskResponse>(response);
+        }
+
+        public SyncInvoker<BatchDeleteRocketMqMigrationTaskResponse> BatchDeleteRocketMqMigrationTaskInvoker(BatchDeleteRocketMqMigrationTaskRequest batchDeleteRocketMqMigrationTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteRocketMqMigrationTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/metadata/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteRocketMqMigrationTaskRequest);
+            return new SyncInvoker<BatchDeleteRocketMqMigrationTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchDeleteRocketMqMigrationTaskResponse>);
+        }
+        
+        /// <summary>
         /// 批量修改消费组
         ///
         /// 批量修改消费组。
@@ -354,32 +380,6 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRequest);
             return new SyncInvoker<DeleteInstanceResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceResponse>);
-        }
-        
-        /// <summary>
-        /// 删除元数据迁移任务
-        ///
-        /// 删除元数据迁移任务。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public DeleteRocketMqMigrationTaskResponse DeleteRocketMqMigrationTask(DeleteRocketMqMigrationTaskRequest deleteRocketMqMigrationTaskRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(deleteRocketMqMigrationTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/metadata", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRocketMqMigrationTaskRequest);
-            var response = DoHttpRequestSync("DELETE", request);
-            return JsonUtils.DeSerializeNull<DeleteRocketMqMigrationTaskResponse>(response);
-        }
-
-        public SyncInvoker<DeleteRocketMqMigrationTaskResponse> DeleteRocketMqMigrationTaskInvoker(DeleteRocketMqMigrationTaskRequest deleteRocketMqMigrationTaskRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(deleteRocketMqMigrationTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/metadata", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRocketMqMigrationTaskRequest);
-            return new SyncInvoker<DeleteRocketMqMigrationTaskResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteRocketMqMigrationTaskResponse>);
         }
         
         /// <summary>

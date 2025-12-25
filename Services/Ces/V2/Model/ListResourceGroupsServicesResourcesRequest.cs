@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class ListResourceGroupsServicesResourcesRequest 
     {
         /// <summary>
-        /// 按状态信息进行过滤，取值只能为health（已设置告警规则且无告警触发的资源）、unhealthy（已设置告警规则且有告警触发的资源）、no_alarm_rule（未设置告警规则的资源）
+        /// **参数解释** 告警规则按状态信息进行过滤。 **约束限制**： 不涉及。 **取值范围** 枚举值。 - health: 已设置告警规则且无告警触发的资源 - unhealthy: 已设置告警规则且有告警触发的资源 - no_alarm_rule: 未设置告警规则的资源 **默认取值**： 不涉及。 
         /// </summary>
-        /// <value>按状态信息进行过滤，取值只能为health（已设置告警规则且无告警触发的资源）、unhealthy（已设置告警规则且有告警触发的资源）、no_alarm_rule（未设置告警规则的资源）</value>
+        /// <value>**参数解释** 告警规则按状态信息进行过滤。 **约束限制**： 不涉及。 **取值范围** 枚举值。 - health: 已设置告警规则且无告警触发的资源 - unhealthy: 已设置告警规则且有告警触发的资源 - no_alarm_rule: 未设置告警规则的资源 **默认取值**： 不涉及。 </value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -137,9 +137,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         }
 
         /// <summary>
-        /// 按事件告警状态信息进行过滤，取值只能为health（已设置事件告警规则且无事件告警触发的资源）、unhealthy（已设置事件告警规则且有事件告警触发的资源）、no_alarm_rule（未设置事件告警规则的资源）
+        /// **参数解释** 按事件告警状态信息进行过滤。 **约束限制**： 不涉及。 **取值范围** 枚举值。 - health: 已设置事件告警规则且无事件告警触发的资源 - unhealthy: 已设置事件告警规则且有事件告警触发的资源 - no_alarm_rule: 未设置事件告警规则的资源 **默认取值**： 不涉及。 
         /// </summary>
-        /// <value>按事件告警状态信息进行过滤，取值只能为health（已设置事件告警规则且无事件告警触发的资源）、unhealthy（已设置事件告警规则且有事件告警触发的资源）、no_alarm_rule（未设置事件告警规则的资源）</value>
+        /// <value>**参数解释** 按事件告警状态信息进行过滤。 **约束限制**： 不涉及。 **取值范围** 枚举值。 - health: 已设置事件告警规则且无事件告警触发的资源 - unhealthy: 已设置事件告警规则且有事件告警触发的资源 - no_alarm_rule: 未设置事件告警规则的资源 **默认取值**： 不涉及。 </value>
         [JsonConverter(typeof(EnumClassConverter<EventStatusEnum>))]
         public class EventStatusEnum
         {
@@ -259,83 +259,83 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
 
         /// <summary>
-        /// 资源分组ID，以rg开头，后跟22位由字母或数字组成的字符串
-        /// </summary>
-        [SDKProperty("group_id", IsPath = true)]
-        [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string GroupId { get; set; }
-
-        /// <summary>
-        /// 服务类别，如SYS.ECS
-        /// </summary>
-        [SDKProperty("service", IsPath = true)]
-        [JsonProperty("service", NullValueHandling = NullValueHandling.Ignore)]
-        public string Service { get; set; }
-
-        /// <summary>
-        /// 资源维度信息，多个维度按字母序使用逗号分隔
-        /// </summary>
-        [SDKProperty("dim_name", IsQuery = true)]
-        [JsonProperty("dim_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string DimName { get; set; }
-
-        /// <summary>
-        /// 分页查询时每页的条目数，取值[1,100]，默认值为100
-        /// </summary>
-        [SDKProperty("limit", IsQuery = true)]
-        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
-        public string Limit { get; set; }
-
-        /// <summary>
-        /// 分页查询时查询的起始位置，表示从第几条数据开始，默认为0
+        /// **参数解释**： 分页偏移量 **约束限制**： 不涉及 **取值范围**： 整数，[0,10000] **默认取值**： 0 
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 按状态信息进行过滤，取值只能为health（已设置告警规则且无告警触发的资源）、unhealthy（已设置告警规则且有告警触发的资源）、no_alarm_rule（未设置告警规则的资源）
+        /// **参数解释**： 分页大小。 **约束限制**： 不涉及。 **取值范围**： 大小为1-100。 **默认取值**： 不涉及。 
+        /// </summary>
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public string Limit { get; set; }
+
+        /// <summary>
+        /// **参数解释** 资源分组ID。 **约束限制** 不涉及 **取值范围** 以\&quot;rg\&quot;开头，后面跟着22个字母或数字 **默认取值** 不涉及 
+        /// </summary>
+        [SDKProperty("group_id", IsPath = true)]
+        [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string GroupId { get; set; }
+
+        /// <summary>
+        /// **参数解释** 服务类别，如SYS.ECS **约束限制** 不涉及 **取值范围** 格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_。字符串的长度在 [3,32]个字符之间 **默认取值** 不涉及
+        /// </summary>
+        [SDKProperty("service", IsPath = true)]
+        [JsonProperty("service", NullValueHandling = NullValueHandling.Ignore)]
+        public string Service { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 资源维度。 **约束限制**： 不涉及。 **取值范围**： 多维度用\&quot;,\&quot;分割，只能包含0-9、a-z、A-Z、_、-、#、/、(、），每个维度的最大长度为32。字符串总长度最小为1，最大为131。 **默认取值**： 不涉及。 
+        /// </summary>
+        [SDKProperty("dim_name", IsQuery = true)]
+        [JsonProperty("dim_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string DimName { get; set; }
+
+        /// <summary>
+        /// **参数解释** 告警规则按状态信息进行过滤。 **约束限制**： 不涉及。 **取值范围** 枚举值。 - health: 已设置告警规则且无告警触发的资源 - unhealthy: 已设置告警规则且有告警触发的资源 - no_alarm_rule: 未设置告警规则的资源 **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
-        /// 资源维度值，不支持模糊匹配，但是多维度资源可以只指定一个维度值
+        /// **参数描述**： 资源维度值，不支持模糊匹配，但是多维度资源可以只指定一个维度值 **约束限制**： 不涉及。  **取值范围**： 字符串长度范围[1,1027] **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("dim_value", IsQuery = true)]
         [JsonProperty("dim_value", NullValueHandling = NullValueHandling.Ignore)]
         public string DimValue { get; set; }
 
         /// <summary>
-        /// 资源的标签信息，格式：\&quot;[key]\&quot;:\&quot;[value]\&quot;，样例参考：\&quot;ssss\&quot;:\&quot;1111\&quot;
+        /// **参数描述**： 资源的标签信息，格式：\&quot;[key]\&quot;:\&quot;[value]\&quot;，样例参考：\&quot;ssss\&quot;:\&quot;1111\&quot; **约束限制**： 不涉及。  **取值范围**： 字符串长度范围[0,500] **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("tag", IsQuery = true)]
         [JsonProperty("tag", NullValueHandling = NullValueHandling.Ignore)]
         public string Tag { get; set; }
 
         /// <summary>
-        /// 企业项目ID
+        /// **参数解释** 企业项目ID。 **约束限制** 不涉及。 **取值范围** 由数字、字母和-组成，字符串长度范围[1,128] **默认取值** 不涉及。 
         /// </summary>
         [SDKProperty("extend_relation_id", IsQuery = true)]
         [JsonProperty("extend_relation_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ExtendRelationId { get; set; }
 
         /// <summary>
-        /// 资源分组的云产品，一般由\&quot;服务命名空间,服务首层维度名称\&quot;组成，如\&quot;SYS.ECS,instance_id\&quot;
+        /// **参数解释**： 资源所属的云产品名称，一般由\&quot;服务命名空间,服务首层维度名称\&quot;组成，如\&quot;SYS.ECS,instance_id\&quot;。 **约束限制**： 不涉及。 **取值范围**： 长度为[0,128]个字符。        **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("product_name", IsQuery = true)]
         [JsonProperty("product_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductName { get; set; }
 
         /// <summary>
-        /// 资源名称
+        /// **参数解释** 资源名称 **约束限制** 不涉及 **取值范围** 长度[1,128]个字符 **默认取值** 不涉及 
         /// </summary>
         [SDKProperty("resource_name", IsQuery = true)]
         [JsonProperty("resource_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceName { get; set; }
 
         /// <summary>
-        /// 按事件告警状态信息进行过滤，取值只能为health（已设置事件告警规则且无事件告警触发的资源）、unhealthy（已设置事件告警规则且有事件告警触发的资源）、no_alarm_rule（未设置事件告警规则的资源）
+        /// **参数解释** 按事件告警状态信息进行过滤。 **约束限制**： 不涉及。 **取值范围** 枚举值。 - health: 已设置事件告警规则且无事件告警触发的资源 - unhealthy: 已设置事件告警规则且有事件告警触发的资源 - no_alarm_rule: 未设置事件告警规则的资源 **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("event_status", IsQuery = true)]
         [JsonProperty("event_status", NullValueHandling = NullValueHandling.Ignore)]
@@ -349,11 +349,11 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListResourceGroupsServicesResourcesRequest {\n");
+            sb.Append("  offset: ").Append(Offset).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  groupId: ").Append(GroupId).Append("\n");
             sb.Append("  service: ").Append(Service).Append("\n");
             sb.Append("  dimName: ").Append(DimName).Append("\n");
-            sb.Append("  limit: ").Append(Limit).Append("\n");
-            sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  dimValue: ").Append(DimValue).Append("\n");
             sb.Append("  tag: ").Append(Tag).Append("\n");
@@ -379,11 +379,11 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public bool Equals(ListResourceGroupsServicesResourcesRequest input)
         {
             if (input == null) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
             if (this.Service != input.Service || (this.Service != null && !this.Service.Equals(input.Service))) return false;
             if (this.DimName != input.DimName || (this.DimName != null && !this.DimName.Equals(input.DimName))) return false;
-            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
-            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Status != input.Status) return false;
             if (this.DimValue != input.DimValue || (this.DimValue != null && !this.DimValue.Equals(input.DimValue))) return false;
             if (this.Tag != input.Tag || (this.Tag != null && !this.Tag.Equals(input.Tag))) return false;
@@ -403,11 +403,11 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
                 if (this.Service != null) hashCode = hashCode * 59 + this.Service.GetHashCode();
                 if (this.DimName != null) hashCode = hashCode * 59 + this.DimName.GetHashCode();
-                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.DimValue != null) hashCode = hashCode * 59 + this.DimValue.GetHashCode();
                 if (this.Tag != null) hashCode = hashCode * 59 + this.Tag.GetHashCode();

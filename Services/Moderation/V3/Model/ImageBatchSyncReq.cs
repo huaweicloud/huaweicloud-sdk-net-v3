@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         public string EventType { get; set; }
 
         /// <summary>
-        /// 检测场景。可添加的检测场景如下： - terrorism：暴恐元素的检测。 - porn：涉黄元素的检测。 - image_text：广告图文的检测。 可通过配置上述场景，来完对应场景元素的检测。每个检测场景的检测次数会分类统计。
+        /// 检测场景。可添加的检测场景如下： - terrorism：暴恐元素的检测。 - porn：涉黄元素的检测。 - politics：涉政人物的检测。 - image_text：广告图文的检测。 可通过配置上述场景，来完对应场景元素的检测。每个检测场景的检测次数会分类统计。
         /// </summary>
         [JsonProperty("categories", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Categories { get; set; }
@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         public List<ImageBatchSyncReqUrls> Urls { get; set; }
 
         /// <summary>
-        /// 指定图片中文字语种类型。 - zh: 中文 - en: 英文 默认值为zh，中国站仅支持zh。
+        /// 指定图片中文字语种类型。 - zh: 中文 默认值为zh，中国站仅支持zh。
         /// </summary>
         [JsonProperty("language", NullValueHandling = NullValueHandling.Ignore)]
         public string Language { get; set; }

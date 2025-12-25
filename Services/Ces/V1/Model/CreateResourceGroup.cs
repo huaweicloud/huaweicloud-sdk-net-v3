@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         [JsonProperty("dimensions", NullValueHandling = NullValueHandling.Ignore)]
         public List<MetricsDimension> Dimensions { get; set; }
 
+        /// <summary>
+        /// **参数解释** 关联id **约束限制** 不涉及 **取值范围** 由数字、字母,_和-组成长度[1,128] **默认取值** 不涉及 
+        /// </summary>
+        [JsonProperty("relation_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string RelationId { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             sb.Append("class CreateResourceGroup {\n");
             sb.Append("  Namespace: ").Append(Namespace).Append("\n");
             sb.Append("  dimensions: ").Append(Dimensions).Append("\n");
+            sb.Append("  relationId: ").Append(RelationId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             if (input == null) return false;
             if (this.Namespace != input.Namespace || (this.Namespace != null && !this.Namespace.Equals(input.Namespace))) return false;
             if (this.Dimensions != input.Dimensions || (this.Dimensions != null && input.Dimensions != null && !this.Dimensions.SequenceEqual(input.Dimensions))) return false;
+            if (this.RelationId != input.RelationId || (this.RelationId != null && !this.RelationId.Equals(input.RelationId))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
                 var hashCode = 41;
                 if (this.Namespace != null) hashCode = hashCode * 59 + this.Namespace.GetHashCode();
                 if (this.Dimensions != null) hashCode = hashCode * 59 + this.Dimensions.GetHashCode();
+                if (this.RelationId != null) hashCode = hashCode * 59 + this.RelationId.GetHashCode();
                 return hashCode;
             }
         }

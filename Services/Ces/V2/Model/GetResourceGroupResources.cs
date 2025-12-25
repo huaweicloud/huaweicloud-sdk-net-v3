@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class GetResourceGroupResources 
     {
         /// <summary>
-        /// 指标告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）
+        /// **参数解释** 按事件告警状态信息进行过滤。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 
         /// </summary>
-        /// <value>指标告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）</value>
+        /// <value>**参数解释** 按事件告警状态信息进行过滤。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 </value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -137,9 +137,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         }
 
         /// <summary>
-        /// 事件告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）
+        /// **参数解释** 按事件告警状态信息进行过滤。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 
         /// </summary>
-        /// <value>事件告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）</value>
+        /// <value>**参数解释** 按事件告警状态信息进行过滤。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 </value>
         [JsonConverter(typeof(EnumClassConverter<EventStatusEnum>))]
         public class EventStatusEnum
         {
@@ -259,7 +259,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
 
         /// <summary>
-        /// 指标告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）
+        /// **参数解释** 按事件告警状态信息进行过滤。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
@@ -270,24 +270,24 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public List<ResourceDimension> Dimensions { get; set; }
 
         /// <summary>
-        /// 资源的tag信息,格式为key/value的json字符串,样例为\&quot;{\\\&quot;sss\\\&quot;:\\\&quot;aaa\\\&quot;}\&quot;
+        /// **参数解释** 资源的tag信息,格式为key/value的json字符串,样例为\&quot;{\\\&quot;sss\\\&quot;:\\\&quot;aaa\\\&quot;}\&quot;。 **取值范围** 枚举值。 字符串长度[0, 10240] 
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public string Tags { get; set; }
 
         /// <summary>
-        /// 企业项目ID
+        /// **参数解释** 企业项目ID。 **取值范围** 由数字、字母和-组成，字符串长度范围[1,128] 
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 事件告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）
+        /// **参数解释** 按事件告警状态信息进行过滤。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 
         /// </summary>
         [JsonProperty("event_status", NullValueHandling = NullValueHandling.Ignore)]
         public EventStatusEnum EventStatus { get; set; }
         /// <summary>
-        /// 资源名称
+        /// **参数解释** 资源名称 **取值范围** 长度[0,128]个字符 
         /// </summary>
         [JsonProperty("resource_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceName { get; set; }

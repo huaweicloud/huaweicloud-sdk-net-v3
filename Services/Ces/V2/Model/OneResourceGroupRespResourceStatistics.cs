@@ -11,31 +11,31 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 资源数量统计信息
+    /// **参数解释** 资源分组中的资源信息统计。
     /// </summary>
     public class OneResourceGroupRespResourceStatistics 
     {
 
         /// <summary>
-        /// 告警中的资源数
+        /// **参数解释** 该资源分组中当前处在告警状态的资源个数。  **取值范围** 在[0,9999999]区间内。
         /// </summary>
         [JsonProperty("unhealthy", NullValueHandling = NullValueHandling.Ignore)]
         public int? Unhealthy { get; set; }
 
         /// <summary>
-        /// 资源总数
+        /// **参数解释** 该资源分组中资源的总个数。  **取值范围** 在[0,9999999]区间内。
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }
 
         /// <summary>
-        /// 已触发的资源数
+        /// **参数解释** 该资源分组中已触发的资源个数。  **取值范围** 在[0,9999999]区间内。
         /// </summary>
         [JsonProperty("event_unhealthy", NullValueHandling = NullValueHandling.Ignore)]
         public int? EventUnhealthy { get; set; }
 
         /// <summary>
-        /// 资源类型数
+        /// **参数解释** 该资源分组中选择的资源类型个数，如资源分组添加了弹性云服务、弹性公网IP和带宽则值为2。 **取值范围** 在[0,9999999]区间内。
         /// </summary>
         [JsonProperty("namespaces", NullValueHandling = NullValueHandling.Ignore)]
         public int? Namespaces { get; set; }

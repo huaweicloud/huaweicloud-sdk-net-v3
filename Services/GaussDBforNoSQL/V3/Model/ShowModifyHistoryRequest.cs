@@ -35,14 +35,14 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
-        public string Offset { get; set; }
+        public int? Offset { get; set; }
 
         /// <summary>
         /// **参数解释：** 查询个数上限值。 **约束限制：** 不涉及。 **取值范围：** 1~100。 **默认取值：** 100。不传该参数时，默认查询前100条信息。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
-        public string Limit { get; set; }
+        public int? Limit { get; set; }
 
 
 

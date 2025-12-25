@@ -29,6 +29,12 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public string AlarmDescription { get; set; }
 
         /// <summary>
+        /// **参数解释**： 告警规则的ID或者资源分组ID。 **取值范围**： 不涉及 
+        /// </summary>
+        [JsonProperty("relation_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string RelationId { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("metric", NullValueHandling = NullValueHandling.Ignore)]
@@ -38,16 +44,16 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// 
         /// </summary>
         [JsonProperty("condition", NullValueHandling = NullValueHandling.Ignore)]
-        public ConditionResp Condition { get; set; }
+        public AlarmRuleConditionResp Condition { get; set; }
 
         /// <summary>
-        /// **参数解释**： 是否启用该条告警。 **取值范围**： 布尔值。 true:开启。 false:关闭。 
+        /// **参数解释**： 是否启用该条告警。 **取值范围**： 布尔值。 - true:开启。 - false:关闭。 
         /// </summary>
         [JsonProperty("alarm_enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AlarmEnabled { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警级别。 **取值范围**： 级别为1、2、3、4。分别对应紧急、重要、次要、提示。 
+        /// **参数解释**： 告警级别。 **取值范围**： 取值为1、2、3、4 - 1：紧急 - 2：重要 - 3：次要 - 4：提示 
         /// </summary>
         [JsonProperty("alarm_level", NullValueHandling = NullValueHandling.Ignore)]
         public int? AlarmLevel { get; set; }
@@ -63,6 +69,12 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// </summary>
         [JsonProperty("alarm_action_enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AlarmActionEnabled { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 数据不足时，是否产生告警记录(不会发送通知)。 **取值范围**： 值为true或者false - true：数据不足时，产生告警记录 - false：数据不足时，不产生告警记录 
+        /// </summary>
+        [JsonProperty("ignore_insufficient_data", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IgnoreInsufficientData { get; set; }
 
         /// <summary>
         /// **参数解释**： 告警触发时，通知组/主题订阅的信息。 
@@ -113,7 +125,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public long? UpdateTime { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警状态。 **取值范围**： 只能为ok、alarm、insufficient_data。字符长度为[0,17] - ok：正常 - alarm：告警 - insufficient_data：数据不足 
+        /// **参数解释**： 告警状态。 **取值范围**： 只能为ok、alarm、insufficient_data。 - ok：正常 - alarm：告警 - insufficient_data：数据不足 
         /// </summary>
         [JsonProperty("alarm_state", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmState { get; set; }
@@ -135,12 +147,14 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             sb.Append("class MetricAlarmsResp {\n");
             sb.Append("  alarmName: ").Append(AlarmName).Append("\n");
             sb.Append("  alarmDescription: ").Append(AlarmDescription).Append("\n");
+            sb.Append("  relationId: ").Append(RelationId).Append("\n");
             sb.Append("  metric: ").Append(Metric).Append("\n");
             sb.Append("  condition: ").Append(Condition).Append("\n");
             sb.Append("  alarmEnabled: ").Append(AlarmEnabled).Append("\n");
             sb.Append("  alarmLevel: ").Append(AlarmLevel).Append("\n");
             sb.Append("  alarmType: ").Append(AlarmType).Append("\n");
             sb.Append("  alarmActionEnabled: ").Append(AlarmActionEnabled).Append("\n");
+            sb.Append("  ignoreInsufficientData: ").Append(IgnoreInsufficientData).Append("\n");
             sb.Append("  alarmActions: ").Append(AlarmActions).Append("\n");
             sb.Append("  okActions: ").Append(OkActions).Append("\n");
             sb.Append("  insufficientdataActions: ").Append(InsufficientdataActions).Append("\n");
@@ -171,12 +185,14 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             if (input == null) return false;
             if (this.AlarmName != input.AlarmName || (this.AlarmName != null && !this.AlarmName.Equals(input.AlarmName))) return false;
             if (this.AlarmDescription != input.AlarmDescription || (this.AlarmDescription != null && !this.AlarmDescription.Equals(input.AlarmDescription))) return false;
+            if (this.RelationId != input.RelationId || (this.RelationId != null && !this.RelationId.Equals(input.RelationId))) return false;
             if (this.Metric != input.Metric || (this.Metric != null && !this.Metric.Equals(input.Metric))) return false;
             if (this.Condition != input.Condition || (this.Condition != null && !this.Condition.Equals(input.Condition))) return false;
             if (this.AlarmEnabled != input.AlarmEnabled || (this.AlarmEnabled != null && !this.AlarmEnabled.Equals(input.AlarmEnabled))) return false;
             if (this.AlarmLevel != input.AlarmLevel || (this.AlarmLevel != null && !this.AlarmLevel.Equals(input.AlarmLevel))) return false;
             if (this.AlarmType != input.AlarmType || (this.AlarmType != null && !this.AlarmType.Equals(input.AlarmType))) return false;
             if (this.AlarmActionEnabled != input.AlarmActionEnabled || (this.AlarmActionEnabled != null && !this.AlarmActionEnabled.Equals(input.AlarmActionEnabled))) return false;
+            if (this.IgnoreInsufficientData != input.IgnoreInsufficientData || (this.IgnoreInsufficientData != null && !this.IgnoreInsufficientData.Equals(input.IgnoreInsufficientData))) return false;
             if (this.AlarmActions != input.AlarmActions || (this.AlarmActions != null && input.AlarmActions != null && !this.AlarmActions.SequenceEqual(input.AlarmActions))) return false;
             if (this.OkActions != input.OkActions || (this.OkActions != null && input.OkActions != null && !this.OkActions.SequenceEqual(input.OkActions))) return false;
             if (this.InsufficientdataActions != input.InsufficientdataActions || (this.InsufficientdataActions != null && input.InsufficientdataActions != null && !this.InsufficientdataActions.SequenceEqual(input.InsufficientdataActions))) return false;
@@ -201,12 +217,14 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
                 var hashCode = 41;
                 if (this.AlarmName != null) hashCode = hashCode * 59 + this.AlarmName.GetHashCode();
                 if (this.AlarmDescription != null) hashCode = hashCode * 59 + this.AlarmDescription.GetHashCode();
+                if (this.RelationId != null) hashCode = hashCode * 59 + this.RelationId.GetHashCode();
                 if (this.Metric != null) hashCode = hashCode * 59 + this.Metric.GetHashCode();
                 if (this.Condition != null) hashCode = hashCode * 59 + this.Condition.GetHashCode();
                 if (this.AlarmEnabled != null) hashCode = hashCode * 59 + this.AlarmEnabled.GetHashCode();
                 if (this.AlarmLevel != null) hashCode = hashCode * 59 + this.AlarmLevel.GetHashCode();
                 if (this.AlarmType != null) hashCode = hashCode * 59 + this.AlarmType.GetHashCode();
                 if (this.AlarmActionEnabled != null) hashCode = hashCode * 59 + this.AlarmActionEnabled.GetHashCode();
+                if (this.IgnoreInsufficientData != null) hashCode = hashCode * 59 + this.IgnoreInsufficientData.GetHashCode();
                 if (this.AlarmActions != null) hashCode = hashCode * 59 + this.AlarmActions.GetHashCode();
                 if (this.OkActions != null) hashCode = hashCode * 59 + this.OkActions.GetHashCode();
                 if (this.InsufficientdataActions != null) hashCode = hashCode * 59 + this.InsufficientdataActions.GetHashCode();

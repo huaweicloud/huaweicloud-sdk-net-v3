@@ -137,9 +137,9 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         }
 
         /// <summary>
-        /// 默认语言，智能交互接口使用。默认值CN。 * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）
+        /// 默认语言，智能交互接口使用。默认值CN。 * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持） * fr：法语（仅海外站点支持）
         /// </summary>
-        /// <value>默认语言，智能交互接口使用。默认值CN。 * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）</value>
+        /// <value>默认语言，智能交互接口使用。默认值CN。 * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持） * fr：法语（仅海外站点支持）</value>
         [JsonConverter(typeof(EnumClassConverter<DefaultLanguageEnum>))]
         public class DefaultLanguageEnum
         {
@@ -173,6 +173,11 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             /// </summary>
             public static readonly DefaultLanguageEnum THAI = new DefaultLanguageEnum("Thai");
 
+            /// <summary>
+            /// Enum FR for value: fr
+            /// </summary>
+            public static readonly DefaultLanguageEnum FR = new DefaultLanguageEnum("fr");
+
             private static readonly Dictionary<string, DefaultLanguageEnum> StaticFields =
             new Dictionary<string, DefaultLanguageEnum>()
             {
@@ -182,6 +187,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 { "por", POR },
                 { "Arabic", ARABIC },
                 { "Thai", THAI },
+                { "fr", FR },
             };
 
             private string _value;
@@ -342,7 +348,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public bool? IsTransparent { get; set; }
 
         /// <summary>
-        /// 默认语言，智能交互接口使用。默认值CN。 * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）
+        /// 默认语言，智能交互接口使用。默认值CN。 * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持） * fr：法语（仅海外站点支持）
         /// </summary>
         [JsonProperty("default_language", NullValueHandling = NullValueHandling.Ignore)]
         public DefaultLanguageEnum DefaultLanguage { get; set; }

@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 告警规则ID
+        /// **参数解释**： 告警模板的ID。  **取值范围**：    以al开头，后跟22位由字母或数字组成的字符串。长度为24个字符。 
         /// </summary>
         [JsonProperty("alarm_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmId { get; set; }
 
         /// <summary>
-        /// 告警规则名称
+        /// **参数解释**： 告警规则名称。     **取值范围**： 只能为字母、数字、汉字、-或_，长度为[1,128]个字符 
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 告警规则描述
+        /// **参数解释**： 告警规则描述。     **取值范围**： 长度为[0,256]个字符。 
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }

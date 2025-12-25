@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public List<string> TemplateIds { get; set; }
 
         /// <summary>
-        /// 如果告警模板关联了告警规则，是否级联删除告警规则，true代表级联删除，false代表只删除告警模板
+        /// **参数解释**： 如果告警模板关联了告警规则，是否级联删除告警规则。     **约束限制**： 不涉及。 **取值范围**： true代表级联删除，false代表只删除告警模板。           **默认取值**： false。 
         /// </summary>
         [JsonProperty("delete_associate_alarm", NullValueHandling = NullValueHandling.Ignore)]
         public bool? DeleteAssociateAlarm { get; set; }

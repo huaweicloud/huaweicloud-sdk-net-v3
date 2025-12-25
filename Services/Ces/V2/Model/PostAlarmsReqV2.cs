@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class PostAlarmsReqV2 
     {
         /// <summary>
-        /// **参数解释**： 产品层级跨维规则创建时需要指明为产品层级规则，resource_level取值为product即为云产品类型，不填或者取值为dimension则为子维度类型。 **约束限制**： 不涉及。 **取值范围**： 枚举值。 - product：云产品。 - dimension：子维度。 **默认取值**： 子维度。 
+        /// **参数解释**： 创建告警规则，需要指定的资源层级。 **约束限制**： 不涉及。 **取值范围**： 枚举值。 - product：云产品类型。 - dimension：子维度类型。 **默认取值**： 子维度。 
         /// </summary>
-        /// <value>**参数解释**： 产品层级跨维规则创建时需要指明为产品层级规则，resource_level取值为product即为云产品类型，不填或者取值为dimension则为子维度类型。 **约束限制**： 不涉及。 **取值范围**： 枚举值。 - product：云产品。 - dimension：子维度。 **默认取值**： 子维度。 </value>
+        /// <value>**参数解释**： 创建告警规则，需要指定的资源层级。 **约束限制**： 不涉及。 **取值范围**： 枚举值。 - product：云产品类型。 - dimension：子维度类型。 **默认取值**： 子维度。 </value>
         [JsonConverter(typeof(EnumClassConverter<ResourceLevelEnum>))]
         public class ResourceLevelEnum
         {
@@ -162,7 +162,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public List<List<Dimension>> Resources { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警策略。 **约束限制**： 当alarm_template_id字段为空时必填，不为空时不填。最多包含50个策略。 
+        /// **参数解释**： 告警策略。 **约束限制**： 当alarm_template_id字段为空时必填，不为空时不填。最多包含50个策略，最少为0个。 
         /// </summary>
         [JsonProperty("policies", NullValueHandling = NullValueHandling.Ignore)]
         public List<AlarmRulePolicy> Policies { get; set; }
@@ -173,25 +173,25 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public AlarmType Type { get; set; }
         /// <summary>
-        /// **参数解释**： 触发告警时，通知组/主题订阅的信息。 **约束限制**： 包含的通知信息的数量最多为10个，最少为0个。 
+        /// **参数解释**： 触发告警时，通知组/主题订阅的信息。 **约束限制**： 包含的通知对象信息的数量最多为10个，最少为0个。 
         /// </summary>
         [JsonProperty("alarm_notifications", NullValueHandling = NullValueHandling.Ignore)]
         public List<Notification> AlarmNotifications { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警恢复时，通知组/主题订阅的信息。 **约束限制**： 包含的通知信息的数量最多为10个，最少为0个。 
+        /// **参数解释**： 告警恢复时，通知组/主题订阅的信息。 **约束限制**： 包含的通知对象信息的数量最多为10个，最少为0个。 
         /// </summary>
         [JsonProperty("ok_notifications", NullValueHandling = NullValueHandling.Ignore)]
         public List<Notification> OkNotifications { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警通知开启时间。    **约束限制**： 不涉及。 **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。           **默认取值**： 不涉及。 
+        /// **参数解释**： 告警通知开启时间。如 00:00    **约束限制**： 不涉及。 **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。           **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("notification_begin_time", NullValueHandling = NullValueHandling.Ignore)]
         public string NotificationBeginTime { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警通知关闭时间。    **约束限制**： 不涉及。 **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。           **默认取值**： 不涉及。 
+        /// **参数解释**： 告警通知关闭时间。如 08:00  **约束限制**： 不涉及。 **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。           **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("notification_end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string NotificationEndTime { get; set; }
@@ -203,7 +203,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string EffectiveTimezone { get; set; }
 
         /// <summary>
-        /// **参数解释**： 企业项目ID。     **约束限制**： 不涉及。 **取值范围**： 只能包含小写字母、数字、“-”。           **默认取值**： 不涉及。 
+        /// **参数解释**： 企业项目ID。     **约束限制**： 不涉及。 **取值范围**： 只能包含小写字母、数字、“-”。0 代表默认企业项目ID         **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
@@ -215,31 +215,31 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public bool? Enabled { get; set; }
 
         /// <summary>
-        /// **参数解释**： 是否开启告警通知。     **约束限制**： 不涉及。 **取值范围**： 布尔值。 - true:开启。 - false:关闭。 **默认取值**： true 
+        /// **参数解释**： 是否开启告警通知。说明：若notification_enabled为true，对应的alarm_notifications、ok_notifications至少有一个不能为空。    **约束限制**： 不涉及。 **取值范围**： 布尔值。 - true:开启。 - false:关闭。 **默认取值**： true 
         /// </summary>
         [JsonProperty("notification_enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? NotificationEnabled { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警规则关联告警模板ID，如果传了，告警规则关联的策略会和告警模板策略联动变化。     **约束限制**： 不涉及。 **取值范围**： 以at开头，只包含字母、数字，长度为[2,64]个字符。          **默认取值**： 不涉及。 
+        /// **参数解释**： 告警规则关联告警模板ID     **约束限制**： 如果传了，告警规则关联的策略会和告警模板策略联动变化。 **取值范围**： 以at开头，只包含字母、数字，长度为[2,64]个字符。          **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("alarm_template_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmTemplateId { get; set; }
 
         /// <summary>
-        /// **参数解释**： 租户标签列表。 **约束限制**： 最多包含20个标签。 
+        /// **参数解释**： 租户标签列表。 **约束限制**： 最多包含20个标签，最少可以不填。 
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<ResourceTag> Tags { get; set; }
 
         /// <summary>
-        /// **参数解释**： 产品层级跨维规则创建时需要指明的规则产品名称，一般由\&quot;服务命名空间,服务首层维度名称\&quot;组成，如\&quot;SYS.ECS,instance_id\&quot;。 **约束限制**： 不涉及。 **取值范围**： 长度为[0,128]个字符。          **默认取值**： 不涉及。 
+        /// **参数解释**： 创建告警规则，资源层级为云产品时，需要指明规则的云产品名称，一般由\&quot;服务命名空间,服务首层维度名称\&quot;组成，如\&quot;SYS.ECS,instance_id\&quot;。 **约束限制**： 不涉及。 **取值范围**： 长度为[0,128]个字符。          **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("product_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductName { get; set; }
 
         /// <summary>
-        /// **参数解释**： 产品层级跨维规则创建时需要指明为产品层级规则，resource_level取值为product即为云产品类型，不填或者取值为dimension则为子维度类型。 **约束限制**： 不涉及。 **取值范围**： 枚举值。 - product：云产品。 - dimension：子维度。 **默认取值**： 子维度。 
+        /// **参数解释**： 创建告警规则，需要指定的资源层级。 **约束限制**： 不涉及。 **取值范围**： 枚举值。 - product：云产品类型。 - dimension：子维度类型。 **默认取值**： 子维度。 
         /// </summary>
         [JsonProperty("resource_level", NullValueHandling = NullValueHandling.Ignore)]
         public ResourceLevelEnum ResourceLevel { get; set; }

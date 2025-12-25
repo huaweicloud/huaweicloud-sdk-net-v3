@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 成功添加的资源数目
+        /// **参数解释**： 成功添加的资源数目。     **取值范围**： 取值范围为0-1000。 
         /// </summary>
         [JsonProperty("succeed_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? SucceedCount { get; set; }

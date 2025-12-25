@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
     public class SmartChatVoiceConfig 
     {
         /// <summary>
-        /// 语言类型。默认值CN。 * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）
+        /// 语言类型。默认值CN。 * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持） * fr：法语（仅海外站点支持）
         /// </summary>
-        /// <value>语言类型。默认值CN。 * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）</value>
+        /// <value>语言类型。默认值CN。 * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持） * fr：法语（仅海外站点支持）</value>
         [JsonConverter(typeof(EnumClassConverter<LanguageEnum>))]
         public class LanguageEnum
         {
@@ -52,6 +52,11 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             /// </summary>
             public static readonly LanguageEnum THAI = new LanguageEnum("Thai");
 
+            /// <summary>
+            /// Enum FR for value: fr
+            /// </summary>
+            public static readonly LanguageEnum FR = new LanguageEnum("fr");
+
             private static readonly Dictionary<string, LanguageEnum> StaticFields =
             new Dictionary<string, LanguageEnum>()
             {
@@ -61,6 +66,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 { "por", POR },
                 { "Arabic", ARABIC },
                 { "Thai", THAI },
+                { "fr", FR },
             };
 
             private string _value;
@@ -186,7 +192,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public string Provider { get; set; }
 
         /// <summary>
-        /// 语言类型。默认值CN。 * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）
+        /// 语言类型。默认值CN。 * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持） * fr：法语（仅海外站点支持）
         /// </summary>
         [JsonProperty("language", NullValueHandling = NullValueHandling.Ignore)]
         public LanguageEnum Language { get; set; }

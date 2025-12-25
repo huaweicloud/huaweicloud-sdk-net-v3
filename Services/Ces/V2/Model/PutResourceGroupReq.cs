@@ -11,43 +11,43 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 资源分组修改请求体
+    /// **参数解释** 资源分组修改请求体
     /// </summary>
     public class PutResourceGroupReq 
     {
 
         /// <summary>
-        /// 资源分组名称，只能为字母、数字、汉字、-、_，最大长度为128
+        /// **参数解释** 资源分组名称。 **约束限制** 不涉及。 **取值范围** 包含字母、数字、_、-或汉字，长度为[1,128]个字符。 **默认取值** 不涉及。
         /// </summary>
         [JsonProperty("group_name", NullValueHandling = NullValueHandling.Ignore)]
         public string GroupName { get; set; }
 
         /// <summary>
-        /// 标签动态匹配时的关联标签,type为TAG时该字段不为空
+        /// **参数解释** 标签动态匹配时的关联标签。 **约束限制** type为TAG时必传，不超过50个标签。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<ResourceGroupTagRelation> Tags { get; set; }
 
         /// <summary>
-        /// 资源匹配规则为组合匹配时传入的参数
+        /// **参数解释** 资源匹配规则为组合匹配时传入的参数，已废弃。 **约束限制** type为COMB时传入，不超过50个条件。
         /// </summary>
         [JsonProperty("enterprise_project_id_and_tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<EnterpriseProjectIdAndTags> EnterpriseProjectIdAndTags { get; set; }
 
         /// <summary>
-        /// 智能添加时企业项目匹配传入参数
+        /// **参数解释** 匹配企业项目时关联的企业项目ID。 **约束限制** type为EPS时必传，不超过50个企业项目。
         /// </summary>
         [JsonProperty("extend_relation_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ExtendRelationIds { get; set; }
 
         /// <summary>
-        /// 实例名称匹配参数
+        /// **参数解释** 实例名称匹配参数。 **约束限制** type为NAME时必传，不超过50个实例。 
         /// </summary>
         [JsonProperty("instances", NullValueHandling = NullValueHandling.Ignore)]
         public List<Instance> Instances { get; set; }
 
         /// <summary>
-        /// 修改资源层级为云产品时的云产品的取值，一般由\&quot;服务命名空间,服务首层维度名称\&quot;组成，如\&quot;SYS.ECS,instance_id\&quot;。多个云产品则用“;”隔开，如\&quot;SERVICE.BMS,instance_id;SYS.ECS,instance_id\&quot;。
+        /// **参数解释** 资源层级为云产品时的云产品名称 **约束限制** 不涉及。 **取值范围** 一般由\&quot;服务命名空间,服务首层维度名称\&quot;组成，如\&quot;SYS.ECS,instance_id\&quot;。多个云产品则用“;”隔开，如\&quot;SERVICE.BMS,instance_id;SYS.ECS,instance_id\&quot;。不超过10240个字符。 **默认取值** 不涉及。
         /// </summary>
         [JsonProperty("product_names", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductNames { get; set; }

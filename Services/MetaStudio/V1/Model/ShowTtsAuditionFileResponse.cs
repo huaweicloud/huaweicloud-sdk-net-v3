@@ -23,6 +23,12 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public bool? IsFileComplete { get; set; }
 
         /// <summary>
+        /// 返回码。
+        /// </summary>
+        [JsonProperty("code", NullValueHandling = NullValueHandling.Ignore)]
+        public string Code { get; set; }
+
+        /// <summary>
         /// 异常信息。
         /// </summary>
         [JsonProperty("message", NullValueHandling = NullValueHandling.Ignore)]
@@ -44,6 +50,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             var sb = new StringBuilder();
             sb.Append("class ShowTtsAuditionFileResponse {\n");
             sb.Append("  isFileComplete: ").Append(IsFileComplete).Append("\n");
+            sb.Append("  code: ").Append(Code).Append("\n");
             sb.Append("  message: ").Append(Message).Append("\n");
             sb.Append("  files: ").Append(Files).Append("\n");
             sb.Append("}\n");
@@ -65,6 +72,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         {
             if (input == null) return false;
             if (this.IsFileComplete != input.IsFileComplete || (this.IsFileComplete != null && !this.IsFileComplete.Equals(input.IsFileComplete))) return false;
+            if (this.Code != input.Code || (this.Code != null && !this.Code.Equals(input.Code))) return false;
             if (this.Message != input.Message || (this.Message != null && !this.Message.Equals(input.Message))) return false;
             if (this.Files != input.Files || (this.Files != null && input.Files != null && !this.Files.SequenceEqual(input.Files))) return false;
 
@@ -80,6 +88,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             {
                 var hashCode = 41;
                 if (this.IsFileComplete != null) hashCode = hashCode * 59 + this.IsFileComplete.GetHashCode();
+                if (this.Code != null) hashCode = hashCode * 59 + this.Code.GetHashCode();
                 if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();
                 if (this.Files != null) hashCode = hashCode * 59 + this.Files.GetHashCode();
                 return hashCode;

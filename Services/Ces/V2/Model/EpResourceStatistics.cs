@@ -17,31 +17,31 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 企业项目ID
+        /// **参数解释** 企业项目ID。 **取值范围** 长度[0,64]个字符. 
         /// </summary>
         [JsonProperty("extend_relation_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ExtendRelationId { get; set; }
 
         /// <summary>
-        /// 告警中的资源数
+        /// **参数解释** 告警中的资源数。 **取值范围** 0-9999999 
         /// </summary>
         [JsonProperty("unhealthy", NullValueHandling = NullValueHandling.Ignore)]
         public int? Unhealthy { get; set; }
 
         /// <summary>
-        /// 资源总数
+        /// **参数解释** 资源总数。 **取值范围** 0-9999999 
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }
 
         /// <summary>
-        /// 已触发的资源数
+        /// **参数解释** 已触发的资源数。 **取值范围** 0-9999999 
         /// </summary>
         [JsonProperty("event_unhealthy", NullValueHandling = NullValueHandling.Ignore)]
         public int? EventUnhealthy { get; set; }
 
         /// <summary>
-        /// 资源类型数
+        /// **参数解释** 资源类型数。 **取值范围** 0-9999999 
         /// </summary>
         [JsonProperty("namespaces", NullValueHandling = NullValueHandling.Ignore)]
         public int? Namespaces { get; set; }

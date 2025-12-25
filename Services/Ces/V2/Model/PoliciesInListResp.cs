@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 
+    /// **参数解释**： 告警策略列表。 
     /// </summary>
     public class PoliciesInListResp 
     {
 
         /// <summary>
-        /// 告警策略ID。
+        /// **参数解释**： 告警策略ID。 **约束限制**： 不涉及。 **取值范围**： 长度为[1,64]个字符，只能包含字母、数字、- **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("alarm_policy_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmPolicyId { get; set; }
@@ -32,7 +32,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// 
         /// </summary>
         [JsonProperty("extra_info", NullValueHandling = NullValueHandling.Ignore)]
-        public MetricExtraInfo ExtraInfo { get; set; }
+        public MetricExtraInfoResp ExtraInfo { get; set; }
 
         /// <summary>
         /// 
@@ -40,19 +40,19 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("period", NullValueHandling = NullValueHandling.Ignore)]
         public Period Period { get; set; }
         /// <summary>
-        /// **参数解释**： 聚合方式。         **约束限制**： 不涉及。 **取值范围**： average： 平均值，variance：方差，min：最小值，max：最大值，sum：求和。           **默认取值**： 不涉及。 
+        /// **参数解释**： 聚合方式。         **约束限制**： period为1（原始值）时filter字段不生效，默认为average。period大于1时filter才起作用。 **取值范围**： - average：平均值 - variance：方差 - min：最小值 - max：最大值 - sum：求和 **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("filter", NullValueHandling = NullValueHandling.Ignore)]
         public string Filter { get; set; }
 
         /// <summary>
-        /// **参数解释**： 阈值符号。     **约束限制**： 指标告警可以使用的阈值符号有&gt;、&gt;&#x3D;、&lt;、&lt;&#x3D;、&#x3D;、!&#x3D;、cycle_decrease、cycle_increase、cycle_wave； 事件告警可以使用的阈值符号为&gt;、&gt;&#x3D;、&lt;、&lt;&#x3D;、&#x3D;、!&#x3D;。 **取值范围**： 支持的值为(&gt;|&lt;|&gt;&#x3D;|&lt;&#x3D;|&#x3D;|!&#x3D;|cycle_decrease|cycle_increase|cycle_wave);cycle_decrease为环比下降,cycle_increase为环比上升,cycle_wave为环比波动。           **默认取值**： 不涉及。 
+        /// **参数解释**： 阈值符号。 **约束限制**： 指标告警可以使用的阈值符号有&gt;、&gt;&#x3D;、&lt;、&lt;&#x3D;、&#x3D;、!&#x3D;、cycle_decrease、cycle_increase、cycle_wave； 事件告警可以使用的阈值符号为&gt;、&gt;&#x3D;、&lt;、&lt;&#x3D;、&#x3D;、!&#x3D;。 **取值范围**： 支持的值为(&gt;|&lt;|&gt;&#x3D;|&lt;&#x3D;|&#x3D;|!&#x3D;|cycle_decrease|cycle_increase|cycle_wave);cycle_decrease为环比下降,cycle_increase为环比上升,cycle_wave为环比波动。 **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("comparison_operator", NullValueHandling = NullValueHandling.Ignore)]
         public string ComparisonOperator { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警阈值。具体阈值取值请参见附录中各服务监控指标中取值范围。    **约束限制**： 单一阈值时value和alarm_level配对使用，当hierarchical_value和value同时使用时以hierarchical_value为准。 **取值范围**： 最小值为-1.7976931348623157e+108，最大值为1.7976931348623157e+108。           **默认取值**： 不涉及。 
+        /// **参数解释**： 告警阈值。具体阈值取值请参见“[支持服务列表](ces_03_0059.xml)”。    **约束限制**： 单一阈值时value和alarm_level配对使用，当hierarchical_value和value同时使用时以hierarchical_value为准。 **取值范围**： 最小值为-1.7976931348623157e+108，最大值为1.7976931348623157e+108。           **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public double? Value { get; set; }
@@ -61,7 +61,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// 
         /// </summary>
         [JsonProperty("hierarchical_value", NullValueHandling = NullValueHandling.Ignore)]
-        public HierarchicalValue HierarchicalValue { get; set; }
+        public HierarchicalValueResp HierarchicalValue { get; set; }
 
         /// <summary>
         /// **参数解释**： 数据的单位。    **约束限制**： 不涉及。 **取值范围**： 长度为[0,32]个字符。         **默认取值**： 不涉及。 
@@ -76,7 +76,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public int? Count { get; set; }
 
         /// <summary>
-        /// 告警策略类型，已废弃，不推荐使用。
+        /// **参数解释**： 告警策略类型，已废弃，不推荐使用。    **取值范围**： 长度为[0,32]个字符。 
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
@@ -94,7 +94,19 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public int? AlarmLevel { get; set; }
 
         /// <summary>
-        /// **参数解释**： 用户在页面中选择的指标单位， 用于后续指标数据回显和计算。     **约束限制**： 不涉及。 **取值范围**： 长度为[0,64]个字符。        **默认取值**： 不涉及。 
+        /// **参数解释**： 查询服务的命名空间，各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”。 **约束限制**： 不涉及。 **取值范围**： 格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_。字符串的长度必须在 3 到 32个字符之间。 **默认取值**： 不涉及。 
+        /// </summary>
+        [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
+        public string Namespace { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 按云产品维度屏蔽时的资源维度信息，有多个时用\&quot;,\&quot;连接。 **取值范围**： 长度为[0,128]个字符。 
+        /// </summary>
+        [JsonProperty("dimension_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string DimensionName { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 用户在页面中选择的指标单位， 用于后续指标数据回显和计算。字符串最大长度为64。    **约束限制**： 不涉及。 **取值范围**： 长度为[0,64]个字符。        **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("selected_unit", NullValueHandling = NullValueHandling.Ignore)]
         public string SelectedUnit { get; set; }
@@ -121,6 +133,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  suppressDuration: ").Append(SuppressDuration).Append("\n");
             sb.Append("  alarmLevel: ").Append(AlarmLevel).Append("\n");
+            sb.Append("  Namespace: ").Append(Namespace).Append("\n");
+            sb.Append("  dimensionName: ").Append(DimensionName).Append("\n");
             sb.Append("  selectedUnit: ").Append(SelectedUnit).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -153,6 +167,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
             if (this.SuppressDuration != input.SuppressDuration || (this.SuppressDuration != null && !this.SuppressDuration.Equals(input.SuppressDuration))) return false;
             if (this.AlarmLevel != input.AlarmLevel || (this.AlarmLevel != null && !this.AlarmLevel.Equals(input.AlarmLevel))) return false;
+            if (this.Namespace != input.Namespace || (this.Namespace != null && !this.Namespace.Equals(input.Namespace))) return false;
+            if (this.DimensionName != input.DimensionName || (this.DimensionName != null && !this.DimensionName.Equals(input.DimensionName))) return false;
             if (this.SelectedUnit != input.SelectedUnit || (this.SelectedUnit != null && !this.SelectedUnit.Equals(input.SelectedUnit))) return false;
 
             return true;
@@ -179,6 +195,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.SuppressDuration != null) hashCode = hashCode * 59 + this.SuppressDuration.GetHashCode();
                 if (this.AlarmLevel != null) hashCode = hashCode * 59 + this.AlarmLevel.GetHashCode();
+                if (this.Namespace != null) hashCode = hashCode * 59 + this.Namespace.GetHashCode();
+                if (this.DimensionName != null) hashCode = hashCode * 59 + this.DimensionName.GetHashCode();
                 if (this.SelectedUnit != null) hashCode = hashCode * 59 + this.SelectedUnit.GetHashCode();
                 return hashCode;
             }

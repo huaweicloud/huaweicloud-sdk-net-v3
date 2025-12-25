@@ -28,12 +28,6 @@ namespace HuaweiCloud.SDK.Ucs.V1.Model
         [JsonProperty("city", NullValueHandling = NullValueHandling.Ignore)]
         public string City { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("workerConfig", NullValueHandling = NullValueHandling.Ignore)]
-        public WorkerConfig WorkerConfig { get; set; }
-
 
 
         /// <summary>
@@ -45,7 +39,6 @@ namespace HuaweiCloud.SDK.Ucs.V1.Model
             sb.Append("class UpdateClusterSpec {\n");
             sb.Append("  country: ").Append(Country).Append("\n");
             sb.Append("  city: ").Append(City).Append("\n");
-            sb.Append("  workerConfig: ").Append(WorkerConfig).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -66,7 +59,6 @@ namespace HuaweiCloud.SDK.Ucs.V1.Model
             if (input == null) return false;
             if (this.Country != input.Country || (this.Country != null && !this.Country.Equals(input.Country))) return false;
             if (this.City != input.City || (this.City != null && !this.City.Equals(input.City))) return false;
-            if (this.WorkerConfig != input.WorkerConfig || (this.WorkerConfig != null && !this.WorkerConfig.Equals(input.WorkerConfig))) return false;
 
             return true;
         }
@@ -81,7 +73,6 @@ namespace HuaweiCloud.SDK.Ucs.V1.Model
                 var hashCode = 41;
                 if (this.Country != null) hashCode = hashCode * 59 + this.Country.GetHashCode();
                 if (this.City != null) hashCode = hashCode * 59 + this.City.GetHashCode();
-                if (this.WorkerConfig != null) hashCode = hashCode * 59 + this.WorkerConfig.GetHashCode();
                 return hashCode;
             }
         }

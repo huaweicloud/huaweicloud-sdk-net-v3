@@ -323,7 +323,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public string Dim1 { get; set; }
 
         /// <summary>
-        /// 指标的第三层维度，目前最大支持4个维度，维度编号从0开始；维度格式为dim.2&#x3D;key,value，如mongod_primary_instance_id,5f9498e9-36f8-4317-9ea1-ebe28cba99b4；key为指标的维度信息，如：文档数据库服务，则第三层维度为mongod_primary_instance_id，value为文档数据库实例下的主节点ID；各资源的指标维度名称可查看：“[服务指标维度]ces_03_0059.xml)”。
+        /// 指标的第三层维度，目前最大支持4个维度，维度编号从0开始；维度格式为dim.2&#x3D;key,value，如mongod_primary_instance_id,5f9498e9-36f8-4317-9ea1-ebe28cba99b4；key为指标的维度信息，如：文档数据库服务，则第三层维度为mongod_primary_instance_id，value为文档数据库实例下的主节点ID；各资源的指标维度名称可查看：“[服务指标维度](ces_03_0059.xml)”。
         /// </summary>
         [SDKProperty("dim.2", IsQuery = true)]
         [JsonProperty("dim.2", NullValueHandling = NullValueHandling.Ignore)]

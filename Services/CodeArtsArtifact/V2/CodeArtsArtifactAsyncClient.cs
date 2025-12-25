@@ -208,6 +208,30 @@ namespace HuaweiCloud.SDK.CodeArtsArtifact.V2
         }
         
         /// <summary>
+        /// 彻底删除文件/文件夹
+        ///
+        /// 根据文件ID彻底删除文件或文件夹，删除后不能恢复，支持批量删除。可使用该接口清理不再需要的文件或文件夹以释放存储空间。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteCompletelyUpdateFileStateResponse> DeleteCompletelyUpdateFileStateAsync(DeleteCompletelyUpdateFileStateRequest deleteCompletelyUpdateFileStateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/files/compeletion", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCompletelyUpdateFileStateRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteCompletelyUpdateFileStateResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteCompletelyUpdateFileStateResponse> DeleteCompletelyUpdateFileStateAsyncInvoker(DeleteCompletelyUpdateFileStateRequest deleteCompletelyUpdateFileStateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/files/compeletion", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCompletelyUpdateFileStateRequest);
+            return new AsyncInvoker<DeleteCompletelyUpdateFileStateResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteCompletelyUpdateFileStateResponse>);
+        }
+        
+        /// <summary>
         /// 删除仓库到回收站
         ///
         /// 删除仓库到回收站
@@ -342,6 +366,298 @@ namespace HuaweiCloud.SDK.CodeArtsArtifact.V2
         }
         
         /// <summary>
+        /// 查询租户容量消息通知设置信息
+        ///
+        /// 查询租户容量消息通知设置，包含容量阈值和是否启用邮件通知等信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListCapacityMessageSettingResponse> ListCapacityMessageSettingAsync(ListCapacityMessageSettingRequest listCapacityMessageSettingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/capacity-notice/settings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCapacityMessageSettingRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListCapacityMessageSettingResponse>(response);
+        }
+
+        public AsyncInvoker<ListCapacityMessageSettingResponse> ListCapacityMessageSettingAsyncInvoker(ListCapacityMessageSettingRequest listCapacityMessageSettingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/capacity-notice/settings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCapacityMessageSettingRequest);
+            return new AsyncInvoker<ListCapacityMessageSettingResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCapacityMessageSettingResponse>);
+        }
+        
+        /// <summary>
+        /// 获取聚合仓下的仓库代理列表
+        ///
+        /// 根据仓库ID获取指定聚合仓的仓库代理列表，包含仓库状态、类型、地址和访问路径白名单等信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListChildProxyRepositoriesListResponse> ListChildProxyRepositoriesListAsync(ListChildProxyRepositoriesListRequest listChildProxyRepositoriesListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/cloudartifact/v5/repositories/proxy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listChildProxyRepositoriesListRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListChildProxyRepositoriesListResponse>(response);
+        }
+
+        public AsyncInvoker<ListChildProxyRepositoriesListResponse> ListChildProxyRepositoriesListAsyncInvoker(ListChildProxyRepositoriesListRequest listChildProxyRepositoriesListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/cloudartifact/v5/repositories/proxy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listChildProxyRepositoriesListRequest);
+            return new AsyncInvoker<ListChildProxyRepositoriesListResponse>(this, "GET", request, JsonUtils.DeSerialize<ListChildProxyRepositoriesListResponse>);
+        }
+        
+        /// <summary>
+        /// 查询租户级IP白名单
+        ///
+        /// 查询租户级IP白名单列表。在IP白名单的IP才能访问制品仓库，未配置IP白名单时，默认所有IP都可访问。该功能可用于保障制品仓库的安全，对访问IP进行严格控制。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListDomainIpConfigResponse> ListDomainIpConfigAsync(ListDomainIpConfigRequest listDomainIpConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/cloudartifact/v5/domain/ipconfig", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainIpConfigRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListDomainIpConfigResponse>(response);
+        }
+
+        public AsyncInvoker<ListDomainIpConfigResponse> ListDomainIpConfigAsyncInvoker(ListDomainIpConfigRequest listDomainIpConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/cloudartifact/v5/domain/ipconfig", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainIpConfigRequest);
+            return new AsyncInvoker<ListDomainIpConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDomainIpConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 分页查询构建归档包列表
+        ///
+        /// 当归档包数量庞大时，分页查询构建归档包列表，包含文件名、文件大小、下载地址、MD5校验和、构建地址、构建代码分支等信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListFileBuildArchivesResponse> ListFileBuildArchivesAsync(ListFileBuildArchivesRequest listFileBuildArchivesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/files/archives", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFileBuildArchivesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListFileBuildArchivesResponse>(response);
+        }
+
+        public AsyncInvoker<ListFileBuildArchivesResponse> ListFileBuildArchivesAsyncInvoker(ListFileBuildArchivesRequest listFileBuildArchivesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/files/archives", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFileBuildArchivesRequest);
+            return new AsyncInvoker<ListFileBuildArchivesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListFileBuildArchivesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询文件/项目列表
+        ///
+        /// 当项目或文件数量庞大时，分页查询项目或文件列表。可根据文件名、文件状态和文件的发布状态等参数进行过滤，从而快速找到所需文件，包含文件名、文件大小和下载地址等信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListFilesResponse> ListFilesAsync(ListFilesRequest listFilesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/files/list", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFilesRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ListFilesResponse>(response);
+        }
+
+        public AsyncInvoker<ListFilesResponse> ListFilesAsyncInvoker(ListFilesRequest listFilesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/files/list", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFilesRequest);
+            return new AsyncInvoker<ListFilesResponse>(this, "POST", request, JsonUtils.DeSerialize<ListFilesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询项目下所有文件的最新版本
+        ///
+        /// 当项目文件数量庞大时，通过该接口可以分页查询项目下所有文件的最新版本，包含文件名、文件大小、文件状态和发布状态等信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListLatestVersionFilesResponse> ListLatestVersionFilesAsync(ListLatestVersionFilesRequest listLatestVersionFilesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listLatestVersionFilesRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/{project_id}/files/version", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLatestVersionFilesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListLatestVersionFilesResponse>(response);
+        }
+
+        public AsyncInvoker<ListLatestVersionFilesResponse> ListLatestVersionFilesAsyncInvoker(ListLatestVersionFilesRequest listLatestVersionFilesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listLatestVersionFilesRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/{project_id}/files/version", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLatestVersionFilesRequest);
+            return new AsyncInvoker<ListLatestVersionFilesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListLatestVersionFilesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询Maven仓库列表
+        ///
+        /// 查询Maven仓库列表，包含仓库状态、类型、地址和访问路径白名单等信息。支持根据项目ID和仓库ID等参数进行过滤。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListMavenListResponse> ListMavenListAsync(ListMavenListRequest listMavenListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/cloudartifact/v5/maven/list", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMavenListRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListMavenListResponse>(response);
+        }
+
+        public AsyncInvoker<ListMavenListResponse> ListMavenListAsyncInvoker(ListMavenListRequest listMavenListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/cloudartifact/v5/maven/list", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMavenListRequest);
+            return new AsyncInvoker<ListMavenListResponse>(this, "GET", request, JsonUtils.DeSerialize<ListMavenListResponse>);
+        }
+        
+        /// <summary>
+        /// 查询私有库用户列表
+        ///
+        /// 分页查询私有库用户列表，包含用户名和用户是否启用等信息。可根据用户名进行过滤。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListMavenUserResponse> ListMavenUserAsync(ListMavenUserRequest listMavenUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/cloudartifact/v5/repositories/users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMavenUserRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListMavenUserResponse>(response);
+        }
+
+        public AsyncInvoker<ListMavenUserResponse> ListMavenUserAsyncInvoker(ListMavenUserRequest listMavenUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/cloudartifact/v5/repositories/users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMavenUserRequest);
+            return new AsyncInvoker<ListMavenUserResponse>(this, "GET", request, JsonUtils.DeSerialize<ListMavenUserResponse>);
+        }
+        
+        /// <summary>
+        /// 查询网络代理列表
+        ///
+        /// 查询网络代理列表，返回代理源的访问地址及认证信息等，用于代理外部公开的制品资源。通过网络代理，开发人员可以安全、高效地访问所需的外部资源。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListNetProxyResponse> ListNetProxyAsync(ListNetProxyRequest listNetProxyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/cloudartifact/v5/tree/net/proxy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNetProxyRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListNetProxyResponse>(response);
+        }
+
+        public AsyncInvoker<ListNetProxyResponse> ListNetProxyAsyncInvoker(ListNetProxyRequest listNetProxyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/cloudartifact/v5/tree/net/proxy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNetProxyRequest);
+            return new AsyncInvoker<ListNetProxyResponse>(this, "GET", request, JsonUtils.DeSerialize<ListNetProxyResponse>);
+        }
+        
+        /// <summary>
+        /// 查看项目的角色权限设置
+        ///
+        /// 查看项目的角色权限设置，包含上传下载、创建文件夹、清空或者还原回收站和更改软件包状态等设置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListProjectRolePermissionsResponse> ListProjectRolePermissionsAsync(ListProjectRolePermissionsRequest listProjectRolePermissionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/project-role/permissions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectRolePermissionsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListProjectRolePermissionsResponse>(response);
+        }
+
+        public AsyncInvoker<ListProjectRolePermissionsResponse> ListProjectRolePermissionsAsyncInvoker(ListProjectRolePermissionsRequest listProjectRolePermissionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/project-role/permissions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectRolePermissionsRequest);
+            return new AsyncInvoker<ListProjectRolePermissionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListProjectRolePermissionsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询项目下的用户
+        ///
+        /// 当项目中的用户数量较多时，分页查询指定项目下的用户列表，包含用户名和角色等信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListProjectUsersResponse> ListProjectUsersAsync(ListProjectUsersRequest listProjectUsersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listProjectUsersRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/cloudartifact/v5/projects/{project_id}/users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectUsersRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListProjectUsersResponse>(response);
+        }
+
+        public AsyncInvoker<ListProjectUsersResponse> ListProjectUsersAsyncInvoker(ListProjectUsersRequest listProjectUsersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listProjectUsersRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/cloudartifact/v5/projects/{project_id}/users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectUsersRequest);
+            return new AsyncInvoker<ListProjectUsersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListProjectUsersResponse>);
+        }
+        
+        /// <summary>
+        /// 查询制品安全扫描任务列表
+        ///
+        /// 分页查询制品安全扫描任务列表，包含扫描制品数量、漏洞数量、病毒文件数量和恶意代码文件数量等信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListSecGuardListResponse> ListSecGuardListAsync(ListSecGuardListRequest listSecGuardListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/cloudartifact/v5/sec-guard/task/list", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecGuardListRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListSecGuardListResponse>(response);
+        }
+
+        public AsyncInvoker<ListSecGuardListResponse> ListSecGuardListAsyncInvoker(ListSecGuardListRequest listSecGuardListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/cloudartifact/v5/sec-guard/task/list", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecGuardListRequest);
+            return new AsyncInvoker<ListSecGuardListResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSecGuardListResponse>);
+        }
+        
+        /// <summary>
         /// 编辑仓库
         ///
         /// 编辑仓库
@@ -472,6 +788,106 @@ namespace HuaweiCloud.SDK.CodeArtsArtifact.V2
         }
         
         /// <summary>
+        /// 查询项目自动删除任务设置
+        ///
+        /// 查询项目自动删除任务设置，包含文件的过期自动删除时间及删除规则。自动删除任务可以自动执行文件清理任务，减少管理员的工作负担，确保存储资源的有效利用。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAutoDeleteJobSettingsResponse> ShowAutoDeleteJobSettingsAsync(ShowAutoDeleteJobSettingsRequest showAutoDeleteJobSettingsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showAutoDeleteJobSettingsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/release/{project_id}/auto-deletion/settings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoDeleteJobSettingsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowAutoDeleteJobSettingsResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAutoDeleteJobSettingsResponse> ShowAutoDeleteJobSettingsAsyncInvoker(ShowAutoDeleteJobSettingsRequest showAutoDeleteJobSettingsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showAutoDeleteJobSettingsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/release/{project_id}/auto-deletion/settings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoDeleteJobSettingsRequest);
+            return new AsyncInvoker<ShowAutoDeleteJobSettingsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutoDeleteJobSettingsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询租户发布库存储容量
+        ///
+        /// 查询租户发布库存储容量，包含已使用存储容量、最大存储容量、套餐类型和仓库数量等信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowDomainReleaseRepoStorageResponse> ShowDomainReleaseRepoStorageAsync(ShowDomainReleaseRepoStorageRequest showDomainReleaseRepoStorageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/storage", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainReleaseRepoStorageRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowDomainReleaseRepoStorageResponse>(response);
+        }
+
+        public AsyncInvoker<ShowDomainReleaseRepoStorageResponse> ShowDomainReleaseRepoStorageAsyncInvoker(ShowDomainReleaseRepoStorageRequest showDomainReleaseRepoStorageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/storage", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainReleaseRepoStorageRequest);
+            return new AsyncInvoker<ShowDomainReleaseRepoStorageResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainReleaseRepoStorageResponse>);
+        }
+        
+        /// <summary>
+        /// 根据文件ID查询文件详情
+        ///
+        /// 在日常数据管理工作中，根据文件ID查询指定文件详情，包含文件名、文件大小、下载地址、校验和、文件状态和发布状态等信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowFileDetailResponse> ShowFileDetailAsync(ShowFileDetailRequest showFileDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showFileDetailRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/files/{id}/info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFileDetailRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowFileDetailResponse>(response);
+        }
+
+        public AsyncInvoker<ShowFileDetailResponse> ShowFileDetailAsyncInvoker(ShowFileDetailRequest showFileDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showFileDetailRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/files/{id}/info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFileDetailRequest);
+            return new AsyncInvoker<ShowFileDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFileDetailResponse>);
+        }
+        
+        /// <summary>
+        /// 根据文件完整路径查询文件详情
+        ///
+        /// 在日常数据管理工作中，根据文件完整路径查询指定文件详情，包含文件名、文件大小、下载地址、校验和、文件状态和发布状态等信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowFileDetailByFullNameResponse> ShowFileDetailByFullNameAsync(ShowFileDetailByFullNameRequest showFileDetailByFullNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/files/info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFileDetailByFullNameRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowFileDetailByFullNameResponse>(response);
+        }
+
+        public AsyncInvoker<ShowFileDetailByFullNameResponse> ShowFileDetailByFullNameAsyncInvoker(ShowFileDetailByFullNameRequest showFileDetailByFullNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/files/info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFileDetailByFullNameRequest);
+            return new AsyncInvoker<ShowFileDetailByFullNameResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFileDetailByFullNameResponse>);
+        }
+        
+        /// <summary>
         /// 查询仓库文件夹目录
         ///
         /// 查询仓库文件夹目录
@@ -502,6 +918,32 @@ namespace HuaweiCloud.SDK.CodeArtsArtifact.V2
         }
         
         /// <summary>
+        /// 查询项目下所有文件的数量
+        ///
+        /// 查询项目下所有文件的数量，该接口会识别所有文件的最新版本，从而提供准确的文件数量统计。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowLatestVersionFilesCountResponse> ShowLatestVersionFilesCountAsync(ShowLatestVersionFilesCountRequest showLatestVersionFilesCountRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showLatestVersionFilesCountRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/{project_id}/files/version/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLatestVersionFilesCountRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowLatestVersionFilesCountResponse>(response);
+        }
+
+        public AsyncInvoker<ShowLatestVersionFilesCountResponse> ShowLatestVersionFilesCountAsyncInvoker(ShowLatestVersionFilesCountRequest showLatestVersionFilesCountRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showLatestVersionFilesCountRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/{project_id}/files/version/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLatestVersionFilesCountRequest);
+            return new AsyncInvoker<ShowLatestVersionFilesCountResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLatestVersionFilesCountResponse>);
+        }
+        
+        /// <summary>
         /// 查询租户Maven仓库列表和账号密码
         ///
         /// 查询租户Maven仓库列表和账号密码，支持跨租户
@@ -523,6 +965,102 @@ namespace HuaweiCloud.SDK.CodeArtsArtifact.V2
             var urlPath = HttpUtils.AddUrlPath("/cloudartifact/v5/maven/info", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMavenInfoRequest);
             return new AsyncInvoker<ShowMavenInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowMavenInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 查询多角色用户权限
+        ///
+        /// 查询多角色用户权限，包含上传下载、创建文件夹、清空或者还原回收站和更改软件包状态等权限信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowMultiRolesUserPermissionsResponse> ShowMultiRolesUserPermissionsAsync(ShowMultiRolesUserPermissionsRequest showMultiRolesUserPermissionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/user/permissions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMultiRolesUserPermissionsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowMultiRolesUserPermissionsResponse>(response);
+        }
+
+        public AsyncInvoker<ShowMultiRolesUserPermissionsResponse> ShowMultiRolesUserPermissionsAsyncInvoker(ShowMultiRolesUserPermissionsRequest showMultiRolesUserPermissionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/user/permissions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMultiRolesUserPermissionsRequest);
+            return new AsyncInvoker<ShowMultiRolesUserPermissionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowMultiRolesUserPermissionsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询中心仓是否启用
+        ///
+        /// 查询中心仓是否启用，用于确定当前局点是否具备中心仓功能，从而确保业务流程的顺利进行。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowOpenSourceEnabledResponse> ShowOpenSourceEnabledAsync(ShowOpenSourceEnabledRequest showOpenSourceEnabledRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/cloudartifact/v5/opensource/enabled", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOpenSourceEnabledRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowOpenSourceEnabledResponse>(response);
+        }
+
+        public AsyncInvoker<ShowOpenSourceEnabledResponse> ShowOpenSourceEnabledAsyncInvoker(ShowOpenSourceEnabledRequest showOpenSourceEnabledRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/cloudartifact/v5/opensource/enabled", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOpenSourceEnabledRequest);
+            return new AsyncInvoker<ShowOpenSourceEnabledResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowOpenSourceEnabledResponse>);
+        }
+        
+        /// <summary>
+        /// 获取当前用户的套餐信息
+        ///
+        /// 获取当前用户的套餐信息，包含总存储容量和已使用存储容量等信息，以便合理规划资源使用。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowPackageDataDetailResponse> ShowPackageDataDetailAsync(ShowPackageDataDetailRequest showPackageDataDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/data/package", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPackageDataDetailRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowPackageDataDetailResponse>(response);
+        }
+
+        public AsyncInvoker<ShowPackageDataDetailResponse> ShowPackageDataDetailAsyncInvoker(ShowPackageDataDetailRequest showPackageDataDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/data/package", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPackageDataDetailRequest);
+            return new AsyncInvoker<ShowPackageDataDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPackageDataDetailResponse>);
+        }
+        
+        /// <summary>
+        /// 获取当前用户的套餐状态
+        ///
+        /// 获取当前用户的套餐状态，包含套餐扩展包的容量和流量规格，如资源类型、套餐状态、剩余天数等信息，帮助用户高效管理云资源。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowPackageInfoResponse> ShowPackageInfoAsync(ShowPackageInfoRequest showPackageInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/data/package/info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPackageInfoRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowPackageInfoResponse>(response);
+        }
+
+        public AsyncInvoker<ShowPackageInfoResponse> ShowPackageInfoAsyncInvoker(ShowPackageInfoRequest showPackageInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/data/package/info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPackageInfoRequest);
+            return new AsyncInvoker<ShowPackageInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPackageInfoResponse>);
         }
         
         /// <summary>
@@ -576,6 +1114,32 @@ namespace HuaweiCloud.SDK.CodeArtsArtifact.V2
         }
         
         /// <summary>
+        /// 查询项目下的制品存储容量信息
+        ///
+        /// 查询项目下的制品存储容量，包含已使用存储容量和文件数量等信息。在项目管理中，可以使用该接口监控项目下的制品存储情况，以确保资源的有效利用。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowProjectStorageInfoResponse> ShowProjectStorageInfoAsync(ShowProjectStorageInfoRequest showProjectStorageInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showProjectStorageInfoRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/{project_id}/storage", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectStorageInfoRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowProjectStorageInfoResponse>(response);
+        }
+
+        public AsyncInvoker<ShowProjectStorageInfoResponse> ShowProjectStorageInfoAsyncInvoker(ShowProjectStorageInfoRequest showProjectStorageInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showProjectStorageInfoRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/{project_id}/storage", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectStorageInfoRequest);
+            return new AsyncInvoker<ShowProjectStorageInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowProjectStorageInfoResponse>);
+        }
+        
+        /// <summary>
         /// 获取项目下文件版本信息列表
         ///
         /// 获取项目下文件版本信息列表
@@ -601,6 +1165,30 @@ namespace HuaweiCloud.SDK.CodeArtsArtifact.V2
             var urlPath = HttpUtils.AddUrlPath("/devreposerver/v2/release/{project_id}/files", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReleaseProjectFilesRequest);
             return new AsyncInvoker<ShowReleaseProjectFilesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowReleaseProjectFilesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询租户私有依赖库的账号密码
+        ///
+        /// 在自动化构建场景，用户可调用该接口查询租户私有依赖库的账号密码，以便进行后续的上传下载操作。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowRepoUserInfoResponse> ShowRepoUserInfoAsync(ShowRepoUserInfoRequest showRepoUserInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/cloudartifact/v5/repositories/user/info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRepoUserInfoRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowRepoUserInfoResponse>(response);
+        }
+
+        public AsyncInvoker<ShowRepoUserInfoResponse> ShowRepoUserInfoAsyncInvoker(ShowRepoUserInfoRequest showRepoUserInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/cloudartifact/v5/repositories/user/info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRepoUserInfoRequest);
+            return new AsyncInvoker<ShowRepoUserInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRepoUserInfoResponse>);
         }
         
         /// <summary>
@@ -707,6 +1295,30 @@ namespace HuaweiCloud.SDK.CodeArtsArtifact.V2
             var urlPath = HttpUtils.AddUrlPath("/cloudartifact/v3/user/{project_id}/privileges", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserPrivilegesRequest);
             return new AsyncInvoker<ShowUserPrivilegesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowUserPrivilegesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询用户凭证
+        ///
+        /// 查询用户凭证，该凭证为IDC用户下载制品时使用。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowUserTicketResponse> ShowUserTicketAsync(ShowUserTicketRequest showUserTicketRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/cloudartifact/v5/ticket", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserTicketRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowUserTicketResponse>(response);
+        }
+
+        public AsyncInvoker<ShowUserTicketResponse> ShowUserTicketAsyncInvoker(ShowUserTicketRequest showUserTicketRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/cloudartifact/v5/ticket", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserTicketRequest);
+            return new AsyncInvoker<ShowUserTicketResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowUserTicketResponse>);
         }
         
         /// <summary>

@@ -11,6 +11,10 @@ namespace HuaweiCloud.SDK.Sis.V1
             "https://sis-ext.cn-north-4.myhuaweicloud.com");
         public static readonly Region CN_EAST_3 = new Region("cn-east-3",
             "https://sis-ext.cn-east-3.myhuaweicloud.com");
+        public static readonly Region AP_SOUTHEAST_3 = new Region("ap-southeast-3",
+            "https://sis-ext.ap-southeast-3.myhuaweicloud.com");
+        public static readonly Region ME_EAST_1 = new Region("me-east-1",
+            "https://sis-ext.me-east-1.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("SIS");
 
@@ -18,6 +22,8 @@ namespace HuaweiCloud.SDK.Sis.V1
         {
                 { "cn-north-4", CN_NORTH_4 },
                 { "cn-east-3", CN_EAST_3 },
+                { "ap-southeast-3", AP_SOUTHEAST_3 },
+                { "me-east-1", ME_EAST_1 },
         };
 
         public static Region ValueOf(string regionId)

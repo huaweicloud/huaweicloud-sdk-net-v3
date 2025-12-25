@@ -70,12 +70,6 @@ namespace HuaweiCloud.SDK.Ucs.V1.Model
         [JsonProperty("manageType", NullValueHandling = NullValueHandling.Ignore)]
         public string ManageType { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("network", NullValueHandling = NullValueHandling.Ignore)]
-        public NetworkConfig Network { get; set; }
-
 
 
         /// <summary>
@@ -94,7 +88,6 @@ namespace HuaweiCloud.SDK.Ucs.V1.Model
             sb.Append("  region: ").Append(Region).Append("\n");
             sb.Append("  projectID: ").Append(ProjectID).Append("\n");
             sb.Append("  manageType: ").Append(ManageType).Append("\n");
-            sb.Append("  network: ").Append(Network).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -122,7 +115,6 @@ namespace HuaweiCloud.SDK.Ucs.V1.Model
             if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
             if (this.ProjectID != input.ProjectID || (this.ProjectID != null && !this.ProjectID.Equals(input.ProjectID))) return false;
             if (this.ManageType != input.ManageType || (this.ManageType != null && !this.ManageType.Equals(input.ManageType))) return false;
-            if (this.Network != input.Network || (this.Network != null && !this.Network.Equals(input.Network))) return false;
 
             return true;
         }
@@ -144,7 +136,6 @@ namespace HuaweiCloud.SDK.Ucs.V1.Model
                 if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
                 if (this.ProjectID != null) hashCode = hashCode * 59 + this.ProjectID.GetHashCode();
                 if (this.ManageType != null) hashCode = hashCode * 59 + this.ManageType.GetHashCode();
-                if (this.Network != null) hashCode = hashCode * 59 + this.Network.GetHashCode();
                 return hashCode;
             }
         }

@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// **参数解释**： 指标维度。 
+    /// **参数解释**： 资源维度。 
     /// </summary>
     public class MetricDimensionResp 
     {
 
         /// <summary>
-        /// **参数解释**： 指标维度名称。 **取值范围**： 以字母开头，长度为[1,32]个字符。 
+        /// **参数解释**： 资源维度名称。 **取值范围**： 以字母开头，长度为[1,32]个字符。 
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// **参数解释**： 指标维度值。 **取值范围**： 长度为[0,256]个字符。 
+        /// **参数解释**： 资源维度值。 **取值范围**： 长度为[0,256]个字符。 
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

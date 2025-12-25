@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string Time { get; set; }
 
         /// <summary>
-        /// **参数解释**： 计算出该条告警记录的资源监控数据在该时间点的监控数值，如：7.019。 **取值范围**： 整数，最小值为0，最大值为1.7976931348623157e+308。 
+        /// **参数解释**： 计算出该条告警记录的资源监控数据在该时间点的监控数值，如：7.019 **取值范围**： 整数，最小值为-1.7976931348623157e+108，最大值为1.7976931348623157e+108 
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public double? Value { get; set; }

@@ -44,7 +44,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// **参数解释：** 是否生效。 **约束限制：** 不涉及。 **取值范围：** - true:已生效。 - false:未生效。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("applied", NullValueHandling = NullValueHandling.Ignore)]
-        public string Applied { get; set; }
+        public bool? Applied { get; set; }
 
         /// <summary>
         /// **参数解释：** 更新时间。 **约束限制：** 不涉及。 **取值范围：** 格式为\&quot;yyyy-MM-ddTHH:mm:ssZ\&quot;。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。 **默认取值：** 不涉及。

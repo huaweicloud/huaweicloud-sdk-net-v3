@@ -70,6 +70,24 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         [JsonProperty("callback_config", NullValueHandling = NullValueHandling.Ignore)]
         public CallBackConfig CallbackConfig { get; set; }
 
+        /// <summary>
+        /// 身份证国徽面照片，需要Base64编码。
+        /// </summary>
+        [JsonProperty("id_card_image1", NullValueHandling = NullValueHandling.Ignore)]
+        public string IdCardImage1 { get; set; }
+
+        /// <summary>
+        /// 身份证人像面照片，需要Base64编码。
+        /// </summary>
+        [JsonProperty("id_card_image2", NullValueHandling = NullValueHandling.Ignore)]
+        public string IdCardImage2 { get; set; }
+
+        /// <summary>
+        /// 授权使用照片
+        /// </summary>
+        [JsonProperty("authorize_use_human_image", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? AuthorizeUseHumanImage { get; set; }
+
 
 
         /// <summary>
@@ -88,6 +106,9 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  backgroundMusicConfig: ").Append(BackgroundMusicConfig).Append("\n");
             sb.Append("  reviewConfig: ").Append(ReviewConfig).Append("\n");
             sb.Append("  callbackConfig: ").Append(CallbackConfig).Append("\n");
+            sb.Append("  idCardImage1: ").Append(IdCardImage1).Append("\n");
+            sb.Append("  idCardImage2: ").Append(IdCardImage2).Append("\n");
+            sb.Append("  authorizeUseHumanImage: ").Append(AuthorizeUseHumanImage).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,6 +136,9 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.BackgroundMusicConfig != input.BackgroundMusicConfig || (this.BackgroundMusicConfig != null && !this.BackgroundMusicConfig.Equals(input.BackgroundMusicConfig))) return false;
             if (this.ReviewConfig != input.ReviewConfig || (this.ReviewConfig != null && !this.ReviewConfig.Equals(input.ReviewConfig))) return false;
             if (this.CallbackConfig != input.CallbackConfig || (this.CallbackConfig != null && !this.CallbackConfig.Equals(input.CallbackConfig))) return false;
+            if (this.IdCardImage1 != input.IdCardImage1 || (this.IdCardImage1 != null && !this.IdCardImage1.Equals(input.IdCardImage1))) return false;
+            if (this.IdCardImage2 != input.IdCardImage2 || (this.IdCardImage2 != null && !this.IdCardImage2.Equals(input.IdCardImage2))) return false;
+            if (this.AuthorizeUseHumanImage != input.AuthorizeUseHumanImage || (this.AuthorizeUseHumanImage != null && !this.AuthorizeUseHumanImage.Equals(input.AuthorizeUseHumanImage))) return false;
 
             return true;
         }
@@ -136,6 +160,9 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.BackgroundMusicConfig != null) hashCode = hashCode * 59 + this.BackgroundMusicConfig.GetHashCode();
                 if (this.ReviewConfig != null) hashCode = hashCode * 59 + this.ReviewConfig.GetHashCode();
                 if (this.CallbackConfig != null) hashCode = hashCode * 59 + this.CallbackConfig.GetHashCode();
+                if (this.IdCardImage1 != null) hashCode = hashCode * 59 + this.IdCardImage1.GetHashCode();
+                if (this.IdCardImage2 != null) hashCode = hashCode * 59 + this.IdCardImage2.GetHashCode();
+                if (this.AuthorizeUseHumanImage != null) hashCode = hashCode * 59 + this.AuthorizeUseHumanImage.GetHashCode();
                 return hashCode;
             }
         }

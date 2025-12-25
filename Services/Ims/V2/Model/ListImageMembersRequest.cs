@@ -23,6 +23,20 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         [JsonProperty("image_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ImageId { get; set; }
 
+        /// <summary>
+        /// 查询镜像成员列表时每页的数量。
+        /// </summary>
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Limit { get; set; }
+
+        /// <summary>
+        /// 分页标识，用于查询下一页内容。
+        /// </summary>
+        [SDKProperty("marker", IsQuery = true)]
+        [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
+        public string Marker { get; set; }
+
 
 
         /// <summary>
@@ -33,6 +47,8 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ListImageMembersRequest {\n");
             sb.Append("  imageId: ").Append(ImageId).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -52,6 +68,8 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         {
             if (input == null) return false;
             if (this.ImageId != input.ImageId || (this.ImageId != null && !this.ImageId.Equals(input.ImageId))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
 
             return true;
         }
@@ -65,6 +83,8 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             {
                 var hashCode = 41;
                 if (this.ImageId != null) hashCode = hashCode * 59 + this.ImageId.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 return hashCode;
             }
         }

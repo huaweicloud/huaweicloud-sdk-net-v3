@@ -497,12 +497,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public ClusterExtendParam ExtendParam { get; set; }
 
         /// <summary>
-        /// 支持Istio
-        /// </summary>
-        [JsonProperty("supportIstio", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? SupportIstio { get; set; }
-
-        /// <summary>
         /// 集群控制节点系统盘、数据盘加密。默认使用AES_256加密算法。CCE、Turbo集群1.25及以上版本开始支持。集群创建后不支持修改。开启后存在一定的磁盘读写性能损耗。
         /// </summary>
         [JsonProperty("enableMasterVolumeEncryption", NullValueHandling = NullValueHandling.Ignore)]
@@ -570,7 +564,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  kubeProxyMode: ").Append(KubeProxyMode).Append("\n");
             sb.Append("  az: ").Append(Az).Append("\n");
             sb.Append("  extendParam: ").Append(ExtendParam).Append("\n");
-            sb.Append("  supportIstio: ").Append(SupportIstio).Append("\n");
             sb.Append("  enableMasterVolumeEncryption: ").Append(EnableMasterVolumeEncryption).Append("\n");
             sb.Append("  enableDistMgt: ").Append(EnableDistMgt).Append("\n");
             sb.Append("  deletionProtection: ").Append(DeletionProtection).Append("\n");
@@ -618,7 +611,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.KubeProxyMode != input.KubeProxyMode) return false;
             if (this.Az != input.Az || (this.Az != null && !this.Az.Equals(input.Az))) return false;
             if (this.ExtendParam != input.ExtendParam || (this.ExtendParam != null && !this.ExtendParam.Equals(input.ExtendParam))) return false;
-            if (this.SupportIstio != input.SupportIstio || (this.SupportIstio != null && !this.SupportIstio.Equals(input.SupportIstio))) return false;
             if (this.EnableMasterVolumeEncryption != input.EnableMasterVolumeEncryption || (this.EnableMasterVolumeEncryption != null && !this.EnableMasterVolumeEncryption.Equals(input.EnableMasterVolumeEncryption))) return false;
             if (this.EnableDistMgt != input.EnableDistMgt || (this.EnableDistMgt != null && !this.EnableDistMgt.Equals(input.EnableDistMgt))) return false;
             if (this.DeletionProtection != input.DeletionProtection || (this.DeletionProtection != null && !this.DeletionProtection.Equals(input.DeletionProtection))) return false;
@@ -660,7 +652,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 hashCode = hashCode * 59 + this.KubeProxyMode.GetHashCode();
                 if (this.Az != null) hashCode = hashCode * 59 + this.Az.GetHashCode();
                 if (this.ExtendParam != null) hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
-                if (this.SupportIstio != null) hashCode = hashCode * 59 + this.SupportIstio.GetHashCode();
                 if (this.EnableMasterVolumeEncryption != null) hashCode = hashCode * 59 + this.EnableMasterVolumeEncryption.GetHashCode();
                 if (this.EnableDistMgt != null) hashCode = hashCode * 59 + this.EnableDistMgt.GetHashCode();
                 if (this.DeletionProtection != null) hashCode = hashCode * 59 + this.DeletionProtection.GetHashCode();

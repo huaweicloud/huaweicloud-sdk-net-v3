@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     public class UpdateAlarmRequestBody 
     {
         /// <summary>
-        /// 告警类型，支持的枚举类型：EVENT.SYS：针对系统事件的告警规则；EVENT.CUSTOM：针对自定义事件的告警规则；RESOURCE_GROUP：针对资源分组的告警规则。
+        /// **参数解释**： 告警类型。 **约束限制**： 不涉及 **取值范围**： - EVENT.SYS：针对系统事件的告警规则。 - EVENT.CUSTOM：针对自定义事件的告警规则。 - RESOURCE_GROUP：针对资源分组的告警规则。 - MULTI_INSTANCE： 针对指定资源的告警规则。 **默认取值**： 不涉及。 
         /// </summary>
-        /// <value>告警类型，支持的枚举类型：EVENT.SYS：针对系统事件的告警规则；EVENT.CUSTOM：针对自定义事件的告警规则；RESOURCE_GROUP：针对资源分组的告警规则。</value>
+        /// <value>**参数解释**： 告警类型。 **约束限制**： 不涉及 **取值范围**： - EVENT.SYS：针对系统事件的告警规则。 - EVENT.CUSTOM：针对自定义事件的告警规则。 - RESOURCE_GROUP：针对资源分组的告警规则。 - MULTI_INSTANCE： 针对指定资源的告警规则。 **默认取值**： 不涉及。 </value>
         [JsonConverter(typeof(EnumClassConverter<AlarmTypeEnum>))]
         public class AlarmTypeEnum
         {
@@ -37,12 +37,18 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             /// </summary>
             public static readonly AlarmTypeEnum RESOURCE_GROUP = new AlarmTypeEnum("RESOURCE_GROUP");
 
+            /// <summary>
+            /// Enum MULTI_INSTANCE for value: MULTI_INSTANCE
+            /// </summary>
+            public static readonly AlarmTypeEnum MULTI_INSTANCE = new AlarmTypeEnum("MULTI_INSTANCE");
+
             private static readonly Dictionary<string, AlarmTypeEnum> StaticFields =
             new Dictionary<string, AlarmTypeEnum>()
             {
                 { "EVENT.SYS", EVENT_SYS },
                 { "EVENT.CUSTOM", EVENT_CUSTOM },
                 { "RESOURCE_GROUP", RESOURCE_GROUP },
+                { "MULTI_INSTANCE", MULTI_INSTANCE },
             };
 
             private string _value;
@@ -138,13 +144,13 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
 
 
         /// <summary>
-        /// 告警名称，只能包含0-9/a-z/A-Z/_/-或汉字。
+        /// **参数解释**： 告警规则名称 **约束限制**： 不涉及 **取值范围**： 只能包含0-9/a-z/A-Z/_/-或汉字，长度[1, 128]个字符 **默认取值**： 不涉及 
         /// </summary>
         [JsonProperty("alarm_name", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmName { get; set; }
 
         /// <summary>
-        /// 告警描述，长度0-256。
+        /// **参数解释**： 告警描述。 **约束限制**： 不涉及。 **取值范围**： 长度[0,256]个字符。 **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("alarm_description", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmDescription { get; set; }
@@ -156,36 +162,36 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public Condition Condition { get; set; }
 
         /// <summary>
-        /// 是否启用该条告警触发的动作，默认为true。注：若alarm_action_enabled为true，对应的alarm_actions、ok_actions至少有一个不能为空。若alarm_actions、ok_actions同时存在时，notificationList值保持一致。
+        /// **参数解释**： 是否开启告警通知 **约束限制**： 若alarm_action_enabled为true，对应的alarm_actions、ok_actions至少有一个不能为空。若alarm_actions、ok_actions同时存在时，notificationList值保持一致。 **取值范围**： 只能为true、false - true: 开启告警通知 - false：关闭告警通知 **默认取值**: false。 
         /// </summary>
         [JsonProperty("alarm_action_enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AlarmActionEnabled { get; set; }
 
         /// <summary>
-        /// 告警级别，默认为2，级别为1、2、3、4。分别对应紧急、重要、次要、提示。
+        /// **参数解释**： 告警级别 **约束限制**： 不涉及 **取值范围**： 级别为1、2、3、4。 - 1：紧急 - 2：重要 - 3：次要 - 4：提示 **默认取值**: 2 
         /// </summary>
         [JsonProperty("alarm_level", NullValueHandling = NullValueHandling.Ignore)]
         public int? AlarmLevel { get; set; }
 
         /// <summary>
-        /// 告警类型，支持的枚举类型：EVENT.SYS：针对系统事件的告警规则；EVENT.CUSTOM：针对自定义事件的告警规则；RESOURCE_GROUP：针对资源分组的告警规则。
+        /// **参数解释**： 告警类型。 **约束限制**： 不涉及 **取值范围**： - EVENT.SYS：针对系统事件的告警规则。 - EVENT.CUSTOM：针对自定义事件的告警规则。 - RESOURCE_GROUP：针对资源分组的告警规则。 - MULTI_INSTANCE： 针对指定资源的告警规则。 **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("alarm_type", NullValueHandling = NullValueHandling.Ignore)]
         public AlarmTypeEnum AlarmType { get; set; }
         /// <summary>
-        /// 告警触发的动作。 结构样例如下： { \&quot;type\&quot;: \&quot;notification\&quot;,\&quot;notificationList\&quot;: [\&quot;urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\&quot;] } type取值： notification：通知。 autoscaling：弹性伸缩。
+        /// **参数解释**： 告警触发时，通知组/主题订阅的信息。结构样例如下： { \&quot;type\&quot;: \&quot;notification\&quot;,\&quot;notificationList\&quot;:[\&quot;urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\&quot;] } **约束限制**： 最多包含10个告警触发时的通知对象信息。 
         /// </summary>
         [JsonProperty("alarm_actions", NullValueHandling = NullValueHandling.Ignore)]
         public List<List<Notification>> AlarmActions { get; set; }
 
         /// <summary>
-        /// 数据不足触发的动作（该参数已废弃，建议无需配置）。
+        /// **参数解释**： 数据不足触发告警时，通知组/主题订阅的信息。（该参数已废弃，建议无需配置） **约束限制**： 最多包含10个告警动作。 
         /// </summary>
         [JsonProperty("insufficientdata_actions", NullValueHandling = NullValueHandling.Ignore)]
         public List<List<Notification>> InsufficientdataActions { get; set; }
 
         /// <summary>
-        /// 告警恢复触发的动作
+        /// **参数解释**： 告警恢复时，通知组/主题订阅的信息。结构样例如下： { \&quot;type\&quot;: \&quot;notification\&quot;,\&quot;notificationList\&quot;:[\&quot;urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\&quot;] }  **约束限制**： 最多包含10个告警触发时的通知对象信息。 
         /// </summary>
         [JsonProperty("ok_actions", NullValueHandling = NullValueHandling.Ignore)]
         public List<List<Notification>> OkActions { get; set; }

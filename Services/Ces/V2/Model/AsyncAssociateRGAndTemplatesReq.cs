@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class AsyncAssociateRGAndTemplatesReq 
     {
         /// <summary>
-        /// NOTIFICATION_GROUP(通知组)/TOPIC_SUBSCRIPTION(主题订阅)/NOTIFICATION_POLICY(通知策略)
+        /// **参数解释**： 通知方式。 **约束限制**： 不涉及。 **取值范围**： 枚举值。取值为NOTIFICATION_GROUP、TOPIC_SUBSCRIPTION、NOTIFICATION_POLICY - NOTIFICATION_GROUP: 通知组 - TOPIC_SUBSCRIPTION: 主题订阅 - NOTIFICATION_POLICY: 通知策略 **默认取值**： 不涉及。 
         /// </summary>
-        /// <value>NOTIFICATION_GROUP(通知组)/TOPIC_SUBSCRIPTION(主题订阅)/NOTIFICATION_POLICY(通知策略)</value>
+        /// <value>**参数解释**： 通知方式。 **约束限制**： 不涉及。 **取值范围**： 枚举值。取值为NOTIFICATION_GROUP、TOPIC_SUBSCRIPTION、NOTIFICATION_POLICY - NOTIFICATION_GROUP: 通知组 - TOPIC_SUBSCRIPTION: 主题订阅 - NOTIFICATION_POLICY: 通知策略 **默认取值**： 不涉及。 </value>
         [JsonConverter(typeof(EnumClassConverter<NotificationMannerEnum>))]
         public class NotificationMannerEnum
         {
@@ -144,7 +144,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public List<string> TemplateIds { get; set; }
 
         /// <summary>
-        /// **参数解释**： 是否开启告警通知。     **约束限制**： 不涉及。 **取值范围**： 布尔值。 - true:开启。 - false:关闭。 **默认取值**： true 
+        /// **参数解释**： 是否开启告警通知。说明：若notification_enabled为true，对应的alarm_notifications、ok_notifications至少有一个不能为空。    **约束限制**： 不涉及。 **取值范围**： 布尔值。 - true:开启。 - false:关闭。 **默认取值**： true 
         /// </summary>
         [JsonProperty("notification_enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? NotificationEnabled { get; set; }
@@ -162,13 +162,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public List<Notification> OkNotifications { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警通知开启时间。    **约束限制**： 不涉及。 **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。           **默认取值**： 不涉及。 
+        /// **参数解释**： 告警通知开启时间。如 00:00    **约束限制**： 不涉及。 **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。           **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("notification_begin_time", NullValueHandling = NullValueHandling.Ignore)]
         public string NotificationBeginTime { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警通知关闭时间。    **约束限制**： 不涉及。 **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。           **默认取值**： 不涉及。 
+        /// **参数解释**： 告警通知关闭时间。如 08:00  **约束限制**： 不涉及。 **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。           **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("notification_end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string NotificationEndTime { get; set; }
@@ -180,13 +180,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string EffectiveTimezone { get; set; }
 
         /// <summary>
-        /// **参数解释**： 企业项目ID。     **约束限制**： 不涉及。 **取值范围**： 只能包含小写字母、数字、“-”。           **默认取值**： 不涉及。 
+        /// **参数解释**： 企业项目ID。     **约束限制**： 不涉及。 **取值范围**： 只能包含小写字母、数字、“-”。0 代表默认企业项目ID         **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// NOTIFICATION_GROUP(通知组)/TOPIC_SUBSCRIPTION(主题订阅)/NOTIFICATION_POLICY(通知策略)
+        /// **参数解释**： 通知方式。 **约束限制**： 不涉及。 **取值范围**： 枚举值。取值为NOTIFICATION_GROUP、TOPIC_SUBSCRIPTION、NOTIFICATION_POLICY - NOTIFICATION_GROUP: 通知组 - TOPIC_SUBSCRIPTION: 主题订阅 - NOTIFICATION_POLICY: 通知策略 **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("notification_manner", NullValueHandling = NullValueHandling.Ignore)]
         public NotificationMannerEnum NotificationManner { get; set; }
@@ -195,6 +195,12 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         [JsonProperty("notification_policy_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> NotificationPolicyIds { get; set; }
+
+        /// <summary>
+        /// 告警通知模板列表
+        /// </summary>
+        [JsonProperty("notice_type_notification_template_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<NoticeTypeNotificationTemplateList> NoticeTypeNotificationTemplateList { get; set; }
 
 
 
@@ -215,6 +221,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  notificationManner: ").Append(NotificationManner).Append("\n");
             sb.Append("  notificationPolicyIds: ").Append(NotificationPolicyIds).Append("\n");
+            sb.Append("  noticeTypeNotificationTemplateList: ").Append(NoticeTypeNotificationTemplateList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -243,6 +250,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.NotificationManner != input.NotificationManner) return false;
             if (this.NotificationPolicyIds != input.NotificationPolicyIds || (this.NotificationPolicyIds != null && input.NotificationPolicyIds != null && !this.NotificationPolicyIds.SequenceEqual(input.NotificationPolicyIds))) return false;
+            if (this.NoticeTypeNotificationTemplateList != input.NoticeTypeNotificationTemplateList || (this.NoticeTypeNotificationTemplateList != null && input.NoticeTypeNotificationTemplateList != null && !this.NoticeTypeNotificationTemplateList.SequenceEqual(input.NoticeTypeNotificationTemplateList))) return false;
 
             return true;
         }
@@ -265,6 +273,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 hashCode = hashCode * 59 + this.NotificationManner.GetHashCode();
                 if (this.NotificationPolicyIds != null) hashCode = hashCode * 59 + this.NotificationPolicyIds.GetHashCode();
+                if (this.NoticeTypeNotificationTemplateList != null) hashCode = hashCode * 59 + this.NoticeTypeNotificationTemplateList.GetHashCode();
                 return hashCode;
             }
         }

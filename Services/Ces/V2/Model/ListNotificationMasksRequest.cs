@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class ListNotificationMasksRequest 
     {
         /// <summary>
-        /// 排序关键字，与sort_dir同时使用。 目前只支持create_time与update_time create_time表示按创建时间排序，update_time表示按修改时间排序
+        /// **参数解释**： 排序关键字，与sort_dir同时使用。 **约束限制**： 目前只支持create_time与update_time **取值范围**： - create_time：按创建时间排序 - update_time：按修改时间排序 **默认取值**： 不涉及。 
         /// </summary>
-        /// <value>排序关键字，与sort_dir同时使用。 目前只支持create_time与update_time create_time表示按创建时间排序，update_time表示按修改时间排序</value>
+        /// <value>**参数解释**： 排序关键字，与sort_dir同时使用。 **约束限制**： 目前只支持create_time与update_time **取值范围**： - create_time：按创建时间排序 - update_time：按修改时间排序 **默认取值**： 不涉及。 </value>
         [JsonConverter(typeof(EnumClassConverter<SortKeyEnum>))]
         public class SortKeyEnum
         {
@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         }
 
         /// <summary>
-        /// 排序顺序，与sort_key同时使用。DESC表示降序排序；ASC表示升序排序；
+        /// **参数解释**： 排序顺序，与sort_key同时使用。 **约束限制**： 不涉及。 **取值范围**： - DESC：降序排序。 - ASC：升序排序。 **默认取值**： 不涉及。 
         /// </summary>
-        /// <value>排序顺序，与sort_key同时使用。DESC表示降序排序；ASC表示升序排序；</value>
+        /// <value>**参数解释**： 排序顺序，与sort_key同时使用。 **约束限制**： 不涉及。 **取值范围**： - DESC：降序排序。 - ASC：升序排序。 **默认取值**： 不涉及。 </value>
         [JsonConverter(typeof(EnumClassConverter<SortDirEnum>))]
         public class SortDirEnum
         {
@@ -247,27 +247,27 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
 
         /// <summary>
-        /// 分页偏移量
+        /// **参数解释**： 分页偏移量 **约束限制**： 不涉及 **取值范围**： 整数，[0,10000] **默认取值**： 0 
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 分页大小
+        /// **参数解释**： 分页大小 **约束限制**： 不涉及 **取值范围**： 整数，[1,100] **默认取值**： 100 
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 排序关键字，与sort_dir同时使用。 目前只支持create_time与update_time create_time表示按创建时间排序，update_time表示按修改时间排序
+        /// **参数解释**： 排序关键字，与sort_dir同时使用。 **约束限制**： 目前只支持create_time与update_time **取值范围**： - create_time：按创建时间排序 - update_time：按修改时间排序 **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("sort_key", IsQuery = true)]
         [JsonProperty("sort_key", NullValueHandling = NullValueHandling.Ignore)]
         public SortKeyEnum SortKey { get; set; }
         /// <summary>
-        /// 排序顺序，与sort_key同时使用。DESC表示降序排序；ASC表示升序排序；
+        /// **参数解释**： 排序顺序，与sort_key同时使用。 **约束限制**： 不涉及。 **取值范围**： - DESC：降序排序。 - ASC：升序排序。 **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("sort_dir", IsQuery = true)]
         [JsonProperty("sort_dir", NullValueHandling = NullValueHandling.Ignore)]

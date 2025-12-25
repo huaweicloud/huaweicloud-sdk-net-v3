@@ -392,7 +392,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         public int? Id { get; set; }
 
         /// <summary>
-        /// **参数解释：** 评论类型。 **取值范围：** - DiscussionNote: 需要解决的关联代码行的评论。 - DiffNote: 一般。 - null: 普通评论。
+        /// **参数解释：** 评论类型。 **取值范围：** - DiscussionNote: 需要解决的关联代码行的评论。 - DiffNote: 一般。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

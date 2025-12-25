@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// **参数解释**： 资源分组ID，监控范围为资源分组时存在该值。 **取值范围**： 以rg开头，后跟22个字母或数字。 
+        /// **参数解释**： 资源分组ID，监控范围为资源分组时，存在该值。 **取值范围**： 以rg开头，后跟22个字母或数字。 
         /// </summary>
         [JsonProperty("resource_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceGroupId { get; set; }
 
         /// <summary>
-        /// **参数解释**： 资源分组名称，监控范围为资源分组时存在该值。 **取值范围**： 长度为[1,128]个字符。 
+        /// **参数解释**： 资源分组名称，监控范围为资源分组时，存在该值。 **取值范围**： 长度为[1,128]个字符。 
         /// </summary>
         [JsonProperty("resource_group_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceGroupName { get; set; }

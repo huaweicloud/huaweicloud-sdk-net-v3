@@ -544,6 +544,30 @@ namespace HuaweiCloud.SDK.Iam.V5
         }
         
         /// <summary>
+        /// 查询用户组相关属性
+        ///
+        /// 该接口可以用于查询用户组相关属性。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowGroupSummaryResponse> ShowGroupSummaryAsync(ShowGroupSummaryRequest showGroupSummaryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/groups-summary", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGroupSummaryRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowGroupSummaryResponse>(response);
+        }
+
+        public AsyncInvoker<ShowGroupSummaryResponse> ShowGroupSummaryAsyncInvoker(ShowGroupSummaryRequest showGroupSummaryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/groups-summary", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGroupSummaryRequest);
+            return new AsyncInvoker<ShowGroupSummaryResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowGroupSummaryResponse>);
+        }
+        
+        /// <summary>
         /// 查询用户组详情
         ///
         /// 该接口可以用于查询用户组详情。

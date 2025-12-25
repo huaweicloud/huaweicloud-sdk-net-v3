@@ -17,11 +17,11 @@ namespace HuaweiCloud.SDK.Live.V2.Model
     {
 
         /// <summary>
-        /// 推流域名。 
+        /// 推流域名列表，最多支持查询100个域名，多个域名以逗号分隔。  若查询多个域名，则返回的是多个域名合并数据。 
         /// </summary>
         [SDKProperty("domain", IsQuery = true)]
         [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
-        public string Domain { get; set; }
+        public List<string> Domain { get; set; }
 
         /// <summary>
         /// 应用名称。
@@ -99,7 +99,7 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         public bool Equals(ListHistoryStreamsRequest input)
         {
             if (input == null) return false;
-            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && input.Domain != null && !this.Domain.SequenceEqual(input.Domain))) return false;
             if (this.App != input.App || (this.App != null && !this.App.Equals(input.App))) return false;
             if (this.Stream != input.Stream || (this.Stream != null && !this.Stream.Equals(input.Stream))) return false;
             if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;

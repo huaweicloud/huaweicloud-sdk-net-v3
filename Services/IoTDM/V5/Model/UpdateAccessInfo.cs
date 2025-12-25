@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.IoTDM.V5.Model
         public string DomainName { get; set; }
 
         /// <summary>
-        /// **参数说明**：是否配置公网接入地址。 **取值范围**： - true：配置公网接入地址，平台将自动分配公网接入地址。约束：分配地址后将不能修改或删除。 
+        /// **参数说明**：是否配置公网接入地址。约束：access_type为APP_HTTPS/APP_AMQP/APP_MQTT的公网地址会同时被解绑或绑定。access_type为DEVICE_MQTT/DEVICE_HTTPS的公网地址会同时被解绑或绑定。 **取值范围**： - true：配置公网接入地址，平台将自动分配公网接入地址。 - false: 解绑公网接入地址，解绑公网地址不会被删除，再次配置公网地址将绑定原来的公网地址。 
         /// </summary>
         [JsonProperty("public_addresses_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PublicAddressesEnable { get; set; }

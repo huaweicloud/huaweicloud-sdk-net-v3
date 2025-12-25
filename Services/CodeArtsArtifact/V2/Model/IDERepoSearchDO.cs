@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.CodeArtsArtifact.V2.Model
         /// 是否在项目中
         /// </summary>
         [JsonProperty("in_project", NullValueHandling = NullValueHandling.Ignore)]
-        public string InProject { get; set; }
+        public bool? InProject { get; set; }
 
 
 

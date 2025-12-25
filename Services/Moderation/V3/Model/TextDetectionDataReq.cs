@@ -126,7 +126,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
 
 
         /// <summary>
-        /// 待检测文本，编码格式为“utf-8”，限定2000个字符以内，文本长度超过10000个字符时，只检测前10000个字符。
+        /// 待检测文本，编码格式为“utf-8”，限定10000个字符以内，文本长度超过10000个字符时，只检测前10000个字符。
         /// </summary>
         [JsonProperty("text", NullValueHandling = NullValueHandling.Ignore)]
         public string Text { get; set; }

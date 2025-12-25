@@ -63,32 +63,6 @@ namespace HuaweiCloud.SDK.Moderation.V3
         }
         
         /// <summary>
-        /// 关闭音频流内容审核作业
-        ///
-        /// 关闭音频流内容审核作业
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public RunCloseAudioStreamModerationJobResponse RunCloseAudioStreamModerationJob(RunCloseAudioStreamModerationJobRequest runCloseAudioStreamModerationJobRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(runCloseAudioStreamModerationJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/audio-stream/jobs/stop/{job_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCloseAudioStreamModerationJobRequest);
-            var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerialize<RunCloseAudioStreamModerationJobResponse>(response);
-        }
-
-        public SyncInvoker<RunCloseAudioStreamModerationJobResponse> RunCloseAudioStreamModerationJobInvoker(RunCloseAudioStreamModerationJobRequest runCloseAudioStreamModerationJobRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(runCloseAudioStreamModerationJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/audio-stream/jobs/stop/{job_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCloseAudioStreamModerationJobRequest);
-            return new SyncInvoker<RunCloseAudioStreamModerationJobResponse>(this, "POST", request, JsonUtils.DeSerialize<RunCloseAudioStreamModerationJobResponse>);
-        }
-        
-        /// <summary>
         /// 创建音频内容审核作业
         ///
         /// 分析并识别用户上传的音频内容是否有敏感内容（如色情、政治等），并将识别结果返回给用户
@@ -110,30 +84,6 @@ namespace HuaweiCloud.SDK.Moderation.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/audio/jobs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCreateAudioModerationJobRequest);
             return new SyncInvoker<RunCreateAudioModerationJobResponse>(this, "POST", request, JsonUtils.DeSerialize<RunCreateAudioModerationJobResponse>);
-        }
-        
-        /// <summary>
-        /// 创建音频流内容审核作业
-        ///
-        /// 创建音频流内容审核作业，创建成功会将作业ID返回给用户
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public RunCreateAudioStreamModerationJobResponse RunCreateAudioStreamModerationJob(RunCreateAudioStreamModerationJobRequest runCreateAudioStreamModerationJobRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/audio-stream/jobs", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCreateAudioStreamModerationJobRequest);
-            var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerialize<RunCreateAudioStreamModerationJobResponse>(response);
-        }
-
-        public SyncInvoker<RunCreateAudioStreamModerationJobResponse> RunCreateAudioStreamModerationJobInvoker(RunCreateAudioStreamModerationJobRequest runCreateAudioStreamModerationJobRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/audio-stream/jobs", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCreateAudioStreamModerationJobRequest);
-            return new SyncInvoker<RunCreateAudioStreamModerationJobResponse>(this, "POST", request, JsonUtils.DeSerialize<RunCreateAudioStreamModerationJobResponse>);
         }
         
         /// <summary>

@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         [JsonProperty("schema", NullValueHandling = NullValueHandling.Ignore)]
         public string Schema { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("page_info", NullValueHandling = NullValueHandling.Ignore)]
+        public GlancePageInfo PageInfo { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             sb.Append("class GlanceListImageMembersResponse {\n");
             sb.Append("  members: ").Append(Members).Append("\n");
             sb.Append("  schema: ").Append(Schema).Append("\n");
+            sb.Append("  pageInfo: ").Append(PageInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             if (input == null) return false;
             if (this.Members != input.Members || (this.Members != null && input.Members != null && !this.Members.SequenceEqual(input.Members))) return false;
             if (this.Schema != input.Schema || (this.Schema != null && !this.Schema.Equals(input.Schema))) return false;
+            if (this.PageInfo != input.PageInfo || (this.PageInfo != null && !this.PageInfo.Equals(input.PageInfo))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                 var hashCode = 41;
                 if (this.Members != null) hashCode = hashCode * 59 + this.Members.GetHashCode();
                 if (this.Schema != null) hashCode = hashCode * 59 + this.Schema.GetHashCode();
+                if (this.PageInfo != null) hashCode = hashCode * 59 + this.PageInfo.GetHashCode();
                 return hashCode;
             }
         }

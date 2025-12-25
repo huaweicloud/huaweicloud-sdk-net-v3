@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     {
 
         /// <summary>
-        /// 告警是否启用。true：启动。false：停止
+        /// **参数解释**： 告警是否启用 **约束限制**： 不涉及 **取值范围**： - true：开启告警 - false：关闭告警 **默认取值**： 不涉及 
         /// </summary>
         [JsonProperty("alarm_enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AlarmEnabled { get; set; }

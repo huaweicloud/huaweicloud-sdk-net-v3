@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.IoTDM.V5.Model
     {
 
         /// <summary>
-        /// **参数说明**：NAT网关绑定的EIP 
+        /// **参数说明**：NAT网关绑定的EIP。 
         /// </summary>
         [JsonProperty("eip", NullValueHandling = NullValueHandling.Ignore)]
         public string Eip { get; set; }

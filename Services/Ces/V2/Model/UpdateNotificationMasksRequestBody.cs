@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class UpdateNotificationMasksRequestBody 
     {
         /// <summary>
-        /// **参数解释** 资源类型。 **约束限制**： **取值范围**： 枚举值，取值为dimension、product - dimension: 子维度 - product: 云产品 **默认取值**： 不涉及。 
+        /// **参数解释** 资源层级。 **约束限制**： 不涉及。 **取值范围**： 枚举值，取值为dimension、product - dimension: 子维度 - product: 云产品 **默认取值**： 不涉及。 
         /// </summary>
-        /// <value>**参数解释** 资源类型。 **约束限制**： **取值范围**： 枚举值，取值为dimension、product - dimension: 子维度 - product: 云产品 **默认取值**： 不涉及。 </value>
+        /// <value>**参数解释** 资源层级。 **约束限制**： 不涉及。 **取值范围**： 枚举值，取值为dimension、product - dimension: 子维度 - product: 云产品 **默认取值**： 不涉及。 </value>
         [JsonConverter(typeof(EnumClassConverter<ResourceLevelEnum>))]
         public class ResourceLevelEnum
         {
@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string MaskName { get; set; }
 
         /// <summary>
-        /// **参数解释**： 关联ID。        **约束限制**： 数组长度为[1,100] relation_type为ALARM_RULE时填屏蔽的告警规则ID；relation_type为RESOURCE_POLICY_NOTIFICATION、RESOURCE_POLICY_ALARM时填屏蔽的告警策略ID。 
+        /// **参数解释**： 关联ID，为告警规则ID或者告警策略ID    **约束限制**： 包含的关联ID数量为[1,100]个。 relation_type为RESOURCE_POLICY_NOTIFICATION时填屏蔽的告警策略ID。 
         /// </summary>
         [JsonProperty("relation_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> RelationIds { get; set; }
@@ -162,7 +162,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public List<ProductMetric> ProductMetrics { get; set; }
 
         /// <summary>
-        /// **参数解释** 资源类型。 **约束限制**： **取值范围**： 枚举值，取值为dimension、product - dimension: 子维度 - product: 云产品 **默认取值**： 不涉及。 
+        /// **参数解释** 资源层级。 **约束限制**： 不涉及。 **取值范围**： 枚举值，取值为dimension、product - dimension: 子维度 - product: 云产品 **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("resource_level", NullValueHandling = NullValueHandling.Ignore)]
         public ResourceLevelEnum ResourceLevel { get; set; }

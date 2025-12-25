@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 告警模板的创建时间
+    /// **参数解释**： 告警模板的创建时间 **取值范围**： 不涉及。 
     /// </summary>
     public class CreateTime 
     {

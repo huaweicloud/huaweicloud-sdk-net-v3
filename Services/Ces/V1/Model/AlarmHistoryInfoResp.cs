@@ -192,19 +192,19 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public bool? AlarmActionEnabled { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警触发的动作。结构如下：{  \&quot;type\&quot;: \&quot;notification\&quot;, \&quot;notificationList\&quot;: [\&quot;urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\&quot;]  }  type取值：notification：通知。autoscaling：弹性伸缩。notificationList：告警状态发生变化时，被通知对象的列表。 
+        /// **参数解释**： 告警触发时，通知组/主题订阅的信息。结构如下：{  \&quot;type\&quot;: \&quot;notification\&quot;, \&quot;notificationList\&quot;: [\&quot;urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\&quot;]  } 
         /// </summary>
         [JsonProperty("alarm_actions", NullValueHandling = NullValueHandling.Ignore)]
         public List<List<NotificationResp>> AlarmActions { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警恢复触发的动作。结构如下：{  \&quot;type\&quot;: \&quot;notification\&quot;, \&quot;notificationList\&quot;: [\&quot;urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\&quot;]  } type取值：notification：通知。notificationList：告警状态发生变化时，被通知对象的列表。 
+        /// **参数解释**： 告警恢复时，通知组/主题订阅的信息。结构如下：{  \&quot;type\&quot;: \&quot;notification\&quot;, \&quot;notificationList\&quot;: [\&quot;urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\&quot;]  } 
         /// </summary>
         [JsonProperty("ok_actions", NullValueHandling = NullValueHandling.Ignore)]
         public List<List<NotificationResp>> OkActions { get; set; }
 
         /// <summary>
-        /// **参数解释**： 数据不足触发的动作。结构如下：{  \&quot;type\&quot;: \&quot;notification\&quot;, \&quot;notificationList\&quot;: [\&quot;urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\&quot;]  } type取值：数据不足触发告警通知类型，取值为notification。notificationList：数据不足触发告警通知时，被通知对象的ID列表。 
+        /// **参数解释**： 数据不足时触发告警时，通知组/主题订阅的信息。结构如下：{  \&quot;type\&quot;: \&quot;notification\&quot;, \&quot;notificationList\&quot;: [\&quot;urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\&quot;]  } 
         /// </summary>
         [JsonProperty("insufficientdata_actions", NullValueHandling = NullValueHandling.Ignore)]
         public List<List<NotificationResp>> InsufficientdataActions { get; set; }
@@ -228,7 +228,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public long? TriggerTime { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警历史的状态 **取值范围**： 枚举值： - ok：正常 - alarm：告警 - insufficient_data：数据不足 - invalid：已失效 
+        /// **参数解释**： 告警规则的状态 **取值范围**： 枚举值： - ok：正常 - alarm：告警 - insufficient_data：数据不足 - invalid：已失效 
         /// </summary>
         [JsonProperty("alarm_status", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmStatus { get; set; }

@@ -11,14 +11,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 通知屏蔽信请求体
+    /// **参数解释**： 通知屏蔽信请求体 **约束限制**： 不涉及 
     /// </summary>
     public class BatchUpdateNotificationMasksRequestBody 
     {
         /// <summary>
-        /// dimension: 子维度,product: 云产品
+        /// **参数解释**： 资源层级。 **约束限制**： 不涉及。 **取值范围**： 枚举值。 - product：资源层级为云产品 - dimension：资源层级为子维度 **默认取值**： 不涉及。 
         /// </summary>
-        /// <value>dimension: 子维度,product: 云产品</value>
+        /// <value>**参数解释**： 资源层级。 **约束限制**： 不涉及。 **取值范围**： 枚举值。 - product：资源层级为云产品 - dimension：资源层级为子维度 **默认取值**： 不涉及。 </value>
         [JsonConverter(typeof(EnumClassConverter<ResourceLevelEnum>))]
         public class ResourceLevelEnum
         {
@@ -143,36 +143,36 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("relation_type", NullValueHandling = NullValueHandling.Ignore)]
         public RelationType RelationType { get; set; }
         /// <summary>
-        /// 关联编号，relation_type为ALARM_RULE时填屏蔽的告警规则ID；relation_type为RESOURCE_POLICY_NOTIFICATION、RESOURCE_POLICY_ALARM时填屏蔽的告警策略ID；
+        /// **参数解释**： 关联ID列表。        **约束限制**： relation_type为ALARM_RULE时填屏蔽的告警规则ID；relation_type为RESOURCE_POLICY_NOTIFICATION时填屏蔽的告警策略ID。包含的关联ID数量为[1,100] 
         /// </summary>
         [JsonProperty("relation_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> RelationIds { get; set; }
 
         /// <summary>
-        /// 关联资源，relation_type为RESOURCE、RESOURCE_POLICY_NOTIFICATION、RESOURCE_POLICY_ALARM时填屏蔽的资源信息；
+        /// **参数解释**： 必填。关联的资源列表   **约束限制**： relation_type为RESOURCE、RESOURCE_POLICY_NOTIFICATION 时填屏蔽的资源信息。包含的资源数量为[1,100] 
         /// </summary>
         [JsonProperty("resources", NullValueHandling = NullValueHandling.Ignore)]
         public List<Resource> Resources { get; set; }
 
         /// <summary>
-        /// 关联指标名称，relation_type为RESOURCE可选填，不填视为对资源所有指标进行告警屏蔽
+        /// **参数解释**： 关联的指标名称 **约束限制**： relation_type为RESOURCE可选填，不填视为对资源所有指标进行告警屏蔽。包含的指标数量为[0,50] 
         /// </summary>
         [JsonProperty("metric_names", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> MetricNames { get; set; }
 
         /// <summary>
-        /// 按云产品维度屏蔽时的指标信息
+        /// **参数解释**： 按云产品维度屏蔽时的指标信息 **约束限制**： 包含的指标数量为[0,50] 
         /// </summary>
         [JsonProperty("product_metrics", NullValueHandling = NullValueHandling.Ignore)]
         public List<ProductMetric> ProductMetrics { get; set; }
 
         /// <summary>
-        /// dimension: 子维度,product: 云产品
+        /// **参数解释**： 资源层级。 **约束限制**： 不涉及。 **取值范围**： 枚举值。 - product：资源层级为云产品 - dimension：资源层级为子维度 **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("resource_level", NullValueHandling = NullValueHandling.Ignore)]
         public ResourceLevelEnum ResourceLevel { get; set; }
         /// <summary>
-        /// 资源为云产品时的云产品名称
+        /// **参数解释**： 资源层级为云产品时的云产品名称 **约束限制**： 不涉及 **取值范围**： 长度为[0,128]个字符。 **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("product_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductName { get; set; }

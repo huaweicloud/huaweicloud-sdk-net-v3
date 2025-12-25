@@ -295,7 +295,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 查询服务的命名空间，各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”
+        /// **参数解释**： 查询服务的命名空间，各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”。 **约束限制**： 不涉及。 **取值范围**： 格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_。字符串的长度必须在 0 到 32个字符之间。 **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
         public string Namespace { get; set; }
@@ -324,31 +324,31 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public bool? Enabled { get; set; }
 
         /// <summary>
-        /// **参数解释**： 是否开启告警通知。     **约束限制**： 不涉及。 **取值范围**： 布尔值。 - true:开启。 - false:关闭。 **默认取值**： true 
+        /// **参数解释**： 是否开启告警通知。说明：若notification_enabled为true，对应的alarm_notifications、ok_notifications至少有一个不能为空。    **约束限制**： 不涉及。 **取值范围**： 布尔值。 - true:开启。 - false:关闭。 **默认取值**： true 
         /// </summary>
         [JsonProperty("notification_enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? NotificationEnabled { get; set; }
 
         /// <summary>
-        /// **参数解释**： 触发告警时，通知组/主题订阅的信息。 **约束限制**： 包含的通知信息的数量最多为10个，最少为0个。 
+        /// **参数解释**： 触发告警时，通知组/主题订阅的信息。 **约束限制**： 包含的通知对象信息的数量最多为10个，最少为0个。 
         /// </summary>
         [JsonProperty("alarm_notifications", NullValueHandling = NullValueHandling.Ignore)]
         public List<Notification> AlarmNotifications { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警恢复时，通知组/主题订阅的信息。 **约束限制**： 包含的通知信息的数量最多为10个，最少为0个。 
+        /// **参数解释**： 告警恢复时，通知组/主题订阅的信息。 **约束限制**： 包含的通知对象信息的数量最多为10个，最少为0个。 
         /// </summary>
         [JsonProperty("ok_notifications", NullValueHandling = NullValueHandling.Ignore)]
         public List<Notification> OkNotifications { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警通知开启时间。    **约束限制**： 不涉及。 **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。           **默认取值**： 不涉及。 
+        /// **参数解释**： 告警通知开启时间。如 00:00    **约束限制**： 不涉及。 **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。           **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("notification_begin_time", NullValueHandling = NullValueHandling.Ignore)]
         public string NotificationBeginTime { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警通知关闭时间。    **约束限制**： 不涉及。 **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。           **默认取值**： 不涉及。 
+        /// **参数解释**： 告警通知关闭时间。如 08:00  **约束限制**： 不涉及。 **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。           **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("notification_end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string NotificationEndTime { get; set; }

@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 通知屏蔽列表
+        /// **参数解释**： 通知屏蔽列表 
         /// </summary>
         [JsonProperty("notification_masks", NullValueHandling = NullValueHandling.Ignore)]
         public List<ListNotificationMaskRespNotificationMasks> NotificationMasks { get; set; }
 
         /// <summary>
-        /// 通知屏蔽列表总数
+        /// **参数解释**： 通知屏蔽列表总数 **取值范围**： [0,99999] 
         /// </summary>
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
         public int? Count { get; set; }

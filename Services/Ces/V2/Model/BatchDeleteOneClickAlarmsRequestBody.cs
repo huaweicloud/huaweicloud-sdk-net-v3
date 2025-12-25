@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("one_click_alarm_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> OneClickAlarmIds { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 操作类型。 **约束限制**： 不涉及。 **取值范围**： 枚举值。取值为disable - disable: 关闭一键告警 **默认取值**： 不涉及。 
+        /// </summary>
+        [JsonProperty("action_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string ActionType { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             var sb = new StringBuilder();
             sb.Append("class BatchDeleteOneClickAlarmsRequestBody {\n");
             sb.Append("  oneClickAlarmIds: ").Append(OneClickAlarmIds).Append("\n");
+            sb.Append("  actionType: ").Append(ActionType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             if (input == null) return false;
             if (this.OneClickAlarmIds != input.OneClickAlarmIds || (this.OneClickAlarmIds != null && input.OneClickAlarmIds != null && !this.OneClickAlarmIds.SequenceEqual(input.OneClickAlarmIds))) return false;
+            if (this.ActionType != input.ActionType || (this.ActionType != null && !this.ActionType.Equals(input.ActionType))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             {
                 var hashCode = 41;
                 if (this.OneClickAlarmIds != null) hashCode = hashCode * 59 + this.OneClickAlarmIds.GetHashCode();
+                if (this.ActionType != null) hashCode = hashCode * 59 + this.ActionType.GetHashCode();
                 return hashCode;
             }
         }

@@ -29,6 +29,12 @@ namespace HuaweiCloud.SDK.Rgc.V1
             "https://rgc.la-north-2.myhuaweicloud.com");
         public static readonly Region SA_BRAZIL_1 = new Region("sa-brazil-1",
             "https://rgc.sa-brazil-1.myhuaweicloud.com");
+        public static readonly Region AP_SOUTHEAST_5 = new Region("ap-southeast-5",
+            "https://rgc.ap-southeast-5.myhuaweicloud.com");
+        public static readonly Region ME_EAST_1 = new Region("me-east-1",
+            "https://rgc.me-east-1.myhuaweicloud.com");
+        public static readonly Region TR_WEST_1 = new Region("tr-west-1",
+            "https://rgc.tr-west-1.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("RGC");
 
@@ -45,6 +51,9 @@ namespace HuaweiCloud.SDK.Rgc.V1
                 { "la-south-2", LA_SOUTH_2 },
                 { "la-north-2", LA_NORTH_2 },
                 { "sa-brazil-1", SA_BRAZIL_1 },
+                { "ap-southeast-5", AP_SOUTHEAST_5 },
+                { "me-east-1", ME_EAST_1 },
+                { "tr-west-1", TR_WEST_1 },
         };
 
         public static Region ValueOf(string regionId)

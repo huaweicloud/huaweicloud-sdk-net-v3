@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// **参数解释**： 标签名。 **约束限制**： 不涉及。 **取值范围**： 最大长度128个unicode字符。           **默认取值**： 不涉及。 
+        /// **参数解释**： 标签名。 **约束限制**： 不涉及。 **取值范围**： 长度[1,128]个unicode字符。           **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
         /// <summary>
-        /// **参数解释**： 标签值。 **约束限制**： 不涉及。 **取值范围**： 最大长度255个unicode字符。           **默认取值**： 不涉及。 
+        /// **参数解释**： 标签值。 **约束限制**： 不涉及。 **取值范围**： 长度为[0,255]个unicode字符。           **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

@@ -23,6 +23,18 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public string State { get; set; }
 
         /// <summary>
+        /// 返回码。
+        /// </summary>
+        [JsonProperty("code", NullValueHandling = NullValueHandling.Ignore)]
+        public string Code { get; set; }
+
+        /// <summary>
+        /// 异常信息。
+        /// </summary>
+        [JsonProperty("message", NullValueHandling = NullValueHandling.Ignore)]
+        public string Message { get; set; }
+
+        /// <summary>
         /// 音频文件下载链接，有效期为1个小时。
         /// </summary>
         [JsonProperty("audio_file_url", NullValueHandling = NullValueHandling.Ignore)]
@@ -56,6 +68,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             var sb = new StringBuilder();
             sb.Append("class ShowAsyncTtsJobResponse {\n");
             sb.Append("  state: ").Append(State).Append("\n");
+            sb.Append("  code: ").Append(Code).Append("\n");
+            sb.Append("  message: ").Append(Message).Append("\n");
             sb.Append("  audioFileUrl: ").Append(AudioFileUrl).Append("\n");
             sb.Append("  audioInfoFileUrl: ").Append(AudioInfoFileUrl).Append("\n");
             sb.Append("  audioSrtFileUrl: ").Append(AudioSrtFileUrl).Append("\n");
@@ -79,6 +93,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         {
             if (input == null) return false;
             if (this.State != input.State || (this.State != null && !this.State.Equals(input.State))) return false;
+            if (this.Code != input.Code || (this.Code != null && !this.Code.Equals(input.Code))) return false;
+            if (this.Message != input.Message || (this.Message != null && !this.Message.Equals(input.Message))) return false;
             if (this.AudioFileUrl != input.AudioFileUrl || (this.AudioFileUrl != null && !this.AudioFileUrl.Equals(input.AudioFileUrl))) return false;
             if (this.AudioInfoFileUrl != input.AudioInfoFileUrl || (this.AudioInfoFileUrl != null && !this.AudioInfoFileUrl.Equals(input.AudioInfoFileUrl))) return false;
             if (this.AudioSrtFileUrl != input.AudioSrtFileUrl || (this.AudioSrtFileUrl != null && !this.AudioSrtFileUrl.Equals(input.AudioSrtFileUrl))) return false;
@@ -96,6 +112,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             {
                 var hashCode = 41;
                 if (this.State != null) hashCode = hashCode * 59 + this.State.GetHashCode();
+                if (this.Code != null) hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();
                 if (this.AudioFileUrl != null) hashCode = hashCode * 59 + this.AudioFileUrl.GetHashCode();
                 if (this.AudioInfoFileUrl != null) hashCode = hashCode * 59 + this.AudioInfoFileUrl.GetHashCode();
                 if (this.AudioSrtFileUrl != null) hashCode = hashCode * 59 + this.AudioSrtFileUrl.GetHashCode();

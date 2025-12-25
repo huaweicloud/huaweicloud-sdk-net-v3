@@ -44,7 +44,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// 镜像层大小
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Size { get; set; }
+        public long? Size { get; set; }
 
         /// <summary>
         /// 镜像层sha256信息

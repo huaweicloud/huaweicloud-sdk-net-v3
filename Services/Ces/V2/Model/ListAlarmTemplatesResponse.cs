@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public List<AlarmTemplates> AlarmTemplates { get; set; }
 
         /// <summary>
-        /// 告警模板记录总数
+        /// **参数解释**： 告警模板记录总数。 **取值范围**： 字符串长度在 10 到 9999999 之间。 
         /// </summary>
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
         public int? Count { get; set; }

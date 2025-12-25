@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     {
 
         /// <summary>
-        /// **参数解释**： 告警通知类型。 **取值范围**： 取值如下： notification：SMN通知； autoscaling：AS通知。 
+        /// **参数解释**： 告警通知类型。 **取值范围**： - notification：通知组或主题订阅。 - autoscaling：AS通知，仅在AS使用。 
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

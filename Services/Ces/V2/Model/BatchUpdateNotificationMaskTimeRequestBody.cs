@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 修改通知屏蔽时间请求体
+    /// **参数解释**： 修改通知屏蔽时间请求体。 **约束限制**： 不涉及。 
     /// </summary>
     public class BatchUpdateNotificationMaskTimeRequestBody 
     {
 
         /// <summary>
-        /// 关联编号
+        /// **参数解释**： 告警屏蔽ID列表 **约束限制**： 包含的告警屏蔽ID数量为[1,100]个。 
         /// </summary>
         [JsonProperty("notification_mask_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> NotificationMaskIds { get; set; }

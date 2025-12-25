@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
     public class ListHotWordsRequest 
     {
         /// <summary>
-        /// 智能交互语言 * zh_CN：简体中文（已下线，请使用CN） * en_US：英语（已下线，请使用EN） * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）
+        /// 智能交互语言 * zh_CN：简体中文（已下线，请使用CN） * en_US：英语（已下线，请使用EN） * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持） * fr：法语（仅海外站点支持）
         /// </summary>
-        /// <value>智能交互语言 * zh_CN：简体中文（已下线，请使用CN） * en_US：英语（已下线，请使用EN） * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）</value>
+        /// <value>智能交互语言 * zh_CN：简体中文（已下线，请使用CN） * en_US：英语（已下线，请使用EN） * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持） * fr：法语（仅海外站点支持）</value>
         [JsonConverter(typeof(EnumClassConverter<LanguageEnum>))]
         public class LanguageEnum
         {
@@ -62,6 +62,11 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             /// </summary>
             public static readonly LanguageEnum THAI = new LanguageEnum("Thai");
 
+            /// <summary>
+            /// Enum FR for value: fr
+            /// </summary>
+            public static readonly LanguageEnum FR = new LanguageEnum("fr");
+
             private static readonly Dictionary<string, LanguageEnum> StaticFields =
             new Dictionary<string, LanguageEnum>()
             {
@@ -73,6 +78,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 { "por", POR },
                 { "Arabic", ARABIC },
                 { "Thai", THAI },
+                { "fr", FR },
             };
 
             private string _value;
@@ -339,7 +345,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public int? Region { get; set; }
 
         /// <summary>
-        /// 智能交互语言 * zh_CN：简体中文（已下线，请使用CN） * en_US：英语（已下线，请使用EN） * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）
+        /// 智能交互语言 * zh_CN：简体中文（已下线，请使用CN） * en_US：英语（已下线，请使用EN） * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持） * fr：法语（仅海外站点支持）
         /// </summary>
         [SDKProperty("language", IsQuery = true)]
         [JsonProperty("language", NullValueHandling = NullValueHandling.Ignore)]

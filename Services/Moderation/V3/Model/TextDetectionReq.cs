@@ -23,13 +23,13 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         public string EventType { get; set; }
 
         /// <summary>
-        /// 文本审核场景，可选值如下： terrorism: 暴恐 porn: 色情 ban: 违禁 abuse: 辱骂 ad: 广告 当categories缺省或为空时，默认审核terrorism、porn、ban、abuse、ad。
+        /// 文本审核场景，可选值如下： terrorism: 暴恐 porn: 色情 ban: 违禁 abuse: 辱骂 politics: 涉政 ad: 广告 当categories缺省或为空时，默认审核terrorism、porn、ban、abuse、ad。
         /// </summary>
         [JsonProperty("categories", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Categories { get; set; }
 
         /// <summary>
-        /// 检测时使用的自定义黑名单词库列表。自定义黑词库的创建和使用请参见[配置定义黑名单词库](https://support.huaweicloud.com/api-moderation/moderation_03_0027.html#moderation_03_0027__section12400140132318)。
+        /// 检测时使用的自定义黑名单词库列表。自定义黑词库的创建和使用请参见[配置定义词库v3](https://support.huaweicloud.com/api-moderation/moderation_03_0097.html)。
         /// </summary>
         [JsonProperty("glossary_names", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> GlossaryNames { get; set; }
@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         public TextDetectionDataReq Data { get; set; }
 
         /// <summary>
-        /// 检测时使用的自定义白名单词库列表。自定义白词库的创建和使用请参见[配置定义白名单词库](https://support.huaweicloud.com/api-moderation/moderation_03_0027.html#moderation_03_0027__section178844141394)。
+        /// 检测时使用的自定义白名单词库列表。自定义白词库的创建和使用请参见[配置定义词库v3](https://support.huaweicloud.com/api-moderation/moderation_03_0097.html)。
         /// </summary>
         [JsonProperty("white_glossary_names", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> WhiteGlossaryNames { get; set; }

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class ShowResourceGroupResponse : SdkResponse
     {
         /// <summary>
-        /// 资源添加/匹配方式，取值只能为EPS（匹配企业项目）,TAG（匹配标签）,NAME（匹配实例名称）, COMB（组合匹配）,Manual（手动添加）
+        /// **参数解释** 资源添加/匹配方式。 **取值范围** 枚举值。 - EPS: 匹配企业项目 - TAG: 匹配标签 - NAME: 匹配实例名称 - COMB: 组合匹配 - Manual: 手动添加 
         /// </summary>
-        /// <value>资源添加/匹配方式，取值只能为EPS（匹配企业项目）,TAG（匹配标签）,NAME（匹配实例名称）, COMB（组合匹配）,Manual（手动添加）</value>
+        /// <value>**参数解释** 资源添加/匹配方式。 **取值范围** 枚举值。 - EPS: 匹配企业项目 - TAG: 匹配标签 - NAME: 匹配实例名称 - COMB: 组合匹配 - Manual: 手动添加 </value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -149,9 +149,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         }
 
         /// <summary>
-        /// 指标告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）
+        /// **参数解释** 指标告警状态。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 
         /// </summary>
-        /// <value>指标告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）</value>
+        /// <value>**参数解释** 指标告警状态。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 </value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -270,9 +270,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         }
 
         /// <summary>
-        /// 事件告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）
+        /// **参数解释** 事件告警状态。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 
         /// </summary>
-        /// <value>事件告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）</value>
+        /// <value>**参数解释** 事件告警状态。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 </value>
         [JsonConverter(typeof(EnumClassConverter<EventStatusEnum>))]
         public class EventStatusEnum
         {
@@ -391,9 +391,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         }
 
         /// <summary>
-        /// dimension: 子维度,product: 云产品
+        /// **参数解释** 资源等级。 **取值范围** 枚举值。 - product: 云产品 - dimension: 子维度 
         /// </summary>
-        /// <value>dimension: 子维度,product: 云产品</value>
+        /// <value>**参数解释** 资源等级。 **取值范围** 枚举值。 - product: 云产品 - dimension: 子维度 </value>
         [JsonConverter(typeof(EnumClassConverter<ResourceLevelEnum>))]
         public class ResourceLevelEnum
         {
@@ -507,31 +507,37 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
 
         /// <summary>
-        /// 资源分组的名称
+        /// **参数解释** 资源分组的名称。 **取值范围** 只能为字母、数字、汉字、-或_，长度为[1,128]个字符。 
         /// </summary>
         [JsonProperty("group_name", NullValueHandling = NullValueHandling.Ignore)]
         public string GroupName { get; set; }
 
         /// <summary>
-        /// 资源分组ID，以rg开头，后跟22位由字母或数字组成的字符串
+        /// **参数解释**： 资源分组ID。 **取值范围**： 以rg开头，后跟22位由字母或数字组成的字符串。长度为[2,24]个字符。 
         /// </summary>
         [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string GroupId { get; set; }
 
         /// <summary>
-        /// 资源分组的创建时间
+        /// **参数解释**： 资源分组的创建时间 **取值范围**： 不涉及。 
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? CreateTime { get; set; }
 
         /// <summary>
-        /// 资源分组归属企业项目ID
+        /// **参数解释**： 资源分组的修改时间 **取值范围**： 不涉及。 
+        /// </summary>
+        [JsonProperty("update_time", NullValueHandling = NullValueHandling.Ignore)]
+        public DateTime? UpdateTime { get; set; }
+
+        /// <summary>
+        /// **参数解释** 资源分组归属企业项目ID。 **取值范围** 由数字、字母和-组成，或者为0（默认企业项目ID）。 
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 资源添加/匹配方式，取值只能为EPS（匹配企业项目）,TAG（匹配标签）,NAME（匹配实例名称）, COMB（组合匹配）,Manual（手动添加）
+        /// **参数解释** 资源添加/匹配方式。 **取值范围** 枚举值。 - EPS: 匹配企业项目 - TAG: 匹配标签 - NAME: 匹配实例名称 - COMB: 组合匹配 - Manual: 手动添加 
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
@@ -572,12 +578,12 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public List<EnterpriseProjectIdAndTags> EnterpriseProjectIdAndTags { get; set; }
 
         /// <summary>
-        /// 指标告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）
+        /// **参数解释** 指标告警状态。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
-        /// 事件告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）
+        /// **参数解释** 事件告警状态。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 
         /// </summary>
         [JsonProperty("event_status", NullValueHandling = NullValueHandling.Ignore)]
         public EventStatusEnum EventStatus { get; set; }
@@ -585,15 +591,15 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// 
         /// </summary>
         [JsonProperty("resource_statistics", NullValueHandling = NullValueHandling.Ignore)]
-        public OneResourceGroupRespResourceStatistics ResourceStatistics { get; set; }
+        public GetResourceGroupRespResourceStatistics ResourceStatistics { get; set; }
 
         /// <summary>
-        /// dimension: 子维度,product: 云产品
+        /// **参数解释** 资源等级。 **取值范围** 枚举值。 - product: 云产品 - dimension: 子维度 
         /// </summary>
         [JsonProperty("resource_level", NullValueHandling = NullValueHandling.Ignore)]
         public ResourceLevelEnum ResourceLevel { get; set; }
         /// <summary>
-        /// 创建资源层级为云产品时的云产品的取值，一般由\&quot;服务命名空间,服务首层维度名称\&quot;组成，如\&quot;SYS.ECS,instance_id\&quot;。多个云产品则用“;”隔开，如\&quot;SERVICE.BMS,instance_id;SYS.ECS,instance_id\&quot;。
+        /// **参数解释** 创建资源层级为云产品时的云产品名称，一般由\&quot;服务命名空间,服务首层维度名称\&quot;组成，如\&quot;SYS.ECS,instance_id\&quot;。多个云产品则用“;”隔开，如\&quot;SERVICE.BMS,instance_id;SYS.ECS,instance_id\&quot;。 **取值范围** 长度[0,10240]个字符 
         /// </summary>
         [JsonProperty("product_names", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductNames { get; set; }
@@ -603,6 +609,12 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         [JsonProperty("ep_resource_statistics", NullValueHandling = NullValueHandling.Ignore)]
         public List<EpResourceStatistics> EpResourceStatistics { get; set; }
+
+        /// <summary>
+        /// 关联的告警模板列表
+        /// </summary>
+        [JsonProperty("association_alarm_templates", NullValueHandling = NullValueHandling.Ignore)]
+        public List<AssociationAlarmTemplate> AssociationAlarmTemplates { get; set; }
 
 
 
@@ -616,6 +628,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  groupName: ").Append(GroupName).Append("\n");
             sb.Append("  groupId: ").Append(GroupId).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
+            sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  associationEpIds: ").Append(AssociationEpIds).Append("\n");
@@ -630,6 +643,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  resourceLevel: ").Append(ResourceLevel).Append("\n");
             sb.Append("  productNames: ").Append(ProductNames).Append("\n");
             sb.Append("  epResourceStatistics: ").Append(EpResourceStatistics).Append("\n");
+            sb.Append("  associationAlarmTemplates: ").Append(AssociationAlarmTemplates).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -651,6 +665,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.GroupName != input.GroupName || (this.GroupName != null && !this.GroupName.Equals(input.GroupName))) return false;
             if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.Type != input.Type) return false;
             if (this.AssociationEpIds != input.AssociationEpIds || (this.AssociationEpIds != null && input.AssociationEpIds != null && !this.AssociationEpIds.SequenceEqual(input.AssociationEpIds))) return false;
@@ -665,6 +680,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.ResourceLevel != input.ResourceLevel) return false;
             if (this.ProductNames != input.ProductNames || (this.ProductNames != null && !this.ProductNames.Equals(input.ProductNames))) return false;
             if (this.EpResourceStatistics != input.EpResourceStatistics || (this.EpResourceStatistics != null && input.EpResourceStatistics != null && !this.EpResourceStatistics.SequenceEqual(input.EpResourceStatistics))) return false;
+            if (this.AssociationAlarmTemplates != input.AssociationAlarmTemplates || (this.AssociationAlarmTemplates != null && input.AssociationAlarmTemplates != null && !this.AssociationAlarmTemplates.SequenceEqual(input.AssociationAlarmTemplates))) return false;
 
             return true;
         }
@@ -680,6 +696,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 if (this.GroupName != null) hashCode = hashCode * 59 + this.GroupName.GetHashCode();
                 if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.AssociationEpIds != null) hashCode = hashCode * 59 + this.AssociationEpIds.GetHashCode();
@@ -694,6 +711,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 hashCode = hashCode * 59 + this.ResourceLevel.GetHashCode();
                 if (this.ProductNames != null) hashCode = hashCode * 59 + this.ProductNames.GetHashCode();
                 if (this.EpResourceStatistics != null) hashCode = hashCode * 59 + this.EpResourceStatistics.GetHashCode();
+                if (this.AssociationAlarmTemplates != null) hashCode = hashCode * 59 + this.AssociationAlarmTemplates.GetHashCode();
                 return hashCode;
             }
         }

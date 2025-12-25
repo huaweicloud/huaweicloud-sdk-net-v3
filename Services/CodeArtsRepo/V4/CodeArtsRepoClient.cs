@@ -15,169 +15,6 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
 
         
         /// <summary>
-        /// 批量删除分支
-        ///
-        /// 批量删除分支
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public BatchDeleteBranchResponse BatchDeleteBranch(BatchDeleteBranchRequest batchDeleteBranchRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(batchDeleteBranchRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/branches/batch-delete", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteBranchRequest);
-            var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerializeNull<BatchDeleteBranchResponse>(response);
-        }
-
-        public SyncInvoker<BatchDeleteBranchResponse> BatchDeleteBranchInvoker(BatchDeleteBranchRequest batchDeleteBranchRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(batchDeleteBranchRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/branches/batch-delete", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteBranchRequest);
-            return new SyncInvoker<BatchDeleteBranchResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteBranchResponse>);
-        }
-        
-        /// <summary>
-        /// 创建分支
-        ///
-        /// 创建分支
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public CreateBranchResponse CreateBranch(CreateBranchRequest createBranchRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(createBranchRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/branches", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createBranchRequest);
-            var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerialize<CreateBranchResponse>(response);
-        }
-
-        public SyncInvoker<CreateBranchResponse> CreateBranchInvoker(CreateBranchRequest createBranchRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(createBranchRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/branches", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createBranchRequest);
-            return new SyncInvoker<CreateBranchResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateBranchResponse>);
-        }
-        
-        /// <summary>
-        /// 删除分支
-        ///
-        /// 删除分支
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public DeleteBranchResponse DeleteBranch(DeleteBranchRequest deleteBranchRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(deleteBranchRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/branch", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBranchRequest);
-            var response = DoHttpRequestSync("DELETE", request);
-            return JsonUtils.DeSerialize<DeleteBranchResponse>(response);
-        }
-
-        public SyncInvoker<DeleteBranchResponse> DeleteBranchInvoker(DeleteBranchRequest deleteBranchRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(deleteBranchRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/branch", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBranchRequest);
-            return new SyncInvoker<DeleteBranchResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteBranchResponse>);
-        }
-        
-        /// <summary>
-        /// 获取分支列表
-        ///
-        /// 获取分支列表
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ListBranchesResponse ListBranches(ListBranchesRequest listBranchesRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listBranchesRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/branches", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBranchesRequest);
-            var response = DoHttpRequestSync("GET", request);
-            var listBranchesResponse = JsonUtils.DeSerializeNull<ListBranchesResponse>(response);
-            listBranchesResponse.Body = JsonUtils.DeSerializeList<BranchSimpleDto>(response);
-            return listBranchesResponse;
-        }
-
-        public SyncInvoker<ListBranchesResponse> ListBranchesInvoker(ListBranchesRequest listBranchesRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listBranchesRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/branches", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBranchesRequest);
-            return new SyncInvoker<ListBranchesResponse>(this, "GET", request, response =>
-            {
-                var listBranchesResponse = JsonUtils.DeSerializeNull<ListBranchesResponse>(response);
-                listBranchesResponse.Body = JsonUtils.DeSerializeList<BranchSimpleDto>(response);
-                return listBranchesResponse;
-            });
-        }
-        
-        /// <summary>
-        /// 获取分支详情
-        ///
-        /// 获取分支详情
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ShowBranchResponse ShowBranch(ShowBranchRequest showBranchRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(showBranchRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/branch", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBranchRequest);
-            var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ShowBranchResponse>(response);
-        }
-
-        public SyncInvoker<ShowBranchResponse> ShowBranchInvoker(ShowBranchRequest showBranchRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(showBranchRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/branch", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBranchRequest);
-            return new SyncInvoker<ShowBranchResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBranchResponse>);
-        }
-        
-        /// <summary>
-        /// 分支重命名
-        ///
-        /// 分支重命名。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public UpdateBranchNameResponse UpdateBranchName(UpdateBranchNameRequest updateBranchNameRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(updateBranchNameRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/branch", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateBranchNameRequest);
-            var response = DoHttpRequestSync("PUT", request);
-            return JsonUtils.DeSerialize<UpdateBranchNameResponse>(response);
-        }
-
-        public SyncInvoker<UpdateBranchNameResponse> UpdateBranchNameInvoker(UpdateBranchNameRequest updateBranchNameRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(updateBranchNameRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/branch", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateBranchNameRequest);
-            return new SyncInvoker<UpdateBranchNameResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateBranchNameResponse>);
-        }
-        
-        /// <summary>
         /// 创建提交信息
         ///
         /// 创建提交信息
@@ -1286,6 +1123,98 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         }
         
         /// <summary>
+        /// 查看文件树
+        ///
+        /// 查看文件树
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListLogsTreeResponse ListLogsTree(ListLogsTreeRequest listLogsTreeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listLogsTreeRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/logs-tree", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLogsTreeRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var listLogsTreeResponse = JsonUtils.DeSerializeNull<ListLogsTreeResponse>(response);
+            listLogsTreeResponse.Body = JsonUtils.DeSerializeList<LogTreeDto>(response);
+            return listLogsTreeResponse;
+        }
+
+        public SyncInvoker<ListLogsTreeResponse> ListLogsTreeInvoker(ListLogsTreeRequest listLogsTreeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listLogsTreeRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/logs-tree", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLogsTreeRequest);
+            return new SyncInvoker<ListLogsTreeResponse>(this, "GET", request, response =>
+            {
+                var listLogsTreeResponse = JsonUtils.DeSerializeNull<ListLogsTreeResponse>(response);
+                listLogsTreeResponse.Body = JsonUtils.DeSerializeList<LogTreeDto>(response);
+                return listLogsTreeResponse;
+            });
+        }
+        
+        /// <summary>
+        /// 查看分支文件列表
+        ///
+        /// 查看分支文件列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListTreesResponse ListTrees(ListTreesRequest listTreesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listTreesRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/trees", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTreesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var listTreesResponse = JsonUtils.DeSerializeNull<ListTreesResponse>(response);
+            listTreesResponse.Body = JsonUtils.DeSerializeList<TreeObjectDto>(response);
+            return listTreesResponse;
+        }
+
+        public SyncInvoker<ListTreesResponse> ListTreesInvoker(ListTreesRequest listTreesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listTreesRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/trees", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTreesRequest);
+            return new SyncInvoker<ListTreesResponse>(this, "GET", request, response =>
+            {
+                var listTreesResponse = JsonUtils.DeSerializeNull<ListTreesResponse>(response);
+                listTreesResponse.Body = JsonUtils.DeSerializeList<TreeObjectDto>(response);
+                return listTreesResponse;
+            });
+        }
+        
+        /// <summary>
+        /// 文件重命名
+        ///
+        /// 文件重命名
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RenameFileResponse RenameFile(RenameFileRequest renameFileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(renameFileRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/rename-file", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", renameFileRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<RenameFileResponse>(response);
+        }
+
+        public SyncInvoker<RenameFileResponse> RenameFileInvoker(RenameFileRequest renameFileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(renameFileRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/rename-file", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", renameFileRequest);
+            return new SyncInvoker<RenameFileResponse>(this, "PUT", request, JsonUtils.DeSerialize<RenameFileResponse>);
+        }
+        
+        /// <summary>
         /// 查看文件属性与内容
         ///
         /// 查看文件属性与内容
@@ -1338,6 +1267,32 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         }
         
         /// <summary>
+        /// 获取仓库单个文件内容
+        ///
+        /// 获取仓库单个文件内容
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowFileRawResponse ShowFileRaw(ShowFileRawRequest showFileRawRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showFileRawRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/files/raw", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFileRawRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowFileRawResponse>(response);
+        }
+
+        public SyncInvoker<ShowFileRawResponse> ShowFileRawInvoker(ShowFileRawRequest showFileRawRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showFileRawRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/files/raw", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFileRawRequest);
+            return new SyncInvoker<ShowFileRawResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFileRawResponse>);
+        }
+        
+        /// <summary>
         /// 获取仓库默认分支的Readme文件内容
         ///
         /// 获取仓库默认分支的Readme文件内容
@@ -1387,124 +1342,6 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
             var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/file", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFileRequest);
             return new SyncInvoker<UpdateFileResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateFileResponse>);
-        }
-        
-        /// <summary>
-        /// 批量删除仓库文件推送权限
-        ///
-        /// 批量删除仓库文件推送权限
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public BatchDeleteRepositoryFilePushPermissionsResponse BatchDeleteRepositoryFilePushPermissions(BatchDeleteRepositoryFilePushPermissionsRequest batchDeleteRepositoryFilePushPermissionsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(batchDeleteRepositoryFilePushPermissionsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/file-push-permissions/batch-delete", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteRepositoryFilePushPermissionsRequest);
-            var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerializeNull<BatchDeleteRepositoryFilePushPermissionsResponse>(response);
-        }
-
-        public SyncInvoker<BatchDeleteRepositoryFilePushPermissionsResponse> BatchDeleteRepositoryFilePushPermissionsInvoker(BatchDeleteRepositoryFilePushPermissionsRequest batchDeleteRepositoryFilePushPermissionsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(batchDeleteRepositoryFilePushPermissionsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/file-push-permissions/batch-delete", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteRepositoryFilePushPermissionsRequest);
-            return new SyncInvoker<BatchDeleteRepositoryFilePushPermissionsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteRepositoryFilePushPermissionsResponse>);
-        }
-        
-        /// <summary>
-        /// 批量更新仓库文件推送权限
-        ///
-        /// 批量更新仓库文件推送权限
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public BatchUpdateRepositoryFilePushPermissionsResponse BatchUpdateRepositoryFilePushPermissions(BatchUpdateRepositoryFilePushPermissionsRequest batchUpdateRepositoryFilePushPermissionsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(batchUpdateRepositoryFilePushPermissionsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/file-push-permissions", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateRepositoryFilePushPermissionsRequest);
-            var response = DoHttpRequestSync("PUT", request);
-            var batchUpdateRepositoryFilePushPermissionsResponse = JsonUtils.DeSerializeNull<BatchUpdateRepositoryFilePushPermissionsResponse>(response);
-            batchUpdateRepositoryFilePushPermissionsResponse.Body = JsonUtils.DeSerializeList<RepositoryFilePushPermissionDto>(response);
-            return batchUpdateRepositoryFilePushPermissionsResponse;
-        }
-
-        public SyncInvoker<BatchUpdateRepositoryFilePushPermissionsResponse> BatchUpdateRepositoryFilePushPermissionsInvoker(BatchUpdateRepositoryFilePushPermissionsRequest batchUpdateRepositoryFilePushPermissionsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(batchUpdateRepositoryFilePushPermissionsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/file-push-permissions", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateRepositoryFilePushPermissionsRequest);
-            return new SyncInvoker<BatchUpdateRepositoryFilePushPermissionsResponse>(this, "PUT", request, response =>
-            {
-                var batchUpdateRepositoryFilePushPermissionsResponse = JsonUtils.DeSerializeNull<BatchUpdateRepositoryFilePushPermissionsResponse>(response);
-                batchUpdateRepositoryFilePushPermissionsResponse.Body = JsonUtils.DeSerializeList<RepositoryFilePushPermissionDto>(response);
-                return batchUpdateRepositoryFilePushPermissionsResponse;
-            });
-        }
-        
-        /// <summary>
-        /// 创建仓库文件推送权限
-        ///
-        /// 创建仓库文件推送权限
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public CreateFilePushPermissionResponse CreateFilePushPermission(CreateFilePushPermissionRequest createFilePushPermissionRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(createFilePushPermissionRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/file-push-permissions", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createFilePushPermissionRequest);
-            var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerialize<CreateFilePushPermissionResponse>(response);
-        }
-
-        public SyncInvoker<CreateFilePushPermissionResponse> CreateFilePushPermissionInvoker(CreateFilePushPermissionRequest createFilePushPermissionRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(createFilePushPermissionRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/file-push-permissions", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createFilePushPermissionRequest);
-            return new SyncInvoker<CreateFilePushPermissionResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateFilePushPermissionResponse>);
-        }
-        
-        /// <summary>
-        /// 获取仓库文件推送权限列表
-        ///
-        /// 获取仓库文件推送权限列表
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ListRepositoryFilePushPermissionsResponse ListRepositoryFilePushPermissions(ListRepositoryFilePushPermissionsRequest listRepositoryFilePushPermissionsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listRepositoryFilePushPermissionsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/file-push-permissions", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRepositoryFilePushPermissionsRequest);
-            var response = DoHttpRequestSync("GET", request);
-            var listRepositoryFilePushPermissionsResponse = JsonUtils.DeSerializeNull<ListRepositoryFilePushPermissionsResponse>(response);
-            listRepositoryFilePushPermissionsResponse.Body = JsonUtils.DeSerializeList<RepositoryFilePushPermissionDto>(response);
-            return listRepositoryFilePushPermissionsResponse;
-        }
-
-        public SyncInvoker<ListRepositoryFilePushPermissionsResponse> ListRepositoryFilePushPermissionsInvoker(ListRepositoryFilePushPermissionsRequest listRepositoryFilePushPermissionsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listRepositoryFilePushPermissionsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/file-push-permissions", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRepositoryFilePushPermissionsRequest);
-            return new SyncInvoker<ListRepositoryFilePushPermissionsResponse>(this, "GET", request, response =>
-            {
-                var listRepositoryFilePushPermissionsResponse = JsonUtils.DeSerializeNull<ListRepositoryFilePushPermissionsResponse>(response);
-                listRepositoryFilePushPermissionsResponse.Body = JsonUtils.DeSerializeList<RepositoryFilePushPermissionDto>(response);
-                return listRepositoryFilePushPermissionsResponse;
-            });
         }
         
         /// <summary>
@@ -1812,101 +1649,35 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         }
         
         /// <summary>
-        /// 获取用户的个人访问令牌
+        /// 获取项目下当前用户有管理权限的代码组列表
         ///
-        /// 获取用户的个人访问令牌
+        /// 获取项目下当前用户有管理权限的代码组列表
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
-        public ListImpersonationTokensResponse ListImpersonationTokens(ListImpersonationTokensRequest listImpersonationTokensRequest)
+        public ListManageableGroupsResponse ListManageableGroups(ListManageableGroupsRequest listManageableGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listImpersonationTokensRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/users/impersonation-tokens", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listImpersonationTokensRequest);
+            if (StringUtils.TryConvertToNonEmptyString(listManageableGroupsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_id}/manageable-groups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listManageableGroupsRequest);
             var response = DoHttpRequestSync("GET", request);
-            var listImpersonationTokensResponse = JsonUtils.DeSerializeNull<ListImpersonationTokensResponse>(response);
-            listImpersonationTokensResponse.Body = JsonUtils.DeSerializeList<ImpersonationToken>(response);
-            return listImpersonationTokensResponse;
+            var listManageableGroupsResponse = JsonUtils.DeSerializeNull<ListManageableGroupsResponse>(response);
+            listManageableGroupsResponse.Body = JsonUtils.DeSerializeList<ManageableGroupDto>(response);
+            return listManageableGroupsResponse;
         }
 
-        public SyncInvoker<ListImpersonationTokensResponse> ListImpersonationTokensInvoker(ListImpersonationTokensRequest listImpersonationTokensRequest)
+        public SyncInvoker<ListManageableGroupsResponse> ListManageableGroupsInvoker(ListManageableGroupsRequest listManageableGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listImpersonationTokensRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/users/impersonation-tokens", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listImpersonationTokensRequest);
-            return new SyncInvoker<ListImpersonationTokensResponse>(this, "GET", request, response =>
+            if (StringUtils.TryConvertToNonEmptyString(listManageableGroupsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_id}/manageable-groups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listManageableGroupsRequest);
+            return new SyncInvoker<ListManageableGroupsResponse>(this, "GET", request, response =>
             {
-                var listImpersonationTokensResponse = JsonUtils.DeSerializeNull<ListImpersonationTokensResponse>(response);
-                listImpersonationTokensResponse.Body = JsonUtils.DeSerializeList<ImpersonationToken>(response);
-                return listImpersonationTokensResponse;
-            });
-        }
-        
-        /// <summary>
-        /// 获取项目下成员列表
-        ///
-        /// 获取项目下成员列表
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ListProductPermissionResourcesGrantedUsersResponse ListProductPermissionResourcesGrantedUsers(ListProductPermissionResourcesGrantedUsersRequest listProductPermissionResourcesGrantedUsersRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listProductPermissionResourcesGrantedUsersRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/members", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProductPermissionResourcesGrantedUsersRequest);
-            var response = DoHttpRequestSync("GET", request);
-            var listProductPermissionResourcesGrantedUsersResponse = JsonUtils.DeSerializeNull<ListProductPermissionResourcesGrantedUsersResponse>(response);
-            listProductPermissionResourcesGrantedUsersResponse.Body = JsonUtils.DeSerializeList<GrantedUsersDto>(response);
-            return listProductPermissionResourcesGrantedUsersResponse;
-        }
-
-        public SyncInvoker<ListProductPermissionResourcesGrantedUsersResponse> ListProductPermissionResourcesGrantedUsersInvoker(ListProductPermissionResourcesGrantedUsersRequest listProductPermissionResourcesGrantedUsersRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listProductPermissionResourcesGrantedUsersRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/members", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProductPermissionResourcesGrantedUsersRequest);
-            return new SyncInvoker<ListProductPermissionResourcesGrantedUsersResponse>(this, "GET", request, response =>
-            {
-                var listProductPermissionResourcesGrantedUsersResponse = JsonUtils.DeSerializeNull<ListProductPermissionResourcesGrantedUsersResponse>(response);
-                listProductPermissionResourcesGrantedUsersResponse.Body = JsonUtils.DeSerializeList<GrantedUsersDto>(response);
-                return listProductPermissionResourcesGrantedUsersResponse;
-            });
-        }
-        
-        /// <summary>
-        /// 获取项目下的代码组和仓库列表
-        ///
-        /// 获取项目下的代码组和仓库列表
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ListProjectSubgroupsAndRepositoriesResponse ListProjectSubgroupsAndRepositories(ListProjectSubgroupsAndRepositoriesRequest listProjectSubgroupsAndRepositoriesRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listProjectSubgroupsAndRepositoriesRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/subgroups-and-repositories", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectSubgroupsAndRepositoriesRequest);
-            var response = DoHttpRequestSync("GET", request);
-            var listProjectSubgroupsAndRepositoriesResponse = JsonUtils.DeSerializeNull<ListProjectSubgroupsAndRepositoriesResponse>(response);
-            listProjectSubgroupsAndRepositoriesResponse.Body = JsonUtils.DeSerializeList<SubgroupAndProjectBaseDto>(response);
-            return listProjectSubgroupsAndRepositoriesResponse;
-        }
-
-        public SyncInvoker<ListProjectSubgroupsAndRepositoriesResponse> ListProjectSubgroupsAndRepositoriesInvoker(ListProjectSubgroupsAndRepositoriesRequest listProjectSubgroupsAndRepositoriesRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listProjectSubgroupsAndRepositoriesRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/subgroups-and-repositories", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectSubgroupsAndRepositoriesRequest);
-            return new SyncInvoker<ListProjectSubgroupsAndRepositoriesResponse>(this, "GET", request, response =>
-            {
-                var listProjectSubgroupsAndRepositoriesResponse = JsonUtils.DeSerializeNull<ListProjectSubgroupsAndRepositoriesResponse>(response);
-                listProjectSubgroupsAndRepositoriesResponse.Body = JsonUtils.DeSerializeList<SubgroupAndProjectBaseDto>(response);
-                return listProjectSubgroupsAndRepositoriesResponse;
+                var listManageableGroupsResponse = JsonUtils.DeSerializeNull<ListManageableGroupsResponse>(response);
+                listManageableGroupsResponse.Body = JsonUtils.DeSerializeList<ManageableGroupDto>(response);
+                return listManageableGroupsResponse;
             });
         }
         
@@ -2128,91 +1899,6 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         }
         
         /// <summary>
-        /// 获取指定项目的基本设置信息
-        ///
-        /// 获取指定项目的基本设置信息
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ShowProjectGeneralPolicyResponse ShowProjectGeneralPolicy(ShowProjectGeneralPolicyRequest showProjectGeneralPolicyRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(showProjectGeneralPolicyRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/policies/general", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectGeneralPolicyRequest);
-            var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ShowProjectGeneralPolicyResponse>(response);
-        }
-
-        public SyncInvoker<ShowProjectGeneralPolicyResponse> ShowProjectGeneralPolicyInvoker(ShowProjectGeneralPolicyRequest showProjectGeneralPolicyRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(showProjectGeneralPolicyRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/policies/general", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectGeneralPolicyRequest);
-            return new SyncInvoker<ShowProjectGeneralPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowProjectGeneralPolicyResponse>);
-        }
-        
-        /// <summary>
-        /// 获取项目成员设置
-        ///
-        /// 获取项目成员设置
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ShowProjectMemberSettingResponse ShowProjectMemberSetting(ShowProjectMemberSettingRequest showProjectMemberSettingRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(showProjectMemberSettingRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/member-setting", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectMemberSettingRequest);
-            var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ShowProjectMemberSettingResponse>(response);
-        }
-
-        public SyncInvoker<ShowProjectMemberSettingResponse> ShowProjectMemberSettingInvoker(ShowProjectMemberSettingRequest showProjectMemberSettingRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(showProjectMemberSettingRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/member-setting", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectMemberSettingRequest);
-            return new SyncInvoker<ShowProjectMemberSettingResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowProjectMemberSettingResponse>);
-        }
-        
-        /// <summary>
-        /// 获取项目继承设置项
-        ///
-        /// 获取项目继承设置项
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ShowProjectSettingsInheritCfgResponse ShowProjectSettingsInheritCfg(ShowProjectSettingsInheritCfgRequest showProjectSettingsInheritCfgRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(showProjectSettingsInheritCfgRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/settings-inherit-cfg", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectSettingsInheritCfgRequest);
-            var response = DoHttpRequestSync("GET", request);
-            var showProjectSettingsInheritCfgResponse = JsonUtils.DeSerializeNull<ShowProjectSettingsInheritCfgResponse>(response);
-            showProjectSettingsInheritCfgResponse.Body = JsonUtils.DeSerializeList<ProjectSettingsInheritCfgDto>(response);
-            return showProjectSettingsInheritCfgResponse;
-        }
-
-        public SyncInvoker<ShowProjectSettingsInheritCfgResponse> ShowProjectSettingsInheritCfgInvoker(ShowProjectSettingsInheritCfgRequest showProjectSettingsInheritCfgRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(showProjectSettingsInheritCfgRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/settings-inherit-cfg", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectSettingsInheritCfgRequest);
-            return new SyncInvoker<ShowProjectSettingsInheritCfgResponse>(this, "GET", request, response =>
-            {
-                var showProjectSettingsInheritCfgResponse = JsonUtils.DeSerializeNull<ShowProjectSettingsInheritCfgResponse>(response);
-                showProjectSettingsInheritCfgResponse.Body = JsonUtils.DeSerializeList<ProjectSettingsInheritCfgDto>(response);
-                return showProjectSettingsInheritCfgResponse;
-            });
-        }
-        
-        /// <summary>
         /// 移交代码组
         ///
         /// 移交代码组
@@ -2288,183 +1974,6 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
             var urlPath = HttpUtils.AddUrlPath("/v4/groups/{group_id}/watermark", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateGroupWatermarkRequest);
             return new SyncInvoker<UpdateGroupWatermarkResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateGroupWatermarkResponse>);
-        }
-        
-        /// <summary>
-        /// 更新项目继承设置项
-        ///
-        /// 更新项目继承设置项
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public UpdateProjectSettingsInheritCfgResponse UpdateProjectSettingsInheritCfg(UpdateProjectSettingsInheritCfgRequest updateProjectSettingsInheritCfgRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(updateProjectSettingsInheritCfgRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/settings-inherit-cfg", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateProjectSettingsInheritCfgRequest);
-            var response = DoHttpRequestSync("PUT", request);
-            var updateProjectSettingsInheritCfgResponse = JsonUtils.DeSerializeNull<UpdateProjectSettingsInheritCfgResponse>(response);
-            updateProjectSettingsInheritCfgResponse.Body = JsonUtils.DeSerializeList<ProjectSettingsInheritCfgDto>(response);
-            return updateProjectSettingsInheritCfgResponse;
-        }
-
-        public SyncInvoker<UpdateProjectSettingsInheritCfgResponse> UpdateProjectSettingsInheritCfgInvoker(UpdateProjectSettingsInheritCfgRequest updateProjectSettingsInheritCfgRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(updateProjectSettingsInheritCfgRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/settings-inherit-cfg", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateProjectSettingsInheritCfgRequest);
-            return new SyncInvoker<UpdateProjectSettingsInheritCfgResponse>(this, "PUT", request, response =>
-            {
-                var updateProjectSettingsInheritCfgResponse = JsonUtils.DeSerializeNull<UpdateProjectSettingsInheritCfgResponse>(response);
-                updateProjectSettingsInheritCfgResponse.Body = JsonUtils.DeSerializeList<ProjectSettingsInheritCfgDto>(response);
-                return updateProjectSettingsInheritCfgResponse;
-            });
-        }
-        
-        /// <summary>
-        /// 创建仓库标签
-        ///
-        /// 创建仓库标签
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public CreateRepositoryLabelResponse CreateRepositoryLabel(CreateRepositoryLabelRequest createRepositoryLabelRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(createRepositoryLabelRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/labels", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRepositoryLabelRequest);
-            var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerialize<CreateRepositoryLabelResponse>(response);
-        }
-
-        public SyncInvoker<CreateRepositoryLabelResponse> CreateRepositoryLabelInvoker(CreateRepositoryLabelRequest createRepositoryLabelRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(createRepositoryLabelRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/labels", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRepositoryLabelRequest);
-            return new SyncInvoker<CreateRepositoryLabelResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateRepositoryLabelResponse>);
-        }
-        
-        /// <summary>
-        /// 创建仓库系统标签
-        ///
-        /// 创建仓库系统标签
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public CreateRepositorySystemLabelsResponse CreateRepositorySystemLabels(CreateRepositorySystemLabelsRequest createRepositorySystemLabelsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(createRepositorySystemLabelsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/system-labels", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRepositorySystemLabelsRequest);
-            var response = DoHttpRequestSync("POST", request);
-            var createRepositorySystemLabelsResponse = JsonUtils.DeSerializeNull<CreateRepositorySystemLabelsResponse>(response);
-            createRepositorySystemLabelsResponse.Body = JsonUtils.DeSerializeList<LabelDetailDto>(response);
-            return createRepositorySystemLabelsResponse;
-        }
-
-        public SyncInvoker<CreateRepositorySystemLabelsResponse> CreateRepositorySystemLabelsInvoker(CreateRepositorySystemLabelsRequest createRepositorySystemLabelsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(createRepositorySystemLabelsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/system-labels", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRepositorySystemLabelsRequest);
-            return new SyncInvoker<CreateRepositorySystemLabelsResponse>(this, "POST", request, response =>
-            {
-                var createRepositorySystemLabelsResponse = JsonUtils.DeSerializeNull<CreateRepositorySystemLabelsResponse>(response);
-                createRepositorySystemLabelsResponse.Body = JsonUtils.DeSerializeList<LabelDetailDto>(response);
-                return createRepositorySystemLabelsResponse;
-            });
-        }
-        
-        /// <summary>
-        /// 删除仓库标签
-        ///
-        /// 删除仓库标签
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public DeleteRepositoryLabelResponse DeleteRepositoryLabel(DeleteRepositoryLabelRequest deleteRepositoryLabelRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(deleteRepositoryLabelRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/label", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRepositoryLabelRequest);
-            var response = DoHttpRequestSync("DELETE", request);
-            return JsonUtils.DeSerializeNull<DeleteRepositoryLabelResponse>(response);
-        }
-
-        public SyncInvoker<DeleteRepositoryLabelResponse> DeleteRepositoryLabelInvoker(DeleteRepositoryLabelRequest deleteRepositoryLabelRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(deleteRepositoryLabelRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/label", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRepositoryLabelRequest);
-            return new SyncInvoker<DeleteRepositoryLabelResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteRepositoryLabelResponse>);
-        }
-        
-        /// <summary>
-        /// 获取仓库标签列表
-        ///
-        /// 获取仓库标签列表
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ListRepositoryLabelsResponse ListRepositoryLabels(ListRepositoryLabelsRequest listRepositoryLabelsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listRepositoryLabelsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/labels", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRepositoryLabelsRequest);
-            var response = DoHttpRequestSync("GET", request);
-            var listRepositoryLabelsResponse = JsonUtils.DeSerializeNull<ListRepositoryLabelsResponse>(response);
-            listRepositoryLabelsResponse.Body = JsonUtils.DeSerializeList<LabelBasicDto>(response);
-            return listRepositoryLabelsResponse;
-        }
-
-        public SyncInvoker<ListRepositoryLabelsResponse> ListRepositoryLabelsInvoker(ListRepositoryLabelsRequest listRepositoryLabelsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listRepositoryLabelsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/labels", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRepositoryLabelsRequest);
-            return new SyncInvoker<ListRepositoryLabelsResponse>(this, "GET", request, response =>
-            {
-                var listRepositoryLabelsResponse = JsonUtils.DeSerializeNull<ListRepositoryLabelsResponse>(response);
-                listRepositoryLabelsResponse.Body = JsonUtils.DeSerializeList<LabelBasicDto>(response);
-                return listRepositoryLabelsResponse;
-            });
-        }
-        
-        /// <summary>
-        /// 修改仓库标签
-        ///
-        /// 修改仓库标签
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public UpdateRepositoryLabelResponse UpdateRepositoryLabel(UpdateRepositoryLabelRequest updateRepositoryLabelRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(updateRepositoryLabelRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/label", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRepositoryLabelRequest);
-            var response = DoHttpRequestSync("PUT", request);
-            return JsonUtils.DeSerialize<UpdateRepositoryLabelResponse>(response);
-        }
-
-        public SyncInvoker<UpdateRepositoryLabelResponse> UpdateRepositoryLabelInvoker(UpdateRepositoryLabelRequest updateRepositoryLabelRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(updateRepositoryLabelRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/label", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRepositoryLabelRequest);
-            return new SyncInvoker<UpdateRepositoryLabelResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateRepositoryLabelResponse>);
         }
         
         /// <summary>
@@ -2563,6 +2072,39 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
                 var listMembersResponse = JsonUtils.DeSerializeNull<ListMembersResponse>(response);
                 listMembersResponse.Body = JsonUtils.DeSerializeList<RepositoryMemberDto>(response);
                 return listMembersResponse;
+            });
+        }
+        
+        /// <summary>
+        /// 获取项目下成员列表
+        ///
+        /// 获取项目下成员列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListProductPermissionResourcesGrantedUsersResponse ListProductPermissionResourcesGrantedUsers(ListProductPermissionResourcesGrantedUsersRequest listProductPermissionResourcesGrantedUsersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listProductPermissionResourcesGrantedUsersRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/members", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProductPermissionResourcesGrantedUsersRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var listProductPermissionResourcesGrantedUsersResponse = JsonUtils.DeSerializeNull<ListProductPermissionResourcesGrantedUsersResponse>(response);
+            listProductPermissionResourcesGrantedUsersResponse.Body = JsonUtils.DeSerializeList<GrantedUsersDto>(response);
+            return listProductPermissionResourcesGrantedUsersResponse;
+        }
+
+        public SyncInvoker<ListProductPermissionResourcesGrantedUsersResponse> ListProductPermissionResourcesGrantedUsersInvoker(ListProductPermissionResourcesGrantedUsersRequest listProductPermissionResourcesGrantedUsersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listProductPermissionResourcesGrantedUsersRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/members", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProductPermissionResourcesGrantedUsersRequest);
+            return new SyncInvoker<ListProductPermissionResourcesGrantedUsersResponse>(this, "GET", request, response =>
+            {
+                var listProductPermissionResourcesGrantedUsersResponse = JsonUtils.DeSerializeNull<ListProductPermissionResourcesGrantedUsersResponse>(response);
+                listProductPermissionResourcesGrantedUsersResponse.Body = JsonUtils.DeSerializeList<GrantedUsersDto>(response);
+                return listProductPermissionResourcesGrantedUsersResponse;
             });
         }
         
@@ -3133,6 +2675,41 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         }
         
         /// <summary>
+        /// 获取提交关联的合并请求
+        ///
+        /// 获取提交关联的合并请求
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListCommitAssociatedMergeRequestsResponse ListCommitAssociatedMergeRequests(ListCommitAssociatedMergeRequestsRequest listCommitAssociatedMergeRequestsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listCommitAssociatedMergeRequestsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            if (StringUtils.TryConvertToNonEmptyString(listCommitAssociatedMergeRequestsRequest.Sha, out var valueOfSha)) urlParam.Add("sha", valueOfSha);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/commits/{sha}/merge-requests", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCommitAssociatedMergeRequestsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var listCommitAssociatedMergeRequestsResponse = JsonUtils.DeSerializeNull<ListCommitAssociatedMergeRequestsResponse>(response);
+            listCommitAssociatedMergeRequestsResponse.Body = JsonUtils.DeSerializeList<CommitMergeRequestDto>(response);
+            return listCommitAssociatedMergeRequestsResponse;
+        }
+
+        public SyncInvoker<ListCommitAssociatedMergeRequestsResponse> ListCommitAssociatedMergeRequestsInvoker(ListCommitAssociatedMergeRequestsRequest listCommitAssociatedMergeRequestsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listCommitAssociatedMergeRequestsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            if (StringUtils.TryConvertToNonEmptyString(listCommitAssociatedMergeRequestsRequest.Sha, out var valueOfSha)) urlParam.Add("sha", valueOfSha);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/commits/{sha}/merge-requests", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCommitAssociatedMergeRequestsRequest);
+            return new SyncInvoker<ListCommitAssociatedMergeRequestsResponse>(this, "GET", request, response =>
+            {
+                var listCommitAssociatedMergeRequestsResponse = JsonUtils.DeSerializeNull<ListCommitAssociatedMergeRequestsResponse>(response);
+                listCommitAssociatedMergeRequestsResponse.Body = JsonUtils.DeSerializeList<CommitMergeRequestDto>(response);
+                return listCommitAssociatedMergeRequestsResponse;
+            });
+        }
+        
+        /// <summary>
         /// 获取检视意见模板列表
         ///
         /// 获取检视意见模板列表
@@ -3518,6 +3095,41 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         }
         
         /// <summary>
+        /// 获取合并请求参与者
+        ///
+        /// 获取合并请求参与者
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListMergeRequestParticipantsResponse ListMergeRequestParticipants(ListMergeRequestParticipantsRequest listMergeRequestParticipantsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listMergeRequestParticipantsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            if (StringUtils.TryConvertToNonEmptyString(listMergeRequestParticipantsRequest.MergeRequestIid, out var valueOfMergeRequestIid)) urlParam.Add("merge_request_iid", valueOfMergeRequestIid);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/merge-requests/{merge_request_iid}/participants", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMergeRequestParticipantsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var listMergeRequestParticipantsResponse = JsonUtils.DeSerializeNull<ListMergeRequestParticipantsResponse>(response);
+            listMergeRequestParticipantsResponse.Body = JsonUtils.DeSerializeList<UserBasicDto>(response);
+            return listMergeRequestParticipantsResponse;
+        }
+
+        public SyncInvoker<ListMergeRequestParticipantsResponse> ListMergeRequestParticipantsInvoker(ListMergeRequestParticipantsRequest listMergeRequestParticipantsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listMergeRequestParticipantsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            if (StringUtils.TryConvertToNonEmptyString(listMergeRequestParticipantsRequest.MergeRequestIid, out var valueOfMergeRequestIid)) urlParam.Add("merge_request_iid", valueOfMergeRequestIid);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/merge-requests/{merge_request_iid}/participants", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMergeRequestParticipantsRequest);
+            return new SyncInvoker<ListMergeRequestParticipantsResponse>(this, "GET", request, response =>
+            {
+                var listMergeRequestParticipantsResponse = JsonUtils.DeSerializeNull<ListMergeRequestParticipantsResponse>(response);
+                listMergeRequestParticipantsResponse.Body = JsonUtils.DeSerializeList<UserBasicDto>(response);
+                return listMergeRequestParticipantsResponse;
+            });
+        }
+        
+        /// <summary>
         /// 获取合并请求检视人列表
         ///
         /// 获取合并请求检视人列表
@@ -3635,6 +3247,37 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
             var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/merge-requests/{merge_request_iid}/versions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMergeRequestVersionsRequest);
             return new SyncInvoker<ListMergeRequestVersionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListMergeRequestVersionsResponse>);
+        }
+        
+        /// <summary>
+        /// 获取个人首页mr列表
+        ///
+        /// 获取个人首页mr列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListPersonalMergeRequestsResponse ListPersonalMergeRequests(ListPersonalMergeRequestsRequest listPersonalMergeRequestsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v4/merge-requests", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPersonalMergeRequestsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var listPersonalMergeRequestsResponse = JsonUtils.DeSerializeNull<ListPersonalMergeRequestsResponse>(response);
+            listPersonalMergeRequestsResponse.Body = JsonUtils.DeSerializeList<MergeRequestListBasicDto>(response);
+            return listPersonalMergeRequestsResponse;
+        }
+
+        public SyncInvoker<ListPersonalMergeRequestsResponse> ListPersonalMergeRequestsInvoker(ListPersonalMergeRequestsRequest listPersonalMergeRequestsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v4/merge-requests", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPersonalMergeRequestsRequest);
+            return new SyncInvoker<ListPersonalMergeRequestsResponse>(this, "GET", request, response =>
+            {
+                var listPersonalMergeRequestsResponse = JsonUtils.DeSerializeNull<ListPersonalMergeRequestsResponse>(response);
+                listPersonalMergeRequestsResponse.Body = JsonUtils.DeSerializeList<MergeRequestListBasicDto>(response);
+                return listPersonalMergeRequestsResponse;
+            });
         }
         
         /// <summary>
@@ -4264,6 +3907,39 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         }
         
         /// <summary>
+        /// 获取仓库合并请求统计数据
+        ///
+        /// 获取仓库合并请求统计数据
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowRepositoryMergeRequestsStatisticResponse ShowRepositoryMergeRequestsStatistic(ShowRepositoryMergeRequestsStatisticRequest showRepositoryMergeRequestsStatisticRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showRepositoryMergeRequestsStatisticRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/merge-requests/statistic", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRepositoryMergeRequestsStatisticRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var showRepositoryMergeRequestsStatisticResponse = JsonUtils.DeSerializeNull<ShowRepositoryMergeRequestsStatisticResponse>(response);
+            showRepositoryMergeRequestsStatisticResponse.Body = JsonUtils.DeSerializeList<MergeRequestStatisticDto>(response);
+            return showRepositoryMergeRequestsStatisticResponse;
+        }
+
+        public SyncInvoker<ShowRepositoryMergeRequestsStatisticResponse> ShowRepositoryMergeRequestsStatisticInvoker(ShowRepositoryMergeRequestsStatisticRequest showRepositoryMergeRequestsStatisticRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showRepositoryMergeRequestsStatisticRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/merge-requests/statistic", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRepositoryMergeRequestsStatisticRequest);
+            return new SyncInvoker<ShowRepositoryMergeRequestsStatisticResponse>(this, "GET", request, response =>
+            {
+                var showRepositoryMergeRequestsStatisticResponse = JsonUtils.DeSerializeNull<ShowRepositoryMergeRequestsStatisticResponse>(response);
+                showRepositoryMergeRequestsStatisticResponse.Body = JsonUtils.DeSerializeList<MergeRequestStatisticDto>(response);
+                return showRepositoryMergeRequestsStatisticResponse;
+            });
+        }
+        
+        /// <summary>
         /// 更新代码组合并请求审核设置
         ///
         /// 更新代码组合并请求审核设置
@@ -4584,136 +4260,120 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         }
         
         /// <summary>
-        /// 获取提交关联的合并请求
+        /// 批量删除仓库文件推送权限
         ///
-        /// 获取提交关联的合并请求
+        /// 批量删除仓库文件推送权限
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
-        public ListCommitAssociatedMergeRequestsResponse ListCommitAssociatedMergeRequests(ListCommitAssociatedMergeRequestsRequest listCommitAssociatedMergeRequestsRequest)
+        public BatchDeleteRepositoryFilePushPermissionsResponse BatchDeleteRepositoryFilePushPermissions(BatchDeleteRepositoryFilePushPermissionsRequest batchDeleteRepositoryFilePushPermissionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listCommitAssociatedMergeRequestsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            if (StringUtils.TryConvertToNonEmptyString(listCommitAssociatedMergeRequestsRequest.Sha, out var valueOfSha)) urlParam.Add("sha", valueOfSha);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/commits/{sha}/merge-requests", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCommitAssociatedMergeRequestsRequest);
-            var response = DoHttpRequestSync("GET", request);
-            var listCommitAssociatedMergeRequestsResponse = JsonUtils.DeSerializeNull<ListCommitAssociatedMergeRequestsResponse>(response);
-            listCommitAssociatedMergeRequestsResponse.Body = JsonUtils.DeSerializeList<CommitMergeRequestDto>(response);
-            return listCommitAssociatedMergeRequestsResponse;
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteRepositoryFilePushPermissionsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/file-push-permissions/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteRepositoryFilePushPermissionsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<BatchDeleteRepositoryFilePushPermissionsResponse>(response);
         }
 
-        public SyncInvoker<ListCommitAssociatedMergeRequestsResponse> ListCommitAssociatedMergeRequestsInvoker(ListCommitAssociatedMergeRequestsRequest listCommitAssociatedMergeRequestsRequest)
+        public SyncInvoker<BatchDeleteRepositoryFilePushPermissionsResponse> BatchDeleteRepositoryFilePushPermissionsInvoker(BatchDeleteRepositoryFilePushPermissionsRequest batchDeleteRepositoryFilePushPermissionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listCommitAssociatedMergeRequestsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            if (StringUtils.TryConvertToNonEmptyString(listCommitAssociatedMergeRequestsRequest.Sha, out var valueOfSha)) urlParam.Add("sha", valueOfSha);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/commits/{sha}/merge-requests", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCommitAssociatedMergeRequestsRequest);
-            return new SyncInvoker<ListCommitAssociatedMergeRequestsResponse>(this, "GET", request, response =>
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteRepositoryFilePushPermissionsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/file-push-permissions/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteRepositoryFilePushPermissionsRequest);
+            return new SyncInvoker<BatchDeleteRepositoryFilePushPermissionsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteRepositoryFilePushPermissionsResponse>);
+        }
+        
+        /// <summary>
+        /// 批量更新仓库文件推送权限
+        ///
+        /// 批量更新仓库文件推送权限
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchUpdateRepositoryFilePushPermissionsResponse BatchUpdateRepositoryFilePushPermissions(BatchUpdateRepositoryFilePushPermissionsRequest batchUpdateRepositoryFilePushPermissionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchUpdateRepositoryFilePushPermissionsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/file-push-permissions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateRepositoryFilePushPermissionsRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            var batchUpdateRepositoryFilePushPermissionsResponse = JsonUtils.DeSerializeNull<BatchUpdateRepositoryFilePushPermissionsResponse>(response);
+            batchUpdateRepositoryFilePushPermissionsResponse.Body = JsonUtils.DeSerializeList<RepositoryFilePushPermissionDto>(response);
+            return batchUpdateRepositoryFilePushPermissionsResponse;
+        }
+
+        public SyncInvoker<BatchUpdateRepositoryFilePushPermissionsResponse> BatchUpdateRepositoryFilePushPermissionsInvoker(BatchUpdateRepositoryFilePushPermissionsRequest batchUpdateRepositoryFilePushPermissionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchUpdateRepositoryFilePushPermissionsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/file-push-permissions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateRepositoryFilePushPermissionsRequest);
+            return new SyncInvoker<BatchUpdateRepositoryFilePushPermissionsResponse>(this, "PUT", request, response =>
             {
-                var listCommitAssociatedMergeRequestsResponse = JsonUtils.DeSerializeNull<ListCommitAssociatedMergeRequestsResponse>(response);
-                listCommitAssociatedMergeRequestsResponse.Body = JsonUtils.DeSerializeList<CommitMergeRequestDto>(response);
-                return listCommitAssociatedMergeRequestsResponse;
+                var batchUpdateRepositoryFilePushPermissionsResponse = JsonUtils.DeSerializeNull<BatchUpdateRepositoryFilePushPermissionsResponse>(response);
+                batchUpdateRepositoryFilePushPermissionsResponse.Body = JsonUtils.DeSerializeList<RepositoryFilePushPermissionDto>(response);
+                return batchUpdateRepositoryFilePushPermissionsResponse;
             });
         }
         
         /// <summary>
-        /// 获取个人首页mr列表
+        /// 创建仓库文件推送权限
         ///
-        /// 获取个人首页mr列表
+        /// 创建仓库文件推送权限
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
-        public ListPersonalMergeRequestsResponse ListPersonalMergeRequests(ListPersonalMergeRequestsRequest listPersonalMergeRequestsRequest)
+        public CreateFilePushPermissionResponse CreateFilePushPermission(CreateFilePushPermissionRequest createFilePushPermissionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v4/merge-requests", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPersonalMergeRequestsRequest);
-            var response = DoHttpRequestSync("GET", request);
-            var listPersonalMergeRequestsResponse = JsonUtils.DeSerializeNull<ListPersonalMergeRequestsResponse>(response);
-            listPersonalMergeRequestsResponse.Body = JsonUtils.DeSerializeList<MergeRequestListBasicDto>(response);
-            return listPersonalMergeRequestsResponse;
+            if (StringUtils.TryConvertToNonEmptyString(createFilePushPermissionRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/file-push-permissions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createFilePushPermissionRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateFilePushPermissionResponse>(response);
         }
 
-        public SyncInvoker<ListPersonalMergeRequestsResponse> ListPersonalMergeRequestsInvoker(ListPersonalMergeRequestsRequest listPersonalMergeRequestsRequest)
+        public SyncInvoker<CreateFilePushPermissionResponse> CreateFilePushPermissionInvoker(CreateFilePushPermissionRequest createFilePushPermissionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v4/merge-requests", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPersonalMergeRequestsRequest);
-            return new SyncInvoker<ListPersonalMergeRequestsResponse>(this, "GET", request, response =>
-            {
-                var listPersonalMergeRequestsResponse = JsonUtils.DeSerializeNull<ListPersonalMergeRequestsResponse>(response);
-                listPersonalMergeRequestsResponse.Body = JsonUtils.DeSerializeList<MergeRequestListBasicDto>(response);
-                return listPersonalMergeRequestsResponse;
-            });
+            if (StringUtils.TryConvertToNonEmptyString(createFilePushPermissionRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/file-push-permissions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createFilePushPermissionRequest);
+            return new SyncInvoker<CreateFilePushPermissionResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateFilePushPermissionResponse>);
         }
         
         /// <summary>
-        /// 获取仓库合并请求统计数据
+        /// 获取仓库文件推送权限列表
         ///
-        /// 获取仓库合并请求统计数据
+        /// 获取仓库文件推送权限列表
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
-        public ShowRepositoryMergeRequestsStatisticResponse ShowRepositoryMergeRequestsStatistic(ShowRepositoryMergeRequestsStatisticRequest showRepositoryMergeRequestsStatisticRequest)
+        public ListRepositoryFilePushPermissionsResponse ListRepositoryFilePushPermissions(ListRepositoryFilePushPermissionsRequest listRepositoryFilePushPermissionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(showRepositoryMergeRequestsStatisticRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/merge-requests/statistic", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRepositoryMergeRequestsStatisticRequest);
+            if (StringUtils.TryConvertToNonEmptyString(listRepositoryFilePushPermissionsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/file-push-permissions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRepositoryFilePushPermissionsRequest);
             var response = DoHttpRequestSync("GET", request);
-            var showRepositoryMergeRequestsStatisticResponse = JsonUtils.DeSerializeNull<ShowRepositoryMergeRequestsStatisticResponse>(response);
-            showRepositoryMergeRequestsStatisticResponse.Body = JsonUtils.DeSerializeList<MergeRequestStatisticDto>(response);
-            return showRepositoryMergeRequestsStatisticResponse;
+            var listRepositoryFilePushPermissionsResponse = JsonUtils.DeSerializeNull<ListRepositoryFilePushPermissionsResponse>(response);
+            listRepositoryFilePushPermissionsResponse.Body = JsonUtils.DeSerializeList<RepositoryFilePushPermissionDto>(response);
+            return listRepositoryFilePushPermissionsResponse;
         }
 
-        public SyncInvoker<ShowRepositoryMergeRequestsStatisticResponse> ShowRepositoryMergeRequestsStatisticInvoker(ShowRepositoryMergeRequestsStatisticRequest showRepositoryMergeRequestsStatisticRequest)
+        public SyncInvoker<ListRepositoryFilePushPermissionsResponse> ListRepositoryFilePushPermissionsInvoker(ListRepositoryFilePushPermissionsRequest listRepositoryFilePushPermissionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(showRepositoryMergeRequestsStatisticRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/merge-requests/statistic", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRepositoryMergeRequestsStatisticRequest);
-            return new SyncInvoker<ShowRepositoryMergeRequestsStatisticResponse>(this, "GET", request, response =>
+            if (StringUtils.TryConvertToNonEmptyString(listRepositoryFilePushPermissionsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/file-push-permissions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRepositoryFilePushPermissionsRequest);
+            return new SyncInvoker<ListRepositoryFilePushPermissionsResponse>(this, "GET", request, response =>
             {
-                var showRepositoryMergeRequestsStatisticResponse = JsonUtils.DeSerializeNull<ShowRepositoryMergeRequestsStatisticResponse>(response);
-                showRepositoryMergeRequestsStatisticResponse.Body = JsonUtils.DeSerializeList<MergeRequestStatisticDto>(response);
-                return showRepositoryMergeRequestsStatisticResponse;
-            });
-        }
-        
-        /// <summary>
-        /// 获取合并请求参与者
-        ///
-        /// 获取合并请求参与者
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ListMergeRequestParticipantsResponse ListMergeRequestParticipants(ListMergeRequestParticipantsRequest listMergeRequestParticipantsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listMergeRequestParticipantsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            if (StringUtils.TryConvertToNonEmptyString(listMergeRequestParticipantsRequest.MergeRequestIid, out var valueOfMergeRequestIid)) urlParam.Add("merge_request_iid", valueOfMergeRequestIid);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/merge-requests/{merge_request_iid}/participants", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMergeRequestParticipantsRequest);
-            var response = DoHttpRequestSync("GET", request);
-            var listMergeRequestParticipantsResponse = JsonUtils.DeSerializeNull<ListMergeRequestParticipantsResponse>(response);
-            listMergeRequestParticipantsResponse.Body = JsonUtils.DeSerializeList<UserBasicDto>(response);
-            return listMergeRequestParticipantsResponse;
-        }
-
-        public SyncInvoker<ListMergeRequestParticipantsResponse> ListMergeRequestParticipantsInvoker(ListMergeRequestParticipantsRequest listMergeRequestParticipantsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listMergeRequestParticipantsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            if (StringUtils.TryConvertToNonEmptyString(listMergeRequestParticipantsRequest.MergeRequestIid, out var valueOfMergeRequestIid)) urlParam.Add("merge_request_iid", valueOfMergeRequestIid);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/merge-requests/{merge_request_iid}/participants", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMergeRequestParticipantsRequest);
-            return new SyncInvoker<ListMergeRequestParticipantsResponse>(this, "GET", request, response =>
-            {
-                var listMergeRequestParticipantsResponse = JsonUtils.DeSerializeNull<ListMergeRequestParticipantsResponse>(response);
-                listMergeRequestParticipantsResponse.Body = JsonUtils.DeSerializeList<UserBasicDto>(response);
-                return listMergeRequestParticipantsResponse;
+                var listRepositoryFilePushPermissionsResponse = JsonUtils.DeSerializeNull<ListRepositoryFilePushPermissionsResponse>(response);
+                listRepositoryFilePushPermissionsResponse.Body = JsonUtils.DeSerializeList<RepositoryFilePushPermissionDto>(response);
+                return listRepositoryFilePushPermissionsResponse;
             });
         }
         
@@ -4931,6 +4591,124 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         }
         
         /// <summary>
+        /// 获取项目下的代码组和仓库列表
+        ///
+        /// 获取项目下的代码组和仓库列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListProjectSubgroupsAndRepositoriesResponse ListProjectSubgroupsAndRepositories(ListProjectSubgroupsAndRepositoriesRequest listProjectSubgroupsAndRepositoriesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listProjectSubgroupsAndRepositoriesRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/subgroups-and-repositories", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectSubgroupsAndRepositoriesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var listProjectSubgroupsAndRepositoriesResponse = JsonUtils.DeSerializeNull<ListProjectSubgroupsAndRepositoriesResponse>(response);
+            listProjectSubgroupsAndRepositoriesResponse.Body = JsonUtils.DeSerializeList<SubgroupAndProjectBaseDto>(response);
+            return listProjectSubgroupsAndRepositoriesResponse;
+        }
+
+        public SyncInvoker<ListProjectSubgroupsAndRepositoriesResponse> ListProjectSubgroupsAndRepositoriesInvoker(ListProjectSubgroupsAndRepositoriesRequest listProjectSubgroupsAndRepositoriesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listProjectSubgroupsAndRepositoriesRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/subgroups-and-repositories", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectSubgroupsAndRepositoriesRequest);
+            return new SyncInvoker<ListProjectSubgroupsAndRepositoriesResponse>(this, "GET", request, response =>
+            {
+                var listProjectSubgroupsAndRepositoriesResponse = JsonUtils.DeSerializeNull<ListProjectSubgroupsAndRepositoriesResponse>(response);
+                listProjectSubgroupsAndRepositoriesResponse.Body = JsonUtils.DeSerializeList<SubgroupAndProjectBaseDto>(response);
+                return listProjectSubgroupsAndRepositoriesResponse;
+            });
+        }
+        
+        /// <summary>
+        /// 获取指定项目的基本设置信息
+        ///
+        /// 获取指定项目的基本设置信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowProjectGeneralPolicyResponse ShowProjectGeneralPolicy(ShowProjectGeneralPolicyRequest showProjectGeneralPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showProjectGeneralPolicyRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/policies/general", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectGeneralPolicyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowProjectGeneralPolicyResponse>(response);
+        }
+
+        public SyncInvoker<ShowProjectGeneralPolicyResponse> ShowProjectGeneralPolicyInvoker(ShowProjectGeneralPolicyRequest showProjectGeneralPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showProjectGeneralPolicyRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/policies/general", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectGeneralPolicyRequest);
+            return new SyncInvoker<ShowProjectGeneralPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowProjectGeneralPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 获取项目成员设置
+        ///
+        /// 获取项目成员设置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowProjectMemberSettingResponse ShowProjectMemberSetting(ShowProjectMemberSettingRequest showProjectMemberSettingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showProjectMemberSettingRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/member-setting", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectMemberSettingRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowProjectMemberSettingResponse>(response);
+        }
+
+        public SyncInvoker<ShowProjectMemberSettingResponse> ShowProjectMemberSettingInvoker(ShowProjectMemberSettingRequest showProjectMemberSettingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showProjectMemberSettingRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/member-setting", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectMemberSettingRequest);
+            return new SyncInvoker<ShowProjectMemberSettingResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowProjectMemberSettingResponse>);
+        }
+        
+        /// <summary>
+        /// 获取项目继承设置项
+        ///
+        /// 获取项目继承设置项
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowProjectSettingsInheritCfgResponse ShowProjectSettingsInheritCfg(ShowProjectSettingsInheritCfgRequest showProjectSettingsInheritCfgRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showProjectSettingsInheritCfgRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/settings-inherit-cfg", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectSettingsInheritCfgRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var showProjectSettingsInheritCfgResponse = JsonUtils.DeSerializeNull<ShowProjectSettingsInheritCfgResponse>(response);
+            showProjectSettingsInheritCfgResponse.Body = JsonUtils.DeSerializeList<ProjectSettingsInheritCfgDto>(response);
+            return showProjectSettingsInheritCfgResponse;
+        }
+
+        public SyncInvoker<ShowProjectSettingsInheritCfgResponse> ShowProjectSettingsInheritCfgInvoker(ShowProjectSettingsInheritCfgRequest showProjectSettingsInheritCfgRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showProjectSettingsInheritCfgRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/settings-inherit-cfg", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectSettingsInheritCfgRequest);
+            return new SyncInvoker<ShowProjectSettingsInheritCfgResponse>(this, "GET", request, response =>
+            {
+                var showProjectSettingsInheritCfgResponse = JsonUtils.DeSerializeNull<ShowProjectSettingsInheritCfgResponse>(response);
+                showProjectSettingsInheritCfgResponse.Body = JsonUtils.DeSerializeList<ProjectSettingsInheritCfgDto>(response);
+                return showProjectSettingsInheritCfgResponse;
+            });
+        }
+        
+        /// <summary>
         /// 获取项目水印设置
         ///
         /// 获取项目水印设置
@@ -5044,6 +4822,39 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         }
         
         /// <summary>
+        /// 更新项目继承设置项
+        ///
+        /// 更新项目继承设置项
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateProjectSettingsInheritCfgResponse UpdateProjectSettingsInheritCfg(UpdateProjectSettingsInheritCfgRequest updateProjectSettingsInheritCfgRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateProjectSettingsInheritCfgRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/settings-inherit-cfg", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateProjectSettingsInheritCfgRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            var updateProjectSettingsInheritCfgResponse = JsonUtils.DeSerializeNull<UpdateProjectSettingsInheritCfgResponse>(response);
+            updateProjectSettingsInheritCfgResponse.Body = JsonUtils.DeSerializeList<ProjectSettingsInheritCfgDto>(response);
+            return updateProjectSettingsInheritCfgResponse;
+        }
+
+        public SyncInvoker<UpdateProjectSettingsInheritCfgResponse> UpdateProjectSettingsInheritCfgInvoker(UpdateProjectSettingsInheritCfgRequest updateProjectSettingsInheritCfgRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateProjectSettingsInheritCfgRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/settings-inherit-cfg", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateProjectSettingsInheritCfgRequest);
+            return new SyncInvoker<UpdateProjectSettingsInheritCfgResponse>(this, "PUT", request, response =>
+            {
+                var updateProjectSettingsInheritCfgResponse = JsonUtils.DeSerializeNull<UpdateProjectSettingsInheritCfgResponse>(response);
+                updateProjectSettingsInheritCfgResponse.Body = JsonUtils.DeSerializeList<ProjectSettingsInheritCfgDto>(response);
+                return updateProjectSettingsInheritCfgResponse;
+            });
+        }
+        
+        /// <summary>
         /// 更新项目水印设置
         ///
         /// 更新项目水印设置
@@ -5103,6 +4914,39 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         }
         
         /// <summary>
+        /// 批量创建仓库保护Tag
+        ///
+        /// 批量创建仓库保护Tag
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchCreateProtectedTagsResponse BatchCreateProtectedTags(BatchCreateProtectedTagsRequest batchCreateProtectedTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateProtectedTagsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/protected-tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateProtectedTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            var batchCreateProtectedTagsResponse = JsonUtils.DeSerializeNull<BatchCreateProtectedTagsResponse>(response);
+            batchCreateProtectedTagsResponse.Body = JsonUtils.DeSerializeList<RepositoryProtectedTagDto>(response);
+            return batchCreateProtectedTagsResponse;
+        }
+
+        public SyncInvoker<BatchCreateProtectedTagsResponse> BatchCreateProtectedTagsInvoker(BatchCreateProtectedTagsRequest batchCreateProtectedTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateProtectedTagsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/protected-tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateProtectedTagsRequest);
+            return new SyncInvoker<BatchCreateProtectedTagsResponse>(this, "POST", request, response =>
+            {
+                var batchCreateProtectedTagsResponse = JsonUtils.DeSerializeNull<BatchCreateProtectedTagsResponse>(response);
+                batchCreateProtectedTagsResponse.Body = JsonUtils.DeSerializeList<RepositoryProtectedTagDto>(response);
+                return batchCreateProtectedTagsResponse;
+            });
+        }
+        
+        /// <summary>
         /// 批量删除仓库保护分支
         ///
         /// 批量删除仓库保护分支
@@ -5126,6 +4970,32 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
             var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/protected-branches/bulk-deletion", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteProtectedBranchesRequest);
             return new SyncInvoker<BatchDeleteProtectedBranchesResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchDeleteProtectedBranchesResponse>);
+        }
+        
+        /// <summary>
+        /// 批量删除仓库保护Tag
+        ///
+        /// 批量删除仓库保护Tag
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchDeleteProtectedTagsResponse BatchDeleteProtectedTags(BatchDeleteProtectedTagsRequest batchDeleteProtectedTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteProtectedTagsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/protected-tags/bulk-deletion", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteProtectedTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<BatchDeleteProtectedTagsResponse>(response);
+        }
+
+        public SyncInvoker<BatchDeleteProtectedTagsResponse> BatchDeleteProtectedTagsInvoker(BatchDeleteProtectedTagsRequest batchDeleteProtectedTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteProtectedTagsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/protected-tags/bulk-deletion", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteProtectedTagsRequest);
+            return new SyncInvoker<BatchDeleteProtectedTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchDeleteProtectedTagsResponse>);
         }
         
         /// <summary>
@@ -5162,6 +5032,39 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         }
         
         /// <summary>
+        /// 批量更新仓库保护Tag
+        ///
+        /// 批量更新仓库保护Tag
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchUpdateProtectedTagsResponse BatchUpdateProtectedTags(BatchUpdateProtectedTagsRequest batchUpdateProtectedTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchUpdateProtectedTagsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/protected-tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateProtectedTagsRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            var batchUpdateProtectedTagsResponse = JsonUtils.DeSerializeNull<BatchUpdateProtectedTagsResponse>(response);
+            batchUpdateProtectedTagsResponse.Body = JsonUtils.DeSerializeList<RepositoryProtectedTagDto>(response);
+            return batchUpdateProtectedTagsResponse;
+        }
+
+        public SyncInvoker<BatchUpdateProtectedTagsResponse> BatchUpdateProtectedTagsInvoker(BatchUpdateProtectedTagsRequest batchUpdateProtectedTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchUpdateProtectedTagsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/protected-tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateProtectedTagsRequest);
+            return new SyncInvoker<BatchUpdateProtectedTagsResponse>(this, "PUT", request, response =>
+            {
+                var batchUpdateProtectedTagsResponse = JsonUtils.DeSerializeNull<BatchUpdateProtectedTagsResponse>(response);
+                batchUpdateProtectedTagsResponse.Body = JsonUtils.DeSerializeList<RepositoryProtectedTagDto>(response);
+                return batchUpdateProtectedTagsResponse;
+            });
+        }
+        
+        /// <summary>
         /// 创建项目下保护分支
         ///
         /// 创建项目下保护分支
@@ -5188,6 +5091,32 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         }
         
         /// <summary>
+        /// 创建项目下的保护tag
+        ///
+        /// 创建项目下的保护tag
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateProjectProtectedTagsResponse CreateProjectProtectedTags(CreateProjectProtectedTagsRequest createProjectProtectedTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createProjectProtectedTagsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/protected-tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createProjectProtectedTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateProjectProtectedTagsResponse>(response);
+        }
+
+        public SyncInvoker<CreateProjectProtectedTagsResponse> CreateProjectProtectedTagsInvoker(CreateProjectProtectedTagsRequest createProjectProtectedTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createProjectProtectedTagsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/protected-tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createProjectProtectedTagsRequest);
+            return new SyncInvoker<CreateProjectProtectedTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateProjectProtectedTagsResponse>);
+        }
+        
+        /// <summary>
         /// 删除仓库保护分支
         ///
         /// 删除仓库保护分支
@@ -5211,6 +5140,32 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
             var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/protected-branch", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteProtectedBranchRequest);
             return new SyncInvoker<DeleteProtectedBranchResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteProtectedBranchResponse>);
+        }
+        
+        /// <summary>
+        /// 删除仓库保护Tag
+        ///
+        /// 删除仓库保护Tag
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteProtectedTagResponse DeleteProtectedTag(DeleteProtectedTagRequest deleteProtectedTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteProtectedTagRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/protected-tag", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteProtectedTagRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteProtectedTagResponse>(response);
+        }
+
+        public SyncInvoker<DeleteProtectedTagResponse> DeleteProtectedTagInvoker(DeleteProtectedTagRequest deleteProtectedTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteProtectedTagRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/protected-tag", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteProtectedTagRequest);
+            return new SyncInvoker<DeleteProtectedTagResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteProtectedTagResponse>);
         }
         
         /// <summary>
@@ -5243,6 +5198,39 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
                 var listProjectProtectedBranchesResponse = JsonUtils.DeSerializeNull<ListProjectProtectedBranchesResponse>(response);
                 listProjectProtectedBranchesResponse.Body = JsonUtils.DeSerializeList<ProjectProtectedBranchApiDto>(response);
                 return listProjectProtectedBranchesResponse;
+            });
+        }
+        
+        /// <summary>
+        /// 获取指定项目的保护tag详情
+        ///
+        /// 获取指定项目的保护tag详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListProjectProtectedTagsResponse ListProjectProtectedTags(ListProjectProtectedTagsRequest listProjectProtectedTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listProjectProtectedTagsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/protected-tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectProtectedTagsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var listProjectProtectedTagsResponse = JsonUtils.DeSerializeNull<ListProjectProtectedTagsResponse>(response);
+            listProjectProtectedTagsResponse.Body = JsonUtils.DeSerializeList<ProjectProtectedTagPo>(response);
+            return listProjectProtectedTagsResponse;
+        }
+
+        public SyncInvoker<ListProjectProtectedTagsResponse> ListProjectProtectedTagsInvoker(ListProjectProtectedTagsRequest listProjectProtectedTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listProjectProtectedTagsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/protected-tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectProtectedTagsRequest);
+            return new SyncInvoker<ListProjectProtectedTagsResponse>(this, "GET", request, response =>
+            {
+                var listProjectProtectedTagsResponse = JsonUtils.DeSerializeNull<ListProjectProtectedTagsResponse>(response);
+                listProjectProtectedTagsResponse.Body = JsonUtils.DeSerializeList<ProjectProtectedTagPo>(response);
+                return listProjectProtectedTagsResponse;
             });
         }
         
@@ -5280,235 +5268,6 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         }
         
         /// <summary>
-        /// 获取仓库保护分支
-        ///
-        /// 获取仓库保护分支
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ShowProtectedBranchResponse ShowProtectedBranch(ShowProtectedBranchRequest showProtectedBranchRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(showProtectedBranchRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/protected-branch", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProtectedBranchRequest);
-            var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ShowProtectedBranchResponse>(response);
-        }
-
-        public SyncInvoker<ShowProtectedBranchResponse> ShowProtectedBranchInvoker(ShowProtectedBranchRequest showProtectedBranchRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(showProtectedBranchRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/protected-branch", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProtectedBranchRequest);
-            return new SyncInvoker<ShowProtectedBranchResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowProtectedBranchResponse>);
-        }
-        
-        /// <summary>
-        /// 更新仓库保护分支
-        ///
-        /// 更新仓库保护分支
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public UpdateProtectedBranchResponse UpdateProtectedBranch(UpdateProtectedBranchRequest updateProtectedBranchRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(updateProtectedBranchRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/protected-branch", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateProtectedBranchRequest);
-            var response = DoHttpRequestSync("PUT", request);
-            return JsonUtils.DeSerialize<UpdateProtectedBranchResponse>(response);
-        }
-
-        public SyncInvoker<UpdateProtectedBranchResponse> UpdateProtectedBranchInvoker(UpdateProtectedBranchRequest updateProtectedBranchRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(updateProtectedBranchRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/protected-branch", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateProtectedBranchRequest);
-            return new SyncInvoker<UpdateProtectedBranchResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateProtectedBranchResponse>);
-        }
-        
-        /// <summary>
-        /// 批量创建仓库保护Tag
-        ///
-        /// 批量创建仓库保护Tag
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public BatchCreateProtectedTagsResponse BatchCreateProtectedTags(BatchCreateProtectedTagsRequest batchCreateProtectedTagsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(batchCreateProtectedTagsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/protected-tags", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateProtectedTagsRequest);
-            var response = DoHttpRequestSync("POST", request);
-            var batchCreateProtectedTagsResponse = JsonUtils.DeSerializeNull<BatchCreateProtectedTagsResponse>(response);
-            batchCreateProtectedTagsResponse.Body = JsonUtils.DeSerializeList<RepositoryProtectedTagDto>(response);
-            return batchCreateProtectedTagsResponse;
-        }
-
-        public SyncInvoker<BatchCreateProtectedTagsResponse> BatchCreateProtectedTagsInvoker(BatchCreateProtectedTagsRequest batchCreateProtectedTagsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(batchCreateProtectedTagsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/protected-tags", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateProtectedTagsRequest);
-            return new SyncInvoker<BatchCreateProtectedTagsResponse>(this, "POST", request, response =>
-            {
-                var batchCreateProtectedTagsResponse = JsonUtils.DeSerializeNull<BatchCreateProtectedTagsResponse>(response);
-                batchCreateProtectedTagsResponse.Body = JsonUtils.DeSerializeList<RepositoryProtectedTagDto>(response);
-                return batchCreateProtectedTagsResponse;
-            });
-        }
-        
-        /// <summary>
-        /// 批量删除仓库保护Tag
-        ///
-        /// 批量删除仓库保护Tag
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public BatchDeleteProtectedTagsResponse BatchDeleteProtectedTags(BatchDeleteProtectedTagsRequest batchDeleteProtectedTagsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(batchDeleteProtectedTagsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/protected-tags/bulk-deletion", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteProtectedTagsRequest);
-            var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerialize<BatchDeleteProtectedTagsResponse>(response);
-        }
-
-        public SyncInvoker<BatchDeleteProtectedTagsResponse> BatchDeleteProtectedTagsInvoker(BatchDeleteProtectedTagsRequest batchDeleteProtectedTagsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(batchDeleteProtectedTagsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/protected-tags/bulk-deletion", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteProtectedTagsRequest);
-            return new SyncInvoker<BatchDeleteProtectedTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchDeleteProtectedTagsResponse>);
-        }
-        
-        /// <summary>
-        /// 批量更新仓库保护Tag
-        ///
-        /// 批量更新仓库保护Tag
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public BatchUpdateProtectedTagsResponse BatchUpdateProtectedTags(BatchUpdateProtectedTagsRequest batchUpdateProtectedTagsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(batchUpdateProtectedTagsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/protected-tags", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateProtectedTagsRequest);
-            var response = DoHttpRequestSync("PUT", request);
-            var batchUpdateProtectedTagsResponse = JsonUtils.DeSerializeNull<BatchUpdateProtectedTagsResponse>(response);
-            batchUpdateProtectedTagsResponse.Body = JsonUtils.DeSerializeList<RepositoryProtectedTagDto>(response);
-            return batchUpdateProtectedTagsResponse;
-        }
-
-        public SyncInvoker<BatchUpdateProtectedTagsResponse> BatchUpdateProtectedTagsInvoker(BatchUpdateProtectedTagsRequest batchUpdateProtectedTagsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(batchUpdateProtectedTagsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/protected-tags", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateProtectedTagsRequest);
-            return new SyncInvoker<BatchUpdateProtectedTagsResponse>(this, "PUT", request, response =>
-            {
-                var batchUpdateProtectedTagsResponse = JsonUtils.DeSerializeNull<BatchUpdateProtectedTagsResponse>(response);
-                batchUpdateProtectedTagsResponse.Body = JsonUtils.DeSerializeList<RepositoryProtectedTagDto>(response);
-                return batchUpdateProtectedTagsResponse;
-            });
-        }
-        
-        /// <summary>
-        /// 创建项目下的保护tag
-        ///
-        /// 创建项目下的保护tag
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public CreateProjectProtectedTagsResponse CreateProjectProtectedTags(CreateProjectProtectedTagsRequest createProjectProtectedTagsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(createProjectProtectedTagsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/protected-tags", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createProjectProtectedTagsRequest);
-            var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerialize<CreateProjectProtectedTagsResponse>(response);
-        }
-
-        public SyncInvoker<CreateProjectProtectedTagsResponse> CreateProjectProtectedTagsInvoker(CreateProjectProtectedTagsRequest createProjectProtectedTagsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(createProjectProtectedTagsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/protected-tags", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createProjectProtectedTagsRequest);
-            return new SyncInvoker<CreateProjectProtectedTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateProjectProtectedTagsResponse>);
-        }
-        
-        /// <summary>
-        /// 删除仓库保护Tag
-        ///
-        /// 删除仓库保护Tag
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public DeleteProtectedTagResponse DeleteProtectedTag(DeleteProtectedTagRequest deleteProtectedTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(deleteProtectedTagRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/protected-tag", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteProtectedTagRequest);
-            var response = DoHttpRequestSync("DELETE", request);
-            return JsonUtils.DeSerialize<DeleteProtectedTagResponse>(response);
-        }
-
-        public SyncInvoker<DeleteProtectedTagResponse> DeleteProtectedTagInvoker(DeleteProtectedTagRequest deleteProtectedTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(deleteProtectedTagRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/protected-tag", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteProtectedTagRequest);
-            return new SyncInvoker<DeleteProtectedTagResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteProtectedTagResponse>);
-        }
-        
-        /// <summary>
-        /// 获取指定项目的保护tag详情
-        ///
-        /// 获取指定项目的保护tag详情
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ListProjectProtectedTagsResponse ListProjectProtectedTags(ListProjectProtectedTagsRequest listProjectProtectedTagsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listProjectProtectedTagsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/protected-tags", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectProtectedTagsRequest);
-            var response = DoHttpRequestSync("GET", request);
-            var listProjectProtectedTagsResponse = JsonUtils.DeSerializeNull<ListProjectProtectedTagsResponse>(response);
-            listProjectProtectedTagsResponse.Body = JsonUtils.DeSerializeList<ProjectProtectedTagPo>(response);
-            return listProjectProtectedTagsResponse;
-        }
-
-        public SyncInvoker<ListProjectProtectedTagsResponse> ListProjectProtectedTagsInvoker(ListProjectProtectedTagsRequest listProjectProtectedTagsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listProjectProtectedTagsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/protected-tags", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectProtectedTagsRequest);
-            return new SyncInvoker<ListProjectProtectedTagsResponse>(this, "GET", request, response =>
-            {
-                var listProjectProtectedTagsResponse = JsonUtils.DeSerializeNull<ListProjectProtectedTagsResponse>(response);
-                listProjectProtectedTagsResponse.Body = JsonUtils.DeSerializeList<ProjectProtectedTagPo>(response);
-                return listProjectProtectedTagsResponse;
-            });
-        }
-        
-        /// <summary>
         /// 获取仓库保护Tag列表
         ///
         /// 获取仓库保护Tag列表
@@ -5542,6 +5301,32 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         }
         
         /// <summary>
+        /// 获取仓库保护分支
+        ///
+        /// 获取仓库保护分支
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowProtectedBranchResponse ShowProtectedBranch(ShowProtectedBranchRequest showProtectedBranchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showProtectedBranchRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/protected-branch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProtectedBranchRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowProtectedBranchResponse>(response);
+        }
+
+        public SyncInvoker<ShowProtectedBranchResponse> ShowProtectedBranchInvoker(ShowProtectedBranchRequest showProtectedBranchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showProtectedBranchRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/protected-branch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProtectedBranchRequest);
+            return new SyncInvoker<ShowProtectedBranchResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowProtectedBranchResponse>);
+        }
+        
+        /// <summary>
         /// 获取仓库保护Tag
         ///
         /// 获取仓库保护Tag
@@ -5568,6 +5353,32 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         }
         
         /// <summary>
+        /// 更新仓库保护分支
+        ///
+        /// 更新仓库保护分支
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateProtectedBranchResponse UpdateProtectedBranch(UpdateProtectedBranchRequest updateProtectedBranchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateProtectedBranchRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/protected-branch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateProtectedBranchRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateProtectedBranchResponse>(response);
+        }
+
+        public SyncInvoker<UpdateProtectedBranchResponse> UpdateProtectedBranchInvoker(UpdateProtectedBranchRequest updateProtectedBranchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateProtectedBranchRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/protected-branch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateProtectedBranchRequest);
+            return new SyncInvoker<UpdateProtectedBranchResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateProtectedBranchResponse>);
+        }
+        
+        /// <summary>
         /// 更新仓库保护Tag
         ///
         /// 更新仓库保护Tag
@@ -5591,39 +5402,6 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
             var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/protected-tag", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateProtectedTagRequest);
             return new SyncInvoker<UpdateProtectedTagResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateProtectedTagResponse>);
-        }
-        
-        /// <summary>
-        /// 查看文件树
-        ///
-        /// 查看文件树
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ListLogsTreeResponse ListLogsTree(ListLogsTreeRequest listLogsTreeRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listLogsTreeRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/logs-tree", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLogsTreeRequest);
-            var response = DoHttpRequestSync("GET", request);
-            var listLogsTreeResponse = JsonUtils.DeSerializeNull<ListLogsTreeResponse>(response);
-            listLogsTreeResponse.Body = JsonUtils.DeSerializeList<LogTreeDto>(response);
-            return listLogsTreeResponse;
-        }
-
-        public SyncInvoker<ListLogsTreeResponse> ListLogsTreeInvoker(ListLogsTreeRequest listLogsTreeRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listLogsTreeRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/logs-tree", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLogsTreeRequest);
-            return new SyncInvoker<ListLogsTreeResponse>(this, "GET", request, response =>
-            {
-                var listLogsTreeResponse = JsonUtils.DeSerializeNull<ListLogsTreeResponse>(response);
-                listLogsTreeResponse.Body = JsonUtils.DeSerializeList<LogTreeDto>(response);
-                return listLogsTreeResponse;
-            });
         }
         
         /// <summary>
@@ -5660,81 +5438,277 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         }
         
         /// <summary>
-        /// 文件重命名
+        /// 批量删除分支
         ///
-        /// 文件重命名
+        /// 批量删除分支
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
-        public RenameFileResponse RenameFile(RenameFileRequest renameFileRequest)
+        public BatchDeleteBranchResponse BatchDeleteBranch(BatchDeleteBranchRequest batchDeleteBranchRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(renameFileRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/rename-file", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", renameFileRequest);
-            var response = DoHttpRequestSync("PUT", request);
-            return JsonUtils.DeSerialize<RenameFileResponse>(response);
-        }
-
-        public SyncInvoker<RenameFileResponse> RenameFileInvoker(RenameFileRequest renameFileRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(renameFileRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/rename-file", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", renameFileRequest);
-            return new SyncInvoker<RenameFileResponse>(this, "PUT", request, JsonUtils.DeSerialize<RenameFileResponse>);
-        }
-        
-        /// <summary>
-        /// 获取仓库单个文件内容
-        ///
-        /// 获取仓库单个文件内容
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ShowFileRawResponse ShowFileRaw(ShowFileRawRequest showFileRawRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(showFileRawRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/files/raw", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFileRawRequest);
-            var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ShowFileRawResponse>(response);
-        }
-
-        public SyncInvoker<ShowFileRawResponse> ShowFileRawInvoker(ShowFileRawRequest showFileRawRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(showFileRawRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/files/raw", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFileRawRequest);
-            return new SyncInvoker<ShowFileRawResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFileRawResponse>);
-        }
-        
-        /// <summary>
-        /// 触发仓库统计任务
-        ///
-        /// 触发仓库统计任务
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ExecuteRepositoryStatisticsResponse ExecuteRepositoryStatistics(ExecuteRepositoryStatisticsRequest executeRepositoryStatisticsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(executeRepositoryStatisticsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/statistics", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeRepositoryStatisticsRequest);
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteBranchRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/branches/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteBranchRequest);
             var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerializeNull<ExecuteRepositoryStatisticsResponse>(response);
+            return JsonUtils.DeSerializeNull<BatchDeleteBranchResponse>(response);
         }
 
-        public SyncInvoker<ExecuteRepositoryStatisticsResponse> ExecuteRepositoryStatisticsInvoker(ExecuteRepositoryStatisticsRequest executeRepositoryStatisticsRequest)
+        public SyncInvoker<BatchDeleteBranchResponse> BatchDeleteBranchInvoker(BatchDeleteBranchRequest batchDeleteBranchRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(executeRepositoryStatisticsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/statistics", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeRepositoryStatisticsRequest);
-            return new SyncInvoker<ExecuteRepositoryStatisticsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ExecuteRepositoryStatisticsResponse>);
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteBranchRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/branches/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteBranchRequest);
+            return new SyncInvoker<BatchDeleteBranchResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteBranchResponse>);
+        }
+        
+        /// <summary>
+        /// 创建分支
+        ///
+        /// 创建分支
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateBranchResponse CreateBranch(CreateBranchRequest createBranchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createBranchRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/branches", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createBranchRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateBranchResponse>(response);
+        }
+
+        public SyncInvoker<CreateBranchResponse> CreateBranchInvoker(CreateBranchRequest createBranchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createBranchRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/branches", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createBranchRequest);
+            return new SyncInvoker<CreateBranchResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateBranchResponse>);
+        }
+        
+        /// <summary>
+        /// 创建标签
+        ///
+        /// 创建标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateTagResponse CreateTag(CreateTagRequest createTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createTagRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTagRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateTagResponse>(response);
+        }
+
+        public SyncInvoker<CreateTagResponse> CreateTagInvoker(CreateTagRequest createTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createTagRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTagRequest);
+            return new SyncInvoker<CreateTagResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateTagResponse>);
+        }
+        
+        /// <summary>
+        /// 删除分支
+        ///
+        /// 删除分支
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteBranchResponse DeleteBranch(DeleteBranchRequest deleteBranchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteBranchRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/branch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBranchRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteBranchResponse>(response);
+        }
+
+        public SyncInvoker<DeleteBranchResponse> DeleteBranchInvoker(DeleteBranchRequest deleteBranchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteBranchRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/branch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBranchRequest);
+            return new SyncInvoker<DeleteBranchResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteBranchResponse>);
+        }
+        
+        /// <summary>
+        /// 删除标签
+        ///
+        /// 删除标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteTagResponse DeleteTag(DeleteTagRequest deleteTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteTagRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/tag", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTagRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteTagResponse>(response);
+        }
+
+        public SyncInvoker<DeleteTagResponse> DeleteTagInvoker(DeleteTagRequest deleteTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteTagRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/tag", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTagRequest);
+            return new SyncInvoker<DeleteTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTagResponse>);
+        }
+        
+        /// <summary>
+        /// 获取分支列表
+        ///
+        /// 获取分支列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListBranchesResponse ListBranches(ListBranchesRequest listBranchesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listBranchesRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/branches", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBranchesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var listBranchesResponse = JsonUtils.DeSerializeNull<ListBranchesResponse>(response);
+            listBranchesResponse.Body = JsonUtils.DeSerializeList<BranchSimpleDto>(response);
+            return listBranchesResponse;
+        }
+
+        public SyncInvoker<ListBranchesResponse> ListBranchesInvoker(ListBranchesRequest listBranchesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listBranchesRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/branches", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBranchesRequest);
+            return new SyncInvoker<ListBranchesResponse>(this, "GET", request, response =>
+            {
+                var listBranchesResponse = JsonUtils.DeSerializeNull<ListBranchesResponse>(response);
+                listBranchesResponse.Body = JsonUtils.DeSerializeList<BranchSimpleDto>(response);
+                return listBranchesResponse;
+            });
+        }
+        
+        /// <summary>
+        /// 获取标签列表
+        ///
+        /// 获取标签列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListTagsResponse ListTags(ListTagsRequest listTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listTagsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTagsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var listTagsResponse = JsonUtils.DeSerializeNull<ListTagsResponse>(response);
+            listTagsResponse.Body = JsonUtils.DeSerializeList<SimpleTagDto>(response);
+            return listTagsResponse;
+        }
+
+        public SyncInvoker<ListTagsResponse> ListTagsInvoker(ListTagsRequest listTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listTagsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTagsRequest);
+            return new SyncInvoker<ListTagsResponse>(this, "GET", request, response =>
+            {
+                var listTagsResponse = JsonUtils.DeSerializeNull<ListTagsResponse>(response);
+                listTagsResponse.Body = JsonUtils.DeSerializeList<SimpleTagDto>(response);
+                return listTagsResponse;
+            });
+        }
+        
+        /// <summary>
+        /// 获取分支详情
+        ///
+        /// 获取分支详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowBranchResponse ShowBranch(ShowBranchRequest showBranchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showBranchRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/branch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBranchRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowBranchResponse>(response);
+        }
+
+        public SyncInvoker<ShowBranchResponse> ShowBranchInvoker(ShowBranchRequest showBranchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showBranchRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/branch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBranchRequest);
+            return new SyncInvoker<ShowBranchResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBranchResponse>);
+        }
+        
+        /// <summary>
+        /// 查看标签详情
+        ///
+        /// 查看标签详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowTagResponse ShowTag(ShowTagRequest showTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTagRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/tag", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTagRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowTagResponse>(response);
+        }
+
+        public SyncInvoker<ShowTagResponse> ShowTagInvoker(ShowTagRequest showTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTagRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/tag", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTagRequest);
+            return new SyncInvoker<ShowTagResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTagResponse>);
+        }
+        
+        /// <summary>
+        /// 分支重命名
+        ///
+        /// 分支重命名。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateBranchNameResponse UpdateBranchName(UpdateBranchNameRequest updateBranchNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateBranchNameRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/branch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateBranchNameRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateBranchNameResponse>(response);
+        }
+
+        public SyncInvoker<UpdateBranchNameResponse> UpdateBranchNameInvoker(UpdateBranchNameRequest updateBranchNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateBranchNameRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/branch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateBranchNameRequest);
+            return new SyncInvoker<UpdateBranchNameResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateBranchNameResponse>);
         }
         
         /// <summary>
@@ -5929,6 +5903,91 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         }
         
         /// <summary>
+        /// 创建仓库标签
+        ///
+        /// 创建仓库标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateRepositoryLabelResponse CreateRepositoryLabel(CreateRepositoryLabelRequest createRepositoryLabelRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createRepositoryLabelRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/labels", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRepositoryLabelRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateRepositoryLabelResponse>(response);
+        }
+
+        public SyncInvoker<CreateRepositoryLabelResponse> CreateRepositoryLabelInvoker(CreateRepositoryLabelRequest createRepositoryLabelRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createRepositoryLabelRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/labels", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRepositoryLabelRequest);
+            return new SyncInvoker<CreateRepositoryLabelResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateRepositoryLabelResponse>);
+        }
+        
+        /// <summary>
+        /// 创建仓库系统标签
+        ///
+        /// 创建仓库系统标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateRepositorySystemLabelsResponse CreateRepositorySystemLabels(CreateRepositorySystemLabelsRequest createRepositorySystemLabelsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createRepositorySystemLabelsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/system-labels", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRepositorySystemLabelsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            var createRepositorySystemLabelsResponse = JsonUtils.DeSerializeNull<CreateRepositorySystemLabelsResponse>(response);
+            createRepositorySystemLabelsResponse.Body = JsonUtils.DeSerializeList<LabelDetailDto>(response);
+            return createRepositorySystemLabelsResponse;
+        }
+
+        public SyncInvoker<CreateRepositorySystemLabelsResponse> CreateRepositorySystemLabelsInvoker(CreateRepositorySystemLabelsRequest createRepositorySystemLabelsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createRepositorySystemLabelsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/system-labels", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRepositorySystemLabelsRequest);
+            return new SyncInvoker<CreateRepositorySystemLabelsResponse>(this, "POST", request, response =>
+            {
+                var createRepositorySystemLabelsResponse = JsonUtils.DeSerializeNull<CreateRepositorySystemLabelsResponse>(response);
+                createRepositorySystemLabelsResponse.Body = JsonUtils.DeSerializeList<LabelDetailDto>(response);
+                return createRepositorySystemLabelsResponse;
+            });
+        }
+        
+        /// <summary>
+        /// 删除仓库标签
+        ///
+        /// 删除仓库标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteRepositoryLabelResponse DeleteRepositoryLabel(DeleteRepositoryLabelRequest deleteRepositoryLabelRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteRepositoryLabelRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/label", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRepositoryLabelRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteRepositoryLabelResponse>(response);
+        }
+
+        public SyncInvoker<DeleteRepositoryLabelResponse> DeleteRepositoryLabelInvoker(DeleteRepositoryLabelRequest deleteRepositoryLabelRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteRepositoryLabelRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/label", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRepositoryLabelRequest);
+            return new SyncInvoker<DeleteRepositoryLabelResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteRepositoryLabelResponse>);
+        }
+        
+        /// <summary>
         /// 删除仓库ip白名单
         ///
         /// 删除仓库ip白名单
@@ -5980,6 +6039,32 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
             var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/archive", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadArchiveRequest);
             return new SyncInvoker<DownloadArchiveResponse>(this, "GET", request, JsonUtils.DeSerialize<DownloadArchiveResponse>);
+        }
+        
+        /// <summary>
+        /// 触发仓库统计任务
+        ///
+        /// 触发仓库统计任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ExecuteRepositoryStatisticsResponse ExecuteRepositoryStatistics(ExecuteRepositoryStatisticsRequest executeRepositoryStatisticsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(executeRepositoryStatisticsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/statistics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeRepositoryStatisticsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<ExecuteRepositoryStatisticsResponse>(response);
+        }
+
+        public SyncInvoker<ExecuteRepositoryStatisticsResponse> ExecuteRepositoryStatisticsInvoker(ExecuteRepositoryStatisticsRequest executeRepositoryStatisticsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(executeRepositoryStatisticsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/statistics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeRepositoryStatisticsRequest);
+            return new SyncInvoker<ExecuteRepositoryStatisticsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ExecuteRepositoryStatisticsResponse>);
         }
         
         /// <summary>
@@ -6043,39 +6128,6 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
                 var listGroupRepositoriesResponse = JsonUtils.DeSerializeNull<ListGroupRepositoriesResponse>(response);
                 listGroupRepositoriesResponse.Body = JsonUtils.DeSerializeList<BasicRepositoryDto>(response);
                 return listGroupRepositoriesResponse;
-            });
-        }
-        
-        /// <summary>
-        /// 获取项目下当前用户有管理权限的代码组列表
-        ///
-        /// 获取项目下当前用户有管理权限的代码组列表
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ListManageableGroupsResponse ListManageableGroups(ListManageableGroupsRequest listManageableGroupsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listManageableGroupsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/{project_id}/manageable-groups", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listManageableGroupsRequest);
-            var response = DoHttpRequestSync("GET", request);
-            var listManageableGroupsResponse = JsonUtils.DeSerializeNull<ListManageableGroupsResponse>(response);
-            listManageableGroupsResponse.Body = JsonUtils.DeSerializeList<ManageableGroupDto>(response);
-            return listManageableGroupsResponse;
-        }
-
-        public SyncInvoker<ListManageableGroupsResponse> ListManageableGroupsInvoker(ListManageableGroupsRequest listManageableGroupsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listManageableGroupsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/{project_id}/manageable-groups", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listManageableGroupsRequest);
-            return new SyncInvoker<ListManageableGroupsResponse>(this, "GET", request, response =>
-            {
-                var listManageableGroupsResponse = JsonUtils.DeSerializeNull<ListManageableGroupsResponse>(response);
-                listManageableGroupsResponse.Body = JsonUtils.DeSerializeList<ManageableGroupDto>(response);
-                return listManageableGroupsResponse;
             });
         }
         
@@ -6307,6 +6359,39 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         }
         
         /// <summary>
+        /// 获取仓库标签列表
+        ///
+        /// 获取仓库标签列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListRepositoryLabelsResponse ListRepositoryLabels(ListRepositoryLabelsRequest listRepositoryLabelsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listRepositoryLabelsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/labels", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRepositoryLabelsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var listRepositoryLabelsResponse = JsonUtils.DeSerializeNull<ListRepositoryLabelsResponse>(response);
+            listRepositoryLabelsResponse.Body = JsonUtils.DeSerializeList<LabelBasicDto>(response);
+            return listRepositoryLabelsResponse;
+        }
+
+        public SyncInvoker<ListRepositoryLabelsResponse> ListRepositoryLabelsInvoker(ListRepositoryLabelsRequest listRepositoryLabelsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listRepositoryLabelsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/labels", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRepositoryLabelsRequest);
+            return new SyncInvoker<ListRepositoryLabelsResponse>(this, "GET", request, response =>
+            {
+                var listRepositoryLabelsResponse = JsonUtils.DeSerializeNull<ListRepositoryLabelsResponse>(response);
+                listRepositoryLabelsResponse.Body = JsonUtils.DeSerializeList<LabelBasicDto>(response);
+                return listRepositoryLabelsResponse;
+            });
+        }
+        
+        /// <summary>
         /// 获取仓库默认分支语言统计
         ///
         /// 获取仓库默认分支语言统计
@@ -6393,39 +6478,6 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
                 var listSubmodulesResponse = JsonUtils.DeSerializeNull<ListSubmodulesResponse>(response);
                 listSubmodulesResponse.Body = JsonUtils.DeSerializeList<SubmoduleDto>(response);
                 return listSubmodulesResponse;
-            });
-        }
-        
-        /// <summary>
-        /// 查看分支文件列表
-        ///
-        /// 查看分支文件列表
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ListTreesResponse ListTrees(ListTreesRequest listTreesRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listTreesRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/trees", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTreesRequest);
-            var response = DoHttpRequestSync("GET", request);
-            var listTreesResponse = JsonUtils.DeSerializeNull<ListTreesResponse>(response);
-            listTreesResponse.Body = JsonUtils.DeSerializeList<TreeObjectDto>(response);
-            return listTreesResponse;
-        }
-
-        public SyncInvoker<ListTreesResponse> ListTreesInvoker(ListTreesRequest listTreesRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listTreesRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/trees", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTreesRequest);
-            return new SyncInvoker<ListTreesResponse>(this, "GET", request, response =>
-            {
-                var listTreesResponse = JsonUtils.DeSerializeNull<ListTreesResponse>(response);
-                listTreesResponse.Body = JsonUtils.DeSerializeList<TreeObjectDto>(response);
-                return listTreesResponse;
             });
         }
         
@@ -7243,6 +7295,32 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         }
         
         /// <summary>
+        /// 修改仓库标签
+        ///
+        /// 修改仓库标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateRepositoryLabelResponse UpdateRepositoryLabel(UpdateRepositoryLabelRequest updateRepositoryLabelRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateRepositoryLabelRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/label", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRepositoryLabelRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateRepositoryLabelResponse>(response);
+        }
+
+        public SyncInvoker<UpdateRepositoryLabelResponse> UpdateRepositoryLabelInvoker(UpdateRepositoryLabelRequest updateRepositoryLabelRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateRepositoryLabelRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/label", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRepositoryLabelRequest);
+            return new SyncInvoker<UpdateRepositoryLabelResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateRepositoryLabelResponse>);
+        }
+        
+        /// <summary>
         /// 更新仓库镜像信息
         ///
         /// 更新仓库镜像信息
@@ -7320,117 +7398,6 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
             var urlPath = HttpUtils.AddUrlPath("/v4/projects/{id}/trusted-ip-addresses/{ip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTrustedIpAddressRequest);
             return new SyncInvoker<UpdateTrustedIpAddressResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateTrustedIpAddressResponse>);
-        }
-        
-        /// <summary>
-        /// 创建标签
-        ///
-        /// 创建标签
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public CreateTagResponse CreateTag(CreateTagRequest createTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(createTagRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/tags", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTagRequest);
-            var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerialize<CreateTagResponse>(response);
-        }
-
-        public SyncInvoker<CreateTagResponse> CreateTagInvoker(CreateTagRequest createTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(createTagRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/tags", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTagRequest);
-            return new SyncInvoker<CreateTagResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateTagResponse>);
-        }
-        
-        /// <summary>
-        /// 删除标签
-        ///
-        /// 删除标签
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public DeleteTagResponse DeleteTag(DeleteTagRequest deleteTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(deleteTagRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/tag", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTagRequest);
-            var response = DoHttpRequestSync("DELETE", request);
-            return JsonUtils.DeSerializeNull<DeleteTagResponse>(response);
-        }
-
-        public SyncInvoker<DeleteTagResponse> DeleteTagInvoker(DeleteTagRequest deleteTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(deleteTagRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/tag", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTagRequest);
-            return new SyncInvoker<DeleteTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTagResponse>);
-        }
-        
-        /// <summary>
-        /// 获取标签列表
-        ///
-        /// 获取标签列表
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ListTagsResponse ListTags(ListTagsRequest listTagsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listTagsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/tags", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTagsRequest);
-            var response = DoHttpRequestSync("GET", request);
-            var listTagsResponse = JsonUtils.DeSerializeNull<ListTagsResponse>(response);
-            listTagsResponse.Body = JsonUtils.DeSerializeList<SimpleTagDto>(response);
-            return listTagsResponse;
-        }
-
-        public SyncInvoker<ListTagsResponse> ListTagsInvoker(ListTagsRequest listTagsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listTagsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/tags", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTagsRequest);
-            return new SyncInvoker<ListTagsResponse>(this, "GET", request, response =>
-            {
-                var listTagsResponse = JsonUtils.DeSerializeNull<ListTagsResponse>(response);
-                listTagsResponse.Body = JsonUtils.DeSerializeList<SimpleTagDto>(response);
-                return listTagsResponse;
-            });
-        }
-        
-        /// <summary>
-        /// 查看标签详情
-        ///
-        /// 查看标签详情
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ShowTagResponse ShowTag(ShowTagRequest showTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(showTagRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/tag", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTagRequest);
-            var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ShowTagResponse>(response);
-        }
-
-        public SyncInvoker<ShowTagResponse> ShowTagInvoker(ShowTagRequest showTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(showTagRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/tag", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTagRequest);
-            return new SyncInvoker<ShowTagResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTagResponse>);
         }
         
         /// <summary>
@@ -7969,6 +7936,39 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
             var urlPath = HttpUtils.AddUrlPath("/v4/user/keys/{key_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSshKeyRequest);
             return new SyncInvoker<DeleteSshKeyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSshKeyResponse>);
+        }
+        
+        /// <summary>
+        /// 获取用户的个人访问令牌
+        ///
+        /// 获取用户的个人访问令牌
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListImpersonationTokensResponse ListImpersonationTokens(ListImpersonationTokensRequest listImpersonationTokensRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listImpersonationTokensRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/users/impersonation-tokens", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listImpersonationTokensRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var listImpersonationTokensResponse = JsonUtils.DeSerializeNull<ListImpersonationTokensResponse>(response);
+            listImpersonationTokensResponse.Body = JsonUtils.DeSerializeList<ImpersonationToken>(response);
+            return listImpersonationTokensResponse;
+        }
+
+        public SyncInvoker<ListImpersonationTokensResponse> ListImpersonationTokensInvoker(ListImpersonationTokensRequest listImpersonationTokensRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listImpersonationTokensRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/users/impersonation-tokens", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listImpersonationTokensRequest);
+            return new SyncInvoker<ListImpersonationTokensResponse>(this, "GET", request, response =>
+            {
+                var listImpersonationTokensResponse = JsonUtils.DeSerializeNull<ListImpersonationTokensResponse>(response);
+                listImpersonationTokensResponse.Body = JsonUtils.DeSerializeList<ImpersonationToken>(response);
+                return listImpersonationTokensResponse;
+            });
         }
         
         /// <summary>

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 资源分组ID，以rg开头，后跟22位由字母或数字组成的字符串
+        /// **参数解释** 资源分组ID。 **约束限制** 不涉及 **取值范围** 以\&quot;rg\&quot;开头，后面跟着22个字母或数字 **默认取值** 不涉及 
         /// </summary>
         [SDKProperty("group_id", IsPath = true)]
         [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]

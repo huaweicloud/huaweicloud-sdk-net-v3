@@ -37,6 +37,8 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
             "https://repo.af-south-1.myhuaweicloud.com");
         public static readonly Region AF_NORTH_1 = new Region("af-north-1",
             "https://repo.af-north-1.myhuaweicloud.com");
+        public static readonly Region EU_WEST_101 = new Region("eu-west-101",
+            "https://codeartsrepo-ext.eu-west-101.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("CODEARTSREPO");
 
@@ -57,6 +59,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
                 { "tr-west-1", TR_WEST_1 },
                 { "af-south-1", AF_SOUTH_1 },
                 { "af-north-1", AF_NORTH_1 },
+                { "eu-west-101", EU_WEST_101 },
         };
 
         public static Region ValueOf(string regionId)

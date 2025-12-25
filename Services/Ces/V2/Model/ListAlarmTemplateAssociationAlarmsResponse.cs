@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public List<ListAssociationAlarmsResponseAlarms> Alarms { get; set; }
 
         /// <summary>
-        /// 告警规则列表总数
+        /// **参数解释**： 告警规则列表总数。     **取值范围**： 取值范围为0-1000. 
         /// </summary>
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
         public int? Count { get; set; }

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// **参数解释**： 按云产品维度屏蔽时的指标维度信息。    **约束限制**： 不涉及。 **取值范围**： 长度为[0,128]个字符，有多个时用\&quot;,\&quot;连接。    **默认取值**： 不涉及。 
+        /// **参数解释**： 按云产品维度屏蔽时的资源维度信息。    **约束限制**： 不涉及。 **取值范围**： 长度为[0,128]个字符，有多个时用\&quot;,\&quot;连接。    **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("dimension_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DimensionName { get; set; }

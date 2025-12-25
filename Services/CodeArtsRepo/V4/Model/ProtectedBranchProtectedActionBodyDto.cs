@@ -141,7 +141,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         /// **参数解释：** 用户ID列表。 **约束限制：** 不涉及。 **取值范围：** Integer **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("user_ids", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Object> UserIds { get; set; }
+        public List<int?> UserIds { get; set; }
 
         /// <summary>
         /// **参数解释：** 成员组ID列表。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。

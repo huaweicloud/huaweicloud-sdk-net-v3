@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 创建成功的关联ID列表
+        /// **参数解释**： 创建成功的关联ID列表 
         /// </summary>
         [JsonProperty("relation_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> RelationIds { get; set; }
 
         /// <summary>
-        /// 屏蔽规则ID
+        /// **参数解释**： 屏蔽规则ID **取值范围**： 以nm开头，后跟[0,62]位字母或数字。 
         /// </summary>
         [JsonProperty("notification_mask_id", NullValueHandling = NullValueHandling.Ignore)]
         public string NotificationMaskId { get; set; }

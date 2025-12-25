@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class ListAlarmRespBodyAlarms 
     {
         /// <summary>
-        /// **参数解释**： 产品层级跨维规则需要指明为产品层级规则，resource_level取值为product即为云产品类型，不填或者取值为dimension则为子维度类型。 **取值范围**: 枚举值。 - product：云产品。 - dimension：子维度。 
+        /// **参数解释**： 资源层级。 **取值范围**: 枚举值。 - product：云产品。 - dimension：子维度。 
         /// </summary>
-        /// <value>**参数解释**： 产品层级跨维规则需要指明为产品层级规则，resource_level取值为product即为云产品类型，不填或者取值为dimension则为子维度类型。 **取值范围**: 枚举值。 - product：云产品。 - dimension：子维度。 </value>
+        /// <value>**参数解释**： 资源层级。 **取值范围**: 枚举值。 - product：云产品。 - dimension：子维度。 </value>
         [JsonConverter(typeof(EnumClassConverter<ResourceLevelEnum>))]
         public class ResourceLevelEnum
         {
@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string AlarmId { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警名称。     **取值范围**： 只能包含0-9/a-z/A-Z/_/-或汉字，长度[1，128]个字符。 
+        /// **参数解释**： 告警规则名称。     **取值范围**： 只能包含0-9/a-z/A-Z/_/-或汉字，长度[1，128]个字符。 
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
@@ -159,10 +159,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// **参数解释**： 告警策略 **取值范围**： 最多包含100个策略。 
         /// </summary>
         [JsonProperty("policies", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Policy> Policies { get; set; }
+        public List<PolicyResp> Policies { get; set; }
 
         /// <summary>
-        /// **参数解释**： 资源列表，关联资源需要使用查询告警规则资源接口获取。 **取值范围**： 最多支持3000个资源。 
+        /// **参数解释**： 资源列表，关联资源需要使用查询“[告警规则资源接口](.xml)”获取。 **取值范围**： 最多支持3000个资源。 
         /// </summary>
         [JsonProperty("resources", NullValueHandling = NullValueHandling.Ignore)]
         public List<ResourcesInListResp> Resources { get; set; }
@@ -198,13 +198,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public List<NotificationResp> OkNotifications { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警通知开启时间。    **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。 
+        /// **参数解释**： 告警通知开启时间。如 00:00    **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。 
         /// </summary>
         [JsonProperty("notification_begin_time", NullValueHandling = NullValueHandling.Ignore)]
         public string NotificationBeginTime { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警通知关闭时间。    **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。 
+        /// **参数解释**： 告警通知关闭时间。如 08:00   **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。 
         /// </summary>
         [JsonProperty("notification_end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string NotificationEndTime { get; set; }
@@ -216,25 +216,25 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string EffectiveTimezone { get; set; }
 
         /// <summary>
-        /// **参数解释**： 企业项目ID。     **取值范围**： 只能包含小写字母、数字、“-”。 
+        /// **参数解释**： 企业项目ID。     **取值范围**： 只能包含小写字母、数字、“-”。0 代表默认企业项目ID 
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警规则关联告警模板ID，如果传了，告警规则关联的策略会和告警模板策略联动变化。     **取值范围**： 以at开头，只包含字母、数字，长度为[2,64]个字符。 
+        /// **参数解释**： 告警规则关联告警模板ID     **取值范围**： 以at开头，只包含字母、数字，长度为[2,64]个字符。 
         /// </summary>
         [JsonProperty("alarm_template_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmTemplateId { get; set; }
 
         /// <summary>
-        /// **参数解释**： 产品层级跨维规则需要指明的规则产品名称，一般由\&quot;服务命名空间,服务首层维度名称\&quot;组成，如\&quot;SYS.ECS,instance_id\&quot;。 **取值范围**: 长度为[0,128]个字符。 
+        /// **参数解释**： 当资源层级为云产品时的云产品名称，一般由\&quot;服务命名空间,服务首层维度名称\&quot;组成，如\&quot;SYS.ECS,instance_id\&quot;。 **取值范围**: 长度为[0,128]个字符。 
         /// </summary>
         [JsonProperty("product_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductName { get; set; }
 
         /// <summary>
-        /// **参数解释**： 产品层级跨维规则需要指明为产品层级规则，resource_level取值为product即为云产品类型，不填或者取值为dimension则为子维度类型。 **取值范围**: 枚举值。 - product：云产品。 - dimension：子维度。 
+        /// **参数解释**： 资源层级。 **取值范围**: 枚举值。 - product：云产品。 - dimension：子维度。 
         /// </summary>
         [JsonProperty("resource_level", NullValueHandling = NullValueHandling.Ignore)]
         public ResourceLevelEnum ResourceLevel { get; set; }
@@ -242,7 +242,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// **参数解释**： 租户标签列表 **取值范围**: 最多支持20个标签。 
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ResourceTag> Tags { get; set; }
+        public List<ResourceTagResp> Tags { get; set; }
 
 
 

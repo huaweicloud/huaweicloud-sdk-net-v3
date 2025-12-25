@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class EnableOneClickAlarmRequestBody 
     {
         /// <summary>
-        /// NOTIFICATION_GROUP(通知组)/TOPIC_SUBSCRIPTION(主题订阅)/NOTIFICATION_POLICY(通知策略)
+        /// **参数解释** 通知方式 **约束限制** 不涉及 **取值范围** 枚举值。 - NOTIFICATION_GROUP: 通知组 - TOPIC_SUBSCRIPTION: 主题订阅 - NOTIFICATION_POLICY: 通知策略 **默认取值** 不涉及 
         /// </summary>
-        /// <value>NOTIFICATION_GROUP(通知组)/TOPIC_SUBSCRIPTION(主题订阅)/NOTIFICATION_POLICY(通知策略)</value>
+        /// <value>**参数解释** 通知方式 **约束限制** 不涉及 **取值范围** 枚举值。 - NOTIFICATION_GROUP: 通知组 - TOPIC_SUBSCRIPTION: 主题订阅 - NOTIFICATION_POLICY: 通知策略 **默认取值** 不涉及 </value>
         [JsonConverter(typeof(EnumClassConverter<NotificationMannerEnum>))]
         public class NotificationMannerEnum
         {
@@ -150,31 +150,31 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public DimensionNames DimensionNames { get; set; }
 
         /// <summary>
-        /// **参数解释**： 是否开启告警通知。     **约束限制**： 不涉及。 **取值范围**： 布尔值。 - true:开启。 - false:关闭。 **默认取值**： true 
+        /// **参数解释**： 是否开启告警通知。说明：若notification_enabled为true，对应的alarm_notifications、ok_notifications至少有一个不能为空。    **约束限制**： 不涉及。 **取值范围**： 布尔值。 - true:开启。 - false:关闭。 **默认取值**： true 
         /// </summary>
         [JsonProperty("notification_enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? NotificationEnabled { get; set; }
 
         /// <summary>
-        /// **参数解释**： 触发告警时，通知组/主题订阅的信息。 **约束限制**： 包含的通知信息的数量最多为10个，最少为0个。 
+        /// **参数解释**： 触发告警时，通知组/主题订阅的信息。 **约束限制**： 包含的通知对象信息的数量最多为10个，最少为0个。 
         /// </summary>
         [JsonProperty("alarm_notifications", NullValueHandling = NullValueHandling.Ignore)]
         public List<Notification> AlarmNotifications { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警恢复时，通知组/主题订阅的信息。 **约束限制**： 包含的通知信息的数量最多为10个，最少为0个。 
+        /// **参数解释**： 告警恢复时，通知组/主题订阅的信息。 **约束限制**： 包含的通知对象信息的数量最多为10个，最少为0个。 
         /// </summary>
         [JsonProperty("ok_notifications", NullValueHandling = NullValueHandling.Ignore)]
         public List<Notification> OkNotifications { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警通知开启时间。    **约束限制**： 不涉及。 **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。           **默认取值**： 不涉及。 
+        /// **参数解释**： 告警通知开启时间。如 00:00    **约束限制**： 不涉及。 **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。           **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("notification_begin_time", NullValueHandling = NullValueHandling.Ignore)]
         public string NotificationBeginTime { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警通知关闭时间。    **约束限制**： 不涉及。 **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。           **默认取值**： 不涉及。 
+        /// **参数解释**： 告警通知关闭时间。如 08:00  **约束限制**： 不涉及。 **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。           **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("notification_end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string NotificationEndTime { get; set; }
@@ -186,7 +186,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string EffectiveTimezone { get; set; }
 
         /// <summary>
-        /// NOTIFICATION_GROUP(通知组)/TOPIC_SUBSCRIPTION(主题订阅)/NOTIFICATION_POLICY(通知策略)
+        /// **参数解释** 通知方式 **约束限制** 不涉及 **取值范围** 枚举值。 - NOTIFICATION_GROUP: 通知组 - TOPIC_SUBSCRIPTION: 主题订阅 - NOTIFICATION_POLICY: 通知策略 **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("notification_manner", NullValueHandling = NullValueHandling.Ignore)]
         public NotificationMannerEnum NotificationManner { get; set; }
@@ -197,7 +197,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public List<string> NotificationPolicyIds { get; set; }
 
         /// <summary>
-        /// 是否以默认一键告警规则重置创建
+        /// **参数解释**： 是否以默认一键告警规则重置创建 **约束限制**： 不涉及。 **取值范围**： - true: 一键告警规则重置创建 - false: 一键告警规则不重置创建 **默认取值**： true 
         /// </summary>
         [JsonProperty("is_reset", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsReset { get; set; }

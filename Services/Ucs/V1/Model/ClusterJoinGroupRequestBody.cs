@@ -30,9 +30,7 @@ namespace HuaweiCloud.SDK.Ucs.V1.Model
         {
             var formData = new Dictionary<string, object>();
 
-            if (ClusterGroupID != null) {
-                formData.Add("clusterGroupID", new FormDataPart<string>(ClusterGroupID));
-            }
+            formData.Add("clusterGroupID", new FormDataPart<string>(ClusterGroupID));
 
             return formData;
         }

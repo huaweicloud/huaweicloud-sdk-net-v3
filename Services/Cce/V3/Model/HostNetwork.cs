@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("controlPlaneSecurityGroup", NullValueHandling = NullValueHandling.Ignore)]
         public string ControlPlaneSecurityGroup { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("autoGenerateSecurityGroupHardeningConfig", NullValueHandling = NullValueHandling.Ignore)]
+        public AutoGenerateSecurityGroupHardeningConfigSpec AutoGenerateSecurityGroupHardeningConfig { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  subnet: ").Append(Subnet).Append("\n");
             sb.Append("  securityGroup: ").Append(SecurityGroup).Append("\n");
             sb.Append("  controlPlaneSecurityGroup: ").Append(ControlPlaneSecurityGroup).Append("\n");
+            sb.Append("  autoGenerateSecurityGroupHardeningConfig: ").Append(AutoGenerateSecurityGroupHardeningConfig).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,6 +82,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.Subnet != input.Subnet || (this.Subnet != null && !this.Subnet.Equals(input.Subnet))) return false;
             if (this.SecurityGroup != input.SecurityGroup || (this.SecurityGroup != null && !this.SecurityGroup.Equals(input.SecurityGroup))) return false;
             if (this.ControlPlaneSecurityGroup != input.ControlPlaneSecurityGroup || (this.ControlPlaneSecurityGroup != null && !this.ControlPlaneSecurityGroup.Equals(input.ControlPlaneSecurityGroup))) return false;
+            if (this.AutoGenerateSecurityGroupHardeningConfig != input.AutoGenerateSecurityGroupHardeningConfig || (this.AutoGenerateSecurityGroupHardeningConfig != null && !this.AutoGenerateSecurityGroupHardeningConfig.Equals(input.AutoGenerateSecurityGroupHardeningConfig))) return false;
 
             return true;
         }
@@ -91,6 +99,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.Subnet != null) hashCode = hashCode * 59 + this.Subnet.GetHashCode();
                 if (this.SecurityGroup != null) hashCode = hashCode * 59 + this.SecurityGroup.GetHashCode();
                 if (this.ControlPlaneSecurityGroup != null) hashCode = hashCode * 59 + this.ControlPlaneSecurityGroup.GetHashCode();
+                if (this.AutoGenerateSecurityGroupHardeningConfig != null) hashCode = hashCode * 59 + this.AutoGenerateSecurityGroupHardeningConfig.GetHashCode();
                 return hashCode;
             }
         }

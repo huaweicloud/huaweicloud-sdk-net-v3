@@ -64,32 +64,6 @@ namespace HuaweiCloud.SDK.Moderation.V3
         }
         
         /// <summary>
-        /// 关闭音频流内容审核作业
-        ///
-        /// 关闭音频流内容审核作业
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<RunCloseAudioStreamModerationJobResponse> RunCloseAudioStreamModerationJobAsync(RunCloseAudioStreamModerationJobRequest runCloseAudioStreamModerationJobRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(runCloseAudioStreamModerationJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/audio-stream/jobs/stop/{job_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCloseAudioStreamModerationJobRequest);
-            var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerialize<RunCloseAudioStreamModerationJobResponse>(response);
-        }
-
-        public AsyncInvoker<RunCloseAudioStreamModerationJobResponse> RunCloseAudioStreamModerationJobAsyncInvoker(RunCloseAudioStreamModerationJobRequest runCloseAudioStreamModerationJobRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(runCloseAudioStreamModerationJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/audio-stream/jobs/stop/{job_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCloseAudioStreamModerationJobRequest);
-            return new AsyncInvoker<RunCloseAudioStreamModerationJobResponse>(this, "POST", request, JsonUtils.DeSerialize<RunCloseAudioStreamModerationJobResponse>);
-        }
-        
-        /// <summary>
         /// 创建音频内容审核作业
         ///
         /// 分析并识别用户上传的音频内容是否有敏感内容（如色情、政治等），并将识别结果返回给用户
@@ -111,30 +85,6 @@ namespace HuaweiCloud.SDK.Moderation.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/audio/jobs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCreateAudioModerationJobRequest);
             return new AsyncInvoker<RunCreateAudioModerationJobResponse>(this, "POST", request, JsonUtils.DeSerialize<RunCreateAudioModerationJobResponse>);
-        }
-        
-        /// <summary>
-        /// 创建音频流内容审核作业
-        ///
-        /// 创建音频流内容审核作业，创建成功会将作业ID返回给用户
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<RunCreateAudioStreamModerationJobResponse> RunCreateAudioStreamModerationJobAsync(RunCreateAudioStreamModerationJobRequest runCreateAudioStreamModerationJobRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/audio-stream/jobs", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCreateAudioStreamModerationJobRequest);
-            var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerialize<RunCreateAudioStreamModerationJobResponse>(response);
-        }
-
-        public AsyncInvoker<RunCreateAudioStreamModerationJobResponse> RunCreateAudioStreamModerationJobAsyncInvoker(RunCreateAudioStreamModerationJobRequest runCreateAudioStreamModerationJobRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/audio-stream/jobs", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCreateAudioStreamModerationJobRequest);
-            return new AsyncInvoker<RunCreateAudioStreamModerationJobResponse>(this, "POST", request, JsonUtils.DeSerialize<RunCreateAudioStreamModerationJobResponse>);
         }
         
         /// <summary>

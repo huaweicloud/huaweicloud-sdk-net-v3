@@ -137,9 +137,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
 
         /// <summary>
-        /// **参数解释**： 告警类型。 **约束限制**： 不涉及。 **取值范围**： 枚举值。event:查询事件类型告警，metric:查询指标类型告警。 **默认取值**： 不涉及。 
+        /// **参数解释**： 告警类型。 **约束限制**： 不涉及。 **取值范围**： 枚举值 - event: 查询事件类型告警 - metric: 查询指标类型告警。 **默认取值**： 不涉及。 
         /// </summary>
-        /// <value>**参数解释**： 告警类型。 **约束限制**： 不涉及。 **取值范围**： 枚举值。event:查询事件类型告警，metric:查询指标类型告警。 **默认取值**： 不涉及。 </value>
+        /// <value>**参数解释**： 告警类型。 **约束限制**： 不涉及。 **取值范围**： 枚举值 - event: 查询事件类型告警 - metric: 查询指标类型告警。 **默认取值**： 不涉及。 </value>
         [JsonConverter(typeof(EnumClassConverter<AlarmTypeEnum>))]
         public class AlarmTypeEnum
         {
@@ -252,9 +252,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         }
 
         /// <summary>
-        /// **参数解释**： 按关键字排序。 **约束限制**： 不涉及。 **取值范围**： 枚举值。first_alarm_time:告警产生时间, update_time:更新时间, alarm_level:告警级别，record_id表记录主键。 **默认取值**： update_time 
+        /// **参数解释**： 按关键字排序。 **约束限制**： 不涉及。 **取值范围**： 枚举值。 - first_alarm_time: 告警产生时间 - update_time: 更新时间 - alarm_level: 告警级别 - record_id: 表记录主键 **默认取值**： update_time 
         /// </summary>
-        /// <value>**参数解释**： 按关键字排序。 **约束限制**： 不涉及。 **取值范围**： 枚举值。first_alarm_time:告警产生时间, update_time:更新时间, alarm_level:告警级别，record_id表记录主键。 **默认取值**： update_time </value>
+        /// <value>**参数解释**： 按关键字排序。 **约束限制**： 不涉及。 **取值范围**： 枚举值。 - first_alarm_time: 告警产生时间 - update_time: 更新时间 - alarm_level: 告警级别 - record_id: 表记录主键 **默认取值**： update_time </value>
         [JsonConverter(typeof(EnumClassConverter<OrderByEnum>))]
         public class OrderByEnum
         {
@@ -407,7 +407,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public List<StatusEnum> Status { get; set; }
         /// <summary>
-        /// **参数解释**： 告警级别。 **约束限制**： 不涉及。 **取值范围**： 枚举值，1为紧急，2为重要，3为次要，4为提示。 **默认取值**： 不涉及。 
+        /// **参数解释**： 告警级别。 **约束限制**： 不涉及。 **取值范围**： 枚举值。 - 1：紧急 - 2：重要 - 3：次要 - 4：提示 **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("level", IsQuery = true)]
         [JsonProperty("level", NullValueHandling = NullValueHandling.Ignore)]
@@ -421,62 +421,62 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string Namespace { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警资源ID。 **约束限制**： 不涉及。 **取值范围**： 多维度情况按字母升序排列并使用逗号分隔。最大字符长度为2048。 **默认取值**： 不涉及。 
+        /// **参数解释**： 告警资源ID。 **约束限制**： 不涉及。 **取值范围**： 多维度情况按字母升序排列并使用逗号分隔。长度为[0,2048]个字符。 **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("resource_id", IsQuery = true)]
         [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceId { get; set; }
 
         /// <summary>
-        /// **参数解释**： 查询告警记录的起始更新时间，例如：2022-02-10T10:05:46+08:00。 **约束限制**： 不涉及。 **取值范围**： 最大字符长度为64。 **默认取值**： 不涉及。 
+        /// **参数解释**： 查询告警记录的起始更新时间，例如：2022-02-10T10:05:46+08:00。 **约束限制**： 不涉及。 **取值范围**： 长度为[0,64]个字符。 **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("from", IsQuery = true)]
         [JsonProperty("from", NullValueHandling = NullValueHandling.Ignore)]
         public string From { get; set; }
 
         /// <summary>
-        /// **参数解释**： 查询告警记录的截止更新时间，例如：2022-02-10T10:05:47+08:00。 **约束限制**： 不涉及。 **取值范围**： 最大字符长度为64。 **默认取值**： 不涉及。 
+        /// **参数解释**： 查询告警记录的截止更新时间，例如：2022-02-10T10:05:47+08:00。 **约束限制**： 不涉及。 **取值范围**： 长度为[0,64]个字符。 **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("to", IsQuery = true)]
         [JsonProperty("to", NullValueHandling = NullValueHandling.Ignore)]
         public string To { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警类型。 **约束限制**： 不涉及。 **取值范围**： 枚举值。event:查询事件类型告警，metric:查询指标类型告警。 **默认取值**： 不涉及。 
+        /// **参数解释**： 告警类型。 **约束限制**： 不涉及。 **取值范围**： 枚举值 - event: 查询事件类型告警 - metric: 查询指标类型告警。 **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("alarm_type", IsQuery = true)]
         [JsonProperty("alarm_type", NullValueHandling = NullValueHandling.Ignore)]
         public AlarmTypeEnum AlarmType { get; set; }
         /// <summary>
-        /// **参数解释**： 查询告警记录的起始创建时间，例如：2022-02-10T10:05:46+08:00。 **约束限制**： 不涉及。 **取值范围**： 最大字符长度为64。 **默认取值**： 不涉及。 
+        /// **参数解释**： 查询告警记录的起始创建时间，例如：2022-02-10T10:05:46+08:00。 **约束限制**： 不涉及。 **取值范围**： 长度为[0,64]个字符。 **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("create_time_from", IsQuery = true)]
         [JsonProperty("create_time_from", NullValueHandling = NullValueHandling.Ignore)]
         public string CreateTimeFrom { get; set; }
 
         /// <summary>
-        /// **参数解释**： 查询告警记录的截止创建时间，例如：2022-02-10T10:05:47+08:00。 **约束限制**： 不涉及。 **取值范围**： 最大字符长度为64。 **默认取值**： 不涉及。 
+        /// **参数解释**： 查询告警记录的截止创建时间，例如：2022-02-10T10:05:47+08:00。 **约束限制**： 不涉及。 **取值范围**： 长度为[0,64]个字符。 **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("create_time_to", IsQuery = true)]
         [JsonProperty("create_time_to", NullValueHandling = NullValueHandling.Ignore)]
         public string CreateTimeTo { get; set; }
 
         /// <summary>
-        /// **参数解释**： 分页偏移量。 **约束限制**： 不涉及。 **取值范围**： 整数，最小值为0，最大值为1000000000。 **默认取值**： 0 
+        /// **参数解释**： 分页偏移量。 **约束限制**： 不涉及。 **取值范围**： 整数，最小值为0，最大值为1000000000 **默认取值**： 0 
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// **参数解释**： 分页偏移量。 **约束限制**： 不涉及。 **取值范围**： 整数，最小值为1，最大值为100。 **默认取值**： 100 
+        /// **参数解释**： 分页偏移量。 **约束限制**： 不涉及。 **取值范围**： 整数，最小值为1，最大值为100 **默认取值**： 100 
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// **参数解释**： 按关键字排序。 **约束限制**： 不涉及。 **取值范围**： 枚举值。first_alarm_time:告警产生时间, update_time:更新时间, alarm_level:告警级别，record_id表记录主键。 **默认取值**： update_time 
+        /// **参数解释**： 按关键字排序。 **约束限制**： 不涉及。 **取值范围**： 枚举值。 - first_alarm_time: 告警产生时间 - update_time: 更新时间 - alarm_level: 告警级别 - record_id: 表记录主键 **默认取值**： update_time 
         /// </summary>
         [SDKProperty("order_by", IsQuery = true)]
         [JsonProperty("order_by", NullValueHandling = NullValueHandling.Ignore)]

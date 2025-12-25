@@ -37,6 +37,13 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
+        /// <summary>
+        /// |参数名称：云服务类型的名称| |参数的约束及描述：该参数非必填，范围限制：1-128，支持模糊查询。仅支持前缀匹配、后缀匹配、中间匹配。|
+        /// </summary>
+        [SDKProperty("service_type_name", IsQuery = true)]
+        [JsonProperty("service_type_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string ServiceTypeName { get; set; }
+
 
 
         /// <summary>
@@ -49,6 +56,7 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
             sb.Append("  xLanguage: ").Append(XLanguage).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  serviceTypeName: ").Append(ServiceTypeName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -70,6 +78,7 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
             if (this.XLanguage != input.XLanguage || (this.XLanguage != null && !this.XLanguage.Equals(input.XLanguage))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.ServiceTypeName != input.ServiceTypeName || (this.ServiceTypeName != null && !this.ServiceTypeName.Equals(input.ServiceTypeName))) return false;
 
             return true;
         }
@@ -85,6 +94,7 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
                 if (this.XLanguage != null) hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.ServiceTypeName != null) hashCode = hashCode * 59 + this.ServiceTypeName.GetHashCode();
                 return hashCode;
             }
         }

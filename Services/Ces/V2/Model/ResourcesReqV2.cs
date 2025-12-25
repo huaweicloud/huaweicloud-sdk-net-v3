@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 资源信息
+        /// **参数解释**： 资源信息列表。 **约束限制**： 包含的资源信息最多为1000个，最少为0个。 
         /// </summary>
         [JsonProperty("resources", NullValueHandling = NullValueHandling.Ignore)]
         public List<List<Dimension>> Resources { get; set; }

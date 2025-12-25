@@ -11,9 +11,9 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 屏蔽状态。UN_MASKED：未屏蔽，MASK_EFFECTIVE：已生效，MASK_INEFFECTIVE：未生效。
+    /// **参数解释**： 屏蔽状态。 **约束限制**： 不涉及。 **取值范围**： - UN_MASKED：未屏蔽 - MASK_EFFECTIVE：已生效 - MASK_INEFFECTIVE：未生效 **默认取值**： 不涉及。 
     /// </summary>
-    /// <value>屏蔽状态。UN_MASKED：未屏蔽，MASK_EFFECTIVE：已生效，MASK_INEFFECTIVE：未生效。</value>
+    /// <value>**参数解释**： 屏蔽状态。 **约束限制**： 不涉及。 **取值范围**： - UN_MASKED：未屏蔽 - MASK_EFFECTIVE：已生效 - MASK_INEFFECTIVE：未生效 **默认取值**： 不涉及。 </value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     

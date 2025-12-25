@@ -66,7 +66,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 类型 租户级自定义读法全局开关:vocabulary
+        /// 类型。 * 租户级自定义读法全局开关，示例vocabulary。
         /// </summary>
         [SDKProperty("key", IsQuery = true)]
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]

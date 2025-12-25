@@ -154,6 +154,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("cidrs", NullValueHandling = NullValueHandling.Ignore)]
         public List<ContainerCIDR> Cidrs { get; set; }
 
+        /// <summary>
+        /// **参数解释**： VPC容器网段预留。在VPC的默认路由表中添加容器网段路由，避免创建与容器网段冲突的子网。支持的集群版本如下： - v1.28.15-r70及以上版本 - v1.29.15-r30及以上版本 - v1.30.14-r30及以上版本 - v1.31.10-r30及以上版本 - v1.32.6-r30及以上版本 - v1.33.5-r20及以上版本  **约束限制**： 仅支持VPC网络模型集群。不支持集群设置不生效。 **取值范围**： - false：不开启VPC容器网段预留 - true：开启VPC容器网段预留  **默认取值**： false
+        /// </summary>
+        [JsonProperty("enableContainerCIDRsReservation", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableContainerCIDRsReservation { get; set; }
+
 
 
         /// <summary>
@@ -166,6 +172,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  mode: ").Append(Mode).Append("\n");
             sb.Append("  cidr: ").Append(Cidr).Append("\n");
             sb.Append("  cidrs: ").Append(Cidrs).Append("\n");
+            sb.Append("  enableContainerCIDRsReservation: ").Append(EnableContainerCIDRsReservation).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -187,6 +194,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.Mode != input.Mode) return false;
             if (this.Cidr != input.Cidr || (this.Cidr != null && !this.Cidr.Equals(input.Cidr))) return false;
             if (this.Cidrs != input.Cidrs || (this.Cidrs != null && input.Cidrs != null && !this.Cidrs.SequenceEqual(input.Cidrs))) return false;
+            if (this.EnableContainerCIDRsReservation != input.EnableContainerCIDRsReservation || (this.EnableContainerCIDRsReservation != null && !this.EnableContainerCIDRsReservation.Equals(input.EnableContainerCIDRsReservation))) return false;
 
             return true;
         }
@@ -202,6 +210,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 hashCode = hashCode * 59 + this.Mode.GetHashCode();
                 if (this.Cidr != null) hashCode = hashCode * 59 + this.Cidr.GetHashCode();
                 if (this.Cidrs != null) hashCode = hashCode * 59 + this.Cidrs.GetHashCode();
+                if (this.EnableContainerCIDRsReservation != null) hashCode = hashCode * 59 + this.EnableContainerCIDRsReservation.GetHashCode();
                 return hashCode;
             }
         }

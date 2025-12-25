@@ -519,7 +519,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public string ResourceId { get; set; }
 
         /// <summary>
-        /// **参数解释**： 资源名称。 **约束限制**： 不涉及。 **取值范围**： 支持字母 中文 数字_ -. ，最大长度128个字符。 **默认取值**： 不涉及。 
+        /// **参数解释**： 资源名称。 **约束限制**： 不涉及。 **取值范围**： 支持字母 中文 数字@_ -. ，最大长度128个字符。 **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("resource_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceName { get; set; }

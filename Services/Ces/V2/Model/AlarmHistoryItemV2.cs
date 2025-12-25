@@ -11,14 +11,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 告警记录详细信息
+    /// **参数解释**： 告警记录详细信息 
     /// </summary>
     public class AlarmHistoryItemV2 
     {
         /// <summary>
-        /// **参数解释**： 告警记录的状态。 **取值范围**： 取值为ok，alarm，invalid, ok_manual； ok为正常，alarm为告警，invalid为已失效,ok_manual为手动恢复。 
+        /// **参数解释**： 告警规则状态 **取值范围**： 枚举值。 - ok：正常 - alarm：告警 - invalid：已失效 - insufficient_data: 数据不足 - ok_manual: 手动恢复 
         /// </summary>
-        /// <value>**参数解释**： 告警记录的状态。 **取值范围**： 取值为ok，alarm，invalid, ok_manual； ok为正常，alarm为告警，invalid为已失效,ok_manual为手动恢复。 </value>
+        /// <value>**参数解释**： 告警规则状态 **取值范围**： 枚举值。 - ok：正常 - alarm：告警 - invalid：已失效 - insufficient_data: 数据不足 - ok_manual: 手动恢复 </value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -38,6 +38,11 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             public static readonly StatusEnum INVALID = new StatusEnum("invalid");
 
             /// <summary>
+            /// Enum INSUFFICIENT_DATA for value: insufficient_data
+            /// </summary>
+            public static readonly StatusEnum INSUFFICIENT_DATA = new StatusEnum("insufficient_data");
+
+            /// <summary>
             /// Enum OK_MANUAL for value: ok_manual
             /// </summary>
             public static readonly StatusEnum OK_MANUAL = new StatusEnum("ok_manual");
@@ -48,6 +53,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 { "ok", OK },
                 { "alarm", ALARM },
                 { "invalid", INVALID },
+                { "insufficient_data", INSUFFICIENT_DATA },
                 { "ok_manual", OK_MANUAL },
             };
 
@@ -143,9 +149,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         }
 
         /// <summary>
-        /// **参数解释**： 告警记录的告警级别。 **取值范围**： 值为1,2,3,4；1为紧急，2为重要，3为次要，4为提示。 
+        /// **参数解释**： 告警记录的告警级别。 **取值范围**： 值为1,2,3,4 - 1：紧急 - 2：重要 - 3：次要 - 4：提示 
         /// </summary>
-        /// <value>**参数解释**： 告警记录的告警级别。 **取值范围**： 值为1,2,3,4；1为紧急，2为重要，3为次要，4为提示。 </value>
+        /// <value>**参数解释**： 告警记录的告警级别。 **取值范围**： 值为1,2,3,4 - 1：紧急 - 2：重要 - 3：次要 - 4：提示 </value>
         [JsonConverter(typeof(EnumClassConverter<LevelEnum>))]
         public class LevelEnum
         {
@@ -270,9 +276,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         }
 
         /// <summary>
-        /// **参数解释**： 告警规则类型。 **取值范围**： 枚举值。ALL_INSTANCE为全部资源指标告警，RESOURCE_GROUP为资源分组指标告警，MULTI_INSTANCE为指定资源指标告警，EVENT.SYS为系统事件告警，EVENT.CUSTOM自定义事件告警，DNSHealthCheck为健康检查告警。 
+        /// **参数解释**： 告警规则类型。 **取值范围**： 枚举值 - ALL_INSTANCE：全部资源指标告警 - RESOURCE_GROUP：资源分组指标告警 - MULTI_INSTANCE：指定资源指标告警 - EVENT.SYS：系统事件告警 - EVENT.CUSTOM：自定义事件告警 - DNSHealthCheck：健康检查告警 
         /// </summary>
-        /// <value>**参数解释**： 告警规则类型。 **取值范围**： 枚举值。ALL_INSTANCE为全部资源指标告警，RESOURCE_GROUP为资源分组指标告警，MULTI_INSTANCE为指定资源指标告警，EVENT.SYS为系统事件告警，EVENT.CUSTOM自定义事件告警，DNSHealthCheck为健康检查告警。 </value>
+        /// <value>**参数解释**： 告警规则类型。 **取值范围**： 枚举值 - ALL_INSTANCE：全部资源指标告警 - RESOURCE_GROUP：资源分组指标告警 - MULTI_INSTANCE：指定资源指标告警 - EVENT.SYS：系统事件告警 - EVENT.CUSTOM：自定义事件告警 - DNSHealthCheck：健康检查告警 </value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -408,42 +414,157 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             }
         }
 
+        /// <summary>
+        /// **参数解释**： 告警屏蔽状态。 **取值范围**： - MASKED：已屏蔽 - UN_MASKED：未屏蔽 
+        /// </summary>
+        /// <value>**参数解释**： 告警屏蔽状态。 **取值范围**： - MASKED：已屏蔽 - UN_MASKED：未屏蔽 </value>
+        [JsonConverter(typeof(EnumClassConverter<MaskStatusEnum>))]
+        public class MaskStatusEnum
+        {
+            /// <summary>
+            /// Enum MASKED for value: MASKED
+            /// </summary>
+            public static readonly MaskStatusEnum MASKED = new MaskStatusEnum("MASKED");
+
+            /// <summary>
+            /// Enum UN_MASKED for value: UN_MASKED
+            /// </summary>
+            public static readonly MaskStatusEnum UN_MASKED = new MaskStatusEnum("UN_MASKED");
+
+            private static readonly Dictionary<string, MaskStatusEnum> StaticFields =
+            new Dictionary<string, MaskStatusEnum>()
+            {
+                { "MASKED", MASKED },
+                { "UN_MASKED", UN_MASKED },
+            };
+
+            private string _value;
+
+            public MaskStatusEnum()
+            {
+
+            }
+
+            public MaskStatusEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static MaskStatusEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as MaskStatusEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(MaskStatusEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(MaskStatusEnum a, MaskStatusEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(MaskStatusEnum a, MaskStatusEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
-        /// **参数解释**： 告警记录ID。 **取值范围**： 字符串长度为24。 
+        /// **参数解释**： 告警记录ID。 **取值范围**： 以ah开头，后跟22位由字母或数字组成的字符串，字符串长度为24。 
         /// </summary>
         [JsonProperty("record_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RecordId { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警规则的ID，如：al1603131199286dzxpqK3Ez。 **取值范围**： 字符串长度为24 
+        /// **参数解释**： 告警规则ID。 **取值范围**： 以al开头，后跟22位的字母或数字。 
         /// </summary>
         [JsonProperty("alarm_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmId { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警规则的名称，如：alarm-test01。 **取值范围**： 字符串长度在 1 到 128 之间。 
+        /// **参数解释**： 告警名称。 **取值范围**： 只能包含0-9/a-z/A-Z/_/-或汉字，长度为[1,128]个字符。 
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警记录的状态。 **取值范围**： 取值为ok，alarm，invalid, ok_manual； ok为正常，alarm为告警，invalid为已失效,ok_manual为手动恢复。 
+        /// **参数解释**： 告警规则状态 **取值范围**： 枚举值。 - ok：正常 - alarm：告警 - invalid：已失效 - insufficient_data: 数据不足 - ok_manual: 手动恢复 
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
-        /// **参数解释**： 告警记录的告警级别。 **取值范围**： 值为1,2,3,4；1为紧急，2为重要，3为次要，4为提示。 
+        /// **参数解释**： 告警记录的告警级别。 **取值范围**： 值为1,2,3,4 - 1：紧急 - 2：重要 - 3：次要 - 4：提示 
         /// </summary>
         [JsonProperty("level", NullValueHandling = NullValueHandling.Ignore)]
         public LevelEnum Level { get; set; }
         /// <summary>
-        /// **参数解释**： 告警规则类型。 **取值范围**： 枚举值。ALL_INSTANCE为全部资源指标告警，RESOURCE_GROUP为资源分组指标告警，MULTI_INSTANCE为指定资源指标告警，EVENT.SYS为系统事件告警，EVENT.CUSTOM自定义事件告警，DNSHealthCheck为健康检查告警。 
+        /// **参数解释**： 告警规则类型。 **取值范围**： 枚举值 - ALL_INSTANCE：全部资源指标告警 - RESOURCE_GROUP：资源分组指标告警 - MULTI_INSTANCE：指定资源指标告警 - EVENT.SYS：系统事件告警 - EVENT.CUSTOM：自定义事件告警 - DNSHealthCheck：健康检查告警 
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
         /// <summary>
-        /// **参数解释**： 是否发送通知 **取值范围**： true：发送通知 false：不发送通知 
+        /// **参数解释**： 是否发送通知 **取值范围**： - true：发送通知 - false：不发送通知 
         /// </summary>
         [JsonProperty("action_enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ActionEnabled { get; set; }
@@ -497,13 +618,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public AdditionalInfo AdditionalInfo { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警触发的动作列表。  结构如下：  {  \&quot;type\&quot;: \&quot;notification\&quot;, \&quot;notification_list\&quot;: [\&quot;urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\&quot;]  }  type取值： notification：通知。 autoscaling：弹性伸缩。 notification_list：告警状态发生变化时，被通知对象的列表。 
+        /// **参数解释**： 告警触发时，通知组/主题订阅的信息。结构如下：  {  \&quot;type\&quot;: \&quot;notification\&quot;, \&quot;notification_list\&quot;: [\&quot;urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\&quot;]  } 
         /// </summary>
         [JsonProperty("alarm_actions", NullValueHandling = NullValueHandling.Ignore)]
         public List<AlarmHistoryItemV2AlarmActions> AlarmActions { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警恢复触发的动作。  结构如下：  {  \&quot;type\&quot;: \&quot;notification\&quot;, \&quot;notification_list\&quot;: [\&quot;urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\&quot;]  } type取值：  notification：通知。  notification_list：告警状态发生变化时，被通知对象的列表。 
+        /// **参数解释**： 告警恢复时，通知组/主题订阅的信息。结构如下：  {  \&quot;type\&quot;: \&quot;notification\&quot;, \&quot;notification_list\&quot;: [\&quot;urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\&quot;]  } 
         /// </summary>
         [JsonProperty("ok_actions", NullValueHandling = NullValueHandling.Ignore)]
         public List<AlarmHistoryItemV2AlarmActions> OkActions { get; set; }
@@ -514,6 +635,11 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("data_points", NullValueHandling = NullValueHandling.Ignore)]
         public List<DataPointInfo> DataPoints { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 告警屏蔽状态。 **取值范围**： - MASKED：已屏蔽 - UN_MASKED：未屏蔽 
+        /// </summary>
+        [JsonProperty("mask_status", NullValueHandling = NullValueHandling.Ignore)]
+        public MaskStatusEnum MaskStatus { get; set; }
 
 
         /// <summary>
@@ -541,6 +667,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  alarmActions: ").Append(AlarmActions).Append("\n");
             sb.Append("  okActions: ").Append(OkActions).Append("\n");
             sb.Append("  dataPoints: ").Append(DataPoints).Append("\n");
+            sb.Append("  maskStatus: ").Append(MaskStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -577,6 +704,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.AlarmActions != input.AlarmActions || (this.AlarmActions != null && input.AlarmActions != null && !this.AlarmActions.SequenceEqual(input.AlarmActions))) return false;
             if (this.OkActions != input.OkActions || (this.OkActions != null && input.OkActions != null && !this.OkActions.SequenceEqual(input.OkActions))) return false;
             if (this.DataPoints != input.DataPoints || (this.DataPoints != null && input.DataPoints != null && !this.DataPoints.SequenceEqual(input.DataPoints))) return false;
+            if (this.MaskStatus != input.MaskStatus) return false;
 
             return true;
         }
@@ -607,6 +735,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 if (this.AlarmActions != null) hashCode = hashCode * 59 + this.AlarmActions.GetHashCode();
                 if (this.OkActions != null) hashCode = hashCode * 59 + this.OkActions.GetHashCode();
                 if (this.DataPoints != null) hashCode = hashCode * 59 + this.DataPoints.GetHashCode();
+                hashCode = hashCode * 59 + this.MaskStatus.GetHashCode();
                 return hashCode;
             }
         }

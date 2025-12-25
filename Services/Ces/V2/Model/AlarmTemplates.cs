@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 告警模板的ID，以at开头，后跟字母、数字，长度最长为64
+        /// **参数解释**： 告警模板的ID。     **约束限制**： 不涉及。 **取值范围**： 以at开头，后跟字母、数字，长度为[2,64]个字符。           **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("template_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TemplateId { get; set; }
@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("template_type", NullValueHandling = NullValueHandling.Ignore)]
         public TemplateType TemplateType { get; set; }
         /// <summary>
-        /// 告警模板的创建时间
+        /// **参数解释**： 告警模板的创建时间 **取值范围**： 不涉及。 
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? CreateTime { get; set; }

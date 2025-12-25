@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public int? Total { get; set; }
 
         /// <summary>
-        /// **参数解释**： 下一个开始的标记，用于分页。如本次查询10条数据，第十条为alarm_id为1441967036681YkazZ0deN，下次start配置为al1441967036681YkazZ0deN可从该alarm_id开始查询。 **取值范围**： 1 - 9999 
+        /// **参数解释**： 下一个开始的标记，用于分页。如本次查询10条数据，第十条alarm_id为al1441967036681YkazZ0deN，下次start配置为al1441967036681YkazZ0deN可从该alarm_id开始查询。 **取值范围**： 1 - 9999 
         /// </summary>
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }

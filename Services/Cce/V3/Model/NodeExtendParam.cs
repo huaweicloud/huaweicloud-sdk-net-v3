@@ -301,6 +301,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public int? DockerBaseSize { get; set; }
 
         /// <summary>
+        /// **参数解释**： 节点上单容器的可用磁盘空间大小，单位G。 CCE节点容器运行时空间配置请参考[数据盘空间分配说明](cce_01_0341.xml)。 **约束限制**： - Devicemapper模式下建议containerBaseSize配置不超过80G，设置过大时可能会导致容器运行时初始化时间过长而启动失败，若对容器磁盘大小有特殊要求，可考虑使用挂载外部或本地存储方式代替；Devicemapper模式在新版中仅有共池裸机使用，已逐步废弃。 - containerBaseSize设置仅在新版本集群（v1.23.14-r0/v1.25.9-r0/v1.27.6-r0/v1.28.4-r0及以上）的EulerOS[/HCEOS2.0](tag:hws,hws_hk,ctc,cmcc)节点上生效。 - 更新节点池时，不支持更新此参数。  **取值范围**： 10-500。 **默认取值**： 不配置该值或值为0时将使用默认值： - Devicemapper模式下默认值为10； - OverlayFS模式默认不限制单容器可用空间大小。
+        /// </summary>
+        [JsonProperty("containerBaseSize", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ContainerBaseSize { get; set; }
+
+        /// <summary>
         /// **参数解释**： 节点的公钥，应用于ssh密钥登录。 **约束限制**： - 当选择使用密钥对方式登录节点时该配置无效 - 创建、更新节点池场景不支持该参数  **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("publicKey", NullValueHandling = NullValueHandling.Ignore)]
@@ -360,6 +366,42 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public int? SystemReservedMem { get; set; }
 
         /// <summary>
+        /// **参数解释**： 节点CPU预留，Kubernetes相关组件预留值。单位为mcore。[随节点规格变动，具体请参见[节点预留资源策略说明](https://support.huaweicloud.com/usermanual-cce/cce_10_0178.html)。](tag:hws) **约束限制**： kubeReservedCpu，systemReservedCpu之和小于节点池中节点最小CPU规格的50%。 **取值范围**： 不涉及 **默认取值**： 不涉及
+        /// </summary>
+        [JsonProperty("kubeReservedCpu", NullValueHandling = NullValueHandling.Ignore)]
+        public int? KubeReservedCpu { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 节点CPU预留，系统组件预留值。单位为mcore。[随节点规格变动，具体请参见[节点预留资源策略说明](https://support.huaweicloud.com/usermanual-cce/cce_10_0178.html)。](tag:hws) **约束限制**： kubeReservedCpu，systemReservedCpu之和小于节点池中节点最小CPU规格的50%。 **取值范围**： 不涉及 **默认取值**： 不涉及
+        /// </summary>
+        [JsonProperty("systemReservedCpu", NullValueHandling = NullValueHandling.Ignore)]
+        public int? SystemReservedCpu { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 节点PID预留，Kubernetes相关组件预留值。目的是为Kubernetes系统守护进程（如kubelet、container runtime等）预留指定数量的进程ID。 **约束限制**： kubeReservedPid，systemReservedPid之和小于linux PID数量上限的50%。[不同OS的kernel.pid_max可能并不相同，具体请参见[修改节点进程 ID数量上限kernel.pid_max](https://support.huaweicloud.com/usermanual-cce/cce_10_0401.html#section1)](tag:hws) **取值范围**： [0,2097152] 注：CCE仅校验kernel.pid_max为4194304的场景，2022年1月30日及之前创建的节点和部分OS的kernel.pid_max会有所不同，若您更新过kernel.pid_max也需要保证kubeReservedPid，systemReservedPid之和小于linux PID数量上限。 **默认取值**： 不涉及
+        /// </summary>
+        [JsonProperty("kubeReservedPid", NullValueHandling = NullValueHandling.Ignore)]
+        public int? KubeReservedPid { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 节点PID预留，系统组件预留值。目的是为OS系统守护进程（如 sshd、udev 等）预留指定数量的进程ID。 **约束限制**： kubeReservedPid，systemReservedPid之和小于linux PID数量上限的50%。[不同OS的kernel.pid_max可能并不相同，具体请参见[修改节点进程 ID数量上限kernel.pid_max](https://support.huaweicloud.com/usermanual-cce/cce_10_0401.html#section1)](tag:hws) **取值范围**： [0,2097152] 注：CCE仅校验kernel.pid_max为4194304的场景，2022年1月30日及之前创建的节点和部分OS的kernel.pid_max会有所不同，若您更新过kernel.pid_max也需要保证kubeReservedPid，systemReservedPid之和小于linux PID数量上限。 **默认取值**： 不涉及
+        /// </summary>
+        [JsonProperty("systemReservedPid", NullValueHandling = NullValueHandling.Ignore)]
+        public int? SystemReservedPid { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 节点临时存储空间预留，Kubernetes组件预留值。目的是为Kubernetes系统守护进程（如kubelet、container runtime等）预留临时存储。单位为Gi。 **约束限制**： kubeReservedStorage，systemReservedStorage之和小于容器组件所使用硬盘空间的50%。 **取值范围**： 不涉及 **默认取值**： 不涉及
+        /// </summary>
+        [JsonProperty("kubeReservedStorage", NullValueHandling = NullValueHandling.Ignore)]
+        public int? KubeReservedStorage { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 节点临时存储空间预留，系统组件预留值。目的是为OS系统守护进程（如 sshd、udev 等）预留临时存储。单位为Gi。 **约束限制**： kubeReservedStorage，systemReservedStorage之和小于容器组件所使用硬盘空间的50%。 **取值范围**： 不涉及 **默认取值**： 不涉及
+        /// </summary>
+        [JsonProperty("systemReservedStorage", NullValueHandling = NullValueHandling.Ignore)]
+        public int? SystemReservedStorage { get; set; }
+
+        /// <summary>
         /// **参数解释**： 节点密码，仅作为响应参数时，固定展示星号，节点池场景响应返回中无该参数。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("init-node-password", NullValueHandling = NullValueHandling.Ignore)]
@@ -389,6 +431,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  isAutoPay: ").Append(IsAutoPay).Append("\n");
             sb.Append("  dockerLVMConfigOverride: ").Append(DockerLVMConfigOverride).Append("\n");
             sb.Append("  dockerBaseSize: ").Append(DockerBaseSize).Append("\n");
+            sb.Append("  containerBaseSize: ").Append(ContainerBaseSize).Append("\n");
             sb.Append("  publicKey: ").Append(PublicKey).Append("\n");
             sb.Append("  alphaCcePreInstall: ").Append(AlphaCcePreInstall).Append("\n");
             sb.Append("  alphaCcePostInstall: ").Append(AlphaCcePostInstall).Append("\n");
@@ -399,6 +442,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  agencyName: ").Append(AgencyName).Append("\n");
             sb.Append("  kubeReservedMem: ").Append(KubeReservedMem).Append("\n");
             sb.Append("  systemReservedMem: ").Append(SystemReservedMem).Append("\n");
+            sb.Append("  kubeReservedCpu: ").Append(KubeReservedCpu).Append("\n");
+            sb.Append("  systemReservedCpu: ").Append(SystemReservedCpu).Append("\n");
+            sb.Append("  kubeReservedPid: ").Append(KubeReservedPid).Append("\n");
+            sb.Append("  systemReservedPid: ").Append(SystemReservedPid).Append("\n");
+            sb.Append("  kubeReservedStorage: ").Append(KubeReservedStorage).Append("\n");
+            sb.Append("  systemReservedStorage: ").Append(SystemReservedStorage).Append("\n");
             sb.Append("  initNodePassword: ").Append(InitNodePassword).Append("\n");
             sb.Append("  securityReinforcementType: ").Append(SecurityReinforcementType).Append("\n");
             sb.Append("}\n");
@@ -429,6 +478,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.IsAutoPay != input.IsAutoPay || (this.IsAutoPay != null && !this.IsAutoPay.Equals(input.IsAutoPay))) return false;
             if (this.DockerLVMConfigOverride != input.DockerLVMConfigOverride || (this.DockerLVMConfigOverride != null && !this.DockerLVMConfigOverride.Equals(input.DockerLVMConfigOverride))) return false;
             if (this.DockerBaseSize != input.DockerBaseSize || (this.DockerBaseSize != null && !this.DockerBaseSize.Equals(input.DockerBaseSize))) return false;
+            if (this.ContainerBaseSize != input.ContainerBaseSize || (this.ContainerBaseSize != null && !this.ContainerBaseSize.Equals(input.ContainerBaseSize))) return false;
             if (this.PublicKey != input.PublicKey || (this.PublicKey != null && !this.PublicKey.Equals(input.PublicKey))) return false;
             if (this.AlphaCcePreInstall != input.AlphaCcePreInstall || (this.AlphaCcePreInstall != null && !this.AlphaCcePreInstall.Equals(input.AlphaCcePreInstall))) return false;
             if (this.AlphaCcePostInstall != input.AlphaCcePostInstall || (this.AlphaCcePostInstall != null && !this.AlphaCcePostInstall.Equals(input.AlphaCcePostInstall))) return false;
@@ -439,6 +489,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.AgencyName != input.AgencyName || (this.AgencyName != null && !this.AgencyName.Equals(input.AgencyName))) return false;
             if (this.KubeReservedMem != input.KubeReservedMem || (this.KubeReservedMem != null && !this.KubeReservedMem.Equals(input.KubeReservedMem))) return false;
             if (this.SystemReservedMem != input.SystemReservedMem || (this.SystemReservedMem != null && !this.SystemReservedMem.Equals(input.SystemReservedMem))) return false;
+            if (this.KubeReservedCpu != input.KubeReservedCpu || (this.KubeReservedCpu != null && !this.KubeReservedCpu.Equals(input.KubeReservedCpu))) return false;
+            if (this.SystemReservedCpu != input.SystemReservedCpu || (this.SystemReservedCpu != null && !this.SystemReservedCpu.Equals(input.SystemReservedCpu))) return false;
+            if (this.KubeReservedPid != input.KubeReservedPid || (this.KubeReservedPid != null && !this.KubeReservedPid.Equals(input.KubeReservedPid))) return false;
+            if (this.SystemReservedPid != input.SystemReservedPid || (this.SystemReservedPid != null && !this.SystemReservedPid.Equals(input.SystemReservedPid))) return false;
+            if (this.KubeReservedStorage != input.KubeReservedStorage || (this.KubeReservedStorage != null && !this.KubeReservedStorage.Equals(input.KubeReservedStorage))) return false;
+            if (this.SystemReservedStorage != input.SystemReservedStorage || (this.SystemReservedStorage != null && !this.SystemReservedStorage.Equals(input.SystemReservedStorage))) return false;
             if (this.InitNodePassword != input.InitNodePassword || (this.InitNodePassword != null && !this.InitNodePassword.Equals(input.InitNodePassword))) return false;
             if (this.SecurityReinforcementType != input.SecurityReinforcementType) return false;
 
@@ -463,6 +519,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.IsAutoPay != null) hashCode = hashCode * 59 + this.IsAutoPay.GetHashCode();
                 if (this.DockerLVMConfigOverride != null) hashCode = hashCode * 59 + this.DockerLVMConfigOverride.GetHashCode();
                 if (this.DockerBaseSize != null) hashCode = hashCode * 59 + this.DockerBaseSize.GetHashCode();
+                if (this.ContainerBaseSize != null) hashCode = hashCode * 59 + this.ContainerBaseSize.GetHashCode();
                 if (this.PublicKey != null) hashCode = hashCode * 59 + this.PublicKey.GetHashCode();
                 if (this.AlphaCcePreInstall != null) hashCode = hashCode * 59 + this.AlphaCcePreInstall.GetHashCode();
                 if (this.AlphaCcePostInstall != null) hashCode = hashCode * 59 + this.AlphaCcePostInstall.GetHashCode();
@@ -473,6 +530,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.AgencyName != null) hashCode = hashCode * 59 + this.AgencyName.GetHashCode();
                 if (this.KubeReservedMem != null) hashCode = hashCode * 59 + this.KubeReservedMem.GetHashCode();
                 if (this.SystemReservedMem != null) hashCode = hashCode * 59 + this.SystemReservedMem.GetHashCode();
+                if (this.KubeReservedCpu != null) hashCode = hashCode * 59 + this.KubeReservedCpu.GetHashCode();
+                if (this.SystemReservedCpu != null) hashCode = hashCode * 59 + this.SystemReservedCpu.GetHashCode();
+                if (this.KubeReservedPid != null) hashCode = hashCode * 59 + this.KubeReservedPid.GetHashCode();
+                if (this.SystemReservedPid != null) hashCode = hashCode * 59 + this.SystemReservedPid.GetHashCode();
+                if (this.KubeReservedStorage != null) hashCode = hashCode * 59 + this.KubeReservedStorage.GetHashCode();
+                if (this.SystemReservedStorage != null) hashCode = hashCode * 59 + this.SystemReservedStorage.GetHashCode();
                 if (this.InitNodePassword != null) hashCode = hashCode * 59 + this.InitNodePassword.GetHashCode();
                 hashCode = hashCode * 59 + this.SecurityReinforcementType.GetHashCode();
                 return hashCode;

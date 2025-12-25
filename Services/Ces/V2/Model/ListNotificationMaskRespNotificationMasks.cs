@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class ListNotificationMaskRespNotificationMasks 
     {
         /// <summary>
-        /// dimension: 子维度,product: 云产品
+        /// **参数解释**： 资源层级。 **取值范围**： 枚举值。 - product：资源层级为云产品 - dimension：资源层级为子维度 
         /// </summary>
-        /// <value>dimension: 子维度,product: 云产品</value>
+        /// <value>**参数解释**： 资源层级。 **取值范围**： 枚举值。 - product：资源层级为云产品 - dimension：资源层级为子维度 </value>
         [JsonConverter(typeof(EnumClassConverter<ResourceLevelEnum>))]
         public class ResourceLevelEnum
         {
@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
 
         /// <summary>
-        /// 屏蔽规则ID
+        /// **参数解释**： 屏蔽规则ID **约束限制**： 不涉及 **取值范围**： 以nm开头，后跟[0,62]位字母或数字。 **默认取值**： 不涉及 
         /// </summary>
         [JsonProperty("notification_mask_id", NullValueHandling = NullValueHandling.Ignore)]
         public string NotificationMaskId { get; set; }
@@ -149,7 +149,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("relation_type", NullValueHandling = NullValueHandling.Ignore)]
         public RelationType RelationType { get; set; }
         /// <summary>
-        /// **参数解释**： 关联ID       **约束限制**： 不涉及。 **取值范围**： 取值为告警规则ID、告警策略ID。只能包含字母、数字、“-”，长度为[1,64]个字符。      **默认取值**： 不涉及。 
+        /// **参数解释**： 关联ID，为告警规则ID或者告警策略ID **约束限制**： 不涉及。 **取值范围**： 只能包含字母、数字、“-”，长度为[1,64]个字符。      **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("relation_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RelationId { get; set; }
@@ -161,33 +161,33 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public MaskResourceType? ResourceType { get; set; }
 
         /// <summary>
-        /// 关联指标名称，relation_type为RESOURCE时存在该字段
+        /// **参数解释**： 关联指标名称列表，relation_type为RESOURCE时存在该字段 
         /// </summary>
         [JsonProperty("metric_names", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> MetricNames { get; set; }
 
         /// <summary>
-        /// 按云产品维度屏蔽时的指标信息
+        /// **参数解释**： 按云产品维度屏蔽时的指标信息 
         /// </summary>
         [JsonProperty("product_metrics", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ProductMetric> ProductMetrics { get; set; }
+        public List<ProductMetricResp> ProductMetrics { get; set; }
 
         /// <summary>
-        /// dimension: 子维度,product: 云产品
+        /// **参数解释**： 资源层级。 **取值范围**： 枚举值。 - product：资源层级为云产品 - dimension：资源层级为子维度 
         /// </summary>
         [JsonProperty("resource_level", NullValueHandling = NullValueHandling.Ignore)]
         public ResourceLevelEnum ResourceLevel { get; set; }
         /// <summary>
-        /// 资源为云产品时的云产品名称
+        /// **参数解释**： 资源为云产品时的云产品名称 **取值范围**： 长度为[0,128]个字符。 
         /// </summary>
         [JsonProperty("product_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductName { get; set; }
 
         /// <summary>
-        /// 关联资源类型，relation_type为RESOURCE时存在该字段,只需要查询出资源的namespace+维度名即可
+        /// **参数解释**： 关联资源类型，relation_type为RESOURCE时存在该字段,只需要查询出资源的namespace+维度名即可 
         /// </summary>
         [JsonProperty("resources", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ResourceCategory> Resources { get; set; }
+        public List<ResourceCategoryResp> Resources { get; set; }
 
         /// <summary>
         /// 
@@ -200,13 +200,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("mask_type", NullValueHandling = NullValueHandling.Ignore)]
         public MaskType MaskType { get; set; }
         /// <summary>
-        /// 告警屏蔽的创建时间，UNIX时间戳，单位毫秒。
+        /// **参数解释**： 告警屏蔽的创建时间，UNIX时间戳，单位毫秒。 **约束限制**： 不涉及。 **取值范围**: 不涉及。 **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? CreateTime { get; set; }
 
         /// <summary>
-        /// 告警屏蔽的更新时间，UNIX时间戳，单位毫秒。
+        /// **参数解释**： 告警屏蔽的更新时间，UNIX时间戳，单位毫秒。 **约束限制**： 不涉及。 **取值范围**: 不涉及。 **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("update_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? UpdateTime { get; set; }
@@ -242,7 +242,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string EffectiveTimezone { get; set; }
 
         /// <summary>
-        /// 告警策略列表。
+        /// **参数解释**： 告警策略列表。 
         /// </summary>
         [JsonProperty("policies", NullValueHandling = NullValueHandling.Ignore)]
         public List<PoliciesInListResp> Policies { get; set; }

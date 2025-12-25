@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     {
 
         /// <summary>
-        /// **参数解释**： 告警阈值的比较条件。 **取值范围**： 只能是&gt;、&#x3D;、&lt;、&gt;&#x3D;、&lt;&#x3D;、!&#x3D;。 
+        /// **参数解释**： 阈值符号。     **取值范围**： 支持的值为(&gt;|&lt;|&gt;&#x3D;|&lt;&#x3D;|&#x3D;|!&#x3D;|cycle_decrease|cycle_increase|cycle_wave);cycle_decrease为环比下降,cycle_increase为环比上升,cycle_wave为环比波动。 
         /// </summary>
         [JsonProperty("comparison_operator", NullValueHandling = NullValueHandling.Ignore)]
         public string ComparisonOperator { get; set; }
 
         /// <summary>
-        /// **参数解释**： 触发告警的连续发生次数。 **取值范围**： 取值范围[1, 5]。告警类型为事件告警时，取值范围为[1, 100]。 
+        /// **参数解释**： 触发告警的连续发生次数。 **取值范围**： 整数，取值范围[1, 5]。 
         /// </summary>
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
         public int? Count { get; set; }

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     {
 
         /// <summary>
-        /// 告警模板添加的监控指标，如弹性云服务器可添加的监控指标为cpu_util等；各服务的指标名称可查看：“[服务指标名称](ces_03_0059.xml)”。
+        /// **参数解释** 告警模板添加的监控指标，如弹性云服务器可添加的监控指标为cpu_util等；各服务的指标名称可查看：“[服务指标名称](ces_03_0059.xml)”。 **约束限制**： 不涉及 **取值范围**： 字符串长度在 1 到 64 之间。 **默认取值**： 不涉及 
         /// </summary>
         [JsonProperty("metric_name", NullValueHandling = NullValueHandling.Ignore)]
         public string MetricName { get; set; }
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public AlarmTemplateCondition Condition { get; set; }
 
         /// <summary>
-        /// 设置告警级别，值为1,2,3,4；1为紧急，2为重要，3为次要，4为提示。
+        /// **参数解释**： 告警级别。     **约束限制**： 不涉及。 **取值范围**： 只能为1、2、3、4。 - 1为紧急 - 2为重要 - 3为次要 - 4为提示           **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("alarm_level", NullValueHandling = NullValueHandling.Ignore)]
         public int? AlarmLevel { get; set; }
