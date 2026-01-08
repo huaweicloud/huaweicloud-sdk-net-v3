@@ -29,6 +29,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string UserName { get; set; }
 
         /// <summary>
+        /// 用户id。
+        /// </summary>
+        [JsonProperty("user_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string UserId { get; set; }
+
+        /// <summary>
         /// 合法用户邮箱，桌面分配成功后系统会通过发送邮件的方式通知用户。
         /// </summary>
         [JsonProperty("user_email", NullValueHandling = NullValueHandling.Ignore)]
@@ -69,6 +75,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("class AttachInstancesDesktopInfo {\n");
             sb.Append("  desktopId: ").Append(DesktopId).Append("\n");
             sb.Append("  userName: ").Append(UserName).Append("\n");
+            sb.Append("  userId: ").Append(UserId).Append("\n");
             sb.Append("  userEmail: ").Append(UserEmail).Append("\n");
             sb.Append("  userGroup: ").Append(UserGroup).Append("\n");
             sb.Append("  computerName: ").Append(ComputerName).Append("\n");
@@ -94,6 +101,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (input == null) return false;
             if (this.DesktopId != input.DesktopId || (this.DesktopId != null && !this.DesktopId.Equals(input.DesktopId))) return false;
             if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
+            if (this.UserId != input.UserId || (this.UserId != null && !this.UserId.Equals(input.UserId))) return false;
             if (this.UserEmail != input.UserEmail || (this.UserEmail != null && !this.UserEmail.Equals(input.UserEmail))) return false;
             if (this.UserGroup != input.UserGroup || (this.UserGroup != null && !this.UserGroup.Equals(input.UserGroup))) return false;
             if (this.ComputerName != input.ComputerName || (this.ComputerName != null && !this.ComputerName.Equals(input.ComputerName))) return false;
@@ -113,6 +121,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 var hashCode = 41;
                 if (this.DesktopId != null) hashCode = hashCode * 59 + this.DesktopId.GetHashCode();
                 if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.UserId != null) hashCode = hashCode * 59 + this.UserId.GetHashCode();
                 if (this.UserEmail != null) hashCode = hashCode * 59 + this.UserEmail.GetHashCode();
                 if (this.UserGroup != null) hashCode = hashCode * 59 + this.UserGroup.GetHashCode();
                 if (this.ComputerName != null) hashCode = hashCode * 59 + this.ComputerName.GetHashCode();

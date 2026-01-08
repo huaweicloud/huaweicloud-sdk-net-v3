@@ -105,6 +105,78 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
+        /// 批量删除证书
+        ///
+        /// 批量删除证书。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchDeleteCertificatesResponse> BatchDeleteCertificatesAsync(BatchDeleteCertificatesRequest batchDeleteCertificatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/certificates/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteCertificatesRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<BatchDeleteCertificatesResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDeleteCertificatesResponse> BatchDeleteCertificatesAsyncInvoker(BatchDeleteCertificatesRequest batchDeleteCertificatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/certificates/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteCertificatesRequest);
+            return new AsyncInvoker<BatchDeleteCertificatesResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchDeleteCertificatesResponse>);
+        }
+        
+        /// <summary>
+        /// 批量删监听器
+        ///
+        /// 批量删除监听器。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchDeleteListenersResponse> BatchDeleteListenersAsync(BatchDeleteListenersRequest batchDeleteListenersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteListenersRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<BatchDeleteListenersResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDeleteListenersResponse> BatchDeleteListenersAsyncInvoker(BatchDeleteListenersRequest batchDeleteListenersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteListenersRequest);
+            return new AsyncInvoker<BatchDeleteListenersResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchDeleteListenersResponse>);
+        }
+        
+        /// <summary>
+        /// 批量删除负载均衡器
+        ///
+        /// 批量删除负载均衡器。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchDeleteLoadbalancersResponse> BatchDeleteLoadbalancersAsync(BatchDeleteLoadbalancersRequest batchDeleteLoadbalancersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteLoadbalancersRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<BatchDeleteLoadbalancersResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDeleteLoadbalancersResponse> BatchDeleteLoadbalancersAsyncInvoker(BatchDeleteLoadbalancersRequest batchDeleteLoadbalancersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteLoadbalancersRequest);
+            return new AsyncInvoker<BatchDeleteLoadbalancersResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchDeleteLoadbalancersResponse>);
+        }
+        
+        /// <summary>
         /// 批量删除后端服务器
         ///
         /// 在指定pool下批量删除后端服务器。一次最多添加200个。
@@ -128,6 +200,82 @@ namespace HuaweiCloud.SDK.Elb.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/batch-delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteMembersRequest);
             return new AsyncInvoker<BatchDeleteMembersResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchDeleteMembersResponse>);
+        }
+        
+        /// <summary>
+        /// 批量删除后端服务器组
+        ///
+        /// 批量删除后端服务器组。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchDeletePoolsResponse> BatchDeletePoolsAsync(BatchDeletePoolsRequest batchDeletePoolsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeletePoolsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<BatchDeletePoolsResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDeletePoolsResponse> BatchDeletePoolsAsyncInvoker(BatchDeletePoolsRequest batchDeletePoolsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeletePoolsRequest);
+            return new AsyncInvoker<BatchDeletePoolsResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchDeletePoolsResponse>);
+        }
+        
+        /// <summary>
+        /// 批量将IP地址从LB实例域名解析中移除
+        ///
+        /// 批量将IP地址从LB实例域名解析中移除。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchDisableDomainIPsResponse> BatchDisableDomainIPsAsync(BatchDisableDomainIPsRequest batchDisableDomainIPsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchDisableDomainIPsRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/dns/ips/batch-disable", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDisableDomainIPsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<BatchDisableDomainIPsResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDisableDomainIPsResponse> BatchDisableDomainIPsAsyncInvoker(BatchDisableDomainIPsRequest batchDisableDomainIPsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchDisableDomainIPsRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/dns/ips/batch-disable", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDisableDomainIPsRequest);
+            return new AsyncInvoker<BatchDisableDomainIPsResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchDisableDomainIPsResponse>);
+        }
+        
+        /// <summary>
+        /// 批量将IP地址加入LB实例域名解析中
+        ///
+        /// 批量将IP地址加入LB实例域名解析中。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchEnableDomainIPsResponse> BatchEnableDomainIPsAsync(BatchEnableDomainIPsRequest batchEnableDomainIPsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchEnableDomainIPsRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/dns/ips/batch-enable", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchEnableDomainIPsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<BatchEnableDomainIPsResponse>(response);
+        }
+
+        public AsyncInvoker<BatchEnableDomainIPsResponse> BatchEnableDomainIPsAsyncInvoker(BatchEnableDomainIPsRequest batchEnableDomainIPsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchEnableDomainIPsRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/dns/ips/batch-enable", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchEnableDomainIPsRequest);
+            return new AsyncInvoker<BatchEnableDomainIPsResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchEnableDomainIPsResponse>);
         }
         
         /// <summary>
@@ -208,6 +356,32 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
+        /// 变更监听器标签列表
+        ///
+        /// 批量添加或删除指定监听器器标签。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ChangeListenerTagsResponse> ChangeListenerTagsAsync(ChangeListenerTagsRequest changeListenerTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(changeListenerTagsRequest.ListenerId, out var valueOfListenerId)) urlParam.Add("listener_id", valueOfListenerId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/listeners/{listener_id}/tags/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeListenerTagsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<ChangeListenerTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ChangeListenerTagsResponse> ChangeListenerTagsAsyncInvoker(ChangeListenerTagsRequest changeListenerTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(changeListenerTagsRequest.ListenerId, out var valueOfListenerId)) urlParam.Add("listener_id", valueOfListenerId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/listeners/{listener_id}/tags/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeListenerTagsRequest);
+            return new AsyncInvoker<ChangeListenerTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ChangeListenerTagsResponse>);
+        }
+        
+        /// <summary>
         /// 变更负载均衡器计费模式
         ///
         /// 负载均衡器计费模式变更，当前支持的计费模式变更为：
@@ -232,6 +406,65 @@ namespace HuaweiCloud.SDK.Elb.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/change-charge-mode", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeLoadbalancerChargeModeRequest);
             return new AsyncInvoker<ChangeLoadbalancerChargeModeResponse>(this, "POST", request, JsonUtils.DeSerialize<ChangeLoadbalancerChargeModeResponse>);
+        }
+        
+        /// <summary>
+        /// 变更负载均衡器标签列表
+        ///
+        /// 批量添加或删除指定负载均衡器标签。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ChangeLoadbalancerTagsResponse> ChangeLoadbalancerTagsAsync(ChangeLoadbalancerTagsRequest changeLoadbalancerTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(changeLoadbalancerTagsRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/loadbalancers/{loadbalancer_id}/tags/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeLoadbalancerTagsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<ChangeLoadbalancerTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ChangeLoadbalancerTagsResponse> ChangeLoadbalancerTagsAsyncInvoker(ChangeLoadbalancerTagsRequest changeLoadbalancerTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(changeLoadbalancerTagsRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/loadbalancers/{loadbalancer_id}/tags/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeLoadbalancerTagsRequest);
+            return new AsyncInvoker<ChangeLoadbalancerTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ChangeLoadbalancerTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 复制已有监听器
+        ///
+        /// 复制已有的监听器到同VPC内的负载均衡器。
+        /// - 仅支持同VPC实例间使用监听器复制功能。
+        /// - 不支持网关型LB下监听器进行复制，也不支持复制到网关型LB下。
+        /// - 仅同类型实例之间可以使用监听器复制功能。
+        /// - 对复制的源监听器有如下限制：后端服务器总数不能超过1000；转发策略总数不能超过100。
+        /// - 源监听器所在负载均衡器和目的监听器所在负载均衡器不能处于冻结、迁移状态。
+        /// - 源监听器中若配置quic_config，复制后为null。
+        /// - 七层转发策略配置为重定向到监听器，该转发策略不会进行复制。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CloneListenerResponse> CloneListenerAsync(CloneListenerRequest cloneListenerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(cloneListenerRequest.ListenerId, out var valueOfListenerId)) urlParam.Add("listener_id", valueOfListenerId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners/{listener_id}/clone", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", cloneListenerRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CloneListenerResponse>(response);
+        }
+
+        public AsyncInvoker<CloneListenerResponse> CloneListenerAsyncInvoker(CloneListenerRequest cloneListenerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(cloneListenerRequest.ListenerId, out var valueOfListenerId)) urlParam.Add("listener_id", valueOfListenerId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners/{listener_id}/clone", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", cloneListenerRequest);
+            return new AsyncInvoker<CloneListenerResponse>(this, "POST", request, JsonUtils.DeSerialize<CloneListenerResponse>);
         }
         
         /// <summary>
@@ -421,11 +654,12 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// - 若要创建网络型负载均衡器，则需要传入l4_flavor_id（网络型规格ID）；若要创建应用型负载均衡器，则需要传入l7_flavor_id（应用型规格ID）；若要创建网络型+应用型负载均衡器，则需要传入l4_flavor_id和l7_flavor_id。
         /// [- 若要创建包周期负载均衡器，则需要传入prepaid_options，否则创建按需计费负载均衡器。](tag:hws)
         /// - 按需计费分为固定规格计费和弹性规格计费，根据创建时所选规格的类型决定计费方式。具体规格说明见创建LB请求参数l4_flavor_id和l7_flavor_id。
-        /// [- 若要创建gateway类型的负载均衡器，则需要：
+        /// - 若要创建gateway类型的负载均衡器，则需要：
         ///    - 指定loadbalancer_type&#x3D;\&quot;gateway\&quot;，且不支持指定vip_address，ipv6_vip_address。
-        ///    - vip_subnet_cidr_id和ipv6_subnet_cidr_id两者不能都为空，如果两者都传入，则必须属于同一子网。 
+        ///    - vip_subnet_cidr_id和ipv6_subnet_cidr_id两者不能都为空，如果两者都传入，则必须属于同一子网。
         ///    - 不支持创建公网gateway类型LB。
-        ///    - 如果要指定规格，则从请求参数gw_flavor_id传入。](tag:hws_eu)
+        ///    - 不支持传入autoscaling字段，不支持l4_flavor_id和l7_flavor_id。
+        ///    - 必须要指定网关型规格，通过参数gw_flavor_id传入。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -811,8 +1045,11 @@ namespace HuaweiCloud.SDK.Elb.V3
         ///
         /// 删除负载均衡器且级联删除其下子资源（删除负载均衡器及其绑定的监听器、后端服务器组、后端服务器等一系列资源）。
         /// - 若LB关联了EIP，则只解绑EIP，不会删除EIP。
+        /// - 若LB已开启了误删保护开关，则级联删除失败。
+        /// - 若LB下任意一个后端服务器组开启了误删保护开关，则级联删除失败。
+        /// - 修改保护开关开启不影响级联删除，仍能正常删除。
         /// [- 若已开启多挂特性，且关联了多个LB，则只做解绑；否则删除。
-        /// - 若是共享型LB下的后端服务器组，无论是否多挂都只删除，不解绑。](tag:hc,hk)
+        /// - 若是共享型LB下的后端服务器组，无论是否多挂都只删除，不解绑。](tag:hws,hws_hk)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1020,6 +1257,30 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
+        /// 查询转发规则列表
+        ///
+        /// 查询当前项目下的转发规则列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAllL7RulesResponse> ListAllL7RulesAsync(ListAllL7RulesRequest listAllL7RulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAllL7RulesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListAllL7RulesResponse>(response);
+        }
+
+        public AsyncInvoker<ListAllL7RulesResponse> ListAllL7RulesAsyncInvoker(ListAllL7RulesRequest listAllL7RulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAllL7RulesRequest);
+            return new AsyncInvoker<ListAllL7RulesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAllL7RulesResponse>);
+        }
+        
+        /// <summary>
         /// 后端服务器全局列表
         ///
         /// 查询当前项目下的后端服务器列表。
@@ -1099,6 +1360,33 @@ namespace HuaweiCloud.SDK.Elb.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/certificates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCertificatesRequest);
             return new AsyncInvoker<ListCertificatesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCertificatesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询负载均衡器ip的域名配置信息
+        ///
+        /// 查询负载均衡器ip的域名配置信息，即负载均衡器的ip是否加入了域名解析。
+        /// 注意：当负载均衡器的公网域名和私网域名都没有打开时，该接口返回空列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListDomainIPsResponse> ListDomainIPsAsync(ListDomainIPsRequest listDomainIPsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listDomainIPsRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/dns/ips", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainIPsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListDomainIPsResponse>(response);
+        }
+
+        public AsyncInvoker<ListDomainIPsResponse> ListDomainIPsAsyncInvoker(ListDomainIPsRequest listDomainIPsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listDomainIPsRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/dns/ips", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainIPsRequest);
+            return new AsyncInvoker<ListDomainIPsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDomainIPsResponse>);
         }
         
         /// <summary>
@@ -1248,6 +1536,30 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
+        /// 查询所有监听器的标签列表
+        ///
+        /// 查询指定项目下所有监听器的标签列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListListenerTagsResponse> ListListenerTagsAsync(ListListenerTagsRequest listListenerTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/listeners/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listListenerTagsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListListenerTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ListListenerTagsResponse> ListListenerTagsAsyncInvoker(ListListenerTagsRequest listListenerTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/listeners/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listListenerTagsRequest);
+            return new AsyncInvoker<ListListenerTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListListenerTagsResponse>);
+        }
+        
+        /// <summary>
         /// 查询监听器列表
         ///
         /// 查询监听器列表。
@@ -1319,6 +1631,30 @@ namespace HuaweiCloud.SDK.Elb.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/features", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLoadbalancerFeatureRequest);
             return new AsyncInvoker<ListLoadbalancerFeatureResponse>(this, "GET", request, JsonUtils.DeSerialize<ListLoadbalancerFeatureResponse>);
+        }
+        
+        /// <summary>
+        /// 查询所有负载均衡器的标签列表
+        ///
+        /// 查询指定项目下所有负载均衡器的标签列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListLoadbalancerTagsResponse> ListLoadbalancerTagsAsync(ListLoadbalancerTagsRequest listLoadbalancerTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/loadbalancers/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLoadbalancerTagsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListLoadbalancerTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ListLoadbalancerTagsResponse> ListLoadbalancerTagsAsyncInvoker(ListLoadbalancerTagsRequest listLoadbalancerTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/loadbalancers/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLoadbalancerTagsRequest);
+            return new AsyncInvoker<ListLoadbalancerTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListLoadbalancerTagsResponse>);
         }
         
         /// <summary>
@@ -1752,6 +2088,32 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
+        /// 查询监听器的标签
+        ///
+        /// 查询指定监听器的所有标签。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowListenerTagsResponse> ShowListenerTagsAsync(ShowListenerTagsRequest showListenerTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showListenerTagsRequest.ListenerId, out var valueOfListenerId)) urlParam.Add("listener_id", valueOfListenerId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/listeners/{listener_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showListenerTagsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowListenerTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ShowListenerTagsResponse> ShowListenerTagsAsyncInvoker(ShowListenerTagsRequest showListenerTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showListenerTagsRequest.ListenerId, out var valueOfListenerId)) urlParam.Add("listener_id", valueOfListenerId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/listeners/{listener_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showListenerTagsRequest);
+            return new AsyncInvoker<ShowListenerTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowListenerTagsResponse>);
+        }
+        
+        /// <summary>
         /// 查询负载均衡器详情
         ///
         /// 查询负载均衡器详情。
@@ -1778,9 +2140,9 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
-        /// 查询负载均衡器占用的下联面子网端口列表
+        /// 查询负载均衡内部转发用的IP
         ///
-        /// 查询负载均衡器占用的下联面子网端口和IP地址信息。
+        /// 查询负载均衡内部转发用的IP。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1830,6 +2192,58 @@ namespace HuaweiCloud.SDK.Elb.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/statuses", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLoadBalancerStatusRequest);
             return new AsyncInvoker<ShowLoadBalancerStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLoadBalancerStatusResponse>);
+        }
+        
+        /// <summary>
+        /// 查询负载均衡器拓扑
+        ///
+        /// 查询负载均衡拓扑，将负载均衡器及其包含的监听器、后端服务器组以拓扑的形式展示。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowLoadBalancerTopologyResponse> ShowLoadBalancerTopologyAsync(ShowLoadBalancerTopologyRequest showLoadBalancerTopologyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showLoadBalancerTopologyRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/topology", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLoadBalancerTopologyRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowLoadBalancerTopologyResponse>(response);
+        }
+
+        public AsyncInvoker<ShowLoadBalancerTopologyResponse> ShowLoadBalancerTopologyAsyncInvoker(ShowLoadBalancerTopologyRequest showLoadBalancerTopologyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showLoadBalancerTopologyRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/topology", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLoadBalancerTopologyRequest);
+            return new AsyncInvoker<ShowLoadBalancerTopologyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLoadBalancerTopologyResponse>);
+        }
+        
+        /// <summary>
+        /// 查询负载均衡器的标签
+        ///
+        /// 查询指定负载均衡器的所有标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowLoadbalancerTagsResponse> ShowLoadbalancerTagsAsync(ShowLoadbalancerTagsRequest showLoadbalancerTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showLoadbalancerTagsRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/loadbalancers/{loadbalancer_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLoadbalancerTagsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowLoadbalancerTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ShowLoadbalancerTagsResponse> ShowLoadbalancerTagsAsyncInvoker(ShowLoadbalancerTagsRequest showLoadbalancerTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showLoadbalancerTagsRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/loadbalancers/{loadbalancer_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLoadbalancerTagsRequest);
+            return new AsyncInvoker<ShowLoadbalancerTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLoadbalancerTagsResponse>);
         }
         
         /// <summary>
@@ -2349,6 +2763,58 @@ namespace HuaweiCloud.SDK.Elb.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/security-policies/{security_policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSecurityPolicyRequest);
             return new AsyncInvoker<UpdateSecurityPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSecurityPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 配置负载均衡器系统默认域名化
+        ///
+        /// 配置负载均衡器系统默认域名化。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateSystemDefaultDomainConfigResponse> UpdateSystemDefaultDomainConfigAsync(UpdateSystemDefaultDomainConfigRequest updateSystemDefaultDomainConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateSystemDefaultDomainConfigRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/dns/system-default-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSystemDefaultDomainConfigRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<UpdateSystemDefaultDomainConfigResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateSystemDefaultDomainConfigResponse> UpdateSystemDefaultDomainConfigAsyncInvoker(UpdateSystemDefaultDomainConfigRequest updateSystemDefaultDomainConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateSystemDefaultDomainConfigRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/dns/system-default-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSystemDefaultDomainConfigRequest);
+            return new AsyncInvoker<UpdateSystemDefaultDomainConfigResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateSystemDefaultDomainConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 配置负载均衡器用户自定义域名化
+        ///
+        /// 配置负载均衡器用户自定义域名化。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateUserDefinedDomainConfigResponse> UpdateUserDefinedDomainConfigAsync(UpdateUserDefinedDomainConfigRequest updateUserDefinedDomainConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateUserDefinedDomainConfigRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/dns/user-defined-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateUserDefinedDomainConfigRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<UpdateUserDefinedDomainConfigResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateUserDefinedDomainConfigResponse> UpdateUserDefinedDomainConfigAsyncInvoker(UpdateUserDefinedDomainConfigRequest updateUserDefinedDomainConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateUserDefinedDomainConfigRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/dns/user-defined-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateUserDefinedDomainConfigRequest);
+            return new AsyncInvoker<UpdateUserDefinedDomainConfigResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateUserDefinedDomainConfigResponse>);
         }
         
         /// <summary>

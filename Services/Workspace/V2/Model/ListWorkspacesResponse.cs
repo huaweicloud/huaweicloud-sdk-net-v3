@@ -186,7 +186,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// 开通服务是否是全局服务
+        /// 开通服务是否是全局服务。
         /// </summary>
         [JsonProperty("is_global", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsGlobal { get; set; }

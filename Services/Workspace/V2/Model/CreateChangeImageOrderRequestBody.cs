@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string DesktopPoolId { get; set; }
 
         /// <summary>
-        /// 包周期桌面ID列表。 不可同时存在普通桌面和池桌面ID。
+        /// 桌面id
         /// </summary>
         [JsonProperty("desktop_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> DesktopIds { get; set; }
@@ -33,6 +33,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// </summary>
         [JsonProperty("promotion_plan_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PromotionPlanId { get; set; }
+
+        /// <summary>
+        /// 处理类型 - ONLY_FOR_EXPAND：仅对新扩容桌面生效 - FOR_EXPAND_AND_IDLE：对新扩容桌面与空闲桌面生效 - FOR_EXPAND_AND_ALL：对新扩容桌面与已有全部桌面生效
+        /// </summary>
+        [JsonProperty("handle_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string HandleType { get; set; }
 
         /// <summary>
         /// 云市场镜像的specCode，即将停用。image_spec_code与image_id同时存在时取image_id的值，两者不可同时为空。
@@ -45,6 +51,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// </summary>
         [JsonProperty("image_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ImageId { get; set; }
+
+        /// <summary>
+        /// 镜像类型。仅重建系统盘/更换镜像使用  - private：私有镜像。 - gold：公共镜像。
+        /// </summary>
+        [JsonProperty("image_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string ImageType { get; set; }
 
         /// <summary>
         /// 立即重建时给用户预留的保存数据的时间（单位：分钟）。
@@ -70,8 +82,10 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  desktopPoolId: ").Append(DesktopPoolId).Append("\n");
             sb.Append("  desktopIds: ").Append(DesktopIds).Append("\n");
             sb.Append("  promotionPlanId: ").Append(PromotionPlanId).Append("\n");
+            sb.Append("  handleType: ").Append(HandleType).Append("\n");
             sb.Append("  imageSpecCode: ").Append(ImageSpecCode).Append("\n");
             sb.Append("  imageId: ").Append(ImageId).Append("\n");
+            sb.Append("  imageType: ").Append(ImageType).Append("\n");
             sb.Append("  delayTime: ").Append(DelayTime).Append("\n");
             sb.Append("  message: ").Append(Message).Append("\n");
             sb.Append("}\n");
@@ -95,8 +109,10 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.DesktopPoolId != input.DesktopPoolId || (this.DesktopPoolId != null && !this.DesktopPoolId.Equals(input.DesktopPoolId))) return false;
             if (this.DesktopIds != input.DesktopIds || (this.DesktopIds != null && input.DesktopIds != null && !this.DesktopIds.SequenceEqual(input.DesktopIds))) return false;
             if (this.PromotionPlanId != input.PromotionPlanId || (this.PromotionPlanId != null && !this.PromotionPlanId.Equals(input.PromotionPlanId))) return false;
+            if (this.HandleType != input.HandleType || (this.HandleType != null && !this.HandleType.Equals(input.HandleType))) return false;
             if (this.ImageSpecCode != input.ImageSpecCode || (this.ImageSpecCode != null && !this.ImageSpecCode.Equals(input.ImageSpecCode))) return false;
             if (this.ImageId != input.ImageId || (this.ImageId != null && !this.ImageId.Equals(input.ImageId))) return false;
+            if (this.ImageType != input.ImageType || (this.ImageType != null && !this.ImageType.Equals(input.ImageType))) return false;
             if (this.DelayTime != input.DelayTime || (this.DelayTime != null && !this.DelayTime.Equals(input.DelayTime))) return false;
             if (this.Message != input.Message || (this.Message != null && !this.Message.Equals(input.Message))) return false;
 
@@ -114,8 +130,10 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.DesktopPoolId != null) hashCode = hashCode * 59 + this.DesktopPoolId.GetHashCode();
                 if (this.DesktopIds != null) hashCode = hashCode * 59 + this.DesktopIds.GetHashCode();
                 if (this.PromotionPlanId != null) hashCode = hashCode * 59 + this.PromotionPlanId.GetHashCode();
+                if (this.HandleType != null) hashCode = hashCode * 59 + this.HandleType.GetHashCode();
                 if (this.ImageSpecCode != null) hashCode = hashCode * 59 + this.ImageSpecCode.GetHashCode();
                 if (this.ImageId != null) hashCode = hashCode * 59 + this.ImageId.GetHashCode();
+                if (this.ImageType != null) hashCode = hashCode * 59 + this.ImageType.GetHashCode();
                 if (this.DelayTime != null) hashCode = hashCode * 59 + this.DelayTime.GetHashCode();
                 if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();
                 return hashCode;

@@ -43,8 +43,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("transaction_query_option", NullValueHandling = NullValueHandling.Ignore)]
-        public ListTransactionRequestBodyTransactionQueryOption TransactionQueryOption { get; set; }
+        [JsonProperty("transaction_query_info", NullValueHandling = NullValueHandling.Ignore)]
+        public ListTransactionRequestBodyTransactionQueryInfo TransactionQueryInfo { get; set; }
 
 
 
@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("  componentId: ").Append(ComponentId).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
-            sb.Append("  transactionQueryOption: ").Append(TransactionQueryOption).Append("\n");
+            sb.Append("  transactionQueryInfo: ").Append(TransactionQueryInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -82,7 +82,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             if (this.ComponentId != input.ComponentId || (this.ComponentId != null && !this.ComponentId.Equals(input.ComponentId))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
-            if (this.TransactionQueryOption != input.TransactionQueryOption || (this.TransactionQueryOption != null && !this.TransactionQueryOption.Equals(input.TransactionQueryOption))) return false;
+            if (this.TransactionQueryInfo != input.TransactionQueryInfo || (this.TransactionQueryInfo != null && !this.TransactionQueryInfo.Equals(input.TransactionQueryInfo))) return false;
 
             return true;
         }
@@ -99,7 +99,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                 if (this.ComponentId != null) hashCode = hashCode * 59 + this.ComponentId.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.TransactionQueryOption != null) hashCode = hashCode * 59 + this.TransactionQueryOption.GetHashCode();
+                if (this.TransactionQueryInfo != null) hashCode = hashCode * 59 + this.TransactionQueryInfo.GetHashCode();
                 return hashCode;
             }
         }

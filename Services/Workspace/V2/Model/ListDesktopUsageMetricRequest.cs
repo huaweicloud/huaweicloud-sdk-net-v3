@@ -66,6 +66,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? UsageMaxHours { get; set; }
 
         /// <summary>
+        /// 企业项目ID。
+        /// </summary>
+        [SDKProperty("enterprise_project_id", IsQuery = true)]
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
         /// 按照指标进行排序 * &#x60;desktop_usage&#x60; -  按照桌面使用时长排序 * &#x60;desktop_idle_duration&#x60; -  按照桌面空闲周期排序
         /// </summary>
         [SDKProperty("sort_field", IsQuery = true)]
@@ -109,6 +116,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  maxIdleDays: ").Append(MaxIdleDays).Append("\n");
             sb.Append("  usageMinHours: ").Append(UsageMinHours).Append("\n");
             sb.Append("  usageMaxHours: ").Append(UsageMaxHours).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  sortField: ").Append(SortField).Append("\n");
             sb.Append("  sortType: ").Append(SortType).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
@@ -138,6 +146,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.MaxIdleDays != input.MaxIdleDays || (this.MaxIdleDays != null && !this.MaxIdleDays.Equals(input.MaxIdleDays))) return false;
             if (this.UsageMinHours != input.UsageMinHours || (this.UsageMinHours != null && !this.UsageMinHours.Equals(input.UsageMinHours))) return false;
             if (this.UsageMaxHours != input.UsageMaxHours || (this.UsageMaxHours != null && !this.UsageMaxHours.Equals(input.UsageMaxHours))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.SortField != input.SortField || (this.SortField != null && !this.SortField.Equals(input.SortField))) return false;
             if (this.SortType != input.SortType || (this.SortType != null && !this.SortType.Equals(input.SortType))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
@@ -161,6 +170,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.MaxIdleDays != null) hashCode = hashCode * 59 + this.MaxIdleDays.GetHashCode();
                 if (this.UsageMinHours != null) hashCode = hashCode * 59 + this.UsageMinHours.GetHashCode();
                 if (this.UsageMaxHours != null) hashCode = hashCode * 59 + this.UsageMaxHours.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.SortField != null) hashCode = hashCode * 59 + this.SortField.GetHashCode();
                 if (this.SortType != null) hashCode = hashCode * 59 + this.SortType.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();

@@ -137,22 +137,34 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("autoscale_type", NullValueHandling = NullValueHandling.Ignore)]
         public AutoscaleTypeEnum AutoscaleType { get; set; }
         /// <summary>
-        /// 自动创建桌面上限。
+        /// 最大自动创建桌面数。
         /// </summary>
         [JsonProperty("max_auto_created", NullValueHandling = NullValueHandling.Ignore)]
         public int? MaxAutoCreated { get; set; }
 
         /// <summary>
-        /// 空闲桌面低于多少时开始自动创建桌面。
+        /// 预留空闲桌面数。
         /// </summary>
         [JsonProperty("min_idle", NullValueHandling = NullValueHandling.Ignore)]
         public int? MinIdle { get; set; }
 
         /// <summary>
-        /// 一次自动创建桌面的数量。
+        /// 一次自动创建桌面的数量(已弃用)。
         /// </summary>
         [JsonProperty("once_auto_created", NullValueHandling = NullValueHandling.Ignore)]
         public int? OnceAutoCreated { get; set; }
+
+        /// <summary>
+        /// 最小桌面数。
+        /// </summary>
+        [JsonProperty("min_retention", NullValueHandling = NullValueHandling.Ignore)]
+        public int? MinRetention { get; set; }
+
+        /// <summary>
+        /// 空闲桌面保留时长（分钟）。
+        /// </summary>
+        [JsonProperty("idle_retention_duration", NullValueHandling = NullValueHandling.Ignore)]
+        public int? IdleRetentionDuration { get; set; }
 
 
 
@@ -167,6 +179,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  maxAutoCreated: ").Append(MaxAutoCreated).Append("\n");
             sb.Append("  minIdle: ").Append(MinIdle).Append("\n");
             sb.Append("  onceAutoCreated: ").Append(OnceAutoCreated).Append("\n");
+            sb.Append("  minRetention: ").Append(MinRetention).Append("\n");
+            sb.Append("  idleRetentionDuration: ").Append(IdleRetentionDuration).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -189,6 +203,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.MaxAutoCreated != input.MaxAutoCreated || (this.MaxAutoCreated != null && !this.MaxAutoCreated.Equals(input.MaxAutoCreated))) return false;
             if (this.MinIdle != input.MinIdle || (this.MinIdle != null && !this.MinIdle.Equals(input.MinIdle))) return false;
             if (this.OnceAutoCreated != input.OnceAutoCreated || (this.OnceAutoCreated != null && !this.OnceAutoCreated.Equals(input.OnceAutoCreated))) return false;
+            if (this.MinRetention != input.MinRetention || (this.MinRetention != null && !this.MinRetention.Equals(input.MinRetention))) return false;
+            if (this.IdleRetentionDuration != input.IdleRetentionDuration || (this.IdleRetentionDuration != null && !this.IdleRetentionDuration.Equals(input.IdleRetentionDuration))) return false;
 
             return true;
         }
@@ -205,6 +221,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.MaxAutoCreated != null) hashCode = hashCode * 59 + this.MaxAutoCreated.GetHashCode();
                 if (this.MinIdle != null) hashCode = hashCode * 59 + this.MinIdle.GetHashCode();
                 if (this.OnceAutoCreated != null) hashCode = hashCode * 59 + this.OnceAutoCreated.GetHashCode();
+                if (this.MinRetention != null) hashCode = hashCode * 59 + this.MinRetention.GetHashCode();
+                if (this.IdleRetentionDuration != null) hashCode = hashCode * 59 + this.IdleRetentionDuration.GetHashCode();
                 return hashCode;
             }
         }

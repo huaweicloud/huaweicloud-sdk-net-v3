@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string DesktopPoolId { get; set; }
 
         /// <summary>
-        /// 包周期桌面ID列表。 不可同时存在普通桌面和池桌面ID。
+        /// 桌面id
         /// </summary>
         [JsonProperty("desktop_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> DesktopIds { get; set; }
@@ -33,6 +33,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// </summary>
         [JsonProperty("promotion_plan_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PromotionPlanId { get; set; }
+
+        /// <summary>
+        /// 处理类型 - ONLY_FOR_EXPAND：仅对新扩容桌面生效 - FOR_EXPAND_AND_IDLE：对新扩容桌面与空闲桌面生效 - FOR_EXPAND_AND_ALL：对新扩容桌面与已有全部桌面生效
+        /// </summary>
+        [JsonProperty("handle_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string HandleType { get; set; }
 
         /// <summary>
         /// 目标规格产品ID。
@@ -58,6 +64,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  desktopPoolId: ").Append(DesktopPoolId).Append("\n");
             sb.Append("  desktopIds: ").Append(DesktopIds).Append("\n");
             sb.Append("  promotionPlanId: ").Append(PromotionPlanId).Append("\n");
+            sb.Append("  handleType: ").Append(HandleType).Append("\n");
             sb.Append("  productId: ").Append(ProductId).Append("\n");
             sb.Append("  mode: ").Append(Mode).Append("\n");
             sb.Append("}\n");
@@ -81,6 +88,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.DesktopPoolId != input.DesktopPoolId || (this.DesktopPoolId != null && !this.DesktopPoolId.Equals(input.DesktopPoolId))) return false;
             if (this.DesktopIds != input.DesktopIds || (this.DesktopIds != null && input.DesktopIds != null && !this.DesktopIds.SequenceEqual(input.DesktopIds))) return false;
             if (this.PromotionPlanId != input.PromotionPlanId || (this.PromotionPlanId != null && !this.PromotionPlanId.Equals(input.PromotionPlanId))) return false;
+            if (this.HandleType != input.HandleType || (this.HandleType != null && !this.HandleType.Equals(input.HandleType))) return false;
             if (this.ProductId != input.ProductId || (this.ProductId != null && !this.ProductId.Equals(input.ProductId))) return false;
             if (this.Mode != input.Mode || (this.Mode != null && !this.Mode.Equals(input.Mode))) return false;
 
@@ -98,6 +106,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.DesktopPoolId != null) hashCode = hashCode * 59 + this.DesktopPoolId.GetHashCode();
                 if (this.DesktopIds != null) hashCode = hashCode * 59 + this.DesktopIds.GetHashCode();
                 if (this.PromotionPlanId != null) hashCode = hashCode * 59 + this.PromotionPlanId.GetHashCode();
+                if (this.HandleType != null) hashCode = hashCode * 59 + this.HandleType.GetHashCode();
                 if (this.ProductId != null) hashCode = hashCode * 59 + this.ProductId.GetHashCode();
                 if (this.Mode != null) hashCode = hashCode * 59 + this.Mode.GetHashCode();
                 return hashCode;

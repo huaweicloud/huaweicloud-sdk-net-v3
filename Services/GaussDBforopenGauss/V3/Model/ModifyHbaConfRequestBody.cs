@@ -17,16 +17,16 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
     {
 
         /// <summary>
-        /// **参数解释**: 需要修改的hba配置信息。 **约束限制**: 不涉及。
+        /// 
         /// </summary>
         [JsonProperty("before_conf", NullValueHandling = NullValueHandling.Ignore)]
-        public Object BeforeConf { get; set; }
+        public BeforeHbaConfOption BeforeConf { get; set; }
 
         /// <summary>
-        /// **参数解释**: 修改后的hba配置信息。 **约束限制**: 不涉及。
+        /// 
         /// </summary>
         [JsonProperty("after_conf", NullValueHandling = NullValueHandling.Ignore)]
-        public Object AfterConf { get; set; }
+        public AfterHbaConfOption AfterConf { get; set; }
 
 
 

@@ -35,6 +35,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? Size { get; set; }
 
         /// <summary>
+        /// iops，云硬盘每秒进行读写的操作次数。
+        /// </summary>
+        [JsonProperty("iops", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Iops { get; set; }
+
+        /// <summary>
+        /// 吞吐量，云硬盘每秒成功传送的数据量，即读取和写入的数据量。
+        /// </summary>
+        [JsonProperty("throughput", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Throughput { get; set; }
+
+        /// <summary>
         /// 规格。
         /// </summary>
         [JsonProperty("resource_spec_code", NullValueHandling = NullValueHandling.Ignore)]
@@ -52,6 +64,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  size: ").Append(Size).Append("\n");
+            sb.Append("  iops: ").Append(Iops).Append("\n");
+            sb.Append("  throughput: ").Append(Throughput).Append("\n");
             sb.Append("  resourceSpecCode: ").Append(ResourceSpecCode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -74,6 +88,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
             if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.Iops != input.Iops || (this.Iops != null && !this.Iops.Equals(input.Iops))) return false;
+            if (this.Throughput != input.Throughput || (this.Throughput != null && !this.Throughput.Equals(input.Throughput))) return false;
             if (this.ResourceSpecCode != input.ResourceSpecCode || (this.ResourceSpecCode != null && !this.ResourceSpecCode.Equals(input.ResourceSpecCode))) return false;
 
             return true;
@@ -90,6 +106,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.Iops != null) hashCode = hashCode * 59 + this.Iops.GetHashCode();
+                if (this.Throughput != null) hashCode = hashCode * 59 + this.Throughput.GetHashCode();
                 if (this.ResourceSpecCode != null) hashCode = hashCode * 59 + this.ResourceSpecCode.GetHashCode();
                 return hashCode;
             }

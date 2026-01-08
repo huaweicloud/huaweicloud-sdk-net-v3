@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("promotion_plan_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PromotionPlanId { get; set; }
 
+        /// <summary>
+        /// 处理类型 - ONLY_FOR_EXPAND：仅对新扩容桌面生效 - FOR_EXPAND_AND_IDLE：对新扩容桌面与空闲桌面生效 - FOR_EXPAND_AND_ALL：对新扩容桌面与已有全部桌面生效
+        /// </summary>
+        [JsonProperty("handle_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string HandleType { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  desktopPoolId: ").Append(DesktopPoolId).Append("\n");
             sb.Append("  desktopIds: ").Append(DesktopIds).Append("\n");
             sb.Append("  promotionPlanId: ").Append(PromotionPlanId).Append("\n");
+            sb.Append("  handleType: ").Append(HandleType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +74,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.DesktopPoolId != input.DesktopPoolId || (this.DesktopPoolId != null && !this.DesktopPoolId.Equals(input.DesktopPoolId))) return false;
             if (this.DesktopIds != input.DesktopIds || (this.DesktopIds != null && input.DesktopIds != null && !this.DesktopIds.SequenceEqual(input.DesktopIds))) return false;
             if (this.PromotionPlanId != input.PromotionPlanId || (this.PromotionPlanId != null && !this.PromotionPlanId.Equals(input.PromotionPlanId))) return false;
+            if (this.HandleType != input.HandleType || (this.HandleType != null && !this.HandleType.Equals(input.HandleType))) return false;
 
             return true;
         }
@@ -82,6 +90,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.DesktopPoolId != null) hashCode = hashCode * 59 + this.DesktopPoolId.GetHashCode();
                 if (this.DesktopIds != null) hashCode = hashCode * 59 + this.DesktopIds.GetHashCode();
                 if (this.PromotionPlanId != null) hashCode = hashCode * 59 + this.PromotionPlanId.GetHashCode();
+                if (this.HandleType != null) hashCode = hashCode * 59 + this.HandleType.GetHashCode();
                 return hashCode;
             }
         }

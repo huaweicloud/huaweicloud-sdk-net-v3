@@ -162,6 +162,18 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         public string TimelineDuration { get; set; }
 
         /// <summary>
+        /// 轮转间隔时间最小值，单位：秒 
+        /// </summary>
+        [JsonProperty("random_time_min", NullValueHandling = NullValueHandling.Ignore)]
+        public string RandomTimeMin { get; set; }
+
+        /// <summary>
+        /// 轮转间隔时间最大值，单位：秒 
+        /// </summary>
+        [JsonProperty("random_time_max", NullValueHandling = NullValueHandling.Ignore)]
+        public string RandomTimeMax { get; set; }
+
+        /// <summary>
         /// 对应拼接列表中第几个片段打水印，从0开始，\&quot;0表示第1个，“1”表示第二个，不带或填\&quot;ALL\&quot;表示所有拼接片源打水印。 
         /// </summary>
         [JsonProperty("overlay_input", NullValueHandling = NullValueHandling.Ignore)]
@@ -192,6 +204,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             sb.Append("  referpos: ").Append(Referpos).Append("\n");
             sb.Append("  timelineStart: ").Append(TimelineStart).Append("\n");
             sb.Append("  timelineDuration: ").Append(TimelineDuration).Append("\n");
+            sb.Append("  randomTimeMin: ").Append(RandomTimeMin).Append("\n");
+            sb.Append("  randomTimeMax: ").Append(RandomTimeMax).Append("\n");
             sb.Append("  overlayInput: ").Append(OverlayInput).Append("\n");
             sb.Append("  input: ").Append(Input).Append("\n");
             sb.Append("  Base: ").Append(Base).Append("\n");
@@ -218,6 +232,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             if (this.Referpos != input.Referpos || (this.Referpos != null && !this.Referpos.Equals(input.Referpos))) return false;
             if (this.TimelineStart != input.TimelineStart || (this.TimelineStart != null && !this.TimelineStart.Equals(input.TimelineStart))) return false;
             if (this.TimelineDuration != input.TimelineDuration || (this.TimelineDuration != null && !this.TimelineDuration.Equals(input.TimelineDuration))) return false;
+            if (this.RandomTimeMin != input.RandomTimeMin || (this.RandomTimeMin != null && !this.RandomTimeMin.Equals(input.RandomTimeMin))) return false;
+            if (this.RandomTimeMax != input.RandomTimeMax || (this.RandomTimeMax != null && !this.RandomTimeMax.Equals(input.RandomTimeMax))) return false;
             if (this.OverlayInput != input.OverlayInput || (this.OverlayInput != null && !this.OverlayInput.Equals(input.OverlayInput))) return false;
             if (this.Input != input.Input || (this.Input != null && !this.Input.Equals(input.Input))) return false;
             if (this.Base != input.Base) return false;
@@ -238,6 +254,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                 if (this.Referpos != null) hashCode = hashCode * 59 + this.Referpos.GetHashCode();
                 if (this.TimelineStart != null) hashCode = hashCode * 59 + this.TimelineStart.GetHashCode();
                 if (this.TimelineDuration != null) hashCode = hashCode * 59 + this.TimelineDuration.GetHashCode();
+                if (this.RandomTimeMin != null) hashCode = hashCode * 59 + this.RandomTimeMin.GetHashCode();
+                if (this.RandomTimeMax != null) hashCode = hashCode * 59 + this.RandomTimeMax.GetHashCode();
                 if (this.OverlayInput != null) hashCode = hashCode * 59 + this.OverlayInput.GetHashCode();
                 if (this.Input != null) hashCode = hashCode * 59 + this.Input.GetHashCode();
                 hashCode = hashCode * 59 + this.Base.GetHashCode();

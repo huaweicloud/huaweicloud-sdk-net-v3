@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string ChargeMode { get; set; }
 
         /// <summary>
-        /// 产品模式，仅支持base（基础加速）
+        /// 产品模式。取值意义： - base：基础加速
         /// </summary>
         [JsonProperty("product_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductType { get; set; }

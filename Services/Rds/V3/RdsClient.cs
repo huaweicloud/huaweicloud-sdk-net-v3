@@ -4590,6 +4590,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 修改时区
+        ///
+        /// 修改时区
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateTimeZoneResponse UpdateTimeZone(UpdateTimeZoneRequest updateTimeZoneRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateTimeZoneRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/timezone/modify", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTimeZoneRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<UpdateTimeZoneResponse>(response);
+        }
+
+        public SyncInvoker<UpdateTimeZoneResponse> UpdateTimeZoneInvoker(UpdateTimeZoneRequest updateTimeZoneRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateTimeZoneRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/timezone/modify", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTimeZoneRequest);
+            return new SyncInvoker<UpdateTimeZoneResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateTimeZoneResponse>);
+        }
+        
+        /// <summary>
         /// RDS实例按需转包周期
         ///
         /// RDS实例按需转包周期

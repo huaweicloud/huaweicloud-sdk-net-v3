@@ -34,6 +34,18 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         [JsonProperty("common", NullValueHandling = NullValueHandling.Ignore)]
         public Common Common { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("output", NullValueHandling = NullValueHandling.Ignore)]
+        public ObsObjInfo Output { get; set; }
+
+        /// <summary>
+        /// 输出文件名 
+        /// </summary>
+        [JsonProperty("output_filename", NullValueHandling = NullValueHandling.Ignore)]
+        public string OutputFilename { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +58,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             sb.Append("  video: ").Append(Video).Append("\n");
             sb.Append("  audio: ").Append(Audio).Append("\n");
             sb.Append("  common: ").Append(Common).Append("\n");
+            sb.Append("  output: ").Append(Output).Append("\n");
+            sb.Append("  outputFilename: ").Append(OutputFilename).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +81,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             if (this.Video != input.Video || (this.Video != null && !this.Video.Equals(input.Video))) return false;
             if (this.Audio != input.Audio || (this.Audio != null && !this.Audio.Equals(input.Audio))) return false;
             if (this.Common != input.Common || (this.Common != null && !this.Common.Equals(input.Common))) return false;
+            if (this.Output != input.Output || (this.Output != null && !this.Output.Equals(input.Output))) return false;
+            if (this.OutputFilename != input.OutputFilename || (this.OutputFilename != null && !this.OutputFilename.Equals(input.OutputFilename))) return false;
 
             return true;
         }
@@ -82,6 +98,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                 if (this.Video != null) hashCode = hashCode * 59 + this.Video.GetHashCode();
                 if (this.Audio != null) hashCode = hashCode * 59 + this.Audio.GetHashCode();
                 if (this.Common != null) hashCode = hashCode * 59 + this.Common.GetHashCode();
+                if (this.Output != null) hashCode = hashCode * 59 + this.Output.GetHashCode();
+                if (this.OutputFilename != null) hashCode = hashCode * 59 + this.OutputFilename.GetHashCode();
                 return hashCode;
             }
         }

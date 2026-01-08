@@ -137,7 +137,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("desktop_type", NullValueHandling = NullValueHandling.Ignore)]
         public DesktopTypeEnum DesktopType { get; set; }
         /// <summary>
-        /// 可用分区。将桌面创建到指定的可用分区。如果不指定则使用系统随机的可用分区。
+        /// 可用分区。将桌面创建到指定的可用分区。
         /// </summary>
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string AvailabilityZone { get; set; }
@@ -185,7 +185,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public List<SecurityGroup> SecurityGroups { get; set; }
 
         /// <summary>
-        /// 创建桌面使用的参数列表。长度为1-100。  当前不支持一批桌面不同配置，所有桌面的配置和第一台的一致，如果第一台未设置参数，则取外层的同名参数。
+        /// 创建桌面使用的参数列表。长度为1-100。
         /// </summary>
         [JsonProperty("desktops", NullValueHandling = NullValueHandling.Ignore)]
         public List<Desktop> Desktops { get; set; }
@@ -256,6 +256,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("hour_package_offering_id", NullValueHandling = NullValueHandling.Ignore)]
         public string HourPackageOfferingId { get; set; }
 
+        /// <summary>
+        /// 是否在发放新桌面时，挂载旧桌面磁盘为数据盘
+        /// </summary>
+        [JsonProperty("if_mount_old_desktop_disk", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IfMountOldDesktopDisk { get; set; }
+
 
 
         /// <summary>
@@ -286,6 +292,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  desktopNamePolicyId: ").Append(DesktopNamePolicyId).Append("\n");
             sb.Append("  hourPackageProductId: ").Append(HourPackageProductId).Append("\n");
             sb.Append("  hourPackageOfferingId: ").Append(HourPackageOfferingId).Append("\n");
+            sb.Append("  ifMountOldDesktopDisk: ").Append(IfMountOldDesktopDisk).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -325,6 +332,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.DesktopNamePolicyId != input.DesktopNamePolicyId || (this.DesktopNamePolicyId != null && !this.DesktopNamePolicyId.Equals(input.DesktopNamePolicyId))) return false;
             if (this.HourPackageProductId != input.HourPackageProductId || (this.HourPackageProductId != null && !this.HourPackageProductId.Equals(input.HourPackageProductId))) return false;
             if (this.HourPackageOfferingId != input.HourPackageOfferingId || (this.HourPackageOfferingId != null && !this.HourPackageOfferingId.Equals(input.HourPackageOfferingId))) return false;
+            if (this.IfMountOldDesktopDisk != input.IfMountOldDesktopDisk || (this.IfMountOldDesktopDisk != null && !this.IfMountOldDesktopDisk.Equals(input.IfMountOldDesktopDisk))) return false;
 
             return true;
         }
@@ -358,6 +366,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.DesktopNamePolicyId != null) hashCode = hashCode * 59 + this.DesktopNamePolicyId.GetHashCode();
                 if (this.HourPackageProductId != null) hashCode = hashCode * 59 + this.HourPackageProductId.GetHashCode();
                 if (this.HourPackageOfferingId != null) hashCode = hashCode * 59 + this.HourPackageOfferingId.GetHashCode();
+                if (this.IfMountOldDesktopDisk != null) hashCode = hashCode * 59 + this.IfMountOldDesktopDisk.GetHashCode();
                 return hashCode;
             }
         }

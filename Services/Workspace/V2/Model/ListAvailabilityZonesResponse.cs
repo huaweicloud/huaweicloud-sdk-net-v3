@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// 云桌面支持的可用分区列表。
         /// </summary>
         [JsonProperty("availability_zones", NullValueHandling = NullValueHandling.Ignore)]
-        public List<AvailabilityZone> AvailabilityZones { get; set; }
+        public List<AvailabilityZoneInfo> AvailabilityZones { get; set; }
 
         /// <summary>
         /// 云桌面支持的可用分区列表总数。

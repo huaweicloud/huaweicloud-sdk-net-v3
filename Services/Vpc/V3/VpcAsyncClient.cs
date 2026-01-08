@@ -72,7 +72,6 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 为指定的端口批量添加标签。
         /// 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
-        /// 该接口在华南-深圳上线。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -150,7 +149,6 @@ namespace HuaweiCloud.SDK.Vpc.V3
         ///
         /// 为指定的端口资源实例批量删除标签。
         /// 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
-        /// 该接口在华南-深圳上线。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -177,7 +175,6 @@ namespace HuaweiCloud.SDK.Vpc.V3
         /// 查询端口资源实例数量
         ///
         /// 使用标签过滤查询端口实例数量。
-        /// 该接口在华南-深圳上线。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -201,9 +198,8 @@ namespace HuaweiCloud.SDK.Vpc.V3
         /// <summary>
         /// 添加端口资源标签
         ///
-        /// 给指定端口资源实例增加标签信息
+        /// 给指定端口资源实例增加标签信息。
         /// 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
-        /// 该接口在华南-深圳上线。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -397,9 +393,8 @@ namespace HuaweiCloud.SDK.Vpc.V3
         /// <summary>
         /// 删除端口资源标签
         ///
-        /// 删除指定端口的标签信息
+        /// 删除指定端口的标签信息。
         /// 该接口为幂等接口：删除的key不存在报404，key不能为空或者空字符串。
-        /// 该接口在华南-深圳上线。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -610,7 +605,6 @@ namespace HuaweiCloud.SDK.Vpc.V3
         /// 查询端口项目标签
         ///
         /// 查询租户在指定Project中实例类型的所有资源标签集合。
-        /// 该接口在华南-深圳上线。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -632,10 +626,33 @@ namespace HuaweiCloud.SDK.Vpc.V3
         }
         
         /// <summary>
+        /// 查询端口列表
+        ///
+        /// 当您的端口创建成功后，您可以通过调用该接口查询所有端口信息，包括端口ID、IP地址、所属云服务实例等。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListPortsResponse> ListPortsAsync(ListPortsRequest listPortsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPortsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListPortsResponse>(response);
+        }
+
+        public AsyncInvoker<ListPortsResponse> ListPortsAsyncInvoker(ListPortsRequest listPortsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPortsRequest);
+            return new AsyncInvoker<ListPortsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPortsResponse>);
+        }
+        
+        /// <summary>
         /// 查询端口资源实例列表
         ///
         /// 使用标签过滤查询端口。
-        /// 该接口在华南-深圳上线。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -825,6 +842,30 @@ namespace HuaweiCloud.SDK.Vpc.V3
         }
         
         /// <summary>
+        /// 查询虚拟子网列表
+        ///
+        /// 当您的子网创建成功后，您可以通过调用该接口查询所有子网信息，包括子网的名称、ID等。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListVirsubnetsResponse> ListVirsubnetsAsync(ListVirsubnetsRequest listVirsubnetsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/virsubnets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVirsubnetsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListVirsubnetsResponse>(response);
+        }
+
+        public AsyncInvoker<ListVirsubnetsResponse> ListVirsubnetsAsyncInvoker(ListVirsubnetsRequest listVirsubnetsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/virsubnets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVirsubnetsRequest);
+            return new AsyncInvoker<ListVirsubnetsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListVirsubnetsResponse>);
+        }
+        
+        /// <summary>
         /// 迁移辅助弹性网卡
         ///
         /// 批量迁移辅助弹性网卡
@@ -901,10 +942,35 @@ namespace HuaweiCloud.SDK.Vpc.V3
         }
         
         /// <summary>
+        /// 查询端口详情
+        ///
+        /// 当您的端口创建成功后，您可以通过调用该接口查询单个端口的详细信息，包括端口ID、IP地址、所属云服务实例等。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowPortResponse> ShowPortAsync(ShowPortRequest showPortRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showPortRequest.PortId, out var valueOfPortId)) urlParam.Add("port_id", valueOfPortId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/{port_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPortRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowPortResponse>(response);
+        }
+
+        public AsyncInvoker<ShowPortResponse> ShowPortAsyncInvoker(ShowPortRequest showPortRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showPortRequest.PortId, out var valueOfPortId)) urlParam.Add("port_id", valueOfPortId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/{port_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPortRequest);
+            return new AsyncInvoker<ShowPortResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPortResponse>);
+        }
+        
+        /// <summary>
         /// 查询端口资源标签
         ///
         /// 查询指定端口的标签信息。
-        /// 该接口在华南-深圳上线。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -925,6 +991,30 @@ namespace HuaweiCloud.SDK.Vpc.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/{port_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPortTagsRequest);
             return new AsyncInvoker<ShowPortTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPortTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询配额
+        ///
+        /// 您可以通过此接口查询VPC服务相关资源的配额，包括安全组配额、安全组规则配额等。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowQuotaResponse> ShowQuotaAsync(ShowQuotaRequest showQuotaRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/quotas", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuotaRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowQuotaResponse>(response);
+        }
+
+        public AsyncInvoker<ShowQuotaResponse> ShowQuotaAsyncInvoker(ShowQuotaRequest showQuotaRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/quotas", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuotaRequest);
+            return new AsyncInvoker<ShowQuotaResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowQuotaResponse>);
         }
         
         /// <summary>
@@ -1105,6 +1195,32 @@ namespace HuaweiCloud.SDK.Vpc.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-sessions/{traffic_mirror_session_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTrafficMirrorSessionRequest);
             return new AsyncInvoker<ShowTrafficMirrorSessionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTrafficMirrorSessionResponse>);
+        }
+        
+        /// <summary>
+        /// 查询虚拟子网详情
+        ///
+        /// 当您的子网创建成功后，您可以通过调用该接口查询单个子网的详细信息，包括子网的名称、ID、状态等。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowVirsubnetResponse> ShowVirsubnetAsync(ShowVirsubnetRequest showVirsubnetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showVirsubnetRequest.VirsubnetId, out var valueOfVirsubnetId)) urlParam.Add("virsubnet_id", valueOfVirsubnetId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/virsubnets/{virsubnet_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVirsubnetRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowVirsubnetResponse>(response);
+        }
+
+        public AsyncInvoker<ShowVirsubnetResponse> ShowVirsubnetAsyncInvoker(ShowVirsubnetRequest showVirsubnetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showVirsubnetRequest.VirsubnetId, out var valueOfVirsubnetId)) urlParam.Add("virsubnet_id", valueOfVirsubnetId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/virsubnets/{virsubnet_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVirsubnetRequest);
+            return new AsyncInvoker<ShowVirsubnetResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVirsubnetResponse>);
         }
         
         /// <summary>
@@ -2181,6 +2297,30 @@ namespace HuaweiCloud.SDK.Vpc.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/address-groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAddressGroupRequest);
             return new AsyncInvoker<ListAddressGroupResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAddressGroupResponse>);
+        }
+        
+        /// <summary>
+        /// 查询IP地址组的关联资源
+        ///
+        /// 当您的IP地址组被网络ACL和安全组资源关联时，您可以通过调用该接口查询IP地址组关联的网络ACL或安全组的资源ID和名称。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAddressGroupsDependencyResponse> ListAddressGroupsDependencyAsync(ListAddressGroupsDependencyRequest listAddressGroupsDependencyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/list-address-groups-dependency", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAddressGroupsDependencyRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListAddressGroupsDependencyResponse>(response);
+        }
+
+        public AsyncInvoker<ListAddressGroupsDependencyResponse> ListAddressGroupsDependencyAsyncInvoker(ListAddressGroupsDependencyRequest listAddressGroupsDependencyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/list-address-groups-dependency", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAddressGroupsDependencyRequest);
+            return new AsyncInvoker<ListAddressGroupsDependencyResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAddressGroupsDependencyResponse>);
         }
         
         /// <summary>

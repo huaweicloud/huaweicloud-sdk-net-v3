@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// **参数解释**：起始端口。  **约束限制**：不涉及  **取值范围**：1-65535  **默认取值：不涉及
+        /// **参数解释**：起始端口。  **约束限制**：不涉及  **取值范围**：1-65535  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("start_port", NullValueHandling = NullValueHandling.Ignore)]
         public int? StartPort { get; set; }
 
         /// <summary>
-        /// **参数解释**：结束端口，需大于等于起始端口  **约束限制**：不涉及  **取值范围**：1-65535  **默认取值：不涉及
+        /// **参数解释**：结束端口。  **约束限制**：大于等于起始端口。  **取值范围**：1-65535  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("end_port", NullValueHandling = NullValueHandling.Ignore)]
         public int? EndPort { get; set; }

@@ -17,6 +17,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
+        /// 域。
+        /// </summary>
+        [SDKProperty("domain", IsQuery = true)]
+        [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
+        public string Domain { get; set; }
+
+        /// <summary>
         /// 用于分页查询，返回桌面数量限制。如果不指定，则返回所有符合条件的桌面。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
@@ -39,6 +46,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListAdOusRequest {\n");
+            sb.Append("  domain: ").Append(Domain).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("}\n");
@@ -59,6 +67,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public bool Equals(ListAdOusRequest input)
         {
             if (input == null) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
 
@@ -73,6 +82,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 return hashCode;

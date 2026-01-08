@@ -618,7 +618,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string InstanceType { get; set; }
 
         /// <summary>
-        /// **参数解释**：标识实例绑定内部服务的实例ID。  **取值范围**：不涉及  不支持该字段，请勿使用。
+        /// **参数解释**：标识实例绑定内部服务的实例id。  **取值范围**：不涉及  不支持该字段，请勿使用。
         /// </summary>
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }

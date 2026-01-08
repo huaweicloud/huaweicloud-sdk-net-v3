@@ -36,12 +36,24 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             /// </summary>
             public static readonly StatusEnum INVALID = new StatusEnum("invalid");
 
+            /// <summary>
+            /// Enum INSUFFICIENT_DATA for value: insufficient_data
+            /// </summary>
+            public static readonly StatusEnum INSUFFICIENT_DATA = new StatusEnum("insufficient_data");
+
+            /// <summary>
+            /// Enum OK_MANUAL for value: ok_manual
+            /// </summary>
+            public static readonly StatusEnum OK_MANUAL = new StatusEnum("ok_manual");
+
             private static readonly Dictionary<string, StatusEnum> StaticFields =
             new Dictionary<string, StatusEnum>()
             {
                 { "ok", OK },
                 { "alarm", ALARM },
                 { "invalid", INVALID },
+                { "insufficient_data", INSUFFICIENT_DATA },
+                { "ok_manual", OK_MANUAL },
             };
 
             private string _value;
@@ -387,7 +399,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public List<string> AlarmId { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警记录ID。 **约束限制**： 不涉及。 **取值范围**： 以ah开头，后跟22位由字母或数字组成的字符串，字符串长度为24。 **默认取值**： 不涉及。 
+        /// **参数解释**： 告警流水号。优化告警流水号生成规则，由之前的 ah1655717086704DEnBrJ999 更改为 ah251222T092004SAD2yARym **约束限制**： 不涉及。 **取值范围**： 以ah开头，后跟22位由字母或数字组成的字符串，字符串长度为24。 **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("record_id", IsQuery = true)]
         [JsonProperty("record_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -401,7 +413,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警规则状态列表。告警规则状态：枚举值，ok为正常，alarm为告警，invalid为已失效。 **约束限制**： 列表长度最大为3。 
+        /// **参数解释**： 告警规则状态列表。 **取值范围**： 告警规则状态：枚举值。 - ok：已解决 - alarm：告警中 - invalid：已失效 - insufficient_data: 数据不足 - ok_manual: 已解决（手动） **约束限制**： 包含的告警规则状态对象数量为[0,3] 
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
@@ -414,7 +426,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public int? Level { get; set; }
 
         /// <summary>
-        /// **参数解释**： 查询服务的命名空间，各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”。 **约束限制**： 不涉及。 **取值范围**： 格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_。字符串的长度必须在 3 到 32个字符之间。 **默认取值**： 不涉及。 
+        /// **参数解释**： 查询服务的命名空间，各服务命名空间请参阅[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/en-us/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)。 **约束限制**： 不涉及。 **取值范围**： 格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_。字符串的长度必须在 3 到 32个字符之间。 **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("namespace", IsQuery = true)]
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
@@ -481,6 +493,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [SDKProperty("order_by", IsQuery = true)]
         [JsonProperty("order_by", NullValueHandling = NullValueHandling.Ignore)]
         public OrderByEnum OrderBy { get; set; }
+        /// <summary>
+        /// **参数解释**： 告警规则屏蔽状态 **约束限制**： 不涉及。 **取值范围**： - UN_MASKED 活跃告警 - MASKED 屏蔽告警 **默认取值**： 不涉及 
+        /// </summary>
+        [SDKProperty("mask_status", IsQuery = true)]
+        [JsonProperty("mask_status", NullValueHandling = NullValueHandling.Ignore)]
+        public string MaskStatus { get; set; }
+
 
 
         /// <summary>
@@ -505,6 +524,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  orderBy: ").Append(OrderBy).Append("\n");
+            sb.Append("  maskStatus: ").Append(MaskStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -538,6 +558,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.OrderBy != input.OrderBy) return false;
+            if (this.MaskStatus != input.MaskStatus || (this.MaskStatus != null && !this.MaskStatus.Equals(input.MaskStatus))) return false;
 
             return true;
         }
@@ -565,6 +586,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 hashCode = hashCode * 59 + this.OrderBy.GetHashCode();
+                if (this.MaskStatus != null) hashCode = hashCode * 59 + this.MaskStatus.GetHashCode();
                 return hashCode;
             }
         }

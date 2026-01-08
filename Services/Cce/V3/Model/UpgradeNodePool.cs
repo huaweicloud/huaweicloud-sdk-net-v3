@@ -17,6 +17,24 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
+        /// API类型，固定值“NodePool”。
+        /// </summary>
+        [JsonProperty("kind", NullValueHandling = NullValueHandling.Ignore)]
+        public string Kind { get; set; }
+
+        /// <summary>
+        /// API版本，固定值“v3”。
+        /// </summary>
+        [JsonProperty("apiVersion", NullValueHandling = NullValueHandling.Ignore)]
+        public string ApiVersion { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
+        public NodePoolMetadata Metadata { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("spec", NullValueHandling = NullValueHandling.Ignore)]
@@ -31,6 +49,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class UpgradeNodePool {\n");
+            sb.Append("  kind: ").Append(Kind).Append("\n");
+            sb.Append("  apiVersion: ").Append(ApiVersion).Append("\n");
+            sb.Append("  metadata: ").Append(Metadata).Append("\n");
             sb.Append("  spec: ").Append(Spec).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -50,6 +71,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public bool Equals(UpgradeNodePool input)
         {
             if (input == null) return false;
+            if (this.Kind != input.Kind || (this.Kind != null && !this.Kind.Equals(input.Kind))) return false;
+            if (this.ApiVersion != input.ApiVersion || (this.ApiVersion != null && !this.ApiVersion.Equals(input.ApiVersion))) return false;
+            if (this.Metadata != input.Metadata || (this.Metadata != null && !this.Metadata.Equals(input.Metadata))) return false;
             if (this.Spec != input.Spec || (this.Spec != null && !this.Spec.Equals(input.Spec))) return false;
 
             return true;
@@ -63,6 +87,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.Kind != null) hashCode = hashCode * 59 + this.Kind.GetHashCode();
+                if (this.ApiVersion != null) hashCode = hashCode * 59 + this.ApiVersion.GetHashCode();
+                if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
                 if (this.Spec != null) hashCode = hashCode * 59 + this.Spec.GetHashCode();
                 return hashCode;
             }

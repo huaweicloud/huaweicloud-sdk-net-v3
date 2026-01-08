@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 桌面agent安装情况。
+    /// 桌面监控插件安装情况。
     /// </summary>
     public class AgentsCondition 
     {
@@ -65,7 +65,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? Process { get; set; }
 
         /// <summary>
-        /// 单个桌面内的agent安装情况。
+        /// 单个桌面内的监控插件安装情况。
         /// </summary>
         [JsonProperty("agent_info", NullValueHandling = NullValueHandling.Ignore)]
         public List<AgentInfo> AgentInfo { get; set; }

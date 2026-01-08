@@ -263,6 +263,18 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         public List<PicInfo> PicInfo { get; set; }
 
         /// <summary>
+        /// 截图文件信息。 
+        /// </summary>
+        [JsonProperty("thumbnails_info", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ThumbnailsInfo> ThumbnailsInfo { get; set; }
+
+        /// <summary>
+        /// 雪碧图信息，数组，最多支持20个成员。 
+        /// </summary>
+        [JsonProperty("image_sprite_info", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ImageSpriteInfo> ImageSpriteInfo { get; set; }
+
+        /// <summary>
         /// 转码参数。  若同时设置“trans_template_id”和此参数，则优先使用此参数进行转码。 
         /// </summary>
         [JsonProperty("av_parameters", NullValueHandling = NullValueHandling.Ignore)]
@@ -306,6 +318,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             sb.Append("  thumbnailOutput: ").Append(ThumbnailOutput).Append("\n");
             sb.Append("  thumbnailOutputname: ").Append(ThumbnailOutputname).Append("\n");
             sb.Append("  picInfo: ").Append(PicInfo).Append("\n");
+            sb.Append("  thumbnailsInfo: ").Append(ThumbnailsInfo).Append("\n");
+            sb.Append("  imageSpriteInfo: ").Append(ImageSpriteInfo).Append("\n");
             sb.Append("  avParameters: ").Append(AvParameters).Append("\n");
             sb.Append("  additionalManifests: ").Append(AdditionalManifests).Append("\n");
             sb.Append("  metadata: ").Append(Metadata).Append("\n");
@@ -344,6 +358,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             if (this.ThumbnailOutput != input.ThumbnailOutput || (this.ThumbnailOutput != null && !this.ThumbnailOutput.Equals(input.ThumbnailOutput))) return false;
             if (this.ThumbnailOutputname != input.ThumbnailOutputname || (this.ThumbnailOutputname != null && !this.ThumbnailOutputname.Equals(input.ThumbnailOutputname))) return false;
             if (this.PicInfo != input.PicInfo || (this.PicInfo != null && input.PicInfo != null && !this.PicInfo.SequenceEqual(input.PicInfo))) return false;
+            if (this.ThumbnailsInfo != input.ThumbnailsInfo || (this.ThumbnailsInfo != null && input.ThumbnailsInfo != null && !this.ThumbnailsInfo.SequenceEqual(input.ThumbnailsInfo))) return false;
+            if (this.ImageSpriteInfo != input.ImageSpriteInfo || (this.ImageSpriteInfo != null && input.ImageSpriteInfo != null && !this.ImageSpriteInfo.SequenceEqual(input.ImageSpriteInfo))) return false;
             if (this.AvParameters != input.AvParameters || (this.AvParameters != null && input.AvParameters != null && !this.AvParameters.SequenceEqual(input.AvParameters))) return false;
             if (this.AdditionalManifests != input.AdditionalManifests || (this.AdditionalManifests != null && input.AdditionalManifests != null && !this.AdditionalManifests.SequenceEqual(input.AdditionalManifests))) return false;
             if (this.Metadata != input.Metadata || (this.Metadata != null && input.Metadata != null && !this.Metadata.SequenceEqual(input.Metadata))) return false;
@@ -376,6 +392,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                 if (this.ThumbnailOutput != null) hashCode = hashCode * 59 + this.ThumbnailOutput.GetHashCode();
                 if (this.ThumbnailOutputname != null) hashCode = hashCode * 59 + this.ThumbnailOutputname.GetHashCode();
                 if (this.PicInfo != null) hashCode = hashCode * 59 + this.PicInfo.GetHashCode();
+                if (this.ThumbnailsInfo != null) hashCode = hashCode * 59 + this.ThumbnailsInfo.GetHashCode();
+                if (this.ImageSpriteInfo != null) hashCode = hashCode * 59 + this.ImageSpriteInfo.GetHashCode();
                 if (this.AvParameters != null) hashCode = hashCode * 59 + this.AvParameters.GetHashCode();
                 if (this.AdditionalManifests != null) hashCode = hashCode * 59 + this.AdditionalManifests.GetHashCode();
                 if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();

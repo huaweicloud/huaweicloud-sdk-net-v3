@@ -156,6 +156,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public List<string> GrayDesktopIds { get; set; }
 
         /// <summary>
+        /// 桌面id列表，支持桌面池部分桌面执行脚本。
+        /// </summary>
+        [JsonProperty("desktop_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> DesktopIds { get; set; }
+
+        /// <summary>
         /// 灰度失败阈值，灰度执行失败次数达到该值时，不执行下一批任务。
         /// </summary>
         [JsonProperty("gray_fail_threshold", NullValueHandling = NullValueHandling.Ignore)]
@@ -202,6 +208,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  scriptIds: ").Append(ScriptIds).Append("\n");
             sb.Append("  grayCount: ").Append(GrayCount).Append("\n");
             sb.Append("  grayDesktopIds: ").Append(GrayDesktopIds).Append("\n");
+            sb.Append("  desktopIds: ").Append(DesktopIds).Append("\n");
             sb.Append("  grayFailThreshold: ").Append(GrayFailThreshold).Append("\n");
             sb.Append("  preStart: ").Append(PreStart).Append("\n");
             sb.Append("  postFinish: ").Append(PostFinish).Append("\n");
@@ -229,6 +236,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.ScriptIds != input.ScriptIds || (this.ScriptIds != null && input.ScriptIds != null && !this.ScriptIds.SequenceEqual(input.ScriptIds))) return false;
             if (this.GrayCount != input.GrayCount || (this.GrayCount != null && !this.GrayCount.Equals(input.GrayCount))) return false;
             if (this.GrayDesktopIds != input.GrayDesktopIds || (this.GrayDesktopIds != null && input.GrayDesktopIds != null && !this.GrayDesktopIds.SequenceEqual(input.GrayDesktopIds))) return false;
+            if (this.DesktopIds != input.DesktopIds || (this.DesktopIds != null && input.DesktopIds != null && !this.DesktopIds.SequenceEqual(input.DesktopIds))) return false;
             if (this.GrayFailThreshold != input.GrayFailThreshold || (this.GrayFailThreshold != null && !this.GrayFailThreshold.Equals(input.GrayFailThreshold))) return false;
             if (this.PreStart != input.PreStart || (this.PreStart != null && !this.PreStart.Equals(input.PreStart))) return false;
             if (this.PostFinish != input.PostFinish || (this.PostFinish != null && !this.PostFinish.Equals(input.PostFinish))) return false;
@@ -250,6 +258,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.ScriptIds != null) hashCode = hashCode * 59 + this.ScriptIds.GetHashCode();
                 if (this.GrayCount != null) hashCode = hashCode * 59 + this.GrayCount.GetHashCode();
                 if (this.GrayDesktopIds != null) hashCode = hashCode * 59 + this.GrayDesktopIds.GetHashCode();
+                if (this.DesktopIds != null) hashCode = hashCode * 59 + this.DesktopIds.GetHashCode();
                 if (this.GrayFailThreshold != null) hashCode = hashCode * 59 + this.GrayFailThreshold.GetHashCode();
                 if (this.PreStart != null) hashCode = hashCode * 59 + this.PreStart.GetHashCode();
                 if (this.PostFinish != null) hashCode = hashCode * 59 + this.PostFinish.GetHashCode();

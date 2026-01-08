@@ -29,6 +29,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string UserName { get; set; }
 
         /// <summary>
+        /// 用户所属域名。
+        /// </summary>
+        [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
+        public string Domain { get; set; }
+
+        /// <summary>
         /// 用户邮箱。
         /// </summary>
         [JsonProperty("user_email", NullValueHandling = NullValueHandling.Ignore)]
@@ -69,6 +75,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("class UserInGroup {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  userName: ").Append(UserName).Append("\n");
+            sb.Append("  domain: ").Append(Domain).Append("\n");
             sb.Append("  userEmail: ").Append(UserEmail).Append("\n");
             sb.Append("  userPhone: ").Append(UserPhone).Append("\n");
             sb.Append("  totalDesktops: ").Append(TotalDesktops).Append("\n");
@@ -94,6 +101,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (input == null) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
             if (this.UserEmail != input.UserEmail || (this.UserEmail != null && !this.UserEmail.Equals(input.UserEmail))) return false;
             if (this.UserPhone != input.UserPhone || (this.UserPhone != null && !this.UserPhone.Equals(input.UserPhone))) return false;
             if (this.TotalDesktops != input.TotalDesktops || (this.TotalDesktops != null && !this.TotalDesktops.Equals(input.TotalDesktops))) return false;
@@ -113,6 +121,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 var hashCode = 41;
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
                 if (this.UserEmail != null) hashCode = hashCode * 59 + this.UserEmail.GetHashCode();
                 if (this.UserPhone != null) hashCode = hashCode * 59 + this.UserPhone.GetHashCode();
                 if (this.TotalDesktops != null) hashCode = hashCode * 59 + this.TotalDesktops.GetHashCode();

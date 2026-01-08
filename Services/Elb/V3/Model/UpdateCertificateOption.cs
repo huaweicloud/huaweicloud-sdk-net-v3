@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     public class UpdateCertificateOption 
     {
         /// <summary>
-        /// **参数解释**：修改保护状态   **约束限制**：不涉及   **取值范围**：  - nonProtection: 不保护  - consoleProtection: 控制台修改保护   **默认取值**：不涉及
+        /// **参数解释**：修改保护状态  **约束限制**：不涉及   **取值范围**：  - nonProtection: 不保护  - consoleProtection: 控制台修改保护   **默认取值**：不涉及
         /// </summary>
-        /// <value>**参数解释**：修改保护状态   **约束限制**：不涉及   **取值范围**：  - nonProtection: 不保护  - consoleProtection: 控制台修改保护   **默认取值**：不涉及</value>
+        /// <value>**参数解释**：修改保护状态  **约束限制**：不涉及   **取值范围**：  - nonProtection: 不保护  - consoleProtection: 控制台修改保护   **默认取值**：不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<ProtectionStatusEnum>))]
         public class ProtectionStatusEnum
         {
@@ -186,7 +186,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Source { get; set; }
 
         /// <summary>
-        /// **参数解释**：修改保护状态   **约束限制**：不涉及   **取值范围**：  - nonProtection: 不保护  - consoleProtection: 控制台修改保护   **默认取值**：不涉及
+        /// **参数解释**：修改保护状态  **约束限制**：不涉及   **取值范围**：  - nonProtection: 不保护  - consoleProtection: 控制台修改保护   **默认取值**：不涉及
         /// </summary>
         [JsonProperty("protection_status", NullValueHandling = NullValueHandling.Ignore)]
         public ProtectionStatusEnum ProtectionStatus { get; set; }

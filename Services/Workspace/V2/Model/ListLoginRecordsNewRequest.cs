@@ -79,6 +79,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("max_network_rtt", NullValueHandling = NullValueHandling.Ignore)]
         public int? MaxNetworkRtt { get; set; }
 
+        /// <summary>
+        /// 企业项目ID。
+        /// </summary>
+        [SDKProperty("enterprise_project_id", IsQuery = true)]
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
 
 
         /// <summary>
@@ -97,6 +104,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  minNetworkRtt: ").Append(MinNetworkRtt).Append("\n");
             sb.Append("  maxNetworkRtt: ").Append(MaxNetworkRtt).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -124,6 +132,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.MinNetworkRtt != input.MinNetworkRtt || (this.MinNetworkRtt != null && !this.MinNetworkRtt.Equals(input.MinNetworkRtt))) return false;
             if (this.MaxNetworkRtt != input.MaxNetworkRtt || (this.MaxNetworkRtt != null && !this.MaxNetworkRtt.Equals(input.MaxNetworkRtt))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
 
             return true;
         }
@@ -145,6 +154,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.MinNetworkRtt != null) hashCode = hashCode * 59 + this.MinNetworkRtt.GetHashCode();
                 if (this.MaxNetworkRtt != null) hashCode = hashCode * 59 + this.MaxNetworkRtt.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

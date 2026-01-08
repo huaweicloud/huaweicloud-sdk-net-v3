@@ -148,6 +148,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("domain_password", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainPassword { get; set; }
 
+        /// <summary>
+        /// 是否开启智能卡认证。
+        /// </summary>
+        [JsonProperty("cba_enabled", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? CbaEnabled { get; set; }
+
+        /// <summary>
+        /// 智能卡证书id。
+        /// </summary>
+        [JsonProperty("certificate_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string CertificateId { get; set; }
+
 
 
         /// <summary>
@@ -160,6 +172,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  domainType: ").Append(DomainType).Append("\n");
             sb.Append("  domainAdminAccount: ").Append(DomainAdminAccount).Append("\n");
             sb.Append("  domainPassword: ").Append(DomainPassword).Append("\n");
+            sb.Append("  cbaEnabled: ").Append(CbaEnabled).Append("\n");
+            sb.Append("  certificateId: ").Append(CertificateId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -181,6 +195,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.DomainType != input.DomainType) return false;
             if (this.DomainAdminAccount != input.DomainAdminAccount || (this.DomainAdminAccount != null && !this.DomainAdminAccount.Equals(input.DomainAdminAccount))) return false;
             if (this.DomainPassword != input.DomainPassword || (this.DomainPassword != null && !this.DomainPassword.Equals(input.DomainPassword))) return false;
+            if (this.CbaEnabled != input.CbaEnabled || (this.CbaEnabled != null && !this.CbaEnabled.Equals(input.CbaEnabled))) return false;
+            if (this.CertificateId != input.CertificateId || (this.CertificateId != null && !this.CertificateId.Equals(input.CertificateId))) return false;
 
             return true;
         }
@@ -196,6 +212,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 hashCode = hashCode * 59 + this.DomainType.GetHashCode();
                 if (this.DomainAdminAccount != null) hashCode = hashCode * 59 + this.DomainAdminAccount.GetHashCode();
                 if (this.DomainPassword != null) hashCode = hashCode * 59 + this.DomainPassword.GetHashCode();
+                if (this.CbaEnabled != null) hashCode = hashCode * 59 + this.CbaEnabled.GetHashCode();
+                if (this.CertificateId != null) hashCode = hashCode * 59 + this.CertificateId.GetHashCode();
                 return hashCode;
             }
         }

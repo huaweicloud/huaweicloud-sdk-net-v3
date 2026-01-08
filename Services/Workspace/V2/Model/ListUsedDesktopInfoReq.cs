@@ -161,6 +161,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string DesktopUsername { get; set; }
 
         /// <summary>
+        /// 桌面的用户所属域。默认为主域。
+        /// </summary>
+        [JsonProperty("desktop_user_domain", NullValueHandling = NullValueHandling.Ignore)]
+        public string DesktopUserDomain { get; set; }
+
+        /// <summary>
         /// 从查询结果中的第几条数据开始返回,用于分页查询，取值范围0-2147483647，默认从0开始。
         /// </summary>
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
@@ -186,6 +192,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("  groupByType: ").Append(GroupByType).Append("\n");
             sb.Append("  desktopUsername: ").Append(DesktopUsername).Append("\n");
+            sb.Append("  desktopUserDomain: ").Append(DesktopUserDomain).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("}\n");
@@ -211,6 +218,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
             if (this.GroupByType != input.GroupByType) return false;
             if (this.DesktopUsername != input.DesktopUsername || (this.DesktopUsername != null && !this.DesktopUsername.Equals(input.DesktopUsername))) return false;
+            if (this.DesktopUserDomain != input.DesktopUserDomain || (this.DesktopUserDomain != null && !this.DesktopUserDomain.Equals(input.DesktopUserDomain))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
 
@@ -230,6 +238,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 hashCode = hashCode * 59 + this.GroupByType.GetHashCode();
                 if (this.DesktopUsername != null) hashCode = hashCode * 59 + this.DesktopUsername.GetHashCode();
+                if (this.DesktopUserDomain != null) hashCode = hashCode * 59 + this.DesktopUserDomain.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 return hashCode;

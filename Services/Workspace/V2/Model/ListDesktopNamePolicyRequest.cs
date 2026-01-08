@@ -45,7 +45,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 用于分页查询，取值范围0-50，默认值50。
+        /// 用于分页查询，取值范围0-100，默认值100。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

@@ -5420,7 +5420,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
-        /// 查询asp采集结果
+        /// 查询ASP采集结果
         ///
         /// 查询ASP采集结果。
         /// 

@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 按需桌面变更规格返回的任务信息。
+    /// 桌面变更规格返回的任务信息。
     /// </summary>
     public class ResizeDesktopPoolJobResponse 
     {

@@ -119,6 +119,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string DesktopType { get; set; }
 
         /// <summary>
+        /// 桌面详细类型
+        /// </summary>
+        [JsonProperty("desktop_detail_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string DesktopDetailType { get; set; }
+
+        /// <summary>
         /// 桌面的子网ID。
         /// </summary>
         [JsonProperty("subnet_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -141,6 +147,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// </summary>
         [JsonProperty("task_status", NullValueHandling = NullValueHandling.Ignore)]
         public string TaskStatus { get; set; }
+
+        /// <summary>
+        /// 所属的可用区。
+        /// </summary>
+        [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
+        public string AvailabilityZone { get; set; }
+
+        /// <summary>
+        /// 桌面的连接状态
+        /// </summary>
+        [JsonProperty("connect_status", NullValueHandling = NullValueHandling.Ignore)]
+        public string ConnectStatus { get; set; }
 
 
 
@@ -168,10 +186,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  inMaintenanceMode: ").Append(InMaintenanceMode).Append("\n");
             sb.Append("  shareResourceSku: ").Append(ShareResourceSku).Append("\n");
             sb.Append("  desktopType: ").Append(DesktopType).Append("\n");
+            sb.Append("  desktopDetailType: ").Append(DesktopDetailType).Append("\n");
             sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
             sb.Append("  billResourceId: ").Append(BillResourceId).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  taskStatus: ").Append(TaskStatus).Append("\n");
+            sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
+            sb.Append("  connectStatus: ").Append(ConnectStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -207,10 +228,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.InMaintenanceMode != input.InMaintenanceMode || (this.InMaintenanceMode != null && !this.InMaintenanceMode.Equals(input.InMaintenanceMode))) return false;
             if (this.ShareResourceSku != input.ShareResourceSku || (this.ShareResourceSku != null && !this.ShareResourceSku.Equals(input.ShareResourceSku))) return false;
             if (this.DesktopType != input.DesktopType || (this.DesktopType != null && !this.DesktopType.Equals(input.DesktopType))) return false;
+            if (this.DesktopDetailType != input.DesktopDetailType || (this.DesktopDetailType != null && !this.DesktopDetailType.Equals(input.DesktopDetailType))) return false;
             if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
             if (this.BillResourceId != input.BillResourceId || (this.BillResourceId != null && !this.BillResourceId.Equals(input.BillResourceId))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.TaskStatus != input.TaskStatus || (this.TaskStatus != null && !this.TaskStatus.Equals(input.TaskStatus))) return false;
+            if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
+            if (this.ConnectStatus != input.ConnectStatus || (this.ConnectStatus != null && !this.ConnectStatus.Equals(input.ConnectStatus))) return false;
 
             return true;
         }
@@ -240,10 +264,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.InMaintenanceMode != null) hashCode = hashCode * 59 + this.InMaintenanceMode.GetHashCode();
                 if (this.ShareResourceSku != null) hashCode = hashCode * 59 + this.ShareResourceSku.GetHashCode();
                 if (this.DesktopType != null) hashCode = hashCode * 59 + this.DesktopType.GetHashCode();
+                if (this.DesktopDetailType != null) hashCode = hashCode * 59 + this.DesktopDetailType.GetHashCode();
                 if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
                 if (this.BillResourceId != null) hashCode = hashCode * 59 + this.BillResourceId.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.TaskStatus != null) hashCode = hashCode * 59 + this.TaskStatus.GetHashCode();
+                if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
+                if (this.ConnectStatus != null) hashCode = hashCode * 59 + this.ConnectStatus.GetHashCode();
                 return hashCode;
             }
         }

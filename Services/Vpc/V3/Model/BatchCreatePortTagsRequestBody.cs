@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
     {
 
         /// <summary>
-        /// 标签列表
+        /// 标签列表 约束：最大支持20组标签键值对
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<ResourceTag> Tags { get; set; }

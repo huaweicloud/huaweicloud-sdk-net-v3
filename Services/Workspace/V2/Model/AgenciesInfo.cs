@@ -23,6 +23,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Name { get; set; }
 
         /// <summary>
+        /// 委托ID。
+        /// </summary>
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// 委托场景。
+        /// </summary>
+        [JsonProperty("scene", NullValueHandling = NullValueHandling.Ignore)]
+        public string Scene { get; set; }
+
+        /// <summary>
         /// 委托权限信息。
         /// </summary>
         [JsonProperty("permissions", NullValueHandling = NullValueHandling.Ignore)]
@@ -38,6 +50,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             var sb = new StringBuilder();
             sb.Append("class AgenciesInfo {\n");
             sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("  scene: ").Append(Scene).Append("\n");
             sb.Append("  permissions: ").Append(Permissions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -58,6 +72,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             if (input == null) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Scene != input.Scene || (this.Scene != null && !this.Scene.Equals(input.Scene))) return false;
             if (this.Permissions != input.Permissions || (this.Permissions != null && input.Permissions != null && !this.Permissions.SequenceEqual(input.Permissions))) return false;
 
             return true;
@@ -72,6 +88,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             {
                 var hashCode = 41;
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Scene != null) hashCode = hashCode * 59 + this.Scene.GetHashCode();
                 if (this.Permissions != null) hashCode = hashCode * 59 + this.Permissions.GetHashCode();
                 return hashCode;
             }

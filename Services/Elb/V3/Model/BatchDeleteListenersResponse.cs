@@ -1,0 +1,80 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.Elb.V3.Model
+{
+    /// <summary>
+    /// Response Object
+    /// </summary>
+    public class BatchDeleteListenersResponse : SdkResponse
+    {
+
+        /// <summary>
+        /// 批量删除任务id
+        /// </summary>
+        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string JobId { get; set; }
+
+        /// <summary>
+        /// 待删除的监听器id列表。
+        /// </summary>
+        [JsonProperty("listener_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> ListenerIds { get; set; }
+
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class BatchDeleteListenersResponse {\n");
+            sb.Append("  jobId: ").Append(JobId).Append("\n");
+            sb.Append("  listenerIds: ").Append(ListenerIds).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as BatchDeleteListenersResponse);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(BatchDeleteListenersResponse input)
+        {
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.ListenerIds != input.ListenerIds || (this.ListenerIds != null && input.ListenerIds != null && !this.ListenerIds.SequenceEqual(input.ListenerIds))) return false;
+
+            return true;
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.ListenerIds != null) hashCode = hashCode * 59 + this.ListenerIds.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

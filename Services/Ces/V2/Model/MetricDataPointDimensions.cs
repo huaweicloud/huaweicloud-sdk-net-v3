@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 实际维度信息。 **取值范围**： 字符串长度在 1 到 1024 之间。 
+        /// </summary>
+        [JsonProperty("origin_value", NullValueHandling = NullValueHandling.Ignore)]
+        public string OriginValue { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("class MetricDataPointDimensions {\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  value: ").Append(Value).Append("\n");
+            sb.Append("  originValue: ").Append(OriginValue).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (input == null) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Value != input.Value || (this.Value != null && !this.Value.Equals(input.Value))) return false;
+            if (this.OriginValue != input.OriginValue || (this.OriginValue != null && !this.OriginValue.Equals(input.OriginValue))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 var hashCode = 41;
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Value != null) hashCode = hashCode * 59 + this.Value.GetHashCode();
+                if (this.OriginValue != null) hashCode = hashCode * 59 + this.OriginValue.GetHashCode();
                 return hashCode;
             }
         }

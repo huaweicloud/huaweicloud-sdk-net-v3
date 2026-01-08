@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// **参数解释**：复制负载均衡器请求体。  **约束限制**：不涉及
+    /// 复制负载均衡器接口请求体。
     /// </summary>
     public class CloneLoadbalancerRequestBody 
     {

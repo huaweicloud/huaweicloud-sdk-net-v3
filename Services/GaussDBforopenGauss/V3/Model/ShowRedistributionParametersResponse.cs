@@ -19,8 +19,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// <summary>
         /// **参数解释**: 参数列表信息。
         /// </summary>
-        [JsonProperty("redistribution_parameters", NullValueHandling = NullValueHandling.Ignore)]
-        public List<RedistributionParameterResult> RedistributionParameters { get; set; }
+        [JsonProperty("expansion_parameters", NullValueHandling = NullValueHandling.Ignore)]
+        public List<RedistributionParameterResult> ExpansionParameters { get; set; }
 
 
 
@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShowRedistributionParametersResponse {\n");
-            sb.Append("  redistributionParameters: ").Append(RedistributionParameters).Append("\n");
+            sb.Append("  expansionParameters: ").Append(ExpansionParameters).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public bool Equals(ShowRedistributionParametersResponse input)
         {
             if (input == null) return false;
-            if (this.RedistributionParameters != input.RedistributionParameters || (this.RedistributionParameters != null && input.RedistributionParameters != null && !this.RedistributionParameters.SequenceEqual(input.RedistributionParameters))) return false;
+            if (this.ExpansionParameters != input.ExpansionParameters || (this.ExpansionParameters != null && input.ExpansionParameters != null && !this.ExpansionParameters.SequenceEqual(input.ExpansionParameters))) return false;
 
             return true;
         }
@@ -63,7 +63,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.RedistributionParameters != null) hashCode = hashCode * 59 + this.RedistributionParameters.GetHashCode();
+                if (this.ExpansionParameters != null) hashCode = hashCode * 59 + this.ExpansionParameters.GetHashCode();
                 return hashCode;
             }
         }

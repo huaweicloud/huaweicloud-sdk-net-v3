@@ -241,6 +241,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
 
 
         /// <summary>
+        /// **参数解释**: 节点ID。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
+        /// </summary>
+        [JsonProperty("node_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string NodeId { get; set; }
+
+        /// <summary>
         /// **参数解释**: 最大查询记录数。例如该参数设定为10，则查询结果最多只显示10条记录。 **约束限制**: 对于公有云25.5.0.1及以上版本，此参数弃用，请勿传值。通过系统系统参数控制最大返回记录数量，默认为200。 **取值范围**: [1, 1000] **默认取值**: 默认为10。
         /// </summary>
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
@@ -355,6 +361,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListEnhanceFullSqlsRequestBody {\n");
+            sb.Append("  nodeId: ").Append(NodeId).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  beginTime: ").Append(BeginTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
@@ -391,6 +398,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public bool Equals(ListEnhanceFullSqlsRequestBody input)
         {
             if (input == null) return false;
+            if (this.NodeId != input.NodeId || (this.NodeId != null && !this.NodeId.Equals(input.NodeId))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.BeginTime != input.BeginTime || (this.BeginTime != null && !this.BeginTime.Equals(input.BeginTime))) return false;
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
@@ -421,6 +429,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.NodeId != null) hashCode = hashCode * 59 + this.NodeId.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.BeginTime != null) hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();

@@ -202,6 +202,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("tls_config", NullValueHandling = NullValueHandling.Ignore)]
         public TlsConfig TlsConfig { get; set; }
 
+        /// <summary>
+        /// 是否开启智能卡认证。
+        /// </summary>
+        [JsonProperty("cba_enabled", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? CbaEnabled { get; set; }
+
+        /// <summary>
+        /// 智能卡证书id。
+        /// </summary>
+        [JsonProperty("certificate_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string CertificateId { get; set; }
+
 
 
         /// <summary>
@@ -223,6 +235,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  deleteComputerObject: ").Append(DeleteComputerObject).Append("\n");
             sb.Append("  useLdaps: ").Append(UseLdaps).Append("\n");
             sb.Append("  tlsConfig: ").Append(TlsConfig).Append("\n");
+            sb.Append("  cbaEnabled: ").Append(CbaEnabled).Append("\n");
+            sb.Append("  certificateId: ").Append(CertificateId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -253,6 +267,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.DeleteComputerObject != input.DeleteComputerObject || (this.DeleteComputerObject != null && !this.DeleteComputerObject.Equals(input.DeleteComputerObject))) return false;
             if (this.UseLdaps != input.UseLdaps || (this.UseLdaps != null && !this.UseLdaps.Equals(input.UseLdaps))) return false;
             if (this.TlsConfig != input.TlsConfig || (this.TlsConfig != null && !this.TlsConfig.Equals(input.TlsConfig))) return false;
+            if (this.CbaEnabled != input.CbaEnabled || (this.CbaEnabled != null && !this.CbaEnabled.Equals(input.CbaEnabled))) return false;
+            if (this.CertificateId != input.CertificateId || (this.CertificateId != null && !this.CertificateId.Equals(input.CertificateId))) return false;
 
             return true;
         }
@@ -277,6 +293,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.DeleteComputerObject != null) hashCode = hashCode * 59 + this.DeleteComputerObject.GetHashCode();
                 if (this.UseLdaps != null) hashCode = hashCode * 59 + this.UseLdaps.GetHashCode();
                 if (this.TlsConfig != null) hashCode = hashCode * 59 + this.TlsConfig.GetHashCode();
+                if (this.CbaEnabled != null) hashCode = hashCode * 59 + this.CbaEnabled.GetHashCode();
+                if (this.CertificateId != null) hashCode = hashCode * 59 + this.CertificateId.GetHashCode();
                 return hashCode;
             }
         }

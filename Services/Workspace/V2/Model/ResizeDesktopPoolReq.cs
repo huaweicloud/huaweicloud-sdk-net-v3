@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string ProductId { get; set; }
 
         /// <summary>
-        /// 产品规格ID。可用区是边缘可用区时，必填此参数。
+        /// 产品规格ID。
         /// </summary>
         [JsonProperty("flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string FlavorId { get; set; }

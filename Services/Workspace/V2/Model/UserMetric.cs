@@ -23,6 +23,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Username { get; set; }
 
         /// <summary>
+        /// 企业项目ID。
+        /// </summary>
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
         /// 桌面使用统计信息 * &#x60;user_usage&#x60; -  用户使用时长(单位:秒)，同一时间登录多台PC的话;相应的时间会累加 * &#x60;user_login_count&#x60; -  用户登录次数(单位:次) * &#x60;user_login_success_count&#x60; -  用户登录成功次数(单位:次) * &#x60;user_login_fail_count&#x60; -  用户登录失败次数(单位:次)
         /// </summary>
         [JsonProperty("metric", NullValueHandling = NullValueHandling.Ignore)]
@@ -38,6 +44,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             var sb = new StringBuilder();
             sb.Append("class UserMetric {\n");
             sb.Append("  username: ").Append(Username).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  metric: ").Append(Metric).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -58,6 +65,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             if (input == null) return false;
             if (this.Username != input.Username || (this.Username != null && !this.Username.Equals(input.Username))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.Metric != input.Metric || (this.Metric != null && input.Metric != null && !this.Metric.SequenceEqual(input.Metric))) return false;
 
             return true;
@@ -72,6 +80,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             {
                 var hashCode = 41;
                 if (this.Username != null) hashCode = hashCode * 59 + this.Username.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.Metric != null) hashCode = hashCode * 59 + this.Metric.GetHashCode();
                 return hashCode;
             }

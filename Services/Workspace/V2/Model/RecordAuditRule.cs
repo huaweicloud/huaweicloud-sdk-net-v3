@@ -23,13 +23,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string RecordType { get; set; }
 
         /// <summary>
-        /// 间隔录制开始时间，仅录制类型为interval时有效 \&quot;hh:mm\&quot;
+        /// 间隔录制开始时间，仅录制类型为interval时有效 \&quot;hh:mm\&quot;。
         /// </summary>
         [JsonProperty("interval_record_start_time", NullValueHandling = NullValueHandling.Ignore)]
         public string IntervalRecordStartTime { get; set; }
 
         /// <summary>
-        /// 间隔录制结束时间，仅录制类型为interval时有效格式 \&quot;hh:mm\&quot;
+        /// 间隔录制结束时间，仅录制类型为interval时有效格式 \&quot;hh:mm\&quot;。
         /// </summary>
         [JsonProperty("interval_record_end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string IntervalRecordEndTime { get; set; }
@@ -47,19 +47,19 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public bool? AudioRecord { get; set; }
 
         /// <summary>
-        /// 录制帧率。取值为：2/5/10/15
+        /// 录制帧率。取值为：2/5/10/15。
         /// </summary>
         [JsonProperty("fps", NullValueHandling = NullValueHandling.Ignore)]
         public string Fps { get; set; }
 
         /// <summary>
-        /// 录制视频单文件时长（分钟）。取值为：10/20/30/60
+        /// 录制视频单文件时长（分钟）。取值为：10/20/30/60。
         /// </summary>
         [JsonProperty("duration", NullValueHandling = NullValueHandling.Ignore)]
         public string Duration { get; set; }
 
         /// <summary>
-        /// 分辨率设置。取值为：720P/1080P/original
+        /// 分辨率设置。取值为：720P/1080P/original。
         /// </summary>
         [JsonProperty("resolution", NullValueHandling = NullValueHandling.Ignore)]
         public string Resolution { get; set; }
@@ -71,31 +71,31 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public bool? EventEnable { get; set; }
 
         /// <summary>
-        /// 文件后缀，多个用\&quot;|\&quot;分隔
+        /// 文件后缀，多个用\&quot;|\&quot;分隔。
         /// </summary>
         [JsonProperty("file_suffix", NullValueHandling = NullValueHandling.Ignore)]
         public string FileSuffix { get; set; }
 
         /// <summary>
-        /// 注册表路径，多个用\&quot;|\&quot;分隔
+        /// 注册表路径，多个用\&quot;|\&quot;分隔。
         /// </summary>
         [JsonProperty("regit_paths", NullValueHandling = NullValueHandling.Ignore)]
         public string RegitPaths { get; set; }
 
         /// <summary>
-        /// 应用过滤类型，black（黑名单）或者white（白名单）二选一
+        /// 应用过滤类型，black（黑名单）或者white（白名单）二选一。
         /// </summary>
         [JsonProperty("app_filter_type", NullValueHandling = NullValueHandling.Ignore)]
         public string AppFilterType { get; set; }
 
         /// <summary>
-        /// APP开启/关闭白名单，仅监控配置的白名单应用列表
+        /// APP开启/关闭白名单，仅监控配置的白名单应用列表。
         /// </summary>
         [JsonProperty("app_white_list", NullValueHandling = NullValueHandling.Ignore)]
         public string AppWhiteList { get; set; }
 
         /// <summary>
-        /// APP开启/关闭黑名单，忽略黑名单里面的应用列表
+        /// APP开启/关闭黑名单，忽略黑名单里面的应用列表。
         /// </summary>
         [JsonProperty("app_black_list", NullValueHandling = NullValueHandling.Ignore)]
         public string AppBlackList { get; set; }

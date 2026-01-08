@@ -35,6 +35,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         public List<int?> TransTemplateId { get; set; }
 
         /// <summary>
+        /// 转码模板数组 
+        /// </summary>
+        [JsonProperty("trans_template_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<TransIdTemplate> TransTemplateList { get; set; }
+
+        /// <summary>
         /// 转码参数。  若同时设置“trans_template_id”和此参数，则优先使用此参数进行转码，不带trans_template_id时，该参数必选。 
         /// </summary>
         [JsonProperty("av_parameters", NullValueHandling = NullValueHandling.Ignore)]
@@ -69,6 +75,24 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         [JsonProperty("thumbnail", NullValueHandling = NullValueHandling.Ignore)]
         public Thumbnail Thumbnail { get; set; }
+
+        /// <summary>
+        /// 多截图任务，数组，最多支持20个成员。 
+        /// </summary>
+        [JsonProperty("thumbnails", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Thumbnail> Thumbnails { get; set; }
+
+        /// <summary>
+        /// 雪碧图参数，数组，最多支持20个成员。 
+        /// </summary>
+        [JsonProperty("image_sprites", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ImageSprite> ImageSprites { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("pipeline_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string PipelineId { get; set; }
 
         /// <summary>
         /// 任务优先级，取值如下： - 9代表高优先级。 - 6代表中优先级，默认为6。  暂时只支持6和9。 
@@ -136,12 +160,16 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             sb.Append("  input: ").Append(Input).Append("\n");
             sb.Append("  output: ").Append(Output).Append("\n");
             sb.Append("  transTemplateId: ").Append(TransTemplateId).Append("\n");
+            sb.Append("  transTemplateList: ").Append(TransTemplateList).Append("\n");
             sb.Append("  avParameters: ").Append(AvParameters).Append("\n");
             sb.Append("  additionalManifests: ").Append(AdditionalManifests).Append("\n");
             sb.Append("  outputFilenames: ").Append(OutputFilenames).Append("\n");
             sb.Append("  userData: ").Append(UserData).Append("\n");
             sb.Append("  watermarks: ").Append(Watermarks).Append("\n");
             sb.Append("  thumbnail: ").Append(Thumbnail).Append("\n");
+            sb.Append("  thumbnails: ").Append(Thumbnails).Append("\n");
+            sb.Append("  imageSprites: ").Append(ImageSprites).Append("\n");
+            sb.Append("  pipelineId: ").Append(PipelineId).Append("\n");
             sb.Append("  priority: ").Append(Priority).Append("\n");
             sb.Append("  subtitle: ").Append(Subtitle).Append("\n");
             sb.Append("  encryption: ").Append(Encryption).Append("\n");
@@ -172,12 +200,16 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             if (this.Input != input.Input || (this.Input != null && !this.Input.Equals(input.Input))) return false;
             if (this.Output != input.Output || (this.Output != null && !this.Output.Equals(input.Output))) return false;
             if (this.TransTemplateId != input.TransTemplateId || (this.TransTemplateId != null && input.TransTemplateId != null && !this.TransTemplateId.SequenceEqual(input.TransTemplateId))) return false;
+            if (this.TransTemplateList != input.TransTemplateList || (this.TransTemplateList != null && input.TransTemplateList != null && !this.TransTemplateList.SequenceEqual(input.TransTemplateList))) return false;
             if (this.AvParameters != input.AvParameters || (this.AvParameters != null && input.AvParameters != null && !this.AvParameters.SequenceEqual(input.AvParameters))) return false;
             if (this.AdditionalManifests != input.AdditionalManifests || (this.AdditionalManifests != null && input.AdditionalManifests != null && !this.AdditionalManifests.SequenceEqual(input.AdditionalManifests))) return false;
             if (this.OutputFilenames != input.OutputFilenames || (this.OutputFilenames != null && input.OutputFilenames != null && !this.OutputFilenames.SequenceEqual(input.OutputFilenames))) return false;
             if (this.UserData != input.UserData || (this.UserData != null && !this.UserData.Equals(input.UserData))) return false;
             if (this.Watermarks != input.Watermarks || (this.Watermarks != null && input.Watermarks != null && !this.Watermarks.SequenceEqual(input.Watermarks))) return false;
             if (this.Thumbnail != input.Thumbnail || (this.Thumbnail != null && !this.Thumbnail.Equals(input.Thumbnail))) return false;
+            if (this.Thumbnails != input.Thumbnails || (this.Thumbnails != null && input.Thumbnails != null && !this.Thumbnails.SequenceEqual(input.Thumbnails))) return false;
+            if (this.ImageSprites != input.ImageSprites || (this.ImageSprites != null && input.ImageSprites != null && !this.ImageSprites.SequenceEqual(input.ImageSprites))) return false;
+            if (this.PipelineId != input.PipelineId || (this.PipelineId != null && !this.PipelineId.Equals(input.PipelineId))) return false;
             if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
             if (this.Subtitle != input.Subtitle || (this.Subtitle != null && !this.Subtitle.Equals(input.Subtitle))) return false;
             if (this.Encryption != input.Encryption || (this.Encryption != null && !this.Encryption.Equals(input.Encryption))) return false;
@@ -202,12 +234,16 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                 if (this.Input != null) hashCode = hashCode * 59 + this.Input.GetHashCode();
                 if (this.Output != null) hashCode = hashCode * 59 + this.Output.GetHashCode();
                 if (this.TransTemplateId != null) hashCode = hashCode * 59 + this.TransTemplateId.GetHashCode();
+                if (this.TransTemplateList != null) hashCode = hashCode * 59 + this.TransTemplateList.GetHashCode();
                 if (this.AvParameters != null) hashCode = hashCode * 59 + this.AvParameters.GetHashCode();
                 if (this.AdditionalManifests != null) hashCode = hashCode * 59 + this.AdditionalManifests.GetHashCode();
                 if (this.OutputFilenames != null) hashCode = hashCode * 59 + this.OutputFilenames.GetHashCode();
                 if (this.UserData != null) hashCode = hashCode * 59 + this.UserData.GetHashCode();
                 if (this.Watermarks != null) hashCode = hashCode * 59 + this.Watermarks.GetHashCode();
                 if (this.Thumbnail != null) hashCode = hashCode * 59 + this.Thumbnail.GetHashCode();
+                if (this.Thumbnails != null) hashCode = hashCode * 59 + this.Thumbnails.GetHashCode();
+                if (this.ImageSprites != null) hashCode = hashCode * 59 + this.ImageSprites.GetHashCode();
+                if (this.PipelineId != null) hashCode = hashCode * 59 + this.PipelineId.GetHashCode();
                 if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
                 if (this.Subtitle != null) hashCode = hashCode * 59 + this.Subtitle.GetHashCode();
                 if (this.Encryption != null) hashCode = hashCode * 59 + this.Encryption.GetHashCode();

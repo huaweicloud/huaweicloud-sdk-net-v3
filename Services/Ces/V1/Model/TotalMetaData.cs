@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V1.Model
 {
     /// <summary>
-    /// **参数解释**： 查询结果元数据统计个数。
+    /// **参数解释**： 查询结果元数据统计个数。 
     /// </summary>
     public class TotalMetaData 
     {
 
         /// <summary>
-        /// **参数解释**： 总条数。 **取值范围**： 在[0,2147483647]区间内。
+        /// **参数解释**： 总条数。 **取值范围**： 在[0,2147483647]区间内。 
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }

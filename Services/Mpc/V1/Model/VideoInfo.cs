@@ -52,6 +52,24 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         [JsonProperty("codec", NullValueHandling = NullValueHandling.Ignore)]
         public string Codec { get; set; }
 
+        /// <summary>
+        /// 视频流时长，单位：秒
+        /// </summary>
+        [JsonProperty("duration", NullValueHandling = NullValueHandling.Ignore)]
+        public string Duration { get; set; }
+
+        /// <summary>
+        /// 视频流时长，单位：毫秒
+        /// </summary>
+        [JsonProperty("duration_ms", NullValueHandling = NullValueHandling.Ignore)]
+        public string DurationMs { get; set; }
+
+        /// <summary>
+        /// 视频拍摄时的选择角度，单位：度。 
+        /// </summary>
+        [JsonProperty("rotate", NullValueHandling = NullValueHandling.Ignore)]
+        public float? Rotate { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +85,9 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             sb.Append("  bitrateBps: ").Append(BitrateBps).Append("\n");
             sb.Append("  frameRate: ").Append(FrameRate).Append("\n");
             sb.Append("  codec: ").Append(Codec).Append("\n");
+            sb.Append("  duration: ").Append(Duration).Append("\n");
+            sb.Append("  durationMs: ").Append(DurationMs).Append("\n");
+            sb.Append("  rotate: ").Append(Rotate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +112,9 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             if (this.BitrateBps != input.BitrateBps || (this.BitrateBps != null && !this.BitrateBps.Equals(input.BitrateBps))) return false;
             if (this.FrameRate != input.FrameRate || (this.FrameRate != null && !this.FrameRate.Equals(input.FrameRate))) return false;
             if (this.Codec != input.Codec || (this.Codec != null && !this.Codec.Equals(input.Codec))) return false;
+            if (this.Duration != input.Duration || (this.Duration != null && !this.Duration.Equals(input.Duration))) return false;
+            if (this.DurationMs != input.DurationMs || (this.DurationMs != null && !this.DurationMs.Equals(input.DurationMs))) return false;
+            if (this.Rotate != input.Rotate || (this.Rotate != null && !this.Rotate.Equals(input.Rotate))) return false;
 
             return true;
         }
@@ -109,6 +133,9 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                 if (this.BitrateBps != null) hashCode = hashCode * 59 + this.BitrateBps.GetHashCode();
                 if (this.FrameRate != null) hashCode = hashCode * 59 + this.FrameRate.GetHashCode();
                 if (this.Codec != null) hashCode = hashCode * 59 + this.Codec.GetHashCode();
+                if (this.Duration != null) hashCode = hashCode * 59 + this.Duration.GetHashCode();
+                if (this.DurationMs != null) hashCode = hashCode * 59 + this.DurationMs.GetHashCode();
+                if (this.Rotate != null) hashCode = hashCode * 59 + this.Rotate.GetHashCode();
                 return hashCode;
             }
         }

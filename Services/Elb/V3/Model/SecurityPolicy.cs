@@ -59,6 +59,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> Ciphers { get; set; }
 
         /// <summary>
+        /// **参数解释**：资源所属的企业项目ID。  **取值范围**： - \&quot;0\&quot;：表示资源属于default企业项目。 - UUID格式的字符串，表示非默认企业项目。  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
+        /// </summary>
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
         /// **参数解释**：创建时间。  **取值范围**：格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;，UTC时区。
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
@@ -86,6 +92,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  listeners: ").Append(Listeners).Append("\n");
             sb.Append("  protocols: ").Append(Protocols).Append("\n");
             sb.Append("  ciphers: ").Append(Ciphers).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("}\n");
@@ -113,6 +120,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.Listeners != input.Listeners || (this.Listeners != null && input.Listeners != null && !this.Listeners.SequenceEqual(input.Listeners))) return false;
             if (this.Protocols != input.Protocols || (this.Protocols != null && input.Protocols != null && !this.Protocols.SequenceEqual(input.Protocols))) return false;
             if (this.Ciphers != input.Ciphers || (this.Ciphers != null && input.Ciphers != null && !this.Ciphers.SequenceEqual(input.Ciphers))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
             if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
 
@@ -134,6 +142,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.Listeners != null) hashCode = hashCode * 59 + this.Listeners.GetHashCode();
                 if (this.Protocols != null) hashCode = hashCode * 59 + this.Protocols.GetHashCode();
                 if (this.Ciphers != null) hashCode = hashCode * 59 + this.Ciphers.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 return hashCode;

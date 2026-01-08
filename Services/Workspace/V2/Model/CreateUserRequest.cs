@@ -167,13 +167,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Password { get; set; }
 
         /// <summary>
-        /// 是否允许用户更改密码，缺省值为true，后续此字段无效，创建时都为true。
+        /// 是否允许用户更改密码，缺省值为true。
         /// </summary>
         [JsonProperty("enable_change_password", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableChangePassword { get; set; }
 
         /// <summary>
-        /// 下次登录是否必须更改密码，缺省值为true。后续此字段无效，创建时都为true。
+        /// 下次登录是否必须更改密码，缺省值为true。该字段只在active_type为ADMIN_ACTIVATE时生效。
         /// </summary>
         [JsonProperty("next_login_change_password", NullValueHandling = NullValueHandling.Ignore)]
         public bool? NextLoginChangePassword { get; set; }
@@ -197,7 +197,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string AliasName { get; set; }
 
         /// <summary>
-        /// 企业项目ID
+        /// 企业项目ID。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
@@ -207,6 +207,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// </summary>
         [JsonProperty("user_info_map", NullValueHandling = NullValueHandling.Ignore)]
         public string UserInfoMap { get; set; }
+
+        /// <summary>
+        /// 用户所属域，domain为空时，默认主域。
+        /// </summary>
+        [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
+        public string Domain { get; set; }
 
 
 
@@ -230,6 +236,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  aliasName: ").Append(AliasName).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  userInfoMap: ").Append(UserInfoMap).Append("\n");
+            sb.Append("  domain: ").Append(Domain).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -261,6 +268,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.AliasName != input.AliasName || (this.AliasName != null && !this.AliasName.Equals(input.AliasName))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.UserInfoMap != input.UserInfoMap || (this.UserInfoMap != null && !this.UserInfoMap.Equals(input.UserInfoMap))) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
 
             return true;
         }
@@ -286,6 +294,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.AliasName != null) hashCode = hashCode * 59 + this.AliasName.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.UserInfoMap != null) hashCode = hashCode * 59 + this.UserInfoMap.GetHashCode();
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
                 return hashCode;
             }
         }

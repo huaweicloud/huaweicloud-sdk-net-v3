@@ -47,16 +47,22 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Message { get; set; }
 
         /// <summary>
-        /// 订单ID，包周期桌面重建系统盘，涉及收费镜像时需传。
-        /// </summary>
-        [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string OrderId { get; set; }
-
-        /// <summary>
         /// 是否是修复行为，修复行为只修复镜像ID与桌面池镜像ID不一致的桌面，用于桌面池切换镜像失败场景的修复。
         /// </summary>
         [JsonProperty("is_fix", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsFix { get; set; }
+
+        /// <summary>
+        /// 处理类型 - ONLY_FOR_EXPAND：仅对新扩容桌面生效 - FOR_EXPAND_AND_IDLE：对新扩容桌面与空闲桌面生效 - FOR_EXPAND_AND_ALL：对新扩容桌面与已有全部桌面生效
+        /// </summary>
+        [JsonProperty("handle_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string HandleType { get; set; }
+
+        /// <summary>
+        /// 桌面id
+        /// </summary>
+        [JsonProperty("desktop_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> DesktopIds { get; set; }
 
 
 
@@ -72,8 +78,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  osType: ").Append(OsType).Append("\n");
             sb.Append("  delayTime: ").Append(DelayTime).Append("\n");
             sb.Append("  message: ").Append(Message).Append("\n");
-            sb.Append("  orderId: ").Append(OrderId).Append("\n");
             sb.Append("  isFix: ").Append(IsFix).Append("\n");
+            sb.Append("  handleType: ").Append(HandleType).Append("\n");
+            sb.Append("  desktopIds: ").Append(DesktopIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -97,8 +104,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.OsType != input.OsType || (this.OsType != null && !this.OsType.Equals(input.OsType))) return false;
             if (this.DelayTime != input.DelayTime || (this.DelayTime != null && !this.DelayTime.Equals(input.DelayTime))) return false;
             if (this.Message != input.Message || (this.Message != null && !this.Message.Equals(input.Message))) return false;
-            if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
             if (this.IsFix != input.IsFix || (this.IsFix != null && !this.IsFix.Equals(input.IsFix))) return false;
+            if (this.HandleType != input.HandleType || (this.HandleType != null && !this.HandleType.Equals(input.HandleType))) return false;
+            if (this.DesktopIds != input.DesktopIds || (this.DesktopIds != null && input.DesktopIds != null && !this.DesktopIds.SequenceEqual(input.DesktopIds))) return false;
 
             return true;
         }
@@ -116,8 +124,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.OsType != null) hashCode = hashCode * 59 + this.OsType.GetHashCode();
                 if (this.DelayTime != null) hashCode = hashCode * 59 + this.DelayTime.GetHashCode();
                 if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();
-                if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 if (this.IsFix != null) hashCode = hashCode * 59 + this.IsFix.GetHashCode();
+                if (this.HandleType != null) hashCode = hashCode * 59 + this.HandleType.GetHashCode();
+                if (this.DesktopIds != null) hashCode = hashCode * 59 + this.DesktopIds.GetHashCode();
                 return hashCode;
             }
         }

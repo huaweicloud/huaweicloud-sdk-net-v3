@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public List<string> VirsubnetId { get; set; }
 
         /// <summary>
-        /// 中转子网状态。 取值范围： ACTIVE： 当前资源状态正常。 INACTIVE： 不可用。
+        /// 中转子网状态。 取值范围： - ACTIVE： 当前资源状态正常。 - INACTIVE： 不可用。
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]

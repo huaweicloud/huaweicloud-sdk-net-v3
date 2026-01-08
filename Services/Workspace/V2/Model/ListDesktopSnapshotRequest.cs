@@ -490,6 +490,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string DesktopId { get; set; }
 
         /// <summary>
+        /// 桌面id列表
+        /// </summary>
+        [SDKProperty("desktop_ids", IsQuery = true)]
+        [JsonProperty("desktop_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> DesktopIds { get; set; }
+
+        /// <summary>
         /// 桌面名称。
         /// </summary>
         [SDKProperty("desktop_name", IsQuery = true)]
@@ -497,11 +504,25 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string DesktopName { get; set; }
 
         /// <summary>
+        /// 桌面名称列表
+        /// </summary>
+        [SDKProperty("desktop_names", IsQuery = true)]
+        [JsonProperty("desktop_names", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> DesktopNames { get; set; }
+
+        /// <summary>
         /// 快照名称。
         /// </summary>
         [SDKProperty("snapshot_name", IsQuery = true)]
         [JsonProperty("snapshot_name", NullValueHandling = NullValueHandling.Ignore)]
         public string SnapshotName { get; set; }
+
+        /// <summary>
+        /// 快照名称列表
+        /// </summary>
+        [SDKProperty("snapshot_names", IsQuery = true)]
+        [JsonProperty("snapshot_names", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> SnapshotNames { get; set; }
 
         /// <summary>
         /// 快照类型。 - SYSTEM_DISK 系统盘。 - DATA_DISKS 数据盘。 - ALL 系统盘和数据盘。
@@ -558,8 +579,11 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ListDesktopSnapshotRequest {\n");
             sb.Append("  desktopId: ").Append(DesktopId).Append("\n");
+            sb.Append("  desktopIds: ").Append(DesktopIds).Append("\n");
             sb.Append("  desktopName: ").Append(DesktopName).Append("\n");
+            sb.Append("  desktopNames: ").Append(DesktopNames).Append("\n");
             sb.Append("  snapshotName: ").Append(SnapshotName).Append("\n");
+            sb.Append("  snapshotNames: ").Append(SnapshotNames).Append("\n");
             sb.Append("  diskType: ").Append(DiskType).Append("\n");
             sb.Append("  createType: ").Append(CreateType).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
@@ -586,8 +610,11 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             if (input == null) return false;
             if (this.DesktopId != input.DesktopId || (this.DesktopId != null && !this.DesktopId.Equals(input.DesktopId))) return false;
+            if (this.DesktopIds != input.DesktopIds || (this.DesktopIds != null && input.DesktopIds != null && !this.DesktopIds.SequenceEqual(input.DesktopIds))) return false;
             if (this.DesktopName != input.DesktopName || (this.DesktopName != null && !this.DesktopName.Equals(input.DesktopName))) return false;
+            if (this.DesktopNames != input.DesktopNames || (this.DesktopNames != null && input.DesktopNames != null && !this.DesktopNames.SequenceEqual(input.DesktopNames))) return false;
             if (this.SnapshotName != input.SnapshotName || (this.SnapshotName != null && !this.SnapshotName.Equals(input.SnapshotName))) return false;
+            if (this.SnapshotNames != input.SnapshotNames || (this.SnapshotNames != null && input.SnapshotNames != null && !this.SnapshotNames.SequenceEqual(input.SnapshotNames))) return false;
             if (this.DiskType != input.DiskType) return false;
             if (this.CreateType != input.CreateType) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
@@ -608,8 +635,11 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             {
                 var hashCode = 41;
                 if (this.DesktopId != null) hashCode = hashCode * 59 + this.DesktopId.GetHashCode();
+                if (this.DesktopIds != null) hashCode = hashCode * 59 + this.DesktopIds.GetHashCode();
                 if (this.DesktopName != null) hashCode = hashCode * 59 + this.DesktopName.GetHashCode();
+                if (this.DesktopNames != null) hashCode = hashCode * 59 + this.DesktopNames.GetHashCode();
                 if (this.SnapshotName != null) hashCode = hashCode * 59 + this.SnapshotName.GetHashCode();
+                if (this.SnapshotNames != null) hashCode = hashCode * 59 + this.SnapshotNames.GetHashCode();
                 hashCode = hashCode * 59 + this.DiskType.GetHashCode();
                 hashCode = hashCode * 59 + this.CreateType.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();

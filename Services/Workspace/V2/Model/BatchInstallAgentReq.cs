@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 批量为桌面安装agent。
+    /// 批量为桌面安装监控插件。
     /// </summary>
     public class BatchInstallAgentReq 
     {

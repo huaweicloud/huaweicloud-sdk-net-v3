@@ -216,7 +216,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// **参数解释**：监听器的监听协议。  [**取值范围**：TCP、UDP、HTTP、HTTPS、TERMINATED_HTTPS、QUIC、TLS。](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,srg,fcs,dt)  [**取值范围**：TCP、UDP、HTTP、HTTPS。](tag:hcso_dt) [**取值范围**：TCP、UDP、IP、HTTP、HTTPS。IP为网关型LB上的监听器独有的协议。](tag:hws_eu)
+        /// **参数解释**：监听器的监听协议。  [**取值范围**：TCP、UDP、HTTP、HTTPS、TERMINATED_HTTPS、QUIC、TLS、IP。IP为网关型LB上的监听器独有的协议。](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,srg,fcs,dt) [**取值范围**：TCP、UDP、HTTP、HTTPS。](tag:hcso_dt) [**取值范围**：TCP、UDP、IP、HTTP、HTTPS。IP为网关型LB上的监听器独有的协议。](tag:hws_eu)
         /// </summary>
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
         public string Protocol { get; set; }
@@ -246,7 +246,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<Tag> Tags { get; set; }
 
         /// <summary>
-        /// **参数解释**：监听器的更新时间。  **取值范围**： 格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;，如：2021-07-30T12:03:44Z
+        /// **参数解释**：监听器的更新时间。  **取值范围**：  格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;，如：2021-07-30T12:03:44Z
         /// </summary>
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdatedAt { get; set; }
@@ -270,7 +270,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool? EnableMemberRetry { get; set; }
 
         /// <summary>
-        /// **参数解释**：客户端连接空闲超时时间。在超过keepalive_timeout时长一直没有请求，负载均衡会暂时中断当前连接，直到下一次请求时重新建立新的连接。  **取值范围**： - TCP监听器[和IP监听器](tag:hws_eu)：10-4000s。 - 若为HTTP/HTTPS/TERMINATED_HTTPS监听器，取值范围为：0-4000s。
+        /// **参数解释**：客户端连接空闲超时时间。在超过keepalive_timeout时长一直没有请求，负载均衡会暂时中断当前连接，直到下一次请求时重新建立新的连接。  **取值范围**： - TCP、UDP和IP监听器：10-4000s，默认值为300s。 - HTTP、HTTPS和TERMINATED_HTTPS监听器：0-4000s，默认值为60s。
         /// </summary>
         [JsonProperty("keepalive_timeout", NullValueHandling = NullValueHandling.Ignore)]
         public int? KeepaliveTimeout { get; set; }

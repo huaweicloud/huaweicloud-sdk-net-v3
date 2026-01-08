@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     public class CreateDesktopPoolAuthorizedObjectsRequestBody 
     {
         /// <summary>
-        /// 执行动作，ADD：增加授权用户/用户组，REMOVE：移除已授权用户/用户组。
+        /// 执行动作，ADD：增加授权用户/用户组，REMOVE：移除已授权用户/用户组，CHANGE_PRIVILEGE：修改授权用户/用户组的权限组。
         /// </summary>
-        /// <value>执行动作，ADD：增加授权用户/用户组，REMOVE：移除已授权用户/用户组。</value>
+        /// <value>执行动作，ADD：增加授权用户/用户组，REMOVE：移除已授权用户/用户组，CHANGE_PRIVILEGE：修改授权用户/用户组的权限组。</value>
         [JsonConverter(typeof(EnumClassConverter<ActionEnum>))]
         public class ActionEnum
         {
@@ -32,11 +32,17 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             /// </summary>
             public static readonly ActionEnum REMOVE = new ActionEnum("REMOVE");
 
+            /// <summary>
+            /// Enum CHANGE_PRIVILEGE for value: CHANGE_PRIVILEGE
+            /// </summary>
+            public static readonly ActionEnum CHANGE_PRIVILEGE = new ActionEnum("CHANGE_PRIVILEGE");
+
             private static readonly Dictionary<string, ActionEnum> StaticFields =
             new Dictionary<string, ActionEnum>()
             {
                 { "ADD", ADD },
                 { "REMOVE", REMOVE },
+                { "CHANGE_PRIVILEGE", CHANGE_PRIVILEGE },
             };
 
             private string _value;
@@ -138,7 +144,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public List<AuthorizedObjects> Objects { get; set; }
 
         /// <summary>
-        /// 执行动作，ADD：增加授权用户/用户组，REMOVE：移除已授权用户/用户组。
+        /// 执行动作，ADD：增加授权用户/用户组，REMOVE：移除已授权用户/用户组，CHANGE_PRIVILEGE：修改授权用户/用户组的权限组。
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public ActionEnum Action { get; set; }

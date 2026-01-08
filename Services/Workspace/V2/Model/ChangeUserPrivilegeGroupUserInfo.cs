@@ -138,6 +138,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string UserName { get; set; }
 
         /// <summary>
+        /// 用户所属域。
+        /// </summary>
+        [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
+        public string Domain { get; set; }
+
+        /// <summary>
         /// 桌面用户所属的用户组。 - sudo：Linux管理员组。 - default：Linux默认用户组。 - administrators：Windows管理员组。管理员拥有对该桌面的完全访问权，可以做任何需要的更改（禁用操作除外）。 - users：Windows标准用户组。标准用户可以使用大多数软件，并可以更改不影响其他用户的系统设置。
         /// </summary>
         [JsonProperty("user_privilege_group", NullValueHandling = NullValueHandling.Ignore)]
@@ -158,6 +164,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ChangeUserPrivilegeGroupUserInfo {\n");
             sb.Append("  userName: ").Append(UserName).Append("\n");
+            sb.Append("  domain: ").Append(Domain).Append("\n");
             sb.Append("  userPrivilegeGroup: ").Append(UserPrivilegeGroup).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("}\n");
@@ -179,6 +186,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             if (input == null) return false;
             if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
             if (this.UserPrivilegeGroup != input.UserPrivilegeGroup || (this.UserPrivilegeGroup != null && !this.UserPrivilegeGroup.Equals(input.UserPrivilegeGroup))) return false;
             if (this.Type != input.Type) return false;
 
@@ -194,6 +202,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             {
                 var hashCode = 41;
                 if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
                 if (this.UserPrivilegeGroup != null) hashCode = hashCode * 59 + this.UserPrivilegeGroup.GetHashCode();
                 hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;

@@ -150,12 +150,6 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string TransitIpId { get; set; }
 
         /// <summary>
-        /// 中转IP的地址。
-        /// </summary>
-        [JsonProperty("transit_ip_address", NullValueHandling = NullValueHandling.Ignore)]
-        public string TransitIpAddress { get; set; }
-
-        /// <summary>
         /// 网络接口ID，支持计算、ELB、VIP等实例的网络接口。
         /// </summary>
         [JsonProperty("network_interface_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -195,7 +189,6 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             sb.Append("class UpdatePrivateDnatOption {\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  transitIpId: ").Append(TransitIpId).Append("\n");
-            sb.Append("  transitIpAddress: ").Append(TransitIpAddress).Append("\n");
             sb.Append("  networkInterfaceId: ").Append(NetworkInterfaceId).Append("\n");
             sb.Append("  privateIpAddress: ").Append(PrivateIpAddress).Append("\n");
             sb.Append("  protocol: ").Append(Protocol).Append("\n");
@@ -221,7 +214,6 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             if (input == null) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.TransitIpId != input.TransitIpId || (this.TransitIpId != null && !this.TransitIpId.Equals(input.TransitIpId))) return false;
-            if (this.TransitIpAddress != input.TransitIpAddress || (this.TransitIpAddress != null && !this.TransitIpAddress.Equals(input.TransitIpAddress))) return false;
             if (this.NetworkInterfaceId != input.NetworkInterfaceId || (this.NetworkInterfaceId != null && !this.NetworkInterfaceId.Equals(input.NetworkInterfaceId))) return false;
             if (this.PrivateIpAddress != input.PrivateIpAddress || (this.PrivateIpAddress != null && !this.PrivateIpAddress.Equals(input.PrivateIpAddress))) return false;
             if (this.Protocol != input.Protocol) return false;
@@ -241,7 +233,6 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                 var hashCode = 41;
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.TransitIpId != null) hashCode = hashCode * 59 + this.TransitIpId.GetHashCode();
-                if (this.TransitIpAddress != null) hashCode = hashCode * 59 + this.TransitIpAddress.GetHashCode();
                 if (this.NetworkInterfaceId != null) hashCode = hashCode * 59 + this.NetworkInterfaceId.GetHashCode();
                 if (this.PrivateIpAddress != null) hashCode = hashCode * 59 + this.PrivateIpAddress.GetHashCode();
                 hashCode = hashCode * 59 + this.Protocol.GetHashCode();

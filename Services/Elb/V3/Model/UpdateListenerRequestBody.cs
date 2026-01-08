@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 
+    /// This is a auto create Body Object
     /// </summary>
     public class UpdateListenerRequestBody 
     {

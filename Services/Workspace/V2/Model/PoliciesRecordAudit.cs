@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string ObsBucketSource { get; set; }
 
         /// <summary>
-        /// obs 桶名
+        /// obs 桶名。
         /// </summary>
         [JsonProperty("obs_bucket_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ObsBucketName { get; set; }

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
     public class CreateNatGatewaySnatRuleResponseBody 
     {
         /// <summary>
-        /// SNAT规则的状态。 取值为： \&quot;ACTIVE\&quot;: 可用 \&quot;PENDING_CREATE\&quot;：创建中 \&quot;PENDING_UPDATE\&quot;：更新中 \&quot;PENDING_DELETE\&quot;：删除中 \&quot;EIP_FREEZED\&quot;：EIP冻结 \&quot;INACTIVE\&quot;：不可用
+        /// SNAT规则的状态。 取值为：  - ACTIVE: 可用 - PENDING_CREATE: 创建中 - PENDING_UPDATE: 更新中 - PENDING_DELETE: 删除中 - EIP_FREEZED: EIP冻结 - INACTIVE: 不可用
         /// </summary>
-        /// <value>SNAT规则的状态。 取值为： \&quot;ACTIVE\&quot;: 可用 \&quot;PENDING_CREATE\&quot;：创建中 \&quot;PENDING_UPDATE\&quot;：更新中 \&quot;PENDING_DELETE\&quot;：删除中 \&quot;EIP_FREEZED\&quot;：EIP冻结 \&quot;INACTIVE\&quot;：不可用</value>
+        /// <value>SNAT规则的状态。 取值为：  - ACTIVE: 可用 - PENDING_CREATE: 创建中 - PENDING_UPDATE: 更新中 - PENDING_DELETE: 删除中 - EIP_FREEZED: EIP冻结 - INACTIVE: 不可用</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -180,7 +180,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string Cidr { get; set; }
 
         /// <summary>
-        /// 0：VPC侧，可以指定network_id 或者cidr 1：专线侧，只能指定cidr 不输入默认为0（VPC）
+        /// 资源类型。 取值范围： - 0：VPC侧，可以指定network_id 或者cidr - 1：专线侧，只能指定cidr 不输入默认为0（VPC）
         /// </summary>
         [JsonProperty("source_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? SourceType { get; set; }
@@ -198,7 +198,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// SNAT规则的状态。 取值为： \&quot;ACTIVE\&quot;: 可用 \&quot;PENDING_CREATE\&quot;：创建中 \&quot;PENDING_UPDATE\&quot;：更新中 \&quot;PENDING_DELETE\&quot;：删除中 \&quot;EIP_FREEZED\&quot;：EIP冻结 \&quot;INACTIVE\&quot;：不可用
+        /// SNAT规则的状态。 取值为：  - ACTIVE: 可用 - PENDING_CREATE: 创建中 - PENDING_UPDATE: 更新中 - PENDING_DELETE: 删除中 - EIP_FREEZED: EIP冻结 - INACTIVE: 不可用
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
@@ -215,7 +215,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string NetworkId { get; set; }
 
         /// <summary>
-        /// 解冻/冻结状态。 取值范围： - \&quot;true\&quot;：解冻 - \&quot;false\&quot;：冻结
+        /// 解冻/冻结状态。 取值范围：  - true: 解冻 - false: 冻结
         /// </summary>
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AdminStateUp { get; set; }

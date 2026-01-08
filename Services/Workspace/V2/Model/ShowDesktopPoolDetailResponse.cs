@@ -71,10 +71,16 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string AvailabilityZone { get; set; }
 
         /// <summary>
-        /// 子网ID。
+        /// 子网ID（已废弃，多个仅取第一个）。
         /// </summary>
         [JsonProperty("subnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetId { get; set; }
+
+        /// <summary>
+        /// 桌面池子网ID列表。
+        /// </summary>
+        [JsonProperty("subnet_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> SubnetIds { get; set; }
 
         /// <summary>
         /// 
@@ -178,6 +184,24 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("desktop_name_policy_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DesktopNamePolicyId { get; set; }
 
+        /// <summary>
+        /// 标签列表
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Tag> Tags { get; set; }
+
+        /// <summary>
+        /// OU名称
+        /// </summary>
+        [JsonProperty("ou_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string OuName { get; set; }
+
+        /// <summary>
+        /// VPC ID。
+        /// </summary>
+        [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string VpcId { get; set; }
+
 
 
         /// <summary>
@@ -197,6 +221,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  desktopUsed: ").Append(DesktopUsed).Append("\n");
             sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
             sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
+            sb.Append("  subnetIds: ").Append(SubnetIds).Append("\n");
             sb.Append("  product: ").Append(Product).Append("\n");
             sb.Append("  imageId: ").Append(ImageId).Append("\n");
             sb.Append("  imageName: ").Append(ImageName).Append("\n");
@@ -214,6 +239,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  inMaintenanceMode: ").Append(InMaintenanceMode).Append("\n");
             sb.Append("  desktopNamePolicyId: ").Append(DesktopNamePolicyId).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  ouName: ").Append(OuName).Append("\n");
+            sb.Append("  vpcId: ").Append(VpcId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -242,6 +270,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.DesktopUsed != input.DesktopUsed || (this.DesktopUsed != null && !this.DesktopUsed.Equals(input.DesktopUsed))) return false;
             if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
             if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
+            if (this.SubnetIds != input.SubnetIds || (this.SubnetIds != null && input.SubnetIds != null && !this.SubnetIds.SequenceEqual(input.SubnetIds))) return false;
             if (this.Product != input.Product || (this.Product != null && !this.Product.Equals(input.Product))) return false;
             if (this.ImageId != input.ImageId || (this.ImageId != null && !this.ImageId.Equals(input.ImageId))) return false;
             if (this.ImageName != input.ImageName || (this.ImageName != null && !this.ImageName.Equals(input.ImageName))) return false;
@@ -259,6 +288,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.InMaintenanceMode != input.InMaintenanceMode || (this.InMaintenanceMode != null && !this.InMaintenanceMode.Equals(input.InMaintenanceMode))) return false;
             if (this.DesktopNamePolicyId != input.DesktopNamePolicyId || (this.DesktopNamePolicyId != null && !this.DesktopNamePolicyId.Equals(input.DesktopNamePolicyId))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.OuName != input.OuName || (this.OuName != null && !this.OuName.Equals(input.OuName))) return false;
+            if (this.VpcId != input.VpcId || (this.VpcId != null && !this.VpcId.Equals(input.VpcId))) return false;
 
             return true;
         }
@@ -281,6 +313,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.DesktopUsed != null) hashCode = hashCode * 59 + this.DesktopUsed.GetHashCode();
                 if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
                 if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
+                if (this.SubnetIds != null) hashCode = hashCode * 59 + this.SubnetIds.GetHashCode();
                 if (this.Product != null) hashCode = hashCode * 59 + this.Product.GetHashCode();
                 if (this.ImageId != null) hashCode = hashCode * 59 + this.ImageId.GetHashCode();
                 if (this.ImageName != null) hashCode = hashCode * 59 + this.ImageName.GetHashCode();
@@ -298,6 +331,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.InMaintenanceMode != null) hashCode = hashCode * 59 + this.InMaintenanceMode.GetHashCode();
                 if (this.DesktopNamePolicyId != null) hashCode = hashCode * 59 + this.DesktopNamePolicyId.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.OuName != null) hashCode = hashCode * 59 + this.OuName.GetHashCode();
+                if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
                 return hashCode;
             }
         }

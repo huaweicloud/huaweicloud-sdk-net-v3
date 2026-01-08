@@ -64,6 +64,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("iops", NullValueHandling = NullValueHandling.Ignore)]
+        public Iops Iops { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("throughput", NullValueHandling = NullValueHandling.Ignore)]
+        public Throughput Throughput { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +93,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  domainIds: ").Append(DomainIds).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  iops: ").Append(Iops).Append("\n");
+            sb.Append("  throughput: ").Append(Throughput).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +121,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.DomainIds != input.DomainIds || (this.DomainIds != null && input.DomainIds != null && !this.DomainIds.SequenceEqual(input.DomainIds))) return false;
             if (this.Name != input.Name || (this.Name != null && input.Name != null && !this.Name.SequenceEqual(input.Name))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Iops != input.Iops || (this.Iops != null && !this.Iops.Equals(input.Iops))) return false;
+            if (this.Throughput != input.Throughput || (this.Throughput != null && !this.Throughput.Equals(input.Throughput))) return false;
 
             return true;
         }
@@ -127,6 +143,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.DomainIds != null) hashCode = hashCode * 59 + this.DomainIds.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Iops != null) hashCode = hashCode * 59 + this.Iops.GetHashCode();
+                if (this.Throughput != null) hashCode = hashCode * 59 + this.Throughput.GetHashCode();
                 return hashCode;
             }
         }

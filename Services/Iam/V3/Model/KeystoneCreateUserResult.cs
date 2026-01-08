@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// IAM用户密码状态。true：需要修改密码，false：正常；如果密码未设置，此字段可能不返回。
+        /// IAM用户密码状态。true：需要修改密码，false：不需要修改密码。
         /// </summary>
         [JsonProperty("pwd_status", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PwdStatus { get; set; }

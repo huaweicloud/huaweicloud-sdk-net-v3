@@ -156,7 +156,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
 
 
         /// <summary>
-        /// 解冻/冻结状态。 取值范围： \&quot;true\&quot;：解冻 \&quot;false\&quot;：冻结
+        /// 解冻/冻结状态。 取值范围：  - true: 解冻 - false: 冻结
         /// </summary>
         [SDKProperty("admin_state_up", IsQuery = true)]
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
@@ -184,7 +184,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string GlobalEipAddress { get; set; }
 
         /// <summary>
-        /// DNAT规则的状态。 取值为:  ACTIVE: 可用 PENDING_CREATE: 创建中 PENDING_UPDATE: 更新中 PENDING_DELETE: 删除中 EIP_FREEZED: EIP冻结 INACTIVE: 不可用
+        /// DNAT规则的状态。 取值为:  - ACTIVE: 可用 - PENDING_CREATE: 创建中 - PENDING_UPDATE: 更新中 - PENDING_DELETE: 删除中 - EIP_FREEZED: EIP冻结 - INACTIVE: 不可用
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]

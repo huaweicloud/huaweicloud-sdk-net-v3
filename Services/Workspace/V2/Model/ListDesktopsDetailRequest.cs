@@ -287,6 +287,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string ComputerName { get; set; }
 
         /// <summary>
+        /// 桌面名列表
+        /// </summary>
+        [SDKProperty("computer_names", IsQuery = true)]
+        [JsonProperty("computer_names", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> ComputerNames { get; set; }
+
+        /// <summary>
         /// 桌面IP地址。
         /// </summary>
         [SDKProperty("desktop_ip", IsQuery = true)]
@@ -413,6 +420,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  sortField: ").Append(SortField).Append("\n");
             sb.Append("  sortType: ").Append(SortType).Append("\n");
             sb.Append("  computerName: ").Append(ComputerName).Append("\n");
+            sb.Append("  computerNames: ").Append(ComputerNames).Append("\n");
             sb.Append("  desktopIp: ").Append(DesktopIp).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
@@ -453,6 +461,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.SortField != input.SortField) return false;
             if (this.SortType != input.SortType) return false;
             if (this.ComputerName != input.ComputerName || (this.ComputerName != null && !this.ComputerName.Equals(input.ComputerName))) return false;
+            if (this.ComputerNames != input.ComputerNames || (this.ComputerNames != null && input.ComputerNames != null && !this.ComputerNames.SequenceEqual(input.ComputerNames))) return false;
             if (this.DesktopIp != input.DesktopIp || (this.DesktopIp != null && !this.DesktopIp.Equals(input.DesktopIp))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
@@ -487,6 +496,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 hashCode = hashCode * 59 + this.SortField.GetHashCode();
                 hashCode = hashCode * 59 + this.SortType.GetHashCode();
                 if (this.ComputerName != null) hashCode = hashCode * 59 + this.ComputerName.GetHashCode();
+                if (this.ComputerNames != null) hashCode = hashCode * 59 + this.ComputerNames.GetHashCode();
                 if (this.DesktopIp != null) hashCode = hashCode * 59 + this.DesktopIp.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();

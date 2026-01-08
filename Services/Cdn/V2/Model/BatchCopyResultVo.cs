@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     public class BatchCopyResultVo 
     {
         /// <summary>
-        /// 批量操作结果。
+        /// 批量操作结果。取值意义： - success：成功 - fail：失败
         /// </summary>
-        /// <value>批量操作结果。</value>
+        /// <value>批量操作结果。取值意义： - success：成功 - fail：失败</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string Reason { get; set; }
 
         /// <summary>
-        /// 批量操作结果。
+        /// 批量操作结果。取值意义： - success：成功 - fail：失败
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }

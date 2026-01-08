@@ -162,6 +162,18 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         public string TimelineDuration { get; set; }
 
         /// <summary>
+        /// 轮转间隔时间最小值，单位：秒 
+        /// </summary>
+        [JsonProperty("random_time_min", NullValueHandling = NullValueHandling.Ignore)]
+        public string RandomTimeMin { get; set; }
+
+        /// <summary>
+        /// 轮转间隔时间最大值，单位：秒 
+        /// </summary>
+        [JsonProperty("random_time_max", NullValueHandling = NullValueHandling.Ignore)]
+        public string RandomTimeMax { get; set; }
+
+        /// <summary>
         /// 字体，当前支持fzyouh 
         /// </summary>
         [JsonProperty("font_name", NullValueHandling = NullValueHandling.Ignore)]
@@ -198,6 +210,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             sb.Append("  referpos: ").Append(Referpos).Append("\n");
             sb.Append("  timelineStart: ").Append(TimelineStart).Append("\n");
             sb.Append("  timelineDuration: ").Append(TimelineDuration).Append("\n");
+            sb.Append("  randomTimeMin: ").Append(RandomTimeMin).Append("\n");
+            sb.Append("  randomTimeMax: ").Append(RandomTimeMax).Append("\n");
             sb.Append("  fontName: ").Append(FontName).Append("\n");
             sb.Append("  fontSize: ").Append(FontSize).Append("\n");
             sb.Append("  fontColor: ").Append(FontColor).Append("\n");
@@ -225,6 +239,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             if (this.Referpos != input.Referpos || (this.Referpos != null && !this.Referpos.Equals(input.Referpos))) return false;
             if (this.TimelineStart != input.TimelineStart || (this.TimelineStart != null && !this.TimelineStart.Equals(input.TimelineStart))) return false;
             if (this.TimelineDuration != input.TimelineDuration || (this.TimelineDuration != null && !this.TimelineDuration.Equals(input.TimelineDuration))) return false;
+            if (this.RandomTimeMin != input.RandomTimeMin || (this.RandomTimeMin != null && !this.RandomTimeMin.Equals(input.RandomTimeMin))) return false;
+            if (this.RandomTimeMax != input.RandomTimeMax || (this.RandomTimeMax != null && !this.RandomTimeMax.Equals(input.RandomTimeMax))) return false;
             if (this.FontName != input.FontName || (this.FontName != null && !this.FontName.Equals(input.FontName))) return false;
             if (this.FontSize != input.FontSize || (this.FontSize != null && !this.FontSize.Equals(input.FontSize))) return false;
             if (this.FontColor != input.FontColor || (this.FontColor != null && !this.FontColor.Equals(input.FontColor))) return false;
@@ -246,6 +262,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                 if (this.Referpos != null) hashCode = hashCode * 59 + this.Referpos.GetHashCode();
                 if (this.TimelineStart != null) hashCode = hashCode * 59 + this.TimelineStart.GetHashCode();
                 if (this.TimelineDuration != null) hashCode = hashCode * 59 + this.TimelineDuration.GetHashCode();
+                if (this.RandomTimeMin != null) hashCode = hashCode * 59 + this.RandomTimeMin.GetHashCode();
+                if (this.RandomTimeMax != null) hashCode = hashCode * 59 + this.RandomTimeMax.GetHashCode();
                 if (this.FontName != null) hashCode = hashCode * 59 + this.FontName.GetHashCode();
                 if (this.FontSize != null) hashCode = hashCode * 59 + this.FontSize.GetHashCode();
                 if (this.FontColor != null) hashCode = hashCode * 59 + this.FontColor.GetHashCode();

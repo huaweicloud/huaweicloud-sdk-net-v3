@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool? CheckResult { get; set; }
 
         /// <summary>
-        /// 
+        /// **参数解释**：分组检查项汇总。
         /// </summary>
         [JsonProperty("check_items", NullValueHandling = NullValueHandling.Ignore)]
         public List<MemberCheckJobResultItem> CheckItems { get; set; }

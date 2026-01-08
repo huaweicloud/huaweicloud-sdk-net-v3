@@ -412,6 +412,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         [JsonProperty("securityReinforcementType", NullValueHandling = NullValueHandling.Ignore)]
         public SecurityReinforcementTypeEnum SecurityReinforcementType { get; set; }
+        /// <summary>
+        /// **参数解释**： 是否要求携带token，默认optional。 **约束限制**： 不涉及 **取值范围**： - optional：不要求携带token。 - required：要求必须携带token，即IMDS服务禁用v1版本，启用v2版本。  **默认取值**： optional
+        /// </summary>
+        [JsonProperty("serverMetadataHttpTokens", NullValueHandling = NullValueHandling.Ignore)]
+        public string ServerMetadataHttpTokens { get; set; }
+
 
 
         /// <summary>
@@ -450,6 +456,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  systemReservedStorage: ").Append(SystemReservedStorage).Append("\n");
             sb.Append("  initNodePassword: ").Append(InitNodePassword).Append("\n");
             sb.Append("  securityReinforcementType: ").Append(SecurityReinforcementType).Append("\n");
+            sb.Append("  serverMetadataHttpTokens: ").Append(ServerMetadataHttpTokens).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -497,6 +504,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.SystemReservedStorage != input.SystemReservedStorage || (this.SystemReservedStorage != null && !this.SystemReservedStorage.Equals(input.SystemReservedStorage))) return false;
             if (this.InitNodePassword != input.InitNodePassword || (this.InitNodePassword != null && !this.InitNodePassword.Equals(input.InitNodePassword))) return false;
             if (this.SecurityReinforcementType != input.SecurityReinforcementType) return false;
+            if (this.ServerMetadataHttpTokens != input.ServerMetadataHttpTokens || (this.ServerMetadataHttpTokens != null && !this.ServerMetadataHttpTokens.Equals(input.ServerMetadataHttpTokens))) return false;
 
             return true;
         }
@@ -538,6 +546,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.SystemReservedStorage != null) hashCode = hashCode * 59 + this.SystemReservedStorage.GetHashCode();
                 if (this.InitNodePassword != null) hashCode = hashCode * 59 + this.InitNodePassword.GetHashCode();
                 hashCode = hashCode * 59 + this.SecurityReinforcementType.GetHashCode();
+                if (this.ServerMetadataHttpTokens != null) hashCode = hashCode * 59 + this.ServerMetadataHttpTokens.GetHashCode();
                 return hashCode;
             }
         }

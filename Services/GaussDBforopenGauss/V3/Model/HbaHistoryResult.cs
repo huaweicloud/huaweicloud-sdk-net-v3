@@ -17,6 +17,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
     {
 
         /// <summary>
+        /// **参数解释**: 客户端接入认证修改记录的ID。 **取值范围**: 不涉及。
+        /// </summary>
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
         /// **参数解释**: 修改结果。 **取值范围**:  - success：已生效。  - failed：未生效。  - etting：设置中。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
@@ -55,6 +61,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class HbaHistoryResult {\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  time: ").Append(Time).Append("\n");
             sb.Append("  failReason: ").Append(FailReason).Append("\n");
@@ -78,6 +85,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public bool Equals(HbaHistoryResult input)
         {
             if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
             if (this.FailReason != input.FailReason || (this.FailReason != null && !this.FailReason.Equals(input.FailReason))) return false;
@@ -95,6 +103,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
                 if (this.FailReason != null) hashCode = hashCode * 59 + this.FailReason.GetHashCode();

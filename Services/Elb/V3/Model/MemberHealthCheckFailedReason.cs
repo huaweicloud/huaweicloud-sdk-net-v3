@@ -23,13 +23,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string ReasonCode { get; set; }
 
         /// <summary>
-        /// **参数解释**：健康检查预期响应状态码。支持HTTP,HTTPS,GRPC健康检查。只有reason_code为RESPONSE_MISMATCH时，支持非null取值。  **取值范围**： - 单值：单个返回码。当type为GRPC时，取值范围为0-99；当type为其他协议时，取值范围为200-599。例如：\&quot;0\&quot;或\&quot;200\&quot;。 - 列表：多个特定返回码，逗号分隔，最多支持5个返回码。例如:\&quot;200,202\&quot;或\&quot;0,1\&quot;。 - 区间：一个返回码区间，区间内\&quot;-\&quot;分隔，区间之间逗号分隔，最多支持5个区间。例如\&quot;200-204,300-399\&quot;或\&quot;0-5,10-12,20-30\&quot;。
+        /// **参数解释**：健康检查预期响应状态码。支持HTTP,HTTPS,GRPC健康检查。只有reason_code为RESPONSE_MISMATCH时，支持非null取值。  **取值范围**： - 单值：单个返回码。当type为GRPC[或GRPCS](tag:not_open)时，取值范围为0-99；当type为其他协议时，取值范围为200-599。例如：\&quot;0\&quot;或\&quot;200\&quot;。 - 列表：多个特定返回码，逗号分隔，最多支持5个返回码。例如:\&quot;200,202\&quot;或\&quot;0,1\&quot;。 - 区间：一个返回码区间，区间内\&quot;-\&quot;分隔，区间之间逗号分隔，最多支持5个区间。例如\&quot;200-204,300-399\&quot;或\&quot;0-5,10-12,20-30\&quot;。
         /// </summary>
         [JsonProperty("expected_response", NullValueHandling = NullValueHandling.Ignore)]
         public string ExpectedResponse { get; set; }
 
         /// <summary>
-        /// **参数解释**：健康检查探测实际响应状态码。支持HTTP,HTTPS,GRPC健康检查。只有reason_code为RESPONSE_MISMATCH时，支持非null取值。  **取值范围**： - 单个返回码。当type为GRPC时，取值范围为0-99；当type为其他协议时，取值范围为200-599。例如：\&quot;0\&quot;或\&quot;200\&quot;。
+        /// **参数解释**：健康检查探测实际响应状态码。支持HTTP,HTTPS,GRPC健康检查。只有reason_code为RESPONSE_MISMATCH时，支持非null取值。  **取值范围**： - 单个返回码。当type为GRPC[或GRPCS](tag:not_open)时，取值范围为0-99；当type为其他协议时，取值范围为200-599。例如：\&quot;0\&quot;或\&quot;200\&quot;。
         /// </summary>
         [JsonProperty("healthcheck_response", NullValueHandling = NullValueHandling.Ignore)]
         public string HealthcheckResponse { get; set; }

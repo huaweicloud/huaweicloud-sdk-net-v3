@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 待修改的监控视图列表
+        /// **参数解释** 待修改的监控视图列表 **约束限制** 包含的监控视图对象个数为[1,50] 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]

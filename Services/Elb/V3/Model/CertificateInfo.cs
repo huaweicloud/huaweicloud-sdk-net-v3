@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     public class CertificateInfo 
     {
         /// <summary>
-        /// **参数解释**：修改保护状态。  **取值范围**：  - nonProtection: 不保护  - consoleProtection: 控制台修改保护，即禁止通过控制台修改。
+        /// **参数解释**：修改保护状态。  **取值范围**：  - nonProtection: 不保护 - consoleProtection: 控制台修改保护，即禁止通过控制台修改。
         /// </summary>
-        /// <value>**参数解释**：修改保护状态。  **取值范围**：  - nonProtection: 不保护  - consoleProtection: 控制台修改保护，即禁止通过控制台修改。</value>
+        /// <value>**参数解释**：修改保护状态。  **取值范围**：  - nonProtection: 不保护 - consoleProtection: 控制台修改保护，即禁止通过控制台修改。</value>
         [JsonConverter(typeof(EnumClassConverter<ProtectionStatusEnum>))]
         public class ProtectionStatusEnum
         {
@@ -246,7 +246,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Source { get; set; }
 
         /// <summary>
-        /// **参数解释**：修改保护状态。  **取值范围**：  - nonProtection: 不保护  - consoleProtection: 控制台修改保护，即禁止通过控制台修改。
+        /// **参数解释**：修改保护状态。  **取值范围**：  - nonProtection: 不保护 - consoleProtection: 控制台修改保护，即禁止通过控制台修改。
         /// </summary>
         [JsonProperty("protection_status", NullValueHandling = NullValueHandling.Ignore)]
         public ProtectionStatusEnum ProtectionStatus { get; set; }
@@ -255,6 +255,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         [JsonProperty("protection_reason", NullValueHandling = NullValueHandling.Ignore)]
         public string ProtectionReason { get; set; }
+
+        /// <summary>
+        /// **参数解释**：资源所属的企业项目ID。  **取值范围**： - \&quot;0\&quot;：表示资源属于default企业项目。 - UUID格式的字符串，表示非默认企业项目。  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
+        /// </summary>
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
 
 
 
@@ -286,6 +292,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  source: ").Append(Source).Append("\n");
             sb.Append("  protectionStatus: ").Append(ProtectionStatus).Append("\n");
             sb.Append("  protectionReason: ").Append(ProtectionReason).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -325,6 +332,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.Source != input.Source || (this.Source != null && !this.Source.Equals(input.Source))) return false;
             if (this.ProtectionStatus != input.ProtectionStatus) return false;
             if (this.ProtectionReason != input.ProtectionReason || (this.ProtectionReason != null && !this.ProtectionReason.Equals(input.ProtectionReason))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
 
             return true;
         }
@@ -358,6 +366,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.Source != null) hashCode = hashCode * 59 + this.Source.GetHashCode();
                 hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
                 if (this.ProtectionReason != null) hashCode = hashCode * 59 + this.ProtectionReason.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

@@ -567,19 +567,19 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 公网NAT网关实例的状态。 取值为:  ACTIVE: 可用 PENDING_CREATE: 创建中 PENDING_UPDATE: 更新中 PENDING_DELETE: 删除中 INACTIVE: 不可用
+        /// 公网NAT网关实例的状态。 取值为:  - ACTIVE: 可用 - PENDING_CREATE: 创建中 - PENDING_UPDATE: 更新中 - PENDING_DELETE: 删除中 - INACTIVE: 不可用
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public List<StatusEnum> Status { get; set; }
         /// <summary>
-        /// 公网NAT网关实例的规格。 取值为： \&quot;1\&quot;：小型，SNAT最大连接数10000 \&quot;2\&quot;：中型，SNAT最大连接数50000 \&quot;3\&quot;：大型，SNAT最大连接数200000 \&quot;4\&quot;：超大型，SNAT最大连接数1000000 “5”：企业型，SNAT最大连接数10000000 
+        /// 公网NAT网关实例的规格。 取值为： - 1：小型，SNAT最大连接数10000 - 2：中型，SNAT最大连接数50000 - 3：大型，SNAT最大连接数200000 - 4：超大型，SNAT最大连接数1000000 - 5：企业型，SNAT最大连接数10000000 
         /// </summary>
         [SDKProperty("spec", IsQuery = true)]
         [JsonProperty("spec", NullValueHandling = NullValueHandling.Ignore)]
         public List<SpecEnum> Spec { get; set; }
         /// <summary>
-        /// 解冻/冻结状态。 取值范围： \&quot;true\&quot;：解冻 \&quot;false\&quot;：冻结
+        /// 解冻/冻结状态。 取值范围：  - true: 解冻 - false: 冻结
         /// </summary>
         [SDKProperty("admin_state_up", IsQuery = true)]
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]

@@ -71,10 +71,46 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string DesktopNamePolicyId { get; set; }
 
         /// <summary>
-        /// 桌面池的可用区。桌面池的可用区是边缘可用区时，不支持修改。
+        /// 桌面池的可用区。
         /// </summary>
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string AvailabilityZone { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("root_volume", NullValueHandling = NullValueHandling.Ignore)]
+        public DesktopPoolVolumeInfo RootVolume { get; set; }
+
+        /// <summary>
+        /// 数据盘列表。
+        /// </summary>
+        [JsonProperty("data_volumes", NullValueHandling = NullValueHandling.Ignore)]
+        public List<DesktopPoolVolumeInfo> DataVolumes { get; set; }
+
+        /// <summary>
+        /// VPC ID
+        /// </summary>
+        [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string VpcId { get; set; }
+
+        /// <summary>
+        /// 桌面池子网ID列表
+        /// </summary>
+        [JsonProperty("subnet_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> SubnetIds { get; set; }
+
+        /// <summary>
+        /// 桌面使用的安全组，如果不指定则默认使用桌面代理中指定的安全组
+        /// </summary>
+        [JsonProperty("security_groups", NullValueHandling = NullValueHandling.Ignore)]
+        public List<SecurityGroup> SecurityGroups { get; set; }
+
+        /// <summary>
+        /// 企业项目ID
+        /// </summary>
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
 
 
 
@@ -95,6 +131,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  inMaintenanceMode: ").Append(InMaintenanceMode).Append("\n");
             sb.Append("  desktopNamePolicyId: ").Append(DesktopNamePolicyId).Append("\n");
             sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
+            sb.Append("  rootVolume: ").Append(RootVolume).Append("\n");
+            sb.Append("  dataVolumes: ").Append(DataVolumes).Append("\n");
+            sb.Append("  vpcId: ").Append(VpcId).Append("\n");
+            sb.Append("  subnetIds: ").Append(SubnetIds).Append("\n");
+            sb.Append("  securityGroups: ").Append(SecurityGroups).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -123,6 +165,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.InMaintenanceMode != input.InMaintenanceMode || (this.InMaintenanceMode != null && !this.InMaintenanceMode.Equals(input.InMaintenanceMode))) return false;
             if (this.DesktopNamePolicyId != input.DesktopNamePolicyId || (this.DesktopNamePolicyId != null && !this.DesktopNamePolicyId.Equals(input.DesktopNamePolicyId))) return false;
             if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
+            if (this.RootVolume != input.RootVolume || (this.RootVolume != null && !this.RootVolume.Equals(input.RootVolume))) return false;
+            if (this.DataVolumes != input.DataVolumes || (this.DataVolumes != null && input.DataVolumes != null && !this.DataVolumes.SequenceEqual(input.DataVolumes))) return false;
+            if (this.VpcId != input.VpcId || (this.VpcId != null && !this.VpcId.Equals(input.VpcId))) return false;
+            if (this.SubnetIds != input.SubnetIds || (this.SubnetIds != null && input.SubnetIds != null && !this.SubnetIds.SequenceEqual(input.SubnetIds))) return false;
+            if (this.SecurityGroups != input.SecurityGroups || (this.SecurityGroups != null && input.SecurityGroups != null && !this.SecurityGroups.SequenceEqual(input.SecurityGroups))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
 
             return true;
         }
@@ -145,6 +193,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.InMaintenanceMode != null) hashCode = hashCode * 59 + this.InMaintenanceMode.GetHashCode();
                 if (this.DesktopNamePolicyId != null) hashCode = hashCode * 59 + this.DesktopNamePolicyId.GetHashCode();
                 if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
+                if (this.RootVolume != null) hashCode = hashCode * 59 + this.RootVolume.GetHashCode();
+                if (this.DataVolumes != null) hashCode = hashCode * 59 + this.DataVolumes.GetHashCode();
+                if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
+                if (this.SubnetIds != null) hashCode = hashCode * 59 + this.SubnetIds.GetHashCode();
+                if (this.SecurityGroups != null) hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

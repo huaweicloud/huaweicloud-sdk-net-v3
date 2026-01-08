@@ -46,6 +46,18 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         [JsonProperty("bitrate_bps", NullValueHandling = NullValueHandling.Ignore)]
         public long? BitrateBps { get; set; }
 
+        /// <summary>
+        /// 音频流时长，单位：秒
+        /// </summary>
+        [JsonProperty("duration", NullValueHandling = NullValueHandling.Ignore)]
+        public string Duration { get; set; }
+
+        /// <summary>
+        /// 音频流时长，单位：毫秒
+        /// </summary>
+        [JsonProperty("duration_ms", NullValueHandling = NullValueHandling.Ignore)]
+        public string DurationMs { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +72,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             sb.Append("  channels: ").Append(Channels).Append("\n");
             sb.Append("  bitrate: ").Append(Bitrate).Append("\n");
             sb.Append("  bitrateBps: ").Append(BitrateBps).Append("\n");
+            sb.Append("  duration: ").Append(Duration).Append("\n");
+            sb.Append("  durationMs: ").Append(DurationMs).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,6 +97,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             if (this.Channels != input.Channels || (this.Channels != null && !this.Channels.Equals(input.Channels))) return false;
             if (this.Bitrate != input.Bitrate || (this.Bitrate != null && !this.Bitrate.Equals(input.Bitrate))) return false;
             if (this.BitrateBps != input.BitrateBps || (this.BitrateBps != null && !this.BitrateBps.Equals(input.BitrateBps))) return false;
+            if (this.Duration != input.Duration || (this.Duration != null && !this.Duration.Equals(input.Duration))) return false;
+            if (this.DurationMs != input.DurationMs || (this.DurationMs != null && !this.DurationMs.Equals(input.DurationMs))) return false;
 
             return true;
         }
@@ -100,6 +116,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                 if (this.Channels != null) hashCode = hashCode * 59 + this.Channels.GetHashCode();
                 if (this.Bitrate != null) hashCode = hashCode * 59 + this.Bitrate.GetHashCode();
                 if (this.BitrateBps != null) hashCode = hashCode * 59 + this.BitrateBps.GetHashCode();
+                if (this.Duration != null) hashCode = hashCode * 59 + this.Duration.GetHashCode();
+                if (this.DurationMs != null) hashCode = hashCode * 59 + this.DurationMs.GetHashCode();
                 return hashCode;
             }
         }

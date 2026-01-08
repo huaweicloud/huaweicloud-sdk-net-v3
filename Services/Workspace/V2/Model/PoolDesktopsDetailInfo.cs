@@ -355,19 +355,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public List<string> UserGroupList { get; set; }
 
         /// <summary>
-        /// 桌面类型。  - DEDICATED：专属桌面。
+        /// 桌面类型。  - DEDICATED：专属桌面。 - SHARED: 多用户桌面 - POOLED: 池桌面
         /// </summary>
         [JsonProperty("desktop_type", NullValueHandling = NullValueHandling.Ignore)]
         public string DesktopType { get; set; }
 
         /// <summary>
-        /// resource_type字段，分别表示：专属桌面（DEDICATED_DESKTOP）、池桌面（POOLED_DESKTOP）、渲染桌面（RENDER_DESKTOP）、专享主机（EXCLUSIVE_HOST）、多用户桌面(SHARED_DESKTOP)。
-        /// </summary>
-        [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string ResourceType { get; set; }
-
-        /// <summary>
-        /// 桌面元数据。  - charging_mode 周期套餐标识，1表示包周期，0表示按需。 - image_name 创建桌面的镜像名称。 - bill_resource_id 镜像计费资源ID。 - metering.image_id 镜像ID。 - metering.resourcespeccode 桌面资源编码。 - metering.resourcetype 桌面资源类型。 - os_bit 操作系统位数：32或64。 - os_type 操作系统类型：Linux、Windows或Others。 - desktop_os_version 操作系统版本。
+        /// 桌面元数据。   - image_name 创建桌面的镜像名称。 - bill_resource_id 镜像计费资源ID。 - metering.image_id 镜像ID。 - metering.resourcespeccode 桌面资源编码。 - metering.resourcetype 桌面资源类型。 - os_bit 操作系统位数：32或64。 - os_type 操作系统类型：Linux、Windows或Others。 - desktop_os_version 操作系统版本。
         /// </summary>
         [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, string> Metadata { get; set; }
@@ -403,7 +397,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Created { get; set; }
 
         /// <summary>
-        /// 桌面安全组。
+        /// 桌面安全组。 仅适用于查询单个桌面详情接口。
         /// </summary>
         [JsonProperty("security_groups", NullValueHandling = NullValueHandling.Ignore)]
         public List<SecurityGroupInfo> SecurityGroups { get; set; }
@@ -522,7 +516,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("internet_mode", NullValueHandling = NullValueHandling.Ignore)]
         public InternetModeEnum InternetMode { get; set; }
         /// <summary>
-        /// 桌面使用的上网方式列表。
+        /// 桌面使用的上网方式列表。 - NAT：表示NAT上网方式。 - EIP：表示EIP上网方式。
         /// </summary>
         [JsonProperty("internet_mode_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> InternetModeList { get; set; }
@@ -599,7 +593,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  userList: ").Append(UserList).Append("\n");
             sb.Append("  userGroupList: ").Append(UserGroupList).Append("\n");
             sb.Append("  desktopType: ").Append(DesktopType).Append("\n");
-            sb.Append("  resourceType: ").Append(ResourceType).Append("\n");
             sb.Append("  metadata: ").Append(Metadata).Append("\n");
             sb.Append("  flavor: ").Append(Flavor).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
@@ -664,7 +657,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.UserList != input.UserList || (this.UserList != null && input.UserList != null && !this.UserList.SequenceEqual(input.UserList))) return false;
             if (this.UserGroupList != input.UserGroupList || (this.UserGroupList != null && input.UserGroupList != null && !this.UserGroupList.SequenceEqual(input.UserGroupList))) return false;
             if (this.DesktopType != input.DesktopType || (this.DesktopType != null && !this.DesktopType.Equals(input.DesktopType))) return false;
-            if (this.ResourceType != input.ResourceType || (this.ResourceType != null && !this.ResourceType.Equals(input.ResourceType))) return false;
             if (this.Metadata != input.Metadata || (this.Metadata != null && input.Metadata != null && !this.Metadata.SequenceEqual(input.Metadata))) return false;
             if (this.Flavor != input.Flavor || (this.Flavor != null && !this.Flavor.Equals(input.Flavor))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
@@ -723,7 +715,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.UserList != null) hashCode = hashCode * 59 + this.UserList.GetHashCode();
                 if (this.UserGroupList != null) hashCode = hashCode * 59 + this.UserGroupList.GetHashCode();
                 if (this.DesktopType != null) hashCode = hashCode * 59 + this.DesktopType.GetHashCode();
-                if (this.ResourceType != null) hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
                 if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
                 if (this.Flavor != null) hashCode = hashCode * 59 + this.Flavor.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();

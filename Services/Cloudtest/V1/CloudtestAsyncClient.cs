@@ -844,6 +844,40 @@ namespace HuaweiCloud.SDK.Cloudtest.V1
         }
         
         /// <summary>
+        /// 下载图片
+        ///
+        /// 下载图片
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DownloadStepImageNewResponse> DownloadStepImageNewAsync(DownloadStepImageNewRequest downloadStepImageNewRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(downloadStepImageNewRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(downloadStepImageNewRequest.Parent, out var valueOfParent)) urlParam.Add("parent", valueOfParent);
+            if (StringUtils.TryConvertToNonEmptyString(downloadStepImageNewRequest.Sub, out var valueOfSub)) urlParam.Add("sub", valueOfSub);
+            if (StringUtils.TryConvertToNonEmptyString(downloadStepImageNewRequest.FileName, out var valueOfFileName)) urlParam.Add("file_name", valueOfFileName);
+            if (StringUtils.TryConvertToNonEmptyString(downloadStepImageNewRequest.FileType, out var valueOfFileType)) urlParam.Add("file_type", valueOfFileType);
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_id}/image/{parent}/{sub}/{file_name}/{file_type}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadStepImageNewRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<DownloadStepImageNewResponse>(response);
+        }
+
+        public AsyncInvoker<DownloadStepImageNewResponse> DownloadStepImageNewAsyncInvoker(DownloadStepImageNewRequest downloadStepImageNewRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(downloadStepImageNewRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(downloadStepImageNewRequest.Parent, out var valueOfParent)) urlParam.Add("parent", valueOfParent);
+            if (StringUtils.TryConvertToNonEmptyString(downloadStepImageNewRequest.Sub, out var valueOfSub)) urlParam.Add("sub", valueOfSub);
+            if (StringUtils.TryConvertToNonEmptyString(downloadStepImageNewRequest.FileName, out var valueOfFileName)) urlParam.Add("file_name", valueOfFileName);
+            if (StringUtils.TryConvertToNonEmptyString(downloadStepImageNewRequest.FileType, out var valueOfFileType)) urlParam.Add("file_type", valueOfFileType);
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_id}/image/{parent}/{sub}/{file_name}/{file_type}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadStepImageNewRequest);
+            return new AsyncInvoker<DownloadStepImageNewResponse>(this, "GET", request, JsonUtils.DeSerialize<DownloadStepImageNewResponse>);
+        }
+        
+        /// <summary>
         /// 查询告警统计数据
         ///
         /// 查询告警统计数据

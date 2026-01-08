@@ -11,14 +11,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 视图展示配置
+    /// **参数解释** 视图展示配置 **约束限制** 不涉及 
     /// </summary>
     public class UpdateWidgetInfoProperties 
     {
         /// <summary>
-        /// 聚合类型，目前只有TopN这一种类型，折线图不支持该参数
+        /// **参数解释** 聚合类型 **约束限制** 折线图不支持该参数 **取值范围** 枚举值： - topN topN类型 **默认取值** 不涉及 
         /// </summary>
-        /// <value>聚合类型，目前只有TopN这一种类型，折线图不支持该参数</value>
+        /// <value>**参数解释** 聚合类型 **约束限制** 折线图不支持该参数 **取值范围** 枚举值： - topN topN类型 **默认取值** 不涉及 </value>
         [JsonConverter(typeof(EnumClassConverter<FilterEnum>))]
         public class FilterEnum
         {
@@ -125,9 +125,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         }
 
         /// <summary>
-        /// 排序字段，asc正序，desc倒序，折线图不支持该参数
+        /// **参数解释** 排序字段 **约束限制** 折线图不支持该参数 **取值范围** 枚举值： - asc 正序 - desc 倒序 **默认取值** 不涉及 
         /// </summary>
-        /// <value>排序字段，asc正序，desc倒序，折线图不支持该参数</value>
+        /// <value>**参数解释** 排序字段 **约束限制** 折线图不支持该参数 **取值范围** 枚举值： - asc 正序 - desc 倒序 **默认取值** 不涉及 </value>
         [JsonConverter(typeof(EnumClassConverter<OrderEnum>))]
         public class OrderEnum
         {
@@ -240,9 +240,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         }
 
         /// <summary>
-        /// 图例位置标记，hide表示隐藏图例，right表示图例放在监控视图右侧，bottom表示图例放在监控视图底部，表格不支持该参数
+        /// **参数解释** 图例位置标记 **约束限制** 表格不支持该参数 **取值范围** 枚举值： - hide 隐藏图例 - right 图例放在监控视图右侧 - bottom 图例放在监控视图底部 **默认取值** 不涉及 
         /// </summary>
-        /// <value>图例位置标记，hide表示隐藏图例，right表示图例放在监控视图右侧，bottom表示图例放在监控视图底部，表格不支持该参数</value>
+        /// <value>**参数解释** 图例位置标记 **约束限制** 表格不支持该参数 **取值范围** 枚举值： - hide 隐藏图例 - right 图例放在监控视图右侧 - bottom 图例放在监控视图底部 **默认取值** 不涉及 </value>
         [JsonConverter(typeof(EnumClassConverter<LegendLocationEnum>))]
         public class LegendLocationEnum
         {
@@ -361,9 +361,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         }
 
         /// <summary>
-        /// 统计值名称, last:当前值,max:最大值,min:最小值,avg:平均值,sum:求和值
+        /// **参数解释** 统计值名称 **约束限制** 不涉及 **取值范围** 枚举值： - last 当前值 - max 最大值 - min 最小值 - avg 平均值 - sum 求和值 **默认取值** 不涉及 
         /// </summary>
-        /// <value>统计值名称, last:当前值,max:最大值,min:最小值,avg:平均值,sum:求和值</value>
+        /// <value>**参数解释** 统计值名称 **约束限制** 不涉及 **取值范围** 枚举值： - last 当前值 - max 最大值 - min 最小值 - avg 平均值 - sum 求和值 **默认取值** 不涉及 </value>
         [JsonConverter(typeof(EnumClassConverter<LegendValuesEnum>))]
         public class LegendValuesEnum
         {
@@ -496,57 +496,57 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
 
         /// <summary>
-        /// 聚合类型，目前只有TopN这一种类型，折线图不支持该参数
+        /// **参数解释** 聚合类型 **约束限制** 折线图不支持该参数 **取值范围** 枚举值： - topN topN类型 **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("filter", NullValueHandling = NullValueHandling.Ignore)]
         public FilterEnum Filter { get; set; }
         /// <summary>
-        /// Top值前N个;折线图时表示随机展示的时序数据条数
+        /// **参数解释** Top值前N个 **约束限制** 折线图时表示随机展示的时序数据条数 **取值范围** Top值为[1,2147483647] **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("topN", NullValueHandling = NullValueHandling.Ignore)]
         public int? TopN { get; set; }
 
         /// <summary>
-        /// 排序字段，asc正序，desc倒序，折线图不支持该参数
+        /// **参数解释** 排序字段 **约束限制** 折线图不支持该参数 **取值范围** 枚举值： - asc 正序 - desc 倒序 **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("order", NullValueHandling = NullValueHandling.Ignore)]
         public OrderEnum Order { get; set; }
         /// <summary>
-        /// 监控视图的描述信息
+        /// **参数解释** 监控视图的描述信息 **约束限制** 不涉及 **取值范围** 信息长度为[0,200]个字符 **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 是否展示同比（上周同一时间）数据，true:展示，false:不展示
+        /// **参数解释** 是否展示同比（上周同一时间）数据 **约束限制** 不涉及 **取值范围** - true 展示 - false 不展示 **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("last_week_compare_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? LastWeekCompareEnable { get; set; }
 
         /// <summary>
-        /// 是否展示环比（昨天同一时间）数据，true:展示，false:不展示
+        /// **参数解释** 是否展示环比（昨天同一时间）数据 **约束限制** 不涉及 **取值范围** - true 展示 - false 不展示 **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("yesterday_compare_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? YesterdayCompareEnable { get; set; }
 
         /// <summary>
-        /// 图例位置标记，hide表示隐藏图例，right表示图例放在监控视图右侧，bottom表示图例放在监控视图底部，表格不支持该参数
+        /// **参数解释** 图例位置标记 **约束限制** 表格不支持该参数 **取值范围** 枚举值： - hide 隐藏图例 - right 图例放在监控视图右侧 - bottom 图例放在监控视图底部 **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("legend_location", NullValueHandling = NullValueHandling.Ignore)]
         public LegendLocationEnum LegendLocation { get; set; }
         /// <summary>
-        /// 当前时序数据需要在图例中展示的统计值名称列表，表格不支持该参数，条形图和柱状图仅支持选择当前值
+        /// **参数解释** 当前时序数据需要在图例中展示的统计值名称列表 **约束限制** 表格不支持该参数，条形图和柱状图仅支持选择当前值 包含的名称对象个数为[0,5] 
         /// </summary>
         [JsonProperty("legend_values", NullValueHandling = NullValueHandling.Ignore)]
         public List<LegendValuesEnum> LegendValues { get; set; }
         /// <summary>
-        /// 监控视图的阈值辅助线配置
+        /// **参数解释**   监控视图的阈值辅助线配置   **约束限制**   包含的配置对象个数为[0,6] 
         /// </summary>
         [JsonProperty("thresholds", NullValueHandling = NullValueHandling.Ignore)]
         public List<ThresholdInfo> Thresholds { get; set; }
 
         /// <summary>
-        /// 同比环比总开关是否生效;true:生效；false:不生效
+        /// **参数解释** 同比环比总开关是否生效 **约束限制** 不涉及 **取值范围** - true 生效 - false 不生效 **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("is_all_compare_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsAllCompareEnable { get; set; }

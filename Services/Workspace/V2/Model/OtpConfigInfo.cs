@@ -17,6 +17,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
+        /// 认证id。
+        /// </summary>
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
         /// 是否启用。
         /// </summary>
         [JsonProperty("enable", NullValueHandling = NullValueHandling.Ignore)]
@@ -64,6 +70,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("apply_rule", NullValueHandling = NullValueHandling.Ignore)]
         public ApplyRuleInfo ApplyRule { get; set; }
 
+        /// <summary>
+        /// 要应用的用户/用户组列表。
+        /// </summary>
+        [JsonProperty("apply_objects", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ApplyObjects> ApplyObjects { get; set; }
+
 
 
         /// <summary>
@@ -73,6 +85,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class OtpConfigInfo {\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  enable: ").Append(Enable).Append("\n");
             sb.Append("  receiveMode: ").Append(ReceiveMode).Append("\n");
             sb.Append("  authUrl: ").Append(AuthUrl).Append("\n");
@@ -81,6 +94,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  authServerAccessMode: ").Append(AuthServerAccessMode).Append("\n");
             sb.Append("  certContent: ").Append(CertContent).Append("\n");
             sb.Append("  applyRule: ").Append(ApplyRule).Append("\n");
+            sb.Append("  applyObjects: ").Append(ApplyObjects).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,6 +113,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public bool Equals(OtpConfigInfo input)
         {
             if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Enable != input.Enable || (this.Enable != null && !this.Enable.Equals(input.Enable))) return false;
             if (this.ReceiveMode != input.ReceiveMode || (this.ReceiveMode != null && !this.ReceiveMode.Equals(input.ReceiveMode))) return false;
             if (this.AuthUrl != input.AuthUrl || (this.AuthUrl != null && !this.AuthUrl.Equals(input.AuthUrl))) return false;
@@ -107,6 +122,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.AuthServerAccessMode != input.AuthServerAccessMode || (this.AuthServerAccessMode != null && !this.AuthServerAccessMode.Equals(input.AuthServerAccessMode))) return false;
             if (this.CertContent != input.CertContent || (this.CertContent != null && !this.CertContent.Equals(input.CertContent))) return false;
             if (this.ApplyRule != input.ApplyRule || (this.ApplyRule != null && !this.ApplyRule.Equals(input.ApplyRule))) return false;
+            if (this.ApplyObjects != input.ApplyObjects || (this.ApplyObjects != null && input.ApplyObjects != null && !this.ApplyObjects.SequenceEqual(input.ApplyObjects))) return false;
 
             return true;
         }
@@ -119,6 +135,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Enable != null) hashCode = hashCode * 59 + this.Enable.GetHashCode();
                 if (this.ReceiveMode != null) hashCode = hashCode * 59 + this.ReceiveMode.GetHashCode();
                 if (this.AuthUrl != null) hashCode = hashCode * 59 + this.AuthUrl.GetHashCode();
@@ -127,6 +144,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.AuthServerAccessMode != null) hashCode = hashCode * 59 + this.AuthServerAccessMode.GetHashCode();
                 if (this.CertContent != null) hashCode = hashCode * 59 + this.CertContent.GetHashCode();
                 if (this.ApplyRule != null) hashCode = hashCode * 59 + this.ApplyRule.GetHashCode();
+                if (this.ApplyObjects != null) hashCode = hashCode * 59 + this.ApplyObjects.GetHashCode();
                 return hashCode;
             }
         }

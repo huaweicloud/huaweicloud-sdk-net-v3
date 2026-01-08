@@ -11,14 +11,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 批量更新监控视图结果
+    /// **参数解释** 批量更新监控视图结果 
     /// </summary>
     public class BatchUpdateWidgetInfo 
     {
         /// <summary>
-        /// 修改结果；成功: successful, 失败: error 
+        /// **参数解释** 修改结果 **取值范围** 枚举值： - successful 成功 - error 失败 
         /// </summary>
-        /// <value>修改结果；成功: successful, 失败: error </value>
+        /// <value>**参数解释** 修改结果 **取值范围** 枚举值： - successful 成功 - error 失败 </value>
         [JsonConverter(typeof(EnumClassConverter<RetStatusEnum>))]
         public class RetStatusEnum
         {
@@ -132,18 +132,18 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
 
         /// <summary>
-        /// 视图id
+        /// **参数解释** 视图id **取值范围** 字符串必须以wg开头，后跟22个字母和数字，总长度为24个字符 
         /// </summary>
         [JsonProperty("widget_id", NullValueHandling = NullValueHandling.Ignore)]
         public string WidgetId { get; set; }
 
         /// <summary>
-        /// 修改结果；成功: successful, 失败: error 
+        /// **参数解释** 修改结果 **取值范围** 枚举值： - successful 成功 - error 失败 
         /// </summary>
         [JsonProperty("ret_status", NullValueHandling = NullValueHandling.Ignore)]
         public RetStatusEnum RetStatus { get; set; }
         /// <summary>
-        /// 如果失败则返回失败信息
+        /// **参数解释** 如果失败则返回失败信息 **取值范围** 长度为[1,2048]个字符 
         /// </summary>
         [JsonProperty("error_msg", NullValueHandling = NullValueHandling.Ignore)]
         public string ErrorMsg { get; set; }

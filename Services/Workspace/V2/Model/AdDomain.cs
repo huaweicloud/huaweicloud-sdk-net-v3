@@ -132,6 +132,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
 
 
         /// <summary>
+        /// 域id。
+        /// </summary>
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
         /// 域类型。 - LITE_AS：本地认证。 - LOCAL_AD：本地AD。 说明：域类型为“LOCAL_AD”时，请确保所选VPC网络与AD所属网络可连通。
         /// </summary>
         [JsonProperty("domain_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -208,6 +214,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("tls_config", NullValueHandling = NullValueHandling.Ignore)]
         public TlsConfig TlsConfig { get; set; }
 
+        /// <summary>
+        /// 是否开启智能卡认证。
+        /// </summary>
+        [JsonProperty("cba_enabled", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? CbaEnabled { get; set; }
+
+        /// <summary>
+        /// 智能卡证书id。
+        /// </summary>
+        [JsonProperty("certificate_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string CertificateId { get; set; }
+
 
 
         /// <summary>
@@ -217,6 +235,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class AdDomain {\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  domainType: ").Append(DomainType).Append("\n");
             sb.Append("  domainName: ").Append(DomainName).Append("\n");
             sb.Append("  domainAdminAccount: ").Append(DomainAdminAccount).Append("\n");
@@ -230,6 +249,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  deleteComputerObject: ").Append(DeleteComputerObject).Append("\n");
             sb.Append("  useLdaps: ").Append(UseLdaps).Append("\n");
             sb.Append("  tlsConfig: ").Append(TlsConfig).Append("\n");
+            sb.Append("  cbaEnabled: ").Append(CbaEnabled).Append("\n");
+            sb.Append("  certificateId: ").Append(CertificateId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -248,6 +269,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public bool Equals(AdDomain input)
         {
             if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.DomainType != input.DomainType) return false;
             if (this.DomainName != input.DomainName || (this.DomainName != null && !this.DomainName.Equals(input.DomainName))) return false;
             if (this.DomainAdminAccount != input.DomainAdminAccount || (this.DomainAdminAccount != null && !this.DomainAdminAccount.Equals(input.DomainAdminAccount))) return false;
@@ -261,6 +283,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.DeleteComputerObject != input.DeleteComputerObject || (this.DeleteComputerObject != null && !this.DeleteComputerObject.Equals(input.DeleteComputerObject))) return false;
             if (this.UseLdaps != input.UseLdaps || (this.UseLdaps != null && !this.UseLdaps.Equals(input.UseLdaps))) return false;
             if (this.TlsConfig != input.TlsConfig || (this.TlsConfig != null && !this.TlsConfig.Equals(input.TlsConfig))) return false;
+            if (this.CbaEnabled != input.CbaEnabled || (this.CbaEnabled != null && !this.CbaEnabled.Equals(input.CbaEnabled))) return false;
+            if (this.CertificateId != input.CertificateId || (this.CertificateId != null && !this.CertificateId.Equals(input.CertificateId))) return false;
 
             return true;
         }
@@ -273,6 +297,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 hashCode = hashCode * 59 + this.DomainType.GetHashCode();
                 if (this.DomainName != null) hashCode = hashCode * 59 + this.DomainName.GetHashCode();
                 if (this.DomainAdminAccount != null) hashCode = hashCode * 59 + this.DomainAdminAccount.GetHashCode();
@@ -286,6 +311,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.DeleteComputerObject != null) hashCode = hashCode * 59 + this.DeleteComputerObject.GetHashCode();
                 if (this.UseLdaps != null) hashCode = hashCode * 59 + this.UseLdaps.GetHashCode();
                 if (this.TlsConfig != null) hashCode = hashCode * 59 + this.TlsConfig.GetHashCode();
+                if (this.CbaEnabled != null) hashCode = hashCode * 59 + this.CbaEnabled.GetHashCode();
+                if (this.CertificateId != null) hashCode = hashCode * 59 + this.CertificateId.GetHashCode();
                 return hashCode;
             }
         }

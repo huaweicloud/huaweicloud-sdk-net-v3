@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("period_desktops_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? PeriodDesktopsNum { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("inconsistent_type", NullValueHandling = NullValueHandling.Ignore)]
+        public InconsistentTypeEnum? InconsistentType { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  totalCount: ").Append(TotalCount).Append("\n");
             sb.Append("  onDemandDesktopsNum: ").Append(OnDemandDesktopsNum).Append("\n");
             sb.Append("  periodDesktopsNum: ").Append(PeriodDesktopsNum).Append("\n");
+            sb.Append("  inconsistentType: ").Append(InconsistentType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,6 +82,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.TotalCount != input.TotalCount || (this.TotalCount != null && !this.TotalCount.Equals(input.TotalCount))) return false;
             if (this.OnDemandDesktopsNum != input.OnDemandDesktopsNum || (this.OnDemandDesktopsNum != null && !this.OnDemandDesktopsNum.Equals(input.OnDemandDesktopsNum))) return false;
             if (this.PeriodDesktopsNum != input.PeriodDesktopsNum || (this.PeriodDesktopsNum != null && !this.PeriodDesktopsNum.Equals(input.PeriodDesktopsNum))) return false;
+            if (this.InconsistentType != input.InconsistentType || (this.InconsistentType != null && !this.InconsistentType.Equals(input.InconsistentType))) return false;
 
             return true;
         }
@@ -91,6 +99,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.TotalCount != null) hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
                 if (this.OnDemandDesktopsNum != null) hashCode = hashCode * 59 + this.OnDemandDesktopsNum.GetHashCode();
                 if (this.PeriodDesktopsNum != null) hashCode = hashCode * 59 + this.PeriodDesktopsNum.GetHashCode();
+                if (this.InconsistentType != null) hashCode = hashCode * 59 + this.InconsistentType.GetHashCode();
                 return hashCode;
             }
         }

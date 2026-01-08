@@ -64,6 +64,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// 处理类型 - ONLY_FOR_EXPAND：仅对新扩容桌面生效 - FOR_EXPAND_AND_IDLE：对新扩容桌面与空闲桌面生效 - FOR_EXPAND_AND_ALL：对新扩容桌面与已有全部桌面生效
+        /// </summary>
+        [JsonProperty("handle_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string HandleType { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +87,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  message: ").Append(Message).Append("\n");
             sb.Append("  orderId: ").Append(OrderId).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  handleType: ").Append(HandleType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +114,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.Message != input.Message || (this.Message != null && !this.Message.Equals(input.Message))) return false;
             if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.HandleType != input.HandleType || (this.HandleType != null && !this.HandleType.Equals(input.HandleType))) return false;
 
             return true;
         }
@@ -127,6 +135,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();
                 if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.HandleType != null) hashCode = hashCode * 59 + this.HandleType.GetHashCode();
                 return hashCode;
             }
         }

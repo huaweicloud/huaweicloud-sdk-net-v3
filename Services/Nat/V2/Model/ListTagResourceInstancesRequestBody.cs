@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
     public class ListTagResourceInstancesRequestBody 
     {
         /// <summary>
-        /// 操作标识（仅限于filter，count）：filter（过滤），count(查询总条数) 如果是filter就是分页查询，如果是count只需按照条件将总条数返回即可。
+        /// 操作标识： - filter：过滤。 - count：查询总条数。
         /// </summary>
-        /// <value>操作标识（仅限于filter，count）：filter（过滤），count(查询总条数) 如果是filter就是分页查询，如果是count只需按照条件将总条数返回即可。</value>
+        /// <value>操作标识： - filter：过滤。 - count：查询总条数。</value>
         [JsonConverter(typeof(EnumClassConverter<ActionEnum>))]
         public class ActionEnum
         {
@@ -144,7 +144,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string Limit { get; set; }
 
         /// <summary>
-        /// 操作标识（仅限于filter，count）：filter（过滤），count(查询总条数) 如果是filter就是分页查询，如果是count只需按照条件将总条数返回即可。
+        /// 操作标识： - filter：过滤。 - count：查询总条数。
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public ActionEnum Action { get; set; }

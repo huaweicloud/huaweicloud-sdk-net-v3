@@ -45,6 +45,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string PolicyGroupName { get; set; }
 
         /// <summary>
+        /// 根据批量策略组名字过滤结果。
+        /// </summary>
+        [SDKProperty("policy_group_names", IsQuery = true)]
+        [JsonProperty("policy_group_names", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> PolicyGroupNames { get; set; }
+
+        /// <summary>
         /// 根据优先级过滤结果。所带的值需要满足现有策略组已有最大优先级值。
         /// </summary>
         [SDKProperty("priority", IsQuery = true)]
@@ -78,6 +85,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  policyGroupId: ").Append(PolicyGroupId).Append("\n");
             sb.Append("  policyGroupName: ").Append(PolicyGroupName).Append("\n");
+            sb.Append("  policyGroupNames: ").Append(PolicyGroupNames).Append("\n");
             sb.Append("  priority: ").Append(Priority).Append("\n");
             sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
@@ -103,6 +111,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.PolicyGroupId != input.PolicyGroupId || (this.PolicyGroupId != null && !this.PolicyGroupId.Equals(input.PolicyGroupId))) return false;
             if (this.PolicyGroupName != input.PolicyGroupName || (this.PolicyGroupName != null && !this.PolicyGroupName.Equals(input.PolicyGroupName))) return false;
+            if (this.PolicyGroupNames != input.PolicyGroupNames || (this.PolicyGroupNames != null && input.PolicyGroupNames != null && !this.PolicyGroupNames.SequenceEqual(input.PolicyGroupNames))) return false;
             if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
             if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
@@ -122,6 +131,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.PolicyGroupId != null) hashCode = hashCode * 59 + this.PolicyGroupId.GetHashCode();
                 if (this.PolicyGroupName != null) hashCode = hashCode * 59 + this.PolicyGroupName.GetHashCode();
+                if (this.PolicyGroupNames != null) hashCode = hashCode * 59 + this.PolicyGroupNames.GetHashCode();
                 if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
                 if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();

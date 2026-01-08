@@ -23,6 +23,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string UserName { get; set; }
 
         /// <summary>
+        /// 用户所属域。
+        /// </summary>
+        [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
+        public string Domain { get; set; }
+
+        /// <summary>
         /// 合法用户邮箱，桌面创建成功后系统会通过发送邮件的方式通知用户。
         /// </summary>
         [JsonProperty("user_email", NullValueHandling = NullValueHandling.Ignore)]
@@ -58,6 +64,24 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("desktop_name_prefix", NullValueHandling = NullValueHandling.Ignore)]
         public string DesktopNamePrefix { get; set; }
 
+        /// <summary>
+        /// 需要拷贝数据盘的桌面ID，如果指定了该参数，那么copy_volume_ids不能为空。
+        /// </summary>
+        [JsonProperty("copy_volume_desktop_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string CopyVolumeDesktopId { get; set; }
+
+        /// <summary>
+        /// 需要拷贝数据盘桌面的磁盘ID列表，如果指定了该参数，copy_volume_desktop_id不能为空，且磁盘必须属于该桌面。
+        /// </summary>
+        [JsonProperty("copy_volume_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> CopyVolumeIds { get; set; }
+
+        /// <summary>
+        /// 是否删除按需旧桌面，值为true时，新发放桌面配置并拷贝磁盘后删除旧桌面
+        /// </summary>
+        [JsonProperty("if_delete_old_desktop", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IfDeleteOldDesktop { get; set; }
+
 
 
         /// <summary>
@@ -68,12 +92,16 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             var sb = new StringBuilder();
             sb.Append("class Desktop {\n");
             sb.Append("  userName: ").Append(UserName).Append("\n");
+            sb.Append("  domain: ").Append(Domain).Append("\n");
             sb.Append("  userEmail: ").Append(UserEmail).Append("\n");
             sb.Append("  userPhone: ").Append(UserPhone).Append("\n");
             sb.Append("  userGroup: ").Append(UserGroup).Append("\n");
             sb.Append("  computerName: ").Append(ComputerName).Append("\n");
             sb.Append("  osHostName: ").Append(OsHostName).Append("\n");
             sb.Append("  desktopNamePrefix: ").Append(DesktopNamePrefix).Append("\n");
+            sb.Append("  copyVolumeDesktopId: ").Append(CopyVolumeDesktopId).Append("\n");
+            sb.Append("  copyVolumeIds: ").Append(CopyVolumeIds).Append("\n");
+            sb.Append("  ifDeleteOldDesktop: ").Append(IfDeleteOldDesktop).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,12 +121,16 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             if (input == null) return false;
             if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
             if (this.UserEmail != input.UserEmail || (this.UserEmail != null && !this.UserEmail.Equals(input.UserEmail))) return false;
             if (this.UserPhone != input.UserPhone || (this.UserPhone != null && !this.UserPhone.Equals(input.UserPhone))) return false;
             if (this.UserGroup != input.UserGroup || (this.UserGroup != null && !this.UserGroup.Equals(input.UserGroup))) return false;
             if (this.ComputerName != input.ComputerName || (this.ComputerName != null && !this.ComputerName.Equals(input.ComputerName))) return false;
             if (this.OsHostName != input.OsHostName || (this.OsHostName != null && !this.OsHostName.Equals(input.OsHostName))) return false;
             if (this.DesktopNamePrefix != input.DesktopNamePrefix || (this.DesktopNamePrefix != null && !this.DesktopNamePrefix.Equals(input.DesktopNamePrefix))) return false;
+            if (this.CopyVolumeDesktopId != input.CopyVolumeDesktopId || (this.CopyVolumeDesktopId != null && !this.CopyVolumeDesktopId.Equals(input.CopyVolumeDesktopId))) return false;
+            if (this.CopyVolumeIds != input.CopyVolumeIds || (this.CopyVolumeIds != null && input.CopyVolumeIds != null && !this.CopyVolumeIds.SequenceEqual(input.CopyVolumeIds))) return false;
+            if (this.IfDeleteOldDesktop != input.IfDeleteOldDesktop || (this.IfDeleteOldDesktop != null && !this.IfDeleteOldDesktop.Equals(input.IfDeleteOldDesktop))) return false;
 
             return true;
         }
@@ -112,12 +144,16 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             {
                 var hashCode = 41;
                 if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
                 if (this.UserEmail != null) hashCode = hashCode * 59 + this.UserEmail.GetHashCode();
                 if (this.UserPhone != null) hashCode = hashCode * 59 + this.UserPhone.GetHashCode();
                 if (this.UserGroup != null) hashCode = hashCode * 59 + this.UserGroup.GetHashCode();
                 if (this.ComputerName != null) hashCode = hashCode * 59 + this.ComputerName.GetHashCode();
                 if (this.OsHostName != null) hashCode = hashCode * 59 + this.OsHostName.GetHashCode();
                 if (this.DesktopNamePrefix != null) hashCode = hashCode * 59 + this.DesktopNamePrefix.GetHashCode();
+                if (this.CopyVolumeDesktopId != null) hashCode = hashCode * 59 + this.CopyVolumeDesktopId.GetHashCode();
+                if (this.CopyVolumeIds != null) hashCode = hashCode * 59 + this.CopyVolumeIds.GetHashCode();
+                if (this.IfDeleteOldDesktop != null) hashCode = hashCode * 59 + this.IfDeleteOldDesktop.GetHashCode();
                 return hashCode;
             }
         }

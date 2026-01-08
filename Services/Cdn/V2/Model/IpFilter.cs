@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// 配置IP黑白名单，当type&#x3D;off时，非必传， 支持IPv6,支持配置IP地址和IP&amp;掩码格式的网段, 多条规则用“,”分割,最多支持配置150个, 多个完全重复的IP/IP段将合并为一个,不支持带通配符的地址，如192.168.0.*。
+        /// 配置IP黑白名单，当type&#x3D;off时，非必传， 支持IPv6,支持配置IP地址和IP&amp;掩码格式的网段, 多条规则用“,”分割,最多支持配置500个, 多个完全重复的IP/IP段将合并为一个,不支持带通配符的地址，如192.168.0.*。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

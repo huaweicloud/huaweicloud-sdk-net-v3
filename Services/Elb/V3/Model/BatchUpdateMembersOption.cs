@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// **参数解释**：后端服务器端口。  **约束限制**： - 在开启端口透传的pool下的member，该字段无法更新。 [- 网关型LB，即pool协议为IP时，protocol_port必须设置为0。](tag:hws_eu)  **取值范围**：1-65535  **默认取值**：不涉及
+        /// **参数解释**：后端服务器端口。  **约束限制**： - 在开启端口透传的pool下的member，该字段无法更新。 - 网关型LB，即pool协议为IP时，protocol_port必须设置为0。  **取值范围**：1-65535  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("protocol_port", NullValueHandling = NullValueHandling.Ignore)]
         public int? ProtocolPort { get; set; }

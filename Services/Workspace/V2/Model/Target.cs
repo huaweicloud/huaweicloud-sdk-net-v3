@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     public class Target 
     {
         /// <summary>
-        /// 对象类型。 - INSTANCE：表示桌面。   target_id：为桌面的SID。   target_name：为桌面name。 - USER：表示用户。   target_id：为用户ID。   target_name：为用户name。 - USERGROUP：表示用户组。   target_id：为用户组ID。   target_name：为用户组name。 - CLIENTIP：终端IP地址。   target_id：终端IP地址。   target_name：终端IP地址。 - OU：组织单元。   target_id：OUID。   target_name：OU名称。 - DESKTOPSPOOL：表示桌面池。   target_id：为桌面池的ID。   target_name：为桌面池name。 - ALL：表示所有桌面。   target_id：default-apply-all-targets。   target_name：All-Targets。
+        /// 对象类型。 - INSTANCE：表示桌面。   target_id：为桌面的SID。   target_name：为桌面name。 - USER：表示用户。   target_id：为用户ID。   target_name：为用户name。 - USERGROUP：表示用户组。   target_id：为用户组ID。   target_name：为用户组name。 - CLIENTIP：终端IP地址。   target_id：终端IP地址。   target_name：终端IP地址。 - OU：组织单元。   target_id：OUID。   target_name：OU名称。 - DESKTOPSPOOL：表示桌面池。   target_id：为桌面池的ID。   target_name：为桌面池name。 - ALL：表示所有桌面。   target_id：default-apply-all-targets。   target_name：All-Targets。 - DESKTOP_TAG：表示桌面标签。   target_id：标签的key|标签的value。   target_name：标签的key|标签的value。
         /// </summary>
-        /// <value>对象类型。 - INSTANCE：表示桌面。   target_id：为桌面的SID。   target_name：为桌面name。 - USER：表示用户。   target_id：为用户ID。   target_name：为用户name。 - USERGROUP：表示用户组。   target_id：为用户组ID。   target_name：为用户组name。 - CLIENTIP：终端IP地址。   target_id：终端IP地址。   target_name：终端IP地址。 - OU：组织单元。   target_id：OUID。   target_name：OU名称。 - DESKTOPSPOOL：表示桌面池。   target_id：为桌面池的ID。   target_name：为桌面池name。 - ALL：表示所有桌面。   target_id：default-apply-all-targets。   target_name：All-Targets。</value>
+        /// <value>对象类型。 - INSTANCE：表示桌面。   target_id：为桌面的SID。   target_name：为桌面name。 - USER：表示用户。   target_id：为用户ID。   target_name：为用户name。 - USERGROUP：表示用户组。   target_id：为用户组ID。   target_name：为用户组name。 - CLIENTIP：终端IP地址。   target_id：终端IP地址。   target_name：终端IP地址。 - OU：组织单元。   target_id：OUID。   target_name：OU名称。 - DESKTOPSPOOL：表示桌面池。   target_id：为桌面池的ID。   target_name：为桌面池name。 - ALL：表示所有桌面。   target_id：default-apply-all-targets。   target_name：All-Targets。 - DESKTOP_TAG：表示桌面标签。   target_id：标签的key|标签的value。   target_name：标签的key|标签的value。</value>
         [JsonConverter(typeof(EnumClassConverter<TargetTypeEnum>))]
         public class TargetTypeEnum
         {
@@ -57,6 +57,11 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             /// </summary>
             public static readonly TargetTypeEnum ALL = new TargetTypeEnum("ALL");
 
+            /// <summary>
+            /// Enum DESKTOP_TAG for value: DESKTOP_TAG
+            /// </summary>
+            public static readonly TargetTypeEnum DESKTOP_TAG = new TargetTypeEnum("DESKTOP_TAG");
+
             private static readonly Dictionary<string, TargetTypeEnum> StaticFields =
             new Dictionary<string, TargetTypeEnum>()
             {
@@ -67,6 +72,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 { "OU", OU },
                 { "USERGROUP", USERGROUP },
                 { "ALL", ALL },
+                { "DESKTOP_TAG", DESKTOP_TAG },
             };
 
             private string _value;
@@ -174,7 +180,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string TargetName { get; set; }
 
         /// <summary>
-        /// 对象类型。 - INSTANCE：表示桌面。   target_id：为桌面的SID。   target_name：为桌面name。 - USER：表示用户。   target_id：为用户ID。   target_name：为用户name。 - USERGROUP：表示用户组。   target_id：为用户组ID。   target_name：为用户组name。 - CLIENTIP：终端IP地址。   target_id：终端IP地址。   target_name：终端IP地址。 - OU：组织单元。   target_id：OUID。   target_name：OU名称。 - DESKTOPSPOOL：表示桌面池。   target_id：为桌面池的ID。   target_name：为桌面池name。 - ALL：表示所有桌面。   target_id：default-apply-all-targets。   target_name：All-Targets。
+        /// 对象类型。 - INSTANCE：表示桌面。   target_id：为桌面的SID。   target_name：为桌面name。 - USER：表示用户。   target_id：为用户ID。   target_name：为用户name。 - USERGROUP：表示用户组。   target_id：为用户组ID。   target_name：为用户组name。 - CLIENTIP：终端IP地址。   target_id：终端IP地址。   target_name：终端IP地址。 - OU：组织单元。   target_id：OUID。   target_name：OU名称。 - DESKTOPSPOOL：表示桌面池。   target_id：为桌面池的ID。   target_name：为桌面池name。 - ALL：表示所有桌面。   target_id：default-apply-all-targets。   target_name：All-Targets。 - DESKTOP_TAG：表示桌面标签。   target_id：标签的key|标签的value。   target_name：标签的key|标签的value。
         /// </summary>
         [JsonProperty("target_type", NullValueHandling = NullValueHandling.Ignore)]
         public TargetTypeEnum TargetType { get; set; }

@@ -149,13 +149,19 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string ObjectName { get; set; }
 
         /// <summary>
+        /// 用户/用户组所属域名。
+        /// </summary>
+        [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
+        public string Domain { get; set; }
+
+        /// <summary>
         /// 桌面用户所属的用户权限组。  - sudo：Linux管理员组。 - default：Linux默认用户组。 - administrators：Windows管理员组。管理员拥有对该桌面的完全访问权，可以做任何需要的更改（禁用操作除外）。 - users：Windows标准用户组。标准用户可以使用大多数软件，并可以更改不影响其他用户的系统设置。
         /// </summary>
         [JsonProperty("user_group", NullValueHandling = NullValueHandling.Ignore)]
         public string UserGroup { get; set; }
 
         /// <summary>
-        /// 创建时间。格式为：UTC格式，例如“2022-05-11T11:45:42.000Z”。
+        /// 创建时间。
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedAt { get; set; }
@@ -172,6 +178,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  objectType: ").Append(ObjectType).Append("\n");
             sb.Append("  objectId: ").Append(ObjectId).Append("\n");
             sb.Append("  objectName: ").Append(ObjectName).Append("\n");
+            sb.Append("  domain: ").Append(Domain).Append("\n");
             sb.Append("  userGroup: ").Append(UserGroup).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("}\n");
@@ -195,6 +202,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.ObjectType != input.ObjectType) return false;
             if (this.ObjectId != input.ObjectId || (this.ObjectId != null && !this.ObjectId.Equals(input.ObjectId))) return false;
             if (this.ObjectName != input.ObjectName || (this.ObjectName != null && !this.ObjectName.Equals(input.ObjectName))) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
             if (this.UserGroup != input.UserGroup || (this.UserGroup != null && !this.UserGroup.Equals(input.UserGroup))) return false;
             if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
 
@@ -212,6 +220,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 hashCode = hashCode * 59 + this.ObjectType.GetHashCode();
                 if (this.ObjectId != null) hashCode = hashCode * 59 + this.ObjectId.GetHashCode();
                 if (this.ObjectName != null) hashCode = hashCode * 59 + this.ObjectName.GetHashCode();
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
                 if (this.UserGroup != null) hashCode = hashCode * 59 + this.UserGroup.GetHashCode();
                 if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 return hashCode;

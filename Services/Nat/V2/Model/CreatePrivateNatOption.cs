@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
     public class CreatePrivateNatOption 
     {
         /// <summary>
-        /// 私网NAT网关实例的规格。 取值为： \&quot;Small\&quot;：小型 \&quot;Medium\&quot;：中型 \&quot;Large\&quot;：大型 \&quot;Extra-large\&quot;：超大型 \&quot;Extra-xlarge\&quot;：企业型
+        /// 私网NAT网关实例的规格。 取值为： - Small：小型 - Medium：中型 - Large：大型 - Extra-large：超大型 - Extra-xlarge：企业型
         /// </summary>
-        /// <value>私网NAT网关实例的规格。 取值为： \&quot;Small\&quot;：小型 \&quot;Medium\&quot;：中型 \&quot;Large\&quot;：大型 \&quot;Extra-large\&quot;：超大型 \&quot;Extra-xlarge\&quot;：企业型</value>
+        /// <value>私网NAT网关实例的规格。 取值为： - Small：小型 - Medium：中型 - Large：大型 - Extra-large：超大型 - Extra-xlarge：企业型</value>
         [JsonConverter(typeof(EnumClassConverter<SpecEnum>))]
         public class SpecEnum
         {
@@ -162,7 +162,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 私网NAT网关实例的规格。 取值为： \&quot;Small\&quot;：小型 \&quot;Medium\&quot;：中型 \&quot;Large\&quot;：大型 \&quot;Extra-large\&quot;：超大型 \&quot;Extra-xlarge\&quot;：企业型
+        /// 私网NAT网关实例的规格。 取值为： - Small：小型 - Medium：中型 - Large：大型 - Extra-large：超大型 - Extra-xlarge：企业型
         /// </summary>
         [JsonProperty("spec", NullValueHandling = NullValueHandling.Ignore)]
         public SpecEnum Spec { get; set; }

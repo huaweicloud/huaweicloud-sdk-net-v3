@@ -23,10 +23,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public int? Total { get; set; }
 
         /// <summary>
-        /// 
+        /// **参数解释**: 数据库实例的等待事件列表。
         /// </summary>
         [JsonProperty("rows", NullValueHandling = NullValueHandling.Ignore)]
-        public WaitEventResult Rows { get; set; }
+        public List<WaitEventResult> Rows { get; set; }
 
 
 
@@ -58,7 +58,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             if (input == null) return false;
             if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
-            if (this.Rows != input.Rows || (this.Rows != null && !this.Rows.Equals(input.Rows))) return false;
+            if (this.Rows != input.Rows || (this.Rows != null && input.Rows != null && !this.Rows.SequenceEqual(input.Rows))) return false;
 
             return true;
         }

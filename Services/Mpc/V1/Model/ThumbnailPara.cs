@@ -143,6 +143,18 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
         /// <summary>
+        /// 黑点比例大于等于此值认为是黑帧。 
+        /// </summary>
+        [JsonProperty("amount", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Amount { get; set; }
+
+        /// <summary>
+        /// 像素值小于此值认为是黑点。 
+        /// </summary>
+        [JsonProperty("threshold", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Threshold { get; set; }
+
+        /// <summary>
         /// 采样截图的时间间隔值。  默认值：12。  单位：秒 
         /// </summary>
         [JsonProperty("time", NullValueHandling = NullValueHandling.Ignore)]
@@ -212,6 +224,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             var sb = new StringBuilder();
             sb.Append("class ThumbnailPara {\n");
             sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  amount: ").Append(Amount).Append("\n");
+            sb.Append("  threshold: ").Append(Threshold).Append("\n");
             sb.Append("  time: ").Append(Time).Append("\n");
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  duration: ").Append(Duration).Append("\n");
@@ -241,6 +255,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             if (input == null) return false;
             if (this.Type != input.Type) return false;
+            if (this.Amount != input.Amount || (this.Amount != null && !this.Amount.Equals(input.Amount))) return false;
+            if (this.Threshold != input.Threshold || (this.Threshold != null && !this.Threshold.Equals(input.Threshold))) return false;
             if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
             if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
             if (this.Duration != input.Duration || (this.Duration != null && !this.Duration.Equals(input.Duration))) return false;
@@ -264,6 +280,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             {
                 var hashCode = 41;
                 hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Amount != null) hashCode = hashCode * 59 + this.Amount.GetHashCode();
+                if (this.Threshold != null) hashCode = hashCode * 59 + this.Threshold.GetHashCode();
                 if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
                 if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.Duration != null) hashCode = hashCode * 59 + this.Duration.GetHashCode();

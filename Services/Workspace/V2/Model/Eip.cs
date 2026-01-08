@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// EIP的类型，5_bgp（全动态BGP），5_sbgp（静态BGP）。
+        /// EIP的类型。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// **参数描述**： 自定义监控看板名称 **约束限制** 不涉及 **取值范围** 长度为[1,128]个字符，只允许中文、英文、数字0-9、_和- **默认取值** 不涉及 
+        /// **参数解释**： 自定义监控看板名称 **约束限制** 不涉及 **取值范围** 长度为[1,128]个字符，只允许中文、英文、数字0-9、_和- **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("dashboard_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DashboardName { get; set; }
@@ -29,13 +29,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string EnterpriseId { get; set; }
 
         /// <summary>
-        /// **参数描述**： 监控看板id **约束限制** 不涉及 **取值范围** 以db开头，包含22个字母和数字，长度为24个字符 **默认取值** 不涉及 
+        /// **参数解释**： 监控看板id **约束限制** 不涉及 **取值范围** 以db开头，包含22个字母和数字，长度为24个字符 **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("dashboard_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DashboardId { get; set; }
 
         /// <summary>
-        /// **参数描述**： 监控视图展示模式 **约束限制** 不涉及 **取值范围** - 0:表示自定义坐标 - 1:代表每行1个监控视图 - 2:代表每行2个监控视图 - 3:代表每行3个监控视图 **默认取值** 3 
+        /// **参数解释**： 监控视图展示模式 **约束限制** 不涉及 **取值范围** - 0:表示自定义坐标 - 1:代表每行1个监控视图 - 2:代表每行2个监控视图 - 3:代表每行3个监控视图 **默认取值** 3 
         /// </summary>
         [JsonProperty("row_widget_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? RowWidgetNum { get; set; }

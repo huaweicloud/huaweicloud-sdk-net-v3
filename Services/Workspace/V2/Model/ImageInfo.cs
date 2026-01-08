@@ -82,6 +82,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedAt { get; set; }
 
+        /// <summary>
+        /// 镜像kmsId。
+        /// </summary>
+        [JsonProperty("kms_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string KmsId { get; set; }
+
 
 
         /// <summary>
@@ -102,6 +108,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  minDisk: ").Append(MinDisk).Append("\n");
             sb.Append("  productCode: ").Append(ProductCode).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  kmsId: ").Append(KmsId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -131,6 +138,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.MinDisk != input.MinDisk || (this.MinDisk != null && !this.MinDisk.Equals(input.MinDisk))) return false;
             if (this.ProductCode != input.ProductCode || (this.ProductCode != null && !this.ProductCode.Equals(input.ProductCode))) return false;
             if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.KmsId != input.KmsId || (this.KmsId != null && !this.KmsId.Equals(input.KmsId))) return false;
 
             return true;
         }
@@ -154,6 +162,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.MinDisk != null) hashCode = hashCode * 59 + this.MinDisk.GetHashCode();
                 if (this.ProductCode != null) hashCode = hashCode * 59 + this.ProductCode.GetHashCode();
                 if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.KmsId != null) hashCode = hashCode * 59 + this.KmsId.GetHashCode();
                 return hashCode;
             }
         }

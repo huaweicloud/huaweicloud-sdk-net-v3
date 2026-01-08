@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class GetResourceGroupResources 
     {
         /// <summary>
-        /// **参数解释** 按事件告警状态信息进行过滤。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 
+        /// **参数解释** 按事件告警状态信息进行过滤。 **取值范围** 枚举值。 - health: 表示无告警 - unhealthy: 表示告警中 - no_alarm_rule: 表示未设置告警规则 
         /// </summary>
-        /// <value>**参数解释** 按事件告警状态信息进行过滤。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 </value>
+        /// <value>**参数解释** 按事件告警状态信息进行过滤。 **取值范围** 枚举值。 - health: 表示无告警 - unhealthy: 表示告警中 - no_alarm_rule: 表示未设置告警规则 </value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -137,9 +137,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         }
 
         /// <summary>
-        /// **参数解释** 按事件告警状态信息进行过滤。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 
+        /// **参数解释** 按事件告警状态信息进行过滤。 **取值范围** 枚举值。 - health: 表示无告警 - unhealthy: 表示告警中 - no_alarm_rule: 表示未设置告警规则 
         /// </summary>
-        /// <value>**参数解释** 按事件告警状态信息进行过滤。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 </value>
+        /// <value>**参数解释** 按事件告警状态信息进行过滤。 **取值范围** 枚举值。 - health: 表示无告警 - unhealthy: 表示告警中 - no_alarm_rule: 表示未设置告警规则 </value>
         [JsonConverter(typeof(EnumClassConverter<EventStatusEnum>))]
         public class EventStatusEnum
         {
@@ -259,7 +259,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
 
         /// <summary>
-        /// **参数解释** 按事件告警状态信息进行过滤。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 
+        /// **参数解释** 按事件告警状态信息进行过滤。 **取值范围** 枚举值。 - health: 表示无告警 - unhealthy: 表示告警中 - no_alarm_rule: 表示未设置告警规则 
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
@@ -282,7 +282,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// **参数解释** 按事件告警状态信息进行过滤。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 
+        /// **参数解释** 按事件告警状态信息进行过滤。 **取值范围** 枚举值。 - health: 表示无告警 - unhealthy: 表示告警中 - no_alarm_rule: 表示未设置告警规则 
         /// </summary>
         [JsonProperty("event_status", NullValueHandling = NullValueHandling.Ignore)]
         public EventStatusEnum EventStatus { get; set; }

@@ -11,9 +11,9 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 认证类型。 RADIUS_GATEWAY：短信辅助认证 OAUTH2:OAUTH2认证 CLIENT_TOKEN:本地token认证 USER_PASSWORD:密码认证类型
+    /// 认证类型。 RADIUS_GATEWAY：短信辅助认证 OAUTH2:OAUTH2认证 CLIENT_TOKEN:本地token认证 USER_PASSWORD:密码认证类型 SAML2:SAML 2.0 联邦认证
     /// </summary>
-    /// <value>认证类型。 RADIUS_GATEWAY：短信辅助认证 OAUTH2:OAUTH2认证 CLIENT_TOKEN:本地token认证 USER_PASSWORD:密码认证类型</value>
+    /// <value>认证类型。 RADIUS_GATEWAY：短信辅助认证 OAUTH2:OAUTH2认证 CLIENT_TOKEN:本地token认证 USER_PASSWORD:密码认证类型 SAML2:SAML 2.0 联邦认证</value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     
@@ -53,7 +53,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// Enum FINGER for value: FINGER
         /// </summary>
         [EnumMember(Value = "FINGER")]
-        FINGER = 6
+        FINGER = 6,
+
+        /// <summary>
+        /// Enum SAML2 for value: SAML2
+        /// </summary>
+        [EnumMember(Value = "SAML2")]
+        SAML2 = 7
 
     }
 

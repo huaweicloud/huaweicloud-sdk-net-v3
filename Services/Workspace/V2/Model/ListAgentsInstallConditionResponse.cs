@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 桌面agent安装情况。
+        /// 桌面监控插件安装情况。
         /// </summary>
         [JsonProperty("agents_condition", NullValueHandling = NullValueHandling.Ignore)]
         public List<AgentsCondition> AgentsCondition { get; set; }

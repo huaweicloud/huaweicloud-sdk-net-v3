@@ -23,6 +23,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
+        /// 授权给Billing服务的委托URN。使用RAM共享密钥创建包周期云桌面或添加包周期磁盘时，需要传入该字段。
+        /// </summary>
+        [JsonProperty("agency_urn", NullValueHandling = NullValueHandling.Ignore)]
+        public string AgencyUrn { get; set; }
+
+        /// <summary>
         /// 小时包资源。
         /// </summary>
         [JsonProperty("hour_package_resources", NullValueHandling = NullValueHandling.Ignore)]
@@ -44,6 +50,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             var sb = new StringBuilder();
             sb.Append("class CreateDesktopOrderRequestBody {\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  agencyUrn: ").Append(AgencyUrn).Append("\n");
             sb.Append("  hourPackageResources: ").Append(HourPackageResources).Append("\n");
             sb.Append("  extendParam: ").Append(ExtendParam).Append("\n");
             sb.Append("}\n");
@@ -65,6 +72,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             if (input == null) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.AgencyUrn != input.AgencyUrn || (this.AgencyUrn != null && !this.AgencyUrn.Equals(input.AgencyUrn))) return false;
             if (this.HourPackageResources != input.HourPackageResources || (this.HourPackageResources != null && input.HourPackageResources != null && !this.HourPackageResources.SequenceEqual(input.HourPackageResources))) return false;
             if (this.ExtendParam != input.ExtendParam || (this.ExtendParam != null && !this.ExtendParam.Equals(input.ExtendParam))) return false;
 
@@ -80,6 +88,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             {
                 var hashCode = 41;
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.AgencyUrn != null) hashCode = hashCode * 59 + this.AgencyUrn.GetHashCode();
                 if (this.HourPackageResources != null) hashCode = hashCode * 59 + this.HourPackageResources.GetHashCode();
                 if (this.ExtendParam != null) hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
                 return hashCode;

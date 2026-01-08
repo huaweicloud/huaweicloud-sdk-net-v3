@@ -35,6 +35,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string ResourceName { get; set; }
 
         /// <summary>
+        /// 企业项目ID。
+        /// </summary>
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
         /// 统计信息 * &#x60;desktop_usage&#x60; -  桌面使用时长(单位:秒) * &#x60;desktop_idle_duration&#x60; -  桌面空闲时长(单位:秒)
         /// </summary>
         [JsonProperty("metric", NullValueHandling = NullValueHandling.Ignore)]
@@ -52,6 +58,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  resourceId: ").Append(ResourceId).Append("\n");
             sb.Append("  resourcePoolId: ").Append(ResourcePoolId).Append("\n");
             sb.Append("  resourceName: ").Append(ResourceName).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  metric: ").Append(Metric).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -74,6 +81,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
             if (this.ResourcePoolId != input.ResourcePoolId || (this.ResourcePoolId != null && !this.ResourcePoolId.Equals(input.ResourcePoolId))) return false;
             if (this.ResourceName != input.ResourceName || (this.ResourceName != null && !this.ResourceName.Equals(input.ResourceName))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.Metric != input.Metric || (this.Metric != null && input.Metric != null && !this.Metric.SequenceEqual(input.Metric))) return false;
 
             return true;
@@ -90,6 +98,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
                 if (this.ResourcePoolId != null) hashCode = hashCode * 59 + this.ResourcePoolId.GetHashCode();
                 if (this.ResourceName != null) hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.Metric != null) hashCode = hashCode * 59 + this.Metric.GetHashCode();
                 return hashCode;
             }

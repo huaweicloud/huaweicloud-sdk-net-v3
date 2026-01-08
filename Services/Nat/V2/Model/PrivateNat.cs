@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
     public class PrivateNat 
     {
         /// <summary>
-        /// 私网NAT网关实例的规格。 取值为： \&quot;Small\&quot;：小型 \&quot;Medium\&quot;：中型 \&quot;Large\&quot;：大型 \&quot;Extra-large\&quot;：超大型 \&quot;Extra-xlarge\&quot;：企业型
+        /// 私网NAT网关实例的规格。 取值为： - Small：小型 - Medium：中型 - Large：大型 - Extra-large：超大型 - Extra-xlarge：企业型
         /// </summary>
-        /// <value>私网NAT网关实例的规格。 取值为： \&quot;Small\&quot;：小型 \&quot;Medium\&quot;：中型 \&quot;Large\&quot;：大型 \&quot;Extra-large\&quot;：超大型 \&quot;Extra-xlarge\&quot;：企业型</value>
+        /// <value>私网NAT网关实例的规格。 取值为： - Small：小型 - Medium：中型 - Large：大型 - Extra-large：超大型 - Extra-xlarge：企业型</value>
         [JsonConverter(typeof(EnumClassConverter<SpecEnum>))]
         public class SpecEnum
         {
@@ -149,9 +149,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         }
 
         /// <summary>
-        /// 私网NAT网关实例的状态。 取值为： \&quot;ACTIVE\&quot;：正常运行 \&quot;FROZEN\&quot;：冻结 \&quot;INACTIVE\&quot;：不可用
+        /// 私网NAT网关实例的状态。 取值为： - ACTIVE：正常运行 - FROZEN：冻结 - INACTIVE：不可用
         /// </summary>
-        /// <value>私网NAT网关实例的状态。 取值为： \&quot;ACTIVE\&quot;：正常运行 \&quot;FROZEN\&quot;：冻结 \&quot;INACTIVE\&quot;：不可用</value>
+        /// <value>私网NAT网关实例的状态。 取值为： - ACTIVE：正常运行 - FROZEN：冻结 - INACTIVE：不可用</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -295,12 +295,12 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 私网NAT网关实例的规格。 取值为： \&quot;Small\&quot;：小型 \&quot;Medium\&quot;：中型 \&quot;Large\&quot;：大型 \&quot;Extra-large\&quot;：超大型 \&quot;Extra-xlarge\&quot;：企业型
+        /// 私网NAT网关实例的规格。 取值为： - Small：小型 - Medium：中型 - Large：大型 - Extra-large：超大型 - Extra-xlarge：企业型
         /// </summary>
         [JsonProperty("spec", NullValueHandling = NullValueHandling.Ignore)]
         public SpecEnum Spec { get; set; }
         /// <summary>
-        /// 私网NAT网关实例的状态。 取值为： \&quot;ACTIVE\&quot;：正常运行 \&quot;FROZEN\&quot;：冻结 \&quot;INACTIVE\&quot;：不可用
+        /// 私网NAT网关实例的状态。 取值为： - ACTIVE：正常运行 - FROZEN：冻结 - INACTIVE：不可用
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }

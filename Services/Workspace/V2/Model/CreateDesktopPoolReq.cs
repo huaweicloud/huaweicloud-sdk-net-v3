@@ -155,7 +155,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 可用分区。将桌面创建到指定的可用分区。如果不指定则使用系统随机的可用分区。
+        /// 可用分区。将桌面创建到指定的可用分区。
         /// </summary>
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string AvailabilityZone { get; set; }
@@ -167,7 +167,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string ProductId { get; set; }
 
         /// <summary>
-        /// 产品规格ID。可用区是边缘可用区时，必填此参数。
+        /// 产品规格ID。
         /// </summary>
         [JsonProperty("flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string FlavorId { get; set; }

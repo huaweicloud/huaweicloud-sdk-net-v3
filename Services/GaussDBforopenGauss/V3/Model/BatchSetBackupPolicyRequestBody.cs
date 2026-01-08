@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// 
         /// </summary>
         [JsonProperty("backup_policy", NullValueHandling = NullValueHandling.Ignore)]
-        public BackupPolicyInfo BackupPolicy { get; set; }
+        public BatchSetBackupPolicyOption BackupPolicy { get; set; }
 
 
 

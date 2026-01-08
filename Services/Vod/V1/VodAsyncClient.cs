@@ -836,6 +836,63 @@ namespace HuaweiCloud.SDK.Vod.V1
         }
         
         /// <summary>
+        /// 查询媒资任务信息
+        ///
+        /// ## 典型场景 ##
+        ///   查询媒资任务信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAssetTaskInfoResponse> ListAssetTaskInfoAsync(ListAssetTaskInfoRequest listAssetTaskInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAssetTaskInfoRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListAssetTaskInfoResponse>(response);
+        }
+
+        public AsyncInvoker<ListAssetTaskInfoResponse> ListAssetTaskInfoAsyncInvoker(ListAssetTaskInfoRequest listAssetTaskInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAssetTaskInfoRequest);
+            return new AsyncInvoker<ListAssetTaskInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAssetTaskInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 查询指定分类信息
+        ///
+        /// ## 典型场景 ##
+        ///   查询指定分类信息，及其子分类（即下一级分类）的列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListCategoryInfoResponse> ListCategoryInfoAsync(ListCategoryInfoRequest listCategoryInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/asset/categories", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCategoryInfoRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            var listCategoryInfoResponse = JsonUtils.DeSerializeNull<ListCategoryInfoResponse>(response);
+            listCategoryInfoResponse.Body = JsonUtils.DeSerializeList<QueryCategoryInfoRsp>(response);
+            return listCategoryInfoResponse;
+        }
+
+        public AsyncInvoker<ListCategoryInfoResponse> ListCategoryInfoAsyncInvoker(ListCategoryInfoRequest listCategoryInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/asset/categories", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCategoryInfoRequest);
+            return new AsyncInvoker<ListCategoryInfoResponse>(this, "GET", request, response =>
+            {
+                var listCategoryInfoResponse = JsonUtils.DeSerializeNull<ListCategoryInfoResponse>(response);
+                listCategoryInfoResponse.Body = JsonUtils.DeSerializeList<QueryCategoryInfoRsp>(response);
+                return listCategoryInfoResponse;
+            });
+        }
+        
+        /// <summary>
         /// 查询CDN统计信息
         ///
         /// 查询CDN的统计数据，包括流量、峰值带宽、请求总数、请求命中率、流量命中率。查询存在1小时误差。

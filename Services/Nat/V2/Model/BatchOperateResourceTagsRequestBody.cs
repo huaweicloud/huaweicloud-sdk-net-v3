@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
     public class BatchOperateResourceTagsRequestBody 
     {
         /// <summary>
-        /// 功能说明：操作标识。 取值范围： create（创建） delete（删除）
+        /// 功能说明：操作标识。 取值范围： - create：创建 - delete：删除
         /// </summary>
-        /// <value>功能说明：操作标识。 取值范围： create（创建） delete（删除）</value>
+        /// <value>功能说明：操作标识。 取值范围： - create：创建 - delete：删除</value>
         [JsonConverter(typeof(EnumClassConverter<ActionEnum>))]
         public class ActionEnum
         {
@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
 
 
         /// <summary>
-        /// 功能说明：操作标识。 取值范围： create（创建） delete（删除）
+        /// 功能说明：操作标识。 取值范围： - create：创建 - delete：删除
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public ActionEnum Action { get; set; }

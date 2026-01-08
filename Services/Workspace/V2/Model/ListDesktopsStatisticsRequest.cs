@@ -150,6 +150,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [SDKProperty("statistics_type", IsQuery = true)]
         [JsonProperty("statistics_type", NullValueHandling = NullValueHandling.Ignore)]
         public List<StatisticsTypeEnum> StatisticsType { get; set; }
+        /// <summary>
+        /// 待查询的桌面池ID列表
+        /// </summary>
+        [SDKProperty("desktop_pool_ids", IsQuery = true)]
+        [JsonProperty("desktop_pool_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> DesktopPoolIds { get; set; }
+
 
 
         /// <summary>
@@ -161,6 +168,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("class ListDesktopsStatisticsRequest {\n");
             sb.Append("  desktopType: ").Append(DesktopType).Append("\n");
             sb.Append("  statisticsType: ").Append(StatisticsType).Append("\n");
+            sb.Append("  desktopPoolIds: ").Append(DesktopPoolIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -181,6 +189,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (input == null) return false;
             if (this.DesktopType != input.DesktopType || (this.DesktopType != null && input.DesktopType != null && !this.DesktopType.SequenceEqual(input.DesktopType))) return false;
             if (this.StatisticsType != input.StatisticsType || (this.StatisticsType != null && input.StatisticsType != null && !this.StatisticsType.SequenceEqual(input.StatisticsType))) return false;
+            if (this.DesktopPoolIds != input.DesktopPoolIds || (this.DesktopPoolIds != null && input.DesktopPoolIds != null && !this.DesktopPoolIds.SequenceEqual(input.DesktopPoolIds))) return false;
 
             return true;
         }
@@ -195,6 +204,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 var hashCode = 41;
                 if (this.DesktopType != null) hashCode = hashCode * 59 + this.DesktopType.GetHashCode();
                 hashCode = hashCode * 59 + this.StatisticsType.GetHashCode();
+                if (this.DesktopPoolIds != null) hashCode = hashCode * 59 + this.DesktopPoolIds.GetHashCode();
                 return hashCode;
             }
         }

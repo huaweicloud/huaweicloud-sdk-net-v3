@@ -95,7 +95,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? Timeout { get; set; }
 
         /// <summary>
-        /// **参数解释**： 健康检查请求协议。  **取值范围**：TCP、UDP_CONNECT、HTTP、HTTPS、TLS和GRPC。
+        /// **参数解释**： 健康检查请求协议。  **取值范围**：TCP、UDP_CONNECT、HTTP、HTTPS、TLS、GRPC[和GRPCS](tag:not_open)。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

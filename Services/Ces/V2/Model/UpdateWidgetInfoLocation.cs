@@ -11,31 +11,31 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 监控视图图表坐标
+    /// **参数解释** 监控视图图表坐标 **约束限制** 不涉及 
     /// </summary>
     public class UpdateWidgetInfoLocation 
     {
 
         /// <summary>
-        /// 监控视图的上坐标
+        /// **参数解释** 监控视图的上坐标 **约束限制** 不涉及 **取值范围** 坐标的取值范围[0,2147483647] **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("top", NullValueHandling = NullValueHandling.Ignore)]
         public int? Top { get; set; }
 
         /// <summary>
-        /// 监控视图的左坐标
+        /// **参数解释** 监控视图的左坐标 **约束限制** 不涉及 **取值范围** 坐标的取值范围[0,9] **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("left", NullValueHandling = NullValueHandling.Ignore)]
         public int? Left { get; set; }
 
         /// <summary>
-        /// 监控视图图表宽度
+        /// **参数解释** 监控视图图表宽度 **约束限制** 不涉及 **取值范围** 宽度的取值范围[3,12] **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("width", NullValueHandling = NullValueHandling.Ignore)]
         public int? Width { get; set; }
 
         /// <summary>
-        /// 监控视图图表高度
+        /// **参数解释** 监控视图图表高度 **约束限制** 不涉及 **取值范围** 高度的取值范围[3,2147483647] **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("height", NullValueHandling = NullValueHandling.Ignore)]
         public int? Height { get; set; }

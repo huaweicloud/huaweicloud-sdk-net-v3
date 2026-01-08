@@ -334,6 +334,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         [JsonProperty("associated_with_ddm", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AssociatedWithDdm { get; set; }
 
+        /// <summary>
+        /// 该备份源文件大小，用于该备份文件恢复到新实例时需要的最小磁盘空间大小。
+        /// </summary>
+        [JsonProperty("min_data_volume_capacity_for_restore", NullValueHandling = NullValueHandling.Ignore)]
+        public int? MinDataVolumeCapacityForRestore { get; set; }
+
 
 
         /// <summary>
@@ -354,6 +360,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("  size: ").Append(Size).Append("\n");
             sb.Append("  datastore: ").Append(Datastore).Append("\n");
             sb.Append("  associatedWithDdm: ").Append(AssociatedWithDdm).Append("\n");
+            sb.Append("  minDataVolumeCapacityForRestore: ").Append(MinDataVolumeCapacityForRestore).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -383,6 +390,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
             if (this.Datastore != input.Datastore || (this.Datastore != null && !this.Datastore.Equals(input.Datastore))) return false;
             if (this.AssociatedWithDdm != input.AssociatedWithDdm || (this.AssociatedWithDdm != null && !this.AssociatedWithDdm.Equals(input.AssociatedWithDdm))) return false;
+            if (this.MinDataVolumeCapacityForRestore != input.MinDataVolumeCapacityForRestore || (this.MinDataVolumeCapacityForRestore != null && !this.MinDataVolumeCapacityForRestore.Equals(input.MinDataVolumeCapacityForRestore))) return false;
 
             return true;
         }
@@ -406,6 +414,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                 if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
                 if (this.Datastore != null) hashCode = hashCode * 59 + this.Datastore.GetHashCode();
                 if (this.AssociatedWithDdm != null) hashCode = hashCode * 59 + this.AssociatedWithDdm.GetHashCode();
+                if (this.MinDataVolumeCapacityForRestore != null) hashCode = hashCode * 59 + this.MinDataVolumeCapacityForRestore.GetHashCode();
                 return hashCode;
             }
         }

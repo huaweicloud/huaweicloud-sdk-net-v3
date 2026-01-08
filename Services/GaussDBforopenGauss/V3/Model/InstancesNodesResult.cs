@@ -29,6 +29,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public string Name { get; set; }
 
         /// <summary>
+        /// **参数解释**： 节点角色。 **取值范围**： - master：主节点。 - slave：备节点。 - secondary：日志节点。 - readreplica：只读节点。
+        /// </summary>
+        [JsonProperty("role", NullValueHandling = NullValueHandling.Ignore)]
+        public string Role { get; set; }
+
+        /// <summary>
         /// **参数解释**： 组件ID列表。
         /// </summary>
         [JsonProperty("component_ids", NullValueHandling = NullValueHandling.Ignore)]
@@ -45,6 +51,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("class InstancesNodesResult {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  role: ").Append(Role).Append("\n");
             sb.Append("  componentIds: ").Append(ComponentIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -66,6 +73,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             if (input == null) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Role != input.Role || (this.Role != null && !this.Role.Equals(input.Role))) return false;
             if (this.ComponentIds != input.ComponentIds || (this.ComponentIds != null && input.ComponentIds != null && !this.ComponentIds.SequenceEqual(input.ComponentIds))) return false;
 
             return true;
@@ -81,6 +89,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                 var hashCode = 41;
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Role != null) hashCode = hashCode * 59 + this.Role.GetHashCode();
                 if (this.ComponentIds != null) hashCode = hashCode * 59 + this.ComponentIds.GetHashCode();
                 return hashCode;
             }

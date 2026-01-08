@@ -2951,7 +2951,7 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}/operation/upgrade", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeNodePoolRequest);
             var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerializeNull<UpgradeNodePoolResponse>(response);
+            return JsonUtils.DeSerialize<UpgradeNodePoolResponse>(response);
         }
 
         public SyncInvoker<UpgradeNodePoolResponse> UpgradeNodePoolInvoker(UpgradeNodePoolRequest upgradeNodePoolRequest)
@@ -2961,7 +2961,7 @@ namespace HuaweiCloud.SDK.Cce.V3
             if (StringUtils.TryConvertToNonEmptyString(upgradeNodePoolRequest.NodepoolId, out var valueOfNodepoolId)) urlParam.Add("nodepool_id", valueOfNodepoolId);
             var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}/operation/upgrade", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeNodePoolRequest);
-            return new SyncInvoker<UpgradeNodePoolResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpgradeNodePoolResponse>);
+            return new SyncInvoker<UpgradeNodePoolResponse>(this, "POST", request, JsonUtils.DeSerialize<UpgradeNodePoolResponse>);
         }
         
         /// <summary>

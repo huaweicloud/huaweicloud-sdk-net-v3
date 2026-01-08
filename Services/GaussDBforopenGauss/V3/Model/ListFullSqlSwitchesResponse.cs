@@ -25,8 +25,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// <summary>
         /// **参数解释**: 开关记录列表。
         /// </summary>
-        [JsonProperty("full_sql_switchs", NullValueHandling = NullValueHandling.Ignore)]
-        public List<FullSqlSwitchResult> FullSqlSwitchs { get; set; }
+        [JsonProperty("full_sql_switches", NullValueHandling = NullValueHandling.Ignore)]
+        public List<FullSqlSwitchResult> FullSqlSwitches { get; set; }
 
         /// <summary>
         /// **参数解释**: 可选择的SQL采集类别清单列表。供开启全量SQL时做配置下发参考。
@@ -44,7 +44,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             var sb = new StringBuilder();
             sb.Append("class ListFullSqlSwitchesResponse {\n");
             sb.Append("  totalCount: ").Append(TotalCount).Append("\n");
-            sb.Append("  fullSqlSwitchs: ").Append(FullSqlSwitchs).Append("\n");
+            sb.Append("  fullSqlSwitches: ").Append(FullSqlSwitches).Append("\n");
             sb.Append("  allowedSqlTypes: ").Append(AllowedSqlTypes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -65,7 +65,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             if (input == null) return false;
             if (this.TotalCount != input.TotalCount || (this.TotalCount != null && !this.TotalCount.Equals(input.TotalCount))) return false;
-            if (this.FullSqlSwitchs != input.FullSqlSwitchs || (this.FullSqlSwitchs != null && input.FullSqlSwitchs != null && !this.FullSqlSwitchs.SequenceEqual(input.FullSqlSwitchs))) return false;
+            if (this.FullSqlSwitches != input.FullSqlSwitches || (this.FullSqlSwitches != null && input.FullSqlSwitches != null && !this.FullSqlSwitches.SequenceEqual(input.FullSqlSwitches))) return false;
             if (this.AllowedSqlTypes != input.AllowedSqlTypes || (this.AllowedSqlTypes != null && input.AllowedSqlTypes != null && !this.AllowedSqlTypes.SequenceEqual(input.AllowedSqlTypes))) return false;
 
             return true;
@@ -80,7 +80,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             {
                 var hashCode = 41;
                 if (this.TotalCount != null) hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
-                if (this.FullSqlSwitchs != null) hashCode = hashCode * 59 + this.FullSqlSwitchs.GetHashCode();
+                if (this.FullSqlSwitches != null) hashCode = hashCode * 59 + this.FullSqlSwitches.GetHashCode();
                 if (this.AllowedSqlTypes != null) hashCode = hashCode * 59 + this.AllowedSqlTypes.GetHashCode();
                 return hashCode;
             }

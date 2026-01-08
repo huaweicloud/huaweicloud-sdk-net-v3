@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? BandwidthSize { get; set; }
 
         /// <summary>
-        /// EIP的类型，5_bgp（全动态BGP），5_sbgp（静态BGP），默认值：5_bgp。
+        /// EIP的类型。
         /// </summary>
         [JsonProperty("eip_type", NullValueHandling = NullValueHandling.Ignore)]
         public string EipType { get; set; }

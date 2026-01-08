@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// **参数解释**：批量更新转发策略优先级的请求参数。  **约束限制**：不涉及
         /// </summary>
         [JsonProperty("l7policies", NullValueHandling = NullValueHandling.Ignore)]
         public List<BatchUpdatePriorityRequestBody> L7policies { get; set; }

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 桌面所属用户。
+        /// 桌面所属用户，支持根据用户名模糊查询。
         /// </summary>
         [SDKProperty("user_name", IsQuery = true)]
         [JsonProperty("user_name", NullValueHandling = NullValueHandling.Ignore)]

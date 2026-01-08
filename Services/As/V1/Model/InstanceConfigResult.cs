@@ -124,6 +124,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
         [JsonProperty("multi_flavor_priority_policy", NullValueHandling = NullValueHandling.Ignore)]
         public string MultiFlavorPriorityPolicy { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("cpu_options", NullValueHandling = NullValueHandling.Ignore)]
+        public CpuOptions CpuOptions { get; set; }
+
 
 
         /// <summary>
@@ -151,6 +157,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
             sb.Append("  dedicatedHostId: ").Append(DedicatedHostId).Append("\n");
             sb.Append("  marketType: ").Append(MarketType).Append("\n");
             sb.Append("  multiFlavorPriorityPolicy: ").Append(MultiFlavorPriorityPolicy).Append("\n");
+            sb.Append("  cpuOptions: ").Append(CpuOptions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -187,6 +194,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
             if (this.DedicatedHostId != input.DedicatedHostId || (this.DedicatedHostId != null && !this.DedicatedHostId.Equals(input.DedicatedHostId))) return false;
             if (this.MarketType != input.MarketType || (this.MarketType != null && !this.MarketType.Equals(input.MarketType))) return false;
             if (this.MultiFlavorPriorityPolicy != input.MultiFlavorPriorityPolicy || (this.MultiFlavorPriorityPolicy != null && !this.MultiFlavorPriorityPolicy.Equals(input.MultiFlavorPriorityPolicy))) return false;
+            if (this.CpuOptions != input.CpuOptions || (this.CpuOptions != null && !this.CpuOptions.Equals(input.CpuOptions))) return false;
 
             return true;
         }
@@ -217,6 +225,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
                 if (this.DedicatedHostId != null) hashCode = hashCode * 59 + this.DedicatedHostId.GetHashCode();
                 if (this.MarketType != null) hashCode = hashCode * 59 + this.MarketType.GetHashCode();
                 if (this.MultiFlavorPriorityPolicy != null) hashCode = hashCode * 59 + this.MultiFlavorPriorityPolicy.GetHashCode();
+                if (this.CpuOptions != null) hashCode = hashCode * 59 + this.CpuOptions.GetHashCode();
                 return hashCode;
             }
         }

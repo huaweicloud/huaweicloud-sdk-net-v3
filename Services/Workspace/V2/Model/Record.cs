@@ -142,6 +142,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("public_ip", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicIp { get; set; }
 
+        /// <summary>
+        /// 企业项目ID。
+        /// </summary>
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
 
 
         /// <summary>
@@ -172,6 +178,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  e2eRtt: ").Append(E2eRtt).Append("\n");
             sb.Append("  sourceIp: ").Append(SourceIp).Append("\n");
             sb.Append("  publicIp: ").Append(PublicIp).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -211,6 +218,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.E2eRtt != input.E2eRtt || (this.E2eRtt != null && !this.E2eRtt.Equals(input.E2eRtt))) return false;
             if (this.SourceIp != input.SourceIp || (this.SourceIp != null && !this.SourceIp.Equals(input.SourceIp))) return false;
             if (this.PublicIp != input.PublicIp || (this.PublicIp != null && !this.PublicIp.Equals(input.PublicIp))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
 
             return true;
         }
@@ -244,6 +252,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.E2eRtt != null) hashCode = hashCode * 59 + this.E2eRtt.GetHashCode();
                 if (this.SourceIp != null) hashCode = hashCode * 59 + this.SourceIp.GetHashCode();
                 if (this.PublicIp != null) hashCode = hashCode * 59 + this.PublicIp.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

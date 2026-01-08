@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
     public class PrepaidOptions 
     {
         /// <summary>
-        /// 订购周期类型，当前支持包月和包年: month: 包月 year: 包年
+        /// 订购周期类型，当前支持包月和包年: - month: 包月 - year: 包年
         /// </summary>
-        /// <value>订购周期类型，当前支持包月和包年: month: 包月 year: 包年</value>
+        /// <value>订购周期类型，当前支持包月和包年: - month: 包月 - year: 包年</value>
         [JsonConverter(typeof(EnumClassConverter<PeriodTypeEnum>))]
         public class PeriodTypeEnum
         {
@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
 
 
         /// <summary>
-        /// 订购周期类型，当前支持包月和包年: month: 包月 year: 包年
+        /// 订购周期类型，当前支持包月和包年: - month: 包月 - year: 包年
         /// </summary>
         [JsonProperty("period_type", NullValueHandling = NullValueHandling.Ignore)]
         public PeriodTypeEnum PeriodType { get; set; }

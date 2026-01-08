@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 桌面数据。支持批量按需类型桌面变更为同一规格。
+        /// 桌面数据。支持批量将桌面变更为同一规格。
         /// </summary>
         [JsonProperty("desktops", NullValueHandling = NullValueHandling.Ignore)]
         public List<ResizeDesktopData> Desktops { get; set; }
@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("auto_placement", NullValueHandling = NullValueHandling.Ignore)]
         public string AutoPlacement { get; set; }
 
+        /// <summary>
+        /// 桌面池id。
+        /// </summary>
+        [JsonProperty("desktop_pool_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DesktopPoolId { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  productId: ").Append(ProductId).Append("\n");
             sb.Append("  mode: ").Append(Mode).Append("\n");
             sb.Append("  autoPlacement: ").Append(AutoPlacement).Append("\n");
+            sb.Append("  desktopPoolId: ").Append(DesktopPoolId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,6 +82,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.ProductId != input.ProductId || (this.ProductId != null && !this.ProductId.Equals(input.ProductId))) return false;
             if (this.Mode != input.Mode || (this.Mode != null && !this.Mode.Equals(input.Mode))) return false;
             if (this.AutoPlacement != input.AutoPlacement || (this.AutoPlacement != null && !this.AutoPlacement.Equals(input.AutoPlacement))) return false;
+            if (this.DesktopPoolId != input.DesktopPoolId || (this.DesktopPoolId != null && !this.DesktopPoolId.Equals(input.DesktopPoolId))) return false;
 
             return true;
         }
@@ -91,6 +99,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.ProductId != null) hashCode = hashCode * 59 + this.ProductId.GetHashCode();
                 if (this.Mode != null) hashCode = hashCode * 59 + this.Mode.GetHashCode();
                 if (this.AutoPlacement != null) hashCode = hashCode * 59 + this.AutoPlacement.GetHashCode();
+                if (this.DesktopPoolId != null) hashCode = hashCode * 59 + this.DesktopPoolId.GetHashCode();
                 return hashCode;
             }
         }

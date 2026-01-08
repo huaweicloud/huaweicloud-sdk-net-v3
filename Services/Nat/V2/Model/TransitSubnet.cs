@@ -125,9 +125,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         }
 
         /// <summary>
-        /// 中转子网状态。 取值范围： ACTIVE： 当前资源状态正常。 INACTIVE： 不可用。
+        /// 中转子网状态。 取值范围： - ACTIVE： 当前资源状态正常。 - INACTIVE： 不可用。
         /// </summary>
-        /// <value>中转子网状态。 取值范围： ACTIVE： 当前资源状态正常。 INACTIVE： 不可用。</value>
+        /// <value>中转子网状态。 取值范围： - ACTIVE： 当前资源状态正常。 - INACTIVE： 不可用。</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -294,7 +294,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
         /// <summary>
-        /// 中转子网状态。 取值范围： ACTIVE： 当前资源状态正常。 INACTIVE： 不可用。
+        /// 中转子网状态。 取值范围： - ACTIVE： 当前资源状态正常。 - INACTIVE： 不可用。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }

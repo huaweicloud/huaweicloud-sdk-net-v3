@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 监控看板id列表
+        /// **参数解释** 监控看板id列表 **约束限制** 包含的监控看板id对象个数为[1,30] 
         /// </summary>
         [JsonProperty("dashboard_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> DashboardIds { get; set; }

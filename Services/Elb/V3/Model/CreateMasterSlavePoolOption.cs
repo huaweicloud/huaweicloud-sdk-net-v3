@@ -65,7 +65,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public CreatePoolSessionPersistenceOption SessionPersistence { get; set; }
 
         /// <summary>
-        /// **参数解释**：后端服务器组关联的虚拟私有云的ID。  **约束限制**： - 只能挂载到该虚拟私有云下。 - 只能添加该虚拟私有云下的后端服务器或跨VPC的后端服务器。 - type必须指定为instance。 [- pool的protocol为IP时，必须指定vpc_id，且与LB的vpc_id相同。](tag:hws_eu) - 若未指定vpc_id，则后续添加后端服务器时，vpc_id由后端服务器所在的虚拟私有云确定。  **取值范围**：不涉及  **默认取值**：不涉及
+        /// **参数解释**：后端服务器组关联的虚拟私有云的ID。  **约束限制**： - 只能挂载到该虚拟私有云下。 - 只能添加该虚拟私有云下的后端服务器或跨VPC的后端服务器。 - type必须指定为instance。 - pool的protocol为IP时，必须指定vpc_id，且与LB的vpc_id相同。 - 若未指定vpc_id，则后续添加后端服务器时，vpc_id由后端服务器所在的虚拟私有云确定。  **取值范围**：不涉及  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VpcId { get; set; }
@@ -112,6 +112,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("quic_cid_hash_strategy", NullValueHandling = NullValueHandling.Ignore)]
         public QuicCidHashStrategy QuicCidHashStrategy { get; set; }
 
+        /// <summary>
+        /// **参数解释**：资源所属的企业项目ID。创建时不传则资源属于default企业项目，返回enterprise_project_id&#x3D;\&quot;0\&quot;。  **约束限制**：不能传入空字符串\&quot;\&quot;、\&quot;0\&quot;或不存在的企业项目ID。  **取值范围**：不涉及  **默认取值**：\&quot;0\&quot;  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
+        /// </summary>
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
 
 
         /// <summary>
@@ -137,6 +143,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  anyPortEnable: ").Append(AnyPortEnable).Append("\n");
             sb.Append("  connectionDrain: ").Append(ConnectionDrain).Append("\n");
             sb.Append("  quicCidHashStrategy: ").Append(QuicCidHashStrategy).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -171,6 +178,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.AnyPortEnable != input.AnyPortEnable || (this.AnyPortEnable != null && !this.AnyPortEnable.Equals(input.AnyPortEnable))) return false;
             if (this.ConnectionDrain != input.ConnectionDrain || (this.ConnectionDrain != null && !this.ConnectionDrain.Equals(input.ConnectionDrain))) return false;
             if (this.QuicCidHashStrategy != input.QuicCidHashStrategy || (this.QuicCidHashStrategy != null && !this.QuicCidHashStrategy.Equals(input.QuicCidHashStrategy))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
 
             return true;
         }
@@ -199,6 +207,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.AnyPortEnable != null) hashCode = hashCode * 59 + this.AnyPortEnable.GetHashCode();
                 if (this.ConnectionDrain != null) hashCode = hashCode * 59 + this.ConnectionDrain.GetHashCode();
                 if (this.QuicCidHashStrategy != null) hashCode = hashCode * 59 + this.QuicCidHashStrategy.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

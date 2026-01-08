@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 
+    /// 健康检查对象
     /// </summary>
     public class MasterSlaveHealthMonitor 
     {

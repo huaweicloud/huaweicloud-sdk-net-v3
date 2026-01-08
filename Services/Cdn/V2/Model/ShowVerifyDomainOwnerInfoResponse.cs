@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// DNS解析类型。
+        /// DNS解析类型。取值意义： - TXT：TXT记录
         /// </summary>
         [JsonProperty("dns_verify_type", NullValueHandling = NullValueHandling.Ignore)]
         public string DnsVerifyType { get; set; }

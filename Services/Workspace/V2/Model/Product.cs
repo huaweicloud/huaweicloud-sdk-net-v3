@@ -65,6 +65,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public bool? IsGpu { get; set; }
 
         /// <summary>
+        /// 显存大小，单位GB。
+        /// </summary>
+        [JsonProperty("vram", NullValueHandling = NullValueHandling.Ignore)]
+        public string Vram { get; set; }
+
+        /// <summary>
         /// 系统盘类型。
         /// </summary>
         [JsonProperty("system_disk_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -183,6 +189,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  cpuDesc: ").Append(CpuDesc).Append("\n");
             sb.Append("  memory: ").Append(Memory).Append("\n");
             sb.Append("  isGpu: ").Append(IsGpu).Append("\n");
+            sb.Append("  vram: ").Append(Vram).Append("\n");
             sb.Append("  systemDiskType: ").Append(SystemDiskType).Append("\n");
             sb.Append("  systemDiskSize: ").Append(SystemDiskSize).Append("\n");
             sb.Append("  dataDiskSize: ").Append(DataDiskSize).Append("\n");
@@ -226,6 +233,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.CpuDesc != input.CpuDesc || (this.CpuDesc != null && !this.CpuDesc.Equals(input.CpuDesc))) return false;
             if (this.Memory != input.Memory || (this.Memory != null && !this.Memory.Equals(input.Memory))) return false;
             if (this.IsGpu != input.IsGpu || (this.IsGpu != null && !this.IsGpu.Equals(input.IsGpu))) return false;
+            if (this.Vram != input.Vram || (this.Vram != null && !this.Vram.Equals(input.Vram))) return false;
             if (this.SystemDiskType != input.SystemDiskType || (this.SystemDiskType != null && !this.SystemDiskType.Equals(input.SystemDiskType))) return false;
             if (this.SystemDiskSize != input.SystemDiskSize || (this.SystemDiskSize != null && !this.SystemDiskSize.Equals(input.SystemDiskSize))) return false;
             if (this.DataDiskSize != input.DataDiskSize || (this.DataDiskSize != null && !this.DataDiskSize.Equals(input.DataDiskSize))) return false;
@@ -263,6 +271,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.CpuDesc != null) hashCode = hashCode * 59 + this.CpuDesc.GetHashCode();
                 if (this.Memory != null) hashCode = hashCode * 59 + this.Memory.GetHashCode();
                 if (this.IsGpu != null) hashCode = hashCode * 59 + this.IsGpu.GetHashCode();
+                if (this.Vram != null) hashCode = hashCode * 59 + this.Vram.GetHashCode();
                 if (this.SystemDiskType != null) hashCode = hashCode * 59 + this.SystemDiskType.GetHashCode();
                 if (this.SystemDiskSize != null) hashCode = hashCode * 59 + this.SystemDiskSize.GetHashCode();
                 if (this.DataDiskSize != null) hashCode = hashCode * 59 + this.DataDiskSize.GetHashCode();

@@ -180,7 +180,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public DomainOriginHost DomainOriginHost { get; set; }
 
         /// <summary>
-        /// 是否开启HTTPS加速。
+        /// 是否开启HTTPS加速。取值意义： - 0：未开启 - 1：开启
         /// </summary>
         [JsonProperty("https_status", NullValueHandling = NullValueHandling.Ignore)]
         public int? HttpsStatus { get; set; }
@@ -221,19 +221,19 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         [JsonProperty("service_area", NullValueHandling = NullValueHandling.Ignore)]
         public ServiceAreaEnum ServiceArea { get; set; }
         /// <summary>
-        /// Range回源状态。
+        /// Range回源状态。取值意义： - on：开启 - off：关闭
         /// </summary>
         [JsonProperty("range_status", NullValueHandling = NullValueHandling.Ignore)]
         public string RangeStatus { get; set; }
 
         /// <summary>
-        /// 回源跟随状态。
+        /// 回源跟随状态。取值意义： - on：开启 - off：关闭
         /// </summary>
         [JsonProperty("follow_status", NullValueHandling = NullValueHandling.Ignore)]
         public string FollowStatus { get; set; }
 
         /// <summary>
-        /// 是否暂停源站回源（off代表关闭 on代表开启）。
+        /// 是否暂停源站回源。取值意义： - on：开启 - off：关闭
         /// </summary>
         [JsonProperty("origin_status", NullValueHandling = NullValueHandling.Ignore)]
         public string OriginStatus { get; set; }

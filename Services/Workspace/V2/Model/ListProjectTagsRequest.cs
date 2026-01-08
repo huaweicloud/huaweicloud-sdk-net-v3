@@ -31,11 +31,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 查询指定标签。
+        /// 查询指定标签key查询，key与value同时传入时，满足其中一个也能查询。
         /// </summary>
         [SDKProperty("key", IsQuery = true)]
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
+
+        /// <summary>
+        /// 查询指定标签value查询，key与value同时传入时，满足其中一个也能查询。
+        /// </summary>
+        [SDKProperty("value", IsQuery = true)]
+        [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
+        public string Value { get; set; }
 
 
 
@@ -49,6 +56,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  key: ").Append(Key).Append("\n");
+            sb.Append("  value: ").Append(Value).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -70,6 +78,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Key != input.Key || (this.Key != null && !this.Key.Equals(input.Key))) return false;
+            if (this.Value != input.Value || (this.Value != null && !this.Value.Equals(input.Value))) return false;
 
             return true;
         }
@@ -85,6 +94,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Key != null) hashCode = hashCode * 59 + this.Key.GetHashCode();
+                if (this.Value != null) hashCode = hashCode * 59 + this.Value.GetHashCode();
                 return hashCode;
             }
         }

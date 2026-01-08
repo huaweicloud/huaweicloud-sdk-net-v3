@@ -748,7 +748,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         ///
         /// - 为指定公网NAT网关实例批量添加或删除标签。 
         /// - 标签管理服务需要使用该接口批量管理实例的标签。 
-        /// - 一个资源上最多有10个标签。
+        /// - 一个资源上最多有20个标签。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -826,7 +826,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         /// <summary>
         /// 添加公网NAT网关资源标签
         ///
-        /// - 添加公网NAT网关资源标签。一个资源上最多有10个标签。
+        /// - 添加公网NAT网关资源标签。一个资源上最多有20个标签。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

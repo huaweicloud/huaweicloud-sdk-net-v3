@@ -142,12 +142,132 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             }
         }
 
+        /// <summary>
+        /// 操作类型。 - CREATE 创建 - FIX 修复
+        /// </summary>
+        /// <value>操作类型。 - CREATE 创建 - FIX 修复</value>
+        [JsonConverter(typeof(EnumClassConverter<ActionEnum>))]
+        public class ActionEnum
+        {
+            /// <summary>
+            /// Enum CREATE for value: CREATE
+            /// </summary>
+            public static readonly ActionEnum CREATE = new ActionEnum("CREATE");
+
+            /// <summary>
+            /// Enum FIX for value: FIX
+            /// </summary>
+            public static readonly ActionEnum FIX = new ActionEnum("FIX");
+
+            private static readonly Dictionary<string, ActionEnum> StaticFields =
+            new Dictionary<string, ActionEnum>()
+            {
+                { "CREATE", CREATE },
+                { "FIX", FIX },
+            };
+
+            private string _value;
+
+            public ActionEnum()
+            {
+
+            }
+
+            public ActionEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static ActionEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ActionEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ActionEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(ActionEnum a, ActionEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ActionEnum a, ActionEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 委托场景。   - WORKSPACE：云桌面。   - CLOUD_GAME：云游戏。   - CLOUD_STORAGE：云存储。   - SCREEN_RECORD：录屏审计。
         /// </summary>
         [JsonProperty("scene", NullValueHandling = NullValueHandling.Ignore)]
         public SceneEnum Scene { get; set; }
+        /// <summary>
+        /// 操作类型。 - CREATE 创建 - FIX 修复
+        /// </summary>
+        [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
+        public ActionEnum Action { get; set; }
 
 
         /// <summary>
@@ -158,6 +278,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             var sb = new StringBuilder();
             sb.Append("class CreateAgenciesReq {\n");
             sb.Append("  scene: ").Append(Scene).Append("\n");
+            sb.Append("  action: ").Append(Action).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -177,6 +298,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             if (input == null) return false;
             if (this.Scene != input.Scene) return false;
+            if (this.Action != input.Action) return false;
 
             return true;
         }
@@ -190,6 +312,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             {
                 var hashCode = 41;
                 hashCode = hashCode * 59 + this.Scene.GetHashCode();
+                hashCode = hashCode * 59 + this.Action.GetHashCode();
                 return hashCode;
             }
         }

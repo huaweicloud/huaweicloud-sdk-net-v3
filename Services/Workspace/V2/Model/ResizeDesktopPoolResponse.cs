@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string JobId { get; set; }
 
         /// <summary>
-        /// 按需桌面变更规格返回的任务信息。
+        /// 桌面变更规格返回的任务信息
         /// </summary>
         [JsonProperty("jobs", NullValueHandling = NullValueHandling.Ignore)]
         public List<ResizeDesktopPoolJobResponse> Jobs { get; set; }

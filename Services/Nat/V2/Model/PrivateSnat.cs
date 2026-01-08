@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
     public class PrivateSnat 
     {
         /// <summary>
-        /// 私网NAT的SNAT规则状态。 取值为： \&quot;ACTIVE\&quot;：正常运行 \&quot;FROZEN\&quot;：冻结 \&quot;INACTIVE\&quot;：不可用
+        /// 私网NAT的SNAT规则状态。 取值为： - ACTIVE：正常运行 - FROZEN：冻结 - INACTIVE：不可用
         /// </summary>
-        /// <value>私网NAT的SNAT规则状态。 取值为： \&quot;ACTIVE\&quot;：正常运行 \&quot;FROZEN\&quot;：冻结 \&quot;INACTIVE\&quot;：不可用</value>
+        /// <value>私网NAT的SNAT规则状态。 取值为： - ACTIVE：正常运行 - FROZEN：冻结 - INACTIVE：不可用</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -198,7 +198,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 私网NAT的SNAT规则状态。 取值为： \&quot;ACTIVE\&quot;：正常运行 \&quot;FROZEN\&quot;：冻结 \&quot;INACTIVE\&quot;：不可用
+        /// 私网NAT的SNAT规则状态。 取值为： - ACTIVE：正常运行 - FROZEN：冻结 - INACTIVE：不可用
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }

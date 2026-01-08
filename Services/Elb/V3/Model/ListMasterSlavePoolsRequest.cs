@@ -73,7 +73,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> LoadbalancerId { get; set; }
 
         /// <summary>
-        /// **参数解释**：后端服务器组的后端协议。 支持多值查询，查询条件格式：*protocol&#x3D;xxx&amp;protocol&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：TCP、UDP、[IP、](tag:hws_eu)TLS、GRPC、HTTP、HTTPS和QUIC。  **默认取值**：不涉及
+        /// **参数解释**：后端服务器组的后端协议。 支持多值查询，查询条件格式：*protocol&#x3D;xxx&amp;protocol&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：TCP、UDP、IP、TLS、GRPC、HTTP、HTTPS和QUIC。  **默认取值**：不涉及
         /// </summary>
         [SDKProperty("protocol", IsQuery = true)]
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]

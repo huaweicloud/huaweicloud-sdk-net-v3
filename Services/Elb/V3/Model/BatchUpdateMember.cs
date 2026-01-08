@@ -83,7 +83,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<MemberStatus> Status { get; set; }
 
         /// <summary>
-        /// **参数解释**：后端服务器的类型。  **取值范围**： - ip：跨VPC的member。 - instance：关联到ECS的member。
+        /// **参数解释**：后端服务器的类型。  **取值范围**： - ip：IP类型的member。 - instance：关联到ECS的member。
         /// </summary>
         [JsonProperty("member_type", NullValueHandling = NullValueHandling.Ignore)]
         public string MemberType { get; set; }

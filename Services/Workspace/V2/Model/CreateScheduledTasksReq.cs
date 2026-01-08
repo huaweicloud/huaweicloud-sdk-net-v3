@@ -148,6 +148,151 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             }
         }
 
+        /// <summary>
+        /// 任务类型，可选值为： - START：开机。 - STOP：关机。 - REBOOT：重启。 - HIBERNATE：休眠。 - REBUILD：重建系统盘。 - EXECUTE_SCRIPT：执行脚本。 - CREATE_SNAPSHOT：创建快照。
+        /// </summary>
+        /// <value>任务类型，可选值为： - START：开机。 - STOP：关机。 - REBOOT：重启。 - HIBERNATE：休眠。 - REBUILD：重建系统盘。 - EXECUTE_SCRIPT：执行脚本。 - CREATE_SNAPSHOT：创建快照。</value>
+        [JsonConverter(typeof(EnumClassConverter<TaskTypeEnum>))]
+        public class TaskTypeEnum
+        {
+            /// <summary>
+            /// Enum START for value: START
+            /// </summary>
+            public static readonly TaskTypeEnum START = new TaskTypeEnum("START");
+
+            /// <summary>
+            /// Enum STOP for value: STOP
+            /// </summary>
+            public static readonly TaskTypeEnum STOP = new TaskTypeEnum("STOP");
+
+            /// <summary>
+            /// Enum REBOOT for value: REBOOT
+            /// </summary>
+            public static readonly TaskTypeEnum REBOOT = new TaskTypeEnum("REBOOT");
+
+            /// <summary>
+            /// Enum HIBERNATE for value: HIBERNATE
+            /// </summary>
+            public static readonly TaskTypeEnum HIBERNATE = new TaskTypeEnum("HIBERNATE");
+
+            /// <summary>
+            /// Enum REBUILD for value: REBUILD
+            /// </summary>
+            public static readonly TaskTypeEnum REBUILD = new TaskTypeEnum("REBUILD");
+
+            /// <summary>
+            /// Enum EXECUTE_SCRIPT for value: EXECUTE_SCRIPT
+            /// </summary>
+            public static readonly TaskTypeEnum EXECUTE_SCRIPT = new TaskTypeEnum("EXECUTE_SCRIPT");
+
+            /// <summary>
+            /// Enum CREATE_SNAPSHOT for value: CREATE_SNAPSHOT
+            /// </summary>
+            public static readonly TaskTypeEnum CREATE_SNAPSHOT = new TaskTypeEnum("CREATE_SNAPSHOT");
+
+            private static readonly Dictionary<string, TaskTypeEnum> StaticFields =
+            new Dictionary<string, TaskTypeEnum>()
+            {
+                { "START", START },
+                { "STOP", STOP },
+                { "REBOOT", REBOOT },
+                { "HIBERNATE", HIBERNATE },
+                { "REBUILD", REBUILD },
+                { "EXECUTE_SCRIPT", EXECUTE_SCRIPT },
+                { "CREATE_SNAPSHOT", CREATE_SNAPSHOT },
+            };
+
+            private string _value;
+
+            public TaskTypeEnum()
+            {
+
+            }
+
+            public TaskTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static TaskTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as TaskTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(TaskTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(TaskTypeEnum a, TaskTypeEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(TaskTypeEnum a, TaskTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 执行周期类型，可选值为： - FIXED_TIME：指定时间。 - DAY：按天。 - WEEK：按周。 - MONTH：按月。 - LIFE_CYCLE：指定场景下触发。
@@ -226,6 +371,47 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("time_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string TimeZone { get; set; }
 
+        /// <summary>
+        /// 任务类型，可选值为： - START：开机。 - STOP：关机。 - REBOOT：重启。 - HIBERNATE：休眠。 - REBUILD：重建系统盘。 - EXECUTE_SCRIPT：执行脚本。 - CREATE_SNAPSHOT：创建快照。
+        /// </summary>
+        [JsonProperty("task_type", NullValueHandling = NullValueHandling.Ignore)]
+        public TaskTypeEnum TaskType { get; set; }
+        /// <summary>
+        /// 任务名称。
+        /// </summary>
+        [JsonProperty("task_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string TaskName { get; set; }
+
+        /// <summary>
+        /// 是否强制执行，true表示强制执行，false表示不强制执行。
+        /// </summary>
+        [JsonProperty("force_execute", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ForceExecute { get; set; }
+
+        /// <summary>
+        /// 描述。
+        /// </summary>
+        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// 扩展参数，json格式。
+        /// </summary>
+        [JsonProperty("extra_params", NullValueHandling = NullValueHandling.Ignore)]
+        public string ExtraParams { get; set; }
+
+        /// <summary>
+        /// 定时任务应用的对象列表。
+        /// </summary>
+        [JsonProperty("apply_objects", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ApplyObject> ApplyObjects { get; set; }
+
+        /// <summary>
+        /// 触发式任务触发后，等待时长。
+        /// </summary>
+        [JsonProperty("wait_time", NullValueHandling = NullValueHandling.Ignore)]
+        public int? WaitTime { get; set; }
+
 
 
         /// <summary>
@@ -248,6 +434,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  grayFailThreshold: ").Append(GrayFailThreshold).Append("\n");
             sb.Append("  lifeCycleType: ").Append(LifeCycleType).Append("\n");
             sb.Append("  timeZone: ").Append(TimeZone).Append("\n");
+            sb.Append("  taskType: ").Append(TaskType).Append("\n");
+            sb.Append("  taskName: ").Append(TaskName).Append("\n");
+            sb.Append("  forceExecute: ").Append(ForceExecute).Append("\n");
+            sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  extraParams: ").Append(ExtraParams).Append("\n");
+            sb.Append("  applyObjects: ").Append(ApplyObjects).Append("\n");
+            sb.Append("  waitTime: ").Append(WaitTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -279,6 +472,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.GrayFailThreshold != input.GrayFailThreshold || (this.GrayFailThreshold != null && !this.GrayFailThreshold.Equals(input.GrayFailThreshold))) return false;
             if (this.LifeCycleType != input.LifeCycleType || (this.LifeCycleType != null && !this.LifeCycleType.Equals(input.LifeCycleType))) return false;
             if (this.TimeZone != input.TimeZone || (this.TimeZone != null && !this.TimeZone.Equals(input.TimeZone))) return false;
+            if (this.TaskType != input.TaskType) return false;
+            if (this.TaskName != input.TaskName || (this.TaskName != null && !this.TaskName.Equals(input.TaskName))) return false;
+            if (this.ForceExecute != input.ForceExecute || (this.ForceExecute != null && !this.ForceExecute.Equals(input.ForceExecute))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.ExtraParams != input.ExtraParams || (this.ExtraParams != null && !this.ExtraParams.Equals(input.ExtraParams))) return false;
+            if (this.ApplyObjects != input.ApplyObjects || (this.ApplyObjects != null && input.ApplyObjects != null && !this.ApplyObjects.SequenceEqual(input.ApplyObjects))) return false;
+            if (this.WaitTime != input.WaitTime || (this.WaitTime != null && !this.WaitTime.Equals(input.WaitTime))) return false;
 
             return true;
         }
@@ -304,6 +504,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.GrayFailThreshold != null) hashCode = hashCode * 59 + this.GrayFailThreshold.GetHashCode();
                 if (this.LifeCycleType != null) hashCode = hashCode * 59 + this.LifeCycleType.GetHashCode();
                 if (this.TimeZone != null) hashCode = hashCode * 59 + this.TimeZone.GetHashCode();
+                hashCode = hashCode * 59 + this.TaskType.GetHashCode();
+                if (this.TaskName != null) hashCode = hashCode * 59 + this.TaskName.GetHashCode();
+                if (this.ForceExecute != null) hashCode = hashCode * 59 + this.ForceExecute.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.ExtraParams != null) hashCode = hashCode * 59 + this.ExtraParams.GetHashCode();
+                if (this.ApplyObjects != null) hashCode = hashCode * 59 + this.ApplyObjects.GetHashCode();
+                if (this.WaitTime != null) hashCode = hashCode * 59 + this.WaitTime.GetHashCode();
                 return hashCode;
             }
         }

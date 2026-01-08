@@ -25,8 +25,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// <summary>
         /// **参数解释**: 事务信息列表。
         /// </summary>
-        [JsonProperty("rows_info", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ListTransactionResponseBodyRowsInfo> RowsInfo { get; set; }
+        [JsonProperty("rows", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ListTransactionResponseBodyRows> Rows { get; set; }
 
 
 
@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             var sb = new StringBuilder();
             sb.Append("class ListTransactionResponse {\n");
             sb.Append("  total: ").Append(Total).Append("\n");
-            sb.Append("  rowsInfo: ").Append(RowsInfo).Append("\n");
+            sb.Append("  rows: ").Append(Rows).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -58,7 +58,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             if (input == null) return false;
             if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
-            if (this.RowsInfo != input.RowsInfo || (this.RowsInfo != null && input.RowsInfo != null && !this.RowsInfo.SequenceEqual(input.RowsInfo))) return false;
+            if (this.Rows != input.Rows || (this.Rows != null && input.Rows != null && !this.Rows.SequenceEqual(input.Rows))) return false;
 
             return true;
         }
@@ -72,7 +72,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             {
                 var hashCode = 41;
                 if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.RowsInfo != null) hashCode = hashCode * 59 + this.RowsInfo.GetHashCode();
+                if (this.Rows != null) hashCode = hashCode * 59 + this.Rows.GetHashCode();
                 return hashCode;
             }
         }

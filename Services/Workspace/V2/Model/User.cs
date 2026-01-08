@@ -245,7 +245,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public List<string> GroupNames { get; set; }
 
         /// <summary>
-        /// 企业项目ID
+        /// 企业项目ID。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
@@ -255,6 +255,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// </summary>
         [JsonProperty("user_info_map", NullValueHandling = NullValueHandling.Ignore)]
         public string UserInfoMap { get; set; }
+
+        /// <summary>
+        /// 域。
+        /// </summary>
+        [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
+        public string Domain { get; set; }
+
+        /// <summary>
+        /// 当前用户是否存在用户证书。
+        /// </summary>
+        [JsonProperty("certificate_status", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? CertificateStatus { get; set; }
 
 
 
@@ -286,6 +298,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  groupNames: ").Append(GroupNames).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  userInfoMap: ").Append(UserInfoMap).Append("\n");
+            sb.Append("  domain: ").Append(Domain).Append("\n");
+            sb.Append("  certificateStatus: ").Append(CertificateStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -325,6 +339,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.GroupNames != input.GroupNames || (this.GroupNames != null && input.GroupNames != null && !this.GroupNames.SequenceEqual(input.GroupNames))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.UserInfoMap != input.UserInfoMap || (this.UserInfoMap != null && !this.UserInfoMap.Equals(input.UserInfoMap))) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
+            if (this.CertificateStatus != input.CertificateStatus || (this.CertificateStatus != null && !this.CertificateStatus.Equals(input.CertificateStatus))) return false;
 
             return true;
         }
@@ -358,6 +374,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.GroupNames != null) hashCode = hashCode * 59 + this.GroupNames.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.UserInfoMap != null) hashCode = hashCode * 59 + this.UserInfoMap.GetHashCode();
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
+                if (this.CertificateStatus != null) hashCode = hashCode * 59 + this.CertificateStatus.GetHashCode();
                 return hashCode;
             }
         }

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// **参数解释**：后端服务器ID。  **取值范围**：不涉及 &gt; 此处并非ECS服务器的ID，而是ELB为绑定的后端服务器自动生成的member ID。
+        /// **参数解释**：后端服务器ID。 **取值范围**：不涉及 &gt; 此处并非ECS服务器的ID，而是ELB为绑定的后端服务器自动生成的member ID。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
@@ -107,7 +107,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string UpdatedAt { get; set; }
 
         /// <summary>
-        /// **参数解释**：后端服务器的类型。  **取值范围**： - ip：跨VPC的member。 - instance：关联到ECS的member。
+        /// **参数解释**：后端服务器的类型。  **取值范围**： - ip：IP类型的member。 - instance：关联到ECS的member。
         /// </summary>
         [JsonProperty("member_type", NullValueHandling = NullValueHandling.Ignore)]
         public string MemberType { get; set; }

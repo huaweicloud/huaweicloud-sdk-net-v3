@@ -101,7 +101,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? Timeout { get; set; }
 
         /// <summary>
-        /// **参数解释**：健康检查请求协议。 支持多值查询，查询条件格式：*****type&#x3D;xxx&amp;type&#x3D;xxx*****。  **约束限制**：不涉及  **取值范围**：TCP、UDP_CONNECT、HTTP、HTTPS、TLS和GRPC。  **默认取值**：不涉及
+        /// **参数解释**：健康检查请求协议。 支持多值查询，查询条件格式：*****type&#x3D;xxx&amp;type&#x3D;xxx*****。  **约束限制**：不涉及  **取值范围**：TCP、UDP_CONNECT、HTTP、HTTPS、TLS、GRPC[和GRPCS](tag:not_open)。  **默认取值**：不涉及
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]

@@ -19,8 +19,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// <summary>
         /// **参数解释**: 剩余企业项目配额组。
         /// </summary>
-        [JsonProperty("eps_quota_remaining", NullValueHandling = NullValueHandling.Ignore)]
-        public List<EpsRemainingQuotaResult> EpsQuotaRemaining { get; set; }
+        [JsonProperty("eps_remaining_quotas", NullValueHandling = NullValueHandling.Ignore)]
+        public List<EpsRemainingQuotaResult> EpsRemainingQuotas { get; set; }
 
         /// <summary>
         /// **参数解释**: 任务ID。 **取值范围**: 不涉及。
@@ -43,7 +43,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShowEpsRemainingQuotaResponse {\n");
-            sb.Append("  epsQuotaRemaining: ").Append(EpsQuotaRemaining).Append("\n");
+            sb.Append("  epsRemainingQuotas: ").Append(EpsRemainingQuotas).Append("\n");
             sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("  totalCount: ").Append(TotalCount).Append("\n");
             sb.Append("}\n");
@@ -64,7 +64,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public bool Equals(ShowEpsRemainingQuotaResponse input)
         {
             if (input == null) return false;
-            if (this.EpsQuotaRemaining != input.EpsQuotaRemaining || (this.EpsQuotaRemaining != null && input.EpsQuotaRemaining != null && !this.EpsQuotaRemaining.SequenceEqual(input.EpsQuotaRemaining))) return false;
+            if (this.EpsRemainingQuotas != input.EpsRemainingQuotas || (this.EpsRemainingQuotas != null && input.EpsRemainingQuotas != null && !this.EpsRemainingQuotas.SequenceEqual(input.EpsRemainingQuotas))) return false;
             if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
             if (this.TotalCount != input.TotalCount || (this.TotalCount != null && !this.TotalCount.Equals(input.TotalCount))) return false;
 
@@ -79,7 +79,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.EpsQuotaRemaining != null) hashCode = hashCode * 59 + this.EpsQuotaRemaining.GetHashCode();
+                if (this.EpsRemainingQuotas != null) hashCode = hashCode * 59 + this.EpsRemainingQuotas.GetHashCode();
                 if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 if (this.TotalCount != null) hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
                 return hashCode;

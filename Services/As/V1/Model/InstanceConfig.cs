@@ -436,6 +436,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         [JsonProperty("market_type", NullValueHandling = NullValueHandling.Ignore)]
         public MarketTypeEnum MarketType { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("cpu_options", NullValueHandling = NullValueHandling.Ignore)]
+        public CpuOptions CpuOptions { get; set; }
+
 
 
         /// <summary>
@@ -460,6 +466,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
             sb.Append("  dedicatedHostId: ").Append(DedicatedHostId).Append("\n");
             sb.Append("  multiFlavorPriorityPolicy: ").Append(MultiFlavorPriorityPolicy).Append("\n");
             sb.Append("  marketType: ").Append(MarketType).Append("\n");
+            sb.Append("  cpuOptions: ").Append(CpuOptions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -493,6 +500,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
             if (this.DedicatedHostId != input.DedicatedHostId || (this.DedicatedHostId != null && !this.DedicatedHostId.Equals(input.DedicatedHostId))) return false;
             if (this.MultiFlavorPriorityPolicy != input.MultiFlavorPriorityPolicy) return false;
             if (this.MarketType != input.MarketType) return false;
+            if (this.CpuOptions != input.CpuOptions || (this.CpuOptions != null && !this.CpuOptions.Equals(input.CpuOptions))) return false;
 
             return true;
         }
@@ -520,6 +528,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
                 if (this.DedicatedHostId != null) hashCode = hashCode * 59 + this.DedicatedHostId.GetHashCode();
                 hashCode = hashCode * 59 + this.MultiFlavorPriorityPolicy.GetHashCode();
                 hashCode = hashCode * 59 + this.MarketType.GetHashCode();
+                if (this.CpuOptions != null) hashCode = hashCode * 59 + this.CpuOptions.GetHashCode();
                 return hashCode;
             }
         }

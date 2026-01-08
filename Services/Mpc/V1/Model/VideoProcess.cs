@@ -396,6 +396,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         [JsonProperty("adaptation", NullValueHandling = NullValueHandling.Ignore)]
         public AdaptationEnum Adaptation { get; set; }
         /// <summary>
+        /// adaptation为NONE时生效： - stretch：拉伸，对每一帧进行拉伸，填满整个画面 - black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。 - white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。 - gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊。 
+        /// </summary>
+        [JsonProperty("fill_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string FillType { get; set; }
+
+        /// <summary>
         /// 是否开启上采样，如支持从480P的片源转为720P，可取值为:  - 0：表示上采样关闭， - 1：表示上采样开启. 
         /// </summary>
         [JsonProperty("upsample", NullValueHandling = NullValueHandling.Ignore)]
@@ -420,6 +426,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             sb.Append("  hlsStorageType: ").Append(HlsStorageType).Append("\n");
             sb.Append("  rotate: ").Append(Rotate).Append("\n");
             sb.Append("  adaptation: ").Append(Adaptation).Append("\n");
+            sb.Append("  fillType: ").Append(FillType).Append("\n");
             sb.Append("  upsample: ").Append(Upsample).Append("\n");
             sb.Append("  hlsSegmentType: ").Append(HlsSegmentType).Append("\n");
             sb.Append("}\n");
@@ -445,6 +452,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             if (this.HlsStorageType != input.HlsStorageType) return false;
             if (this.Rotate != input.Rotate || (this.Rotate != null && !this.Rotate.Equals(input.Rotate))) return false;
             if (this.Adaptation != input.Adaptation) return false;
+            if (this.FillType != input.FillType || (this.FillType != null && !this.FillType.Equals(input.FillType))) return false;
             if (this.Upsample != input.Upsample || (this.Upsample != null && !this.Upsample.Equals(input.Upsample))) return false;
             if (this.HlsSegmentType != input.HlsSegmentType) return false;
 
@@ -464,6 +472,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                 hashCode = hashCode * 59 + this.HlsStorageType.GetHashCode();
                 if (this.Rotate != null) hashCode = hashCode * 59 + this.Rotate.GetHashCode();
                 hashCode = hashCode * 59 + this.Adaptation.GetHashCode();
+                if (this.FillType != null) hashCode = hashCode * 59 + this.FillType.GetHashCode();
                 if (this.Upsample != null) hashCode = hashCode * 59 + this.Upsample.GetHashCode();
                 hashCode = hashCode * 59 + this.HlsSegmentType.GetHashCode();
                 return hashCode;

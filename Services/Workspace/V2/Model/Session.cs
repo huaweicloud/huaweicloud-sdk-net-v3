@@ -35,13 +35,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public bool? DisconnectOnLockFlag { get; set; }
 
         /// <summary>
-        /// 锁定生效开始时间，格式 hh:mm:ss
+        /// 锁定生效开始时间，格式 hh:mm:ss。
         /// </summary>
         [JsonProperty("auto_lock_start_time", NullValueHandling = NullValueHandling.Ignore)]
         public string AutoLockStartTime { get; set; }
 
         /// <summary>
-        /// 锁定生效开始时间，格式 hh:mm:ss
+        /// 锁定生效时间，格式 hh:mm:ss。
         /// </summary>
         [JsonProperty("auto_lock_end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string AutoLockEndTime { get; set; }

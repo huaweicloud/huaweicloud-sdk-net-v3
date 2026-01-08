@@ -80,7 +80,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public List<string> NetworkInterfaceId { get; set; }
 
         /// <summary>
-        /// DNAT规则后端的类型。 取值：     COMPUTE：后端为计算实例。     VIP：后端为VIP的实例。     ELB：后端为ELBv2的实例。     ELBv3：后端为ELBv3的实例。     CUSTOMIZE：后端为自定义IP。
+        /// DNAT规则后端的类型。 取值： - COMPUTE：后端为计算实例。 - VIP：后端为VIP的实例。 - ELB：后端为ELBv2的实例。 - ELBv3：后端为ELBv3的实例。 - CUSTOMIZE：后端为自定义IP。
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
@@ -114,13 +114,6 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         [JsonProperty("transit_service_port", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> TransitServicePort { get; set; }
 
-        /// <summary>
-        /// 中转IP的地址。
-        /// </summary>
-        [SDKProperty("transit_ip_address", IsQuery = true)]
-        [JsonProperty("transit_ip_address", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> TransitIpAddress { get; set; }
-
 
 
         /// <summary>
@@ -144,7 +137,6 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             sb.Append("  protocol: ").Append(Protocol).Append("\n");
             sb.Append("  internalServicePort: ").Append(InternalServicePort).Append("\n");
             sb.Append("  transitServicePort: ").Append(TransitServicePort).Append("\n");
-            sb.Append("  transitIpAddress: ").Append(TransitIpAddress).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -177,7 +169,6 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             if (this.Protocol != input.Protocol || (this.Protocol != null && input.Protocol != null && !this.Protocol.SequenceEqual(input.Protocol))) return false;
             if (this.InternalServicePort != input.InternalServicePort || (this.InternalServicePort != null && input.InternalServicePort != null && !this.InternalServicePort.SequenceEqual(input.InternalServicePort))) return false;
             if (this.TransitServicePort != input.TransitServicePort || (this.TransitServicePort != null && input.TransitServicePort != null && !this.TransitServicePort.SequenceEqual(input.TransitServicePort))) return false;
-            if (this.TransitIpAddress != input.TransitIpAddress || (this.TransitIpAddress != null && input.TransitIpAddress != null && !this.TransitIpAddress.SequenceEqual(input.TransitIpAddress))) return false;
 
             return true;
         }
@@ -204,7 +195,6 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                 if (this.Protocol != null) hashCode = hashCode * 59 + this.Protocol.GetHashCode();
                 if (this.InternalServicePort != null) hashCode = hashCode * 59 + this.InternalServicePort.GetHashCode();
                 if (this.TransitServicePort != null) hashCode = hashCode * 59 + this.TransitServicePort.GetHashCode();
-                if (this.TransitIpAddress != null) hashCode = hashCode * 59 + this.TransitIpAddress.GetHashCode();
                 return hashCode;
             }
         }

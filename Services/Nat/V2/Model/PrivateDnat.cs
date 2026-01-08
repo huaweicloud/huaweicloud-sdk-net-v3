@@ -137,9 +137,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         }
 
         /// <summary>
-        /// 私网NAT的DNAT规则状态。 取值为： \&quot;ACTIVE\&quot;：正常运行 \&quot;FROZEN\&quot;：冻结 \&quot;INACTIVE\&quot;：不可用
+        /// 私网NAT的DNAT规则状态。 取值为： - ACTIVE：正常运行 - FROZEN：冻结 - INACTIVE：不可用
         /// </summary>
-        /// <value>私网NAT的DNAT规则状态。 取值为： \&quot;ACTIVE\&quot;：正常运行 \&quot;FROZEN\&quot;：冻结 \&quot;INACTIVE\&quot;：不可用</value>
+        /// <value>私网NAT的DNAT规则状态。 取值为： - ACTIVE：正常运行 - FROZEN：冻结 - INACTIVE：不可用</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -283,12 +283,6 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string TransitIpId { get; set; }
 
         /// <summary>
-        /// 中转IP的地址。
-        /// </summary>
-        [JsonProperty("transit_ip_address", NullValueHandling = NullValueHandling.Ignore)]
-        public string TransitIpAddress { get; set; }
-
-        /// <summary>
         /// 私网NAT网关实例的ID。
         /// </summary>
         [JsonProperty("gateway_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -301,7 +295,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string NetworkInterfaceId { get; set; }
 
         /// <summary>
-        /// DNAT规则后端的类型。 取值：     COMPUTE：后端为计算实例。     VIP：后端为VIP的实例。     ELB：后端为ELBv2的实例。     ELBv3：后端为ELBv3的实例。     CUSTOMIZE：后端为自定义IP。
+        /// DNAT规则后端的类型。 取值： - COMPUTE：后端为计算实例。 - VIP：后端为VIP的实例。 - ELB：后端为ELBv2的实例。 - ELBv3：后端为ELBv3的实例。 - CUSTOMIZE：后端为自定义IP。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
@@ -348,7 +342,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public DateTime? UpdatedAt { get; set; }
 
         /// <summary>
-        /// 私网NAT的DNAT规则状态。 取值为： \&quot;ACTIVE\&quot;：正常运行 \&quot;FROZEN\&quot;：冻结 \&quot;INACTIVE\&quot;：不可用
+        /// 私网NAT的DNAT规则状态。 取值为： - ACTIVE：正常运行 - FROZEN：冻结 - INACTIVE：不可用
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
@@ -365,7 +359,6 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  transitIpId: ").Append(TransitIpId).Append("\n");
-            sb.Append("  transitIpAddress: ").Append(TransitIpAddress).Append("\n");
             sb.Append("  gatewayId: ").Append(GatewayId).Append("\n");
             sb.Append("  networkInterfaceId: ").Append(NetworkInterfaceId).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
@@ -399,7 +392,6 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.TransitIpId != input.TransitIpId || (this.TransitIpId != null && !this.TransitIpId.Equals(input.TransitIpId))) return false;
-            if (this.TransitIpAddress != input.TransitIpAddress || (this.TransitIpAddress != null && !this.TransitIpAddress.Equals(input.TransitIpAddress))) return false;
             if (this.GatewayId != input.GatewayId || (this.GatewayId != null && !this.GatewayId.Equals(input.GatewayId))) return false;
             if (this.NetworkInterfaceId != input.NetworkInterfaceId || (this.NetworkInterfaceId != null && !this.NetworkInterfaceId.Equals(input.NetworkInterfaceId))) return false;
             if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
@@ -427,7 +419,6 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                 if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.TransitIpId != null) hashCode = hashCode * 59 + this.TransitIpId.GetHashCode();
-                if (this.TransitIpAddress != null) hashCode = hashCode * 59 + this.TransitIpAddress.GetHashCode();
                 if (this.GatewayId != null) hashCode = hashCode * 59 + this.GatewayId.GetHashCode();
                 if (this.NetworkInterfaceId != null) hashCode = hashCode * 59 + this.NetworkInterfaceId.GetHashCode();
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();

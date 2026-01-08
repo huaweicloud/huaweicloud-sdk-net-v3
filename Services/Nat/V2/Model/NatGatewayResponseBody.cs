@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
     public class NatGatewayResponseBody 
     {
         /// <summary>
-        /// 公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 “5”：企业型，SNAT最大连接数10000000 
+        /// 公网NAT网关的规格。 取值为： - 1：小型，SNAT最大连接数10000 - 2：中型，SNAT最大连接数50000 - 3：大型，SNAT最大连接数200000 - 4：超大型，SNAT最大连接数1000000 - 5：企业型，SNAT最大连接数10000000 
         /// </summary>
-        /// <value>公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 “5”：企业型，SNAT最大连接数10000000 </value>
+        /// <value>公网NAT网关的规格。 取值为： - 1：小型，SNAT最大连接数10000 - 2：中型，SNAT最大连接数50000 - 3：大型，SNAT最大连接数200000 - 4：超大型，SNAT最大连接数1000000 - 5：企业型，SNAT最大连接数10000000 </value>
         [JsonConverter(typeof(EnumClassConverter<SpecEnum>))]
         public class SpecEnum
         {
@@ -149,9 +149,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         }
 
         /// <summary>
-        /// 公网NAT网关实例的状态。 取值为:  ACTIVE: 可用 PENDING_CREATE: 创建中 PENDING_UPDATE: 更新中 PENDING_DELETE: 删除中 INACTIVE: 不可用
+        /// 公网NAT网关实例的状态。 取值为:   - ACTIVE: 可用 - PENDING_CREATE: 创建中 - PENDING_UPDATE: 更新中 - PENDING_DELETE: 删除中 - INACTIVE: 不可用
         /// </summary>
-        /// <value>公网NAT网关实例的状态。 取值为:  ACTIVE: 可用 PENDING_CREATE: 创建中 PENDING_UPDATE: 更新中 PENDING_DELETE: 删除中 INACTIVE: 不可用</value>
+        /// <value>公网NAT网关实例的状态。 取值为:   - ACTIVE: 可用 - PENDING_CREATE: 创建中 - PENDING_UPDATE: 更新中 - PENDING_DELETE: 删除中 - INACTIVE: 不可用</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -307,17 +307,17 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 “5”：企业型，SNAT最大连接数10000000 
+        /// 公网NAT网关的规格。 取值为： - 1：小型，SNAT最大连接数10000 - 2：中型，SNAT最大连接数50000 - 3：大型，SNAT最大连接数200000 - 4：超大型，SNAT最大连接数1000000 - 5：企业型，SNAT最大连接数10000000 
         /// </summary>
         [JsonProperty("spec", NullValueHandling = NullValueHandling.Ignore)]
         public SpecEnum Spec { get; set; }
         /// <summary>
-        /// 公网NAT网关实例的状态。 取值为:  ACTIVE: 可用 PENDING_CREATE: 创建中 PENDING_UPDATE: 更新中 PENDING_DELETE: 删除中 INACTIVE: 不可用
+        /// 公网NAT网关实例的状态。 取值为:   - ACTIVE: 可用 - PENDING_CREATE: 创建中 - PENDING_UPDATE: 更新中 - PENDING_DELETE: 删除中 - INACTIVE: 不可用
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
-        /// 解冻/冻结状态。 取值范围： - \&quot;true\&quot;：解冻 - \&quot;false\&quot;：冻结
+        /// 解冻/冻结状态。 取值范围：  - true: 解冻 - false: 冻结
         /// </summary>
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AdminStateUp { get; set; }

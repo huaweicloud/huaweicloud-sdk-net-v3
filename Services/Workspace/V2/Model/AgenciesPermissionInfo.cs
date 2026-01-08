@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("wanted_system_permission_display_names", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> WantedSystemPermissionDisplayNames { get; set; }
 
+        /// <summary>
+        /// 目标委托的权限项。
+        /// </summary>
+        [JsonProperty("should_have_system_permission_display_names", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> ShouldHaveSystemPermissionDisplayNames { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("class AgenciesPermissionInfo {\n");
             sb.Append("  systemPermissionDisplayNames: ").Append(SystemPermissionDisplayNames).Append("\n");
             sb.Append("  wantedSystemPermissionDisplayNames: ").Append(WantedSystemPermissionDisplayNames).Append("\n");
+            sb.Append("  shouldHaveSystemPermissionDisplayNames: ").Append(ShouldHaveSystemPermissionDisplayNames).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (input == null) return false;
             if (this.SystemPermissionDisplayNames != input.SystemPermissionDisplayNames || (this.SystemPermissionDisplayNames != null && input.SystemPermissionDisplayNames != null && !this.SystemPermissionDisplayNames.SequenceEqual(input.SystemPermissionDisplayNames))) return false;
             if (this.WantedSystemPermissionDisplayNames != input.WantedSystemPermissionDisplayNames || (this.WantedSystemPermissionDisplayNames != null && input.WantedSystemPermissionDisplayNames != null && !this.WantedSystemPermissionDisplayNames.SequenceEqual(input.WantedSystemPermissionDisplayNames))) return false;
+            if (this.ShouldHaveSystemPermissionDisplayNames != input.ShouldHaveSystemPermissionDisplayNames || (this.ShouldHaveSystemPermissionDisplayNames != null && input.ShouldHaveSystemPermissionDisplayNames != null && !this.ShouldHaveSystemPermissionDisplayNames.SequenceEqual(input.ShouldHaveSystemPermissionDisplayNames))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 var hashCode = 41;
                 if (this.SystemPermissionDisplayNames != null) hashCode = hashCode * 59 + this.SystemPermissionDisplayNames.GetHashCode();
                 if (this.WantedSystemPermissionDisplayNames != null) hashCode = hashCode * 59 + this.WantedSystemPermissionDisplayNames.GetHashCode();
+                if (this.ShouldHaveSystemPermissionDisplayNames != null) hashCode = hashCode * 59 + this.ShouldHaveSystemPermissionDisplayNames.GetHashCode();
                 return hashCode;
             }
         }
