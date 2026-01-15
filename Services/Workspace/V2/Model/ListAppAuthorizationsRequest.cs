@@ -51,6 +51,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("target_type", NullValueHandling = NullValueHandling.Ignore)]
         public string TargetType { get; set; }
 
+        /// <summary>
+        /// 类型： * &#x60;ALL_USER&#x60; - 所有用户 * &#x60;ASSIGN_USER&#x60; - 部分用户
+        /// </summary>
+        [SDKProperty("assign_type", IsQuery = true)]
+        [JsonProperty("assign_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string AssignType { get; set; }
+
 
 
         /// <summary>
@@ -65,6 +72,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  appId: ").Append(AppId).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  targetType: ").Append(TargetType).Append("\n");
+            sb.Append("  assignType: ").Append(AssignType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -88,6 +96,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.AppId != input.AppId || (this.AppId != null && !this.AppId.Equals(input.AppId))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.TargetType != input.TargetType || (this.TargetType != null && !this.TargetType.Equals(input.TargetType))) return false;
+            if (this.AssignType != input.AssignType || (this.AssignType != null && !this.AssignType.Equals(input.AssignType))) return false;
 
             return true;
         }
@@ -105,6 +114,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.AppId != null) hashCode = hashCode * 59 + this.AppId.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.TargetType != null) hashCode = hashCode * 59 + this.TargetType.GetHashCode();
+                if (this.AssignType != null) hashCode = hashCode * 59 + this.AssignType.GetHashCode();
                 return hashCode;
             }
         }

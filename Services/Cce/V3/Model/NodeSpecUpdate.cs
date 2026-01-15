@@ -83,6 +83,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public Dictionary<string, string> K8sTags { get; set; }
 
         /// <summary>
+        /// **参数解释**： 云服务器组ID，若指定，将节点创建在该云服务器组下。 **约束限制**： 创建节点池时该配置不会生效，若要保持节点池中的节点都在同一个云服务器组内，请在节点池 nodeManagement 字段中配置。 **取值范围**： 不涉及 **默认取值**： 不涉及
+        /// </summary>
+        [JsonProperty("ecsGroupId", NullValueHandling = NullValueHandling.Ignore)]
+        public string EcsGroupId { get; set; }
+
+        /// <summary>
         /// **参数解释**： 云服务器标签（资源标签）。 **约束限制**： - 键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为8个。 - 参数未指定时将不会更新节点池的自定义云服务器标签。 - 参数为空数组时将删除节点池的自定义云服务器标签。
         /// </summary>
         [JsonProperty("userTags", NullValueHandling = NullValueHandling.Ignore)]
@@ -144,6 +150,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  taints: ").Append(Taints).Append("\n");
             sb.Append("  waitPostInstallFinish: ").Append(WaitPostInstallFinish).Append("\n");
             sb.Append("  k8sTags: ").Append(K8sTags).Append("\n");
+            sb.Append("  ecsGroupId: ").Append(EcsGroupId).Append("\n");
             sb.Append("  userTags: ").Append(UserTags).Append("\n");
             sb.Append("  nodeNameTemplate: ").Append(NodeNameTemplate).Append("\n");
             sb.Append("  initializedConditions: ").Append(InitializedConditions).Append("\n");
@@ -180,6 +187,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.Taints != input.Taints || (this.Taints != null && input.Taints != null && !this.Taints.SequenceEqual(input.Taints))) return false;
             if (this.WaitPostInstallFinish != input.WaitPostInstallFinish || (this.WaitPostInstallFinish != null && !this.WaitPostInstallFinish.Equals(input.WaitPostInstallFinish))) return false;
             if (this.K8sTags != input.K8sTags || (this.K8sTags != null && input.K8sTags != null && !this.K8sTags.SequenceEqual(input.K8sTags))) return false;
+            if (this.EcsGroupId != input.EcsGroupId || (this.EcsGroupId != null && !this.EcsGroupId.Equals(input.EcsGroupId))) return false;
             if (this.UserTags != input.UserTags || (this.UserTags != null && input.UserTags != null && !this.UserTags.SequenceEqual(input.UserTags))) return false;
             if (this.NodeNameTemplate != input.NodeNameTemplate || (this.NodeNameTemplate != null && !this.NodeNameTemplate.Equals(input.NodeNameTemplate))) return false;
             if (this.InitializedConditions != input.InitializedConditions || (this.InitializedConditions != null && input.InitializedConditions != null && !this.InitializedConditions.SequenceEqual(input.InitializedConditions))) return false;
@@ -210,6 +218,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.Taints != null) hashCode = hashCode * 59 + this.Taints.GetHashCode();
                 if (this.WaitPostInstallFinish != null) hashCode = hashCode * 59 + this.WaitPostInstallFinish.GetHashCode();
                 if (this.K8sTags != null) hashCode = hashCode * 59 + this.K8sTags.GetHashCode();
+                if (this.EcsGroupId != null) hashCode = hashCode * 59 + this.EcsGroupId.GetHashCode();
                 if (this.UserTags != null) hashCode = hashCode * 59 + this.UserTags.GetHashCode();
                 if (this.NodeNameTemplate != null) hashCode = hashCode * 59 + this.NodeNameTemplate.GetHashCode();
                 if (this.InitializedConditions != null) hashCode = hashCode * 59 + this.InitializedConditions.GetHashCode();

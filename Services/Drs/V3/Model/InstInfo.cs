@@ -167,9 +167,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         }
 
         /// <summary>
-        /// 实例类型
+        /// 实例类型 取值：common，high，ultrahigh
         /// </summary>
-        /// <value>实例类型</value>
+        /// <value>实例类型 取值：common，high，ultrahigh</value>
         [JsonConverter(typeof(EnumClassConverter<InstTypeEnum>))]
         public class InstTypeEnum
         {
@@ -397,7 +397,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         [JsonProperty("engine_type", NullValueHandling = NullValueHandling.Ignore)]
         public EngineTypeEnum EngineType { get; set; }
         /// <summary>
-        /// 实例类型
+        /// 实例类型 取值：common，high，ultrahigh
         /// </summary>
         [JsonProperty("inst_type", NullValueHandling = NullValueHandling.Ignore)]
         public InstTypeEnum InstType { get; set; }

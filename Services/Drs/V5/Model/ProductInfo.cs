@@ -23,13 +23,13 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// 用户购买云服务产品的云服务类型，例如EC2，云服务类型为hws.service.type.ec2。
+        /// 用户购买云服务产品的云服务类型，例如EC2，云服务类型为hws.service.type.ec2。 取值：hws.service.type.drs
         /// </summary>
         [JsonProperty("cloud_service_type", NullValueHandling = NullValueHandling.Ignore)]
         public string CloudServiceType { get; set; }
 
         /// <summary>
-        /// 用户购买云服务产品的资源类型，例如EC2中的VM，资源类型为hws.resource.type.vm。
+        /// 用户购买云服务产品的资源类型，例如EC2中的VM，资源类型为hws.resource.type.vm。 hws.resource.type.drs.instance：instance（实例） hws.resource.type.drs.vm：vm（虚机） hws.resource.type.drs.volume：volume（磁盘） dbs.instanceName：instanceName（实例名称- -适配DT） hws.resource.type.drs.flow：flow（DRS流量费） dbs.tag：tag（用户标签） dbs.enterpriseProjectId：enterpriseProjectId（企业项目）
         /// </summary>
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceType { get; set; }

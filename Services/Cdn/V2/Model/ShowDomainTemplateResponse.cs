@@ -25,8 +25,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("temlates", NullValueHandling = NullValueHandling.Ignore)]
-        public List<TemplateItem> Temlates { get; set; }
+        [JsonProperty("templates", NullValueHandling = NullValueHandling.Ignore)]
+        public List<TemplateItem> Templates { get; set; }
 
 
 
@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ShowDomainTemplateResponse {\n");
             sb.Append("  total: ").Append(Total).Append("\n");
-            sb.Append("  temlates: ").Append(Temlates).Append("\n");
+            sb.Append("  templates: ").Append(Templates).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -58,7 +58,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             if (input == null) return false;
             if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
-            if (this.Temlates != input.Temlates || (this.Temlates != null && input.Temlates != null && !this.Temlates.SequenceEqual(input.Temlates))) return false;
+            if (this.Templates != input.Templates || (this.Templates != null && input.Templates != null && !this.Templates.SequenceEqual(input.Templates))) return false;
 
             return true;
         }
@@ -72,7 +72,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             {
                 var hashCode = 41;
                 if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.Temlates != null) hashCode = hashCode * 59 + this.Temlates.GetHashCode();
+                if (this.Templates != null) hashCode = hashCode * 59 + this.Templates.GetHashCode();
                 return hashCode;
             }
         }

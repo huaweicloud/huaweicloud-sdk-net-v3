@@ -30,6 +30,20 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("resource_spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceSpecCode { get; set; }
 
+        /// <summary>
+        /// 每页数量，范围0-1000，默认1000。
+        /// </summary>
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Limit { get; set; }
+
+        /// <summary>
+        /// 偏移量，默认0。
+        /// </summary>
+        [SDKProperty("offset", IsQuery = true)]
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Offset { get; set; }
+
 
 
         /// <summary>
@@ -41,6 +55,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("class ListHourPackagesTypeRequest {\n");
             sb.Append("  desktopResourceSpecCode: ").Append(DesktopResourceSpecCode).Append("\n");
             sb.Append("  resourceSpecCode: ").Append(ResourceSpecCode).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -61,6 +77,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (input == null) return false;
             if (this.DesktopResourceSpecCode != input.DesktopResourceSpecCode || (this.DesktopResourceSpecCode != null && !this.DesktopResourceSpecCode.Equals(input.DesktopResourceSpecCode))) return false;
             if (this.ResourceSpecCode != input.ResourceSpecCode || (this.ResourceSpecCode != null && !this.ResourceSpecCode.Equals(input.ResourceSpecCode))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
 
             return true;
         }
@@ -75,6 +93,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 var hashCode = 41;
                 if (this.DesktopResourceSpecCode != null) hashCode = hashCode * 59 + this.DesktopResourceSpecCode.GetHashCode();
                 if (this.ResourceSpecCode != null) hashCode = hashCode * 59 + this.ResourceSpecCode.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 return hashCode;
             }
         }

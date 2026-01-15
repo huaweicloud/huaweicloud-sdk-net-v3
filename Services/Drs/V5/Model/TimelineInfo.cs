@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 状态。
+        /// 状态。 取值：success, failed
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     public class AuditScopeSwitchRequestNew 
     {
         /// <summary>
-        /// 状态  - OFF： 关闭  - ON： 启用
+        /// 状态  - OFF：关闭  - ON：启用
         /// </summary>
-        /// <value>状态  - OFF： 关闭  - ON： 启用</value>
+        /// <value>状态  - OFF：关闭  - ON：启用</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public List<string> Ids { get; set; }
 
         /// <summary>
-        /// 状态  - OFF： 关闭  - ON： 启用
+        /// 状态  - OFF：关闭  - ON：启用
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }

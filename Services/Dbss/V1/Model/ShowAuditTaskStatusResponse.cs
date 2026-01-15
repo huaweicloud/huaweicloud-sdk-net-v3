@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public long? BeginTime { get; set; }
 
         /// <summary>
-        /// 业务类型  - audit: 审计  - risk: 风险
+        /// 业务类型  - audit：审计  - risk：风险
         /// </summary>
         [JsonProperty("busi_type", NullValueHandling = NullValueHandling.Ignore)]
         public string BusiType { get; set; }

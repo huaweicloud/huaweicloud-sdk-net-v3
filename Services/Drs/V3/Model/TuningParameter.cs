@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         public string Availability { get; set; }
 
         /// <summary>
-        /// 参数取值范围。
+        /// 参数范围。
         /// </summary>
         [JsonProperty("range", NullValueHandling = NullValueHandling.Ignore)]
         public string Range { get; set; }

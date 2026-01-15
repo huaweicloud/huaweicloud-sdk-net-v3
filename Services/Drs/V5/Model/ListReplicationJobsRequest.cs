@@ -334,7 +334,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 排序字段。
+        /// 排序字段。 取值：name，db_type，inst_id，ip，created_at，description，tag_value
         /// </summary>
         [SDKProperty("sort_key", IsQuery = true)]
         [JsonProperty("sort_key", NullValueHandling = NullValueHandling.Ignore)]

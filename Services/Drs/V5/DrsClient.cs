@@ -541,6 +541,32 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 删除对象的列信息（列映射、列过滤）
+        ///
+        /// 删除对象的列信息（列映射、列过滤）
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteColumnInfosResponse DeleteColumnInfos(DeleteColumnInfosRequest deleteColumnInfosRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteColumnInfosRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/job/{job_id}/column-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteColumnInfosRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteColumnInfosResponse>(response);
+        }
+
+        public SyncInvoker<DeleteColumnInfosResponse> DeleteColumnInfosInvoker(DeleteColumnInfosRequest deleteColumnInfosRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteColumnInfosRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/job/{job_id}/column-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteColumnInfosRequest);
+            return new SyncInvoker<DeleteColumnInfosResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteColumnInfosResponse>);
+        }
+        
+        /// <summary>
         /// 删除连接
         ///
         /// 删除租户指定的连接。
@@ -1299,6 +1325,32 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 修改对象的列信息（列映射、列过滤）
+        ///
+        /// 修改对象的列信息（列映射、列过滤）
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ModifyColumnInfosResponse ModifyColumnInfos(ModifyColumnInfosRequest modifyColumnInfosRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(modifyColumnInfosRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/job/{job_id}/column-info-modification", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyColumnInfosRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ModifyColumnInfosResponse>(response);
+        }
+
+        public SyncInvoker<ModifyColumnInfosResponse> ModifyColumnInfosInvoker(ModifyColumnInfosRequest modifyColumnInfosRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(modifyColumnInfosRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/job/{job_id}/column-info-modification", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyColumnInfosRequest);
+            return new SyncInvoker<ModifyColumnInfosResponse>(this, "POST", request, JsonUtils.DeSerialize<ModifyColumnInfosResponse>);
+        }
+        
+        /// <summary>
         /// 修改连接
         ///
         /// 修改创建的连接信息。
@@ -1400,6 +1452,32 @@ namespace HuaweiCloud.SDK.Drs.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/job/{job_id}/columns", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showColumnInfoResultRequest);
             return new SyncInvoker<ShowColumnInfoResultResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowColumnInfoResultResponse>);
+        }
+        
+        /// <summary>
+        /// 查询对象的列信息（列映射、列过滤）
+        ///
+        /// 查询对象的列信息（列映射、列过滤）
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowColumnInfosResponse ShowColumnInfos(ShowColumnInfosRequest showColumnInfosRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showColumnInfosRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/job/{job_id}/column-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showColumnInfosRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ShowColumnInfosResponse>(response);
+        }
+
+        public SyncInvoker<ShowColumnInfosResponse> ShowColumnInfosInvoker(ShowColumnInfosRequest showColumnInfosRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showColumnInfosRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/job/{job_id}/column-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showColumnInfosRequest);
+            return new SyncInvoker<ShowColumnInfosResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowColumnInfosResponse>);
         }
         
         /// <summary>
@@ -2020,6 +2098,32 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 查询录制回放任务进度
+        ///
+        /// 查询录制回放任务进度
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowReplayProgressResponse ShowReplayProgress(ShowReplayProgressRequest showReplayProgressRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showReplayProgressRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/replay-progress", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReplayProgressRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowReplayProgressResponse>(response);
+        }
+
+        public SyncInvoker<ShowReplayProgressResponse> ShowReplayProgressInvoker(ShowReplayProgressRequest showReplayProgressRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showReplayProgressRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/replay-progress", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReplayProgressRequest);
+            return new SyncInvoker<ShowReplayProgressResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowReplayProgressResponse>);
+        }
+        
+        /// <summary>
         /// 查询录制回放结果
         ///
         /// 获取录制回放结果数据，包括：回放基于时间维度统计信息，异常SQL及统计结果、慢SQL及统计结果
@@ -2069,6 +2173,30 @@ namespace HuaweiCloud.SDK.Drs.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/backup-migration-jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReplicationJobRequest);
             return new SyncInvoker<ShowReplicationJobResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowReplicationJobResponse>);
+        }
+        
+        /// <summary>
+        /// 查询订阅任务列表
+        ///
+        /// 查询订阅任务列表，可以根据企业项目，引擎类型，网络类型，任务状态，任务名称，任务ID进行查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowSubscriptionListsResponse ShowSubscriptionLists(ShowSubscriptionListsRequest showSubscriptionListsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/subscriptions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSubscriptionListsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ShowSubscriptionListsResponse>(response);
+        }
+
+        public SyncInvoker<ShowSubscriptionListsResponse> ShowSubscriptionListsInvoker(ShowSubscriptionListsRequest showSubscriptionListsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/subscriptions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSubscriptionListsRequest);
+            return new SyncInvoker<ShowSubscriptionListsResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowSubscriptionListsResponse>);
         }
         
         /// <summary>

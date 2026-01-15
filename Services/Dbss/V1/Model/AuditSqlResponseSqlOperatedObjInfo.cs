@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string ColumnName { get; set; }
 
         /// <summary>
-        /// 操作对象类型 - VARIABLE: 变量 - \&quot;\&quot;: 空
+        /// 操作对象类型 - VARIABLE：变量 - \&quot;\&quot;：空
         /// </summary>
         [JsonProperty("object_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ObjectType { get; set; }
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string SchemaName { get; set; }
 
         /// <summary>
-        /// sql类型 - LOGIN: LOGIN - CREATE_TABLE: CREATE TABLE - CREATE_TABLESPACE: CREATE TABLESPACE - DROP_TABLE: DROP TABLE - DROP_TABLESPACE: DROP TABLESPACE - DELETE: DELETE - INSERT: INSERT - INSERT_SELECT: INSERT SELECT - SELECT: SELECT - SELECT_FOR_UPDATE: SELECT FOR UPDATE - UPDATE: UPDATE - CREATE_USER: CREATE USER - DROP_USER: DROP USER - GRANT: GRANT - OPERATE: OPERATE - ALL: ALL
+        /// sql类型 - LOGIN：LOGIN - CREATE_TABLE：CREATE TABLE - CREATE_TABLESPACE：CREATE TABLESPACE - DROP_TABLE：DROP TABLE - DROP_TABLESPACE：DROP TABLESPACE - DELETE：DELETE - INSERT：INSERT - INSERT_SELECT：INSERT SELECT - SELECT：SELECT - SELECT_FOR_UPDATE：SELECT FOR UPDATE - UPDATE：UPDATE - CREATE_USER：CREATE USER - DROP_USER：DROP USER - GRANT：GRANT - OPERATE：OPERATE - ALL：ALL
         /// </summary>
         [JsonProperty("sql_type", NullValueHandling = NullValueHandling.Ignore)]
         public string SqlType { get; set; }

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     {
 
         /// <summary>
-        /// 全量数据对比进度，单位为%。
+        /// 增量数据对比进度，单位为%。
         /// </summary>
         [JsonProperty("progress", NullValueHandling = NullValueHandling.Ignore)]
         public float? Progress { get; set; }

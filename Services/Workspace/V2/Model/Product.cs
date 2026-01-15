@@ -23,12 +23,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string ProductId { get; set; }
 
         /// <summary>
-        /// 规格ID。
-        /// </summary>
-        [JsonProperty("flavor_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string FlavorId { get; set; }
-
-        /// <summary>
         /// 产品类型。取值为： BASE：表示产品基础套餐，套餐镜像中不包括除操作系统之外的其他商业软件，私有镜像场景只能使用此类套餐。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
@@ -182,7 +176,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             var sb = new StringBuilder();
             sb.Append("class Product {\n");
             sb.Append("  productId: ").Append(ProductId).Append("\n");
-            sb.Append("  flavorId: ").Append(FlavorId).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  architecture: ").Append(Architecture).Append("\n");
             sb.Append("  cpu: ").Append(Cpu).Append("\n");
@@ -226,7 +219,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             if (input == null) return false;
             if (this.ProductId != input.ProductId || (this.ProductId != null && !this.ProductId.Equals(input.ProductId))) return false;
-            if (this.FlavorId != input.FlavorId || (this.FlavorId != null && !this.FlavorId.Equals(input.FlavorId))) return false;
             if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
             if (this.Architecture != input.Architecture || (this.Architecture != null && !this.Architecture.Equals(input.Architecture))) return false;
             if (this.Cpu != input.Cpu || (this.Cpu != null && !this.Cpu.Equals(input.Cpu))) return false;
@@ -264,7 +256,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             {
                 var hashCode = 41;
                 if (this.ProductId != null) hashCode = hashCode * 59 + this.ProductId.GetHashCode();
-                if (this.FlavorId != null) hashCode = hashCode * 59 + this.FlavorId.GetHashCode();
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Architecture != null) hashCode = hashCode * 59 + this.Architecture.GetHashCode();
                 if (this.Cpu != null) hashCode = hashCode * 59 + this.Cpu.GetHashCode();

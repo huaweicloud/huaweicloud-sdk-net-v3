@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     {
 
         /// <summary>
-        /// 操作码，operType为switch时必输入  - on: 开启  - off: 关闭
+        /// 操作码，operType为switch时必输入  - on：开启  - off：关闭
         /// </summary>
         [JsonProperty("code", NullValueHandling = NullValueHandling.Ignore)]
         public string Code { get; set; }
 
         /// <summary>
-        /// 操作类型  - switch: 任务开关  - execute: 立即刷新
+        /// 操作类型  - switch：任务开关  - execute：立即刷新
         /// </summary>
         [JsonProperty("oper_type", NullValueHandling = NullValueHandling.Ignore)]
         public string OperType { get; set; }

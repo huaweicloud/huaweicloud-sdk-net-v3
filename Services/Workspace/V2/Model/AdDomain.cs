@@ -226,6 +226,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("certificate_id", NullValueHandling = NullValueHandling.Ignore)]
         public string CertificateId { get; set; }
 
+        /// <summary>
+        /// 域控制器信息列表。有值时，active_domain_name、active_domain_ip、standby_domain_name、standby_domain_ip无效。
+        /// </summary>
+        [JsonProperty("domain_controllers", NullValueHandling = NullValueHandling.Ignore)]
+        public List<DomainController> DomainControllers { get; set; }
+
 
 
         /// <summary>
@@ -251,6 +257,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  tlsConfig: ").Append(TlsConfig).Append("\n");
             sb.Append("  cbaEnabled: ").Append(CbaEnabled).Append("\n");
             sb.Append("  certificateId: ").Append(CertificateId).Append("\n");
+            sb.Append("  domainControllers: ").Append(DomainControllers).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -285,6 +292,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.TlsConfig != input.TlsConfig || (this.TlsConfig != null && !this.TlsConfig.Equals(input.TlsConfig))) return false;
             if (this.CbaEnabled != input.CbaEnabled || (this.CbaEnabled != null && !this.CbaEnabled.Equals(input.CbaEnabled))) return false;
             if (this.CertificateId != input.CertificateId || (this.CertificateId != null && !this.CertificateId.Equals(input.CertificateId))) return false;
+            if (this.DomainControllers != input.DomainControllers || (this.DomainControllers != null && input.DomainControllers != null && !this.DomainControllers.SequenceEqual(input.DomainControllers))) return false;
 
             return true;
         }
@@ -313,6 +321,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.TlsConfig != null) hashCode = hashCode * 59 + this.TlsConfig.GetHashCode();
                 if (this.CbaEnabled != null) hashCode = hashCode * 59 + this.CbaEnabled.GetHashCode();
                 if (this.CertificateId != null) hashCode = hashCode * 59 + this.CertificateId.GetHashCode();
+                if (this.DomainControllers != null) hashCode = hashCode * 59 + this.DomainControllers.GetHashCode();
                 return hashCode;
             }
         }

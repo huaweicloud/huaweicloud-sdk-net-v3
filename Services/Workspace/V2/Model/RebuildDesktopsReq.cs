@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public List<string> DesktopIds { get; set; }
 
         /// <summary>
-        /// 镜像类型。
+        /// 镜像类型 - 公共镜像：gold - 私有镜像：private - 市场镜像：market
         /// </summary>
         [JsonProperty("image_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ImageType { get; set; }
@@ -33,6 +33,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// </summary>
         [JsonProperty("image_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ImageId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("encrypt_type", NullValueHandling = NullValueHandling.Ignore)]
+        public EncryptType? EncryptType { get; set; }
+
+        /// <summary>
+        /// 密钥ID，encrypt_type为ENCRYPTED时必传。
+        /// </summary>
+        [JsonProperty("kms_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string KmsId { get; set; }
 
         /// <summary>
         /// os类型。
@@ -82,6 +94,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  desktopIds: ").Append(DesktopIds).Append("\n");
             sb.Append("  imageType: ").Append(ImageType).Append("\n");
             sb.Append("  imageId: ").Append(ImageId).Append("\n");
+            sb.Append("  encryptType: ").Append(EncryptType).Append("\n");
+            sb.Append("  kmsId: ").Append(KmsId).Append("\n");
             sb.Append("  osType: ").Append(OsType).Append("\n");
             sb.Append("  delayTime: ").Append(DelayTime).Append("\n");
             sb.Append("  message: ").Append(Message).Append("\n");
@@ -109,6 +123,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.DesktopIds != input.DesktopIds || (this.DesktopIds != null && input.DesktopIds != null && !this.DesktopIds.SequenceEqual(input.DesktopIds))) return false;
             if (this.ImageType != input.ImageType || (this.ImageType != null && !this.ImageType.Equals(input.ImageType))) return false;
             if (this.ImageId != input.ImageId || (this.ImageId != null && !this.ImageId.Equals(input.ImageId))) return false;
+            if (this.EncryptType != input.EncryptType || (this.EncryptType != null && !this.EncryptType.Equals(input.EncryptType))) return false;
+            if (this.KmsId != input.KmsId || (this.KmsId != null && !this.KmsId.Equals(input.KmsId))) return false;
             if (this.OsType != input.OsType || (this.OsType != null && !this.OsType.Equals(input.OsType))) return false;
             if (this.DelayTime != input.DelayTime || (this.DelayTime != null && !this.DelayTime.Equals(input.DelayTime))) return false;
             if (this.Message != input.Message || (this.Message != null && !this.Message.Equals(input.Message))) return false;
@@ -130,6 +146,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.DesktopIds != null) hashCode = hashCode * 59 + this.DesktopIds.GetHashCode();
                 if (this.ImageType != null) hashCode = hashCode * 59 + this.ImageType.GetHashCode();
                 if (this.ImageId != null) hashCode = hashCode * 59 + this.ImageId.GetHashCode();
+                if (this.EncryptType != null) hashCode = hashCode * 59 + this.EncryptType.GetHashCode();
+                if (this.KmsId != null) hashCode = hashCode * 59 + this.KmsId.GetHashCode();
                 if (this.OsType != null) hashCode = hashCode * 59 + this.OsType.GetHashCode();
                 if (this.DelayTime != null) hashCode = hashCode * 59 + this.DelayTime.GetHashCode();
                 if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();

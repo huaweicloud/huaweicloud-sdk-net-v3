@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 添加的数据库类型： - MYSQL：MySQL - ORACLE：Oracle - POSTGRESQL: PostgreSQL - SQLSERVER: SqlServer - DAMENG: Dameng - TAURUS: Taurus - DWS: Dws - KINGBASE: Kingbase - GAUSSDBOPENGAUSS：GaussDB(for openGauss) - GREENPLUM：Greenplum - HIGHGO：HighGo - SHENTONG：ShenTong - GBASE8A：GBase 8a - GBASE8S：GBase 8s - GBASEXDM：GBase XDM - MONGODB：MongoDB - DDS：DDS（Document Database Service）
+        /// 添加的数据库类型： - MYSQL：MySQL - ORACLE：Oracle - POSTGRESQL：PostgreSQL - SQLSERVER：SqlServer - DAMENG：Dameng - TAURUS：Taurus - DWS：Dws - KINGBASE：Kingbase - GAUSSDBOPENGAUSS：GaussDB(for openGauss) - GREENPLUM：Greenplum - HIGHGO：HighGo - SHENTONG：ShenTong - GBASE8A：GBase 8a - GBASE8S：GBase 8s - GBASEXDM：GBase XDM - MONGODB：MongoDB - DDS：DDS（Document Database Service）
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
@@ -65,7 +65,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string Os { get; set; }
 
         /// <summary>
-        /// 实例状态 - ON :开启 - OFF : 关闭
+        /// 实例状态 - ON：开启 - OFF： 关闭
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
@@ -89,7 +89,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public List<string> AgentUrl { get; set; }
 
         /// <summary>
-        /// 数据库分类 - RDS: 表示RDS数据库 - ECS: 自建数据库
+        /// 数据库分类 - RDS：表示RDS数据库 - ECS：自建数据库
         /// </summary>
         [JsonProperty("db_classification", NullValueHandling = NullValueHandling.Ignore)]
         public string DbClassification { get; set; }

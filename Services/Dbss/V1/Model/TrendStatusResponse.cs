@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Dbss.V1.Model
 {
     /// <summary>
-    /// 
+    /// 数据库趋势统计
     /// </summary>
     public class TrendStatusResponse 
     {
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string GenerateTime { get; set; }
 
         /// <summary>
-        /// 统计类型  - RISK: 风险  - SESSION：SESSION  - SQL: SQL  - COUNT: 数量  - INJECTION：注入 - OPERATION: 操作
+        /// 统计类型  - RISK：风险  - SESSION：SESSION  - SQL：SQL  - COUNT：数量  - INJECTION：注入 - OPERATION：操作
         /// </summary>
         [JsonProperty("statistics_type", NullValueHandling = NullValueHandling.Ignore)]
         public string StatisticsType { get; set; }

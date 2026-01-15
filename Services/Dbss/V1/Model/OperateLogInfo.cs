@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string Time { get; set; }
 
         /// <summary>
-        /// 该条记录的操作类型 - create：创建 - update：更新 - delete：删除 - download: 下载
+        /// 该条记录的操作类型 - create：创建 - update：更新 - delete：删除 - download：下载
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public string Action { get; set; }
@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 该条记录对应用户执行的结果 - success: 成功 - fail: 失败
+        /// 该条记录对应用户执行的结果 - success：成功 - fail：失败
         /// </summary>
         [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
         public string Result { get; set; }

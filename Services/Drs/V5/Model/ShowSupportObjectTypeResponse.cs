@@ -88,6 +88,18 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("is_import_cloumn", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsImportCloumn { get; set; }
 
+        /// <summary>
+        /// 文件导入映射场景。 - table_mapping - topic_mapping
+        /// </summary>
+        [JsonProperty("import_mapping_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string ImportMappingType { get; set; }
+
+        /// <summary>
+        /// 唯一键信息是否导入。
+        /// </summary>
+        [JsonProperty("is_import_unique_key", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsImportUniqueKey { get; set; }
+
 
 
         /// <summary>
@@ -109,6 +121,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  previousSelect: ").Append(PreviousSelect).Append("\n");
             sb.Append("  importLevel: ").Append(ImportLevel).Append("\n");
             sb.Append("  isImportCloumn: ").Append(IsImportCloumn).Append("\n");
+            sb.Append("  importMappingType: ").Append(ImportMappingType).Append("\n");
+            sb.Append("  isImportUniqueKey: ").Append(IsImportUniqueKey).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -139,6 +153,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             if (this.PreviousSelect != input.PreviousSelect || (this.PreviousSelect != null && !this.PreviousSelect.Equals(input.PreviousSelect))) return false;
             if (this.ImportLevel != input.ImportLevel || (this.ImportLevel != null && !this.ImportLevel.Equals(input.ImportLevel))) return false;
             if (this.IsImportCloumn != input.IsImportCloumn || (this.IsImportCloumn != null && !this.IsImportCloumn.Equals(input.IsImportCloumn))) return false;
+            if (this.ImportMappingType != input.ImportMappingType || (this.ImportMappingType != null && !this.ImportMappingType.Equals(input.ImportMappingType))) return false;
+            if (this.IsImportUniqueKey != input.IsImportUniqueKey || (this.IsImportUniqueKey != null && !this.IsImportUniqueKey.Equals(input.IsImportUniqueKey))) return false;
 
             return true;
         }
@@ -163,6 +179,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 if (this.PreviousSelect != null) hashCode = hashCode * 59 + this.PreviousSelect.GetHashCode();
                 if (this.ImportLevel != null) hashCode = hashCode * 59 + this.ImportLevel.GetHashCode();
                 if (this.IsImportCloumn != null) hashCode = hashCode * 59 + this.IsImportCloumn.GetHashCode();
+                if (this.ImportMappingType != null) hashCode = hashCode * 59 + this.ImportMappingType.GetHashCode();
+                if (this.IsImportUniqueKey != null) hashCode = hashCode * 59 + this.IsImportUniqueKey.GetHashCode();
                 return hashCode;
             }
         }

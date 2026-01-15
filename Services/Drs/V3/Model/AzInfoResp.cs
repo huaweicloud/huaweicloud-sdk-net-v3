@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 可用区状态
+        /// 可用区状态，ENABLED：可用，DISABLED：不可用
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }

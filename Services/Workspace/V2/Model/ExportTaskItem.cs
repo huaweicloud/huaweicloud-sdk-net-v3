@@ -173,13 +173,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string ErrorCode { get; set; }
 
         /// <summary>
-        /// 创建文件的时间, utc时间：yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ。
+        /// 导出任务的开始时间, utc时间：yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ。
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
         public string CreateTime { get; set; }
 
         /// <summary>
-        /// 创建文件的时间, utc时间：yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ。
+        /// 导出任务的结束时间, utc时间：yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ。
         /// </summary>
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string EndTime { get; set; }

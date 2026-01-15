@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     {
 
         /// <summary>
-        /// 修复状态。
+        /// 修复状态。 取值：\&quot;FAILED\&quot;, \&quot;SUCCEEDED\&quot;, \&quot;FINISHED\&quot;, \&quot;SUCCESS\&quot;
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }

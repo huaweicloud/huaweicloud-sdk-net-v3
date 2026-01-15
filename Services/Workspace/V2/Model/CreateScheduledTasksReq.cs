@@ -149,9 +149,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         }
 
         /// <summary>
-        /// 任务类型，可选值为： - START：开机。 - STOP：关机。 - REBOOT：重启。 - HIBERNATE：休眠。 - REBUILD：重建系统盘。 - EXECUTE_SCRIPT：执行脚本。 - CREATE_SNAPSHOT：创建快照。
+        /// 任务类型，可选值为： - START：开机。 - STOP：关机。 - REBOOT：重启。 - HIBERNATE：休眠。 - REBUILD：重建系统盘。 - EXECUTE_SCRIPT：执行脚本。 - CREATE_SNAPSHOT：创建快照。 - DELETE_BLACK_ECS: 删除黑产ecs
         /// </summary>
-        /// <value>任务类型，可选值为： - START：开机。 - STOP：关机。 - REBOOT：重启。 - HIBERNATE：休眠。 - REBUILD：重建系统盘。 - EXECUTE_SCRIPT：执行脚本。 - CREATE_SNAPSHOT：创建快照。</value>
+        /// <value>任务类型，可选值为： - START：开机。 - STOP：关机。 - REBOOT：重启。 - HIBERNATE：休眠。 - REBUILD：重建系统盘。 - EXECUTE_SCRIPT：执行脚本。 - CREATE_SNAPSHOT：创建快照。 - DELETE_BLACK_ECS: 删除黑产ecs</value>
         [JsonConverter(typeof(EnumClassConverter<TaskTypeEnum>))]
         public class TaskTypeEnum
         {
@@ -190,6 +190,11 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             /// </summary>
             public static readonly TaskTypeEnum CREATE_SNAPSHOT = new TaskTypeEnum("CREATE_SNAPSHOT");
 
+            /// <summary>
+            /// Enum DELETE_BLACK_ECS for value: DELETE_BLACK_ECS
+            /// </summary>
+            public static readonly TaskTypeEnum DELETE_BLACK_ECS = new TaskTypeEnum("DELETE_BLACK_ECS");
+
             private static readonly Dictionary<string, TaskTypeEnum> StaticFields =
             new Dictionary<string, TaskTypeEnum>()
             {
@@ -200,6 +205,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 { "REBUILD", REBUILD },
                 { "EXECUTE_SCRIPT", EXECUTE_SCRIPT },
                 { "CREATE_SNAPSHOT", CREATE_SNAPSHOT },
+                { "DELETE_BLACK_ECS", DELETE_BLACK_ECS },
             };
 
             private string _value;
@@ -372,7 +378,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string TimeZone { get; set; }
 
         /// <summary>
-        /// 任务类型，可选值为： - START：开机。 - STOP：关机。 - REBOOT：重启。 - HIBERNATE：休眠。 - REBUILD：重建系统盘。 - EXECUTE_SCRIPT：执行脚本。 - CREATE_SNAPSHOT：创建快照。
+        /// 任务类型，可选值为： - START：开机。 - STOP：关机。 - REBOOT：重启。 - HIBERNATE：休眠。 - REBUILD：重建系统盘。 - EXECUTE_SCRIPT：执行脚本。 - CREATE_SNAPSHOT：创建快照。 - DELETE_BLACK_ECS: 删除黑产ecs
         /// </summary>
         [JsonProperty("task_type", NullValueHandling = NullValueHandling.Ignore)]
         public TaskTypeEnum TaskType { get; set; }

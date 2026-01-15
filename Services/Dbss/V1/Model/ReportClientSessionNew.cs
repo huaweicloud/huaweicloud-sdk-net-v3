@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Dbss.V1.Model
 {
     /// <summary>
-    /// 
+    /// 数据库用户会话量
     /// </summary>
     public class ReportClientSessionNew 
     {

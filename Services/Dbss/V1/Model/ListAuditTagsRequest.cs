@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     {
 
         /// <summary>
-        /// **参数解释**：  资源类型。 **约束限制**： 不涉及 **取值范围**：  - auditInstance: 审计 **默认取值**： 不涉及 
+        /// **参数解释**：  资源类型。 **约束限制**： 不涉及 **取值范围**：  - auditInstance：审计 **默认取值**： 不涉及 
         /// </summary>
         [SDKProperty("resource_type", IsPath = true)]
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]

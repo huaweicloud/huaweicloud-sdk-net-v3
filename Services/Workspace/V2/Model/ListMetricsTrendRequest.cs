@@ -144,6 +144,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
 
 
         /// <summary>
+        /// 指标维度 | 目前最大支持3个维度，必须从0开始；维度格式为dim.{i}&#x3D;key,value，key的最大长度32，value的最大长度为256。 单维度：dim.0&#x3D;instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d 多维度：dim.0&#x3D;key,value&amp;dim.1&#x3D;key,value。
+        /// </summary>
+        [SDKProperty("dim", IsQuery = true)]
+        [JsonProperty("dim", NullValueHandling = NullValueHandling.Ignore)]
+        public string Dim { get; set; }
+
+        /// <summary>
         /// 开始时间。
         /// </summary>
         [SDKProperty("start_time", IsQuery = true)]
@@ -156,13 +163,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [SDKProperty("end_time", IsQuery = true)]
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string EndTime { get; set; }
-
-        /// <summary>
-        /// 指标维度 | 目前最大支持3个维度，必须从0开始；维度格式为dim.{i}&#x3D;key,value，key的最大长度32，value的最大长度为256。 单维度：dim.0&#x3D;instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d 多维度：dim.0&#x3D;key,value&amp;dim.1&#x3D;key,value。
-        /// </summary>
-        [SDKProperty("dim", IsQuery = true)]
-        [JsonProperty("dim", NullValueHandling = NullValueHandling.Ignore)]
-        public string Dim { get; set; }
 
         /// <summary>
         /// 指标名称列表。
@@ -186,9 +186,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListMetricsTrendRequest {\n");
+            sb.Append("  dim: ").Append(Dim).Append("\n");
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
-            sb.Append("  dim: ").Append(Dim).Append("\n");
             sb.Append("  metricNames: ").Append(MetricNames).Append("\n");
             sb.Append("  period: ").Append(Period).Append("\n");
             sb.Append("}\n");
@@ -209,9 +209,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public bool Equals(ListMetricsTrendRequest input)
         {
             if (input == null) return false;
+            if (this.Dim != input.Dim || (this.Dim != null && !this.Dim.Equals(input.Dim))) return false;
             if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
-            if (this.Dim != input.Dim || (this.Dim != null && !this.Dim.Equals(input.Dim))) return false;
             if (this.MetricNames != input.MetricNames || (this.MetricNames != null && input.MetricNames != null && !this.MetricNames.SequenceEqual(input.MetricNames))) return false;
             if (this.Period != input.Period) return false;
 
@@ -226,9 +226,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.Dim != null) hashCode = hashCode * 59 + this.Dim.GetHashCode();
                 if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.Dim != null) hashCode = hashCode * 59 + this.Dim.GetHashCode();
                 if (this.MetricNames != null) hashCode = hashCode * 59 + this.MetricNames.GetHashCode();
                 hashCode = hashCode * 59 + this.Period.GetHashCode();
                 return hashCode;

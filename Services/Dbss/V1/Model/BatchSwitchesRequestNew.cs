@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     public class BatchSwitchesRequestNew 
     {
         /// <summary>
-        /// 开关状态 - OFF: 关闭 - ON: 开启
+        /// 开关状态 - OFF：关闭 - ON：开启
         /// </summary>
-        /// <value>开关状态 - OFF: 关闭 - ON: 开启</value>
+        /// <value>开关状态 - OFF：关闭 - ON：开启</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public List<string> Ids { get; set; }
 
         /// <summary>
-        /// 开关状态 - OFF: 关闭 - ON: 开启
+        /// 开关状态 - OFF：关闭 - ON：开启
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }

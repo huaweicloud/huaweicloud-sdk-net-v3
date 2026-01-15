@@ -53,6 +53,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
+        /// 当不封装镜像时,用此字段来区分是否删除用户信息，默认为false。不删除用户信息：false，删除用户信息：true。
+        /// </summary>
+        [JsonProperty("is_clear_data", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsClearData { get; set; }
+
+        /// <summary>
         /// 表示镜像支持的最大内存，单位为MB。
         /// </summary>
         [JsonProperty("max_ram", NullValueHandling = NullValueHandling.Ignore)]
@@ -79,6 +85,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  executeSysprep: ").Append(ExecuteSysprep).Append("\n");
             sb.Append("  imageTags: ").Append(ImageTags).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  isClearData: ").Append(IsClearData).Append("\n");
             sb.Append("  maxRam: ").Append(MaxRam).Append("\n");
             sb.Append("  minRam: ").Append(MinRam).Append("\n");
             sb.Append("}\n");
@@ -105,6 +112,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.ExecuteSysprep != input.ExecuteSysprep || (this.ExecuteSysprep != null && !this.ExecuteSysprep.Equals(input.ExecuteSysprep))) return false;
             if (this.ImageTags != input.ImageTags || (this.ImageTags != null && input.ImageTags != null && !this.ImageTags.SequenceEqual(input.ImageTags))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.IsClearData != input.IsClearData || (this.IsClearData != null && !this.IsClearData.Equals(input.IsClearData))) return false;
             if (this.MaxRam != input.MaxRam || (this.MaxRam != null && !this.MaxRam.Equals(input.MaxRam))) return false;
             if (this.MinRam != input.MinRam || (this.MinRam != null && !this.MinRam.Equals(input.MinRam))) return false;
 
@@ -125,6 +133,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.ExecuteSysprep != null) hashCode = hashCode * 59 + this.ExecuteSysprep.GetHashCode();
                 if (this.ImageTags != null) hashCode = hashCode * 59 + this.ImageTags.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.IsClearData != null) hashCode = hashCode * 59 + this.IsClearData.GetHashCode();
                 if (this.MaxRam != null) hashCode = hashCode * 59 + this.MaxRam.GetHashCode();
                 if (this.MinRam != null) hashCode = hashCode * 59 + this.MinRam.GetHashCode();
                 return hashCode;

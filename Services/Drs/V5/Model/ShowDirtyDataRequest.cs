@@ -172,6 +172,20 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
+        /// <summary>
+        /// 是否脱敏。
+        /// </summary>
+        [SDKProperty("anonymize_mode", IsQuery = true)]
+        [JsonProperty("anonymize_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? AnonymizeMode { get; set; }
+
+        /// <summary>
+        /// 查询任务阶段信息，不传默认查增量阶段信息。 - FULL_TRANSFER，全量阶段
+        /// </summary>
+        [SDKProperty("task_mode", IsQuery = true)]
+        [JsonProperty("task_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string TaskMode { get; set; }
+
 
 
         /// <summary>
@@ -187,6 +201,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  anonymizeMode: ").Append(AnonymizeMode).Append("\n");
+            sb.Append("  taskMode: ").Append(TaskMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -211,6 +227,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.AnonymizeMode != input.AnonymizeMode || (this.AnonymizeMode != null && !this.AnonymizeMode.Equals(input.AnonymizeMode))) return false;
+            if (this.TaskMode != input.TaskMode || (this.TaskMode != null && !this.TaskMode.Equals(input.TaskMode))) return false;
 
             return true;
         }
@@ -229,6 +247,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.AnonymizeMode != null) hashCode = hashCode * 59 + this.AnonymizeMode.GetHashCode();
+                if (this.TaskMode != null) hashCode = hashCode * 59 + this.TaskMode.GetHashCode();
                 return hashCode;
             }
         }

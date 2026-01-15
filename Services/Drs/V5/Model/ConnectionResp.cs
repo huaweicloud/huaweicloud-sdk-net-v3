@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public long? CreateTime { get; set; }
 
         /// <summary>
-        /// 连接类型。
+        /// 连接类型。 取值：mysql - postgresql - mongodb - oracle
         /// </summary>
         [JsonProperty("db_type", NullValueHandling = NullValueHandling.Ignore)]
         public string DbType { get; set; }

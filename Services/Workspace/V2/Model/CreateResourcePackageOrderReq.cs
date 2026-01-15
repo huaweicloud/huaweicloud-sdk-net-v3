@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// 资源包。
         /// </summary>
         [JsonProperty("resource_packages", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ResourcePackage> ResourcePackages { get; set; }
+        public List<DesktopResourcePackage> ResourcePackages { get; set; }
 
         /// <summary>
         /// 购买资源包数量。

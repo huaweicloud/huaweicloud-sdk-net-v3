@@ -94,6 +94,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("record_audit", NullValueHandling = NullValueHandling.Ignore)]
         public PoliciesRecordAudit RecordAudit { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("cloud_storage", NullValueHandling = NullValueHandling.Ignore)]
+        public PoliciesCloudStorage CloudStorage { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("user_profile", NullValueHandling = NullValueHandling.Ignore)]
+        public PoliciesUserProfile UserProfile { get; set; }
+
 
 
         /// <summary>
@@ -116,6 +128,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  personalizedDataMgmt: ").Append(PersonalizedDataMgmt).Append("\n");
             sb.Append("  custom: ").Append(Custom).Append("\n");
             sb.Append("  recordAudit: ").Append(RecordAudit).Append("\n");
+            sb.Append("  cloudStorage: ").Append(CloudStorage).Append("\n");
+            sb.Append("  userProfile: ").Append(UserProfile).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -147,6 +161,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.PersonalizedDataMgmt != input.PersonalizedDataMgmt || (this.PersonalizedDataMgmt != null && !this.PersonalizedDataMgmt.Equals(input.PersonalizedDataMgmt))) return false;
             if (this.Custom != input.Custom || (this.Custom != null && !this.Custom.Equals(input.Custom))) return false;
             if (this.RecordAudit != input.RecordAudit || (this.RecordAudit != null && !this.RecordAudit.Equals(input.RecordAudit))) return false;
+            if (this.CloudStorage != input.CloudStorage || (this.CloudStorage != null && !this.CloudStorage.Equals(input.CloudStorage))) return false;
+            if (this.UserProfile != input.UserProfile || (this.UserProfile != null && !this.UserProfile.Equals(input.UserProfile))) return false;
 
             return true;
         }
@@ -172,6 +188,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.PersonalizedDataMgmt != null) hashCode = hashCode * 59 + this.PersonalizedDataMgmt.GetHashCode();
                 if (this.Custom != null) hashCode = hashCode * 59 + this.Custom.GetHashCode();
                 if (this.RecordAudit != null) hashCode = hashCode * 59 + this.RecordAudit.GetHashCode();
+                if (this.CloudStorage != null) hashCode = hashCode * 59 + this.CloudStorage.GetHashCode();
+                if (this.UserProfile != null) hashCode = hashCode * 59 + this.UserProfile.GetHashCode();
                 return hashCode;
             }
         }

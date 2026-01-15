@@ -232,9 +232,9 @@ namespace HuaweiCloud.SDK.Dbss.V1
         }
         
         /// <summary>
-        /// 绑定数据库加密实例的eip
+        /// 绑定数据库加密实例的EIP
         ///
-        /// 绑定数据库加密实例的eip
+        /// 绑定数据库加密实例的EIP
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -258,9 +258,9 @@ namespace HuaweiCloud.SDK.Dbss.V1
         }
         
         /// <summary>
-        /// 绑定数据库运维实例的eip
+        /// 绑定数据库运维实例的EIP
         ///
-        /// 绑定数据库运维实例的eip
+        /// 绑定数据库运维实例的EIP
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -638,7 +638,7 @@ namespace HuaweiCloud.SDK.Dbss.V1
         /// <summary>
         /// 按包周期方式购买数据库加密实例
         ///
-        /// 按需方式购买数据库加密实例
+        /// 按包周期方式购买数据库加密实例
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -3493,9 +3493,9 @@ namespace HuaweiCloud.SDK.Dbss.V1
         }
         
         /// <summary>
-        /// 解绑数据库加密实例的eip
+        /// 解绑数据库加密实例的EIP
         ///
-        /// 解绑数据库加密实例的eip
+        /// 解绑数据库加密实例的EIP
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -3519,9 +3519,9 @@ namespace HuaweiCloud.SDK.Dbss.V1
         }
         
         /// <summary>
-        /// 解绑数据库运维实例的eip
+        /// 解绑数据库运维实例的EIP
         ///
-        /// 解绑数据库运维实例的eip
+        /// 解绑数据库运维实例的EIP
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

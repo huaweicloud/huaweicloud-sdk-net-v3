@@ -29,12 +29,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string KeyAlgorithm { get; set; }
 
         /// <summary>
-        /// 签名哈希算法 SHA-256 SHA-512。
-        /// </summary>
-        [JsonProperty("signature_algorithm", NullValueHandling = NullValueHandling.Ignore)]
-        public string SignatureAlgorithm { get; set; }
-
-        /// <summary>
         /// 事务id。
         /// </summary>
         [JsonProperty("transaction_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -51,7 +45,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("class CreateCertSignatureReq {\n");
             sb.Append("  distinguishedName: ").Append(DistinguishedName).Append("\n");
             sb.Append("  keyAlgorithm: ").Append(KeyAlgorithm).Append("\n");
-            sb.Append("  signatureAlgorithm: ").Append(SignatureAlgorithm).Append("\n");
             sb.Append("  transactionId: ").Append(TransactionId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -73,7 +66,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (input == null) return false;
             if (this.DistinguishedName != input.DistinguishedName || (this.DistinguishedName != null && !this.DistinguishedName.Equals(input.DistinguishedName))) return false;
             if (this.KeyAlgorithm != input.KeyAlgorithm || (this.KeyAlgorithm != null && !this.KeyAlgorithm.Equals(input.KeyAlgorithm))) return false;
-            if (this.SignatureAlgorithm != input.SignatureAlgorithm || (this.SignatureAlgorithm != null && !this.SignatureAlgorithm.Equals(input.SignatureAlgorithm))) return false;
             if (this.TransactionId != input.TransactionId || (this.TransactionId != null && !this.TransactionId.Equals(input.TransactionId))) return false;
 
             return true;
@@ -89,7 +81,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 var hashCode = 41;
                 if (this.DistinguishedName != null) hashCode = hashCode * 59 + this.DistinguishedName.GetHashCode();
                 if (this.KeyAlgorithm != null) hashCode = hashCode * 59 + this.KeyAlgorithm.GetHashCode();
-                if (this.SignatureAlgorithm != null) hashCode = hashCode * 59 + this.SignatureAlgorithm.GetHashCode();
                 if (this.TransactionId != null) hashCode = hashCode * 59 + this.TransactionId.GetHashCode();
                 return hashCode;
             }

@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public bool? SendSuccess { get; set; }
 
         /// <summary>
-        /// 文件解析状态。
+        /// 文件解析状态。 取值：success，failed
         /// </summary>
         [JsonProperty("process_status", NullValueHandling = NullValueHandling.Ignore)]
         public string ProcessStatus { get; set; }

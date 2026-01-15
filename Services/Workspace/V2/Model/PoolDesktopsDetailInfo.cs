@@ -569,6 +569,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public HourPackageInfo HourPackageInfo { get; set; }
 
         /// <summary>
+        /// 是否冻结
+        /// </summary>
+        [JsonProperty("is_freeze", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsFreeze { get; set; }
+
+        /// <summary>
         /// 桌面与桌面池不一致的规格类型: - PRODUCT: 产品ID不一致 - IMAGE: 镜像ID不一致
         /// </summary>
         [JsonProperty("inconsistent_types", NullValueHandling = NullValueHandling.Ignore)]
@@ -628,6 +634,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  process: ").Append(Process).Append("\n");
             sb.Append("  rootResourceId: ").Append(RootResourceId).Append("\n");
             sb.Append("  hourPackageInfo: ").Append(HourPackageInfo).Append("\n");
+            sb.Append("  isFreeze: ").Append(IsFreeze).Append("\n");
             sb.Append("  inconsistentTypes: ").Append(InconsistentTypes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -692,6 +699,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.Process != input.Process || (this.Process != null && !this.Process.Equals(input.Process))) return false;
             if (this.RootResourceId != input.RootResourceId || (this.RootResourceId != null && !this.RootResourceId.Equals(input.RootResourceId))) return false;
             if (this.HourPackageInfo != input.HourPackageInfo || (this.HourPackageInfo != null && !this.HourPackageInfo.Equals(input.HourPackageInfo))) return false;
+            if (this.IsFreeze != input.IsFreeze || (this.IsFreeze != null && !this.IsFreeze.Equals(input.IsFreeze))) return false;
             if (this.InconsistentTypes != input.InconsistentTypes || (this.InconsistentTypes != null && input.InconsistentTypes != null && !this.InconsistentTypes.SequenceEqual(input.InconsistentTypes))) return false;
 
             return true;
@@ -750,6 +758,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Process != null) hashCode = hashCode * 59 + this.Process.GetHashCode();
                 if (this.RootResourceId != null) hashCode = hashCode * 59 + this.RootResourceId.GetHashCode();
                 if (this.HourPackageInfo != null) hashCode = hashCode * 59 + this.HourPackageInfo.GetHashCode();
+                if (this.IsFreeze != null) hashCode = hashCode * 59 + this.IsFreeze.GetHashCode();
                 if (this.InconsistentTypes != null) hashCode = hashCode * 59 + this.InconsistentTypes.GetHashCode();
                 return hashCode;
             }

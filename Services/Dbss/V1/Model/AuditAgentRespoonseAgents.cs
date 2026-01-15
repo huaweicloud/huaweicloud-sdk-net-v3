@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string AgentId { get; set; }
 
         /// <summary>
-        /// agent 类型 - DB: 数据库端 - APP: 应用端
+        /// agent 类型 - DB：数据库端 - APP：应用端
         /// </summary>
         [JsonProperty("agent_type", NullValueHandling = NullValueHandling.Ignore)]
         public string AgentType { get; set; }

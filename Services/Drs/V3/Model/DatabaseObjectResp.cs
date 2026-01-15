@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         public string JobId { get; set; }
 
         /// <summary>
-        /// 选择对象任务成功标志
+        /// 选择对象任务成功标志：true，false
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Status { get; set; }

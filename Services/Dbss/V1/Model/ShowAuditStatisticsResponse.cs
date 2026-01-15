@@ -56,7 +56,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// 
         /// </summary>
         [JsonProperty("unsupported_audit_infos", NullValueHandling = NullValueHandling.Ignore)]
-        public UnSupportAuditInfoResponse UnsupportedAuditInfos { get; set; }
+        public UnsupportedAuditInfoResponse UnsupportedAuditInfos { get; set; }
 
         /// <summary>
         /// 更新时间

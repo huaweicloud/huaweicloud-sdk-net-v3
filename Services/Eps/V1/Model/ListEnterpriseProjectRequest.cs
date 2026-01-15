@@ -245,6 +245,121 @@ namespace HuaweiCloud.SDK.Eps.V1.Model
             }
         }
 
+        /// <summary>
+        /// 查询项目类型。 - prod-商用项目 - poc-测试项目
+        /// </summary>
+        /// <value>查询项目类型。 - prod-商用项目 - poc-测试项目</value>
+        [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
+        public class TypeEnum
+        {
+            /// <summary>
+            /// Enum PROD for value: prod
+            /// </summary>
+            public static readonly TypeEnum PROD = new TypeEnum("prod");
+
+            /// <summary>
+            /// Enum POC for value: poc
+            /// </summary>
+            public static readonly TypeEnum POC = new TypeEnum("poc");
+
+            private static readonly Dictionary<string, TypeEnum> StaticFields =
+            new Dictionary<string, TypeEnum>()
+            {
+                { "prod", PROD },
+                { "poc", POC },
+            };
+
+            private string _value;
+
+            public TypeEnum()
+            {
+
+            }
+
+            public TypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static TypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as TypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(TypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(TypeEnum a, TypeEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(TypeEnum a, TypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 企业项目ID，0表示默认企业项目
@@ -293,6 +408,12 @@ namespace HuaweiCloud.SDK.Eps.V1.Model
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public int? Status { get; set; }
 
+        /// <summary>
+        /// 查询项目类型。 - prod-商用项目 - poc-测试项目
+        /// </summary>
+        [SDKProperty("type", IsQuery = true)]
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public TypeEnum Type { get; set; }
 
 
         /// <summary>
@@ -309,6 +430,7 @@ namespace HuaweiCloud.SDK.Eps.V1.Model
             sb.Append("  sortDir: ").Append(SortDir).Append("\n");
             sb.Append("  sortKey: ").Append(SortKey).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -334,6 +456,7 @@ namespace HuaweiCloud.SDK.Eps.V1.Model
             if (this.SortDir != input.SortDir) return false;
             if (this.SortKey != input.SortKey) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Type != input.Type) return false;
 
             return true;
         }
@@ -353,6 +476,7 @@ namespace HuaweiCloud.SDK.Eps.V1.Model
                 hashCode = hashCode * 59 + this.SortDir.GetHashCode();
                 hashCode = hashCode * 59 + this.SortKey.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;
             }
         }

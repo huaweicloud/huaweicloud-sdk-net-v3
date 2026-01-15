@@ -367,7 +367,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         [JsonProperty("compare_result", NullValueHandling = NullValueHandling.Ignore)]
         public CompareResultEnum CompareResult { get; set; }
         /// <summary>
-        /// 参数类型
+        /// 参数类型 figure，string
         /// </summary>
         [JsonProperty("data_type", NullValueHandling = NullValueHandling.Ignore)]
         public string DataType { get; set; }
@@ -378,7 +378,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         [JsonProperty("group", NullValueHandling = NullValueHandling.Ignore)]
         public GroupEnum Group { get; set; }
         /// <summary>
-        /// 参数名
+        /// 参数名 binlog_cache_size，binlog_stmt_cache_size，bulk_insert_buffer_size，character_set_server，collation_server...
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }

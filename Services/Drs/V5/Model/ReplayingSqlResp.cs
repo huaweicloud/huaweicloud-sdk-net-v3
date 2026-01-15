@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public int? ExecuteLatency { get; set; }
 
         /// <summary>
-        /// 执行状态
+        /// 执行状态 取值：INIT，RUNNING，FAILED，PAUSE，SUCCESS，FINISHED
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }

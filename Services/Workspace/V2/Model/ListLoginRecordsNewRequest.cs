@@ -52,6 +52,20 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string TerminalType { get; set; }
 
         /// <summary>
+        /// 企业项目ID。
+        /// </summary>
+        [SDKProperty("enterprise_project_id", IsQuery = true)]
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
+        /// 终端出口IP。
+        /// </summary>
+        [SDKProperty("public_ip", IsQuery = true)]
+        [JsonProperty("public_ip", NullValueHandling = NullValueHandling.Ignore)]
+        public string PublicIp { get; set; }
+
+        /// <summary>
         /// 用于分页查询，查询的起始记录序号，从0开始。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
@@ -79,13 +93,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("max_network_rtt", NullValueHandling = NullValueHandling.Ignore)]
         public int? MaxNetworkRtt { get; set; }
 
-        /// <summary>
-        /// 企业项目ID。
-        /// </summary>
-        [SDKProperty("enterprise_project_id", IsQuery = true)]
-        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string EnterpriseProjectId { get; set; }
-
 
 
         /// <summary>
@@ -100,11 +107,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  userName: ").Append(UserName).Append("\n");
             sb.Append("  computerName: ").Append(ComputerName).Append("\n");
             sb.Append("  terminalType: ").Append(TerminalType).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  publicIp: ").Append(PublicIp).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  minNetworkRtt: ").Append(MinNetworkRtt).Append("\n");
             sb.Append("  maxNetworkRtt: ").Append(MaxNetworkRtt).Append("\n");
-            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -128,11 +136,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
             if (this.ComputerName != input.ComputerName || (this.ComputerName != null && !this.ComputerName.Equals(input.ComputerName))) return false;
             if (this.TerminalType != input.TerminalType || (this.TerminalType != null && !this.TerminalType.Equals(input.TerminalType))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.PublicIp != input.PublicIp || (this.PublicIp != null && !this.PublicIp.Equals(input.PublicIp))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.MinNetworkRtt != input.MinNetworkRtt || (this.MinNetworkRtt != null && !this.MinNetworkRtt.Equals(input.MinNetworkRtt))) return false;
             if (this.MaxNetworkRtt != input.MaxNetworkRtt || (this.MaxNetworkRtt != null && !this.MaxNetworkRtt.Equals(input.MaxNetworkRtt))) return false;
-            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
 
             return true;
         }
@@ -150,11 +159,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
                 if (this.ComputerName != null) hashCode = hashCode * 59 + this.ComputerName.GetHashCode();
                 if (this.TerminalType != null) hashCode = hashCode * 59 + this.TerminalType.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.PublicIp != null) hashCode = hashCode * 59 + this.PublicIp.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.MinNetworkRtt != null) hashCode = hashCode * 59 + this.MinNetworkRtt.GetHashCode();
                 if (this.MaxNetworkRtt != null) hashCode = hashCode * 59 + this.MaxNetworkRtt.GetHashCode();
-                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

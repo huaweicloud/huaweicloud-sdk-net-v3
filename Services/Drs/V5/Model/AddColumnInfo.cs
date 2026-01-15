@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     {
 
         /// <summary>
-        /// 列类型
+        /// 列类型 取值：default_value，create_time，update_time，expression，server_database_table
         /// </summary>
         [JsonProperty("column_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ColumnType { get; set; }
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public string ColumnValue { get; set; }
 
         /// <summary>
-        /// 填充列的数据类型
+        /// 填充列的数据类型 取值：int，long，varchar(256)，varchar(191)，datetime，timestamp
         /// </summary>
         [JsonProperty("data_type", NullValueHandling = NullValueHandling.Ignore)]
         public string DataType { get; set; }

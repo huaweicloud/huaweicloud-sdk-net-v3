@@ -19,8 +19,8 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// <summary>
         /// ecs规格集合
         /// </summary>
-        [JsonProperty("specification", NullValueHandling = NullValueHandling.Ignore)]
-        public List<EcsSpecificationBean> Specification { get; set; }
+        [JsonProperty("specifications", NullValueHandling = NullValueHandling.Ignore)]
+        public List<EcsSpecificationBean> Specifications { get; set; }
 
 
 
@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListEcsSpecificationNewResponse {\n");
-            sb.Append("  specification: ").Append(Specification).Append("\n");
+            sb.Append("  specifications: ").Append(Specifications).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public bool Equals(ListEcsSpecificationNewResponse input)
         {
             if (input == null) return false;
-            if (this.Specification != input.Specification || (this.Specification != null && input.Specification != null && !this.Specification.SequenceEqual(input.Specification))) return false;
+            if (this.Specifications != input.Specifications || (this.Specifications != null && input.Specifications != null && !this.Specifications.SequenceEqual(input.Specifications))) return false;
 
             return true;
         }
@@ -63,7 +63,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Specification != null) hashCode = hashCode * 59 + this.Specification.GetHashCode();
+                if (this.Specifications != null) hashCode = hashCode * 59 + this.Specifications.GetHashCode();
                 return hashCode;
             }
         }

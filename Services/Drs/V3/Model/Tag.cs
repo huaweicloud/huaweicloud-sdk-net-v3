@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
     {
 
         /// <summary>
-        /// 标签key
+        /// 标签key \&quot;key1\&quot; : \&quot;value1\&quot;, \&quot;key2\&quot; : \&quot;value2\&quot;
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }

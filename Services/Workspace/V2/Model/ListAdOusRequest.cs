@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 域。
+        /// 域，默认查询主域。
         /// </summary>
         [SDKProperty("domain", IsQuery = true)]
         [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]

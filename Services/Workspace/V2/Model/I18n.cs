@@ -28,6 +28,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("en_us", NullValueHandling = NullValueHandling.Ignore)]
         public string EnUs { get; set; }
 
+        /// <summary>
+        /// 可用分区西班牙语名称。
+        /// </summary>
+        [JsonProperty("es_us", NullValueHandling = NullValueHandling.Ignore)]
+        public string EsUs { get; set; }
+
+        /// <summary>
+        /// 可用分区葡萄牙语名称。
+        /// </summary>
+        [JsonProperty("pt_br", NullValueHandling = NullValueHandling.Ignore)]
+        public string PtBr { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +51,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("class I18n {\n");
             sb.Append("  zhCn: ").Append(ZhCn).Append("\n");
             sb.Append("  enUs: ").Append(EnUs).Append("\n");
+            sb.Append("  esUs: ").Append(EsUs).Append("\n");
+            sb.Append("  ptBr: ").Append(PtBr).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +73,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (input == null) return false;
             if (this.ZhCn != input.ZhCn || (this.ZhCn != null && !this.ZhCn.Equals(input.ZhCn))) return false;
             if (this.EnUs != input.EnUs || (this.EnUs != null && !this.EnUs.Equals(input.EnUs))) return false;
+            if (this.EsUs != input.EsUs || (this.EsUs != null && !this.EsUs.Equals(input.EsUs))) return false;
+            if (this.PtBr != input.PtBr || (this.PtBr != null && !this.PtBr.Equals(input.PtBr))) return false;
 
             return true;
         }
@@ -73,6 +89,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 var hashCode = 41;
                 if (this.ZhCn != null) hashCode = hashCode * 59 + this.ZhCn.GetHashCode();
                 if (this.EnUs != null) hashCode = hashCode * 59 + this.EnUs.GetHashCode();
+                if (this.EsUs != null) hashCode = hashCode * 59 + this.EsUs.GetHashCode();
+                if (this.PtBr != null) hashCode = hashCode * 59 + this.PtBr.GetHashCode();
                 return hashCode;
             }
         }

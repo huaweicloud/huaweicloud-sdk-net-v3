@@ -1139,6 +1139,121 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
             }
         }
 
+        /// <summary>
+        /// 灾备任务内核方向，up上云，down下云。当任务处于倒换中，与灾备任务方向相反，否则相同。
+        /// </summary>
+        /// <value>灾备任务内核方向，up上云，down下云。当任务处于倒换中，与灾备任务方向相反，否则相同。</value>
+        [JsonConverter(typeof(EnumClassConverter<JobKernelDirectionEnum>))]
+        public class JobKernelDirectionEnum
+        {
+            /// <summary>
+            /// Enum UP for value: up
+            /// </summary>
+            public static readonly JobKernelDirectionEnum UP = new JobKernelDirectionEnum("up");
+
+            /// <summary>
+            /// Enum DOWN for value: down
+            /// </summary>
+            public static readonly JobKernelDirectionEnum DOWN = new JobKernelDirectionEnum("down");
+
+            private static readonly Dictionary<string, JobKernelDirectionEnum> StaticFields =
+            new Dictionary<string, JobKernelDirectionEnum>()
+            {
+                { "up", UP },
+                { "down", DOWN },
+            };
+
+            private string _value;
+
+            public JobKernelDirectionEnum()
+            {
+
+            }
+
+            public JobKernelDirectionEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static JobKernelDirectionEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as JobKernelDirectionEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(JobKernelDirectionEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(JobKernelDirectionEnum a, JobKernelDirectionEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(JobKernelDirectionEnum a, JobKernelDirectionEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 任务id
@@ -1498,6 +1613,11 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         [JsonProperty("is_open_fast_clean", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsOpenFastClean { get; set; }
 
+        /// <summary>
+        /// 灾备任务内核方向，up上云，down下云。当任务处于倒换中，与灾备任务方向相反，否则相同。
+        /// </summary>
+        [JsonProperty("job_kernel_direction", NullValueHandling = NullValueHandling.Ignore)]
+        public JobKernelDirectionEnum JobKernelDirection { get; set; }
 
 
         /// <summary>
@@ -1568,6 +1688,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
             sb.Append("  bindPublicIpState: ").Append(BindPublicIpState).Append("\n");
             sb.Append("  children: ").Append(Children).Append("\n");
             sb.Append("  isOpenFastClean: ").Append(IsOpenFastClean).Append("\n");
+            sb.Append("  jobKernelDirection: ").Append(JobKernelDirection).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -1647,6 +1768,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
             if (this.BindPublicIpState != input.BindPublicIpState || (this.BindPublicIpState != null && !this.BindPublicIpState.Equals(input.BindPublicIpState))) return false;
             if (this.Children != input.Children || (this.Children != null && input.Children != null && !this.Children.SequenceEqual(input.Children))) return false;
             if (this.IsOpenFastClean != input.IsOpenFastClean || (this.IsOpenFastClean != null && !this.IsOpenFastClean.Equals(input.IsOpenFastClean))) return false;
+            if (this.JobKernelDirection != input.JobKernelDirection) return false;
 
             return true;
         }
@@ -1720,6 +1842,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
                 if (this.BindPublicIpState != null) hashCode = hashCode * 59 + this.BindPublicIpState.GetHashCode();
                 if (this.Children != null) hashCode = hashCode * 59 + this.Children.GetHashCode();
                 if (this.IsOpenFastClean != null) hashCode = hashCode * 59 + this.IsOpenFastClean.GetHashCode();
+                hashCode = hashCode * 59 + this.JobKernelDirection.GetHashCode();
                 return hashCode;
             }
         }

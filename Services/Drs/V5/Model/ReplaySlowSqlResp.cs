@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     {
 
         /// <summary>
-        /// SQL语句类型
+        /// SQL语句类型 取值：SELECT, INSERT, DELETE, UPDATE, DDL
         /// </summary>
         [JsonProperty("object_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ObjectType { get; set; }

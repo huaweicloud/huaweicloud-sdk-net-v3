@@ -161,6 +161,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
         /// <summary>
+        /// 授权给Billing服务的委托URN。使用RAM共享密钥创建包周期云桌面或添加包周期磁盘、重建系统时，需要传入该字段。
+        /// </summary>
+        [JsonProperty("agency_urn", NullValueHandling = NullValueHandling.Ignore)]
+        public string AgencyUrn { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("add_volume_param", NullValueHandling = NullValueHandling.Ignore)]
@@ -206,6 +212,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             var sb = new StringBuilder();
             sb.Append("class CreateBatchChangeOrderRequestBody {\n");
             sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  agencyUrn: ").Append(AgencyUrn).Append("\n");
             sb.Append("  addVolumeParam: ").Append(AddVolumeParam).Append("\n");
             sb.Append("  extendVolumeParam: ").Append(ExtendVolumeParam).Append("\n");
             sb.Append("  resizeParam: ").Append(ResizeParam).Append("\n");
@@ -231,6 +238,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             if (input == null) return false;
             if (this.Type != input.Type) return false;
+            if (this.AgencyUrn != input.AgencyUrn || (this.AgencyUrn != null && !this.AgencyUrn.Equals(input.AgencyUrn))) return false;
             if (this.AddVolumeParam != input.AddVolumeParam || (this.AddVolumeParam != null && !this.AddVolumeParam.Equals(input.AddVolumeParam))) return false;
             if (this.ExtendVolumeParam != input.ExtendVolumeParam || (this.ExtendVolumeParam != null && !this.ExtendVolumeParam.Equals(input.ExtendVolumeParam))) return false;
             if (this.ResizeParam != input.ResizeParam || (this.ResizeParam != null && !this.ResizeParam.Equals(input.ResizeParam))) return false;
@@ -250,6 +258,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             {
                 var hashCode = 41;
                 hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.AgencyUrn != null) hashCode = hashCode * 59 + this.AgencyUrn.GetHashCode();
                 if (this.AddVolumeParam != null) hashCode = hashCode * 59 + this.AddVolumeParam.GetHashCode();
                 if (this.ExtendVolumeParam != null) hashCode = hashCode * 59 + this.ExtendVolumeParam.GetHashCode();
                 if (this.ResizeParam != null) hashCode = hashCode * 59 + this.ResizeParam.GetHashCode();

@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 数据库类型。
+        /// 数据库类型。 取值：mysql - postgresql - mongodb - oracle
         /// </summary>
         [JsonProperty("db_type", NullValueHandling = NullValueHandling.Ignore)]
         public string DbType { get; set; }

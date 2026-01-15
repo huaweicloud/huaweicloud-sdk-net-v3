@@ -226,8 +226,8 @@ the [CHANGELOG.md](https://github.com/huaweicloud/huaweicloud-sdk-net-v3/blob/ma
     * [1.3 Timeout Configuration](#13-timeout-configuration-top)
     * [1.4 SSL Certification](#14-ssl-certification-top)
 * [2. Credentials Configuration](#2-credentials-configuration-top)
-    * [2.1 Use Permanent AK&SK](#21-use-permanent-aksk-top)
-    * [2.2 Use Temporary AK&SK](#22-use-temporary-aksk-top)
+    * [2.1 Use Temporary AK&SK](#22-use-temporary-aksk-top)
+    * [2.2 Use Permanent AK&SK](#21-use-permanent-aksk-top)
     * [2.3 Authentication Management](#23-authentication-management-top)
         * [2.3.1 Environment Variables](#231-environment-variables-top)
         * [2.3.2 Profile](#232-profile-top)
@@ -342,33 +342,7 @@ For `global` services' authentication, domainId is required to initialize Global
 You could use permanent AK and SK **or** use temporary AK and SK and SecurityToken to complete credentials'
 configuration.
 
-#### 2.1 Use Permanent AK&SK [:top:](#user-manual-top)
-
-``` csharp
-// Regional services
-var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
-var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
-var projectId = "{your projectId string}";
-
-Credentials basicCredentials = new BasicCredentials(ak, sk, projectId);
-
-// Global services
-var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
-var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
-var domainId = "{your domainId string}";
-
-Credentials globalCredentials = new GlobalCredentials(ak, sk, domainId);
-```
-
-**Notice**:
-
-- projectId/domainId supports **automatic acquisition** in version `3.0.26-beta` or later, if you want to use this
-  feature, you need to provide the ak and sk of your account and the id of the region, and then build your client
-  instance with method `WithRegion()`, detailed example could refer
-  to [3.2 Initialize the client with specified Region](#32-initialize-the-serviceclient-with-specified-region-recommended-top)
-  .
-
-#### 2.2 Use Temporary AK&SK [:top:](#user-manual-top)
+#### 2.1 Use Temporary AK&SK [:top:](#user-manual-top)
 
 It's required to obtain temporary AK&SK and security token first, which could be obtained through
 permanent AK&SK or through an agency.
@@ -398,6 +372,34 @@ var domainId = "{your domainId string}";
 
 Credentials globalCredentials = new GlobalCredentials(ak, sk, domainId).WithSecurityToken(securityToken);
 ```
+
+#### 2.2 Use Permanent AK&SK [:top:](#user-manual-top)
+
+> ⚠️The Huawei Cloud main account is for administrators and has full access to resources and cloud services. If the AK and SK are leaked, it will pose a significant information security risk to the system; therefore, their use is not recommended.
+> It is recommended to use the AK and SK of a minimally authorized IAM user. For details about how to use IAM securely, please refer to the [Best Practices for Using IAM](https://support.huaweicloud.com/intl/en-us/bestpractice-iam/iam_0426.html).
+
+``` csharp
+// Regional services
+var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
+var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
+var projectId = "{your projectId string}";
+
+Credentials basicCredentials = new BasicCredentials(ak, sk, projectId);
+
+// Global services
+var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
+var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
+var domainId = "{your domainId string}";
+
+Credentials globalCredentials = new GlobalCredentials(ak, sk, domainId);
+```
+
+**Notice**:
+
+- projectId/domainId supports **automatic acquisition** in version `3.0.26-beta` or later, if you want to use this
+  feature, you need to provide the ak and sk of your account and the id of the region, and then build your client
+  instance with method `WithRegion()`, detailed example could refer
+  to [3.2 Initialize the client with specified Region](#32-initialize-the-serviceclient-with-specified-region-recommended-top).
 
 #### 2.3 Authentication Management [:top:](#user-manual-top)
 

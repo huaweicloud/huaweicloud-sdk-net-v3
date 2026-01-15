@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// 状态 - 0: 关闭 - 1：开启
+        /// 状态 - 0：关闭 - 1：开启
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public int? Status { get; set; }

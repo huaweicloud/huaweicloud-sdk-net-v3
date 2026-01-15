@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     {
 
         /// <summary>
-        /// 响应状态 - SUCCESS: 成功  - FAILED: 失败
+        /// 响应状态 - SUCCESS：成功  - FAILED：失败
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }

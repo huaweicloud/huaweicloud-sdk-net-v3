@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     public class CreateDatabaseRequestDatabase 
     {
         /// <summary>
-        /// 字符集。 - GBK： GBK - UTF8：UTF8
+        /// 字符集。 - GBK：GBK - UTF8：UTF8
         /// </summary>
-        /// <value>字符集。 - GBK： GBK - UTF8：UTF8</value>
+        /// <value>字符集。 - GBK：GBK - UTF8：UTF8</value>
         [JsonConverter(typeof(EnumClassConverter<CharsetEnum>))]
         public class CharsetEnum
         {
@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
 
 
         /// <summary>
-        /// 数据库分类 - RDS: RDS数据库 - ECS: 自建数据库
+        /// 数据库分类 - RDS：RDS数据库 - ECS：自建数据库
         /// </summary>
         [JsonProperty("db_classification", NullValueHandling = NullValueHandling.Ignore)]
         public string DbClassification { get; set; }
@@ -144,7 +144,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 数据库类型 - MYSQL: MySQL - ORACLE: Oracle - POSTGRESQL: PostgreSQL - SQLSERVER: SQL Server - DAMENG： DAMENG - TAURUS: Taurus DB - DWS: GaussDB(DWS) - KINGBASE: Kingbase - GAUSSDBOPENGAUSS：GaussDB/openGauss - GREENPLUM： Greenplum - HIGHGO: HIGHGO - SHENTONG： ShenTong - GBASE8A: GBase 8a - GBASE8S： GBase 8s - GBASEXDM： GBase XDM - MONGODB: MongoDB - DDS： DDS(MongoDB)
+        /// 数据库类型 - MYSQL：MySQL - ORACLE：Oracle - POSTGRESQL：PostgreSQL - SQLSERVER：SQL Server - DAMENG：DAMENG - TAURUS：Taurus DB - DWS：GaussDB(DWS) - KINGBASE：Kingbase - GAUSSDBOPENGAUSS：GaussDB/openGauss - GREENPLUM：Greenplum - HIGHGO：HIGHGO - SHENTONG：ShenTong - GBASE8A：GBase 8a - GBASE8S：GBase 8s - GBASEXDM：GBase XDM - MONGODB：MongoDB - DDS：DDS(MongoDB)
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
@@ -156,7 +156,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string Version { get; set; }
 
         /// <summary>
-        /// 字符集。 - GBK： GBK - UTF8：UTF8
+        /// 字符集。 - GBK：GBK - UTF8：UTF8
         /// </summary>
         [JsonProperty("charset", NullValueHandling = NullValueHandling.Ignore)]
         public CharsetEnum Charset { get; set; }

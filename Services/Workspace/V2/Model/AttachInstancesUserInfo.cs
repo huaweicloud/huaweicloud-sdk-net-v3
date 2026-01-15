@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     public class AttachInstancesUserInfo 
     {
         /// <summary>
-        /// 对象类型，可选值为： - USER：用户。 - GROUP：用户组。
+        /// 对象类型，可选值为，默认值为USER： - USER：用户。 - GROUP：用户组。
         /// </summary>
-        /// <value>对象类型，可选值为： - USER：用户。 - GROUP：用户组。</value>
+        /// <value>对象类型，可选值为，默认值为USER： - USER：用户。 - GROUP：用户组。</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -156,7 +156,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string UserGroup { get; set; }
 
         /// <summary>
-        /// 对象类型，可选值为： - USER：用户。 - GROUP：用户组。
+        /// 对象类型，可选值为，默认值为USER： - USER：用户。 - GROUP：用户组。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }

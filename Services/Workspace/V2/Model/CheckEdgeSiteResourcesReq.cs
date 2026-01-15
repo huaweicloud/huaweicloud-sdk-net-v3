@@ -35,10 +35,10 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? ResourceCounts { get; set; }
 
         /// <summary>
-        /// 磁盘列表。
+        /// 磁盘列表。包含系统盘。
         /// </summary>
         [JsonProperty("volumes", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Volume> Volumes { get; set; }
+        public List<CheckEdgeSiteResourcesVolume> Volumes { get; set; }
 
 
 

@@ -40,6 +40,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("desktop_name_policy_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DesktopNamePolicyId { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("encrypt_type", NullValueHandling = NullValueHandling.Ignore)]
+        public EncryptType? EncryptType { get; set; }
+
+        /// <summary>
+        /// 密钥ID，encrypt_type为ENCRYPTED时必传。
+        /// </summary>
+        [JsonProperty("kms_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string KmsId { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +65,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  imageType: ").Append(ImageType).Append("\n");
             sb.Append("  imageId: ").Append(ImageId).Append("\n");
             sb.Append("  desktopNamePolicyId: ").Append(DesktopNamePolicyId).Append("\n");
+            sb.Append("  encryptType: ").Append(EncryptType).Append("\n");
+            sb.Append("  kmsId: ").Append(KmsId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,6 +89,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.ImageType != input.ImageType || (this.ImageType != null && !this.ImageType.Equals(input.ImageType))) return false;
             if (this.ImageId != input.ImageId || (this.ImageId != null && !this.ImageId.Equals(input.ImageId))) return false;
             if (this.DesktopNamePolicyId != input.DesktopNamePolicyId || (this.DesktopNamePolicyId != null && !this.DesktopNamePolicyId.Equals(input.DesktopNamePolicyId))) return false;
+            if (this.EncryptType != input.EncryptType || (this.EncryptType != null && !this.EncryptType.Equals(input.EncryptType))) return false;
+            if (this.KmsId != input.KmsId || (this.KmsId != null && !this.KmsId.Equals(input.KmsId))) return false;
 
             return true;
         }
@@ -91,6 +107,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.ImageType != null) hashCode = hashCode * 59 + this.ImageType.GetHashCode();
                 if (this.ImageId != null) hashCode = hashCode * 59 + this.ImageId.GetHashCode();
                 if (this.DesktopNamePolicyId != null) hashCode = hashCode * 59 + this.DesktopNamePolicyId.GetHashCode();
+                if (this.EncryptType != null) hashCode = hashCode * 59 + this.EncryptType.GetHashCode();
+                if (this.KmsId != null) hashCode = hashCode * 59 + this.KmsId.GetHashCode();
                 return hashCode;
             }
         }

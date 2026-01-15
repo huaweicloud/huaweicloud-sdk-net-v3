@@ -71,6 +71,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string BillResourceId { get; set; }
 
         /// <summary>
+        /// 桌面池磁盘ID。
+        /// </summary>
+        [JsonProperty("desktop_pool_disk_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DesktopPoolDiskId { get; set; }
+
+        /// <summary>
         /// 磁盘的创建时间。
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
@@ -106,6 +112,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  volumeId: ").Append(VolumeId).Append("\n");
             sb.Append("  billResourceId: ").Append(BillResourceId).Append("\n");
+            sb.Append("  desktopPoolDiskId: ").Append(DesktopPoolDiskId).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
             sb.Append("  displayName: ").Append(DisplayName).Append("\n");
             sb.Append("  resourceSpecCode: ").Append(ResourceSpecCode).Append("\n");
@@ -136,6 +143,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.VolumeId != input.VolumeId || (this.VolumeId != null && !this.VolumeId.Equals(input.VolumeId))) return false;
             if (this.BillResourceId != input.BillResourceId || (this.BillResourceId != null && !this.BillResourceId.Equals(input.BillResourceId))) return false;
+            if (this.DesktopPoolDiskId != input.DesktopPoolDiskId || (this.DesktopPoolDiskId != null && !this.DesktopPoolDiskId.Equals(input.DesktopPoolDiskId))) return false;
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
             if (this.DisplayName != input.DisplayName || (this.DisplayName != null && !this.DisplayName.Equals(input.DisplayName))) return false;
             if (this.ResourceSpecCode != input.ResourceSpecCode || (this.ResourceSpecCode != null && !this.ResourceSpecCode.Equals(input.ResourceSpecCode))) return false;
@@ -160,6 +168,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.VolumeId != null) hashCode = hashCode * 59 + this.VolumeId.GetHashCode();
                 if (this.BillResourceId != null) hashCode = hashCode * 59 + this.BillResourceId.GetHashCode();
+                if (this.DesktopPoolDiskId != null) hashCode = hashCode * 59 + this.DesktopPoolDiskId.GetHashCode();
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.DisplayName != null) hashCode = hashCode * 59 + this.DisplayName.GetHashCode();
                 if (this.ResourceSpecCode != null) hashCode = hashCode * 59 + this.ResourceSpecCode.GetHashCode();

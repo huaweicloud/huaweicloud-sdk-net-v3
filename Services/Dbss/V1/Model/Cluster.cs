@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     public class Cluster 
     {
         /// <summary>
-        /// 计费模式  - Period: 包周期  - Demand: 按需
+        /// 计费模式  - Period：包周期  - Demand：按需
         /// </summary>
-        /// <value>计费模式  - Period: 包周期  - Demand: 按需</value>
+        /// <value>计费模式  - Period：包周期  - Demand：按需</value>
         [JsonConverter(typeof(EnumClassConverter<ChargeModelEnum>))]
         public class ChargeModelEnum
         {
@@ -137,9 +137,9 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         }
 
         /// <summary>
-        /// 部署方式  - CLOUD: 云上  - OUTSIDE：云外
+        /// 部署方式  - CLOUD：云上  - OUTSIDE：云外
         /// </summary>
-        /// <value>部署方式  - CLOUD: 云上  - OUTSIDE：云外</value>
+        /// <value>部署方式  - CLOUD：云上  - OUTSIDE：云外</value>
         [JsonConverter(typeof(EnumClassConverter<DeployModeEnum>))]
         public class DeployModeEnum
         {
@@ -259,7 +259,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public InstanceActivateInfo ActivateInfo { get; set; }
 
         /// <summary>
-        /// 计费模式  - Period: 包周期  - Demand: 按需
+        /// 计费模式  - Period：包周期  - Demand：按需
         /// </summary>
         [JsonProperty("charge_model", NullValueHandling = NullValueHandling.Ignore)]
         public ChargeModelEnum ChargeModel { get; set; }
@@ -276,7 +276,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public long? Created { get; set; }
 
         /// <summary>
-        /// 部署方式  - CLOUD: 云上  - OUTSIDE：云外
+        /// 部署方式  - CLOUD：云上  - OUTSIDE：云外
         /// </summary>
         [JsonProperty("deploy_mode", NullValueHandling = NullValueHandling.Ignore)]
         public DeployModeEnum DeployMode { get; set; }

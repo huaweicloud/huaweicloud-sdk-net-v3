@@ -34,6 +34,24 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         [JsonProperty("ovs_hybrid_plug", NullValueHandling = NullValueHandling.Ignore)]
         public bool? OvsHybridPlug { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 辅助弹性网卡的vlan ID。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("vlan_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string VlanId { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 辅助弹性网卡的宿主网卡ID。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("parent_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ParentId { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 辅助弹性网卡的宿主网卡所属的设备ID。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("parent_device_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ParentDeviceId { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +64,9 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             sb.Append("  primaryInterface: ").Append(PrimaryInterface).Append("\n");
             sb.Append("  portFilter: ").Append(PortFilter).Append("\n");
             sb.Append("  ovsHybridPlug: ").Append(OvsHybridPlug).Append("\n");
+            sb.Append("  vlanId: ").Append(VlanId).Append("\n");
+            sb.Append("  parentId: ").Append(ParentId).Append("\n");
+            sb.Append("  parentDeviceId: ").Append(ParentDeviceId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +88,9 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             if (this.PrimaryInterface != input.PrimaryInterface || (this.PrimaryInterface != null && !this.PrimaryInterface.Equals(input.PrimaryInterface))) return false;
             if (this.PortFilter != input.PortFilter || (this.PortFilter != null && !this.PortFilter.Equals(input.PortFilter))) return false;
             if (this.OvsHybridPlug != input.OvsHybridPlug || (this.OvsHybridPlug != null && !this.OvsHybridPlug.Equals(input.OvsHybridPlug))) return false;
+            if (this.VlanId != input.VlanId || (this.VlanId != null && !this.VlanId.Equals(input.VlanId))) return false;
+            if (this.ParentId != input.ParentId || (this.ParentId != null && !this.ParentId.Equals(input.ParentId))) return false;
+            if (this.ParentDeviceId != input.ParentDeviceId || (this.ParentDeviceId != null && !this.ParentDeviceId.Equals(input.ParentDeviceId))) return false;
 
             return true;
         }
@@ -82,6 +106,9 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                 if (this.PrimaryInterface != null) hashCode = hashCode * 59 + this.PrimaryInterface.GetHashCode();
                 if (this.PortFilter != null) hashCode = hashCode * 59 + this.PortFilter.GetHashCode();
                 if (this.OvsHybridPlug != null) hashCode = hashCode * 59 + this.OvsHybridPlug.GetHashCode();
+                if (this.VlanId != null) hashCode = hashCode * 59 + this.VlanId.GetHashCode();
+                if (this.ParentId != null) hashCode = hashCode * 59 + this.ParentId.GetHashCode();
+                if (this.ParentDeviceId != null) hashCode = hashCode * 59 + this.ParentDeviceId.GetHashCode();
                 return hashCode;
             }
         }

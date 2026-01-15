@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string BackupTaskFailReason { get; set; }
 
         /// <summary>
-        /// 备份时间,yyyy-MM-dd HH:mm:ss
+        /// 备份时间，yyyy-MM-dd HH:mm:ss
         /// </summary>
         [JsonProperty("backup_time", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? BackupTime { get; set; }
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public bool? Deleted { get; set; }
 
         /// <summary>
-        /// 备份结束时间,yyyy-MM-dd HH:mm:ss
+        /// 备份结束时间，yyyy-MM-dd HH:mm:ss
         /// </summary>
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? EndTime { get; set; }
@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public long? FileSize { get; set; }
 
         /// <summary>
-        /// 文件大小单位 - Byte：Byte - KB：kb - MB: mb - GB: gb
+        /// 文件大小单位 - Byte：Byte - KB：kb - MB：mb - GB：gb
         /// </summary>
         [JsonProperty("file_size_unit", NullValueHandling = NullValueHandling.Ignore)]
         public string FileSizeUnit { get; set; }
@@ -77,7 +77,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public int? Percentage { get; set; }
 
         /// <summary>
-        /// 进度 - CLEAN_AFTER_FAILED: 清理失败 - DELETING：删除中 - DELETED：已删除 - DELETE_FAIL：删除失败 - RESTORING_WAITING：恢复等待中 - RESTORING：恢复中 - RESTORED：已恢复 - RESTORE_FAIL：恢复失败 - BACKUP_WAITING：等待备份 - FILE_UPLOAD_WAITING：等待上传备份文件 - FILE_UPLOADING：上传中 - AUTO_BACKUPING：自动备份中 - AUTO_BACKUPED：自动备份结束 - AUTO_BACKUP_FAIL：自动备份失败 - MANUAL_BACKUPING：手动备份中 - MANUAL_BACKUPED：手动备份结束 - MANUAL_BACKUP_FAIL：手动备份失败 - ISAP_WAITING：ISAP等待备份 - ISAP_BACKUPING：ISAP备份中 - ISAP_BACKUPED：ISAP备份成功 - ISAP_BACKUP_FAIL：ISAP备份失败 - ISAP_FILE_UPLOAD_WAITING：ISAP等待上传备份文件 - ISAP_FILE_UPLOADING：ISAP上传中
+        /// 进度 - CLEAN_AFTER_FAILED：清理失败 - DELETING：删除中 - DELETED：已删除 - DELETE_FAIL：删除失败 - RESTORING_WAITING：恢复等待中 - RESTORING：恢复中 - RESTORED：已恢复 - RESTORE_FAIL：恢复失败 - BACKUP_WAITING：等待备份 - FILE_UPLOAD_WAITING：等待上传备份文件 - FILE_UPLOADING：上传中 - AUTO_BACKUPING：自动备份中 - AUTO_BACKUPED：自动备份结束 - AUTO_BACKUP_FAIL：自动备份失败 - MANUAL_BACKUPING：手动备份中 - MANUAL_BACKUPED：手动备份结束 - MANUAL_BACKUP_FAIL：手动备份失败 - ISAP_WAITING：ISAP等待备份 - ISAP_BACKUPING：ISAP备份中 - ISAP_BACKUPED：ISAP备份成功 - ISAP_BACKUP_FAIL：ISAP备份失败 - ISAP_FILE_UPLOAD_WAITING：ISAP等待上传备份文件 - ISAP_FILE_UPLOADING：ISAP上传中
         /// </summary>
         [JsonProperty("progress", NullValueHandling = NullValueHandling.Ignore)]
         public string Progress { get; set; }

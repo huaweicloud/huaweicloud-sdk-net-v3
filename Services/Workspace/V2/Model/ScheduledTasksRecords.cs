@@ -88,6 +88,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("execute_object_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ExecuteObjectType { get; set; }
 
+        /// <summary>
+        /// 到期时间，格式为yyyy-MM-dd HH:mm:ss。
+        /// </summary>
+        [JsonProperty("expire_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string ExpireTime { get; set; }
+
+        /// <summary>
+        /// 扩展参数，json格式。
+        /// </summary>
+        [JsonProperty("extra_params", NullValueHandling = NullValueHandling.Ignore)]
+        public string ExtraParams { get; set; }
+
 
 
         /// <summary>
@@ -109,6 +121,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  timeZone: ").Append(TimeZone).Append("\n");
             sb.Append("  executeTaskId: ").Append(ExecuteTaskId).Append("\n");
             sb.Append("  executeObjectType: ").Append(ExecuteObjectType).Append("\n");
+            sb.Append("  expireTime: ").Append(ExpireTime).Append("\n");
+            sb.Append("  extraParams: ").Append(ExtraParams).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -139,6 +153,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.TimeZone != input.TimeZone || (this.TimeZone != null && !this.TimeZone.Equals(input.TimeZone))) return false;
             if (this.ExecuteTaskId != input.ExecuteTaskId || (this.ExecuteTaskId != null && !this.ExecuteTaskId.Equals(input.ExecuteTaskId))) return false;
             if (this.ExecuteObjectType != input.ExecuteObjectType || (this.ExecuteObjectType != null && !this.ExecuteObjectType.Equals(input.ExecuteObjectType))) return false;
+            if (this.ExpireTime != input.ExpireTime || (this.ExpireTime != null && !this.ExpireTime.Equals(input.ExpireTime))) return false;
+            if (this.ExtraParams != input.ExtraParams || (this.ExtraParams != null && !this.ExtraParams.Equals(input.ExtraParams))) return false;
 
             return true;
         }
@@ -163,6 +179,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.TimeZone != null) hashCode = hashCode * 59 + this.TimeZone.GetHashCode();
                 if (this.ExecuteTaskId != null) hashCode = hashCode * 59 + this.ExecuteTaskId.GetHashCode();
                 if (this.ExecuteObjectType != null) hashCode = hashCode * 59 + this.ExecuteObjectType.GetHashCode();
+                if (this.ExpireTime != null) hashCode = hashCode * 59 + this.ExpireTime.GetHashCode();
+                if (this.ExtraParams != null) hashCode = hashCode * 59 + this.ExtraParams.GetHashCode();
                 return hashCode;
             }
         }

@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string AlarmTopicUrn { get; set; }
 
         /// <summary>
-        /// 是否支持SMN订阅  - true: 支持  - false: 不支持
+        /// 是否支持SMN订阅  - true：支持  - false：不支持
         /// </summary>
         [JsonProperty("smn_effective", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SmnEffective { get; set; }

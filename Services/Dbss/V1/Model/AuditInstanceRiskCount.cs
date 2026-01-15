@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     /// <summary>
     /// 
     /// </summary>
-    public class AuditInsanceRiskCount 
+    public class AuditInstanceRiskCount 
     {
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class AuditInsanceRiskCount {\n");
+            sb.Append("class AuditInstanceRiskCount {\n");
             sb.Append("  count: ").Append(Count).Append("\n");
             sb.Append("  dbId: ").Append(DbId).Append("\n");
             sb.Append("  dbIp: ").Append(DbIp).Append("\n");
@@ -76,13 +76,13 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AuditInsanceRiskCount);
+            return this.Equals(input as AuditInstanceRiskCount);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(AuditInsanceRiskCount input)
+        public bool Equals(AuditInstanceRiskCount input)
         {
             if (input == null) return false;
             if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;

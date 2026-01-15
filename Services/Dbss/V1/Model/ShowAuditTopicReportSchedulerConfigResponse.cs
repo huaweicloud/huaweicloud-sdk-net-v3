@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public SchedulerConfigBase Scheduler { get; set; }
 
         /// <summary>
-        /// 是否支持订阅  - true: 支持  - false: 不支持\&quot;
+        /// 是否支持订阅  - true：支持  - false：不支持
         /// </summary>
         [JsonProperty("smn_effective", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SmnEffective { get; set; }

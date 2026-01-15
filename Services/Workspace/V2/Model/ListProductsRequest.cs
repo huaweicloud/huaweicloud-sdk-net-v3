@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 产品ID。
+        /// 产品ID。指定该参数会返回支持变更规格的套餐信息。
         /// </summary>
         [SDKProperty("product_id", IsQuery = true)]
         [JsonProperty("product_id", NullValueHandling = NullValueHandling.Ignore)]

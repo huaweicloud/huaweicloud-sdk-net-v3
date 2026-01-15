@@ -3327,7 +3327,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         }
         
         /// <summary>
-        /// 批量添加删除标签
+        /// 批量添加或删除标签
         ///
         /// 为指定桌面批量添加或删除标签。创建时，如果创建的标签已经存在（key相同），则覆盖。删除时，如果删除的标签不存在，默认处理成功。
         /// 
@@ -3431,9 +3431,9 @@ namespace HuaweiCloud.SDK.Workspace.V2
         }
         
         /// <summary>
-        /// 使用标签过滤桌面
+        /// 使用标签过滤桌面（已废弃）
         ///
-        /// 使用标签过滤桌面。
+        /// 使用标签过滤桌面。该接口已废弃，请使用post /v2/{project_id}/desktops/resource-instances/action
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -3452,6 +3452,30 @@ namespace HuaweiCloud.SDK.Workspace.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/desktops/resource_instances/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDesktopByTagsRequest);
             return new SyncInvoker<ListDesktopByTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListDesktopByTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 使用标签过滤桌面
+        ///
+        /// 使用标签过滤桌面。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListDesktopsByTagsResponse ListDesktopsByTags(ListDesktopsByTagsRequest listDesktopsByTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/desktops/resource-instances/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDesktopsByTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ListDesktopsByTagsResponse>(response);
+        }
+
+        public SyncInvoker<ListDesktopsByTagsResponse> ListDesktopsByTagsInvoker(ListDesktopsByTagsRequest listDesktopsByTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/desktops/resource-instances/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDesktopsByTagsRequest);
+            return new SyncInvoker<ListDesktopsByTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListDesktopsByTagsResponse>);
         }
         
         /// <summary>
@@ -4384,6 +4408,30 @@ namespace HuaweiCloud.SDK.Workspace.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/eips/unbinding", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDisassociateDesktopsEipRequest);
             return new SyncInvoker<BatchDisassociateDesktopsEipResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDisassociateDesktopsEipResponse>);
+        }
+        
+        /// <summary>
+        /// 校验租户冲突网段
+        ///
+        /// 该接口用于校验租户网段是否冲突,返回冲突网段列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CheckCidrResponse CheckCidr(CheckCidrRequest checkCidrRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/check-cidr", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkCidrRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CheckCidrResponse>(response);
+        }
+
+        public SyncInvoker<CheckCidrResponse> CheckCidrInvoker(CheckCidrRequest checkCidrRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/check-cidr", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkCidrRequest);
+            return new SyncInvoker<CheckCidrResponse>(this, "POST", request, JsonUtils.DeSerialize<CheckCidrResponse>);
         }
         
         /// <summary>
@@ -5613,7 +5661,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/scheduled-tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createScheduledTasksRequest);
             var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerializeNull<CreateScheduledTasksResponse>(response);
+            return JsonUtils.DeSerialize<CreateScheduledTasksResponse>(response);
         }
 
         public SyncInvoker<CreateScheduledTasksResponse> CreateScheduledTasksInvoker(CreateScheduledTasksRequest createScheduledTasksRequest)
@@ -5621,7 +5669,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
             var urlParam = new Dictionary<string, string>();
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/scheduled-tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createScheduledTasksRequest);
-            return new SyncInvoker<CreateScheduledTasksResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateScheduledTasksResponse>);
+            return new SyncInvoker<CreateScheduledTasksResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateScheduledTasksResponse>);
         }
         
         /// <summary>
@@ -7644,6 +7692,30 @@ namespace HuaweiCloud.SDK.Workspace.V2
         }
         
         /// <summary>
+        /// 查询通知拦截记录
+        ///
+        /// 查询通知拦截记录
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListNotificationRecordsResponse ListNotificationRecords(ListNotificationRecordsRequest listNotificationRecordsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/users/notification-records", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNotificationRecordsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListNotificationRecordsResponse>(response);
+        }
+
+        public SyncInvoker<ListNotificationRecordsResponse> ListNotificationRecordsInvoker(ListNotificationRecordsRequest listNotificationRecordsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/users/notification-records", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNotificationRecordsRequest);
+            return new SyncInvoker<ListNotificationRecordsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListNotificationRecordsResponse>);
+        }
+        
+        /// <summary>
         /// 查询OTP设备
         ///
         /// 该接口用于查询相应用户下面的OTP设备。
@@ -8261,6 +8333,30 @@ namespace HuaweiCloud.SDK.Workspace.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/workspaces", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateWorkspaceRequest);
             return new SyncInvoker<UpdateWorkspaceResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateWorkspaceResponse>);
+        }
+        
+        /// <summary>
+        /// 校验域控有效性
+        ///
+        /// 校验域控有效性。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ValidateDomainControllerResponse ValidateDomainController(ValidateDomainControllerRequest validateDomainControllerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/domain-controllers/validation", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", validateDomainControllerRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<ValidateDomainControllerResponse>(response);
+        }
+
+        public SyncInvoker<ValidateDomainControllerResponse> ValidateDomainControllerInvoker(ValidateDomainControllerRequest validateDomainControllerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/domain-controllers/validation", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", validateDomainControllerRequest);
+            return new SyncInvoker<ValidateDomainControllerResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ValidateDomainControllerResponse>);
         }
         
     }

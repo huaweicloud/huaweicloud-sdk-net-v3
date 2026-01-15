@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("universal_printer_driver", NullValueHandling = NullValueHandling.Ignore)]
         public string UniversalPrinterDriver { get; set; }
 
+        /// <summary>
+        /// 是否开启使用端侧网络连接网络打印机开关。取值为： false：表示关闭。 true：表示开启。
+        /// </summary>
+        [JsonProperty("network_redirect_printer_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? NetworkRedirectPrinterEnable { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  printDataCompressionMode: ").Append(PrintDataCompressionMode).Append("\n");
             sb.Append("  syncClientDefaultPrinterEnable: ").Append(SyncClientDefaultPrinterEnable).Append("\n");
             sb.Append("  universalPrinterDriver: ").Append(UniversalPrinterDriver).Append("\n");
+            sb.Append("  networkRedirectPrinterEnable: ").Append(NetworkRedirectPrinterEnable).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,6 +82,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.PrintDataCompressionMode != input.PrintDataCompressionMode || (this.PrintDataCompressionMode != null && !this.PrintDataCompressionMode.Equals(input.PrintDataCompressionMode))) return false;
             if (this.SyncClientDefaultPrinterEnable != input.SyncClientDefaultPrinterEnable || (this.SyncClientDefaultPrinterEnable != null && !this.SyncClientDefaultPrinterEnable.Equals(input.SyncClientDefaultPrinterEnable))) return false;
             if (this.UniversalPrinterDriver != input.UniversalPrinterDriver || (this.UniversalPrinterDriver != null && !this.UniversalPrinterDriver.Equals(input.UniversalPrinterDriver))) return false;
+            if (this.NetworkRedirectPrinterEnable != input.NetworkRedirectPrinterEnable || (this.NetworkRedirectPrinterEnable != null && !this.NetworkRedirectPrinterEnable.Equals(input.NetworkRedirectPrinterEnable))) return false;
 
             return true;
         }
@@ -91,6 +99,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.PrintDataCompressionMode != null) hashCode = hashCode * 59 + this.PrintDataCompressionMode.GetHashCode();
                 if (this.SyncClientDefaultPrinterEnable != null) hashCode = hashCode * 59 + this.SyncClientDefaultPrinterEnable.GetHashCode();
                 if (this.UniversalPrinterDriver != null) hashCode = hashCode * 59 + this.UniversalPrinterDriver.GetHashCode();
+                if (this.NetworkRedirectPrinterEnable != null) hashCode = hashCode * 59 + this.NetworkRedirectPrinterEnable.GetHashCode();
                 return hashCode;
             }
         }

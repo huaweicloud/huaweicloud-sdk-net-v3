@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string TaskName { get; set; }
 
         /// <summary>
-        /// 任务类型。START：开机，STOP：关机，REBOOT：重启，HIBERNATE：休眠，REBUILD：重建系统盘，EXECUTE_SCRIPT：执行脚本，CREATE_SNAPSHOT：创建快照。
+        /// 任务类型。START：开机，STOP：关机，REBOOT：重启，HIBERNATE：休眠，REBUILD：重建系统盘，EXECUTE_SCRIPT：执行脚本，CREATE_SNAPSHOT：创建快照，DELETE_BLACK_ECS：删除桌面
         /// </summary>
         [JsonProperty("task_type", NullValueHandling = NullValueHandling.Ignore)]
         public string TaskType { get; set; }
@@ -57,6 +57,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// </summary>
         [JsonProperty("next_execution_time", NullValueHandling = NullValueHandling.Ignore)]
         public string NextExecutionTime { get; set; }
+
+        /// <summary>
+        /// 到期时间，格式为yyyy-MM-dd HH:mm:ss。
+        /// </summary>
+        [JsonProperty("expire_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string ExpireTime { get; set; }
 
         /// <summary>
         /// 是否启用。
@@ -88,6 +94,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("wait_time", NullValueHandling = NullValueHandling.Ignore)]
         public int? WaitTime { get; set; }
 
+        /// <summary>
+        /// 扩展参数，json格式。
+        /// </summary>
+        [JsonProperty("extra_params", NullValueHandling = NullValueHandling.Ignore)]
+        public string ExtraParams { get; set; }
+
 
 
         /// <summary>
@@ -104,11 +116,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  lifeCycleType: ").Append(LifeCycleType).Append("\n");
             sb.Append("  lastStatus: ").Append(LastStatus).Append("\n");
             sb.Append("  nextExecutionTime: ").Append(NextExecutionTime).Append("\n");
+            sb.Append("  expireTime: ").Append(ExpireTime).Append("\n");
             sb.Append("  enable: ").Append(Enable).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  priority: ").Append(Priority).Append("\n");
             sb.Append("  timeZone: ").Append(TimeZone).Append("\n");
             sb.Append("  waitTime: ").Append(WaitTime).Append("\n");
+            sb.Append("  extraParams: ").Append(ExtraParams).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -134,11 +148,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.LifeCycleType != input.LifeCycleType || (this.LifeCycleType != null && !this.LifeCycleType.Equals(input.LifeCycleType))) return false;
             if (this.LastStatus != input.LastStatus || (this.LastStatus != null && !this.LastStatus.Equals(input.LastStatus))) return false;
             if (this.NextExecutionTime != input.NextExecutionTime || (this.NextExecutionTime != null && !this.NextExecutionTime.Equals(input.NextExecutionTime))) return false;
+            if (this.ExpireTime != input.ExpireTime || (this.ExpireTime != null && !this.ExpireTime.Equals(input.ExpireTime))) return false;
             if (this.Enable != input.Enable || (this.Enable != null && !this.Enable.Equals(input.Enable))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
             if (this.TimeZone != input.TimeZone || (this.TimeZone != null && !this.TimeZone.Equals(input.TimeZone))) return false;
             if (this.WaitTime != input.WaitTime || (this.WaitTime != null && !this.WaitTime.Equals(input.WaitTime))) return false;
+            if (this.ExtraParams != input.ExtraParams || (this.ExtraParams != null && !this.ExtraParams.Equals(input.ExtraParams))) return false;
 
             return true;
         }
@@ -158,11 +174,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.LifeCycleType != null) hashCode = hashCode * 59 + this.LifeCycleType.GetHashCode();
                 if (this.LastStatus != null) hashCode = hashCode * 59 + this.LastStatus.GetHashCode();
                 if (this.NextExecutionTime != null) hashCode = hashCode * 59 + this.NextExecutionTime.GetHashCode();
+                if (this.ExpireTime != null) hashCode = hashCode * 59 + this.ExpireTime.GetHashCode();
                 if (this.Enable != null) hashCode = hashCode * 59 + this.Enable.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
                 if (this.TimeZone != null) hashCode = hashCode * 59 + this.TimeZone.GetHashCode();
                 if (this.WaitTime != null) hashCode = hashCode * 59 + this.WaitTime.GetHashCode();
+                if (this.ExtraParams != null) hashCode = hashCode * 59 + this.ExtraParams.GetHashCode();
                 return hashCode;
             }
         }

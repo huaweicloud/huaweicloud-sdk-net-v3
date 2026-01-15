@@ -165,6 +165,13 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
+        /// <summary>
+        /// 需要过滤的源库对象名称
+        /// </summary>
+        [SDKProperty("search_name", IsQuery = true)]
+        [JsonProperty("search_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string SearchName { get; set; }
+
 
 
         /// <summary>
@@ -179,6 +186,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  searchName: ").Append(SearchName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -202,6 +210,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.SearchName != input.SearchName || (this.SearchName != null && !this.SearchName.Equals(input.SearchName))) return false;
 
             return true;
         }
@@ -219,6 +228,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.SearchName != null) hashCode = hashCode * 59 + this.SearchName.GetHashCode();
                 return hashCode;
             }
         }

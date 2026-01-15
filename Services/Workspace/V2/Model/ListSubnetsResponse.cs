@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// 子网列表。
         /// </summary>
         [JsonProperty("subnets", NullValueHandling = NullValueHandling.Ignore)]
-        public List<SubnetInfo> Subnets { get; set; }
+        public List<SingleSubnetInfo> Subnets { get; set; }
 
         /// <summary>
         /// 子网数量。

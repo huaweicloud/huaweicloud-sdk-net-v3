@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         }
 
         /// <summary>
-        /// 周期 - AUDIT_REPORT_DAY: 天 - AUDIT_REPORT_WEEK：周 - AUDIT_REPORT_MONTH：月 - AUDIT_REPORT_YEAR：年 - AUDIT_REPORT_REAL_TIME：实时
+        /// 周期 - AUDIT_REPORT_DAY：天 - AUDIT_REPORT_WEEK：周 - AUDIT_REPORT_MONTH：月 - AUDIT_REPORT_YEAR：年 - AUDIT_REPORT_REAL_TIME：实时
         /// </summary>
-        /// <value>周期 - AUDIT_REPORT_DAY: 天 - AUDIT_REPORT_WEEK：周 - AUDIT_REPORT_MONTH：月 - AUDIT_REPORT_YEAR：年 - AUDIT_REPORT_REAL_TIME：实时</value>
+        /// <value>周期 - AUDIT_REPORT_DAY：天 - AUDIT_REPORT_WEEK：周 - AUDIT_REPORT_MONTH：月 - AUDIT_REPORT_YEAR：年 - AUDIT_REPORT_REAL_TIME：实时</value>
         [JsonConverter(typeof(EnumClassConverter<FrequencyEnum>))]
         public class FrequencyEnum
         {
@@ -494,9 +494,9 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         }
 
         /// <summary>
-        /// 模板状态 - ON: 开启 - OFF：关闭
+        /// 模板状态 - ON：开启 - OFF：关闭
         /// </summary>
-        /// <value>模板状态 - ON: 开启 - OFF：关闭</value>
+        /// <value>模板状态 - ON：开启 - OFF：关闭</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -621,7 +621,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         [JsonProperty("format", NullValueHandling = NullValueHandling.Ignore)]
         public FormatEnum Format { get; set; }
         /// <summary>
-        /// 周期 - AUDIT_REPORT_DAY: 天 - AUDIT_REPORT_WEEK：周 - AUDIT_REPORT_MONTH：月 - AUDIT_REPORT_YEAR：年 - AUDIT_REPORT_REAL_TIME：实时
+        /// 周期 - AUDIT_REPORT_DAY：天 - AUDIT_REPORT_WEEK：周 - AUDIT_REPORT_MONTH：月 - AUDIT_REPORT_YEAR：年 - AUDIT_REPORT_REAL_TIME：实时
         /// </summary>
         [JsonProperty("frequency", NullValueHandling = NullValueHandling.Ignore)]
         public FrequencyEnum Frequency { get; set; }
@@ -648,7 +648,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 模板状态 - ON: 开启 - OFF：关闭
+        /// 模板状态 - ON：开启 - OFF：关闭
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }

@@ -227,7 +227,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public bool? FetchAll { get; set; }
 
         /// <summary>
-        /// 返回结果按该关键字排序，默认为“created_at”。
+        /// 返回结果按该关键字排序，默认为“created_at”。 取值：name，db_type，inst_id，ip，created_at，description，tag_value
         /// </summary>
         [SDKProperty("sort_key", IsQuery = true)]
         [JsonProperty("sort_key", NullValueHandling = NullValueHandling.Ignore)]

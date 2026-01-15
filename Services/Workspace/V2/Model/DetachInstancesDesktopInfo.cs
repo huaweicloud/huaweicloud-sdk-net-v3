@@ -32,7 +32,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// 解分配的用户信息列表。
         /// </summary>
         [JsonProperty("detach_user_infos", NullValueHandling = NullValueHandling.Ignore)]
-        public List<AttachInstancesUserInfo> DetachUserInfos { get; set; }
+        public List<DetachInstancesUserInfo> DetachUserInfos { get; set; }
 
 
 

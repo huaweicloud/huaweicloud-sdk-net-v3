@@ -79,6 +79,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// 客户端出口IP。
+        /// </summary>
+        [SDKProperty("public_ip", IsQuery = true)]
+        [JsonProperty("public_ip", NullValueHandling = NullValueHandling.Ignore)]
+        public string PublicIp { get; set; }
+
 
 
         /// <summary>
@@ -97,6 +104,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  minE2eRtt: ").Append(MinE2eRtt).Append("\n");
             sb.Append("  maxE2eRtt: ").Append(MaxE2eRtt).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  publicIp: ").Append(PublicIp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -124,6 +132,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.MinE2eRtt != input.MinE2eRtt || (this.MinE2eRtt != null && !this.MinE2eRtt.Equals(input.MinE2eRtt))) return false;
             if (this.MaxE2eRtt != input.MaxE2eRtt || (this.MaxE2eRtt != null && !this.MaxE2eRtt.Equals(input.MaxE2eRtt))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.PublicIp != input.PublicIp || (this.PublicIp != null && !this.PublicIp.Equals(input.PublicIp))) return false;
 
             return true;
         }
@@ -145,6 +154,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.MinE2eRtt != null) hashCode = hashCode * 59 + this.MinE2eRtt.GetHashCode();
                 if (this.MaxE2eRtt != null) hashCode = hashCode * 59 + this.MaxE2eRtt.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.PublicIp != null) hashCode = hashCode * 59 + this.PublicIp.GetHashCode();
                 return hashCode;
             }
         }

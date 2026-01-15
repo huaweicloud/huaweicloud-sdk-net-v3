@@ -149,6 +149,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string ProductId { get; set; }
 
         /// <summary>
+        /// console页面购买方式。默认值为custom。  - speed：快速购买。 - custom：自定义购买。
+        /// </summary>
+        [JsonProperty("buy_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string BuyType { get; set; }
+
+        /// <summary>
         /// 镜像类型。默认值为private。  - private：私有镜像。 - gold：公共镜像。
         /// </summary>
         [JsonProperty("image_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -182,7 +188,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// 桌面使用的安全组，如果不指定则默认使用桌面代理中指定的安全组。
         /// </summary>
         [JsonProperty("security_groups", NullValueHandling = NullValueHandling.Ignore)]
-        public List<SecurityGroup> SecurityGroups { get; set; }
+        public List<SecurityGroupIdInfo> SecurityGroups { get; set; }
 
         /// <summary>
         /// 创建桌面使用的参数列表。长度为1-100。
@@ -274,6 +280,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  desktopType: ").Append(DesktopType).Append("\n");
             sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
             sb.Append("  productId: ").Append(ProductId).Append("\n");
+            sb.Append("  buyType: ").Append(BuyType).Append("\n");
             sb.Append("  imageType: ").Append(ImageType).Append("\n");
             sb.Append("  imageId: ").Append(ImageId).Append("\n");
             sb.Append("  rootVolume: ").Append(RootVolume).Append("\n");
@@ -314,6 +321,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.DesktopType != input.DesktopType) return false;
             if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
             if (this.ProductId != input.ProductId || (this.ProductId != null && !this.ProductId.Equals(input.ProductId))) return false;
+            if (this.BuyType != input.BuyType || (this.BuyType != null && !this.BuyType.Equals(input.BuyType))) return false;
             if (this.ImageType != input.ImageType || (this.ImageType != null && !this.ImageType.Equals(input.ImageType))) return false;
             if (this.ImageId != input.ImageId || (this.ImageId != null && !this.ImageId.Equals(input.ImageId))) return false;
             if (this.RootVolume != input.RootVolume || (this.RootVolume != null && !this.RootVolume.Equals(input.RootVolume))) return false;
@@ -348,6 +356,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 hashCode = hashCode * 59 + this.DesktopType.GetHashCode();
                 if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
                 if (this.ProductId != null) hashCode = hashCode * 59 + this.ProductId.GetHashCode();
+                if (this.BuyType != null) hashCode = hashCode * 59 + this.BuyType.GetHashCode();
                 if (this.ImageType != null) hashCode = hashCode * 59 + this.ImageType.GetHashCode();
                 if (this.ImageId != null) hashCode = hashCode * 59 + this.ImageId.GetHashCode();
                 if (this.RootVolume != null) hashCode = hashCode * 59 + this.RootVolume.GetHashCode();

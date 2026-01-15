@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string JobId { get; set; }
 
         /// <summary>
-        /// 任务状态 - SUCCESS: 成功 - RUNNING：运行中 - FAIL：失败 - INIT：初始化 - READY：就绪
+        /// 任务状态 - SUCCESS：成功 - RUNNING：运行中 - FAIL：失败 - INIT：初始化 - READY：就绪
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
@@ -65,7 +65,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public long? EndTime { get; set; }
 
         /// <summary>
-        /// 计费模式 - Period: 包周期计费 - Demand: 按需计费
+        /// 计费模式 - Period：包周期计费 - Demand：按需计费
         /// </summary>
         [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
         public string ChargeMode { get; set; }

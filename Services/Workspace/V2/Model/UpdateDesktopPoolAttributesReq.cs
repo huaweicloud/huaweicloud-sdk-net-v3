@@ -104,7 +104,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// 桌面使用的安全组，如果不指定则默认使用桌面代理中指定的安全组
         /// </summary>
         [JsonProperty("security_groups", NullValueHandling = NullValueHandling.Ignore)]
-        public List<SecurityGroup> SecurityGroups { get; set; }
+        public List<SecurityGroupIdInfo> SecurityGroups { get; set; }
 
         /// <summary>
         /// 企业项目ID

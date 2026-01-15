@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     {
 
         /// <summary>
-        /// 数据库ID列表，多个用英文逗号分割
+        /// 数据库ID列表，多个用英文逗号分隔
         /// </summary>
         [JsonProperty("db_ids", NullValueHandling = NullValueHandling.Ignore)]
         public string DbIds { get; set; }

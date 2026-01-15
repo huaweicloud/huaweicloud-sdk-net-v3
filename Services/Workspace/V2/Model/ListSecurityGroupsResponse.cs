@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// 安全组列表。
         /// </summary>
         [JsonProperty("security_groups", NullValueHandling = NullValueHandling.Ignore)]
-        public List<SecurityGroup> SecurityGroups { get; set; }
+        public List<SimpleSecurityGroupsInfo> SecurityGroups { get; set; }
 
 
 

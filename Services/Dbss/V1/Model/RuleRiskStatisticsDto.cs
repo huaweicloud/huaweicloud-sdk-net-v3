@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// 实例数据库风险汇总
         /// </summary>
         [JsonProperty("instance_risk_count", NullValueHandling = NullValueHandling.Ignore)]
-        public List<AuditInsanceRiskCount> InstanceRiskCount { get; set; }
+        public List<AuditInstanceRiskCount> InstanceRiskCount { get; set; }
 
         /// <summary>
         /// 规则名称

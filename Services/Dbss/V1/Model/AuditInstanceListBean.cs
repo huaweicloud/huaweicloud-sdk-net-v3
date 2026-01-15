@@ -65,7 +65,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public int? DatabaseLimit { get; set; }
 
         /// <summary>
-        /// 实例结果状态 - 1:冻结可释放  - 2:冻结不可释放 - 3:冻结后不可续费
+        /// 实例结果状态 - 1：冻结可释放  - 2：冻结不可释放 - 3：冻结后不可续费
         /// </summary>
         [JsonProperty("effect", NullValueHandling = NullValueHandling.Ignore)]
         public int? Effect { get; set; }
@@ -155,7 +155,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string Specification { get; set; }
 
         /// <summary>
-        /// 实例状态  - SHUTOFF :已关闭  - ACTIVE: 运行中，允许任何操作   - DELETING: 删除中，不允许任何操作  - BUILD: 创建中，不允许任何操作  - DELETED: 已删除，不需要展示  - ERROR: 故障，只允许删除  - HAWAIT: 等待备机创建成功，不允许任何操作  - FROZEN: 已冻结，只允许续费、绑定/解绑  - UPGRADING: 升级中，不允许升级操作
+        /// 实例状态  - SHUTOFF：已关闭  - ACTIVE：运行中，允许任何操作   - DELETING：删除中，不允许任何操作  - BUILD：创建中，不允许任何操作  - DELETED：已删除，不需要展示  - ERROR：故障，只允许删除  - HAWAIT：等待备机创建成功，不允许任何操作  - FROZEN：已冻结，只允许续费、绑定/解绑  - UPGRADING：升级中，不允许升级操作
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
@@ -167,7 +167,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string SubnetId { get; set; }
 
         /// <summary>
-        /// 任务状态  - powering-on: 正在开启，实例可以绑定、解绑  - powering-off: 正在关闭，实例可以绑定、解绑  - rebooting: 正在重启，实例可以绑定、解绑  - delete_wait: 等待删除，集群与实例不允许任何操作  - NO_TASK: 不展示
+        /// 任务状态  - powering-on：正在开启，实例可以绑定、解绑  - powering-off：正在关闭，实例可以绑定、解绑  - rebooting：正在重启，实例可以绑定、解绑  - delete_wait：等待删除，集群与实例不允许任何操作  - NO_TASK：不展示
         /// </summary>
         [JsonProperty("task", NullValueHandling = NullValueHandling.Ignore)]
         public string Task { get; set; }

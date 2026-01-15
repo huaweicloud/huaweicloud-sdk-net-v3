@@ -44,6 +44,20 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         [JsonProperty("support_db_classify_rule", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SupportDbClassifyRule { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 分页偏移量，从第一条数据偏移offset条数据后开始查询 **约束限制**： 仅支持大于等于0的整数 **取值范围**： 大于等于0 **默认取值**： 默认值为0 
+        /// </summary>
+        [SDKProperty("offset", IsQuery = true)]
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
+        public string Offset { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 每页查询记录数。 **约束限制**： 仅支持大于0的整数 **取值范围**： 大于0小于等于1000 **默认取值**： 默认值为100 
+        /// </summary>
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public string Limit { get; set; }
+
 
 
         /// <summary>
@@ -57,6 +71,8 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  riskLevels: ").Append(RiskLevels).Append("\n");
             sb.Append("  supportDbClassifyRule: ").Append(SupportDbClassifyRule).Append("\n");
+            sb.Append("  offset: ").Append(Offset).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -79,6 +95,8 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.RiskLevels != input.RiskLevels || (this.RiskLevels != null && !this.RiskLevels.Equals(input.RiskLevels))) return false;
             if (this.SupportDbClassifyRule != input.SupportDbClassifyRule || (this.SupportDbClassifyRule != null && !this.SupportDbClassifyRule.Equals(input.SupportDbClassifyRule))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
 
             return true;
         }
@@ -95,6 +113,8 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.RiskLevels != null) hashCode = hashCode * 59 + this.RiskLevels.GetHashCode();
                 if (this.SupportDbClassifyRule != null) hashCode = hashCode * 59 + this.SupportDbClassifyRule.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 return hashCode;
             }
         }

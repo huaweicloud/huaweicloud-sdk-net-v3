@@ -13,14 +13,14 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     /// <summary>
     /// 
     /// </summary>
-    public class AvailabilityZoneInfo 
+    public class AvailabilityZone 
     {
 
         /// <summary>
         /// 可用分区编码。
         /// </summary>
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
-        public string AvailabilityZone { get; set; }
+        public string _AvailabilityZone { get; set; }
 
         /// <summary>
         /// 可用分区名称。
@@ -66,8 +66,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class AvailabilityZoneInfo {\n");
-            sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
+            sb.Append("class AvailabilityZone {\n");
+            sb.Append("  _availabilityZone: ").Append(_AvailabilityZone).Append("\n");
             sb.Append("  displayName: ").Append(DisplayName).Append("\n");
             sb.Append("  i18n: ").Append(I18n).Append("\n");
             sb.Append("  soldOut: ").Append(SoldOut).Append("\n");
@@ -83,16 +83,16 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AvailabilityZoneInfo);
+            return this.Equals(input as AvailabilityZone);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(AvailabilityZoneInfo input)
+        public bool Equals(AvailabilityZone input)
         {
             if (input == null) return false;
-            if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
+            if (this._AvailabilityZone != input._AvailabilityZone || (this._AvailabilityZone != null && !this._AvailabilityZone.Equals(input._AvailabilityZone))) return false;
             if (this.DisplayName != input.DisplayName || (this.DisplayName != null && !this.DisplayName.Equals(input.DisplayName))) return false;
             if (this.I18n != input.I18n || (this.I18n != null && input.I18n != null && !this.I18n.SequenceEqual(input.I18n))) return false;
             if (this.SoldOut != input.SoldOut || (this.SoldOut != null && !this.SoldOut.Equals(input.SoldOut))) return false;
@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
+                if (this._AvailabilityZone != null) hashCode = hashCode * 59 + this._AvailabilityZone.GetHashCode();
                 if (this.DisplayName != null) hashCode = hashCode * 59 + this.DisplayName.GetHashCode();
                 if (this.I18n != null) hashCode = hashCode * 59 + this.I18n.GetHashCode();
                 if (this.SoldOut != null) hashCode = hashCode * 59 + this.SoldOut.GetHashCode();

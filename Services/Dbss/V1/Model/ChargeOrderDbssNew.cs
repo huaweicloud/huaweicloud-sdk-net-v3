@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string CompositeProductId { get; set; }
 
         /// <summary>
-        /// 实例部署方式，默认为云上 - CLOUD： 云上 - OUTSIDE：云外
+        /// 实例部署方式，默认为云上 - CLOUD：云上 - OUTSIDE：云外
         /// </summary>
         [JsonProperty("deploy_mode", NullValueHandling = NullValueHandling.Ignore)]
         public string DeployMode { get; set; }

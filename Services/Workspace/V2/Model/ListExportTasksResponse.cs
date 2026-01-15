@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public List<ExportTaskItem> ExportTasks { get; set; }
 
         /// <summary>
-        /// 导出任务列表总数。
+        /// 导出任务总数。
         /// </summary>
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
         public int? Count { get; set; }

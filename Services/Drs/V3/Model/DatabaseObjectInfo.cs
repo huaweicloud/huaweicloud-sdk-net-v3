@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         public string ParentId { get; set; }
 
         /// <summary>
-        /// 类型。
+        /// 类型。 table：表名，function：函数，database：SCHEMA，procedure：存储过程
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

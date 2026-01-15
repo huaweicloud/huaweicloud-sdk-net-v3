@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     /// <summary>
     /// 
     /// </summary>
-    public class ExportUsersV3Req 
+    public class ExportUsersNewReq 
     {
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ExportUsersV3Req {\n");
+            sb.Append("class ExportUsersNewReq {\n");
             sb.Append("  userName: ").Append(UserName).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  activeType: ").Append(ActiveType).Append("\n");
@@ -69,13 +69,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ExportUsersV3Req);
+            return this.Equals(input as ExportUsersNewReq);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ExportUsersV3Req input)
+        public bool Equals(ExportUsersNewReq input)
         {
             if (input == null) return false;
             if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;

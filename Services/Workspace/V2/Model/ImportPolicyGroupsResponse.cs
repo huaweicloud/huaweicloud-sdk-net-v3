@@ -29,6 +29,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string ErrorMsg { get; set; }
 
         /// <summary>
+        /// 错误详情。
+        /// </summary>
+        [JsonProperty("error_detail", NullValueHandling = NullValueHandling.Ignore)]
+        public string ErrorDetail { get; set; }
+
+        /// <summary>
         /// 加密后的详细拒绝原因，用户可以自行调用STS服务的decode-authorization-message接口进行解密。
         /// </summary>
         [JsonProperty("encoded_authorization_message", NullValueHandling = NullValueHandling.Ignore)]
@@ -57,6 +63,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("class ImportPolicyGroupsResponse {\n");
             sb.Append("  errorCode: ").Append(ErrorCode).Append("\n");
             sb.Append("  errorMsg: ").Append(ErrorMsg).Append("\n");
+            sb.Append("  errorDetail: ").Append(ErrorDetail).Append("\n");
             sb.Append("  encodedAuthorizationMessage: ").Append(EncodedAuthorizationMessage).Append("\n");
             sb.Append("  policyGroupNameList: ").Append(PolicyGroupNameList).Append("\n");
             sb.Append("  failedPolicyGroupNameList: ").Append(FailedPolicyGroupNameList).Append("\n");
@@ -80,6 +87,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (input == null) return false;
             if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
             if (this.ErrorMsg != input.ErrorMsg || (this.ErrorMsg != null && !this.ErrorMsg.Equals(input.ErrorMsg))) return false;
+            if (this.ErrorDetail != input.ErrorDetail || (this.ErrorDetail != null && !this.ErrorDetail.Equals(input.ErrorDetail))) return false;
             if (this.EncodedAuthorizationMessage != input.EncodedAuthorizationMessage || (this.EncodedAuthorizationMessage != null && !this.EncodedAuthorizationMessage.Equals(input.EncodedAuthorizationMessage))) return false;
             if (this.PolicyGroupNameList != input.PolicyGroupNameList || (this.PolicyGroupNameList != null && input.PolicyGroupNameList != null && !this.PolicyGroupNameList.SequenceEqual(input.PolicyGroupNameList))) return false;
             if (this.FailedPolicyGroupNameList != input.FailedPolicyGroupNameList || (this.FailedPolicyGroupNameList != null && input.FailedPolicyGroupNameList != null && !this.FailedPolicyGroupNameList.SequenceEqual(input.FailedPolicyGroupNameList))) return false;
@@ -97,6 +105,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 var hashCode = 41;
                 if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
                 if (this.ErrorMsg != null) hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
+                if (this.ErrorDetail != null) hashCode = hashCode * 59 + this.ErrorDetail.GetHashCode();
                 if (this.EncodedAuthorizationMessage != null) hashCode = hashCode * 59 + this.EncodedAuthorizationMessage.GetHashCode();
                 if (this.PolicyGroupNameList != null) hashCode = hashCode * 59 + this.PolicyGroupNameList.GetHashCode();
                 if (this.FailedPolicyGroupNameList != null) hashCode = hashCode * 59 + this.FailedPolicyGroupNameList.GetHashCode();

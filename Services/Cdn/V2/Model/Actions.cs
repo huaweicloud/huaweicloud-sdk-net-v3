@@ -43,8 +43,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("request_limit_rules", NullValueHandling = NullValueHandling.Ignore)]
-        public RequestLimitRulesEngine RequestLimitRules { get; set; }
+        [JsonProperty("request_limit_rule", NullValueHandling = NullValueHandling.Ignore)]
+        public RequestLimitRulesEngine RequestLimitRule { get; set; }
 
         /// <summary>
         /// 
@@ -74,7 +74,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// 
         /// </summary>
         [JsonProperty("error_code_cache", NullValueHandling = NullValueHandling.Ignore)]
-        public ErrorCodeCacheEngine ErrorCodeCache { get; set; }
+        public List<ErrorCodeCacheEngine> ErrorCodeCache { get; set; }
 
 
 
@@ -89,7 +89,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  originRequestHeader: ").Append(OriginRequestHeader).Append("\n");
             sb.Append("  httpResponseHeader: ").Append(HttpResponseHeader).Append("\n");
             sb.Append("  accessControl: ").Append(AccessControl).Append("\n");
-            sb.Append("  requestLimitRules: ").Append(RequestLimitRules).Append("\n");
+            sb.Append("  requestLimitRule: ").Append(RequestLimitRule).Append("\n");
             sb.Append("  originRequestUrlRewrite: ").Append(OriginRequestUrlRewrite).Append("\n");
             sb.Append("  cacheRule: ").Append(CacheRule).Append("\n");
             sb.Append("  requestUrlRewrite: ").Append(RequestUrlRewrite).Append("\n");
@@ -117,12 +117,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             if (this.OriginRequestHeader != input.OriginRequestHeader || (this.OriginRequestHeader != null && input.OriginRequestHeader != null && !this.OriginRequestHeader.SequenceEqual(input.OriginRequestHeader))) return false;
             if (this.HttpResponseHeader != input.HttpResponseHeader || (this.HttpResponseHeader != null && input.HttpResponseHeader != null && !this.HttpResponseHeader.SequenceEqual(input.HttpResponseHeader))) return false;
             if (this.AccessControl != input.AccessControl || (this.AccessControl != null && !this.AccessControl.Equals(input.AccessControl))) return false;
-            if (this.RequestLimitRules != input.RequestLimitRules || (this.RequestLimitRules != null && !this.RequestLimitRules.Equals(input.RequestLimitRules))) return false;
+            if (this.RequestLimitRule != input.RequestLimitRule || (this.RequestLimitRule != null && !this.RequestLimitRule.Equals(input.RequestLimitRule))) return false;
             if (this.OriginRequestUrlRewrite != input.OriginRequestUrlRewrite || (this.OriginRequestUrlRewrite != null && !this.OriginRequestUrlRewrite.Equals(input.OriginRequestUrlRewrite))) return false;
             if (this.CacheRule != input.CacheRule || (this.CacheRule != null && !this.CacheRule.Equals(input.CacheRule))) return false;
             if (this.RequestUrlRewrite != input.RequestUrlRewrite || (this.RequestUrlRewrite != null && !this.RequestUrlRewrite.Equals(input.RequestUrlRewrite))) return false;
             if (this.BrowserCacheRule != input.BrowserCacheRule || (this.BrowserCacheRule != null && !this.BrowserCacheRule.Equals(input.BrowserCacheRule))) return false;
-            if (this.ErrorCodeCache != input.ErrorCodeCache || (this.ErrorCodeCache != null && !this.ErrorCodeCache.Equals(input.ErrorCodeCache))) return false;
+            if (this.ErrorCodeCache != input.ErrorCodeCache || (this.ErrorCodeCache != null && input.ErrorCodeCache != null && !this.ErrorCodeCache.SequenceEqual(input.ErrorCodeCache))) return false;
 
             return true;
         }
@@ -139,7 +139,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                 if (this.OriginRequestHeader != null) hashCode = hashCode * 59 + this.OriginRequestHeader.GetHashCode();
                 if (this.HttpResponseHeader != null) hashCode = hashCode * 59 + this.HttpResponseHeader.GetHashCode();
                 if (this.AccessControl != null) hashCode = hashCode * 59 + this.AccessControl.GetHashCode();
-                if (this.RequestLimitRules != null) hashCode = hashCode * 59 + this.RequestLimitRules.GetHashCode();
+                if (this.RequestLimitRule != null) hashCode = hashCode * 59 + this.RequestLimitRule.GetHashCode();
                 if (this.OriginRequestUrlRewrite != null) hashCode = hashCode * 59 + this.OriginRequestUrlRewrite.GetHashCode();
                 if (this.CacheRule != null) hashCode = hashCode * 59 + this.CacheRule.GetHashCode();
                 if (this.RequestUrlRewrite != null) hashCode = hashCode * 59 + this.RequestUrlRewrite.GetHashCode();

@@ -17,16 +17,34 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 磁盘类型。
+        /// 桌面数据盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。  -SAS：高IO。 -SSD：超高IO。 -GPSSD：通用型SSD。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// 磁盘大小，单位GB。
+        /// 磁盘容量，单位GB。系统盘大小范围[80-32760]，数据盘范围[10-32760]，大小为10的倍数。
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
-        public long? Size { get; set; }
+        public int? Size { get; set; }
+
+        /// <summary>
+        /// iops，云硬盘每秒进行读写的操作次数。
+        /// </summary>
+        [JsonProperty("iops", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Iops { get; set; }
+
+        /// <summary>
+        /// 吞吐量，云硬盘每秒成功传送的数据量，即读取和写入的数据量。
+        /// </summary>
+        [JsonProperty("throughput", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Throughput { get; set; }
+
+        /// <summary>
+        /// kms密钥id，对创建的磁盘进行加密。
+        /// </summary>
+        [JsonProperty("kms_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string KmsId { get; set; }
 
 
 
@@ -39,6 +57,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("class Volume {\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  size: ").Append(Size).Append("\n");
+            sb.Append("  iops: ").Append(Iops).Append("\n");
+            sb.Append("  throughput: ").Append(Throughput).Append("\n");
+            sb.Append("  kmsId: ").Append(KmsId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +80,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (input == null) return false;
             if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
             if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.Iops != input.Iops || (this.Iops != null && !this.Iops.Equals(input.Iops))) return false;
+            if (this.Throughput != input.Throughput || (this.Throughput != null && !this.Throughput.Equals(input.Throughput))) return false;
+            if (this.KmsId != input.KmsId || (this.KmsId != null && !this.KmsId.Equals(input.KmsId))) return false;
 
             return true;
         }
@@ -73,6 +97,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 var hashCode = 41;
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.Iops != null) hashCode = hashCode * 59 + this.Iops.GetHashCode();
+                if (this.Throughput != null) hashCode = hashCode * 59 + this.Throughput.GetHashCode();
+                if (this.KmsId != null) hashCode = hashCode * 59 + this.KmsId.GetHashCode();
                 return hashCode;
             }
         }

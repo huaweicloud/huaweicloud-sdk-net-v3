@@ -132,11 +132,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
 
 
         /// <summary>
-        /// 环比周期 | DAY - 天 MONTH - 月。
+        /// 指标维度 | 目前最大支持3个维度，必须从0开始；维度格式为dim.{i}&#x3D;key,value，key的最大长度32，value的最大长度为256。 单维度：dim.0&#x3D;instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d 多维度：dim.0&#x3D;key,value&amp;dim.1&#x3D;key,value。
         /// </summary>
-        [SDKProperty("grow_period", IsQuery = true)]
-        [JsonProperty("grow_period", NullValueHandling = NullValueHandling.Ignore)]
-        public GrowPeriodEnum GrowPeriod { get; set; }
+        [SDKProperty("dim", IsQuery = true)]
+        [JsonProperty("dim", NullValueHandling = NullValueHandling.Ignore)]
+        public string Dim { get; set; }
+
         /// <summary>
         /// 指标名称。
         /// </summary>
@@ -145,12 +146,11 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string MetricName { get; set; }
 
         /// <summary>
-        /// 指标维度 | 目前最大支持3个维度，必须从0开始；维度格式为dim.{i}&#x3D;key,value，key的最大长度32，value的最大长度为256。 单维度：dim.0&#x3D;instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d 多维度：dim.0&#x3D;key,value&amp;dim.1&#x3D;key,value。
+        /// 环比周期 | DAY - 天 MONTH - 月。
         /// </summary>
-        [SDKProperty("dim", IsQuery = true)]
-        [JsonProperty("dim", NullValueHandling = NullValueHandling.Ignore)]
-        public string Dim { get; set; }
-
+        [SDKProperty("grow_period", IsQuery = true)]
+        [JsonProperty("grow_period", NullValueHandling = NullValueHandling.Ignore)]
+        public GrowPeriodEnum GrowPeriod { get; set; }
 
 
         /// <summary>
@@ -160,9 +160,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShowGrowthRateRequest {\n");
-            sb.Append("  growPeriod: ").Append(GrowPeriod).Append("\n");
-            sb.Append("  metricName: ").Append(MetricName).Append("\n");
             sb.Append("  dim: ").Append(Dim).Append("\n");
+            sb.Append("  metricName: ").Append(MetricName).Append("\n");
+            sb.Append("  growPeriod: ").Append(GrowPeriod).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -181,9 +181,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public bool Equals(ShowGrowthRateRequest input)
         {
             if (input == null) return false;
-            if (this.GrowPeriod != input.GrowPeriod) return false;
-            if (this.MetricName != input.MetricName || (this.MetricName != null && !this.MetricName.Equals(input.MetricName))) return false;
             if (this.Dim != input.Dim || (this.Dim != null && !this.Dim.Equals(input.Dim))) return false;
+            if (this.MetricName != input.MetricName || (this.MetricName != null && !this.MetricName.Equals(input.MetricName))) return false;
+            if (this.GrowPeriod != input.GrowPeriod) return false;
 
             return true;
         }
@@ -196,9 +196,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                hashCode = hashCode * 59 + this.GrowPeriod.GetHashCode();
-                if (this.MetricName != null) hashCode = hashCode * 59 + this.MetricName.GetHashCode();
                 if (this.Dim != null) hashCode = hashCode * 59 + this.Dim.GetHashCode();
+                if (this.MetricName != null) hashCode = hashCode * 59 + this.MetricName.GetHashCode();
+                hashCode = hashCode * 59 + this.GrowPeriod.GetHashCode();
                 return hashCode;
             }
         }

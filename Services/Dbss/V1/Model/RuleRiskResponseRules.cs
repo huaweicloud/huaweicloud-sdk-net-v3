@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string Feature { get; set; }
 
         /// <summary>
-        /// 风险规则状态。 - ON: 开启 - OFF: 关闭
+        /// 风险规则状态。 - ON：开启 - OFF：关闭
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string RiskLevel { get; set; }
 
         /// <summary>
-        /// 规则类型 - SYSTEM: 系统  - CUSTOMIZE: 自定义
+        /// 规则类型 - SYSTEM：系统  - CUSTOMIZE：自定义
         /// </summary>
         [JsonProperty("rule_type", NullValueHandling = NullValueHandling.Ignore)]
         public string RuleType { get; set; }

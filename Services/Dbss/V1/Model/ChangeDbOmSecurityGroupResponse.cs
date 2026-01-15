@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     {
 
         /// <summary>
-        /// - 0: 正常 - 非0: 异常
+        /// - 0：正常 - 非0：异常
         /// </summary>
         [JsonProperty("code", NullValueHandling = NullValueHandling.Ignore)]
         public int? Code { get; set; }

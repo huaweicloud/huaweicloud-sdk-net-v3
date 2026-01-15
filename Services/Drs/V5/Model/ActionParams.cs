@@ -65,6 +65,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public bool? IsOnlyInitTask { get; set; }
 
         /// <summary>
+        /// 是否在任务结束时自动创建对比任务，不填默认设置为true。
+        /// </summary>
+        [JsonProperty("is_auto_create_compare", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsAutoCreateCompare { get; set; }
+
+        /// <summary>
         /// 强制结束时取值为true。
         /// </summary>
         [JsonProperty("force_delete", NullValueHandling = NullValueHandling.Ignore)]
@@ -105,6 +111,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  compareTaskParam: ").Append(CompareTaskParam).Append("\n");
             sb.Append("  isSyncReEdit: ").Append(IsSyncReEdit).Append("\n");
             sb.Append("  isOnlyInitTask: ").Append(IsOnlyInitTask).Append("\n");
+            sb.Append("  isAutoCreateCompare: ").Append(IsAutoCreateCompare).Append("\n");
             sb.Append("  forceDelete: ").Append(ForceDelete).Append("\n");
             sb.Append("  publicIpConfig: ").Append(PublicIpConfig).Append("\n");
             sb.Append("  replayConfig: ").Append(ReplayConfig).Append("\n");
@@ -135,6 +142,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             if (this.CompareTaskParam != input.CompareTaskParam || (this.CompareTaskParam != null && !this.CompareTaskParam.Equals(input.CompareTaskParam))) return false;
             if (this.IsSyncReEdit != input.IsSyncReEdit || (this.IsSyncReEdit != null && !this.IsSyncReEdit.Equals(input.IsSyncReEdit))) return false;
             if (this.IsOnlyInitTask != input.IsOnlyInitTask || (this.IsOnlyInitTask != null && !this.IsOnlyInitTask.Equals(input.IsOnlyInitTask))) return false;
+            if (this.IsAutoCreateCompare != input.IsAutoCreateCompare || (this.IsAutoCreateCompare != null && !this.IsAutoCreateCompare.Equals(input.IsAutoCreateCompare))) return false;
             if (this.ForceDelete != input.ForceDelete || (this.ForceDelete != null && !this.ForceDelete.Equals(input.ForceDelete))) return false;
             if (this.PublicIpConfig != input.PublicIpConfig || (this.PublicIpConfig != null && !this.PublicIpConfig.Equals(input.PublicIpConfig))) return false;
             if (this.ReplayConfig != input.ReplayConfig || (this.ReplayConfig != null && !this.ReplayConfig.Equals(input.ReplayConfig))) return false;
@@ -159,6 +167,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 if (this.CompareTaskParam != null) hashCode = hashCode * 59 + this.CompareTaskParam.GetHashCode();
                 if (this.IsSyncReEdit != null) hashCode = hashCode * 59 + this.IsSyncReEdit.GetHashCode();
                 if (this.IsOnlyInitTask != null) hashCode = hashCode * 59 + this.IsOnlyInitTask.GetHashCode();
+                if (this.IsAutoCreateCompare != null) hashCode = hashCode * 59 + this.IsAutoCreateCompare.GetHashCode();
                 if (this.ForceDelete != null) hashCode = hashCode * 59 + this.ForceDelete.GetHashCode();
                 if (this.PublicIpConfig != null) hashCode = hashCode * 59 + this.PublicIpConfig.GetHashCode();
                 if (this.ReplayConfig != null) hashCode = hashCode * 59 + this.ReplayConfig.GetHashCode();

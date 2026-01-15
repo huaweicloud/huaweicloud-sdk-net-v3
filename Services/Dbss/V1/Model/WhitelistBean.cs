@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string Desc { get; set; }
 
         /// <summary>
-        /// 状态 - true:启用 - false: 禁用
+        /// 状态 - true：启用 - false：禁用
         /// </summary>
         [JsonProperty("enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enabled { get; set; }

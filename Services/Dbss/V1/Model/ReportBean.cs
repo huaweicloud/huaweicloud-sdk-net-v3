@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string FinishTime { get; set; }
 
         /// <summary>
-        /// 格式  - pdf: PDF文件  - zip: zip文件
+        /// 格式  - pdf：PDF文件  - zip：zip文件
         /// </summary>
         [JsonProperty("format", NullValueHandling = NullValueHandling.Ignore)]
         public string Format { get; set; }
@@ -71,13 +71,13 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 报表类型 - PDF: pdf - ZIP: zip
+        /// 报表类型 - PDF：pdf - ZIP：zip
         /// </summary>
         [JsonProperty("template_type", NullValueHandling = NullValueHandling.Ignore)]
         public string TemplateType { get; set; }
 
         /// <summary>
-        /// 周期 - AUDIT_REPORT_DAY: 按天 - AUDIT_REPORT_WEEK： 按周 - AUDIT_REPORT_MONTH： 按月 - AUDIT_REPORT_YEAR：按年 - AUDIT_REPORT_REAL_TIME：立即
+        /// 周期 - AUDIT_REPORT_DAY：按天 - AUDIT_REPORT_WEEK：按周 - AUDIT_REPORT_MONTH：按月 - AUDIT_REPORT_YEAR：按年 - AUDIT_REPORT_REAL_TIME：立即
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

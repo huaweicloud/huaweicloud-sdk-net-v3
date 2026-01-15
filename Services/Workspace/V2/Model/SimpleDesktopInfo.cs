@@ -160,6 +160,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("connect_status", NullValueHandling = NullValueHandling.Ignore)]
         public string ConnectStatus { get; set; }
 
+        /// <summary>
+        /// 桌面池id。
+        /// </summary>
+        [JsonProperty("pool_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string PoolId { get; set; }
+
 
 
         /// <summary>
@@ -193,6 +199,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  taskStatus: ").Append(TaskStatus).Append("\n");
             sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
             sb.Append("  connectStatus: ").Append(ConnectStatus).Append("\n");
+            sb.Append("  poolId: ").Append(PoolId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -235,6 +242,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.TaskStatus != input.TaskStatus || (this.TaskStatus != null && !this.TaskStatus.Equals(input.TaskStatus))) return false;
             if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
             if (this.ConnectStatus != input.ConnectStatus || (this.ConnectStatus != null && !this.ConnectStatus.Equals(input.ConnectStatus))) return false;
+            if (this.PoolId != input.PoolId || (this.PoolId != null && !this.PoolId.Equals(input.PoolId))) return false;
 
             return true;
         }
@@ -271,6 +279,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.TaskStatus != null) hashCode = hashCode * 59 + this.TaskStatus.GetHashCode();
                 if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
                 if (this.ConnectStatus != null) hashCode = hashCode * 59 + this.ConnectStatus.GetHashCode();
+                if (this.PoolId != null) hashCode = hashCode * 59 + this.PoolId.GetHashCode();
                 return hashCode;
             }
         }

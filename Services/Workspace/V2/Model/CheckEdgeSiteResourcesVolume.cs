@@ -8,25 +8,25 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Dbss.V1.Model
+namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 
+    /// 磁盘。
     /// </summary>
-    public class UnSupportAuditInfo 
+    public class CheckEdgeSiteResourcesVolume 
     {
 
         /// <summary>
-        /// 实例版本
+        /// 磁盘类型。
         /// </summary>
-        [JsonProperty("audit_version", NullValueHandling = NullValueHandling.Ignore)]
-        public string AuditVersion { get; set; }
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public string Type { get; set; }
 
         /// <summary>
-        /// 实例名称
+        /// 磁盘大小，单位GB。
         /// </summary>
-        [JsonProperty("server_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string ServerName { get; set; }
+        [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
+        public long? Size { get; set; }
 
 
 
@@ -36,9 +36,9 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UnSupportAuditInfo {\n");
-            sb.Append("  auditVersion: ").Append(AuditVersion).Append("\n");
-            sb.Append("  serverName: ").Append(ServerName).Append("\n");
+            sb.Append("class CheckEdgeSiteResourcesVolume {\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  size: ").Append(Size).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -48,17 +48,17 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UnSupportAuditInfo);
+            return this.Equals(input as CheckEdgeSiteResourcesVolume);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(UnSupportAuditInfo input)
+        public bool Equals(CheckEdgeSiteResourcesVolume input)
         {
             if (input == null) return false;
-            if (this.AuditVersion != input.AuditVersion || (this.AuditVersion != null && !this.AuditVersion.Equals(input.AuditVersion))) return false;
-            if (this.ServerName != input.ServerName || (this.ServerName != null && !this.ServerName.Equals(input.ServerName))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
 
             return true;
         }
@@ -71,8 +71,8 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.AuditVersion != null) hashCode = hashCode * 59 + this.AuditVersion.GetHashCode();
-                if (this.ServerName != null) hashCode = hashCode * 59 + this.ServerName.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
                 return hashCode;
             }
         }

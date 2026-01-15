@@ -101,7 +101,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public string ApplyAverageCommitTime { get; set; }
 
         /// <summary>
-        /// 同步状态。
+        /// 同步状态。 succeed：同步成功，failed：同步失败，processing：同步中，waiting：等待中
         /// </summary>
         [JsonProperty("apply_current_state", NullValueHandling = NullValueHandling.Ignore)]
         public string ApplyCurrentState { get; set; }

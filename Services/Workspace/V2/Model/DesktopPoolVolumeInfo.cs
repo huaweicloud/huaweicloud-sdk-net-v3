@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("throughput", NullValueHandling = NullValueHandling.Ignore)]
         public int? Throughput { get; set; }
 
+        /// <summary>
+        /// kms密钥id。变更密钥是传入密钥id；如需删除密钥则传入空字符串；默认null，不变更密钥。
+        /// </summary>
+        [JsonProperty("kms_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string KmsId { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  iops: ").Append(Iops).Append("\n");
             sb.Append("  throughput: ").Append(Throughput).Append("\n");
+            sb.Append("  kmsId: ").Append(KmsId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,6 +82,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
             if (this.Iops != input.Iops || (this.Iops != null && !this.Iops.Equals(input.Iops))) return false;
             if (this.Throughput != input.Throughput || (this.Throughput != null && !this.Throughput.Equals(input.Throughput))) return false;
+            if (this.KmsId != input.KmsId || (this.KmsId != null && !this.KmsId.Equals(input.KmsId))) return false;
 
             return true;
         }
@@ -91,6 +99,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Iops != null) hashCode = hashCode * 59 + this.Iops.GetHashCode();
                 if (this.Throughput != null) hashCode = hashCode * 59 + this.Throughput.GetHashCode();
+                if (this.KmsId != null) hashCode = hashCode * 59 + this.KmsId.GetHashCode();
                 return hashCode;
             }
         }

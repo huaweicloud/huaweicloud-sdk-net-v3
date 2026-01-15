@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public List<OperationStatisticsBean> OperationStatistics { get; set; }
 
         /// <summary>
-        /// 状态  - FINISHED：已完成  - RUNNING：运行中
+        /// 状态  - FINISHED：已完成 - RUNNING：运行中
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }

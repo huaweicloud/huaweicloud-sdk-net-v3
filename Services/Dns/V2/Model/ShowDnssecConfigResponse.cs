@@ -17,79 +17,79 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 域名。
+        /// **参数解释：** 域名。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("zone_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ZoneName { get; set; }
 
         /// <summary>
-        /// 密钥标签。
+        /// **参数解释：** 密钥标签。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("key_tag", NullValueHandling = NullValueHandling.Ignore)]
         public int? KeyTag { get; set; }
 
         /// <summary>
-        /// 旗标。
+        /// **参数解释：** 旗标。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("flag", NullValueHandling = NullValueHandling.Ignore)]
         public int? Flag { get; set; }
 
         /// <summary>
-        /// 摘要算法。
+        /// **参数解释：** 摘要算法。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("digest_algorithm", NullValueHandling = NullValueHandling.Ignore)]
         public string DigestAlgorithm { get; set; }
 
         /// <summary>
-        /// 摘要算法类型。
+        /// **参数解释：** 摘要算法类型。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("digest_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? DigestType { get; set; }
 
         /// <summary>
-        /// 摘要。
+        /// **参数解释：** 摘要。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("digest", NullValueHandling = NullValueHandling.Ignore)]
         public string Digest { get; set; }
 
         /// <summary>
-        /// 签名算法。
+        /// **参数解释：** 签名算法。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("signature", NullValueHandling = NullValueHandling.Ignore)]
         public string Signature { get; set; }
 
         /// <summary>
-        /// 签名算法类型。
+        /// **参数解释：** 签名算法类型。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("signature_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? SignatureType { get; set; }
 
         /// <summary>
-        /// 公有密钥。
+        /// **参数解释：** 公有密钥。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("ksk_public_key", NullValueHandling = NullValueHandling.Ignore)]
         public string KskPublicKey { get; set; }
 
         /// <summary>
-        /// DS记录。
+        /// **参数解释：** DS记录。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("ds_record", NullValueHandling = NullValueHandling.Ignore)]
         public string DsRecord { get; set; }
 
         /// <summary>
-        /// 创建时间。 格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS。
+        /// **参数解释：** 创建时间。 格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedAt { get; set; }
 
         /// <summary>
-        /// 更新时间。 格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS。
+        /// **参数解释：** 更新时间。 格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdatedAt { get; set; }
 
         /// <summary>
-        /// 状态。  取值范围：  ENABLE：启用 DISABLE：关闭
+        /// **参数解释：** 状态。 **取值范围：** - ENABLE：启用 - DISABLE：关闭
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }

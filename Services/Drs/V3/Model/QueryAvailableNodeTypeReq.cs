@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
     public class QueryAvailableNodeTypeReq 
     {
         /// <summary>
-        /// 迁移场景，migration-实时迁移,sync-实时同步,cloudDataGuard-实时灾备
+        /// 迁移场景 migration实时迁移，sync实时同步，dataGuard实时灾备，subscription实时订阅，replay流量回放
         /// </summary>
-        /// <value>迁移场景，migration-实时迁移,sync-实时同步,cloudDataGuard-实时灾备</value>
+        /// <value>迁移场景 migration实时迁移，sync实时同步，dataGuard实时灾备，subscription实时订阅，replay流量回放</value>
         [JsonConverter(typeof(EnumClassConverter<DbUseTypeEnum>))]
         public class DbUseTypeEnum
         {
@@ -265,7 +265,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         public string EngineType { get; set; }
 
         /// <summary>
-        /// 迁移场景，migration-实时迁移,sync-实时同步,cloudDataGuard-实时灾备
+        /// 迁移场景 migration实时迁移，sync实时同步，dataGuard实时灾备，subscription实时订阅，replay流量回放
         /// </summary>
         [JsonProperty("db_use_type", NullValueHandling = NullValueHandling.Ignore)]
         public DbUseTypeEnum DbUseType { get; set; }
@@ -275,7 +275,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         [JsonProperty("job_direction", NullValueHandling = NullValueHandling.Ignore)]
         public JobDirectionEnum JobDirection { get; set; }
         /// <summary>
-        /// 规格类型。
+        /// 规格类型。 micro：极小，small：小，medium：中，high：高，xlarge：超高，2xlarge：极高
         /// </summary>
         [JsonProperty("node_type", NullValueHandling = NullValueHandling.Ignore)]
         public string NodeType { get; set; }

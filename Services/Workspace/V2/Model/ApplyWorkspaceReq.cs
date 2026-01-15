@@ -141,7 +141,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// 
         /// </summary>
         [JsonProperty("ad_domains", NullValueHandling = NullValueHandling.Ignore)]
-        public AdDomain AdDomains { get; set; }
+        public ApplyWorkspaceAdDomain AdDomains { get; set; }
 
         /// <summary>
         /// 企业ID。 企业ID是您在云桌面服务的唯一标识，终端用户登录时需要填写企业ID，若不自定义设置企业ID，系统将自动生成您的企业ID。格式为由半角数字、字母、_-组成，长度范围小于等于32个字符。

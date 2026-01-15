@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     {
 
         /// <summary>
-        /// 标签键。
+        /// 标签键。例如键值对{“aaa”:\&quot;bbb\&quot;}的key为\&quot;aaa\&quot;
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
         /// <summary>
-        /// 标签值。
+        /// 标签值。例如键值对{“aaa”:[\&quot;bbb\&quot;]}的values为[\&quot;bbb\&quot;]
         /// </summary>
         [JsonProperty("values", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Values { get; set; }

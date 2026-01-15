@@ -899,6 +899,13 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [SDKProperty("compare_detail_type", IsQuery = true)]
         [JsonProperty("compare_detail_type", NullValueHandling = NullValueHandling.Ignore)]
         public CompareDetailTypeEnum CompareDetailType { get; set; }
+        /// <summary>
+        /// 查询日志的级别。取值： - Info：提示级别。 - Warn：警告级别。 - Error：错误级别。
+        /// </summary>
+        [SDKProperty("log_level", IsQuery = true)]
+        [JsonProperty("log_level", NullValueHandling = NullValueHandling.Ignore)]
+        public string LogLevel { get; set; }
+
 
 
         /// <summary>
@@ -921,6 +928,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  sourceDbName: ").Append(SourceDbName).Append("\n");
             sb.Append("  targetDbName: ").Append(TargetDbName).Append("\n");
             sb.Append("  compareDetailType: ").Append(CompareDetailType).Append("\n");
+            sb.Append("  logLevel: ").Append(LogLevel).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -952,6 +960,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             if (this.SourceDbName != input.SourceDbName || (this.SourceDbName != null && !this.SourceDbName.Equals(input.SourceDbName))) return false;
             if (this.TargetDbName != input.TargetDbName || (this.TargetDbName != null && !this.TargetDbName.Equals(input.TargetDbName))) return false;
             if (this.CompareDetailType != input.CompareDetailType) return false;
+            if (this.LogLevel != input.LogLevel || (this.LogLevel != null && !this.LogLevel.Equals(input.LogLevel))) return false;
 
             return true;
         }
@@ -977,6 +986,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 if (this.SourceDbName != null) hashCode = hashCode * 59 + this.SourceDbName.GetHashCode();
                 if (this.TargetDbName != null) hashCode = hashCode * 59 + this.TargetDbName.GetHashCode();
                 hashCode = hashCode * 59 + this.CompareDetailType.GetHashCode();
+                if (this.LogLevel != null) hashCode = hashCode * 59 + this.LogLevel.GetHashCode();
                 return hashCode;
             }
         }

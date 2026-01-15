@@ -407,6 +407,121 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             }
         }
 
+        /// <summary>
+        /// 灾备任务内核方向，up上云，down下云。当任务处于倒换中，与灾备任务方向相反，否则相同。
+        /// </summary>
+        /// <value>灾备任务内核方向，up上云，down下云。当任务处于倒换中，与灾备任务方向相反，否则相同。</value>
+        [JsonConverter(typeof(EnumClassConverter<JobKernelDirectionEnum>))]
+        public class JobKernelDirectionEnum
+        {
+            /// <summary>
+            /// Enum UP for value: up
+            /// </summary>
+            public static readonly JobKernelDirectionEnum UP = new JobKernelDirectionEnum("up");
+
+            /// <summary>
+            /// Enum DOWN for value: down
+            /// </summary>
+            public static readonly JobKernelDirectionEnum DOWN = new JobKernelDirectionEnum("down");
+
+            private static readonly Dictionary<string, JobKernelDirectionEnum> StaticFields =
+            new Dictionary<string, JobKernelDirectionEnum>()
+            {
+                { "up", UP },
+                { "down", DOWN },
+            };
+
+            private string _value;
+
+            public JobKernelDirectionEnum()
+            {
+
+            }
+
+            public JobKernelDirectionEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static JobKernelDirectionEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as JobKernelDirectionEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(JobKernelDirectionEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(JobKernelDirectionEnum a, JobKernelDirectionEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(JobKernelDirectionEnum a, JobKernelDirectionEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 任务ID。
@@ -576,7 +691,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public List<PublicIpConfig> PublicIpList { get; set; }
 
         /// <summary>
-        /// 是否成功绑定公网IP
+        /// 是否成功绑定公网IP 取值：SUCCESS，FAILED
         /// </summary>
         [JsonProperty("bind_public_ip_state", NullValueHandling = NullValueHandling.Ignore)]
         public string BindPublicIpState { get; set; }
@@ -611,11 +726,16 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public QueryRepairDetailResp RepairDetailInfo { get; set; }
 
         /// <summary>
-        /// 修复SQL导出状态。
+        /// 修复SQL导出状态。 INIT：初始状态，EXPORTING：比对结果导出中，EXPORT_COMPLETE：比对结果导出完成，EXPORT_COMMON_FAILED：比对结果导出失败
         /// </summary>
         [JsonProperty("repair_export_status", NullValueHandling = NullValueHandling.Ignore)]
         public string RepairExportStatus { get; set; }
 
+        /// <summary>
+        /// 灾备任务内核方向，up上云，down下云。当任务处于倒换中，与灾备任务方向相反，否则相同。
+        /// </summary>
+        [JsonProperty("job_kernel_direction", NullValueHandling = NullValueHandling.Ignore)]
+        public JobKernelDirectionEnum JobKernelDirection { get; set; }
 
 
         /// <summary>
@@ -660,6 +780,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  repairProgressInfo: ").Append(RepairProgressInfo).Append("\n");
             sb.Append("  repairDetailInfo: ").Append(RepairDetailInfo).Append("\n");
             sb.Append("  repairExportStatus: ").Append(RepairExportStatus).Append("\n");
+            sb.Append("  jobKernelDirection: ").Append(JobKernelDirection).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -713,6 +834,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             if (this.RepairProgressInfo != input.RepairProgressInfo || (this.RepairProgressInfo != null && !this.RepairProgressInfo.Equals(input.RepairProgressInfo))) return false;
             if (this.RepairDetailInfo != input.RepairDetailInfo || (this.RepairDetailInfo != null && !this.RepairDetailInfo.Equals(input.RepairDetailInfo))) return false;
             if (this.RepairExportStatus != input.RepairExportStatus || (this.RepairExportStatus != null && !this.RepairExportStatus.Equals(input.RepairExportStatus))) return false;
+            if (this.JobKernelDirection != input.JobKernelDirection) return false;
 
             return true;
         }
@@ -760,6 +882,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 if (this.RepairProgressInfo != null) hashCode = hashCode * 59 + this.RepairProgressInfo.GetHashCode();
                 if (this.RepairDetailInfo != null) hashCode = hashCode * 59 + this.RepairDetailInfo.GetHashCode();
                 if (this.RepairExportStatus != null) hashCode = hashCode * 59 + this.RepairExportStatus.GetHashCode();
+                hashCode = hashCode * 59 + this.JobKernelDirection.GetHashCode();
                 return hashCode;
             }
         }

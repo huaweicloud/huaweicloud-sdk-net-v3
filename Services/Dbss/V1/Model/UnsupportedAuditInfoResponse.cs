@@ -13,14 +13,14 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     /// <summary>
     /// 
     /// </summary>
-    public class UnSupportAuditInfoResponse 
+    public class UnsupportedAuditInfoResponse 
     {
 
         /// <summary>
         /// 审计信息
         /// </summary>
         [JsonProperty("audit_infos", NullValueHandling = NullValueHandling.Ignore)]
-        public List<UnSupportAuditInfo> AuditInfos { get; set; }
+        public List<UnsupportedAuditInfo> AuditInfos { get; set; }
 
         /// <summary>
         /// 支持的版本
@@ -36,7 +36,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UnSupportAuditInfoResponse {\n");
+            sb.Append("class UnsupportedAuditInfoResponse {\n");
             sb.Append("  auditInfos: ").Append(AuditInfos).Append("\n");
             sb.Append("  supportVersion: ").Append(SupportVersion).Append("\n");
             sb.Append("}\n");
@@ -48,13 +48,13 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UnSupportAuditInfoResponse);
+            return this.Equals(input as UnsupportedAuditInfoResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(UnSupportAuditInfoResponse input)
+        public bool Equals(UnsupportedAuditInfoResponse input)
         {
             if (input == null) return false;
             if (this.AuditInfos != input.AuditInfos || (this.AuditInfos != null && input.AuditInfos != null && !this.AuditInfos.SequenceEqual(input.AuditInfos))) return false;

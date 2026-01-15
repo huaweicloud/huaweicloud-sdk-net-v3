@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public string SchemaName { get; set; }
 
         /// <summary>
-        /// SQL类型
+        /// SQL类型 取值：SELECT, INSERT, DELETE, UPDATE, DDL
         /// </summary>
         [JsonProperty("query_type", NullValueHandling = NullValueHandling.Ignore)]
         public string QueryType { get; set; }
