@@ -89,12 +89,6 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         public List<ImageSprite> ImageSprites { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("pipeline_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string PipelineId { get; set; }
-
-        /// <summary>
         /// 任务优先级，取值如下： - 9代表高优先级。 - 6代表中优先级，默认为6。  暂时只支持6和9。 
         /// </summary>
         [JsonProperty("priority", NullValueHandling = NullValueHandling.Ignore)]
@@ -169,7 +163,6 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             sb.Append("  thumbnail: ").Append(Thumbnail).Append("\n");
             sb.Append("  thumbnails: ").Append(Thumbnails).Append("\n");
             sb.Append("  imageSprites: ").Append(ImageSprites).Append("\n");
-            sb.Append("  pipelineId: ").Append(PipelineId).Append("\n");
             sb.Append("  priority: ").Append(Priority).Append("\n");
             sb.Append("  subtitle: ").Append(Subtitle).Append("\n");
             sb.Append("  encryption: ").Append(Encryption).Append("\n");
@@ -209,7 +202,6 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             if (this.Thumbnail != input.Thumbnail || (this.Thumbnail != null && !this.Thumbnail.Equals(input.Thumbnail))) return false;
             if (this.Thumbnails != input.Thumbnails || (this.Thumbnails != null && input.Thumbnails != null && !this.Thumbnails.SequenceEqual(input.Thumbnails))) return false;
             if (this.ImageSprites != input.ImageSprites || (this.ImageSprites != null && input.ImageSprites != null && !this.ImageSprites.SequenceEqual(input.ImageSprites))) return false;
-            if (this.PipelineId != input.PipelineId || (this.PipelineId != null && !this.PipelineId.Equals(input.PipelineId))) return false;
             if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
             if (this.Subtitle != input.Subtitle || (this.Subtitle != null && !this.Subtitle.Equals(input.Subtitle))) return false;
             if (this.Encryption != input.Encryption || (this.Encryption != null && !this.Encryption.Equals(input.Encryption))) return false;
@@ -243,7 +235,6 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                 if (this.Thumbnail != null) hashCode = hashCode * 59 + this.Thumbnail.GetHashCode();
                 if (this.Thumbnails != null) hashCode = hashCode * 59 + this.Thumbnails.GetHashCode();
                 if (this.ImageSprites != null) hashCode = hashCode * 59 + this.ImageSprites.GetHashCode();
-                if (this.PipelineId != null) hashCode = hashCode * 59 + this.PipelineId.GetHashCode();
                 if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
                 if (this.Subtitle != null) hashCode = hashCode * 59 + this.Subtitle.GetHashCode();
                 if (this.Encryption != null) hashCode = hashCode * 59 + this.Encryption.GetHashCode();

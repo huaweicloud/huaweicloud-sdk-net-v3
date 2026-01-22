@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// **参数解释**： 批量删除域名组响应信息 **取值范围**： 不涉及 
         /// </summary>
         [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, List<Mapstringstring>> Data { get; set; }

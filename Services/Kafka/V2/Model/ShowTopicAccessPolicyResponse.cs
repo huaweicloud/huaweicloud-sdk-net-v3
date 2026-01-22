@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// Topic类型。
+        /// **参数解释**： Topic类型。 **取值范围**： - 0：普通Topic。 - 1：系统(内部)Topic。
         /// </summary>
         [JsonProperty("topic_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? TopicType { get; set; }

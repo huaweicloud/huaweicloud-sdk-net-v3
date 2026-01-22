@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     {
 
         /// <summary>
-        /// 当前显示数量
+        /// **参数解释**： 当前显示数量。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
         public int? Size { get; set; }
 
         /// <summary>
-        /// 查询结果总数
+        /// **参数解释**： 查询结果总数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }
 
         /// <summary>
-        /// 查询详情
+        /// **参数解释**： 查询详情。
         /// </summary>
         [JsonProperty("items", NullValueHandling = NullValueHandling.Ignore)]
         public List<QueueDetails> Items { get; set; }

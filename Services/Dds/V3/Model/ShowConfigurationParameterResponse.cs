@@ -17,49 +17,49 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
     {
 
         /// <summary>
-        /// 参数模板ID。
+        /// **参数解释：** 参数模板ID。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 参数模板名称。
+        /// **参数解释：** 参数模板名称。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 数据库版本。
+        /// **参数解释：** 数据库版本。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("datastore_version", NullValueHandling = NullValueHandling.Ignore)]
         public string DatastoreVersion { get; set; }
 
         /// <summary>
-        /// 数据库类型。
+        /// **参数解释：** 数据库类型。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("datastore_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DatastoreName { get; set; }
 
         /// <summary>
-        /// 参数模板描述。
+        /// **参数解释：** 参数模板描述。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 创建时间，格式为\&quot;yyyy-MM-ddTHH:mm:ssZ\&quot;。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+        /// **参数解释：** 创建时间，格式为“yyyy-MM-ddTHH:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("created", NullValueHandling = NullValueHandling.Ignore)]
         public string Created { get; set; }
 
         /// <summary>
-        /// 更新时间，格式为\&quot;yyyy-MM-ddTHH:mm:ssZ\&quot;。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+        /// **参数解释：** 更新时间，格式为“yyyy-MM-ddTHH:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("updated", NullValueHandling = NullValueHandling.Ignore)]
         public string Updated { get; set; }
 
         /// <summary>
-        /// 参数对象，用户基于默认参数模板自定义的参数配置。
+        /// **参数解释：** 参数对象，用户基于默认参数模板自定义的参数配置。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("parameters", NullValueHandling = NullValueHandling.Ignore)]
         public List<ConfigurationParametersResult> Parameters { get; set; }

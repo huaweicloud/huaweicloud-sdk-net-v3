@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     public class User 
     {
         /// <summary>
-        /// **参数解释**： 默认的主题权限。 **约束限制**： 不涉及。 **取值范围**： - pub：拥有发布权限。 - sub：拥有订阅权限。 - PUB|sub：拥有发布订阅权限。 - DENY：无权限。  **默认取值**： 不涉及。
+        /// **参数解释**： 默认的主题权限。 **约束限制**： 不涉及。 **取值范围**： - PUB：拥有发布权限。 - SUB：拥有订阅权限。 - PUB|SUB：拥有发布订阅权限。 - DENY：无权限。 **默认取值**： 不涉及。
         /// </summary>
-        /// <value>**参数解释**： 默认的主题权限。 **约束限制**： 不涉及。 **取值范围**： - pub：拥有发布权限。 - sub：拥有订阅权限。 - PUB|sub：拥有发布订阅权限。 - DENY：无权限。  **默认取值**： 不涉及。</value>
+        /// <value>**参数解释**： 默认的主题权限。 **约束限制**： 不涉及。 **取值范围**： - PUB：拥有发布权限。 - SUB：拥有订阅权限。 - PUB|SUB：拥有发布订阅权限。 - DENY：无权限。 **默认取值**： 不涉及。</value>
         [JsonConverter(typeof(EnumClassConverter<DefaultTopicPermEnum>))]
         public class DefaultTopicPermEnum
         {
@@ -143,9 +143,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         }
 
         /// <summary>
-        /// **参数解释**： 默认的消费组权限。 **约束限制**： 不涉及。 **取值范围**： - sub：拥有订阅权限。 - DENY：无权限。  **默认取值**： 不涉及。
+        /// **参数解释**： 默认的消费组权限。 **约束限制**： 不涉及。 **取值范围**： - SUB：拥有订阅权限。 - DENY：无权限。 **默认取值**： 不涉及。
         /// </summary>
-        /// <value>**参数解释**： 默认的消费组权限。 **约束限制**： 不涉及。 **取值范围**： - sub：拥有订阅权限。 - DENY：无权限。  **默认取值**： 不涉及。</value>
+        /// <value>**参数解释**： 默认的消费组权限。 **约束限制**： 不涉及。 **取值范围**： - SUB：拥有订阅权限。 - DENY：无权限。 **默认取值**： 不涉及。</value>
         [JsonConverter(typeof(EnumClassConverter<DefaultGroupPermEnum>))]
         public class DefaultGroupPermEnum
         {
@@ -265,7 +265,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string AccessKey { get; set; }
 
         /// <summary>
-        /// **参数解释**： 密钥。 **约束限制**： 8-32个字符。 至少包含以下字符中的3种： - 大写字母 - 小写字母 - 数字 - 特殊字符&#x60;~!@#$%^&amp;*()-_&#x3D;+\\\\|[{}];:\\&#39;\\\&quot;,&lt;.&gt;/?密钥。 不能与名称或倒序的名称相同。  **取值范围**： 不涉及。 **默认取值**： 不涉及。
+        /// **参数解释**： 密钥。当密钥为空时，不更新密钥，继续使用旧密钥。 **约束限制**： 8-32个字符。 至少包含以下字符中的3种： - 大写字母 - 小写字母 - 数字 - 特殊字符&#x60;~!@#$%^&amp;*()-_&#x3D;+\\\\|[{}];:\\&#39;\\\&quot;,&lt;.&gt;/?密钥。 不能与名称或倒序的名称相同。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("secret_key", NullValueHandling = NullValueHandling.Ignore)]
         public string SecretKey { get; set; }
@@ -277,18 +277,18 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string WhiteRemoteAddress { get; set; }
 
         /// <summary>
-        /// **参数解释**： 是否为管理员。 **约束限制**： 不涉及。 **取值范围**： - true：是管理员。 - false：不是管理员。  **默认取值**： 不涉及。
+        /// **参数解释**： 是否为管理员。 **约束限制**： 不涉及。 **取值范围**： - true：是管理员。 - false：不是管理员。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("admin", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Admin { get; set; }
 
         /// <summary>
-        /// **参数解释**： 默认的主题权限。 **约束限制**： 不涉及。 **取值范围**： - pub：拥有发布权限。 - sub：拥有订阅权限。 - PUB|sub：拥有发布订阅权限。 - DENY：无权限。  **默认取值**： 不涉及。
+        /// **参数解释**： 默认的主题权限。 **约束限制**： 不涉及。 **取值范围**： - PUB：拥有发布权限。 - SUB：拥有订阅权限。 - PUB|SUB：拥有发布订阅权限。 - DENY：无权限。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("default_topic_perm", NullValueHandling = NullValueHandling.Ignore)]
         public DefaultTopicPermEnum DefaultTopicPerm { get; set; }
         /// <summary>
-        /// **参数解释**： 默认的消费组权限。 **约束限制**： 不涉及。 **取值范围**： - sub：拥有订阅权限。 - DENY：无权限。  **默认取值**： 不涉及。
+        /// **参数解释**： 默认的消费组权限。 **约束限制**： 不涉及。 **取值范围**： - SUB：拥有订阅权限。 - DENY：无权限。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("default_group_perm", NullValueHandling = NullValueHandling.Ignore)]
         public DefaultGroupPermEnum DefaultGroupPerm { get; set; }

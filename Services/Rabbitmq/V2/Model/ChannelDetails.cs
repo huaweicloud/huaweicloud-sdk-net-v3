@@ -17,37 +17,37 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     {
 
         /// <summary>
-        /// channel信息，包括客户端IP:Port到服务端IP:Port(channel_id)。
+        /// **参数解释**： channel信息，包括客户端IP:Port到服务端IP:Port(channel_id)。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// channel数量
+        /// **参数解释**： channel数量。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("number", NullValueHandling = NullValueHandling.Ignore)]
         public int? Number { get; set; }
 
         /// <summary>
-        /// 消费者用户名，在开启ACL访问控制后返回真实用户名，未开启ACL时返回null。
+        /// **参数解释**： 消费者用户名，在开启ACL访问控制后返回真实用户名，未开启ACL时返回null。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("user", NullValueHandling = NullValueHandling.Ignore)]
         public string User { get; set; }
 
         /// <summary>
-        /// connection信息，包括客户端IP:Port到服务端IP:Port。
+        /// **参数解释**： connection信息，包括客户端IP:Port到服务端IP:Port。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("connection_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ConnectionName { get; set; }
 
         /// <summary>
-        /// 连接的消费者IP
+        /// **参数解释**： 连接的消费者IP。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("peer_host", NullValueHandling = NullValueHandling.Ignore)]
         public string PeerHost { get; set; }
 
         /// <summary>
-        /// 连接的消费者进程端口号
+        /// **参数解释**： 连接的消费者进程端口号。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("peer_port", NullValueHandling = NullValueHandling.Ignore)]
         public int? PeerPort { get; set; }

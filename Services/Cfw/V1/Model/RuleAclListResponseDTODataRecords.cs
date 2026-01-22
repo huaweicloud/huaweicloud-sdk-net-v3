@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     public class RuleAclListResponseDTODataRecords 
     {
         /// <summary>
-        /// 规则方向0：外到内1：内到外
+        /// **参数解释**： 规则方向 **取值范围**： 0：外到内1：内到外
         /// </summary>
-        /// <value>规则方向0：外到内1：内到外</value>
+        /// <value>**参数解释**： 规则方向 **取值范围**： 0：外到内1：内到外</value>
         [JsonConverter(typeof(EnumClassConverter<DirectionEnum>))]
         public class DirectionEnum
         {
@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         }
 
         /// <summary>
-        /// 规则类型，0：互联网规则，1：vpc规则，2：nat规则
+        /// **参数解释**： 规则类型，用于区分不同防护对象设置规则类型。 **取值范围**：  0：互联网边界规则，源（source）和目的（destination）地址需要为公网IP或域名； 1：VPC间规则，源（source）和目的（destination）地址需要为私有ip； 2：NAT规则，源（source）地址需要为私网IP，目的地址为公网IP或域名。
         /// </summary>
-        /// <value>规则类型，0：互联网规则，1：vpc规则，2：nat规则</value>
+        /// <value>**参数解释**： 规则类型，用于区分不同防护对象设置规则类型。 **取值范围**：  0：互联网边界规则，源（source）和目的（destination）地址需要为公网IP或域名； 1：VPC间规则，源（source）和目的（destination）地址需要为私有ip； 2：NAT规则，源（source）地址需要为私网IP，目的地址为公网IP或域名。</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -253,84 +253,84 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
 
 
         /// <summary>
-        /// 规则id
+        /// **参数解释**： 规则ID **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("rule_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RuleId { get; set; }
 
         /// <summary>
-        /// 应用列表
-        /// </summary>
-        [JsonProperty("applications", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> Applications { get; set; }
-
-        /// <summary>
-        /// 地址类型0 ipv4，1 ipv6
-        /// </summary>
-        [JsonProperty("address_type", NullValueHandling = NullValueHandling.Ignore)]
-        public int? AddressType { get; set; }
-
-        /// <summary>
-        /// 规则名称
-        /// </summary>
-        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// 排序id
+        /// **参数解释**： 排序id **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? OrderId { get; set; }
 
         /// <summary>
-        /// 规则方向0：外到内1：内到外
+        /// **参数解释**： 应用列表 **取值范围**： 不涉及
+        /// </summary>
+        [JsonProperty("applications", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Applications { get; set; }
+
+        /// <summary>
+        /// 参数解释： IP地址的互联网协议类型，用于指定IP地址的互联网协议，由客户指定 约束限制： 不涉及 取值范围： 0：IPv4 1：IPv6 默认取值： 不涉及
+        /// </summary>
+        [JsonProperty("address_type", NullValueHandling = NullValueHandling.Ignore)]
+        public int? AddressType { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 规则名称 **取值范围**： 不涉及
+        /// </summary>
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 规则方向 **取值范围**： 0：外到内1：内到外
         /// </summary>
         [JsonProperty("direction", NullValueHandling = NullValueHandling.Ignore)]
         public DirectionEnum Direction { get; set; }
         /// <summary>
-        /// 动作0：permit，1：deny
+        /// **参数解释**： 规则动作类型，用于区分规则对流量的动作 **取值范围**： 0表示允许通行（permit），1表示拒绝通行（deny）
         /// </summary>
         [JsonProperty("action_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? ActionType { get; set; }
 
         /// <summary>
-        /// 规则下发状态 0：禁用，1：启用
+        /// **参数解释**： 规则启用状态，用于区分规则是否启用 **取值范围**： 0表示启用，1表示禁用
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public int? Status { get; set; }
 
         /// <summary>
-        /// 描述
+        /// **参数解释**： 规则描述，用于描述规则的用途。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 长连接时长
+        /// **参数解释**： 长连接时长（s）。 **取值范围**： 1-86400000。
         /// </summary>
         [JsonProperty("long_connect_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? LongConnectTime { get; set; }
 
         /// <summary>
-        /// 长连接支持
+        /// **参数解释**： 用于表示是否支持长连接。 **取值范围**： 0表示不支持，1表示支持
         /// </summary>
         [JsonProperty("long_connect_enable", NullValueHandling = NullValueHandling.Ignore)]
         public int? LongConnectEnable { get; set; }
 
         /// <summary>
-        /// 长连接时长对应小时
+        /// **参数解释**： 长连接时长对应小时数（h）。 **取值范围**： 0-24000。
         /// </summary>
         [JsonProperty("long_connect_time_hour", NullValueHandling = NullValueHandling.Ignore)]
         public long? LongConnectTimeHour { get; set; }
 
         /// <summary>
-        /// 长连接时长对应分钟
+        /// **参数解释**： 长连接时长对应分钟数（min）。 **取值范围**： 0-60。
         /// </summary>
         [JsonProperty("long_connect_time_minute", NullValueHandling = NullValueHandling.Ignore)]
         public long? LongConnectTimeMinute { get; set; }
 
         /// <summary>
-        /// 长连接时长秒
+        /// **参数解释**： 长连接时长对应秒数（s）。 **取值范围**： 0-60。
         /// </summary>
         [JsonProperty("long_connect_time_second", NullValueHandling = NullValueHandling.Ignore)]
         public long? LongConnectTimeSecond { get; set; }
@@ -354,18 +354,24 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public RuleServiceDtoForResponse Service { get; set; }
 
         /// <summary>
-        /// 规则类型，0：互联网规则，1：vpc规则，2：nat规则
+        /// **参数解释**： 规则类型，用于区分不同防护对象设置规则类型。 **取值范围**：  0：互联网边界规则，源（source）和目的（destination）地址需要为公网IP或域名； 1：VPC间规则，源（source）和目的（destination）地址需要为私有ip； 2：NAT规则，源（source）地址需要为私网IP，目的地址为公网IP或域名。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
         /// <summary>
-        /// 规则创建时间，例如：\&quot;2024-08-12 08:40:00\&quot;
+        /// **参数解释**： 规则创建时间。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("created_date", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedDate { get; set; }
 
         /// <summary>
-        /// 规则最后开启时间，例如：\&quot;2024-08-12 08:40:00\&quot;
+        /// **参数解释**： 规则修改时间。 **取值范围**： 不涉及
+        /// </summary>
+        [JsonProperty("modified_date", NullValueHandling = NullValueHandling.Ignore)]
+        public string ModifiedDate { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 规则最后开启时间。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("last_open_time", NullValueHandling = NullValueHandling.Ignore)]
         public string LastOpenTime { get; set; }
@@ -386,10 +392,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             var sb = new StringBuilder();
             sb.Append("class RuleAclListResponseDTODataRecords {\n");
             sb.Append("  ruleId: ").Append(RuleId).Append("\n");
+            sb.Append("  orderId: ").Append(OrderId).Append("\n");
             sb.Append("  applications: ").Append(Applications).Append("\n");
             sb.Append("  addressType: ").Append(AddressType).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
-            sb.Append("  orderId: ").Append(OrderId).Append("\n");
             sb.Append("  direction: ").Append(Direction).Append("\n");
             sb.Append("  actionType: ").Append(ActionType).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
@@ -404,6 +410,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  service: ").Append(Service).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  createdDate: ").Append(CreatedDate).Append("\n");
+            sb.Append("  modifiedDate: ").Append(ModifiedDate).Append("\n");
             sb.Append("  lastOpenTime: ").Append(LastOpenTime).Append("\n");
             sb.Append("  tag: ").Append(Tag).Append("\n");
             sb.Append("}\n");
@@ -425,10 +432,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             if (input == null) return false;
             if (this.RuleId != input.RuleId || (this.RuleId != null && !this.RuleId.Equals(input.RuleId))) return false;
+            if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
             if (this.Applications != input.Applications || (this.Applications != null && input.Applications != null && !this.Applications.SequenceEqual(input.Applications))) return false;
             if (this.AddressType != input.AddressType || (this.AddressType != null && !this.AddressType.Equals(input.AddressType))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
-            if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
             if (this.Direction != input.Direction) return false;
             if (this.ActionType != input.ActionType || (this.ActionType != null && !this.ActionType.Equals(input.ActionType))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
@@ -443,6 +450,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             if (this.Service != input.Service || (this.Service != null && !this.Service.Equals(input.Service))) return false;
             if (this.Type != input.Type) return false;
             if (this.CreatedDate != input.CreatedDate || (this.CreatedDate != null && !this.CreatedDate.Equals(input.CreatedDate))) return false;
+            if (this.ModifiedDate != input.ModifiedDate || (this.ModifiedDate != null && !this.ModifiedDate.Equals(input.ModifiedDate))) return false;
             if (this.LastOpenTime != input.LastOpenTime || (this.LastOpenTime != null && !this.LastOpenTime.Equals(input.LastOpenTime))) return false;
             if (this.Tag != input.Tag || (this.Tag != null && !this.Tag.Equals(input.Tag))) return false;
 
@@ -458,10 +466,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             {
                 var hashCode = 41;
                 if (this.RuleId != null) hashCode = hashCode * 59 + this.RuleId.GetHashCode();
+                if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 if (this.Applications != null) hashCode = hashCode * 59 + this.Applications.GetHashCode();
                 if (this.AddressType != null) hashCode = hashCode * 59 + this.AddressType.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 hashCode = hashCode * 59 + this.Direction.GetHashCode();
                 if (this.ActionType != null) hashCode = hashCode * 59 + this.ActionType.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
@@ -476,6 +484,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                 if (this.Service != null) hashCode = hashCode * 59 + this.Service.GetHashCode();
                 hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.CreatedDate != null) hashCode = hashCode * 59 + this.CreatedDate.GetHashCode();
+                if (this.ModifiedDate != null) hashCode = hashCode * 59 + this.ModifiedDate.GetHashCode();
                 if (this.LastOpenTime != null) hashCode = hashCode * 59 + this.LastOpenTime.GetHashCode();
                 if (this.Tag != null) hashCode = hashCode * 59 + this.Tag.GetHashCode();
                 return hashCode;

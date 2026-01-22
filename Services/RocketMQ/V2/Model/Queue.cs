@@ -17,31 +17,31 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// **参数解释**： 队列ID。 **取值范围**： 不涉及。
+        /// **参数解释**： 队列ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public int? Id { get; set; }
 
         /// <summary>
-        /// **参数解释**： 队列消费堆积总数。 **取值范围**： 不涉及。
+        /// **参数解释**： 队列消费堆积总数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("lag", NullValueHandling = NullValueHandling.Ignore)]
         public long? Lag { get; set; }
 
         /// <summary>
-        /// **参数解释**： 队列消息总数。 **取值范围**： 不涉及。
+        /// **参数解释**： 队列消息总数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("broker_offset", NullValueHandling = NullValueHandling.Ignore)]
         public long? BrokerOffset { get; set; }
 
         /// <summary>
-        /// **参数解释**： 已消费消息数。 **取值范围**： 不涉及。
+        /// **参数解释**： 已消费消息数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("consumer_offset", NullValueHandling = NullValueHandling.Ignore)]
         public long? ConsumerOffset { get; set; }
 
         /// <summary>
-        /// **参数解释**： 最新消费消息的存储时间，Unix毫秒时间戳格式。 **取值范围**： 不涉及。
+        /// **参数解释**： 最新消费消息的存储时间，Unix毫秒时间戳格式。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("last_message_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? LastMessageTime { get; set; }

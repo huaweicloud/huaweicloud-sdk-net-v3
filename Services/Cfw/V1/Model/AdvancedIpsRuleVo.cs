@@ -23,25 +23,25 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? Action { get; set; }
 
         /// <summary>
-        /// 高级ips规则id
+        /// 频率ips规则id
         /// </summary>
         [JsonProperty("ips_rule_id", NullValueHandling = NullValueHandling.Ignore)]
         public string IpsRuleId { get; set; }
 
         /// <summary>
-        /// ips规则类型：0表示敏感目录扫描、1表示反弹xshell
+        /// ips规则类型：0表示敏感目录扫描、1表示反弹shell
         /// </summary>
         [JsonProperty("ips_rule_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? IpsRuleType { get; set; }
 
         /// <summary>
-        /// 包含特殊参数的JSON字符串
+        /// 频率ips定义JSON字符串
         /// </summary>
         [JsonProperty("param", NullValueHandling = NullValueHandling.Ignore)]
         public string Param { get; set; }
 
         /// <summary>
-        /// 开关状态：0表示关闭、1表示开启
+        /// 频率ips规则状态，0表示关闭，1表示开启
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public int? Status { get; set; }

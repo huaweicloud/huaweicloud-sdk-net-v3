@@ -17,25 +17,25 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// 总数。
+        /// **参数解释**： 总数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? Total { get; set; }
 
         /// <summary>
-        /// 下个分页的offset。
+        /// **参数解释**： 下个分页的offset。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("next_offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? NextOffset { get; set; }
 
         /// <summary>
-        /// 上个分页的offset。
+        /// **参数解释**： 上个分页的offset。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("previous_offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? PreviousOffset { get; set; }
 
         /// <summary>
-        /// 代理列表。
+        /// **参数解释**： 代理列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("brokers", NullValueHandling = NullValueHandling.Ignore)]
         public List<ListBrokersRespBrokers> Brokers { get; set; }

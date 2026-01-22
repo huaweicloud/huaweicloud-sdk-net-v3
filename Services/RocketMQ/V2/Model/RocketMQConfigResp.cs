@@ -17,37 +17,37 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// RocketMQ配置名称。
+        /// **参数解释**： RocketMQ配置名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// RocketMQ配置当前值。
+        /// **参数解释**： RocketMQ配置当前值。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }
 
         /// <summary>
-        /// RocketMQ配置的类型。
+        /// **参数解释**： RocketMQ配置的类型。 **约束限制**： 不涉及。 **取值范围**： - dynamic：动态。 - static：静态。    **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("config_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ConfigType { get; set; }
 
         /// <summary>
-        /// RocketMQ配置的默认值。
+        /// **参数解释**： RocketMQ配置的默认值。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("default_value", NullValueHandling = NullValueHandling.Ignore)]
         public string DefaultValue { get; set; }
 
         /// <summary>
-        /// RocketMQ配置取值的范围。
+        /// **参数解释**： RocketMQ配置取值的范围。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("valid_values", NullValueHandling = NullValueHandling.Ignore)]
         public string ValidValues { get; set; }
 
         /// <summary>
-        /// RocketMQ配置值的类型。
+        /// **参数解释**： RocketMQ配置值的类型。 **约束限制**： 不涉及。 **取值范围**： - integer：整数类型。 - boolean：布尔类型。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("value_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ValueType { get; set; }

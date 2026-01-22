@@ -295,7 +295,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string LogId { get; set; }
 
         /// <summary>
-        /// **参数解释**： 下个日期 **约束限制**： 第一页为空，其他页不为空 **取值范围**： 查询流量日志时为上一次查询最后一条数据的end_time **默认取值**： 不涉及
+        /// **参数解释**： 下个日期 **约束限制**： 第一页为空，其他页不为空 **取值范围**： 查询流量日志时为上一次查询最后一条数据的end_time 查询访问控制日志时为上一次查询最后一条数据的hit_time 查询访问控制日志时为上一次查询最后一条数据的event_time 查询URL日志时为上一次查询最后一条数据的hit_time **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("next_date", NullValueHandling = NullValueHandling.Ignore)]
         public long? NextDate { get; set; }

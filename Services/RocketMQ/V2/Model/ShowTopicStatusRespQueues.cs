@@ -17,25 +17,25 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// 队列ID。
+        /// **参数解释**： 队列ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public int? Id { get; set; }
 
         /// <summary>
-        /// 最小偏移量。
+        /// **参数解释**： 最小偏移量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("min_offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? MinOffset { get; set; }
 
         /// <summary>
-        /// 最大偏移量。
+        /// **参数解释**： 最大偏移量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("max_offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? MaxOffset { get; set; }
 
         /// <summary>
-        /// 最后一条消息的时间。
+        /// **参数解释**： 最后一条消息的时间。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("last_message_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? LastMessageTime { get; set; }

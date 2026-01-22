@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 删除防火墙时生成的任务的job_id
+        /// **参数解释**： 删除防火墙时生成的任务的job_id **约束限制**： 不涉及
         /// </summary>
         [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
         public string Data { get; set; }

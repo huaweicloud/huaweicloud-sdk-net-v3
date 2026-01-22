@@ -15,180 +15,72 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     /// </summary>
     public class ListMessagesRequest 
     {
-        /// <summary>
-        /// 消息引擎。
-        /// </summary>
-        /// <value>消息引擎。</value>
-        [JsonConverter(typeof(EnumClassConverter<EngineEnum>))]
-        public class EngineEnum
-        {
-            /// <summary>
-            /// Enum RELIABILITY for value: reliability
-            /// </summary>
-            public static readonly EngineEnum RELIABILITY = new EngineEnum("reliability");
-
-            private static readonly Dictionary<string, EngineEnum> StaticFields =
-            new Dictionary<string, EngineEnum>()
-            {
-                { "reliability", RELIABILITY },
-            };
-
-            private string _value;
-
-            public EngineEnum()
-            {
-
-            }
-
-            public EngineEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static EngineEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as EngineEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(EngineEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(EngineEnum a, EngineEnum b)
-            {
-                if (ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(EngineEnum a, EngineEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
-        /// 消息引擎。
+        /// **参数解释**： 消息引擎。 **约束限制**： 不涉及。 **取值范围**： - rocketmq：RocketMQ消息引擎。 - reliability：RocketMQ消息引擎别称。 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("engine", IsPath = true)]
         [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]
-        public EngineEnum Engine { get; set; }
+        public string Engine { get; set; }
+
         /// <summary>
-        /// 实例ID。
+        /// **参数解释**： 实例ID。获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("instance_id", IsPath = true)]
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 主题名称。
+        /// **参数解释**： 主题名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("topic", IsQuery = true)]
         [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
         public string Topic { get; set; }
 
         /// <summary>
-        /// 队列。
+        /// **参数解释**： 队列。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("queue", IsQuery = true)]
         [JsonProperty("queue", NullValueHandling = NullValueHandling.Ignore)]
         public string Queue { get; set; }
 
         /// <summary>
-        /// 查询数量。
+        /// **参数解释**： 查询数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
-        public string Limit { get; set; }
+        public int? Limit { get; set; }
 
         /// <summary>
-        /// 偏移量，表示从此偏移量开始查询， offset大于等于0。
+        /// **参数解释**： 偏移量。 **约束限制**： 不涉及。 **取值范围**： 大于等于0。 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
-        public string Offset { get; set; }
+        public int? Offset { get; set; }
 
         /// <summary>
-        /// 消息的key。
+        /// **参数解释**： 消息的key。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("key", IsQuery = true)]
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
         /// <summary>
-        /// 开始时间（不通过msg_id精确查询消息时，此参数必填）。
+        /// **参数解释**： 开始时间。 **约束限制**： 不通过msg_id精确查询消息时，此参数必填。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("start_time", IsQuery = true)]
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 结束时间（不通过msg_id精确查询消息时，此参数必填）。
+        /// **参数解释**： 结束时间。 **约束限制**： 不通过msg_id精确查询消息时，此参数必填。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("end_time", IsQuery = true)]
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string EndTime { get; set; }
 
         /// <summary>
-        /// 消息ID。
+        /// **参数解释**： 消息ID。 **约束限制**： 不通过时间范围查询消息时，此参数必填。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("msg_id", IsQuery = true)]
         [JsonProperty("msg_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -231,7 +123,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public bool Equals(ListMessagesRequest input)
         {
             if (input == null) return false;
-            if (this.Engine != input.Engine) return false;
+            if (this.Engine != input.Engine || (this.Engine != null && !this.Engine.Equals(input.Engine))) return false;
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
             if (this.Topic != input.Topic || (this.Topic != null && !this.Topic.Equals(input.Topic))) return false;
             if (this.Queue != input.Queue || (this.Queue != null && !this.Queue.Equals(input.Queue))) return false;
@@ -253,7 +145,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                hashCode = hashCode * 59 + this.Engine.GetHashCode();
+                if (this.Engine != null) hashCode = hashCode * 59 + this.Engine.GetHashCode();
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.Topic != null) hashCode = hashCode * 59 + this.Topic.GetHashCode();
                 if (this.Queue != null) hashCode = hashCode * 59 + this.Queue.GetHashCode();

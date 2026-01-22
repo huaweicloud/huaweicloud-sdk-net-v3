@@ -29,10 +29,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public int? PublicBoundwidth { get; set; }
 
         /// <summary>
-        /// **参数解释**： 公网IP的ID。  **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+        /// **参数解释**： 公网IP的ID。[获取方法：参考[[《弹性公网IP API参考》](https://support.huaweicloud.com/api-eip/ListPublicipsV3.html)](tag:hws)[[《弹性公网IP API参考》](https://support.huaweicloud.com/intl/zh-cn/api-eip/ListPublicipsV3.html)](tag:hws_hk)[[《弹性公网IP API参考》](https://support.huaweicloud.com/eu/api-eip/ListPublicipsV3.html)](tag:hws_eu)[《弹性公网IP API参考》](tag:ax,cmcc,ctc,sbc,hk_sbc,g42,hk_g42,srg,dt,ocb,hws_ocb,hcs,fcs)，调用“查询弹性公网IP列表”接口，从响应体中获取弹性公网IP的ID。](tag:ax,cmcc,ctc,sbc,hk_sbc,g42,hk_g42,srg,dt,ocb,hws_ocb,hcs,fcs,hws,hws_hk,hws_eu) **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
-        [JsonProperty("publicIpId", NullValueHandling = NullValueHandling.Ignore)]
-        public string PublicIpId { get; set; }
+        [JsonProperty("publicip_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string PublicipId { get; set; }
 
 
 
@@ -45,7 +45,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("class ModifyKafkaPublicIPAccessSwitchReq {\n");
             sb.Append("  eipAddress: ").Append(EipAddress).Append("\n");
             sb.Append("  publicBoundwidth: ").Append(PublicBoundwidth).Append("\n");
-            sb.Append("  publicIpId: ").Append(PublicIpId).Append("\n");
+            sb.Append("  publicipId: ").Append(PublicipId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -66,7 +66,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             if (input == null) return false;
             if (this.EipAddress != input.EipAddress || (this.EipAddress != null && !this.EipAddress.Equals(input.EipAddress))) return false;
             if (this.PublicBoundwidth != input.PublicBoundwidth || (this.PublicBoundwidth != null && !this.PublicBoundwidth.Equals(input.PublicBoundwidth))) return false;
-            if (this.PublicIpId != input.PublicIpId || (this.PublicIpId != null && !this.PublicIpId.Equals(input.PublicIpId))) return false;
+            if (this.PublicipId != input.PublicipId || (this.PublicipId != null && !this.PublicipId.Equals(input.PublicipId))) return false;
 
             return true;
         }
@@ -81,7 +81,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 var hashCode = 41;
                 if (this.EipAddress != null) hashCode = hashCode * 59 + this.EipAddress.GetHashCode();
                 if (this.PublicBoundwidth != null) hashCode = hashCode * 59 + this.PublicBoundwidth.GetHashCode();
-                if (this.PublicIpId != null) hashCode = hashCode * 59 + this.PublicIpId.GetHashCode();
+                if (this.PublicipId != null) hashCode = hashCode * 59 + this.PublicipId.GetHashCode();
                 return hashCode;
             }
         }

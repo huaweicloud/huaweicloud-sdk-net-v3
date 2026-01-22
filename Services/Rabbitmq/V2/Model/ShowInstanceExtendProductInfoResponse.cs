@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// 表示包年包月的产品列表。当前暂不支持通过API创建包年包月的Rabbitmq实例。
         /// </summary>
         [JsonProperty("monthly", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ShowInstanceExtendProductInfoRespMonthly> Monthly { get; set; }
+        public List<ShowInstanceExtendProductInfoRespHourly> Monthly { get; set; }
 
 
 

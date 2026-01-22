@@ -21,7 +21,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public ObjectInfoDto Body { get; set; }
+        public UpdateObjectConfigDesc Body { get; set; }
 
 
 

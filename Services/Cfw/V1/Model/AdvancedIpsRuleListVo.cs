@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 频率ips规则列表
         /// </summary>
         [JsonProperty("advanced_ips_rules", NullValueHandling = NullValueHandling.Ignore)]
         public List<AdvancedIpsRuleVo> AdvancedIpsRules { get; set; }
 
         /// <summary>
-        /// 
+        /// 频率ips规则总数
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }

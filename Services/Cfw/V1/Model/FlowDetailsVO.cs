@@ -47,6 +47,18 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public long? LastTime { get; set; }
 
         /// <summary>
+        /// **参数解释**： 聚合开始时间 **取值范围**： 不涉及
+        /// </summary>
+        [JsonProperty("agg_start_time", NullValueHandling = NullValueHandling.Ignore)]
+        public long? AggStartTime { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 聚合结束时间 **取值范围**： 不涉及
+        /// </summary>
+        [JsonProperty("agg_end_time", NullValueHandling = NullValueHandling.Ignore)]
+        public long? AggEndTime { get; set; }
+
+        /// <summary>
         /// **参数解释**： 端口统计 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("ports", NullValueHandling = NullValueHandling.Ignore)]
@@ -114,6 +126,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  deviceName: ").Append(DeviceName).Append("\n");
             sb.Append("  item: ").Append(Item).Append("\n");
             sb.Append("  lastTime: ").Append(LastTime).Append("\n");
+            sb.Append("  aggStartTime: ").Append(AggStartTime).Append("\n");
+            sb.Append("  aggEndTime: ").Append(AggEndTime).Append("\n");
             sb.Append("  ports: ").Append(Ports).Append("\n");
             sb.Append("  region: ").Append(Region).Append("\n");
             sb.Append("  requestByte: ").Append(RequestByte).Append("\n");
@@ -146,6 +160,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             if (this.DeviceName != input.DeviceName || (this.DeviceName != null && !this.DeviceName.Equals(input.DeviceName))) return false;
             if (this.Item != input.Item || (this.Item != null && !this.Item.Equals(input.Item))) return false;
             if (this.LastTime != input.LastTime || (this.LastTime != null && !this.LastTime.Equals(input.LastTime))) return false;
+            if (this.AggStartTime != input.AggStartTime || (this.AggStartTime != null && !this.AggStartTime.Equals(input.AggStartTime))) return false;
+            if (this.AggEndTime != input.AggEndTime || (this.AggEndTime != null && !this.AggEndTime.Equals(input.AggEndTime))) return false;
             if (this.Ports != input.Ports || (this.Ports != null && input.Ports != null && !this.Ports.SequenceEqual(input.Ports))) return false;
             if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
             if (this.RequestByte != input.RequestByte || (this.RequestByte != null && !this.RequestByte.Equals(input.RequestByte))) return false;
@@ -172,6 +188,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                 if (this.DeviceName != null) hashCode = hashCode * 59 + this.DeviceName.GetHashCode();
                 if (this.Item != null) hashCode = hashCode * 59 + this.Item.GetHashCode();
                 if (this.LastTime != null) hashCode = hashCode * 59 + this.LastTime.GetHashCode();
+                if (this.AggStartTime != null) hashCode = hashCode * 59 + this.AggStartTime.GetHashCode();
+                if (this.AggEndTime != null) hashCode = hashCode * 59 + this.AggEndTime.GetHashCode();
                 if (this.Ports != null) hashCode = hashCode * 59 + this.Ports.GetHashCode();
                 if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
                 if (this.RequestByte != null) hashCode = hashCode * 59 + this.RequestByte.GetHashCode();

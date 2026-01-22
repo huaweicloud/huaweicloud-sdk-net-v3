@@ -179,7 +179,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string DeviceOwner { get; set; }
 
         /// <summary>
-        /// 关联实例类型，包括：NATGW，ELB，PORT等。
+        /// **参数解释**： 关联实例类型 **约束限制**： 不涉及 **取值范围**： PORT：IPV4云服务器 NATGW：NAT网关 ELB： 负载均衡器 VPN： 虚拟专用网络 EVPN： 虚拟专用网络 IPV6_PORT：IPV6云服务器 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("associate_instance_type", NullValueHandling = NullValueHandling.Ignore)]
         public string AssociateInstanceType { get; set; }
@@ -203,7 +203,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string FwEnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获得，通过返回值中的data.records.protect_objects.object_id（.表示各对象之间层级的区分）获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。此处仅取type为0的防护对象id，可通过data.records.protect_objects.type（.表示各对象之间层级的区分）获得。
+        /// 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获得，通过返回值中的data.records.protect_objects.object_id（.表示各对象之间层级的区分）获得，type为0时，object_id为互联网边界防护对象ID，type为1时，object_id为VPC边界防护对象ID。此处仅取type为0的防护对象id，可通过data.records.protect_objects.type（.表示各对象之间层级的区分）获得。
         /// </summary>
         [JsonProperty("object_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ObjectId { get; set; }
@@ -225,6 +225,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         [JsonProperty("fw_domain_id", NullValueHandling = NullValueHandling.Ignore)]
         public string FwDomainId { get; set; }
+
+        /// <summary>
+        /// bypass状态，0: 未bypass, 1: 已bypass, 2: 失败
+        /// </summary>
+        [JsonProperty("bypass_status", NullValueHandling = NullValueHandling.Ignore)]
+        public int? BypassStatus { get; set; }
 
 
 
@@ -251,6 +257,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  domainId: ").Append(DomainId).Append("\n");
             sb.Append("  fwDomainId: ").Append(FwDomainId).Append("\n");
+            sb.Append("  bypassStatus: ").Append(BypassStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -285,6 +292,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             if (this.Tags != input.Tags || (this.Tags != null && !this.Tags.Equals(input.Tags))) return false;
             if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
             if (this.FwDomainId != input.FwDomainId || (this.FwDomainId != null && !this.FwDomainId.Equals(input.FwDomainId))) return false;
+            if (this.BypassStatus != input.BypassStatus || (this.BypassStatus != null && !this.BypassStatus.Equals(input.BypassStatus))) return false;
 
             return true;
         }
@@ -313,6 +321,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
                 if (this.FwDomainId != null) hashCode = hashCode * 59 + this.FwDomainId.GetHashCode();
+                if (this.BypassStatus != null) hashCode = hashCode * 59 + this.BypassStatus.GetHashCode();
                 return hashCode;
             }
         }

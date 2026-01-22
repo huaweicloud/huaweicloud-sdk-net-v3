@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? Action { get; set; }
 
         /// <summary>
-        /// 协议类型
+        /// 协议类型，包括0：HTTP、1：SMTP、2： POP3、3：IMAP4、4：FTP、5：SMB、6：恶意访问、7：IM
         /// </summary>
         [JsonProperty("protocol_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? ProtocolType { get; set; }

@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// **参数解释**：要添加请求头参数。  **约束限制**：不涉及
+    /// **参数解释**：要添加的请求头参数。  **约束限制**：不涉及
     /// </summary>
     public class UpdateInsertHeaderConfig 
     {
@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Key { get; set; }
 
         /// <summary>
-        /// **参数解释**：请求头参数类别。  **约束限制**：不涉及  **取值范围**：USER_DEFINED,REFERENCE_HEADER,SYSTEM_DEFINED  **默认取值**：不涉及
+        /// **参数解释**：请求头参数类别。  **约束限制**：不涉及  **取值范围**： - USER_DEFINED：用户自定义请求头。 - REFERENCE_HEADER：引用请求头字段中的某一个字段。 - SYSTEM_DEFINED：表示请求头参数只能使用系统定义的一系列固定值，取值列表见value字段描述。  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("value_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ValueType { get; set; }

@@ -11,37 +11,37 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 {
     /// <summary>
-    /// RocketMQ元数据迁移，RabbitMQ binding元数据。
+    /// **参数解释**： RocketMQ元数据迁移，RabbitMQ binding元数据。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
     /// </summary>
     public class MigrationRabbitBindingMetadata 
     {
 
         /// <summary>
-        /// vhost名称。
+        /// **参数解释**： vhost名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("vhost", NullValueHandling = NullValueHandling.Ignore)]
         public string Vhost { get; set; }
 
         /// <summary>
-        /// 消息的来源。
+        /// **参数解释**： 消息的来源。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("source", NullValueHandling = NullValueHandling.Ignore)]
         public string Source { get; set; }
 
         /// <summary>
-        /// 消息的目标。
+        /// **参数解释**： 消息的目标。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("destination", NullValueHandling = NullValueHandling.Ignore)]
         public string Destination { get; set; }
 
         /// <summary>
-        /// 目标的类型。
+        /// **参数解释**： 目标的类型。 **约束限制**： 不涉及。 **取值范围**： - exchange：交换机。 - queue：队列。[RabbitMQ AMQP版本只支持绑定queue。](tag:hws,hws_hk) **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("destination_type", NullValueHandling = NullValueHandling.Ignore)]
         public string DestinationType { get; set; }
 
         /// <summary>
-        /// 路由键。
+        /// **参数解释**： 路由键。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("routing_key", NullValueHandling = NullValueHandling.Ignore)]
         public string RoutingKey { get; set; }

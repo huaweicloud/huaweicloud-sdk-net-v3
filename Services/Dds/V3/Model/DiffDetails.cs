@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
     {
 
         /// <summary>
-        /// 参数名称
+        /// **参数解释：** 参数名称。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("parameter_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ParameterName { get; set; }
 
         /// <summary>
-        /// 比较参数模板的参数值。
+        /// **参数解释：** 源参数模板中的参数值。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("source_value", NullValueHandling = NullValueHandling.Ignore)]
         public string SourceValue { get; set; }
 
         /// <summary>
-        /// 目标参数模板的参数值。
+        /// **参数解释：** 目标参数模板中的参数值。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("target_value", NullValueHandling = NullValueHandling.Ignore)]
         public string TargetValue { get; set; }

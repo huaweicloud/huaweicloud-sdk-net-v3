@@ -29,13 +29,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? Direction { get; set; }
 
         /// <summary>
-        /// ip地址类型0：ipv4，1:ipv6
+        /// IP地址类型0：ipv4，1:ipv6
         /// </summary>
         [JsonProperty("address_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? AddressType { get; set; }
 
         /// <summary>
-        /// ip地址
+        /// IP地址
         /// </summary>
         [JsonProperty("address", NullValueHandling = NullValueHandling.Ignore)]
         public string Address { get; set; }
@@ -58,6 +58,18 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
+        /// <summary>
+        /// |- **参数解释**： 黑白名单创建时间。 **取值范围**： 不涉及 
+        /// </summary>
+        [JsonProperty("created_date", NullValueHandling = NullValueHandling.Ignore)]
+        public string CreatedDate { get; set; }
+
+        /// <summary>
+        /// |- **参数解释**： 黑白名单修改时间。 **取值范围**： 不涉及 
+        /// </summary>
+        [JsonProperty("modified_date", NullValueHandling = NullValueHandling.Ignore)]
+        public string ModifiedDate { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +86,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  protocol: ").Append(Protocol).Append("\n");
             sb.Append("  port: ").Append(Port).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  createdDate: ").Append(CreatedDate).Append("\n");
+            sb.Append("  modifiedDate: ").Append(ModifiedDate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,6 +113,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             if (this.Protocol != input.Protocol || (this.Protocol != null && !this.Protocol.Equals(input.Protocol))) return false;
             if (this.Port != input.Port || (this.Port != null && !this.Port.Equals(input.Port))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.CreatedDate != input.CreatedDate || (this.CreatedDate != null && !this.CreatedDate.Equals(input.CreatedDate))) return false;
+            if (this.ModifiedDate != input.ModifiedDate || (this.ModifiedDate != null && !this.ModifiedDate.Equals(input.ModifiedDate))) return false;
 
             return true;
         }
@@ -118,6 +134,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                 if (this.Protocol != null) hashCode = hashCode * 59 + this.Protocol.GetHashCode();
                 if (this.Port != null) hashCode = hashCode * 59 + this.Port.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.CreatedDate != null) hashCode = hashCode * 59 + this.CreatedDate.GetHashCode();
+                if (this.ModifiedDate != null) hashCode = hashCode * 59 + this.ModifiedDate.GetHashCode();
                 return hashCode;
             }
         }

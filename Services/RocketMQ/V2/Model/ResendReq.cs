@@ -17,25 +17,25 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// Group ID。
+        /// **参数解释**： Group ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
         /// </summary>
         [JsonProperty("group", NullValueHandling = NullValueHandling.Ignore)]
         public string Group { get; set; }
 
         /// <summary>
-        /// 消息所属Topic。
+        /// **参数解释**： 消息所属Topic。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
         /// </summary>
         [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
         public string Topic { get; set; }
 
         /// <summary>
-        /// 客户端ID。
+        /// **参数解释**： 客户端ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
         /// </summary>
         [JsonProperty("client_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ClientId { get; set; }
 
         /// <summary>
-        /// 消息列表。
+        /// **参数解释**： 消息列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
         /// </summary>
         [JsonProperty("msg_id_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> MsgIdList { get; set; }

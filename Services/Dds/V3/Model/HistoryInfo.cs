@@ -17,25 +17,25 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
     {
 
         /// <summary>
-        /// 参数名称
+        /// **参数解释：** 参数名称。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("parameter_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ParameterName { get; set; }
 
         /// <summary>
-        /// 修改前的值。
+        /// **参数解释：** 修改前的值。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("old_value", NullValueHandling = NullValueHandling.Ignore)]
         public string OldValue { get; set; }
 
         /// <summary>
-        /// 修改后的值。
+        /// **参数解释：** 修改后的值。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("new_value", NullValueHandling = NullValueHandling.Ignore)]
         public string NewValue { get; set; }
 
         /// <summary>
-        /// 修改时间，格式为\&quot;yyyy-MM-ddTHH:mm:ssZ\&quot;。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+        /// **参数解释：** 修改时间，格式为\&quot;yyyy-MM-ddTHH:mm:ssZ\&quot;。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdatedAt { get; set; }

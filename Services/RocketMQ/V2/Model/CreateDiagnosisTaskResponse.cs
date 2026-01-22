@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// **参数解释**： 报告ID。 **取值范围**： 不涉及。
+        /// **参数解释**： 报告ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("report_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ReportId { get; set; }

@@ -17,55 +17,55 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
     {
 
         /// <summary>
-        /// 参数模板ID。
+        /// **参数解释：** 参数模板ID。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 参数模板名称。
+        /// **参数解释：** 参数模板名称。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 参数模板描述。
+        /// **参数解释：** 参数模板描述。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 数据库版本。
+        /// **参数解释：** 数据库版本。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("datastore_version", NullValueHandling = NullValueHandling.Ignore)]
         public string DatastoreVersion { get; set; }
 
         /// <summary>
-        /// 数据库类型。
+        /// **参数解释：** 数据库类型。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("datastore_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DatastoreName { get; set; }
 
         /// <summary>
-        /// 参数模板节点类型。 - mongos，表示集群mongos节点类型。 - shard，表示集群shard节点类型。 - config，表示集群config节点类型。 - replica，表示副本集类型。 - single，表示单节点类型。
+        /// **参数解释：** 参数模板节点类型。 **取值范围：** - mongos，表示集群mongos节点类型。 - shard，表示集群shard节点类型。 - config，表示集群config节点类型。 - replica，表示副本集类型。 - readonly，表示副本集只读节点类型。 - shard_readonly，表示集群只读节点类型。 - single，表示单节点类型。
         /// </summary>
         [JsonProperty("node_type", NullValueHandling = NullValueHandling.Ignore)]
         public string NodeType { get; set; }
 
         /// <summary>
-        /// 创建时间，格式为\&quot;yyyy-MM-ddTHH:mm:ssZ\&quot;。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+        /// **参数解释：** 创建时间，格式为“yyyy-MM-ddTHH:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("created", NullValueHandling = NullValueHandling.Ignore)]
         public string Created { get; set; }
 
         /// <summary>
-        /// 更新时间，格式为\&quot;yyyy-MM-ddTHH:mm:ssZ\&quot;。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+        /// **参数解释：** 更新时间，格式为“yyyy-MM-ddTHH:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("updated", NullValueHandling = NullValueHandling.Ignore)]
         public string Updated { get; set; }
 
         /// <summary>
-        /// 是否是用户自定义参数模板。 - false表示为默认参数模板。 - true表示为用户自定义参数模板。
+        /// **参数解释：** 是否是用户自定义参数模板。 **取值范围：** - 取值为“false”，表示为系统默认参数模板。 - 取值为“true”，表示为用户自定义参数模板。
         /// </summary>
         [JsonProperty("user_defined", NullValueHandling = NullValueHandling.Ignore)]
         public bool? UserDefined { get; set; }

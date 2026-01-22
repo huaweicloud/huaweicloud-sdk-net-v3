@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public List<AddressItemIdWithoutName> Items { get; set; }
 
         /// <summary>
-        /// 覆盖ip列表
+        /// 覆盖IP列表
         /// </summary>
         [JsonProperty("covered_ip", NullValueHandling = NullValueHandling.Ignore)]
         public List<CoveredIPVO> CoveredIp { get; set; }

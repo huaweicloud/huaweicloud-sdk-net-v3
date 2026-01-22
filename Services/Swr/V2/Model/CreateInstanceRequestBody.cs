@@ -418,6 +418,12 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         [JsonProperty("obs_bucket_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ObsBucketName { get; set; }
 
+        /// <summary>
+        /// KMS的密钥ID，用于对自动创建的OBS桶进行加密。密钥的加密算法支持AES-256和SM4。指定该字段时必须开启OBS桶加密开关，且不能指定自定义OBS桶。
+        /// </summary>
+        [JsonProperty("obs_enc_kms_key_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ObsEncKmsKeyId { get; set; }
+
 
 
         /// <summary>
@@ -439,6 +445,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("  obsEncrypt: ").Append(ObsEncrypt).Append("\n");
             sb.Append("  encryptType: ").Append(EncryptType).Append("\n");
             sb.Append("  obsBucketName: ").Append(ObsBucketName).Append("\n");
+            sb.Append("  obsEncKmsKeyId: ").Append(ObsEncKmsKeyId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -469,6 +476,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             if (this.ObsEncrypt != input.ObsEncrypt || (this.ObsEncrypt != null && !this.ObsEncrypt.Equals(input.ObsEncrypt))) return false;
             if (this.EncryptType != input.EncryptType) return false;
             if (this.ObsBucketName != input.ObsBucketName || (this.ObsBucketName != null && !this.ObsBucketName.Equals(input.ObsBucketName))) return false;
+            if (this.ObsEncKmsKeyId != input.ObsEncKmsKeyId || (this.ObsEncKmsKeyId != null && !this.ObsEncKmsKeyId.Equals(input.ObsEncKmsKeyId))) return false;
 
             return true;
         }
@@ -493,6 +501,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 if (this.ObsEncrypt != null) hashCode = hashCode * 59 + this.ObsEncrypt.GetHashCode();
                 hashCode = hashCode * 59 + this.EncryptType.GetHashCode();
                 if (this.ObsBucketName != null) hashCode = hashCode * 59 + this.ObsBucketName.GetHashCode();
+                if (this.ObsEncKmsKeyId != null) hashCode = hashCode * 59 + this.ObsEncKmsKeyId.GetHashCode();
                 return hashCode;
             }
         }

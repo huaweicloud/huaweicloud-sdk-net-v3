@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// ip地址
+        /// IP地址
         /// </summary>
         [JsonProperty("ip", NullValueHandling = NullValueHandling.Ignore)]
         public string Ip { get; set; }
 
         /// <summary>
-        /// 覆盖ip地址。
+        /// 覆盖IP地址。
         /// </summary>
         [JsonProperty("covered_Ip", NullValueHandling = NullValueHandling.Ignore)]
         public string CoveredIp { get; set; }

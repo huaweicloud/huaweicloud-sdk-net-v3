@@ -209,6 +209,30 @@ namespace HuaweiCloud.SDK.Eip.V3
         }
         
         /// <summary>
+        /// 查询公网IP池类型
+        ///
+        /// 查询公网IP池类型。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowPublicipPoolTypesResponse ShowPublicipPoolTypes(ShowPublicipPoolTypesRequest showPublicipPoolTypesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/eip/publicip-pool-types", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPublicipPoolTypesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowPublicipPoolTypesResponse>(response);
+        }
+
+        public SyncInvoker<ShowPublicipPoolTypesResponse> ShowPublicipPoolTypesInvoker(ShowPublicipPoolTypesRequest showPublicipPoolTypesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/eip/publicip-pool-types", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPublicipPoolTypesRequest);
+            return new SyncInvoker<ShowPublicipPoolTypesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPublicipPoolTypesResponse>);
+        }
+        
+        /// <summary>
         /// 查询GEIP与实例绑定关系的租户列表
         ///
         /// 查询GEIP与实例绑定关系的租户列表

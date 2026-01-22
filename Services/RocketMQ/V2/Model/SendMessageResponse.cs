@@ -17,43 +17,43 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// **参数解释**： 主题名称。 **取值范围**： 不涉及。
+        /// **参数解释**： 主题名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
         /// </summary>
         [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
         public string Topic { get; set; }
 
         /// <summary>
-        /// **参数解释**： 消息内容。 **取值范围**： 不涉及。
+        /// **参数解释**： 消息内容。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
         /// </summary>
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public string Body { get; set; }
 
         /// <summary>
-        /// **参数解释**： 特性列表。 **取值范围**： 不涉及。
+        /// **参数解释**： 特性列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
         /// </summary>
         [JsonProperty("property_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<SendMessageProperties> PropertyList { get; set; }
 
         /// <summary>
-        /// **参数解释**： 消息ID。 **取值范围**： 不涉及。
+        /// **参数解释**： 消息ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
         /// </summary>
         [JsonProperty("msg_id", NullValueHandling = NullValueHandling.Ignore)]
         public string MsgId { get; set; }
 
         /// <summary>
-        /// **参数解释**： 队列ID。 **取值范围**： 不涉及。
+        /// **参数解释**： 队列ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
         /// </summary>
         [JsonProperty("queue_id", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? QueueId { get; set; }
 
         /// <summary>
-        /// **参数解释**： 队列offset。 **取值范围**： 不涉及。
+        /// **参数解释**： 队列offset。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
         /// </summary>
         [JsonProperty("queue_offset", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? QueueOffset { get; set; }
 
         /// <summary>
-        /// **参数解释**： Broker名称。 **取值范围**： 不涉及。
+        /// **参数解释**： Broker名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
         /// </summary>
         [JsonProperty("broker_name", NullValueHandling = NullValueHandling.Ignore)]
         public string BrokerName { get; set; }

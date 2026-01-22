@@ -17,37 +17,37 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 每页显示个数，范围为1-1024
+        /// **参数解释**： 每页显示个数 **取值范围**： 1-1024
         /// </summary>
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
+        /// **参数解释**： 偏移量：指定返回记录的开始位置 **取值范围**： 大于或等于0
         /// </summary>
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 项目ID
+        /// **参数解释**： 项目ID **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 域名信息列表
+        /// **参数解释**： 域名信息列表 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("records", NullValueHandling = NullValueHandling.Ignore)]
         public List<DomainInfo> Records { get; set; }
 
         /// <summary>
-        /// 域名组id
+        /// **参数解释**： 域名组id **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("set_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SetId { get; set; }
 
         /// <summary>
-        /// 域名总数
+        /// **参数解释**： 域名总数 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }

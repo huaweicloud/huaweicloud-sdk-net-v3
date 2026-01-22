@@ -17,43 +17,43 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     {
 
         /// <summary>
-        /// 监控维度。
+        /// **参数解释**： 监控维度。
         /// </summary>
         [JsonProperty("dimensions", NullValueHandling = NullValueHandling.Ignore)]
         public List<ShowCeshierarchyRespDimensions> Dimensions { get; set; }
 
         /// <summary>
-        /// 实例信息。
+        /// **参数解释**： 实例信息。
         /// </summary>
         [JsonProperty("instance_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<ShowCeshierarchyRespInstanceIds> InstanceIds { get; set; }
 
         /// <summary>
-        /// 节点信息。
+        /// **参数解释**： 节点信息。
         /// </summary>
         [JsonProperty("nodes", NullValueHandling = NullValueHandling.Ignore)]
         public List<ShowCeshierarchyRespNodes> Nodes { get; set; }
 
         /// <summary>
-        /// Queue信息。
+        /// **参数解释**： Queue信息。
         /// </summary>
         [JsonProperty("queues", NullValueHandling = NullValueHandling.Ignore)]
         public List<ShowCeshierarchyRespQueues> Queues { get; set; }
 
         /// <summary>
-        /// Vhost信息
+        /// **参数解释**： Vhost信息
         /// </summary>
         [JsonProperty("vhosts", NullValueHandling = NullValueHandling.Ignore)]
         public List<ShowCeshierarchyRespVhosts> Vhosts { get; set; }
 
         /// <summary>
-        /// exchange信息
+        /// **参数解释**： Exchange信息
         /// </summary>
         [JsonProperty("exchanges", NullValueHandling = NullValueHandling.Ignore)]
         public List<ShowCeshierarchyRespExchanges> Exchanges { get; set; }
 
         /// <summary>
-        /// 消费组信息。
+        /// **参数解释**： 消费组信息。
         /// </summary>
         [JsonProperty("groups", NullValueHandling = NullValueHandling.Ignore)]
         public List<ShowCeshierarchyRespGroups> Groups { get; set; }

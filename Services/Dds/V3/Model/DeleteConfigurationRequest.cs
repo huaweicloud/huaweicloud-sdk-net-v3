@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
     {
 
         /// <summary>
-        /// 参数模板ID。
+        /// **参数解释：** 参数模板ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
         [SDKProperty("config_id", IsPath = true)]
         [JsonProperty("config_id", NullValueHandling = NullValueHandling.Ignore)]

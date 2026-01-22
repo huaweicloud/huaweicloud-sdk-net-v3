@@ -38,6 +38,13 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public string Status { get; set; }
 
         /// <summary>
+        /// 任务ID。
+        /// </summary>
+        [SDKProperty("id", IsQuery = true)]
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
         /// 任务名称。对应取值如下： - \&quot;CreateMongoDB\&quot;：创建集群实例 - \&quot;CreateMongoDBReplica\&quot;：创建副本集实例 - \&quot;CreateMongoDBReplicaSingle\&quot;：创建单节点实例 - \&quot;EnlargeMongoDBVolume\&quot;：磁盘扩容 - \&quot;ResizeMongoDBInstance\&quot;：社区版实例规格变更 - \&quot;ResizeDfvMongoDBInstance\&quot;：社区增强版实例规格变更 - \&quot;EnlargeMongoDBGroup\&quot;：添加节点 - \&quot;ReplicaSetEnlargeNode\&quot;：副本集添加备节点 - \&quot;AddReadonlyNode\&quot;：添加只读节点 - \&quot;RestartInstance\&quot;：重启集群实例 - \&quot;RestartGroup\&quot;：重启集群节点组 - \&quot;RestartNode\&quot;：重启集群节点 - \&quot;RestartReplicaSetInstance\&quot;：重启副本集实例 - \&quot;RestartReplicaSingleInstance\&quot;：重启单节点实例 - \&quot;SwitchPrimary\&quot;：主备切换 - \&quot;ModifyIp\&quot;：修改内网地址 - \&quot;ModifySecurityGroup\&quot;：修改安全组 - \&quot;ModifyPort\&quot;：修改数据库端口 - \&quot;BindPublicIP\&quot;：绑定弹性IP - \&quot;UnbindPublicIP\&quot;：解绑弹性IP - \&quot;SwitchInstanceSSL\&quot;：切换SSL - \&quot;AzMigrate\&quot;：迁移可用区 - \&quot;CreateIp\&quot;：显示shard/config IP - \&quot;ModifyOpLogSize\&quot;：修改oplog大小 - \&quot;RestoreMongoDB\&quot;：集群恢复到新实例 - \&quot;RestoreMongoDB_Replica\&quot;：副本集恢复到新实例 - \&quot;RestoreMongoDB_Replica_Single\&quot;：单节点恢复到新实例 - \&quot;RestoreMongoDB_Replica_PITR\&quot;：副本集恢复到指定时间点 - \&quot;MongodbSnapshotBackup\&quot;：创建物理备份 - \&quot;MongodbSnapshotEBackup\&quot;：创建快照备份 - \&quot;MongodbRestoreData2CurrentInstance\&quot;：备份恢复到当前实例 - \&quot;MongodbRestoreData2NewInstance\&quot;：备份恢复到新实例 - \&quot;MongodbPitr2CurrentInstance\&quot;：备份恢复到当前实例指定时间点 - \&quot;MongodbPitr2NewInstance\&quot;：备份恢复到新实例指定时间点 - \&quot;MongodbRecycleBackup\&quot;：备份回收 - \&quot;MongodbRestoreTable\&quot;：库表级时间点恢复 - \&quot;UpgradeDatabaseVersion\&quot;：升级数据库补丁
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
@@ -70,6 +77,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
@@ -94,6 +102,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
@@ -112,6 +121,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                 if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();

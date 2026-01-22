@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// **参数解释**： 任务ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+        /// **参数解释**： 任务ID。 **约束限制**： 仅Kafka扩容时支持查询进度。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("task_id", IsPath = true)]
         [JsonProperty("task_id", NullValueHandling = NullValueHandling.Ignore)]

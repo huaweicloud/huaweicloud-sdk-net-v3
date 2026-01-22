@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// **参数解释**： 磁盘IO编码。 **取值范围**： 不涉及。
+        /// **参数解释**： 磁盘IO编码。 **取值范围**： - dms.physical.storage.high.v2：高IO类型磁盘。 - dms.physical.storage.ultra.v2：超高IO类型磁盘。 [- dms.physical.storage.general：使用通用型SSD的磁盘类型。](tag:hws,hws_hk,ax,dt) [- dms.physical.storage.extreme：使用极速型SSD的磁盘类型。](tag:hws,hws_hk,ax,dt)
         /// </summary>
         [JsonProperty("io_spec", NullValueHandling = NullValueHandling.Ignore)]
         public string IoSpec { get; set; }
 
         /// <summary>
-        /// **参数解释**： 磁盘类型。 **取值范围**： 不涉及。
+        /// **参数解释**： 磁盘类型。 **取值范围**： evs。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     public class UserGroupPerms 
     {
         /// <summary>
-        /// **参数解释**： 消费组权限。 **约束限制**： 不涉及。 **取值范围**： - sub：拥有订阅权限。 - DENY：无权限。  **默认取值**： 不涉及。
+        /// **参数解释**： 消费组权限。 **约束限制**： 不涉及。 **取值范围**： - SUB：拥有订阅权限。 - DENY：无权限。  **默认取值**： 不涉及。
         /// </summary>
-        /// <value>**参数解释**： 消费组权限。 **约束限制**： 不涉及。 **取值范围**： - sub：拥有订阅权限。 - DENY：无权限。  **默认取值**： 不涉及。</value>
+        /// <value>**参数解释**： 消费组权限。 **约束限制**： 不涉及。 **取值范围**： - SUB：拥有订阅权限。 - DENY：无权限。  **默认取值**： 不涉及。</value>
         [JsonConverter(typeof(EnumClassConverter<PermEnum>))]
         public class PermEnum
         {
@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// **参数解释**： 消费组权限。 **约束限制**： 不涉及。 **取值范围**： - sub：拥有订阅权限。 - DENY：无权限。  **默认取值**： 不涉及。
+        /// **参数解释**： 消费组权限。 **约束限制**： 不涉及。 **取值范围**： - SUB：拥有订阅权限。 - DENY：无权限。  **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("perm", NullValueHandling = NullValueHandling.Ignore)]
         public PermEnum Perm { get; set; }

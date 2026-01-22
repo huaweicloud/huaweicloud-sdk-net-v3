@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string ResourceId { get; set; }
 
         /// <summary>
-        /// **参数解释**：子任务关联的资源类型。  **取值范围**：不涉及
+        /// **参数解释**：子任务关联的资源类型。  **取值范围**： - loadbalancer：弹性负载均衡器。 - listener：监听器。
         /// </summary>
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceType { get; set; }

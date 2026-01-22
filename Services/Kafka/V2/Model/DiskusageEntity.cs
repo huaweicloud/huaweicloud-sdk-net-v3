@@ -41,13 +41,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string DataDiskFree { get; set; }
 
         /// <summary>
-        /// 消息标签。
+        /// **参数解释**： 已使用的磁盘容量占比。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("data_disk_use_percentage", NullValueHandling = NullValueHandling.Ignore)]
         public string DataDiskUsePercentage { get; set; }
 
         /// <summary>
-        /// 消息标签。
+        /// **参数解释**： 状态。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }

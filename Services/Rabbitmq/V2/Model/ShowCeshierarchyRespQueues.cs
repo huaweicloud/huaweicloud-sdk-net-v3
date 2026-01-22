@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     {
 
         /// <summary>
-        /// Queue名称。
+        /// **参数解释**： Queue名称。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 对应的Vhost。
+        /// **参数解释**： 对应的Vhost。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("vhost", NullValueHandling = NullValueHandling.Ignore)]
         public string Vhost { get; set; }

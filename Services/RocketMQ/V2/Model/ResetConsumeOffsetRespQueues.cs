@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// 队列所在的broker。
+        /// **参数解释**： 队列所在的broker。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("broker_name", NullValueHandling = NullValueHandling.Ignore)]
         public string BrokerName { get; set; }
 
         /// <summary>
-        /// 队列ID。
+        /// **参数解释**： 队列ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("queue_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? QueueId { get; set; }
 
         /// <summary>
-        /// 重置消费进度。
+        /// **参数解释**： 重置消费进度。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("timestamp_offset", NullValueHandling = NullValueHandling.Ignore)]
         public long? TimestampOffset { get; set; }

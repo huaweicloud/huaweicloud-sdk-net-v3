@@ -372,6 +372,121 @@ namespace HuaweiCloud.SDK.Live.V2.Model
             }
         }
 
+        /// <summary>
+        /// ip类型，取值如下：  - v4 ：ipv4协议  - v6 ：ipv6协议   不填写默认查询所有ip类型的数据   该参数只对2026-01-30后的数据生效。 
+        /// </summary>
+        /// <value>ip类型，取值如下：  - v4 ：ipv4协议  - v6 ：ipv6协议   不填写默认查询所有ip类型的数据   该参数只对2026-01-30后的数据生效。 </value>
+        [JsonConverter(typeof(EnumClassConverter<IpTypeEnum>))]
+        public class IpTypeEnum
+        {
+            /// <summary>
+            /// Enum V4 for value: v4
+            /// </summary>
+            public static readonly IpTypeEnum V4 = new IpTypeEnum("v4");
+
+            /// <summary>
+            /// Enum V6 for value: v6
+            /// </summary>
+            public static readonly IpTypeEnum V6 = new IpTypeEnum("v6");
+
+            private static readonly Dictionary<string, IpTypeEnum> StaticFields =
+            new Dictionary<string, IpTypeEnum>()
+            {
+                { "v4", V4 },
+                { "v6", V6 },
+            };
+
+            private string _value;
+
+            public IpTypeEnum()
+            {
+
+            }
+
+            public IpTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static IpTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as IpTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(IpTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(IpTypeEnum a, IpTypeEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(IpTypeEnum a, IpTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 播放域名列表，最多支持查询100个域名，多个域名以逗号分隔。  如果不传入域名，则查询租户下所有播放域名的带宽数据。 
@@ -447,6 +562,12 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         [SDKProperty("service_type", IsQuery = true)]
         [JsonProperty("service_type", NullValueHandling = NullValueHandling.Ignore)]
         public ServiceTypeEnum ServiceType { get; set; }
+        /// <summary>
+        /// ip类型，取值如下：  - v4 ：ipv4协议  - v6 ：ipv6协议   不填写默认查询所有ip类型的数据   该参数只对2026-01-30后的数据生效。 
+        /// </summary>
+        [SDKProperty("ip_type", IsQuery = true)]
+        [JsonProperty("ip_type", NullValueHandling = NullValueHandling.Ignore)]
+        public IpTypeEnum IpType { get; set; }
 
 
         /// <summary>
@@ -467,6 +588,7 @@ namespace HuaweiCloud.SDK.Live.V2.Model
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("  serviceType: ").Append(ServiceType).Append("\n");
+            sb.Append("  ipType: ").Append(IpType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -496,6 +618,7 @@ namespace HuaweiCloud.SDK.Live.V2.Model
             if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
             if (this.ServiceType != input.ServiceType) return false;
+            if (this.IpType != input.IpType) return false;
 
             return true;
         }
@@ -519,6 +642,7 @@ namespace HuaweiCloud.SDK.Live.V2.Model
                 if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 hashCode = hashCode * 59 + this.ServiceType.GetHashCode();
+                hashCode = hashCode * 59 + this.IpType.GetHashCode();
                 return hashCode;
             }
         }

@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 反病毒开关状态
+        /// 参数解释： 反病毒开关状态，为必传参数 约束限制： 不涉及 取值范围： 0：开启 1：关闭 默认取值： 不涉及
         /// </summary>
         [JsonProperty("anti_virus_status", NullValueHandling = NullValueHandling.Ignore)]
         public int? AntiVirusStatus { get; set; }
 
         /// <summary>
-        /// 防护对象ID
+        /// 防护对象ID，为必传参数
         /// </summary>
         [JsonProperty("object_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ObjectId { get; set; }

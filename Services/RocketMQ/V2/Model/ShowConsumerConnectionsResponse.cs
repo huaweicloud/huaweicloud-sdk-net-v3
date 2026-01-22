@@ -17,43 +17,43 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// 消费组名称。
+        /// **参数解释**： 消费组名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("group_name", NullValueHandling = NullValueHandling.Ignore)]
         public string GroupName { get; set; }
 
         /// <summary>
-        /// 消费组是否在线。
+        /// **参数解释**： 消费组是否在线。 **约束限制**： 不涉及。 **取值范围**： - true：在线。 - false：不在线。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("online", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Online { get; set; }
 
         /// <summary>
-        /// 订阅关系是否一致。
+        /// **参数解释**： 订阅关系是否一致。 **约束限制**： 不涉及。 **取值范围**： - true：一致。 - false：不一致。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("subscription_consistency", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SubscriptionConsistency { get; set; }
 
         /// <summary>
-        /// 消费者总数。
+        /// **参数解释**： 消费者总数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }
 
         /// <summary>
-        /// 下个分页的offset。
+        /// **参数解释**： 下个分页的offset。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("next_offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? NextOffset { get; set; }
 
         /// <summary>
-        /// 上个分页的offset。
+        /// **参数解释**： 上个分页的offset。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("previous_offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? PreviousOffset { get; set; }
 
         /// <summary>
-        /// 消费者订阅详情列表。
+        /// **参数解释**： 消费者订阅详情列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("clients", NullValueHandling = NullValueHandling.Ignore)]
         public List<ClientData> Clients { get; set; }

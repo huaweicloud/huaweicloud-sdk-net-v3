@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 域名解析数据
+        /// **参数解释**： 域名解析数据，包括域名IP列表 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Data { get; set; }

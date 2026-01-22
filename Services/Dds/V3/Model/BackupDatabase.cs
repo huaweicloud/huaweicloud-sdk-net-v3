@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// **参数解释：** 数据库版本。 **取值范围：** 取值为“5.0”、“4.4”、“4.2”、“4.0”、“3.4”。
+        /// **参数解释：** 数据库版本。支持5.0、4.4、4.2、4.0、3.4版本。 **取值范围：** 取值为“5.0”、“4.4”、“4.2”、“4.0”、“3.4”。
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }

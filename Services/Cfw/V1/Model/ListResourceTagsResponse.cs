@@ -23,16 +23,16 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string Data { get; set; }
 
         /// <summary>
-        /// 
+        /// 资源标签列表
         /// </summary>
-        [JsonProperty("sys_tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ResourceTag> SysTags { get; set; }
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ResourceTag> Tags { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ResourceTag> Tags { get; set; }
+        [JsonProperty("sys_tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ResourceTag> SysTags { get; set; }
 
 
 
@@ -44,8 +44,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             var sb = new StringBuilder();
             sb.Append("class ListResourceTagsResponse {\n");
             sb.Append("  data: ").Append(Data).Append("\n");
-            sb.Append("  sysTags: ").Append(SysTags).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  sysTags: ").Append(SysTags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -65,8 +65,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             if (input == null) return false;
             if (this.Data != input.Data || (this.Data != null && !this.Data.Equals(input.Data))) return false;
-            if (this.SysTags != input.SysTags || (this.SysTags != null && input.SysTags != null && !this.SysTags.SequenceEqual(input.SysTags))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.SysTags != input.SysTags || (this.SysTags != null && input.SysTags != null && !this.SysTags.SequenceEqual(input.SysTags))) return false;
 
             return true;
         }
@@ -80,8 +80,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             {
                 var hashCode = 41;
                 if (this.Data != null) hashCode = hashCode * 59 + this.Data.GetHashCode();
-                if (this.SysTags != null) hashCode = hashCode * 59 + this.SysTags.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.SysTags != null) hashCode = hashCode * 59 + this.SysTags.GetHashCode();
                 return hashCode;
             }
         }

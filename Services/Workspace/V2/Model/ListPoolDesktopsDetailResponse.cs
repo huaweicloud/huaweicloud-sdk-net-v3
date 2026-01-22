@@ -41,25 +41,25 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? PeriodDesktopsNum { get; set; }
 
         /// <summary>
-        /// 按需免费桌面总数。
+        /// 按需免费镜像桌面总数。
         /// </summary>
         [JsonProperty("on_demand_free_image_desktops_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? OnDemandFreeImageDesktopsNum { get; set; }
 
         /// <summary>
-        /// 按需收费桌面总数。
+        /// 按需收费镜像桌面总数。
         /// </summary>
         [JsonProperty("on_demand_charge_image_desktops_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? OnDemandChargeImageDesktopsNum { get; set; }
 
         /// <summary>
-        /// 包周期免费桌面总数。
+        /// 包周期免费镜像桌面总数。
         /// </summary>
         [JsonProperty("period_free_image_desktops_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? PeriodFreeImageDesktopsNum { get; set; }
 
         /// <summary>
-        /// 包周期收费桌面总数。
+        /// 包周期收费镜像桌面总数。
         /// </summary>
         [JsonProperty("period_charge_image_desktops_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? PeriodChargeImageDesktopsNum { get; set; }

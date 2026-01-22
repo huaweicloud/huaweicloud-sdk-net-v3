@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     public class BatchDeleteInstanceReq 
     {
         /// <summary>
-        /// 对实例的操作：delete。
+        /// **参数解释**： 对实例的操作：delete。 **约束限制**： 不涉及。 **取值范围**：  - delete **默认取值**： 不涉及
         /// </summary>
-        /// <value>对实例的操作：delete。</value>
+        /// <value>**参数解释**： 对实例的操作：delete。 **约束限制**： 不涉及。 **取值范围**：  - delete **默认取值**： 不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<ActionEnum>))]
         public class ActionEnum
         {
@@ -125,9 +125,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         }
 
         /// <summary>
-        /// 参数值为reliability，表示删除租户所有创建失败的RocketMQ实例。
+        /// **参数解释**： 参数值为reliability，表示删除租户所有创建失败的RocketMQ实例。 **约束限制**： 不涉及。 **取值范围**： - reliability **默认取值**： 不涉及。
         /// </summary>
-        /// <value>参数值为reliability，表示删除租户所有创建失败的RocketMQ实例。</value>
+        /// <value>**参数解释**： 参数值为reliability，表示删除租户所有创建失败的RocketMQ实例。 **约束限制**： 不涉及。 **取值范围**： - reliability **默认取值**： 不涉及。</value>
         [JsonConverter(typeof(EnumClassConverter<AllFailureEnum>))]
         public class AllFailureEnum
         {
@@ -235,21 +235,27 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 
 
         /// <summary>
-        /// 实例的ID列表。
+        /// **参数解释**： 实例的ID列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("instances", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Instances { get; set; }
 
         /// <summary>
-        /// 对实例的操作：delete。
+        /// **参数解释**： 对实例的操作：delete。 **约束限制**： 不涉及。 **取值范围**：  - delete **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public ActionEnum Action { get; set; }
         /// <summary>
-        /// 参数值为reliability，表示删除租户所有创建失败的RocketMQ实例。
+        /// **参数解释**： 参数值为reliability，表示删除租户所有创建失败的RocketMQ实例。 **约束限制**： 不涉及。 **取值范围**： - reliability **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("all_failure", NullValueHandling = NullValueHandling.Ignore)]
         public AllFailureEnum AllFailure { get; set; }
+        /// <summary>
+        /// **参数解释**： 是否强删除。 **约束限制**： 不涉及。 **取值范围**： - true：强删除，强删除实例不进入回收站。 - false：弱删除，开启回收站功能后，实例进入回收站。 **默认取值**： 不涉及。
+        /// </summary>
+        [JsonProperty("force_delete", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ForceDelete { get; set; }
+
 
 
         /// <summary>
@@ -262,6 +268,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             sb.Append("  instances: ").Append(Instances).Append("\n");
             sb.Append("  action: ").Append(Action).Append("\n");
             sb.Append("  allFailure: ").Append(AllFailure).Append("\n");
+            sb.Append("  forceDelete: ").Append(ForceDelete).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -283,6 +290,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             if (this.Instances != input.Instances || (this.Instances != null && input.Instances != null && !this.Instances.SequenceEqual(input.Instances))) return false;
             if (this.Action != input.Action) return false;
             if (this.AllFailure != input.AllFailure) return false;
+            if (this.ForceDelete != input.ForceDelete || (this.ForceDelete != null && !this.ForceDelete.Equals(input.ForceDelete))) return false;
 
             return true;
         }
@@ -298,6 +306,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 if (this.Instances != null) hashCode = hashCode * 59 + this.Instances.GetHashCode();
                 hashCode = hashCode * 59 + this.Action.GetHashCode();
                 hashCode = hashCode * 59 + this.AllFailure.GetHashCode();
+                if (this.ForceDelete != null) hashCode = hashCode * 59 + this.ForceDelete.GetHashCode();
                 return hashCode;
             }
         }

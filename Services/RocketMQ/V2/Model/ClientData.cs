@@ -17,31 +17,31 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// 客户端语言。
+        /// **参数解释**： 客户端语言。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("language", NullValueHandling = NullValueHandling.Ignore)]
         public string Language { get; set; }
 
         /// <summary>
-        /// 客户端版本。
+        /// **参数解释**： 客户端版本。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }
 
         /// <summary>
-        /// 客户端ID。
+        /// **参数解释**： 客户端ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("client_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ClientId { get; set; }
 
         /// <summary>
-        /// 客户端地址。
+        /// **参数解释**： 客户端地址。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("client_addr", NullValueHandling = NullValueHandling.Ignore)]
         public string ClientAddr { get; set; }
 
         /// <summary>
-        /// 订阅关系列表。
+        /// **参数解释**： 订阅关系列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("subscriptions", NullValueHandling = NullValueHandling.Ignore)]
         public List<Subscription> Subscriptions { get; set; }

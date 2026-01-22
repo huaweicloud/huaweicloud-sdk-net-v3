@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     public class CreatePostPaidInstanceByEngineRequest 
     {
         /// <summary>
-        /// 消息引擎。
+        /// **参数解释**： 消息引擎。 **约束限制**： 不涉及。 **取值范围**： rabbitmq：RabbitMQ引擎。 **默认取值**： 不涉及。
         /// </summary>
-        /// <value>消息引擎。</value>
+        /// <value>**参数解释**： 消息引擎。 **约束限制**： 不涉及。 **取值范围**： rabbitmq：RabbitMQ引擎。 **默认取值**： 不涉及。</value>
         [JsonConverter(typeof(EnumClassConverter<EngineEnum>))]
         public class EngineEnum
         {
@@ -126,7 +126,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
 
 
         /// <summary>
-        /// 消息引擎。
+        /// **参数解释**： 消息引擎。 **约束限制**： 不涉及。 **取值范围**： rabbitmq：RabbitMQ引擎。 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("engine", IsPath = true)]
         [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]

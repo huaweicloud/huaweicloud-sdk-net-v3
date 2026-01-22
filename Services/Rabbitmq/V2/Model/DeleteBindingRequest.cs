@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// Vhost名称
+        /// vhost名称，名称中包含/时，需要将/替换为__F_SLASH__，否则会调用失败。例如：Vhost名称为/test，入参值为__F_SLASH__test。
         /// </summary>
         [SDKProperty("vhost", IsPath = true)]
         [JsonProperty("vhost", NullValueHandling = NullValueHandling.Ignore)]
@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string Exchange { get; set; }
 
         /// <summary>
-        /// 绑定目标端类型，Exchange或Queue。[（AMQP版本只支持Queue绑定类型）](tag:hws,hws_hk)
+        /// **参数解释**： 绑定目标端类型。 **约束限制**： [不涉及。](tag:sbc,cmcc,tm,hk_tm,ax,hk_sbc)[AMQP版本只支持绑定Queue。](tag:hws,hws_hk,hws_eu) **取值范围**： - Exchange：交换机。 - Queue：队列。 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("destination_type", IsPath = true)]
         [JsonProperty("destination_type", NullValueHandling = NullValueHandling.Ignore)]

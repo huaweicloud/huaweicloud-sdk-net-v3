@@ -65,7 +65,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public long? RemainTime { get; set; }
 
         /// <summary>
-        /// **参数解释**： 是否支持IPv6。 **取值范围**： - true：支持 - false：不支持
+        /// **参数解释**： 是否支持IPv6。[华为云Stack不支持此参数。](tag:hcs)  **取值范围**： - true：支持 - false：不支持
         /// </summary>
         [JsonProperty("ipv6_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Ipv6Enable { get; set; }

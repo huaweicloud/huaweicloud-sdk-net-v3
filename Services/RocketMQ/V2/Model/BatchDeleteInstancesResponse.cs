@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// 修改实例的结果。
+        /// **参数解释**： 修改实例的结果。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("results", NullValueHandling = NullValueHandling.Ignore)]
         public List<BatchDeleteInstanceRespResults> Results { get; set; }

@@ -16,8 +16,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     public class IpsRuleVO 
     {
         /// <summary>
-        /// Defines defaultStatus
+        /// 默认状态
         /// </summary>
+        /// <value>默认状态</value>
         [JsonConverter(typeof(EnumClassConverter<DefaultStatusEnum>))]
         public class DefaultStatusEnum
         {
@@ -148,8 +149,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         }
 
         /// <summary>
-        /// Defines ipsGroup
+        /// ips组，使用ips规则拦截模式区分，包含，0：观察模式，1：严格模式，2：中等模式，3：宽松模式
         /// </summary>
+        /// <value>ips组，使用ips规则拦截模式区分，包含，0：观察模式，1：严格模式，2：中等模式，3：宽松模式</value>
         [JsonConverter(typeof(EnumClassConverter<IpsGroupEnum>))]
         public class IpsGroupEnum
         {
@@ -274,8 +276,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         }
 
         /// <summary>
-        /// Defines ipsLevel
+        /// ips严重等级，  ips严重等级，包含CRITICAL、HIGH、MEDIUM、LOW
         /// </summary>
+        /// <value>ips严重等级，  ips严重等级，包含CRITICAL、HIGH、MEDIUM、LOW</value>
         [JsonConverter(typeof(EnumClassConverter<IpsLevelEnum>))]
         public class IpsLevelEnum
         {
@@ -406,8 +409,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         }
 
         /// <summary>
-        /// Defines ipsStatus
+        /// ips规则状态，包含观察：OBSERVE、拦截：ENABLE、禁用：CLOSE、恢复默认：DEFAULT、全局恢复默认：ALL_DEFAULT
         /// </summary>
+        /// <value>ips规则状态，包含观察：OBSERVE、拦截：ENABLE、禁用：CLOSE、恢复默认：DEFAULT、全局恢复默认：ALL_DEFAULT</value>
         [JsonConverter(typeof(EnumClassConverter<IpsStatusEnum>))]
         public class IpsStatusEnum
         {
@@ -539,58 +543,58 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
 
 
         /// <summary>
-        /// 
+        /// 受影响对象，可包含如下：Others、Sun、Apache、IBM、VMware、WordPress、Adobe、Oracle、Google Chrome等
         /// </summary>
         [JsonProperty("affected_application", NullValueHandling = NullValueHandling.Ignore)]
         public string AffectedApplication { get; set; }
 
         /// <summary>
-        /// 
+        /// ips规则创建的年份
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
         public string CreateTime { get; set; }
 
         /// <summary>
-        /// 
+        /// 默认状态
         /// </summary>
         [JsonProperty("default_status", NullValueHandling = NullValueHandling.Ignore)]
         public DefaultStatusEnum DefaultStatus { get; set; }
         /// <summary>
-        /// 
+        /// cve id
         /// </summary>
         [JsonProperty("ips_cve", NullValueHandling = NullValueHandling.Ignore)]
         public string IpsCve { get; set; }
 
         /// <summary>
-        /// 
+        /// ips组，使用ips规则拦截模式区分，包含，0：观察模式，1：严格模式，2：中等模式，3：宽松模式
         /// </summary>
         [JsonProperty("ips_group", NullValueHandling = NullValueHandling.Ignore)]
         public IpsGroupEnum IpsGroup { get; set; }
         /// <summary>
-        /// 
+        /// ips规则id
         /// </summary>
         [JsonProperty("ips_id", NullValueHandling = NullValueHandling.Ignore)]
         public string IpsId { get; set; }
 
         /// <summary>
-        /// 
+        /// ips严重等级，  ips严重等级，包含CRITICAL、HIGH、MEDIUM、LOW
         /// </summary>
         [JsonProperty("ips_level", NullValueHandling = NullValueHandling.Ignore)]
         public IpsLevelEnum IpsLevel { get; set; }
         /// <summary>
-        /// 
+        /// ips规则名称
         /// </summary>
         [JsonProperty("ips_name", NullValueHandling = NullValueHandling.Ignore)]
         public string IpsName { get; set; }
 
         /// <summary>
-        /// 
+        /// ips规则类型，包括漏洞扫描、黑客工具、特洛伊木马等
         /// </summary>
         [JsonProperty("ips_rules_type", NullValueHandling = NullValueHandling.Ignore)]
         public string IpsRulesType { get; set; }
 
         /// <summary>
-        /// 
+        /// ips规则状态，包含观察：OBSERVE、拦截：ENABLE、禁用：CLOSE、恢复默认：DEFAULT、全局恢复默认：ALL_DEFAULT
         /// </summary>
         [JsonProperty("ips_status", NullValueHandling = NullValueHandling.Ignore)]
         public IpsStatusEnum IpsStatus { get; set; }

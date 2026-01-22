@@ -15,124 +15,16 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     /// </summary>
     public class SendDlqMessageRequest 
     {
-        /// <summary>
-        /// 消息引擎。
-        /// </summary>
-        /// <value>消息引擎。</value>
-        [JsonConverter(typeof(EnumClassConverter<EngineEnum>))]
-        public class EngineEnum
-        {
-            /// <summary>
-            /// Enum RELIABILITY for value: reliability
-            /// </summary>
-            public static readonly EngineEnum RELIABILITY = new EngineEnum("reliability");
-
-            private static readonly Dictionary<string, EngineEnum> StaticFields =
-            new Dictionary<string, EngineEnum>()
-            {
-                { "reliability", RELIABILITY },
-            };
-
-            private string _value;
-
-            public EngineEnum()
-            {
-
-            }
-
-            public EngineEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static EngineEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as EngineEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(EngineEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(EngineEnum a, EngineEnum b)
-            {
-                if (ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(EngineEnum a, EngineEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
-        /// 消息引擎。
+        /// **参数解释**： 消息引擎。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("engine", IsPath = true)]
         [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]
-        public EngineEnum Engine { get; set; }
+        public string Engine { get; set; }
+
         /// <summary>
-        /// 实例ID。
+        /// **参数解释**： 实例ID。获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("instance_id", IsPath = true)]
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -175,7 +67,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public bool Equals(SendDlqMessageRequest input)
         {
             if (input == null) return false;
-            if (this.Engine != input.Engine) return false;
+            if (this.Engine != input.Engine || (this.Engine != null && !this.Engine.Equals(input.Engine))) return false;
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
             if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
@@ -190,7 +82,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                hashCode = hashCode * 59 + this.Engine.GetHashCode();
+                if (this.Engine != null) hashCode = hashCode * 59 + this.Engine.GetHashCode();
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;

@@ -17,25 +17,25 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     {
 
         /// <summary>
-        /// 规格详情。
+        /// **参数解释**： 规格详情。
         /// </summary>
         [JsonProperty("detail", NullValueHandling = NullValueHandling.Ignore)]
         public List<ListProductsRespDetail> Detail { get; set; }
 
         /// <summary>
-        /// 实例类型。
+        /// **参数解释**： 实例类型。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 资源售罄的可用区列表。
+        /// **参数解释**： 资源售罄的可用区列表。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("unavailable_zones", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> UnavailableZones { get; set; }
 
         /// <summary>
-        /// 有可用资源的可用区列表。
+        /// **参数解释**： 有可用资源的可用区列表。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("available_zones", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AvailableZones { get; set; }

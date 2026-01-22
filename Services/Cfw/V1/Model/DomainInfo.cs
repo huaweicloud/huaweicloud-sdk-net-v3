@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 域名地址id
+        /// **参数解释**： 域名地址id **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("domain_address_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainAddressId { get; set; }
 
         /// <summary>
-        /// 域名，如www.test.com
+        /// **参数解释**： 域名 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainName { get; set; }
 
         /// <summary>
-        /// 域名描述
+        /// **参数解释**： 域名描述 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }

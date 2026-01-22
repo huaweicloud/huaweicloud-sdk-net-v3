@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     {
 
         /// <summary>
-        /// 消费者标识
+        /// **参数解释**： 消费者标识。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("consumer_tag", NullValueHandling = NullValueHandling.Ignore)]
         public string ConsumerTag { get; set; }
@@ -29,13 +29,13 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public ChannelDetails ChannelDetails { get; set; }
 
         /// <summary>
-        /// 消费者客户端是否设置手动ack
+        /// **参数解释**： 消费者客户端是否设置手动ack。 **取值范围**： - true：设置手动ack。 - false：不设置手动ack。
         /// </summary>
         [JsonProperty("ack_required", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AckRequired { get; set; }
 
         /// <summary>
-        /// 消费者客户端预取值
+        /// **参数解释**： 消费者客户端预取值。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("prefetch_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? PrefetchCount { get; set; }

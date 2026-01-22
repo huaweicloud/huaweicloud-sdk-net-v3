@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 域名服务器列表
+        /// **参数解释**： 域名服务器列表 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Data { get; set; }

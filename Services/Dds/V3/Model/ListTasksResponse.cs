@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public List<JobInfo> Jobs { get; set; }
 
         /// <summary>
-        /// 任务列表总数
+        /// 任务列表总数。
         /// </summary>
         [JsonProperty("total_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? TotalCount { get; set; }

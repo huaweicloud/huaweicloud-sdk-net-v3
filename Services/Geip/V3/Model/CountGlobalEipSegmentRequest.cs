@@ -368,34 +368,6 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
 
 
         /// <summary>
-        /// 每页条数
-        /// </summary>
-        [SDKProperty("limit", IsQuery = true)]
-        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Limit { get; set; }
-
-        /// <summary>
-        /// 分页起始点
-        /// </summary>
-        [SDKProperty("offset", IsQuery = true)]
-        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Offset { get; set; }
-
-        /// <summary>
-        /// 分页起始点
-        /// </summary>
-        [SDKProperty("marker", IsQuery = true)]
-        [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
-        public string Marker { get; set; }
-
-        /// <summary>
-        /// 翻页方向
-        /// </summary>
-        [SDKProperty("page_reverse", IsQuery = true)]
-        [JsonProperty("page_reverse", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? PageReverse { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [SDKProperty("fields", IsQuery = true)]
@@ -555,10 +527,6 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CountGlobalEipSegmentRequest {\n");
-            sb.Append("  limit: ").Append(Limit).Append("\n");
-            sb.Append("  offset: ").Append(Offset).Append("\n");
-            sb.Append("  marker: ").Append(Marker).Append("\n");
-            sb.Append("  pageReverse: ").Append(PageReverse).Append("\n");
             sb.Append("  fields: ").Append(Fields).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  internetBandwidthId: ").Append(InternetBandwidthId).Append("\n");
@@ -599,10 +567,6 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         public bool Equals(CountGlobalEipSegmentRequest input)
         {
             if (input == null) return false;
-            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
-            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
-            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
-            if (this.PageReverse != input.PageReverse || (this.PageReverse != null && !this.PageReverse.Equals(input.PageReverse))) return false;
             if (this.Fields != input.Fields || (this.Fields != null && input.Fields != null && !this.Fields.SequenceEqual(input.Fields))) return false;
             if (this.Id != input.Id || (this.Id != null && input.Id != null && !this.Id.SequenceEqual(input.Id))) return false;
             if (this.InternetBandwidthId != input.InternetBandwidthId || (this.InternetBandwidthId != null && input.InternetBandwidthId != null && !this.InternetBandwidthId.SequenceEqual(input.InternetBandwidthId))) return false;
@@ -637,10 +601,6 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.PageReverse != null) hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
                 hashCode = hashCode * 59 + this.Fields.GetHashCode();
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.InternetBandwidthId != null) hashCode = hashCode * 59 + this.InternetBandwidthId.GetHashCode();

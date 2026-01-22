@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cfw.V1.Model
 {
     /// <summary>
-    /// 规则id列表
+    /// **参数解释**： 规则ID列表
     /// </summary>
     public class RuleIdList 
     {

@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// 
         /// </summary>
         [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
-        public AdvancedIpsRuleListVo Data { get; set; }
+        public IpsRuleListVO Data { get; set; }
 
 
 

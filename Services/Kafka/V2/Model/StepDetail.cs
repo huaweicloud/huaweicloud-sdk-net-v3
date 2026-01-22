@@ -25,8 +25,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// <summary>
         /// **参数解释**： 任务状态。 **取值范围**： - COMPLETED：任务已完成。 - IN_PROGRESS：任务正在进行。 - FAILED：任务失败。 - WAITING：等待开始。
         /// </summary>
-        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public string Status { get; set; }
+        [JsonProperty("statue", NullValueHandling = NullValueHandling.Ignore)]
+        public string Statue { get; set; }
 
         /// <summary>
         /// **参数解释**： 开始时间。     **取值范围**： 不涉及。
@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             var sb = new StringBuilder();
             sb.Append("class StepDetail {\n");
             sb.Append("  name: ").Append(Name).Append("\n");
-            sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  statue: ").Append(Statue).Append("\n");
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("}\n");
@@ -72,7 +72,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             if (input == null) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
-            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Statue != input.Statue || (this.Statue != null && !this.Statue.Equals(input.Statue))) return false;
             if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
 
@@ -88,7 +88,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             {
                 var hashCode = 41;
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Statue != null) hashCode = hashCode * 59 + this.Statue.GetHashCode();
                 if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 return hashCode;

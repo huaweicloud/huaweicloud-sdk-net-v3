@@ -16,12 +16,17 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     public class CreateInstanceByEngineRequest 
     {
         /// <summary>
-        /// 消息引擎。
+        /// **参数解释**： 消息引擎。 **约束限制**： 不涉及。 **取值范围**： - rocketmq：RocketMQ消息引擎。 - reliability：RocketMQ消息引擎别称。 **默认取值**： 不涉及。
         /// </summary>
-        /// <value>消息引擎。</value>
+        /// <value>**参数解释**： 消息引擎。 **约束限制**： 不涉及。 **取值范围**： - rocketmq：RocketMQ消息引擎。 - reliability：RocketMQ消息引擎别称。 **默认取值**： 不涉及。</value>
         [JsonConverter(typeof(EnumClassConverter<EngineEnum>))]
         public class EngineEnum
         {
+            /// <summary>
+            /// Enum ROCKETMQ for value: rocketmq
+            /// </summary>
+            public static readonly EngineEnum ROCKETMQ = new EngineEnum("rocketmq");
+
             /// <summary>
             /// Enum RELIABILITY for value: reliability
             /// </summary>
@@ -30,6 +35,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             private static readonly Dictionary<string, EngineEnum> StaticFields =
             new Dictionary<string, EngineEnum>()
             {
+                { "rocketmq", ROCKETMQ },
                 { "reliability", RELIABILITY },
             };
 
@@ -126,7 +132,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 
 
         /// <summary>
-        /// 消息引擎。
+        /// **参数解释**： 消息引擎。 **约束限制**： 不涉及。 **取值范围**： - rocketmq：RocketMQ消息引擎。 - reliability：RocketMQ消息引擎别称。 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("engine", IsPath = true)]
         [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]

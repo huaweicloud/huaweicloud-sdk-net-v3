@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// **参数解释**： 代理名称。 **取值范围**： 不涉及。
+        /// **参数解释**： 代理名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("broker_name", NullValueHandling = NullValueHandling.Ignore)]
         public string BrokerName { get; set; }
 
         /// <summary>
-        /// **参数解释**： 读队列个数。 **取值范围**： 不涉及。
+        /// **参数解释**： 读队列个数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("read_queue_num", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? ReadQueueNum { get; set; }
 
         /// <summary>
-        /// **参数解释**： 写队列个数。 **取值范围**： 不涉及。
+        /// **参数解释**： 写队列个数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("write_queue_num", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? WriteQueueNum { get; set; }

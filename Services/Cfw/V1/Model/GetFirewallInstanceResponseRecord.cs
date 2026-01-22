@@ -17,37 +17,37 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id。，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，默认情况下，fw_instance_Id为空时，返回账号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
+        /// **参数解释**： 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id。可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获取 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("fw_instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string FwInstanceId { get; set; }
 
         /// <summary>
-        /// 防火墙名称
+        /// **参数解释**： 防火墙名称 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 集群类型，包含主备（0）和集群（1）两种方式，主备模式包含四个节点，2个主节点构成集群，剩余两个节点为主节点的备节点，集群模式仅拉起两个节点作为集群。
+        /// **参数解释**： 集群类型 **取值范围**： - 0：主备模式，包含四个节点，2个主节点构成集群，剩余两个节点为主节点的备节点 - 1：集群模式，仅拉起两个节点作为集群
         /// </summary>
         [JsonProperty("ha_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? HaType { get; set; }
 
         /// <summary>
-        /// 计费模式 0：包年/包月 1：按需
+        /// **参数解释**： 计费模式 **取值范围**： - 0：包年/包月 - 1：按需
         /// </summary>
         [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
         public int? ChargeMode { get; set; }
 
         /// <summary>
-        /// 防火墙防护类型，目前仅支持0，互联网防护
+        /// **参数解释**： 防火墙防护类型 **取值范围**： 目前仅支持0，互联网防护
         /// </summary>
         [JsonProperty("service_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? ServiceType { get; set; }
 
         /// <summary>
-        /// 引擎类型，0：自研引擎 1：山石引擎 3：天融信引擎
+        /// **参数解释**： 引擎类型 **取值范围**： - 0：自研引擎 - 1：山石引擎 - 3：天融信引擎
         /// </summary>
         [JsonProperty("engine_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? EngineType { get; set; }
@@ -59,79 +59,79 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public Flavor Flavor { get; set; }
 
         /// <summary>
-        /// 防护对象列表
+        /// **参数解释**： 防护对象列表 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("protect_objects", NullValueHandling = NullValueHandling.Ignore)]
         public List<ProtectObjectVO> ProtectObjects { get; set; }
 
         /// <summary>
-        /// 防火墙状态列表，包括-1：等待支付，0：创建中，1，删除中，2：运行中，3：升级中，4：删除完成：5：冻结中，6：创建失败，7：删除失败，8：冻结失败，9：存储中，10：存储失败，11：升级失败
+        /// **参数解释**： 防火墙状态列表 **取值范围**： - -1：等待支付 - 0：创建中 - 1，删除中 - 2：运行中 - 3：升级中 - 4：删除完成 - 5：冻结中 - 6：创建失败 - 7：删除失败 - 8：冻结失败 - 9：存储中 - 10：存储失败 - 11：升级失败
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public int? Status { get; set; }
 
         /// <summary>
-        /// 是否为旧引擎，true表示是，false表示不是
+        /// **参数解释**： 是否为旧引擎 **取值范围**： - true：是 - false：不是
         /// </summary>
         [JsonProperty("is_old_firewall_instance", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsOldFirewallInstance { get; set; }
 
         /// <summary>
-        /// 是否支持obs，true表示是，false表示不是
+        /// **参数解释**： 是否支持obs **取值范围**： - true：是 - false：不是
         /// </summary>
         [JsonProperty("is_available_obs", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsAvailableObs { get; set; }
 
         /// <summary>
-        /// 是否支持威胁情报标签，true表示是，false表示不是
+        /// **参数解释**： 是否支持威胁情报标签 **取值范围**： - true：是 - false：不是
         /// </summary>
         [JsonProperty("is_support_threat_tags", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsSupportThreatTags { get; set; }
 
         /// <summary>
-        /// 是否支持ipv6，true表示是，false表示不是
+        /// **参数解释**： 是否支持ipv6 **取值范围**： - true：是 - false：不是
         /// </summary>
         [JsonProperty("support_ipv6", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SupportIpv6 { get; set; }
 
         /// <summary>
-        /// 特性开关，boolean值为true表示是，false表示否
+        /// **参数解释**： 特性开关 **取值范围**： - true：是 - false：不是
         /// </summary>
         [JsonProperty("feature_toggle", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, bool?> FeatureToggle { get; set; }
 
         /// <summary>
-        /// 防火墙资源列表
+        /// **参数解释**： 防火墙资源列表 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("resources", NullValueHandling = NullValueHandling.Ignore)]
         public List<FirewallInstanceResource> Resources { get; set; }
 
         /// <summary>
-        /// 防火墙名称
+        /// **参数解释**： 防火墙名称 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("fw_instance_name", NullValueHandling = NullValueHandling.Ignore)]
         public string FwInstanceName { get; set; }
 
         /// <summary>
-        /// 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，用户未开启企业项目时为0
+        /// **参数解释**： 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 防火墙资源id，同fw_instance_id
+        /// **参数解释**： 防火墙资源id，同fw_instance_id **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceId { get; set; }
 
         /// <summary>
-        /// 是否支持url过滤，true表示是，false表示不是
+        /// **参数解释**： 是否支持url过滤 **取值范围**： - true：是 - false：不是
         /// </summary>
         [JsonProperty("support_url_filtering", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SupportUrlFiltering { get; set; }
 
         /// <summary>
-        /// 标签列表，标签键值map转化的json字符串，如\&quot;{\\\&quot;key\\\&quot;:\\\&quot;value\\\&quot;}\&quot;
+        /// **参数解释**： 标签列表，标签键值map转化的json字符串，如\&quot;{\\\&quot;key\\\&quot;:\\\&quot;value\\\&quot;}\&quot; **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public string Tags { get; set; }

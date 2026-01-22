@@ -40,12 +40,6 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         [JsonProperty("config_info", NullValueHandling = NullValueHandling.Ignore)]
         public Object ConfigInfo { get; set; }
 
-        /// <summary>
-        /// 统计配置失效时间，秒时间戳。不能超过当前时间点往后一年
-        /// </summary>
-        [JsonProperty("expired_time", NullValueHandling = NullValueHandling.Ignore)]
-        public long? ExpiredTime { get; set; }
-
 
 
         /// <summary>
@@ -59,7 +53,6 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  resourceType: ").Append(ResourceType).Append("\n");
             sb.Append("  resourceName: ").Append(ResourceName).Append("\n");
             sb.Append("  configInfo: ").Append(ConfigInfo).Append("\n");
-            sb.Append("  expiredTime: ").Append(ExpiredTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -82,7 +75,6 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             if (this.ResourceType != input.ResourceType || (this.ResourceType != null && !this.ResourceType.Equals(input.ResourceType))) return false;
             if (this.ResourceName != input.ResourceName || (this.ResourceName != null && !this.ResourceName.Equals(input.ResourceName))) return false;
             if (this.ConfigInfo != input.ConfigInfo || (this.ConfigInfo != null && !this.ConfigInfo.Equals(input.ConfigInfo))) return false;
-            if (this.ExpiredTime != input.ExpiredTime || (this.ExpiredTime != null && !this.ExpiredTime.Equals(input.ExpiredTime))) return false;
 
             return true;
         }
@@ -99,7 +91,6 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                 if (this.ResourceType != null) hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
                 if (this.ResourceName != null) hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
                 if (this.ConfigInfo != null) hashCode = hashCode * 59 + this.ConfigInfo.GetHashCode();
-                if (this.ExpiredTime != null) hashCode = hashCode * 59 + this.ExpiredTime.GetHashCode();
                 return hashCode;
             }
         }

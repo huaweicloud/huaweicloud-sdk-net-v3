@@ -17,43 +17,43 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 域名组id
+        /// **参数解释**： 域名组id **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("set_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SetId { get; set; }
 
         /// <summary>
-        /// 域名组名称
+        /// **参数解释**： 域名组名称 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 域名组描述
+        /// **参数解释**： 域名组描述 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 域名组被规则引用次数
+        /// **参数解释**： 域名组被规则引用次数 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("ref_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? RefCount { get; set; }
 
         /// <summary>
-        /// 域名组类型，0表示应用域名组，1表示网络域名组
+        /// **参数解释**： 域名组类型 **取值范围**： - 0：应用域名组 - 1：网络域名组
         /// </summary>
         [JsonProperty("domain_set_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? DomainSetType { get; set; }
 
         /// <summary>
-        /// 配置状态，-1表示未配置态，0表示配置失败，1表示配置成功，2表示配置中，3表示正常，4表示配置异常
+        /// **参数解释**： 配置状态 **取值范围**： - -1：未配置态 - 0：配置失败 - 1：配置成功 - 2：配置中 - 3：正常 - 4：配置异常
         /// </summary>
         [JsonProperty("config_status", NullValueHandling = NullValueHandling.Ignore)]
         public int? ConfigStatus { get; set; }
 
         /// <summary>
-        /// 使用规则id列表
+        /// **参数解释**： 使用规则id列表 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("rules", NullValueHandling = NullValueHandling.Ignore)]
         public List<UseRuleVO> Rules { get; set; }

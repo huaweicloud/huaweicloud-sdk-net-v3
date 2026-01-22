@@ -11,91 +11,91 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 {
     /// <summary>
-    /// 消息。
+    /// **参数解释**： 消息。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
     /// </summary>
     public class Message 
     {
 
         /// <summary>
-        /// 消息ID。
+        /// **参数解释**： 消息ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("msg_id", NullValueHandling = NullValueHandling.Ignore)]
         public string MsgId { get; set; }
 
         /// <summary>
-        /// 实例ID。
+        /// **参数解释**： 实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 主题名称。
+        /// **参数解释**： 主题名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
         public string Topic { get; set; }
 
         /// <summary>
-        /// 存储消息的时间。
+        /// **参数解释**： 存储消息的时间。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("store_timestamp", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? StoreTimestamp { get; set; }
 
         /// <summary>
-        /// 产生消息的时间。
+        /// **参数解释**： 产生消息的时间。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("born_timestamp", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? BornTimestamp { get; set; }
 
         /// <summary>
-        /// 重试次数。
+        /// **参数解释**： 重试次数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("reconsume_times", NullValueHandling = NullValueHandling.Ignore)]
         public int? ReconsumeTimes { get; set; }
 
         /// <summary>
-        /// 消息体。
+        /// **参数解释**： 消息体。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public string Body { get; set; }
 
         /// <summary>
-        /// 消息体校验和。
+        /// **参数解释**： 消息体校验和。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("body_crc", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? BodyCrc { get; set; }
 
         /// <summary>
-        /// 存储大小。
+        /// **参数解释**： 存储大小。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("store_size", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? StoreSize { get; set; }
 
         /// <summary>
-        /// 消息属性列表。
+        /// **参数解释**： 消息属性列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("property_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<MessagePropertyList> PropertyList { get; set; }
 
         /// <summary>
-        /// 产生消息的主机IP。
+        /// **参数解释**： 产生消息的主机IP。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("born_host", NullValueHandling = NullValueHandling.Ignore)]
         public string BornHost { get; set; }
 
         /// <summary>
-        /// 存储消息的主机IP。
+        /// **参数解释**： 存储消息的主机IP。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("store_host", NullValueHandling = NullValueHandling.Ignore)]
         public string StoreHost { get; set; }
 
         /// <summary>
-        /// 队列ID。
+        /// **参数解释**： 队列ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("queue_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? QueueId { get; set; }
 
         /// <summary>
-        /// 在队列中的偏移量。
+        /// **参数解释**： 在队列中的偏移量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("queue_offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? QueueOffset { get; set; }

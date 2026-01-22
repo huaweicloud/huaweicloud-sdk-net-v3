@@ -11,31 +11,31 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
 {
     /// <summary>
-    /// 支持的磁盘IO类型信息。
+    /// **参数解释**： 支持的磁盘IO类型信息。 **取值范围**： 不涉及。
     /// </summary>
     public class ListEngineIosEntity 
     {
 
         /// <summary>
-        /// 磁盘IO编码。
+        /// **参数解释**： 存储类型规格编码。 **取值范围**： - dms.physical.storage.high.v2：高IO类型磁盘。 - dms.physical.storage.ultra.v2：超高IO类型磁盘。 [- dms.physical.storage.general：使用通用型SSD的磁盘类型。](tag:hws,hws_hk,ax) [- dms.physical.storage.extreme：使用极速型SSD的磁盘类型。](tag:hws,hws_hk,ax)
         /// </summary>
         [JsonProperty("io_spec", NullValueHandling = NullValueHandling.Ignore)]
         public string IoSpec { get; set; }
 
         /// <summary>
-        /// 磁盘类型。
+        /// **参数解释**： 服务类型。 **取值范围**： evs。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// 可用区。
+        /// **参数解释**： 可用区。
         /// </summary>
         [JsonProperty("available_zones", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AvailableZones { get; set; }
 
         /// <summary>
-        /// 不可用区。
+        /// **参数解释**： 不可用区。
         /// </summary>
         [JsonProperty("unavailable_zones", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> UnavailableZones { get; set; }

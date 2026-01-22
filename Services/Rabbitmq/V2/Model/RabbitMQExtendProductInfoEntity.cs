@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     {
 
         /// <summary>
-        /// 实例类型
+        /// **参数解释**： 实例类型。 **取值范围**： - single：单机。 - cluster：集群。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

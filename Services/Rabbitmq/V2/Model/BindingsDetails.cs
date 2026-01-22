@@ -17,31 +17,31 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     {
 
         /// <summary>
-        /// Exchange名称
+        /// **参数解释**： Exchange名称。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("source", NullValueHandling = NullValueHandling.Ignore)]
         public string Source { get; set; }
 
         /// <summary>
-        /// 绑定目标类型
+        /// **参数解释**： 绑定目标的类型。 **取值范围**： - exchange：交换机。 - queue：队列。
         /// </summary>
         [JsonProperty("destination_type", NullValueHandling = NullValueHandling.Ignore)]
         public string DestinationType { get; set; }
 
         /// <summary>
-        /// 绑定目标的名称
+        /// **参数解释**： 绑定目标。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("destination", NullValueHandling = NullValueHandling.Ignore)]
         public string Destination { get; set; }
 
         /// <summary>
-        /// 绑定键值
+        /// **参数解释**： 绑定键值。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("routing_key", NullValueHandling = NullValueHandling.Ignore)]
         public string RoutingKey { get; set; }
 
         /// <summary>
-        /// 经过URL转译后routing_key
+        /// **参数解释**： 经过URL转译后routing_key。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("properties_key", NullValueHandling = NullValueHandling.Ignore)]
         public string PropertiesKey { get; set; }

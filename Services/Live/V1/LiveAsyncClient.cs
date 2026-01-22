@@ -40,6 +40,30 @@ namespace HuaweiCloud.SDK.Live.V1
         }
         
         /// <summary>
+        /// 域名归属权认证
+        ///
+        /// 域名归属权认证，确保创建的域名对应的主域名有归属权。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CheckDomainVerificationResponse> CheckDomainVerificationAsync(CheckDomainVerificationRequest checkDomainVerificationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain/verification", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", checkDomainVerificationRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CheckDomainVerificationResponse>(response);
+        }
+
+        public AsyncInvoker<CheckDomainVerificationResponse> CheckDomainVerificationAsyncInvoker(CheckDomainVerificationRequest checkDomainVerificationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain/verification", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", checkDomainVerificationRequest);
+            return new AsyncInvoker<CheckDomainVerificationResponse>(this, "POST", request, JsonUtils.DeSerialize<CheckDomainVerificationResponse>);
+        }
+        
+        /// <summary>
         /// 创建直播域名
         ///
         /// 可单独创建直播播放域名或推流域名，每个租户最多可配置64条域名记录。
@@ -133,6 +157,30 @@ namespace HuaweiCloud.SDK.Live.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/flows", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", createFlowsRequest);
             return new AsyncInvoker<CreateFlowsResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateFlowsResponse>);
+        }
+        
+        /// <summary>
+        /// 创建直播拉流转推任务
+        ///
+        /// 根据租户指定的拉流源以及拉流任务信息创建直播拉流转推任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreatePullTaskResponse> CreatePullTaskAsync(CreatePullTaskRequest createPullTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/pull/stream/task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", createPullTaskRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreatePullTaskResponse>(response);
+        }
+
+        public AsyncInvoker<CreatePullTaskResponse> CreatePullTaskAsyncInvoker(CreatePullTaskRequest createPullTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/pull/stream/task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", createPullTaskRequest);
+            return new AsyncInvoker<CreatePullTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreatePullTaskResponse>);
         }
         
         /// <summary>
@@ -541,6 +589,30 @@ namespace HuaweiCloud.SDK.Live.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/notifications/publish", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePublishTemplateRequest);
             return new AsyncInvoker<DeletePublishTemplateResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePublishTemplateResponse>);
+        }
+        
+        /// <summary>
+        /// 删除直播拉流转推任务
+        ///
+        /// 停止并删除直播拉流转推任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeletePullTaskResponse> DeletePullTaskAsync(DeletePullTaskRequest deletePullTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/pull/stream/task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePullTaskRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeletePullTaskResponse>(response);
+        }
+
+        public AsyncInvoker<DeletePullTaskResponse> DeletePullTaskAsyncInvoker(DeletePullTaskRequest deletePullTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/pull/stream/task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePullTaskRequest);
+            return new AsyncInvoker<DeletePullTaskResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeletePullTaskResponse>);
         }
         
         /// <summary>
@@ -963,6 +1035,30 @@ namespace HuaweiCloud.SDK.Live.V1
         }
         
         /// <summary>
+        /// 查询直播拉流转推任务
+        ///
+        /// 查询直播拉流转推任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListPullTasksResponse> ListPullTasksAsync(ListPullTasksRequest listPullTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/pull/stream/task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPullTasksRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListPullTasksResponse>(response);
+        }
+
+        public AsyncInvoker<ListPullTasksResponse> ListPullTasksAsyncInvoker(ListPullTasksRequest listPullTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/pull/stream/task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPullTasksRequest);
+            return new AsyncInvoker<ListPullTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPullTasksResponse>);
+        }
+        
+        /// <summary>
         /// 查询录制回调配置列表
         ///
         /// 查询录制回调配置列表接口。通过指定条件，查询满足条件的配置列表。
@@ -1251,6 +1347,30 @@ namespace HuaweiCloud.SDK.Live.V1
         }
         
         /// <summary>
+        /// 修改直播拉流转推任务
+        ///
+        /// 修改直播拉流转推任务，仅当source_type为PullVodPushLive的任务生效
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ModifyPullTaskResponse> ModifyPullTaskAsync(ModifyPullTaskRequest modifyPullTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/pull/stream/task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", modifyPullTaskRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<ModifyPullTaskResponse>(response);
+        }
+
+        public AsyncInvoker<ModifyPullTaskResponse> ModifyPullTaskAsyncInvoker(ModifyPullTaskRequest modifyPullTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/pull/stream/task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", modifyPullTaskRequest);
+            return new AsyncInvoker<ModifyPullTaskResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyPullTaskResponse>);
+        }
+        
+        /// <summary>
         /// 提交录制控制命令
         ///
         /// 对单条流的实时录制控制接口。
@@ -1344,6 +1464,30 @@ namespace HuaweiCloud.SDK.Live.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/guard/key-chain", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainKeyChainRequest);
             return new AsyncInvoker<ShowDomainKeyChainResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainKeyChainResponse>);
+        }
+        
+        /// <summary>
+        /// 查询域名归属权验证信息
+        ///
+        /// 查询域名归属权验证信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowDomainVerificationResponse> ShowDomainVerificationAsync(ShowDomainVerificationRequest showDomainVerificationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain/verification", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainVerificationRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowDomainVerificationResponse>(response);
+        }
+
+        public AsyncInvoker<ShowDomainVerificationResponse> ShowDomainVerificationAsyncInvoker(ShowDomainVerificationRequest showDomainVerificationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain/verification", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainVerificationRequest);
+            return new AsyncInvoker<ShowDomainVerificationResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainVerificationResponse>);
         }
         
         /// <summary>
@@ -2035,6 +2179,30 @@ namespace HuaweiCloud.SDK.Live.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/guard/https-cert", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDomainHttpsCertRequest);
             return new AsyncInvoker<DeleteDomainHttpsCertResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteDomainHttpsCertResponse>);
+        }
+        
+        /// <summary>
+        /// 查询HTTPS证书信息
+        ///
+        /// 根据项目ID、域名等信息查询HTTPS证书信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowCertificateInfoResponse> ShowCertificateInfoAsync(ShowCertificateInfoRequest showCertificateInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/certificates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCertificateInfoRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowCertificateInfoResponse>(response);
+        }
+
+        public AsyncInvoker<ShowCertificateInfoResponse> ShowCertificateInfoAsyncInvoker(ShowCertificateInfoRequest showCertificateInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/certificates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCertificateInfoRequest);
+            return new AsyncInvoker<ShowCertificateInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCertificateInfoResponse>);
         }
         
         /// <summary>

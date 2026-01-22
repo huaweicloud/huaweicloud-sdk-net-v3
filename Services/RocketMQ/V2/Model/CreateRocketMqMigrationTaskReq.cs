@@ -17,37 +17,37 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// RocketMQ Topic 元数据，键为Topic名，值为topic配置，迁移任务类型为自建RocketMQ上云(rocketmq)时必填。
+        /// **参数解释**： RocketMQ Topic 元数据，键为Topic名，值为topic配置，迁移任务类型为自建RocketMQ上云(rocketmq)时必填。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
-        [JsonProperty("topicConfigTable", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("topic_config_table", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, MigrationRocketMqTopicConfig> TopicConfigTable { get; set; }
 
         /// <summary>
-        /// RocketMQ消费组元数据，键为消费组名，值为消费组配置，迁移任务类型为自建RocketMQ上云(rocketmq)时必填。
+        /// **参数解释**： RocketMQ消费组元数据，键为消费组名，值为消费组配置，迁移任务类型为自建RocketMQ上云(rocketmq)时必填。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
-        [JsonProperty("subscriptionGroupTable", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("subscription_group_table", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, MigrationRocketMqSubscriptionGroup> SubscriptionGroupTable { get; set; }
 
         /// <summary>
-        /// RabbitMQ vhost元数据列表，迁移任务类型为自建RabbitMQ上云(rabbitToRocket)时必填。
+        /// **参数解释**： RabbitMQ vhost元数据列表，迁移任务类型为自建RabbitMQ上云(rabbitToRocket)时必填。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("vhosts", NullValueHandling = NullValueHandling.Ignore)]
         public List<MigrationRabbitVhostMetadata> Vhosts { get; set; }
 
         /// <summary>
-        /// RabbitMQ队列元数据列表，迁移任务类型为自建RabbitMQ上云(rabbitToRocket)时必填。
+        /// **参数解释**： RabbitMQ队列元数据列表，迁移任务类型为自建RabbitMQ上云(rabbitToRocket)时必填。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("queues", NullValueHandling = NullValueHandling.Ignore)]
         public List<MigrationRabbitQueueMetadata> Queues { get; set; }
 
         /// <summary>
-        /// RabbitMQ交换机元数据列表，迁移任务类型为自建RabbitMQ上云(rabbitToRocket)时必填。
+        /// **参数解释**： RabbitMQ交换机元数据列表，迁移任务类型为自建RabbitMQ上云(rabbitToRocket)时必填。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("exchanges", NullValueHandling = NullValueHandling.Ignore)]
         public List<MigrationRabbitExchangeMetadata> Exchanges { get; set; }
 
         /// <summary>
-        /// RabbitMQ binding元数据列表，迁移任务类型为自建RabbitMQ上云(rabbitToRocket)时必填。
+        /// **参数解释**： RabbitMQ binding元数据列表，迁移任务类型为自建RabbitMQ上云(rabbitToRocket)时必填。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("bindings", NullValueHandling = NullValueHandling.Ignore)]
         public List<MigrationRabbitBindingMetadata> Bindings { get; set; }

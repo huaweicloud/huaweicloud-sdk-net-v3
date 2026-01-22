@@ -23,13 +23,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public long? DenyCount { get; set; }
 
         /// <summary>
-        /// **参数解释**： 高频命中的阻断策略ID **取值范围**： 不涉及
+        /// **参数解释**： Top命中的阻断策略ID **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("deny_top_one_acl_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DenyTopOneAclId { get; set; }
 
         /// <summary>
-        /// **参数解释**： 高频命中的阻断策略ID **取值范围**： 不涉及
+        /// **参数解释**： Top命中的阻断策略名称 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("deny_top_one_acl_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DenyTopOneAclName { get; set; }

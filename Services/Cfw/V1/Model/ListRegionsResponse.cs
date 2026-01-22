@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// region列表
+        /// **参数解释**： 地域列表 **取值范围**： 不涉及 
         /// </summary>
         [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Data { get; set; }
+        public List<IpRegionResponseBodyData> Data { get; set; }
 
 
 
@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public bool Equals(ListRegionsResponse input)
         {
             if (input == null) return false;
-            if (this.Data != input.Data || (this.Data != null && !this.Data.Equals(input.Data))) return false;
+            if (this.Data != input.Data || (this.Data != null && input.Data != null && !this.Data.SequenceEqual(input.Data))) return false;
 
             return true;
         }

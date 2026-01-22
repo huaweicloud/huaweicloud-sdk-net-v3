@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// 消息列表。
+        /// **参数解释**： 消息列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("messages", NullValueHandling = NullValueHandling.Ignore)]
         public List<Message> Messages { get; set; }
 
         /// <summary>
-        /// 消息总数。
+        /// **参数解释**： 消息总数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? Total { get; set; }

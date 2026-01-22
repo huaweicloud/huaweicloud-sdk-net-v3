@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     public class BssParam 
     {
         /// <summary>
-        /// 计费模式。  功能说明：付费方式。  取值范围：   - prePaid：预付费，即包年包月；   - postPaid：后付费，即按需付费；  默认为postPaid。
+        /// **参数解释**： 计费模式。 **约束限制**： 不涉及。 **取值范围**： - prePaid：预付费，即包年包月。 - postPaid：后付费，即按需付费。 **默认取值**： postPaid。
         /// </summary>
-        /// <value>计费模式。  功能说明：付费方式。  取值范围：   - prePaid：预付费，即包年包月；   - postPaid：后付费，即按需付费；  默认为postPaid。</value>
+        /// <value>**参数解释**： 计费模式。 **约束限制**： 不涉及。 **取值范围**： - prePaid：预付费，即包年包月。 - postPaid：后付费，即按需付费。 **默认取值**： postPaid。</value>
         [JsonConverter(typeof(EnumClassConverter<ChargingModeEnum>))]
         public class ChargingModeEnum
         {
@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         }
 
         /// <summary>
-        /// 订购周期类型。  取值范围：   - month：月   - year：年  **chargingMode为prePaid时生效且为必选值。**
+        /// **参数解释**： 订购周期类型。 **约束限制**： chargingMode为prePaid时生效且为必选值。 **取值范围**： - month：月。 - year：年。 **默认取值**： 不涉及。
         /// </summary>
-        /// <value>订购周期类型。  取值范围：   - month：月   - year：年  **chargingMode为prePaid时生效且为必选值。**</value>
+        /// <value>**参数解释**： 订购周期类型。 **约束限制**： chargingMode为prePaid时生效且为必选值。 **取值范围**： - month：月。 - year：年。 **默认取值**： 不涉及。</value>
         [JsonConverter(typeof(EnumClassConverter<PeriodTypeEnum>))]
         public class PeriodTypeEnum
         {
@@ -247,29 +247,29 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
 
 
         /// <summary>
-        /// 是否自动续订。  取值范围：   - true: 自动续订。   - false: 不自动续订。  默认不自动续订。
+        /// **参数解释**： 是否自动续订。 **约束限制**： 不涉及。 **取值范围**： - true：自动续订。 - false：不自动续订。 **默认取值**： false
         /// </summary>
         [JsonProperty("is_auto_renew", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsAutoRenew { get; set; }
 
         /// <summary>
-        /// 计费模式。  功能说明：付费方式。  取值范围：   - prePaid：预付费，即包年包月；   - postPaid：后付费，即按需付费；  默认为postPaid。
+        /// **参数解释**： 计费模式。 **约束限制**： 不涉及。 **取值范围**： - prePaid：预付费，即包年包月。 - postPaid：后付费，即按需付费。 **默认取值**： postPaid。
         /// </summary>
         [JsonProperty("charging_mode", NullValueHandling = NullValueHandling.Ignore)]
         public ChargingModeEnum ChargingMode { get; set; }
         /// <summary>
-        /// 下单订购后，是否自动从客户的账户中支付，而不需要客户手动去进行支付。  取值范围：   - true：是（自动支付）   - false：否（需要客户手动支付）  默认为手动支付。
+        /// **参数解释**： 下单订购后，是否自动从客户的账户中支付，而不需要客户手动去进行支付。 **约束限制**： 不涉及。 **取值范围**： - true：是（自动支付） - false：否（需要客户手动支付） **默认取值**： false
         /// </summary>
         [JsonProperty("is_auto_pay", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsAutoPay { get; set; }
 
         /// <summary>
-        /// 订购周期类型。  取值范围：   - month：月   - year：年  **chargingMode为prePaid时生效且为必选值。**
+        /// **参数解释**： 订购周期类型。 **约束限制**： chargingMode为prePaid时生效且为必选值。 **取值范围**： - month：月。 - year：年。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("period_type", NullValueHandling = NullValueHandling.Ignore)]
         public PeriodTypeEnum PeriodType { get; set; }
         /// <summary>
-        /// 订购周期数。  取值范围：   - periodType&#x3D;month（周期类型为月）时，取值为[1，9]；  - periodType&#x3D;year（周期类型为年）时，取值为[1，3]；  **chargingMode为prePaid时生效且为必选值。**
+        /// **参数解释**： 订购周期数。 **约束限制**： chargingMode为prePaid时生效且为必选值。 **取值范围**： - periodType&#x3D;month（周期类型为月）时，取值为[1，9]。 - periodType&#x3D;year（周期类型为年）时，取值为[1，3]。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("period_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? PeriodNum { get; set; }

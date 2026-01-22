@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// **参数解释**： 创建时间。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("createdAt", NullValueHandling = NullValueHandling.Ignore)]
-        public Object CreatedAt { get; set; }
+        public long? CreatedAt { get; set; }
 
         /// <summary>
         /// **参数解释**： 消费组名称。 **取值范围**： 不涉及。

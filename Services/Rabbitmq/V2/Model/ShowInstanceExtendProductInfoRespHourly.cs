@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 消息引擎的版本，当前支持3.8.35[和3.7.17](tag:hk_sbc,sbc)。
+        /// 消息引擎的版本，当前支持3.8.35。
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }
@@ -32,7 +32,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// 产品规格列表。
         /// </summary>
         [JsonProperty("values", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ListProductsRespValues> Values { get; set; }
+        public List<ShowInstanceExtendProductInfoRespValues> Values { get; set; }
 
 
 

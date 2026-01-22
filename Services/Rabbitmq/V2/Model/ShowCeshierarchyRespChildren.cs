@@ -11,31 +11,31 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
 {
     /// <summary>
-    /// 子维度信息。
+    /// **参数解释**： 子维度信息。 **取值范围**： 不涉及。
     /// </summary>
     public class ShowCeshierarchyRespChildren 
     {
 
         /// <summary>
-        /// 子维度名称。
+        /// **参数解释**： 子维度名称。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 监控指标名称列表。
+        /// **参数解释**： 监控指标名称列表。
         /// </summary>
         [JsonProperty("metrics", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Metrics { get; set; }
 
         /// <summary>
-        /// 监控查询使用的key。
+        /// **参数解释**： 监控查询使用的key。
         /// </summary>
         [JsonProperty("key_name", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> KeyName { get; set; }
 
         /// <summary>
-        /// 监控维度路由。
+        /// **参数解释**： 监控维度路由。
         /// </summary>
         [JsonProperty("dim_router", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> DimRouter { get; set; }

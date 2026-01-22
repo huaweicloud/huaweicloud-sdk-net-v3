@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// **参数解释**：检查结果，true表示检查通过，false为检查不通过。  **取值范围**：不涉及
+        /// **参数解释**：检查结果。  **取值范围**：true表示检查通过，false为检查不通过。
         /// </summary>
         [JsonProperty("check_result", NullValueHandling = NullValueHandling.Ignore)]
         public bool? CheckResult { get; set; }
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<MemberCheckJobResultItem> CheckItems { get; set; }
 
         /// <summary>
-        /// **参数解释**：processed检查完成，processing检查中，failed检查失败。  **取值范围**：不涉及
+        /// **参数解释**：分组检查任务状态。  **取值范围**： - processed：检查任务执行完成。 - processing：检查任务执行中。 - failed：检查任务执行失败。
         /// </summary>
         [JsonProperty("check_status", NullValueHandling = NullValueHandling.Ignore)]
         public string CheckStatus { get; set; }

@@ -17,31 +17,31 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 是否支持企业项目，true表示是，false表示不是
+        /// **参数解释**： 是否支持企业项目 **取值范围**： - true：是 - false：否
         /// </summary>
         [JsonProperty("user_support_eps", NullValueHandling = NullValueHandling.Ignore)]
         public bool? UserSupportEps { get; set; }
 
         /// <summary>
-        /// 是否存在ndr，true表示是，false表示不是，NDR为原旁路版防火墙，现已停止售卖。
+        /// **参数解释**： 是否存在NDR，NDR为原旁路版防火墙，现已停止售卖。 **取值范围**： - true：是 - false：不是
         /// </summary>
         [JsonProperty("has_ndr", NullValueHandling = NullValueHandling.Ignore)]
         public bool? HasNdr { get; set; }
 
         /// <summary>
-        /// 是否支持按需购买，true表示是，false表示不是
+        /// **参数解释**： 是否支持按需购买 **取值范围**： - true：是 - false：不是
         /// </summary>
         [JsonProperty("is_support_postpaid", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsSupportPostpaid { get; set; }
 
         /// <summary>
-        /// 是否支持基础版，true表示是，false表示不是
+        /// **参数解释**： 是否支持基础版 **取值范围**： - true：是 - false：不是
         /// </summary>
         [JsonProperty("is_support_basic_version", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsSupportBasicVersion { get; set; }
 
         /// <summary>
-        /// 是否支持购买专业版，true表示是，false表示不是
+        /// **参数解释**： 是否支持购买专业版 **取值范围**： - true：是 - false：不是
         /// </summary>
         [JsonProperty("is_support_buy_professional", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsSupportBuyProfessional { get; set; }

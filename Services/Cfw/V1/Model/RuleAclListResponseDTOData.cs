@@ -11,37 +11,43 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cfw.V1.Model
 {
     /// <summary>
-    /// 查询规则列表返回值数据
+    /// **参数解释**： 查询规则列表返回值数据
     /// </summary>
     public class RuleAclListResponseDTOData 
     {
 
         /// <summary>
-        /// 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
+        /// **参数解释**： 偏移量：指定返回记录的开始位置 **取值范围**： 大于或等于0
         /// </summary>
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 每页显示个数，范围为1-1024
+        /// **参数解释**： 每页显示个数 **取值范围**： 1-1024
         /// </summary>
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 查询规则列表总条数
+        /// **参数解释**： 查询规则列表总条数 **取值范围**： 大于0
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }
 
         /// <summary>
-        /// 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。
+        /// **参数解释**： 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获得，通过返回值中的data.records.protect_objects.object_id（.表示各对象之间层级的区分）获得，type为0时，object_id为互联网边界防护对象ID，type为1时，object_id为VPC边界防护对象ID，type可通过data.records.protect_objects.type（.表示各对象之间层级的区分）获得  **取值范围**：  32位UUID
         /// </summary>
         [JsonProperty("object_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ObjectId { get; set; }
 
         /// <summary>
-        /// 查询规则列表记录
+        /// **参数解释**： 顶部规则数量 **取值范围**： 不涉及
+        /// </summary>
+        [JsonProperty("up_rules_count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? UpRulesCount { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 查询规则列表记录
         /// </summary>
         [JsonProperty("records", NullValueHandling = NullValueHandling.Ignore)]
         public List<RuleAclListResponseDTODataRecords> Records { get; set; }
@@ -59,6 +65,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  total: ").Append(Total).Append("\n");
             sb.Append("  objectId: ").Append(ObjectId).Append("\n");
+            sb.Append("  upRulesCount: ").Append(UpRulesCount).Append("\n");
             sb.Append("  records: ").Append(Records).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -82,6 +89,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
             if (this.ObjectId != input.ObjectId || (this.ObjectId != null && !this.ObjectId.Equals(input.ObjectId))) return false;
+            if (this.UpRulesCount != input.UpRulesCount || (this.UpRulesCount != null && !this.UpRulesCount.Equals(input.UpRulesCount))) return false;
             if (this.Records != input.Records || (this.Records != null && input.Records != null && !this.Records.SequenceEqual(input.Records))) return false;
 
             return true;
@@ -99,6 +107,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
                 if (this.ObjectId != null) hashCode = hashCode * 59 + this.ObjectId.GetHashCode();
+                if (this.UpRulesCount != null) hashCode = hashCode * 59 + this.UpRulesCount.GetHashCode();
                 if (this.Records != null) hashCode = hashCode * 59 + this.Records.GetHashCode();
                 return hashCode;
             }

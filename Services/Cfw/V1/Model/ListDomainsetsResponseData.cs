@@ -17,25 +17,25 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 每页显示个数，范围为1-1024
+        /// **参数解释**： 每页显示个数 **取值范围**： 1-1024
         /// </summary>
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
+        /// **参数解释**： 偏移量：指定返回记录的开始位置 **取值范围**： 大于等于0
         /// </summary>
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 域名组总数
+        /// **参数解释**： 域名组总数 **取值范围**： 大于等于0
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }
 
         /// <summary>
-        /// 域名组列表
+        /// **参数解释**： 域名组列表 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("records", NullValueHandling = NullValueHandling.Ignore)]
         public List<DomainSetVo> Records { get; set; }

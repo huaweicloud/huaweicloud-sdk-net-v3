@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         [JsonProperty("cerAvailable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? CerAvailable { get; set; }
 
+        /// <summary>
+        /// 是否支持使用已有KSM密钥ID创建OBS桶
+        /// </summary>
+        [JsonProperty("enableOBSEncryptUserKmsKey", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableOBSEncryptUserKmsKey { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("  enableUserDefObs: ").Append(EnableUserDefObs).Append("\n");
             sb.Append("  enableEnterprise: ").Append(EnableEnterprise).Append("\n");
             sb.Append("  cerAvailable: ").Append(CerAvailable).Append("\n");
+            sb.Append("  enableOBSEncryptUserKmsKey: ").Append(EnableOBSEncryptUserKmsKey).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +74,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             if (this.EnableUserDefObs != input.EnableUserDefObs || (this.EnableUserDefObs != null && !this.EnableUserDefObs.Equals(input.EnableUserDefObs))) return false;
             if (this.EnableEnterprise != input.EnableEnterprise || (this.EnableEnterprise != null && !this.EnableEnterprise.Equals(input.EnableEnterprise))) return false;
             if (this.CerAvailable != input.CerAvailable || (this.CerAvailable != null && !this.CerAvailable.Equals(input.CerAvailable))) return false;
+            if (this.EnableOBSEncryptUserKmsKey != input.EnableOBSEncryptUserKmsKey || (this.EnableOBSEncryptUserKmsKey != null && !this.EnableOBSEncryptUserKmsKey.Equals(input.EnableOBSEncryptUserKmsKey))) return false;
 
             return true;
         }
@@ -82,6 +90,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 if (this.EnableUserDefObs != null) hashCode = hashCode * 59 + this.EnableUserDefObs.GetHashCode();
                 if (this.EnableEnterprise != null) hashCode = hashCode * 59 + this.EnableEnterprise.GetHashCode();
                 if (this.CerAvailable != null) hashCode = hashCode * 59 + this.CerAvailable.GetHashCode();
+                if (this.EnableOBSEncryptUserKmsKey != null) hashCode = hashCode * 59 + this.EnableOBSEncryptUserKmsKey.GetHashCode();
                 return hashCode;
             }
         }

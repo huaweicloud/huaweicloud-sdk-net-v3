@@ -11,51 +11,51 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 {
     /// <summary>
-    /// RocketMQ元数据迁移，RocketMQ Topic元数据。
+    /// **参数解释**： RocketMQ元数据迁移，RocketMQ Topic元数据。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
     /// </summary>
     public class MigrationRocketMqTopicConfig 
     {
 
         /// <summary>
-        /// Topic名称。
+        /// **参数解释**： Topic名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
-        [JsonProperty("topicName", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("topic_name", NullValueHandling = NullValueHandling.Ignore)]
         public string TopicName { get; set; }
 
         /// <summary>
-        /// 是否有序消息。
+        /// **参数解释**： 是否有序消息。 **约束限制**： 不涉及。 **取值范围**： - true：有序消息。 - false：无序消息。 **默认取值**： false。
         /// </summary>
         [JsonProperty("order", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Order { get; set; }
 
         /// <summary>
-        /// Topic权限。
+        /// **参数解释**： Topic权限。 **约束限制**： 不涉及。 **取值范围**： - PUB：拥有发布权限。 - SUB：拥有订阅权限。 - PUB|SUB：拥有发布订阅权限。 - DENY：无权限。 **默认取值**： 6。
         /// </summary>
         [JsonProperty("perm", NullValueHandling = NullValueHandling.Ignore)]
         public int? Perm { get; set; }
 
         /// <summary>
-        /// 读队列个数。
+        /// **参数解释**： 读队列个数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 16。
         /// </summary>
-        [JsonProperty("readQueueNums", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("read_queue_nums", NullValueHandling = NullValueHandling.Ignore)]
         public int? ReadQueueNums { get; set; }
 
         /// <summary>
-        /// 写队列个数。
+        /// **参数解释**： 写队列个数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 16。
         /// </summary>
-        [JsonProperty("writeQueueNums", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("write_queue_nums", NullValueHandling = NullValueHandling.Ignore)]
         public int? WriteQueueNums { get; set; }
 
         /// <summary>
-        /// Topic过滤类型。   - SINGLE_TAG：单标签   - MULTI_TAG：多标签
+        /// **参数解释**： Topic过滤类型。 **约束限制**： 不涉及。 **取值范围**： - SINGLE_TAG：单标签   - MULTI_TAG：多标签 **默认取值**： 不涉及。
         /// </summary>
-        [JsonProperty("topicFilterType", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("topic_filter_type", NullValueHandling = NullValueHandling.Ignore)]
         public string TopicFilterType { get; set; }
 
         /// <summary>
-        /// Topic系统标志位。
+        /// **参数解释**： Topic系统标志位。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 0。
         /// </summary>
-        [JsonProperty("topicSysFlag", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("topic_sys_flag", NullValueHandling = NullValueHandling.Ignore)]
         public int? TopicSysFlag { get; set; }
 
 

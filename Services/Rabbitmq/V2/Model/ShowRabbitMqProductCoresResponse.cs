@@ -17,10 +17,16 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     {
 
         /// <summary>
-        /// 核数
+        /// **参数解释**： 核数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("core_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? CoreNum { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 预估存储空间，当填写的broker_num小于等于当前实例真实值时，显示为当前实例的存储空间。如果填写的broker_num大于当前实例真实值时，显示为所填写broker_num时实例的预估存储空间。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("total_extend_storage_space", NullValueHandling = NullValueHandling.Ignore)]
+        public int? TotalExtendStorageSpace { get; set; }
 
 
 
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ShowRabbitMqProductCoresResponse {\n");
             sb.Append("  coreNum: ").Append(CoreNum).Append("\n");
+            sb.Append("  totalExtendStorageSpace: ").Append(TotalExtendStorageSpace).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         {
             if (input == null) return false;
             if (this.CoreNum != input.CoreNum || (this.CoreNum != null && !this.CoreNum.Equals(input.CoreNum))) return false;
+            if (this.TotalExtendStorageSpace != input.TotalExtendStorageSpace || (this.TotalExtendStorageSpace != null && !this.TotalExtendStorageSpace.Equals(input.TotalExtendStorageSpace))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             {
                 var hashCode = 41;
                 if (this.CoreNum != null) hashCode = hashCode * 59 + this.CoreNum.GetHashCode();
+                if (this.TotalExtendStorageSpace != null) hashCode = hashCode * 59 + this.TotalExtendStorageSpace.GetHashCode();
                 return hashCode;
             }
         }

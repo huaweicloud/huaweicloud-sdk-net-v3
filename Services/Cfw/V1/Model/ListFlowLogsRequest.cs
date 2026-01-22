@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     public class ListFlowLogsRequest 
     {
         /// <summary>
-        /// 日志类型包括：internet，vpc，nat
+        /// **参数解释**： 日志类型 **约束限制**： 不涉及 **取值范围**： internet为南北向日志、nat为nat场景日志，vpc为东西向日志，vgw为vgw场景日志 **默认取值**： 不涉及
         /// </summary>
-        /// <value>日志类型包括：internet，vpc，nat</value>
+        /// <value>**参数解释**： 日志类型 **约束限制**： 不涉及 **取值范围**： internet为南北向日志、nat为nat场景日志，vpc为东西向日志，vgw为vgw场景日志 **默认取值**： 不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<LogTypeEnum>))]
         public class LogTypeEnum
         {
@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
 
 
         /// <summary>
-        /// 防火墙id，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
+        /// 防火墙ID，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
         /// </summary>
         [SDKProperty("fw_instance_id", IsQuery = true)]
         [JsonProperty("fw_instance_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -152,7 +152,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string Direction { get; set; }
 
         /// <summary>
-        /// 日志类型包括：internet，vpc，nat
+        /// **参数解释**： 日志类型 **约束限制**： 不涉及 **取值范围**： internet为南北向日志、nat为nat场景日志，vpc为东西向日志，vgw为vgw场景日志 **默认取值**： 不涉及
         /// </summary>
         [SDKProperty("log_type", IsQuery = true)]
         [JsonProperty("log_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -200,14 +200,14 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? DstPort { get; set; }
 
         /// <summary>
-        /// 协议类型，包含TCP, UDP,ICMP,ICMPV6等。
+        /// 协议类型，包含TCP, UDP，ICMP，ICMPV6等。
         /// </summary>
         [SDKProperty("protocol", IsQuery = true)]
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
         public string Protocol { get; set; }
 
         /// <summary>
-        /// 规则应用类型包括：“HTTP”，\&quot;HTTPS\&quot;，\&quot;TLS1\&quot;，“DNS”，“SSH”，“MYSQL”，“SMTP”，“RDP”，“RDPS”，“VNC”，“POP3”，“IMAP4”，“SMTPS”，“POP3S”，“FTPS”，“ANY”,“BGP”等。
+        /// 规则应用类型包括：“HTTP”，“HTTPS“，“TLS1“，“DNS”，“SSH”，“MYSQL”，“SMTP”，“RDP”，“RDPS”，“VNC”，“POP3”，“IMAP4”，“SMTPS”，“POP3S”，“FTPS”，“ANY”,“BGP”等。
         /// </summary>
         [SDKProperty("app", IsQuery = true)]
         [JsonProperty("app", NullValueHandling = NullValueHandling.Ignore)]

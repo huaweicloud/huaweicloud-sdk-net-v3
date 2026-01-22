@@ -11,14 +11,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cfw.V1.Model
 {
     /// <summary>
-    /// 防火墙规格信息
+    /// **参数解释**： 防火墙规格信息 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
     public class CreateFirewallReqFlavor 
     {
         /// <summary>
-        /// 防火墙版本 “charge_mode”为“prePaid”时，支持标准版、专业版。 “charge_mode”为“postPaid”时，仅支持专业版。  Standard - 标准版 Professional - 专业版
+        /// **参数解释**： 防火墙版本 **约束限制**： “charge_mode”为“prePaid”时，支持标准版、专业版。 “charge_mode”为“postPaid”时，仅支持专业版。 **取值范围**： Standard - 标准版 Professional - 专业版 **默认取值**： 不涉及
         /// </summary>
-        /// <value>防火墙版本 “charge_mode”为“prePaid”时，支持标准版、专业版。 “charge_mode”为“postPaid”时，仅支持专业版。  Standard - 标准版 Professional - 专业版</value>
+        /// <value>**参数解释**： 防火墙版本 **约束限制**： “charge_mode”为“prePaid”时，支持标准版、专业版。 “charge_mode”为“postPaid”时，仅支持专业版。 **取值范围**： Standard - 标准版 Professional - 专业版 **默认取值**： 不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<VersionEnum>))]
         public class VersionEnum
         {
@@ -132,24 +132,24 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
 
 
         /// <summary>
-        /// 防火墙版本 “charge_mode”为“prePaid”时，支持标准版、专业版。 “charge_mode”为“postPaid”时，仅支持专业版。  Standard - 标准版 Professional - 专业版
+        /// **参数解释**： 防火墙版本 **约束限制**： “charge_mode”为“prePaid”时，支持标准版、专业版。 “charge_mode”为“postPaid”时，仅支持专业版。 **取值范围**： Standard - 标准版 Professional - 专业版 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public VersionEnum Version { get; set; }
         /// <summary>
-        /// 扩展EIP数量，仅包周期场景下生效，当用户需要在增加EIP使用时需要使用此参数。
+        /// **参数解释**： 扩展EIP数量 **约束限制**： 仅包周期场景下生效，当用户需要增加EIP防护数量时使用此参数。 **取值范围**： 0-2000 **默认取值**： 0
         /// </summary>
         [JsonProperty("extend_eip_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? ExtendEipCount { get; set; }
 
         /// <summary>
-        /// 扩展带宽，步长为5，仅包周期场景下生效，当用户需要在增加带宽使用时需要使用此参数。
+        /// **参数解释**： 扩展带宽，步长为5 **约束限制**： 仅包周期场景下生效，当用户需要防护带宽时使用此参数。 **取值范围**： 0-5000 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("extend_bandwidth", NullValueHandling = NullValueHandling.Ignore)]
         public int? ExtendBandwidth { get; set; }
 
         /// <summary>
-        /// 扩展VPC数量，仅包周期场景下生效，当用户需要增加VPC使用时需要使用此参数。
+        /// **参数解释**： 扩展VPC数量 **约束限制**： 仅包周期场景下生效，当用户需要增加VPC防护数量时使用此参数。 **取值范围**： 0-100 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("extend_vpc_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? ExtendVpcCount { get; set; }

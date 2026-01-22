@@ -374,7 +374,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string Engine { get; set; }
 
         /// <summary>
-        /// **参数解释**： Kafka的版本。 **取值范围**： [- 1.1.0](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt,sbc,cmcc,ax) [- 2.3.0](tag:g42,tm,hk_g42,ctc,hk_tm,dt,sbc,cmcc) - 2.7 [- 3.x](tag:hws,hws_hk,dt,sbc,hcs,fcs,ctc,tm,hk_tm,hws_eu,ax)
+        /// **参数解释**： Kafka的版本。 **取值范围**： [- 1.1.0](tag:hws,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,sbc,hk_sbc,cmcc,ax,srg) [- 2.3.0](tag:g42,tm,hk_g42,ctc,hk_tm,dt,cmcc,ocb,hws_ocb) - 2.7 [- 3.x](tag:hws,hws_hk,dt,sbc,hk_sbc,hcs,fcs,ctc,tm,hk_tm,hws_eu,ax,cmcc,srg)
         /// </summary>
         [JsonProperty("engine_version", NullValueHandling = NullValueHandling.Ignore)]
         public string EngineVersion { get; set; }
@@ -392,7 +392,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string Specification { get; set; }
 
         /// <summary>
-        /// **参数解释**： 消息存储空间，单位：GB。 **取值范围**： [- Kafka实例规格为c6.2u4g.cluster时，存储空间取值范围300GB ~ 300000GB。 - Kafka实例规格为c6.4u8g.cluster时，存储空间取值范围300GB ~ 600000GB。 - Kafka实例规格为c6.8u16g.cluster时，存储空间取值范围300GB ~ 1500000GB。 - Kafka实例规格为c6.12u24g.cluster时，存储空间取值范围300GB ~ 1500000GB。 - Kafka实例规格为c6.16u32g.cluster时，存储空间取值范围300GB ~ 1500000GB。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt,ax) [- Kafka实例规格为kafka.2u4g.cluster.small时，存储空间取值范围300GB~300000GB。](tag:hws,hws_hk,hws_eu,dt,ax) [- Kafka实例规格为kafka.2u8g.cluster时，存储空间取值范围300GB~300000GB。](tag:fcs) [- Kafka实例规格为kafka.4u16g.cluster时，存储空间取值范围300GB~600000GB。 - Kafka实例规格为kafka.8u32g.cluster时，存储空间取值范围300GB~1500000GB。 - Kafka实例规格为kafka.16u64g.cluster时，存储空间取值范围300GB~1500000GB。 - Kafka实例规格为kafka.32u128g.cluster时，存储空间取值范围300GB~1500000GB。](tag:hcs,fcs)
+        /// **参数解释**： 消息存储空间，单位：GB。 **取值范围**： [- Kafka实例规格为c6.2u4g.cluster时，存储空间取值范围300GB ~ 300000GB。 - Kafka实例规格为c6.4u8g.cluster时，存储空间取值范围300GB ~ 600000GB。 - Kafka实例规格为c6.8u16g.cluster时，存储空间取值范围300GB ~ 1500000GB。 - Kafka实例规格为c6.12u24g.cluster时，存储空间取值范围300GB ~ 1500000GB。 - Kafka实例规格为c6.16u32g.cluster时，存储空间取值范围300GB ~ 1500000GB。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt,ax,cmcc,sbc,hk_sbc,srg) [- Kafka实例规格为kafka.2u4g.cluster.small时，存储空间取值范围300GB~300000GB。](tag:hws,hws_hk,hws_eu,dt,ax) [- Kafka实例规格为kafka.2u8g.cluster时，存储空间取值范围300GB~300000GB。](tag:fcs) [- Kafka实例规格为kafka.4u16g.cluster时，存储空间取值范围300GB~600000GB。 - Kafka实例规格为kafka.8u32g.cluster时，存储空间取值范围300GB~1500000GB。 - Kafka实例规格为kafka.16u64g.cluster时，存储空间取值范围300GB~1500000GB。 - Kafka实例规格为kafka.32u128g.cluster时，存储空间取值范围300GB~1500000GB。](tag:hcs,fcs)
         /// </summary>
         [JsonProperty("storage_space", NullValueHandling = NullValueHandling.Ignore)]
         public int? StorageSpace { get; set; }
@@ -446,7 +446,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string ResourceSpecCode { get; set; }
 
         /// <summary>
-        /// **参数解释**： 付费模式。 **取值范围**： [- 1表示按需计费。 - 0表示包年/包月计费。](tag:hws,hws_hk,ctc,cmcc,ax)[付费模式，暂未使用。](tag:hws_ocb,ocb) [- 1表示按需计费。](tag:dt,g42,tm,hk_g42,hk_tm,hcs,fcs,sbc,hk_sbc,hws_eu)
+        /// **参数解释**： 付费模式。 **取值范围**： [- 1表示按需计费。 - 0表示包年/包月计费。](tag:hws,hws_hk,ctc,cmcc,ax,hws_eu)[付费模式，暂未使用。](tag:hws_ocb,ocb) [- 1表示按需计费。](tag:dt,g42,tm,hk_g42,hk_tm,hcs,fcs,sbc,hk_sbc)
         /// </summary>
         [JsonProperty("charging_mode", NullValueHandling = NullValueHandling.Ignore)]
         public int? ChargingMode { get; set; }
@@ -542,7 +542,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? BrokerSslEnable { get; set; }
 
         /// <summary>
-        /// **参数解释**： Kafka使用的安全协议。 若实例详情中不存在port_protocols返回参数，则kafka_security_protocol同时代表内网访问、公网访问以及跨VPC访问的安全协议。 若实例详情中存在port_protocols返回参数，则kafka_security_protocol仅代表跨VPC访问的安全协议。内网访问公网访问的安全协议请参考port_protocols参数。 **取值范围**： - PLAINTEXT：既未采用SSL证书进行加密传输，也不支持账号密码认证。性能更好，安全性较低，建议在生产环境下公网访问不使用此方式。 - SASL_SSL：采用SSL证书进行加密传输，支持账号密码认证，安全性更高。 - SASL_PLAINTEXT：明文传输，支持账号密码认证，性能更好，建议使用SCRAM-SHA-512机制。
+        /// **参数解释**： Kafka使用的安全协议。 若实例详情中不存在port_protocols返回参数，则kafka_security_protocol同时代表内网访问、公网访问以及跨VPC访问的安全协议。 若实例详情中存在port_protocols返回参数，则kafka_security_protocol仅代表跨VPC访问的安全协议。内网访问公网访问的安全协议请参考port_protocols参数。 **取值范围**： - PLAINTEXT：既未采用SSL证书进行加密传输，也不支持账号密码认证。性能更好，安全性较低，建议在生产环境下公网访问不使用此方式。 - SASL_SSL：采用SSL证书进行加密传输，支持账号密码认证，安全性更高。 [- SASL_PLAINTEXT：明文传输，支持账号密码认证，性能更好，建议使用SCRAM-SHA-512机制。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt,ax)
         /// </summary>
         [JsonProperty("kafka_security_protocol", NullValueHandling = NullValueHandling.Ignore)]
         public string KafkaSecurityProtocol { get; set; }
@@ -553,19 +553,19 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("sasl_enabled_mechanisms", NullValueHandling = NullValueHandling.Ignore)]
         public List<SaslEnabledMechanismsEnum> SaslEnabledMechanisms { get; set; }
         /// <summary>
-        /// **参数解释**： 是否开启双向认证。 **取值范围**： - true：开启 - false：未开启
+        /// **参数解释**： 是否开启双向认证。[华为云Stack不支持此参数。](tag:hcs) **取值范围**： - true：开启 - false：未开启
         /// </summary>
         [JsonProperty("ssl_two_way_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SslTwoWayEnable { get; set; }
 
         /// <summary>
-        /// **参数解释**： 是否开启证书替换。 **取值范围**： - true：开启 - false：未开启
+        /// **参数解释**： 是否开启证书替换。[华为云Stack不支持此参数。](tag:hcs) **取值范围**： - true：开启 - false：未开启
         /// </summary>
         [JsonProperty("cert_replaced", NullValueHandling = NullValueHandling.Ignore)]
         public bool? CertReplaced { get; set; }
 
         /// <summary>
-        /// **参数解释**： 公网访问Kafka Manager连接地址。 **取值范围**： 不涉及。
+        /// **参数解释**： 公网访问Kafka Manager连接地址。[华为云Stack不支持此参数。](tag:hcs) **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("public_management_connect_address", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicManagementConnectAddress { get; set; }
@@ -666,13 +666,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string StorageSpecCode { get; set; }
 
         /// <summary>
-        /// **参数解释**： 服务类型。 **取值范围**： advanced。
+        /// **参数解释**： 服务类型。 **取值范围**： advanced：服务类型。
         /// </summary>
         [JsonProperty("service_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ServiceType { get; set; }
 
         /// <summary>
-        /// **参数解释**： 存储类型。 **取值范围**： hec
+        /// **参数解释**： 存储类型。 **取值范围**： hec：存储类型。
         /// </summary>
         [JsonProperty("storage_type", NullValueHandling = NullValueHandling.Ignore)]
         public string StorageType { get; set; }
@@ -710,7 +710,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// **参数解释**： 跨VPC访问信息。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("cross_vpc_info", NullValueHandling = NullValueHandling.Ignore)]
-        public string CrossVpcInfo { get; set; }
+        public Object CrossVpcInfo { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 公网跨VPC访问信息。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("public_cross_vpc_info", NullValueHandling = NullValueHandling.Ignore)]
+        public Object PublicCrossVpcInfo { get; set; }
 
         /// <summary>
         /// **参数解释**： 是否开启IPv6。 **取值范围**： - true：开启 - false：不开启
@@ -833,7 +839,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string PublicAccessEnabled { get; set; }
 
         /// <summary>
-        /// **参数解释**： 节点数。 **取值范围**： - [1：Kafka单机实例的节点数。](tag:hws,hws_hk,hws_eu,dt,hcs,ax) - 3~50：Kafka集群实例的节点数。
+        /// **参数解释**： 节点数。 **取值范围**： [- 1：Kafka单机实例的节点数。](tag:hws,hws_hk,hws_eu,dt,hcs,ax) - 3~50：Kafka集群实例的节点数。
         /// </summary>
         [JsonProperty("node_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? NodeNum { get; set; }
@@ -942,6 +948,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  enableLogCollection: ").Append(EnableLogCollection).Append("\n");
             sb.Append("  newAuthCert: ").Append(NewAuthCert).Append("\n");
             sb.Append("  crossVpcInfo: ").Append(CrossVpcInfo).Append("\n");
+            sb.Append("  publicCrossVpcInfo: ").Append(PublicCrossVpcInfo).Append("\n");
             sb.Append("  ipv6Enable: ").Append(Ipv6Enable).Append("\n");
             sb.Append("  ipv6ConnectAddresses: ").Append(Ipv6ConnectAddresses).Append("\n");
             sb.Append("  connectorEnable: ").Append(ConnectorEnable).Append("\n");
@@ -1046,6 +1053,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             if (this.EnableLogCollection != input.EnableLogCollection || (this.EnableLogCollection != null && !this.EnableLogCollection.Equals(input.EnableLogCollection))) return false;
             if (this.NewAuthCert != input.NewAuthCert || (this.NewAuthCert != null && !this.NewAuthCert.Equals(input.NewAuthCert))) return false;
             if (this.CrossVpcInfo != input.CrossVpcInfo || (this.CrossVpcInfo != null && !this.CrossVpcInfo.Equals(input.CrossVpcInfo))) return false;
+            if (this.PublicCrossVpcInfo != input.PublicCrossVpcInfo || (this.PublicCrossVpcInfo != null && !this.PublicCrossVpcInfo.Equals(input.PublicCrossVpcInfo))) return false;
             if (this.Ipv6Enable != input.Ipv6Enable || (this.Ipv6Enable != null && !this.Ipv6Enable.Equals(input.Ipv6Enable))) return false;
             if (this.Ipv6ConnectAddresses != input.Ipv6ConnectAddresses || (this.Ipv6ConnectAddresses != null && input.Ipv6ConnectAddresses != null && !this.Ipv6ConnectAddresses.SequenceEqual(input.Ipv6ConnectAddresses))) return false;
             if (this.ConnectorEnable != input.ConnectorEnable || (this.ConnectorEnable != null && !this.ConnectorEnable.Equals(input.ConnectorEnable))) return false;
@@ -1144,6 +1152,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 if (this.EnableLogCollection != null) hashCode = hashCode * 59 + this.EnableLogCollection.GetHashCode();
                 if (this.NewAuthCert != null) hashCode = hashCode * 59 + this.NewAuthCert.GetHashCode();
                 if (this.CrossVpcInfo != null) hashCode = hashCode * 59 + this.CrossVpcInfo.GetHashCode();
+                if (this.PublicCrossVpcInfo != null) hashCode = hashCode * 59 + this.PublicCrossVpcInfo.GetHashCode();
                 if (this.Ipv6Enable != null) hashCode = hashCode * 59 + this.Ipv6Enable.GetHashCode();
                 if (this.Ipv6ConnectAddresses != null) hashCode = hashCode * 59 + this.Ipv6ConnectAddresses.GetHashCode();
                 if (this.ConnectorEnable != null) hashCode = hashCode * 59 + this.ConnectorEnable.GetHashCode();

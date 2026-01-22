@@ -11,25 +11,25 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 {
     /// <summary>
-    /// RocketMQ元数据迁移，RabbitMQ队列元数据。
+    /// **参数解释**： RocketMQ元数据迁移，RabbitMQ队列元数据。 **约束限制**： 不涉及。 **取值范围**： - true：持久化。 - false：不进行持久化。 **默认取值**： 不涉及。
     /// </summary>
     public class MigrationRabbitQueueMetadata 
     {
 
         /// <summary>
-        /// vhost名称。
+        /// **参数解释**： vhost名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("vhost", NullValueHandling = NullValueHandling.Ignore)]
         public string Vhost { get; set; }
 
         /// <summary>
-        /// 队列名称。
+        /// **参数解释**： 队列名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 是否持久化。
+        /// **参数解释**： 是否持久化。 **约束限制**： 不涉及。 **取值范围**： - true：持久化。 - false：不进行持久化。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("durable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Durable { get; set; }

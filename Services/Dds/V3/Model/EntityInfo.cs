@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
     {
 
         /// <summary>
-        /// 组ID或节点ID。
+        /// **参数解释：** 组ID或节点ID。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("entity_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EntityId { get; set; }
 
         /// <summary>
-        /// 组名称或节点名称。
+        /// **参数解释：** 组名称或节点名称。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("entity_name", NullValueHandling = NullValueHandling.Ignore)]
         public string EntityName { get; set; }

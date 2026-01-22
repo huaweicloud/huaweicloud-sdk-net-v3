@@ -436,6 +436,34 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
+        /// 新增Kafka实例指定Topic分区
+        ///
+        /// 新增Kafka实例指定Topic分区。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreatePartitionResponse> CreatePartitionAsync(CreatePartitionRequest createPartitionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createPartitionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(createPartitionRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/partitions-reassignment", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPartitionRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<CreatePartitionResponse>(response);
+        }
+
+        public AsyncInvoker<CreatePartitionResponse> CreatePartitionAsyncInvoker(CreatePartitionRequest createPartitionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createPartitionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(createPartitionRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/partitions-reassignment", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPartitionRequest);
+            return new AsyncInvoker<CreatePartitionResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreatePartitionResponse>);
+        }
+        
+        /// <summary>
         /// 创建实例
         ///
         /// 创建按需计费类型的Kafka实例。
@@ -568,9 +596,39 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
+        /// kafka实例删除指定消费组
+        ///
+        /// kafka实例删除指定消费组
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteGroupResponse> DeleteGroupAsync(DeleteGroupRequest deleteGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteGroupRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/{group}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGroupRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteGroupResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteGroupResponse> DeleteGroupAsyncInvoker(DeleteGroupRequest deleteGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteGroupRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/{group}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGroupRequest);
+            return new AsyncInvoker<DeleteGroupResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteGroupResponse>);
+        }
+        
+        /// <summary>
         /// 删除指定的实例
         ///
         /// 删除指定的实例，释放该实例的所有资源。
+        /// 
+        /// [注意：调用本接口删除的实例将被彻底删除，不会进入回收站，且删除后不可恢复。若您需要删除的实例进入回收站，请使用[批量重启或删除实例](BatchRestartOrDeleteInstances.xml)。](tag:hws,hws_hk,cmcc,ctc,sbc,hk_sbc,tm,hk_tm,srg)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -649,6 +707,34 @@ namespace HuaweiCloud.SDK.Kafka.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/topics/{topic}/messages", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKafkaMessageRequest);
             return new AsyncInvoker<DeleteKafkaMessageResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteKafkaMessageResponse>);
+        }
+        
+        /// <summary>
+        /// 删除Kafka消息
+        ///
+        /// 删除Kafka消息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteKafkaTopicMessagesResponse> DeleteKafkaTopicMessagesAsync(DeleteKafkaTopicMessagesRequest deleteKafkaTopicMessagesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteKafkaTopicMessagesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteKafkaTopicMessagesRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/topics/{topic}/messages/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKafkaTopicMessagesRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<DeleteKafkaTopicMessagesResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteKafkaTopicMessagesResponse> DeleteKafkaTopicMessagesAsyncInvoker(DeleteKafkaTopicMessagesRequest deleteKafkaTopicMessagesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteKafkaTopicMessagesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteKafkaTopicMessagesRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/topics/{topic}/messages/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKafkaTopicMessagesRequest);
+            return new AsyncInvoker<DeleteKafkaTopicMessagesResponse>(this, "POST", request, JsonUtils.DeSerialize<DeleteKafkaTopicMessagesResponse>);
         }
         
         /// <summary>
@@ -732,31 +818,29 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 删除指定用户
+        /// 开启Kafka实例域名访问能力
         ///
-        /// 删除指定用户。
+        /// 开启Kafka实例域名访问后，客户端可以通过域名连接Kafka实例。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
-        public async Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest deleteUserRequest)
+        public async Task<EnableDnsResponse> EnableDnsAsync(EnableDnsRequest enableDnsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(deleteUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            if (StringUtils.TryConvertToNonEmptyString(deleteUserRequest.UserName, out var valueOfUserName)) urlParam.Add("user_name", valueOfUserName);
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users/{user_name}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteUserRequest);
-            var response = await DoHttpRequestAsync("DELETE", request);
-            return JsonUtils.DeSerialize<DeleteUserResponse>(response);
+            if (StringUtils.TryConvertToNonEmptyString(enableDnsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/dns", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableDnsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<EnableDnsResponse>(response);
         }
 
-        public AsyncInvoker<DeleteUserResponse> DeleteUserAsyncInvoker(DeleteUserRequest deleteUserRequest)
+        public AsyncInvoker<EnableDnsResponse> EnableDnsAsyncInvoker(EnableDnsRequest enableDnsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(deleteUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            if (StringUtils.TryConvertToNonEmptyString(deleteUserRequest.UserName, out var valueOfUserName)) urlParam.Add("user_name", valueOfUserName);
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users/{user_name}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteUserRequest);
-            return new AsyncInvoker<DeleteUserResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteUserResponse>);
+            if (StringUtils.TryConvertToNonEmptyString(enableDnsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/dns", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableDnsRequest);
+            return new AsyncInvoker<EnableDnsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<EnableDnsResponse>);
         }
         
         /// <summary>
@@ -1851,6 +1935,34 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
+        /// 查询指定消费组信息
+        ///
+        /// 查询指定消费组信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowGroupResponse> ShowGroupAsync(ShowGroupRequest showGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showGroupRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/{group}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGroupRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowGroupResponse>(response);
+        }
+
+        public AsyncInvoker<ShowGroupResponse> ShowGroupAsyncInvoker(ShowGroupRequest showGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showGroupRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/{group}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGroupRequest);
+            return new AsyncInvoker<ShowGroupResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowGroupResponse>);
+        }
+        
+        /// <summary>
         /// 查询消费组信息
         ///
         /// 查询消费组信息。
@@ -1959,8 +2071,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         /// <summary>
         /// 查询消息
         ///
-        /// 查询消息的偏移量和消息内容。
-        /// 先根据时间戳查询消息的偏移量，再根据偏移量查询消息内容。
+        /// Kafka实例支持两种消息查询方式，具体查询范围及结果如下：
+        /// - 按创建时间查询：若已知消息的创建时间段，可通过该方式查询，将返回消息列表及对应偏移量，但不包含消息具体内容。
+        /// - 按偏移量查询：若已知目标消息所属Topic的分区及具体偏移量，可通过该方式查询，将返回消息列表及完整的消息内容。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2179,9 +2292,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/extend-check", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaScalePreCheckInfoRequest);
             var response = await DoHttpRequestAsync("GET", request);
-            var showKafkaScalePreCheckInfoResponse = JsonUtils.DeSerializeNull<ShowKafkaScalePreCheckInfoResponse>(response);
-            showKafkaScalePreCheckInfoResponse.Body = JsonUtils.DeSerializeList<ShowKafkaScalePreCheckInfoResponseBody>(response);
-            return showKafkaScalePreCheckInfoResponse;
+            return JsonUtils.DeSerialize<ShowKafkaScalePreCheckInfoResponse>(response);
         }
 
         public AsyncInvoker<ShowKafkaScalePreCheckInfoResponse> ShowKafkaScalePreCheckInfoAsyncInvoker(ShowKafkaScalePreCheckInfoRequest showKafkaScalePreCheckInfoRequest)
@@ -2190,12 +2301,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
             if (StringUtils.TryConvertToNonEmptyString(showKafkaScalePreCheckInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/extend-check", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaScalePreCheckInfoRequest);
-            return new AsyncInvoker<ShowKafkaScalePreCheckInfoResponse>(this, "GET", request, response =>
-            {
-                var showKafkaScalePreCheckInfoResponse = JsonUtils.DeSerializeNull<ShowKafkaScalePreCheckInfoResponse>(response);
-                showKafkaScalePreCheckInfoResponse.Body = JsonUtils.DeSerializeList<ShowKafkaScalePreCheckInfoResponseBody>(response);
-                return showKafkaScalePreCheckInfoResponse;
-            });
+            return new AsyncInvoker<ShowKafkaScalePreCheckInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowKafkaScalePreCheckInfoResponse>);
         }
         
         /// <summary>
@@ -2992,34 +3098,6 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 修改Kafka实例Topic分区的副本
-        ///
-        /// 修改Kafka实例Topic分区的副本。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<UpdateTopicReplicaResponse> UpdateTopicReplicaAsync(UpdateTopicReplicaRequest updateTopicReplicaRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(updateTopicReplicaRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            if (StringUtils.TryConvertToNonEmptyString(updateTopicReplicaRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/replicas-reassignment", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTopicReplicaRequest);
-            var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerializeNull<UpdateTopicReplicaResponse>(response);
-        }
-
-        public AsyncInvoker<UpdateTopicReplicaResponse> UpdateTopicReplicaAsyncInvoker(UpdateTopicReplicaRequest updateTopicReplicaRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(updateTopicReplicaRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            if (StringUtils.TryConvertToNonEmptyString(updateTopicReplicaRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/replicas-reassignment", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTopicReplicaRequest);
-            return new AsyncInvoker<UpdateTopicReplicaResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateTopicReplicaResponse>);
-        }
-        
-        /// <summary>
         /// 修改磁盘自动扩容配置
         ///
         /// 该接口用于修改磁盘自动扩容配置，包含磁盘自动扩容是否开启、扩容阈值、扩容步长，以及扩容上限的配置。
@@ -3377,9 +3455,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 查询开启Smart Connector功能所需资源信息
+        /// 查询开启Smart Connect功能所需资源信息
         ///
-        /// 查询开启Smart Connector功能所需要使用的资源的情况
+        /// 查询开启Smart Connect功能所需要使用的资源的情况
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

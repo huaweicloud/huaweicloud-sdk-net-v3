@@ -17,43 +17,43 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     {
 
         /// <summary>
-        /// Queue所属Vhost名称
+        /// **参数解释**： Queue所属Vhost名称。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("vhost", NullValueHandling = NullValueHandling.Ignore)]
         public string Vhost { get; set; }
 
         /// <summary>
-        /// Queue名称
+        /// **参数解释**： Queue名称。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 是否持久化
+        /// **参数解释**： Queue是否开启持久化。 **取值范围**： - true：开启持久化。 - false：未开启持久化。
         /// </summary>
         [JsonProperty("durable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Durable { get; set; }
 
         /// <summary>
-        /// 是否自动删除
+        /// **参数解释**： Queue是否开启自动删除。 **取值范围**： - true：开启自动删除。 - false：未开启自动删除。
         /// </summary>
         [JsonProperty("auto_delete", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AutoDelete { get; set; }
 
         /// <summary>
-        /// 待消费消息数
+        /// **参数解释**： 待消费消息数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("messages", NullValueHandling = NullValueHandling.Ignore)]
         public int? Messages { get; set; }
 
         /// <summary>
-        /// 连接的消费者数
+        /// **参数解释**： 连接的消费者数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("consumers", NullValueHandling = NullValueHandling.Ignore)]
         public int? Consumers { get; set; }
 
         /// <summary>
-        /// 策略[（AMQP版本不支持policy，不涉及此参数）](tag:hws,hws_hk)
+        /// **参数解释**： 策略[（AMQP版本不支持policy，不涉及此参数）](tag:hws,hws_hk,hws_eu)。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("policy", NullValueHandling = NullValueHandling.Ignore)]
         public string Policy { get; set; }
@@ -65,13 +65,13 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public QueueArguments Arguments { get; set; }
 
         /// <summary>
-        /// 订阅该Queue的消费者信息。
+        /// **参数解释**： 订阅该Queue的消费者信息。
         /// </summary>
         [JsonProperty("consumer_details", NullValueHandling = NullValueHandling.Ignore)]
         public List<ConsumerDetails> ConsumerDetails { get; set; }
 
         /// <summary>
-        /// 以此Queue为目标的绑定信息列表。
+        /// **参数解释**： 以此Queue为目标的绑定信息列表。
         /// </summary>
         [JsonProperty("queue_bindings", NullValueHandling = NullValueHandling.Ignore)]
         public List<BindingsDetails> QueueBindings { get; set; }

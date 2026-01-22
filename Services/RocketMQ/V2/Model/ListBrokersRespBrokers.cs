@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// 全部代理ID。
+        /// **参数解释**： 全部代理ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<decimal?> Ids { get; set; }
 
         /// <summary>
-        /// 节点名称。
+        /// **参数解释**： 节点名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("broker_name", NullValueHandling = NullValueHandling.Ignore)]
         public string BrokerName { get; set; }

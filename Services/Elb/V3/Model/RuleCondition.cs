@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// **参数解释**：匹配项的名称。  **约束限制**：同一个rule内的conditions列表中所有key必须相同。  **取值范围**： - 当转发规则类别type为HOST_NAME、PATH、METHOD、SOURCE_IP时，该字段固定为空字符串。 - 当转发规则类别type为HEADER时，key表示请求头、响应头参数的名称，value表示请求头、响应头参数的值。key的长度限制1-40字符，只允许包含字母、数字和-_。 - 当转发规则类别type为QUERY_STRING时，key表示查询参数的名称，value表示查询参数的值。key的长度限制为1-128字符，不支持空格，中括号，大括号，尖括号，反斜杠，双引号，&#39;#&#39;，&#39;&amp;&#39;，&#39;|&#39;，‘%’，‘~’，字母区分大小写。  **默认取值**：不涉及
+        /// **参数解释**：匹配项的名称。  **约束限制**：同一个rule内的conditions列表中所有key必须相同。  **取值范围**： - 当转发规则类别type为HOST_NAME、PATH、METHOD、SOURCE_IP时，该字段固定为空字符串。 - 当转发规则类别type为HEADER时，key表示请求头参数的名称，value表示请求头参数的值。key的长度限制1-40字符，只允许包含字母、数字和-_。 - 当转发规则类别type为QUERY_STRING时，key表示查询参数的名称，value表示查询参数的值。key的长度限制为1-128字符，不支持空格，中括号，大括号，尖括号，反斜杠，双引号，&#39;#&#39;，&#39;&amp;&#39;，&#39;|&#39;，‘%’，‘~’，字母区分大小写。  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }

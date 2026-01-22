@@ -576,7 +576,7 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         /// </summary>
         [SDKProperty("mask", IsQuery = true)]
         [JsonProperty("mask", NullValueHandling = NullValueHandling.Ignore)]
-        public List<int?> Mask { get; set; }
+        public int? Mask { get; set; }
 
 
 
@@ -624,7 +624,7 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
             if (this.SortDir != input.SortDir || (this.SortDir != null && input.SortDir != null && !this.SortDir.SequenceEqual(input.SortDir))) return false;
             if (this.Id != input.Id || (this.Id != null && input.Id != null && !this.Id.SequenceEqual(input.Id))) return false;
             if (this.IpVersion != input.IpVersion || (this.IpVersion != null && input.IpVersion != null && !this.IpVersion.SequenceEqual(input.IpVersion))) return false;
-            if (this.Mask != input.Mask || (this.Mask != null && input.Mask != null && !this.Mask.SequenceEqual(input.Mask))) return false;
+            if (this.Mask != input.Mask || (this.Mask != null && !this.Mask.Equals(input.Mask))) return false;
 
             return true;
         }

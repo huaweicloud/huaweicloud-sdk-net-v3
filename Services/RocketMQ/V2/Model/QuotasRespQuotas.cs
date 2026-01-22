@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 {
     /// <summary>
-    /// 配额信息。
+    /// **参数解释**： 配额信息。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
     /// </summary>
     public class QuotasRespQuotas 
     {
 
         /// <summary>
-        /// 配额列表。
+        /// **参数解释**： 配额列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("resources", NullValueHandling = NullValueHandling.Ignore)]
         public List<QuotaResourceEntity> Resources { get; set; }

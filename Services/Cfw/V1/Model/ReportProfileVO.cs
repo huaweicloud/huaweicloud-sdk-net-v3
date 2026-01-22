@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string ReportId { get; set; }
 
         /// <summary>
-        /// **参数解释**： 最新的报告的生成时间 **取值范围**： 不涉及
+        /// **参数解释**： 最新的报告的生成时间，毫秒级时间戳 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("last_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? LastTime { get; set; }

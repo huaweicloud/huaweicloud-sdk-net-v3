@@ -11,31 +11,31 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
 {
     /// <summary>
-    /// Queue参数，如果未配置则不返回。
+    /// **参数解释**： Queue参数，如果未配置则不返回。
     /// </summary>
     public class QueueArguments 
     {
 
         /// <summary>
-        /// 消息过期时间，发布到Queue的消息在被丢弃之前可以存活多长时间。
+        /// **参数解释**： 消息过期时间，发布到Queue的消息在被丢弃之前可以存活多长时间。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("x-message-ttl", NullValueHandling = NullValueHandling.Ignore)]
         public long? XMessageTtl { get; set; }
 
         /// <summary>
-        /// 死信Exchange名称，消息被拒绝或过期时将重新发布到该Exchange。
+        /// **参数解释**： 死信Exchange名称，消息被拒绝或过期时将重新发布到该Exchange。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("x-dead-letter-exchange", NullValueHandling = NullValueHandling.Ignore)]
         public string XDeadLetterExchange { get; set; }
 
         /// <summary>
-        /// 死信的RoutingKey，死信Exchange会发送死信消息到绑定对应RoutingKey的Queue上。
+        /// **参数解释**： 死信的RoutingKey，死信Exchange会发送死信消息到绑定对应RoutingKey的Queue上。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("x-dead-letter-routing-key", NullValueHandling = NullValueHandling.Ignore)]
         public string XDeadLetterRoutingKey { get; set; }
 
         /// <summary>
-        /// 惰性队列[（AMQP版本默认持久化所有消息，不涉及此参数）](tag:hws,hws_hk)
+        /// **参数解释**： 惰性队列[（AMQP版本默认持久化所有消息，不涉及此参数）](tag:hws,hws_hk,hws_eu)。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("x-queue-mode", NullValueHandling = NullValueHandling.Ignore)]
         public string XQueueMode { get; set; }

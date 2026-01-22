@@ -88,6 +88,12 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         [JsonProperty("enable_image_quota", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableImageQuota { get; set; }
 
+        /// <summary>
+        /// 是否支持自定义临时登录指令有效期
+        /// </summary>
+        [JsonProperty("enable_customize_validity_period", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableCustomizeValidityPeriod { get; set; }
+
 
 
         /// <summary>
@@ -109,6 +115,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("  enableResource: ").Append(EnableResource).Append("\n");
             sb.Append("  enableListV3: ").Append(EnableListV3).Append("\n");
             sb.Append("  enableImageQuota: ").Append(EnableImageQuota).Append("\n");
+            sb.Append("  enableCustomizeValidityPeriod: ").Append(EnableCustomizeValidityPeriod).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -139,6 +146,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             if (this.EnableResource != input.EnableResource || (this.EnableResource != null && !this.EnableResource.Equals(input.EnableResource))) return false;
             if (this.EnableListV3 != input.EnableListV3 || (this.EnableListV3 != null && !this.EnableListV3.Equals(input.EnableListV3))) return false;
             if (this.EnableImageQuota != input.EnableImageQuota || (this.EnableImageQuota != null && !this.EnableImageQuota.Equals(input.EnableImageQuota))) return false;
+            if (this.EnableCustomizeValidityPeriod != input.EnableCustomizeValidityPeriod || (this.EnableCustomizeValidityPeriod != null && !this.EnableCustomizeValidityPeriod.Equals(input.EnableCustomizeValidityPeriod))) return false;
 
             return true;
         }
@@ -163,6 +171,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 if (this.EnableResource != null) hashCode = hashCode * 59 + this.EnableResource.GetHashCode();
                 if (this.EnableListV3 != null) hashCode = hashCode * 59 + this.EnableListV3.GetHashCode();
                 if (this.EnableImageQuota != null) hashCode = hashCode * 59 + this.EnableImageQuota.GetHashCode();
+                if (this.EnableCustomizeValidityPeriod != null) hashCode = hashCode * 59 + this.EnableCustomizeValidityPeriod.GetHashCode();
                 return hashCode;
             }
         }

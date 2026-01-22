@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     public class BatchDeleteInstanceRespResults 
     {
         /// <summary>
-        /// 操作结果。
+        /// **参数解释**： 操作结果。 **约束限制**： 不涉及。 **取值范围**： - success - failed **默认取值**： 不涉及。
         /// </summary>
-        /// <value>操作结果。</value>
+        /// <value>**参数解释**： 操作结果。 **约束限制**： 不涉及。 **取值范围**： - success - failed **默认取值**： 不涉及。</value>
         [JsonConverter(typeof(EnumClassConverter<ResultEnum>))]
         public class ResultEnum
         {
@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 
 
         /// <summary>
-        /// 操作结果。
+        /// **参数解释**： 操作结果。 **约束限制**： 不涉及。 **取值范围**： - success - failed **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
         public ResultEnum Result { get; set; }

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     public class ProtectObjectVO 
     {
         /// <summary>
-        /// 防护对象类型：0 南北向，1 东西向护对象类型
+        /// **参数解释**： 防护对象类型 **取值范围**： - 0：南北向 - 1：东西向
         /// </summary>
-        /// <value>防护对象类型：0 南北向，1 东西向护对象类型</value>
+        /// <value>**参数解释**： 防护对象类型 **取值范围**： - 0：南北向 - 1：东西向</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -132,19 +132,19 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
 
 
         /// <summary>
-        /// 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id。
+        /// **参数解释**： 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("object_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ObjectId { get; set; }
 
         /// <summary>
-        /// 防护对象名称
+        /// **参数解释**： 防护对象名称 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("object_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ObjectName { get; set; }
 
         /// <summary>
-        /// 防护对象类型：0 南北向，1 东西向护对象类型
+        /// **参数解释**： 防护对象类型 **取值范围**： - 0：南北向 - 1：东西向
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }

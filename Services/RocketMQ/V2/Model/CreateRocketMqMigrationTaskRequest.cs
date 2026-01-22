@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     public class CreateRocketMqMigrationTaskRequest 
     {
         /// <summary>
-        /// true开启同名覆盖，会对已有的同名元数据的配置进行修改，false时当Topic或group已存在则会报错。
+        /// **参数解释**： true开启同名覆盖，会对已有的同名元数据的配置进行修改，false时当Topic或group已存在则会报错。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
-        /// <value>true开启同名覆盖，会对已有的同名元数据的配置进行修改，false时当Topic或group已存在则会报错。</value>
+        /// <value>**参数解释**： true开启同名覆盖，会对已有的同名元数据的配置进行修改，false时当Topic或group已存在则会报错。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。</value>
         [JsonConverter(typeof(EnumClassConverter<OverwriteEnum>))]
         public class OverwriteEnum
         {
@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         }
 
         /// <summary>
-        /// 迁移任务类型，分为自建RocketMQ上云(rocketmq)、自建RabbitMQ上云(rabbitToRocket)
+        /// **参数解释**： 迁移任务类型，分为自建RocketMQ上云(rocketmq)、自建RabbitMQ上云(rabbitToRocket) **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
-        /// <value>迁移任务类型，分为自建RocketMQ上云(rocketmq)、自建RabbitMQ上云(rabbitToRocket)</value>
+        /// <value>**参数解释**： 迁移任务类型，分为自建RocketMQ上云(rocketmq)、自建RabbitMQ上云(rabbitToRocket) **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -247,27 +247,27 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 
 
         /// <summary>
-        /// 实例ID。
+        /// **参数解释**： 实例ID。获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("instance_id", IsPath = true)]
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// true开启同名覆盖，会对已有的同名元数据的配置进行修改，false时当Topic或group已存在则会报错。
+        /// **参数解释**： true开启同名覆盖，会对已有的同名元数据的配置进行修改，false时当Topic或group已存在则会报错。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("overwrite", IsQuery = true)]
         [JsonProperty("overwrite", NullValueHandling = NullValueHandling.Ignore)]
         public OverwriteEnum Overwrite { get; set; }
         /// <summary>
-        /// 迁移任务名称，名称规则参考创建实例。
+        /// **参数解释**： 迁移任务名称，名称规则参考创建实例。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 迁移任务类型，分为自建RocketMQ上云(rocketmq)、自建RabbitMQ上云(rabbitToRocket)
+        /// **参数解释**： 迁移任务类型，分为自建RocketMQ上云(rocketmq)、自建RabbitMQ上云(rabbitToRocket) **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]

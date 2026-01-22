@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
     {
 
         /// <summary>
-        /// **参数解释：** 升级模式。 **约束限制：** 不涉及。 **取值范围：** minimized_interrupt_time：表示中断时间最短优先模式：升级过程对业务影响相对较小的升级方式。 minimized_upgrade_time：表示升级时长最短优先模式：升级过程时长相对较快的升级方式。 **默认取值：** minimized_interrupt_time。
+        /// **参数解释：** 升级模式。 **约束限制：** 不涉及。 **取值范围：** - minimized_interrupt_time：表示中断时间最短优先模式：升级过程对业务影响相对较小的升级方式。 - minimized_upgrade_time：表示升级时长最短优先模式：升级过程时长相对较快的升级方式。 **默认取值：** minimized_interrupt_time。
         /// </summary>
         [JsonProperty("upgrade_mode", NullValueHandling = NullValueHandling.Ignore)]
         public string UpgradeMode { get; set; }
 
         /// <summary>
-        /// **参数解释：** 实例是否在可维护时间窗内自动升级。 **约束限制：** 不涉及。 **取值范围：** true：表示延迟升级，实例将在可维护时间窗内自动升级。 false：表示立即升级。 **默认取值：** false。
+        /// **参数解释：** 实例是否在可维护时间窗内自动升级。 **约束限制：** 不涉及。 **取值范围：** - true：表示延迟升级，实例将在可维护时间窗内自动升级。 - false：表示立即升级。 **默认取值：** false。
         /// </summary>
         [JsonProperty("is_delayed", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsDelayed { get; set; }

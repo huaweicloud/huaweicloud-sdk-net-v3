@@ -11,25 +11,25 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cfw.V1.Model
 {
     /// <summary>
-    /// 创建东西向防火墙body体
+    /// **参数解释**： 创建东西向防火墙body体 **约束限制**： 不涉及
     /// </summary>
     public class CreateEastWestFirewallRequestBody 
     {
 
         /// <summary>
-        /// 出方向关联ER ID,可通过ER服务查询企业路由器列表接口获得，返回值中instances.id即为erid（.表示各对象之间层级的区分）
+        /// **参数解释**： 出方向关联ER ID,可通过ER服务查询企业路由器列表接口获得，返回值中instances.id即为erid（.表示各对象之间层级的区分） **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("er_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ErId { get; set; }
 
         /// <summary>
-        /// 创建引流VPC时使用的网段
+        /// **参数解释**： 创建引流VPC时使用的网段 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("inspection_cidr", NullValueHandling = NullValueHandling.Ignore)]
         public string InspectionCidr { get; set; }
 
         /// <summary>
-        /// 东西向防火墙模式，填写er
+        /// **参数解释**： 东西向防火墙模式，填写er **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
         public string Mode { get; set; }

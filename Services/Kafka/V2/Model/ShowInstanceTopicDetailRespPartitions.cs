@@ -32,19 +32,19 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// **参数解释**： 分区leader副本的LEO（Log End Offset）。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("leo", NullValueHandling = NullValueHandling.Ignore)]
-        public long? Leo { get; set; }
+        public int? Leo { get; set; }
 
         /// <summary>
         /// **参数解释**： 分区高水位（HW，High Watermark）。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("hw", NullValueHandling = NullValueHandling.Ignore)]
-        public long? Hw { get; set; }
+        public int? Hw { get; set; }
 
         /// <summary>
         /// **参数解释**： 分区leader副本的LSO（Log Start Offset）。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("lso", NullValueHandling = NullValueHandling.Ignore)]
-        public long? Lso { get; set; }
+        public int? Lso { get; set; }
 
         /// <summary>
         /// **参数解释**： 分区上次写入消息的时间。  格式为Unix时间戳。  单位：毫秒。 **取值范围**： 不涉及

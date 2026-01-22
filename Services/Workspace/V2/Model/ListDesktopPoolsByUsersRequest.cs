@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 用于分页查询，返回桌面数量限制。取值范围0-100，默认值是10。
+        /// 用于分页查询，返回桌面数量限制。取值范围0-10，默认值是10。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

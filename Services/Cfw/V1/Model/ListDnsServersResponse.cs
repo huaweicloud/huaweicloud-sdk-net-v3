@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// dns服务器列表
+        /// **参数解释**： dns服务器列表 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
         public List<DnsServersResponseDTO> Data { get; set; }
 
         /// <summary>
-        /// dns服务器总数
+        /// **参数解释**： dns服务器总数 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }

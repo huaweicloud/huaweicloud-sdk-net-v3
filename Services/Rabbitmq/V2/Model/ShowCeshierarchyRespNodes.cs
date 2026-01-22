@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     {
 
         /// <summary>
-        /// 节点名称。
+        /// **参数解释**： 节点名称。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 可用区。
+        /// **参数解释**： 可用区。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("available_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string AvailableZone { get; set; }

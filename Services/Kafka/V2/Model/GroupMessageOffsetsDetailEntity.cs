@@ -29,10 +29,22 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string MessageCurrentOffset { get; set; }
 
         /// <summary>
+        /// topic名称
+        /// </summary>
+        [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
+        public string Topic { get; set; }
+
+        /// <summary>
         /// 消息开始位点
         /// </summary>
         [JsonProperty("message_log_start_offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? MessageLogStartOffset { get; set; }
+
+        /// <summary>
+        /// 剩余可消费消息数，即消息堆积数
+        /// </summary>
+        [JsonProperty("lag", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Lag { get; set; }
 
         /// <summary>
         /// 消息结束位点
@@ -69,7 +81,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("class GroupMessageOffsetsDetailEntity {\n");
             sb.Append("  partition: ").Append(Partition).Append("\n");
             sb.Append("  messageCurrentOffset: ").Append(MessageCurrentOffset).Append("\n");
+            sb.Append("  topic: ").Append(Topic).Append("\n");
             sb.Append("  messageLogStartOffset: ").Append(MessageLogStartOffset).Append("\n");
+            sb.Append("  lag: ").Append(Lag).Append("\n");
             sb.Append("  messageLogEndOffset: ").Append(MessageLogEndOffset).Append("\n");
             sb.Append("  consumerId: ").Append(ConsumerId).Append("\n");
             sb.Append("  host: ").Append(Host).Append("\n");
@@ -94,7 +108,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             if (input == null) return false;
             if (this.Partition != input.Partition || (this.Partition != null && !this.Partition.Equals(input.Partition))) return false;
             if (this.MessageCurrentOffset != input.MessageCurrentOffset || (this.MessageCurrentOffset != null && !this.MessageCurrentOffset.Equals(input.MessageCurrentOffset))) return false;
+            if (this.Topic != input.Topic || (this.Topic != null && !this.Topic.Equals(input.Topic))) return false;
             if (this.MessageLogStartOffset != input.MessageLogStartOffset || (this.MessageLogStartOffset != null && !this.MessageLogStartOffset.Equals(input.MessageLogStartOffset))) return false;
+            if (this.Lag != input.Lag || (this.Lag != null && !this.Lag.Equals(input.Lag))) return false;
             if (this.MessageLogEndOffset != input.MessageLogEndOffset || (this.MessageLogEndOffset != null && !this.MessageLogEndOffset.Equals(input.MessageLogEndOffset))) return false;
             if (this.ConsumerId != input.ConsumerId || (this.ConsumerId != null && !this.ConsumerId.Equals(input.ConsumerId))) return false;
             if (this.Host != input.Host || (this.Host != null && !this.Host.Equals(input.Host))) return false;
@@ -113,7 +129,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 var hashCode = 41;
                 if (this.Partition != null) hashCode = hashCode * 59 + this.Partition.GetHashCode();
                 if (this.MessageCurrentOffset != null) hashCode = hashCode * 59 + this.MessageCurrentOffset.GetHashCode();
+                if (this.Topic != null) hashCode = hashCode * 59 + this.Topic.GetHashCode();
                 if (this.MessageLogStartOffset != null) hashCode = hashCode * 59 + this.MessageLogStartOffset.GetHashCode();
+                if (this.Lag != null) hashCode = hashCode * 59 + this.Lag.GetHashCode();
                 if (this.MessageLogEndOffset != null) hashCode = hashCode * 59 + this.MessageLogEndOffset.GetHashCode();
                 if (this.ConsumerId != null) hashCode = hashCode * 59 + this.ConsumerId.GetHashCode();
                 if (this.Host != null) hashCode = hashCode * 59 + this.Host.GetHashCode();

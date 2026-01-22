@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// 订阅的Topic名称。
+        /// **参数解释**： 订阅的Topic名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
         public string Topic { get; set; }
 
         /// <summary>
-        /// 订阅类型，取值如下：TAG和SQL92。
+        /// **参数解释**： 订阅类型。 **约束限制**： 不涉及。 **取值范围**： - TAG：基于TAG进行订阅。 - SQL92：基于消息属性进行复杂条件过滤的订阅。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

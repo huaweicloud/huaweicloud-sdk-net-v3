@@ -11,73 +11,73 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
 {
     /// <summary>
-    /// 当前规格实例的属性。
+    /// **参数解释**： 当前规格实例的属性。
     /// </summary>
     public class ListEnginePropertiesEntity 
     {
 
         /// <summary>
-        /// 节点增长步长。
+        /// **参数解释**： 节点增长步长。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("step_length", NullValueHandling = NullValueHandling.Ignore)]
         public string StepLength { get; set; }
 
         /// <summary>
-        /// 每个Broker的最大队列。
+        /// **参数解释**： 每个Broker的最大队列。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("max_queue_per_broker", NullValueHandling = NullValueHandling.Ignore)]
         public string MaxQueuePerBroker { get; set; }
 
         /// <summary>
-        /// 每个Broker的最大连接数。
+        /// **参数解释**： 每个Broker的最大连接数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("max_connection_per_broker", NullValueHandling = NullValueHandling.Ignore)]
         public string MaxConnectionPerBroker { get; set; }
 
         /// <summary>
-        /// Broker的最大个数。
+        /// **参数解释**： Broker的最大个数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("max_broker", NullValueHandling = NullValueHandling.Ignore)]
         public string MaxBroker { get; set; }
 
         /// <summary>
-        /// 每个节点的最大存储。单位为GB。
+        /// **参数解释**： 每个节点的最大存储。单位为GB。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("max_storage_per_node", NullValueHandling = NullValueHandling.Ignore)]
         public string MaxStoragePerNode { get; set; }
 
         /// <summary>
-        /// 每个Broker的最大消费者数。
+        /// **参数解释**： 每个Broker的最大消费者数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("max_consumer_per_broker", NullValueHandling = NullValueHandling.Ignore)]
         public string MaxConsumerPerBroker { get; set; }
 
         /// <summary>
-        /// Broker的最小个数。
+        /// **参数解释**： Broker的最小个数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("min_broker", NullValueHandling = NullValueHandling.Ignore)]
         public string MinBroker { get; set; }
 
         /// <summary>
-        /// 每个Broker的最大带宽。
+        /// **参数解释**： 每个Broker的最大带宽。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("max_bandwidth_per_broker", NullValueHandling = NullValueHandling.Ignore)]
         public string MaxBandwidthPerBroker { get; set; }
 
         /// <summary>
-        /// 每个节点的最小存储。单位为GB。
+        /// **参数解释**： 每个节点的最小存储。单位为GB。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("min_storage_per_node", NullValueHandling = NullValueHandling.Ignore)]
         public string MinStoragePerNode { get; set; }
 
         /// <summary>
-        /// 每个Broker的最大TPS。
+        /// **参数解释**： 每个Broker的最大TPS。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("max_tps_per_broker", NullValueHandling = NullValueHandling.Ignore)]
         public string MaxTpsPerBroker { get; set; }
 
         /// <summary>
-        /// product_id的别名。
+        /// **参数解释**： product_id的别名。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("product_alias", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductAlias { get; set; }

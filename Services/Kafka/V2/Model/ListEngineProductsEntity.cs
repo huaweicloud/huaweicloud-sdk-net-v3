@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// **参数解释**： 产品类型。 **取值范围**： - single    - cluster
+        /// **参数解释**： 产品类型。 **取值范围**： - single：单机。 - cluster：集群。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

@@ -11,57 +11,57 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 {
     /// <summary>
-    /// RocketMQ元数据迁移，RocketMQ消费组元数据。
+    /// **参数解释**： RocketMQ元数据迁移，RocketMQ消费组元数据。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
     /// </summary>
     public class MigrationRocketMqSubscriptionGroup 
     {
 
         /// <summary>
-        /// 消费组名。
+        /// **参数解释**： 消费组名。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
-        [JsonProperty("groupName", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("group_name", NullValueHandling = NullValueHandling.Ignore)]
         public string GroupName { get; set; }
 
         /// <summary>
-        /// 是否允许以广播模式消费。
+        /// **参数解释**： 是否允许以广播模式消费。 **约束限制**： 不涉及。 **取值范围**： - true：允许以广播模式消费。 - false：不允许以广播模式消费。 **默认取值**： 不涉及。
         /// </summary>
-        [JsonProperty("consumeBroadcastEnable", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("consume_broadcast_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ConsumeBroadcastEnable { get; set; }
 
         /// <summary>
-        /// 是否允许消费。
+        /// **参数解释**： 是否允许消费。 **约束限制**： 不涉及。 **取值范围**： - true：允许消费。 - false：不允许消费。 **默认取值**： true。
         /// </summary>
-        [JsonProperty("consumeEnable", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("consume_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ConsumeEnable { get; set; }
 
         /// <summary>
-        /// 是否从最小偏移量开始消费。
+        /// **参数解释**： 是否从最小偏移量开始消费。 **约束限制**： 不涉及。 **取值范围**： - true：是。 - false：不是。 **默认取值**： true。
         /// </summary>
-        [JsonProperty("consumeFromMinEnable", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("consume_from_min_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ConsumeFromMinEnable { get; set; }
 
         /// <summary>
-        /// 消费者ID变化时是否通知。
+        /// **参数解释**： 消费者ID变化时是否通知。 **约束限制**： 不涉及。 **取值范围**： - true：是。 - false：不是。 **默认取值**： true。
         /// </summary>
-        [JsonProperty("notifyConsumerIdsChangedEnable", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("notify_consumer_ids_changed_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? NotifyConsumerIdsChangedEnable { get; set; }
 
         /// <summary>
-        /// 消费最大重试次数。
+        /// **参数解释**： 消费最大重试次数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 16。
         /// </summary>
-        [JsonProperty("retryMaxTimes", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("retry_max_times", NullValueHandling = NullValueHandling.Ignore)]
         public int? RetryMaxTimes { get; set; }
 
         /// <summary>
-        /// 重试队列个数。
+        /// **参数解释**： 消费最大重试次数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 1。
         /// </summary>
-        [JsonProperty("retryQueueNums", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("retry_queue_nums", NullValueHandling = NullValueHandling.Ignore)]
         public int? RetryQueueNums { get; set; }
 
         /// <summary>
-        /// 慢消费时选择的broker节点ID。
+        /// **参数解释**： 慢消费时选择的broker节点ID **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 1。
         /// </summary>
-        [JsonProperty("whichBrokerWhenConsumeSlow", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("which_broker_when_consume_slow", NullValueHandling = NullValueHandling.Ignore)]
         public long? WhichBrokerWhenConsumeSlow { get; set; }
 
 

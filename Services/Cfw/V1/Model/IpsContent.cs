@@ -11,49 +11,49 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cfw.V1.Model
 {
     /// <summary>
-    /// **参数解释**： 自定义IPS规则内容 **取值范围**： 不涉及
+    /// **参数解释**： 自定义IPS规则内容 **约束限制**：     不涉及 **取值范围**： 不涉及 **默认取值**：   不涉及
     /// </summary>
     public class IpsContent 
     {
 
         /// <summary>
-        /// **参数解释**： 内容 **取值范围**： 不涉及
+        /// **参数解释**： 内容 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**：   不涉及
         /// </summary>
         [JsonProperty("content", NullValueHandling = NullValueHandling.Ignore)]
         public string Content { get; set; }
 
         /// <summary>
-        /// **参数解释**： 深度 **取值范围**： 不涉及
+        /// **参数解释**： 匹配特征时，截止匹配的位置 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**：   不涉及
         /// </summary>
         [JsonProperty("depth", NullValueHandling = NullValueHandling.Ignore)]
         public int? Depth { get; set; }
 
         /// <summary>
-        /// **参数解释**： 报文内容是否为十六进制 **取值范围**： 不涉及
+        /// **参数解释**： 报文内容是否为十六进制 **约束限制**： 不涉及 **取值范围**： true： 是十六进制 false： 不是十六进制 **默认取值**：   不涉及
         /// </summary>
         [JsonProperty("is_hex", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsHex { get; set; }
 
         /// <summary>
-        /// **参数解释**： 是否忽略大小写 **取值范围**： 不涉及
+        /// **参数解释**： 是否忽略大小写 **约束限制**： 不涉及 **取值范围**： true： 忽略 false： 不忽略 **默认取值**：   不涉及
         /// </summary>
         [JsonProperty("is_ignore", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsIgnore { get; set; }
 
         /// <summary>
-        /// **参数解释**： 是否在uri中截取报文 **取值范围**： 不涉及
+        /// **参数解释**： 是否匹配URL中跟“内容”一致的字段 **约束限制**： 不涉及 **取值范围**： true： 匹配 false： 不匹配 **默认取值**：   不涉及
         /// </summary>
         [JsonProperty("is_uri", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsUri { get; set; }
 
         /// <summary>
-        /// **参数解释**： 偏移量 **取值范围**： 不涉及
+        /// **参数解释**： 匹配特征时开始的位置 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**：   不涉及
         /// </summary>
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// **参数解释**： 相对位置 **取值范围**： 不涉及
+        /// **参数解释**： 匹配特征时，指定开始的位置 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**：   不涉及
         /// </summary>
         [JsonProperty("relative_position", NullValueHandling = NullValueHandling.Ignore)]
         public int? RelativePosition { get; set; }

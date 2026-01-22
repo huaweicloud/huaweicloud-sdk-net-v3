@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 防护对象ID
+        /// 防护对象ID，为必传参数
         /// </summary>
         [JsonProperty("object_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ObjectId { get; set; }
 
         /// <summary>
-        /// 扫描协议配置
+        /// 扫描协议配置列表
         /// </summary>
         [JsonProperty("scan_protocol_configs", NullValueHandling = NullValueHandling.Ignore)]
         public List<ScanProtocolConfig> ScanProtocolConfigs { get; set; }

@@ -259,7 +259,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// **参数解释**： 发送时间，日报和周报需要设置 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
+        /// **参数解释**： 发送时间，日报和周报需要设置 **约束限制**： 不涉及 **取值范围**： 0-23 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("send_period", NullValueHandling = NullValueHandling.Ignore)]
         public int? SendPeriod { get; set; }

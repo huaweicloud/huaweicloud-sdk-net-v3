@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// 最大偏移量。
+        /// **参数解释**： 最大偏移量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("max_offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? MaxOffset { get; set; }
 
         /// <summary>
-        /// 最小偏移量。
+        /// **参数解释**： 最小偏移量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("min_offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? MinOffset { get; set; }
 
         /// <summary>
-        /// 代理。
+        /// **参数解释**： 代理。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("brokers", NullValueHandling = NullValueHandling.Ignore)]
         public List<ShowTopicStatusRespBrokers> Brokers { get; set; }

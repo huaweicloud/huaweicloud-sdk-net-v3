@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     public class IpsRuleChangeDto 
     {
         /// <summary>
-        /// ips规则状态
+        /// ips规则状态，包含观察：OBSERVE、拦截：ENABLE、禁用：CLOSE、恢复默认：DEFAULT、全局恢复默认：ALL_DEFAULT
         /// </summary>
-        /// <value>ips规则状态</value>
+        /// <value>ips规则状态，包含观察：OBSERVE、拦截：ENABLE、禁用：CLOSE、恢复默认：DEFAULT、全局恢复默认：ALL_DEFAULT</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -150,7 +150,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
 
 
         /// <summary>
-        /// ips的id列表
+        /// ips的id列表，Ips规则id，为必填参数，可通过[获取ips规则列表]( ListIpsRules.xml)查询获得，通过返回值中的data.records.ips_id（.表示各对象之间层级的区分）获得。
         /// </summary>
         [JsonProperty("ips_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> IpsIds { get; set; }
@@ -162,7 +162,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string ObjectId { get; set; }
 
         /// <summary>
-        /// ips规则状态
+        /// ips规则状态，包含观察：OBSERVE、拦截：ENABLE、禁用：CLOSE、恢复默认：DEFAULT、全局恢复默认：ALL_DEFAULT
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }

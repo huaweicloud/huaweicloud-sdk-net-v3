@@ -143,7 +143,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         [JsonProperty("new_spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public NewSpecCodeEnum NewSpecCode { get; set; }
         /// <summary>
-        /// 规格变更后的消息存储空间，单位：GB。
+        /// 规格变更后的消息存储空间，单位：GB。注意：磁盘容量仅支持设置为100的整数倍。
         /// </summary>
         [JsonProperty("new_storage_space", NullValueHandling = NullValueHandling.Ignore)]
         public int? NewStorageSpace { get; set; }

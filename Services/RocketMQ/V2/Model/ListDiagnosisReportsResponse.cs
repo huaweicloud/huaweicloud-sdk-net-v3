@@ -17,10 +17,16 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// **参数解释**： 诊断报告列表。 **取值范围**： 不涉及。
+        /// **参数解释**： 诊断报告列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("diagnosis_report_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<DiagnosisReportResp> DiagnosisReportList { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 报告数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+        /// </summary>
+        [JsonProperty("total_num", NullValueHandling = NullValueHandling.Ignore)]
+        public Object TotalNum { get; set; }
 
 
 
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ListDiagnosisReportsResponse {\n");
             sb.Append("  diagnosisReportList: ").Append(DiagnosisReportList).Append("\n");
+            sb.Append("  totalNum: ").Append(TotalNum).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             if (input == null) return false;
             if (this.DiagnosisReportList != input.DiagnosisReportList || (this.DiagnosisReportList != null && input.DiagnosisReportList != null && !this.DiagnosisReportList.SequenceEqual(input.DiagnosisReportList))) return false;
+            if (this.TotalNum != input.TotalNum || (this.TotalNum != null && !this.TotalNum.Equals(input.TotalNum))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             {
                 var hashCode = 41;
                 if (this.DiagnosisReportList != null) hashCode = hashCode * 59 + this.DiagnosisReportList.GetHashCode();
+                if (this.TotalNum != null) hashCode = hashCode * 59 + this.TotalNum.GetHashCode();
                 return hashCode;
             }
         }

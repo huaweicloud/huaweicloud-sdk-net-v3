@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// ips防护模式，0：观察模式，1：严格模式，2：中等模式，3：宽松模式
+        /// ips防护模式，0：观察模式，1：严格模式，2：中等模式，3：宽松模式，观察模式为默认模式
         /// </summary>
         [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
         public int? Mode { get; set; }

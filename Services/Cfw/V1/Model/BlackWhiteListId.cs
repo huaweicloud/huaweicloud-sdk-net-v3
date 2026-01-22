@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// 黑白名单名称，为黑白名单的地址
+        /// 黑白名单的地址
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
     {
 
         /// <summary>
-        /// 参数模板的修改历史列表。
+        /// **参数解释：** 参数模板的修改历史列表。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("histories", NullValueHandling = NullValueHandling.Ignore)]
         public List<HistoryInfo> Histories { get; set; }

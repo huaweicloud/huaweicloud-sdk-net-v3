@@ -17,58 +17,64 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// **参数解释**： 是否可以消费。 **取值范围**： - true：可以消费。 - false：不可以消费。
+        /// **参数解释**： 是否可以消费。 **约束限制**： 不涉及。 **取值范围**： - true：可以消费。 - false：不可以消费。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enabled { get; set; }
 
         /// <summary>
-        /// **参数解释**： 是否广播。 **取值范围**： - true：可以广播。 - false：不可以广播。
+        /// **参数解释**： 是否广播。 **约束限制**： 不涉及。 **取值范围**： - true：可以广播。 - false：不可以广播。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("broadcast", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Broadcast { get; set; }
 
         /// <summary>
-        /// **参数解释**： 关联的代理列表。
+        /// **参数解释**： 关联的代理列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("brokers", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Brokers { get; set; }
 
         /// <summary>
-        /// **参数解释**： 消费组名称。 **取值范围**： 不涉及。
+        /// **参数解释**： 消费组名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// **参数解释**： 消费组描述。 **取值范围**： 不涉及。
+        /// **参数解释**： 消费组描述。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("group_desc", NullValueHandling = NullValueHandling.Ignore)]
         public string GroupDesc { get; set; }
 
         /// <summary>
-        /// **参数解释**： 最大重试次数。 **取值范围**： 1~16。
+        /// **参数解释**： 最大重试次数。 **约束限制**： 不涉及。 **取值范围**： 1~16。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("retry_max_time", NullValueHandling = NullValueHandling.Ignore)]
         public int? RetryMaxTime { get; set; }
 
         /// <summary>
-        /// **参数解释**： 创建时间戳。 **取值范围**： 不涉及。
+        /// **参数解释**： 创建时间。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
-        [JsonProperty("createdAt", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public long? CreatedAt { get; set; }
 
         /// <summary>
-        /// **参数解释**： 权限集。
+        /// **参数解释**： 权限集。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("permissions", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Permissions { get; set; }
 
         /// <summary>
-        /// **参数解释**： 是否按顺序消费。 **取值范围**： - true：按顺序消费。 - false：不按顺序消费。
+        /// **参数解释**： 是否按顺序消费。 **约束限制**： 不涉及。 **取值范围**： - true：按顺序消费。 - false：不按顺序消费。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("consume_orderly", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ConsumeOrderly { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 消费组是否在线。 **约束限制**： 不涉及。 **取值范围**： - true：消费组在线。 - false：消费组不在线。 **默认取值**： 不涉及。
+        /// </summary>
+        [JsonProperty("group_online", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? GroupOnline { get; set; }
 
 
 
@@ -88,6 +94,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  permissions: ").Append(Permissions).Append("\n");
             sb.Append("  consumeOrderly: ").Append(ConsumeOrderly).Append("\n");
+            sb.Append("  groupOnline: ").Append(GroupOnline).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,6 +122,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
             if (this.Permissions != input.Permissions || (this.Permissions != null && input.Permissions != null && !this.Permissions.SequenceEqual(input.Permissions))) return false;
             if (this.ConsumeOrderly != input.ConsumeOrderly || (this.ConsumeOrderly != null && !this.ConsumeOrderly.Equals(input.ConsumeOrderly))) return false;
+            if (this.GroupOnline != input.GroupOnline || (this.GroupOnline != null && !this.GroupOnline.Equals(input.GroupOnline))) return false;
 
             return true;
         }
@@ -136,6 +144,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.Permissions != null) hashCode = hashCode * 59 + this.Permissions.GetHashCode();
                 if (this.ConsumeOrderly != null) hashCode = hashCode * 59 + this.ConsumeOrderly.GetHashCode();
+                if (this.GroupOnline != null) hashCode = hashCode * 59 + this.GroupOnline.GetHashCode();
                 return hashCode;
             }
         }

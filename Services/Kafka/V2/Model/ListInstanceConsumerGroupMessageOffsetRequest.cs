@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string Group { get; set; }
 
         /// <summary>
-        /// topic名称。
+        /// topic名称。查询消费组消息位点时必填项。
         /// </summary>
         [SDKProperty("topic", IsQuery = true)]
         [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]

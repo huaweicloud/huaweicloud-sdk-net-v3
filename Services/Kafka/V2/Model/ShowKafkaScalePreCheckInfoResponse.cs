@@ -17,10 +17,28 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// **参数解释**： 检查项名称。  **取值范围**： 不涉及。
         /// </summary>
-        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ShowKafkaScalePreCheckInfoResponseBody> Body { get; set; }
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 检查项状态。 **取值范围**： - true：正常。 - false：异常。
+        /// </summary>
+        [JsonProperty("success", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Success { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 失败原因。    **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("reason", NullValueHandling = NullValueHandling.Ignore)]
+        public string Reason { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 风险等级。   **取值范围**： - low：低风险。 - medium：中风险。 - high：高风险。
+        /// </summary>
+        [JsonProperty("risk", NullValueHandling = NullValueHandling.Ignore)]
+        public string Risk { get; set; }
 
 
 
@@ -31,7 +49,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShowKafkaScalePreCheckInfoResponse {\n");
-            sb.Append("  body: ").Append(Body).Append("\n");
+            sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  success: ").Append(Success).Append("\n");
+            sb.Append("  reason: ").Append(Reason).Append("\n");
+            sb.Append("  risk: ").Append(Risk).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -50,7 +71,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool Equals(ShowKafkaScalePreCheckInfoResponse input)
         {
             if (input == null) return false;
-            if (this.Body != input.Body || (this.Body != null && input.Body != null && !this.Body.SequenceEqual(input.Body))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Success != input.Success || (this.Success != null && !this.Success.Equals(input.Success))) return false;
+            if (this.Reason != input.Reason || (this.Reason != null && !this.Reason.Equals(input.Reason))) return false;
+            if (this.Risk != input.Risk || (this.Risk != null && !this.Risk.Equals(input.Risk))) return false;
 
             return true;
         }
@@ -63,7 +87,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Success != null) hashCode = hashCode * 59 + this.Success.GetHashCode();
+                if (this.Reason != null) hashCode = hashCode * 59 + this.Reason.GetHashCode();
+                if (this.Risk != null) hashCode = hashCode * 59 + this.Risk.GetHashCode();
                 return hashCode;
             }
         }

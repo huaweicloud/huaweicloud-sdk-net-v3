@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 所属Vhost名称
+        /// vhost名称，名称中包含/时，需要将/替换为__F_SLASH__，否则会调用失败。例如：Vhost名称为/test，入参值为__F_SLASH__test。
         /// </summary>
         [SDKProperty("vhost", IsPath = true)]
         [JsonProperty("vhost", NullValueHandling = NullValueHandling.Ignore)]

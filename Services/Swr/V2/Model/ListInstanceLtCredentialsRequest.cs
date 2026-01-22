@@ -37,6 +37,13 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
+        /// <summary>
+        /// 值为false的时候，拥有te_admin角色的用户可以查询实例下所有的长期登录凭证，默认情况下只查询自己创建的长期登录凭证
+        /// </summary>
+        [SDKProperty("self_only", IsQuery = true)]
+        [JsonProperty("self_only", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SelfOnly { get; set; }
+
 
 
         /// <summary>
@@ -49,6 +56,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  selfOnly: ").Append(SelfOnly).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -70,6 +78,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.SelfOnly != input.SelfOnly || (this.SelfOnly != null && !this.SelfOnly.Equals(input.SelfOnly))) return false;
 
             return true;
         }
@@ -85,6 +94,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.SelfOnly != null) hashCode = hashCode * 59 + this.SelfOnly.GetHashCode();
                 return hashCode;
             }
         }

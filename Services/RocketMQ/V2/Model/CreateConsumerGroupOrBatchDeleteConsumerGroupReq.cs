@@ -17,49 +17,49 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// 待删除的消费组列表。
+        /// **参数解释**： 待删除的消费组列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
-        [JsonProperty("groups", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> Groups { get; set; }
+        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string JobId { get; set; }
 
         /// <summary>
-        /// 消费组名称，只能由英文字母、数字、百分号、竖线、中划线、下划线组成，长度3~64个字符。
+        /// **参数解释**： 消费组名称。 **约束限制**： 只能由英文字母、数字、百分号、竖线、中划线、下划线组成，长度3~64个字符。 当创建消费组时必填。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 关联的代理列表（仅RocketMQ实例4.8.0版本需要填写此参数）。
+        /// **参数解释**： 关联的代理列表。 **约束限制**： 仅RocketMQ实例4.8.0版本需要填写此参数。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("brokers", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Brokers { get; set; }
 
         /// <summary>
-        /// 是否广播。
+        /// **参数解释**： 是否设置为广播消费。 **约束限制**： 不涉及。 **取值范围**： - true：使用广播消费。 - false：不使用广播消费。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("broadcast", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Broadcast { get; set; }
 
         /// <summary>
-        /// 最大重试次数，取值范围为1~16。
+        /// **参数解释**： 最大重试次数。 **约束限制**： 不涉及。 **取值范围**： 1~16。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("retry_max_time", NullValueHandling = NullValueHandling.Ignore)]
         public int? RetryMaxTime { get; set; }
 
         /// <summary>
-        /// 是否可以消费。
+        /// **参数解释**： 是否可以消费。 **约束限制**： 不涉及。 **取值范围**： - true：可以消费。 - false：不可以消费。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enabled { get; set; }
 
         /// <summary>
-        /// 是否按顺序消费（仅RocketMQ实例5.x版本需要填写此参数）。
+        /// **参数解释**： 是否按顺序消费。 **约束限制**： 仅RocketMQ实例5.x版本需要填写此参数。[华为云Stack不支持此参数。](tag:hcs,hcs_oemout) **取值范围**： - true：顺序消费。 - false：不按顺序消费。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("consume_orderly", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ConsumeOrderly { get; set; }
 
         /// <summary>
-        /// 消费组描述，长度0~200个字符。
+        /// **参数解释**： 消费组描述。 **约束限制**： 不涉及。 **取值范围**： 0~200。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("group_desc", NullValueHandling = NullValueHandling.Ignore)]
         public string GroupDesc { get; set; }
@@ -73,7 +73,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {\n");
-            sb.Append("  groups: ").Append(Groups).Append("\n");
+            sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  brokers: ").Append(Brokers).Append("\n");
             sb.Append("  broadcast: ").Append(Broadcast).Append("\n");
@@ -99,7 +99,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public bool Equals(CreateConsumerGroupOrBatchDeleteConsumerGroupReq input)
         {
             if (input == null) return false;
-            if (this.Groups != input.Groups || (this.Groups != null && input.Groups != null && !this.Groups.SequenceEqual(input.Groups))) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Brokers != input.Brokers || (this.Brokers != null && input.Brokers != null && !this.Brokers.SequenceEqual(input.Brokers))) return false;
             if (this.Broadcast != input.Broadcast || (this.Broadcast != null && !this.Broadcast.Equals(input.Broadcast))) return false;
@@ -119,7 +119,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Groups != null) hashCode = hashCode * 59 + this.Groups.GetHashCode();
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Brokers != null) hashCode = hashCode * 59 + this.Brokers.GetHashCode();
                 if (this.Broadcast != null) hashCode = hashCode * 59 + this.Broadcast.GetHashCode();

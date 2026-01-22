@@ -730,6 +730,66 @@ namespace HuaweiCloud.SDK.Swr.V2
         }
         
         /// <summary>
+        /// 获取签名镜像关联的被签名镜像版本列表
+        ///
+        /// 获取签名镜像关联的被签名镜像版本列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListReferencesResponse> ListReferencesAsync(ListReferencesRequest listReferencesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listReferencesRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(listReferencesRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
+            if (StringUtils.TryConvertToNonEmptyString(listReferencesRequest.Tag, out var valueOfTag)) urlParam.Add("tag", valueOfTag);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/{tag}/references", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listReferencesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListReferencesResponse>(response);
+        }
+
+        public AsyncInvoker<ListReferencesResponse> ListReferencesAsyncInvoker(ListReferencesRequest listReferencesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listReferencesRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(listReferencesRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
+            if (StringUtils.TryConvertToNonEmptyString(listReferencesRequest.Tag, out var valueOfTag)) urlParam.Add("tag", valueOfTag);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/{tag}/references", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listReferencesRequest);
+            return new AsyncInvoker<ListReferencesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListReferencesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询镜像的附件列表
+        ///
+        /// 获取共享仓的镜像的附件列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListRepoAccessoriesResponse> ListRepoAccessoriesAsync(ListRepoAccessoriesRequest listRepoAccessoriesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listRepoAccessoriesRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(listRepoAccessoriesRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
+            if (StringUtils.TryConvertToNonEmptyString(listRepoAccessoriesRequest.Tag, out var valueOfTag)) urlParam.Add("tag", valueOfTag);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/{tag}/accessories", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRepoAccessoriesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListRepoAccessoriesResponse>(response);
+        }
+
+        public AsyncInvoker<ListRepoAccessoriesResponse> ListRepoAccessoriesAsyncInvoker(ListRepoAccessoriesRequest listRepoAccessoriesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listRepoAccessoriesRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(listRepoAccessoriesRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
+            if (StringUtils.TryConvertToNonEmptyString(listRepoAccessoriesRequest.Tag, out var valueOfTag)) urlParam.Add("tag", valueOfTag);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/{tag}/accessories", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRepoAccessoriesRequest);
+            return new AsyncInvoker<ListRepoAccessoriesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRepoAccessoriesResponse>);
+        }
+        
+        /// <summary>
         /// 查询镜像仓库列表详情
         ///
         /// 查询镜像仓库列表详情

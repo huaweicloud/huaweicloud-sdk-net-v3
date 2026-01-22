@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 规则id
+        /// **参数解释**： 规则ID **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("rule_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RuleId { get; set; }
 
         /// <summary>
-        /// 规则击中次数，当acl规则被触发时，对应规则id的击中次数会添加一次。
+        /// **参数解释**： 规则击中次数，当acl规则被触发时，对应规则ID的击中次数会添加一次。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("rule_hit_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? RuleHitCount { get; set; }

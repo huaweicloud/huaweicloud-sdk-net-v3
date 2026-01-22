@@ -11,49 +11,49 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cfw.V1.Model
 {
     /// <summary>
-    /// vpc protects vo
+    /// **参数解释**： vpc protects vo **取值范围**： 不涉及
     /// </summary>
     public class VPCProtectsVo 
     {
 
         /// <summary>
-        /// 总防护VPC数
+        /// **参数解释**： 总防护VPC数 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }
 
         /// <summary>
-        /// 防火墙东西向防护可进行跨账号防护VPC，self_total表示本项目防护VPC总数。
+        /// **参数解释**： 防火墙东西向防护可进行跨账号防护VPC，self_total表示本项目防护VPC总数。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("self_total", NullValueHandling = NullValueHandling.Ignore)]
         public int? SelfTotal { get; set; }
 
         /// <summary>
-        /// 防火墙东西向防护可进行跨账号防护VPC，other_total表示其他项目防护VPC数
+        /// **参数解释**： 防火墙东西向防护可进行跨账号防护VPC，other_total表示其他项目防护VPC数 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("other_total", NullValueHandling = NullValueHandling.Ignore)]
         public int? OtherTotal { get; set; }
 
         /// <summary>
-        /// 防火墙东西向防护可进行跨账号防护VPC，protect_vpcs指的是总体防护VPC列表
+        /// **参数解释**： 防火墙东西向防护可进行跨账号防护VPC，protect_vpcs表示总体防护VPC列表 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("protect_vpcs", NullValueHandling = NullValueHandling.Ignore)]
         public List<VpcAttachmentDetail> ProtectVpcs { get; set; }
 
         /// <summary>
-        /// 防火墙东西向防护可进行跨账号防护VPC，self_protect_vpcs指的是本项目防护VPC列表
+        /// **参数解释**： 防火墙东西向防护可进行跨账号防护VPC，self_protect_vpcs表示本项目防护VPC列表 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("self_protect_vpcs", NullValueHandling = NullValueHandling.Ignore)]
         public List<VpcAttachmentDetail> SelfProtectVpcs { get; set; }
 
         /// <summary>
-        /// 防火墙东西向防护可进行跨账号防护VPC，other_protect_vpcs指的是其他项目防护VPC列表
+        /// **参数解释**： 防火墙东西向防护可进行跨账号防护VPC，other_protect_vpcs表示其他项目防护VPC列表 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("other_protect_vpcs", NullValueHandling = NullValueHandling.Ignore)]
         public List<VpcAttachmentDetail> OtherProtectVpcs { get; set; }
 
         /// <summary>
-        /// 租户的所有VPC资产数量
+        /// **参数解释**： 租户的所有VPC资产数量 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("total_assets", NullValueHandling = NullValueHandling.Ignore)]
         public int? TotalAssets { get; set; }

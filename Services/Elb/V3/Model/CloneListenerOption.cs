@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<PortRange> PortRanges { get; set; }
 
         /// <summary>
-        /// **参数解释**：新监听器是否复用或复制源监听器的后端服务器组和后端服务器的标识。 - 复用：目的负载均衡器将会直接使用源负载均衡器的后端服务器组。 - 复制：系统将会根据原有配置创建新的后端服务器组，然后将其关联到目的负载均衡器使用。 **约束限制**： - 配置为true时，需要开启后端服务器组多挂实例功能。 - 只在独享型场景复制、同VPC场景可配。 **取值范围**： - true：复用源监听器的后端服务器组。 - false：复制源监听器的后端服务器组。 **默认取值**：false
+        /// **参数解释**：新监听器是否复用或复制源监听器的后端服务器组和后端服务器的标识。 - 复用：目的监听器将会直接使用源监听器的后端服务器组。 - 复制：系统将会根据原有配置创建新的后端服务器组，然后将其关联到目的监听器使用。 **约束限制**： - 配置为true时，需要开启后端服务器组多挂实例功能。 - 只在独享型场景复制、同VPC场景可配。 **取值范围**： - true：复用源监听器的后端服务器组。 - false：复制源监听器的后端服务器组。 **默认取值**：false
         /// </summary>
         [JsonProperty("reuse_pool", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ReusePool { get; set; }

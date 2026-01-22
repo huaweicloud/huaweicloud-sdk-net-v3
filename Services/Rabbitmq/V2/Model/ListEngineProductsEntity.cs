@@ -11,55 +11,55 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
 {
     /// <summary>
-    /// 产品规格的详细信息。
+    /// **参数解释**： 产品规格的详细信息。 **取值范围**： 不涉及。
     /// </summary>
     public class ListEngineProductsEntity 
     {
 
         /// <summary>
-        /// 产品类型。当前产品类型有单机和集群。
+        /// **参数解释**： 产品类型。 **取值范围**： - single：单机。    - cluster：集群。 [- single.professional：单机专业版，AMQP版本产品类型。](tag:hws,hws_hk,hws_eu) [- cluster.professional：集群专业版，AMQP版本产品类型。](tag:hws,hws_hk,hws_eu)
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// 产品ID。
+        /// **参数解释**： 产品ID。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("product_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductId { get; set; }
 
         /// <summary>
-        /// 底层资源类型。
+        /// **参数解释**： 底层资源类型。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("ecs_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EcsFlavorId { get; set; }
 
         /// <summary>
-        /// 账单计费类型。
+        /// **参数解释**： 账单计费类型。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("billing_code", NullValueHandling = NullValueHandling.Ignore)]
         public string BillingCode { get; set; }
 
         /// <summary>
-        /// CPU架构。
+        /// **参数解释**： CPU架构。
         /// </summary>
         [JsonProperty("arch_types", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ArchTypes { get; set; }
 
         /// <summary>
-        /// 计费模式。   - monthly：包年/包月类型。   - hourly：按需类型。
+        /// **参数解释**： 计费模式。
         /// </summary>
         [JsonProperty("charging_mode", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ChargingMode { get; set; }
 
         /// <summary>
-        /// 支持的磁盘IO类型列表。
+        /// **参数解释**： 支持的磁盘IO类型列表。
         /// </summary>
         [JsonProperty("ios", NullValueHandling = NullValueHandling.Ignore)]
         public List<ListEngineIosEntity> Ios { get; set; }
 
         /// <summary>
-        /// 当前规格实例支持的功能特性列表。
+        /// **参数解释**： 当前规格实例支持的功能特性列表。
         /// </summary>
         [JsonProperty("support_features", NullValueHandling = NullValueHandling.Ignore)]
         public List<Object> SupportFeatures { get; set; }

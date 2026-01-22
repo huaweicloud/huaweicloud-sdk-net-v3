@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 账号名称
+        /// 
         /// </summary>
         [JsonProperty("account_name", NullValueHandling = NullValueHandling.Ignore)]
         public string AccountName { get; set; }
 
         /// <summary>
-        /// 告警id
+        /// 
         /// </summary>
         [JsonProperty("alarm_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmId { get; set; }
 
         /// <summary>
-        /// 告警周期，0：全天，1：8时到22时
+        /// 告警周期，0：8时到22时，1：全天
         /// </summary>
         [JsonProperty("alarm_time_period", NullValueHandling = NullValueHandling.Ignore)]
         public int? AlarmTimePeriod { get; set; }
@@ -53,37 +53,37 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? FrequencyCount { get; set; }
 
         /// <summary>
-        /// 告警频次时间范围
+        /// 告警频次时间范围，以分钟为单位
         /// </summary>
         [JsonProperty("frequency_time", NullValueHandling = NullValueHandling.Ignore)]
         public int? FrequencyTime { get; set; }
 
         /// <summary>
-        /// 告警语言
+        /// 告警语言，zh-cn为中文，en-us为英文
         /// </summary>
         [JsonProperty("language", NullValueHandling = NullValueHandling.Ignore)]
         public string Language { get; set; }
 
         /// <summary>
-        /// 告警主题名称
+        /// 通知群组名称
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 告警等级
+        /// 告警等级，当type为0和4时，severity为CRITICAL,HIGH,MEDIUM,LOW四种等级的组合字符串，当type为2时，severity固定为3
         /// </summary>
         [JsonProperty("severity", NullValueHandling = NullValueHandling.Ignore)]
         public string Severity { get; set; }
 
         /// <summary>
-        /// 告警urn
+        /// 告警topic的urn
         /// </summary>
         [JsonProperty("topic_urn", NullValueHandling = NullValueHandling.Ignore)]
         public string TopicUrn { get; set; }
 
         /// <summary>
-        /// 用户名称
+        /// 用户名称，为cfw
         /// </summary>
         [JsonProperty("username", NullValueHandling = NullValueHandling.Ignore)]
         public string Username { get; set; }

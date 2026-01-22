@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     public class ListMessageTraceRespTrace 
     {
         /// <summary>
-        /// 轨迹类型
+        /// **参数解释**： 轨迹类型。 **约束限制**： 不涉及。 **取值范围**： - Pub：生产者成功发送消息。 - SubBefore：消费者准备消费消息。 - SubAfter：消费者完成消息消费。 - EndTransaction：事务消息被提交或回滚。 - Receive：服务侧接收消息。 - Ack：消费者手动确认消费。 **默认取值**： 不涉及。
         /// </summary>
-        /// <value>轨迹类型</value>
+        /// <value>**参数解释**： 轨迹类型。 **约束限制**： 不涉及。 **取值范围**： - Pub：生产者成功发送消息。 - SubBefore：消费者准备消费消息。 - SubAfter：消费者完成消息消费。 - EndTransaction：事务消息被提交或回滚。 - Receive：服务侧接收消息。 - Ack：消费者手动确认消费。 **默认取值**： 不涉及。</value>
         [JsonConverter(typeof(EnumClassConverter<TraceTypeEnum>))]
         public class TraceTypeEnum
         {
@@ -42,6 +42,16 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             /// </summary>
             public static readonly TraceTypeEnum ENDTRANSACTION = new TraceTypeEnum("EndTransaction");
 
+            /// <summary>
+            /// Enum RECEIVE for value: Receive
+            /// </summary>
+            public static readonly TraceTypeEnum RECEIVE = new TraceTypeEnum("Receive");
+
+            /// <summary>
+            /// Enum ACK for value: Ack
+            /// </summary>
+            public static readonly TraceTypeEnum ACK = new TraceTypeEnum("Ack");
+
             private static readonly Dictionary<string, TraceTypeEnum> StaticFields =
             new Dictionary<string, TraceTypeEnum>()
             {
@@ -49,6 +59,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 { "SubBefore", SUBBEFORE },
                 { "SubAfter", SUBAFTER },
                 { "EndTransaction", ENDTRANSACTION },
+                { "Receive", RECEIVE },
+                { "Ack", ACK },
             };
 
             private string _value;
@@ -143,9 +155,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         }
 
         /// <summary>
-        /// 消息类型。
+        /// **参数解释**： 消息类型。 **约束限制**： 不涉及。 **取值范围**： - Normal_Msg：普通消息。 - Trans_Msg_Half：事务半消息。 - Trans_msg_Commit：事务提交消息。 - Delay_Msg：延迟消息。 - Order_Msg：顺序消息。 **默认取值** 不涉及。
         /// </summary>
-        /// <value>消息类型。</value>
+        /// <value>**参数解释**： 消息类型。 **约束限制**： 不涉及。 **取值范围**： - Normal_Msg：普通消息。 - Trans_Msg_Half：事务半消息。 - Trans_msg_Commit：事务提交消息。 - Delay_Msg：延迟消息。 - Order_Msg：顺序消息。 **默认取值** 不涉及。</value>
         [JsonConverter(typeof(EnumClassConverter<MsgTypeEnum>))]
         public class MsgTypeEnum
         {
@@ -169,6 +181,11 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             /// </summary>
             public static readonly MsgTypeEnum DELAY_MSG = new MsgTypeEnum("Delay_Msg");
 
+            /// <summary>
+            /// Enum ORDER_MSG for value: Order_Msg
+            /// </summary>
+            public static readonly MsgTypeEnum ORDER_MSG = new MsgTypeEnum("Order_Msg");
+
             private static readonly Dictionary<string, MsgTypeEnum> StaticFields =
             new Dictionary<string, MsgTypeEnum>()
             {
@@ -176,6 +193,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 { "Trans_Msg_Half", TRANS_MSG_HALF },
                 { "Trans_msg_Commit", TRANS_MSG_COMMIT },
                 { "Delay_Msg", DELAY_MSG },
+                { "Order_Msg", ORDER_MSG },
             };
 
             private string _value;
@@ -270,9 +288,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         }
 
         /// <summary>
-        /// 事务状态。
+        /// **参数解释**： 事务状态。 **约束限制**： 不涉及。 **取值范围**： - COMMIT_MESSAGE - ROLLBACK_MESSAGE - UNKNOW **默认取值** 不涉及。
         /// </summary>
-        /// <value>事务状态。</value>
+        /// <value>**参数解释**： 事务状态。 **约束限制**： 不涉及。 **取值范围**： - COMMIT_MESSAGE - ROLLBACK_MESSAGE - UNKNOW **默认取值** 不涉及。</value>
         [JsonConverter(typeof(EnumClassConverter<TransactionStateEnum>))]
         public class TransactionStateEnum
         {
@@ -392,118 +410,118 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 
 
         /// <summary>
-        /// 是否成功。
+        /// **参数解释**： 是否成功。 **约束限制**： 不涉及。 **取值范围**： - true：成功。 - false：失败。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("success", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Success { get; set; }
 
         /// <summary>
-        /// 轨迹类型
+        /// **参数解释**： 轨迹类型。 **约束限制**： 不涉及。 **取值范围**： - Pub：生产者成功发送消息。 - SubBefore：消费者准备消费消息。 - SubAfter：消费者完成消息消费。 - EndTransaction：事务消息被提交或回滚。 - Receive：服务侧接收消息。 - Ack：消费者手动确认消费。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("trace_type", NullValueHandling = NullValueHandling.Ignore)]
         public TraceTypeEnum TraceType { get; set; }
         /// <summary>
-        /// 时间。
+        /// **参数解释**： 时间。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("timestamp", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? Timestamp { get; set; }
 
         /// <summary>
-        /// 生产组或消费组。
+        /// **参数解释**： 生产组或消费组。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("group_name", NullValueHandling = NullValueHandling.Ignore)]
         public string GroupName { get; set; }
 
         /// <summary>
-        /// 耗时。
+        /// **参数解释**： 耗时。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("cost_time", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? CostTime { get; set; }
 
         /// <summary>
-        /// 请求ID。
+        /// **参数解释**： 请求ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("request_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RequestId { get; set; }
 
         /// <summary>
-        /// 消费状态：  - 0-消费成功  - 1-消费超时  - 2-消费发生异常   - 3-消费返回NULL  - 5-消费失败
+        /// **参数解释**： 消费状态： **约束限制**： 不涉及。 **取值范围**：  - 0-消费成功  - 1-消费超时  - 2-消费发生异常   - 3-消费返回NULL  - 5-消费失败 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("consume_status", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? ConsumeStatus { get; set; }
 
         /// <summary>
-        /// 主题名称。
+        /// **参数解释**： 主题名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**
         /// </summary>
         [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
         public string Topic { get; set; }
 
         /// <summary>
-        /// 消息ID。
+        /// **参数解释**： 消息ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
         /// </summary>
         [JsonProperty("msg_id", NullValueHandling = NullValueHandling.Ignore)]
         public string MsgId { get; set; }
 
         /// <summary>
-        /// offset消息ID。
+        /// **参数解释**： offset消息ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
         /// </summary>
         [JsonProperty("offset_msg_id", NullValueHandling = NullValueHandling.Ignore)]
         public string OffsetMsgId { get; set; }
 
         /// <summary>
-        /// 消息的标签。
+        /// **参数解释**： 消息的标签。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public string Tags { get; set; }
 
         /// <summary>
-        /// 消息的keys。
+        /// **参数解释**： 消息的keys。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
         /// </summary>
         [JsonProperty("keys", NullValueHandling = NullValueHandling.Ignore)]
         public string Keys { get; set; }
 
         /// <summary>
-        /// 存储消息的主机IP。
+        /// **参数解释**： 存储消息的主机IP。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
         /// </summary>
         [JsonProperty("store_host", NullValueHandling = NullValueHandling.Ignore)]
         public string StoreHost { get; set; }
 
         /// <summary>
-        /// 产生消息的主机IP。
+        /// **参数解释**： 产生消息的主机IP。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
         /// </summary>
         [JsonProperty("client_host", NullValueHandling = NullValueHandling.Ignore)]
         public string ClientHost { get; set; }
 
         /// <summary>
-        /// 重试次数。
+        /// **参数解释**： 重试次数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
         /// </summary>
         [JsonProperty("retry_times", NullValueHandling = NullValueHandling.Ignore)]
         public int? RetryTimes { get; set; }
 
         /// <summary>
-        /// 消息体长度。
+        /// **参数解释**： 消息体长度。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
         /// </summary>
         [JsonProperty("body_length", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? BodyLength { get; set; }
 
         /// <summary>
-        /// 消息类型。
+        /// **参数解释**： 消息类型。 **约束限制**： 不涉及。 **取值范围**： - Normal_Msg：普通消息。 - Trans_Msg_Half：事务半消息。 - Trans_msg_Commit：事务提交消息。 - Delay_Msg：延迟消息。 - Order_Msg：顺序消息。 **默认取值** 不涉及。
         /// </summary>
         [JsonProperty("msg_type", NullValueHandling = NullValueHandling.Ignore)]
         public MsgTypeEnum MsgType { get; set; }
         /// <summary>
-        /// 事务状态。
+        /// **参数解释**： 事务状态。 **约束限制**： 不涉及。 **取值范围**： - COMMIT_MESSAGE - ROLLBACK_MESSAGE - UNKNOW **默认取值** 不涉及。
         /// </summary>
         [JsonProperty("transaction_state", NullValueHandling = NullValueHandling.Ignore)]
         public TransactionStateEnum TransactionState { get; set; }
         /// <summary>
-        /// 事务ID。
+        /// **参数解释**： 事务ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
         /// </summary>
         [JsonProperty("transaction_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TransactionId { get; set; }
 
         /// <summary>
-        /// 是否为事务回查的响应。
+        /// **参数解释**： 是否为事务回查的响应。 **约束限制**： 不涉及。 **取值范围**： - true：是事务回查的响应。 - false：不是事务回查的响应。 **默认取值** 不涉及。
         /// </summary>
         [JsonProperty("from_transaction_check", NullValueHandling = NullValueHandling.Ignore)]
         public bool? FromTransactionCheck { get; set; }

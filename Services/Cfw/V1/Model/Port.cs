@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cfw.V1.Model
 {
     /// <summary>
-    /// 
+    /// **参数解释**： 端口信息 **约束限制**：   不涉及 **取值范围**： 不涉及 **默认取值**：   不涉及
     /// </summary>
     public class Port 
     {
 
         /// <summary>
-        /// **参数解释**： 端口类型 **取值范围**： -1 Any，0 包含，1 排除
+        /// **参数解释**： 端口操作类型 **约束限制**：   不涉及 **取值范围**： -1：Any 0：包含 1：排除 **默认取值**：   不涉及
         /// </summary>
         [JsonProperty("port_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? PortType { get; set; }
 
         /// <summary>
-        /// **参数解释**： 端口 **取值范围**： 不涉及
+        /// **参数解释**： 端口 **约束限制**：   不涉及 **取值范围**： 不涉及 **默认取值**：   不涉及
         /// </summary>
         [JsonProperty("ports", NullValueHandling = NullValueHandling.Ignore)]
         public string Ports { get; set; }

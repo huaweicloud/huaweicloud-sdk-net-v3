@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// ips类型，0表示基础防御，1表示虚拟补丁
         /// </summary>
         [JsonProperty("ips_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? IpsType { get; set; }
 
         /// <summary>
-        /// 
+        /// ips规则版本
         /// </summary>
         [JsonProperty("ips_version", NullValueHandling = NullValueHandling.Ignore)]
         public string IpsVersion { get; set; }
 
         /// <summary>
-        /// 
+        /// ips更新时间戳
         /// </summary>
         [JsonProperty("update_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? UpdateTime { get; set; }

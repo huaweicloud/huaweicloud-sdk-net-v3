@@ -98,7 +98,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// **参数解释**： 目的地区ID **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("dst_region_id", NullValueHandling = NullValueHandling.Ignore)]
-        public Object DstRegionId { get; set; }
+        public string DstRegionId { get; set; }
 
         /// <summary>
         /// **参数解释**： 目的地区名称 **取值范围**： 不涉及

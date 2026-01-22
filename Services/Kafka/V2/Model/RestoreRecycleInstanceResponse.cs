@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// **参数解释**： 实例列表。
+        /// **参数解释**： 实例恢复列表。
         /// </summary>
-        [JsonProperty("instances", NullValueHandling = NullValueHandling.Ignore)]
-        public List<InstanceResumeResult> Instances { get; set; }
+        [JsonProperty("results", NullValueHandling = NullValueHandling.Ignore)]
+        public List<InstanceResumeResult> Results { get; set; }
 
 
 
@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class RestoreRecycleInstanceResponse {\n");
-            sb.Append("  instances: ").Append(Instances).Append("\n");
+            sb.Append("  results: ").Append(Results).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool Equals(RestoreRecycleInstanceResponse input)
         {
             if (input == null) return false;
-            if (this.Instances != input.Instances || (this.Instances != null && input.Instances != null && !this.Instances.SequenceEqual(input.Instances))) return false;
+            if (this.Results != input.Results || (this.Results != null && input.Results != null && !this.Results.SequenceEqual(input.Results))) return false;
 
             return true;
         }
@@ -63,7 +63,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Instances != null) hashCode = hashCode * 59 + this.Instances.GetHashCode();
+                if (this.Results != null) hashCode = hashCode * 59 + this.Results.GetHashCode();
                 return hashCode;
             }
         }

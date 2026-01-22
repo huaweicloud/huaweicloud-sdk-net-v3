@@ -17,25 +17,13 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// 下个分页的offset。
-        /// </summary>
-        [JsonProperty("next_offset", NullValueHandling = NullValueHandling.Ignore)]
-        public int? NextOffset { get; set; }
-
-        /// <summary>
-        /// 上个分页的offset。
-        /// </summary>
-        [JsonProperty("previous_offset", NullValueHandling = NullValueHandling.Ignore)]
-        public int? PreviousOffset { get; set; }
-
-        /// <summary>
-        /// 后台任务ID
+        /// **参数解释**： 后台任务ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("nodes", NullValueHandling = NullValueHandling.Ignore)]
         public List<NodeContextEntity> Nodes { get; set; }
 
         /// <summary>
-        /// 总个数
+        /// **参数解释**： 总个数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }
@@ -49,8 +37,6 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShowInstanceNodesResponse {\n");
-            sb.Append("  nextOffset: ").Append(NextOffset).Append("\n");
-            sb.Append("  previousOffset: ").Append(PreviousOffset).Append("\n");
             sb.Append("  nodes: ").Append(Nodes).Append("\n");
             sb.Append("  total: ").Append(Total).Append("\n");
             sb.Append("}\n");
@@ -71,8 +57,6 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public bool Equals(ShowInstanceNodesResponse input)
         {
             if (input == null) return false;
-            if (this.NextOffset != input.NextOffset || (this.NextOffset != null && !this.NextOffset.Equals(input.NextOffset))) return false;
-            if (this.PreviousOffset != input.PreviousOffset || (this.PreviousOffset != null && !this.PreviousOffset.Equals(input.PreviousOffset))) return false;
             if (this.Nodes != input.Nodes || (this.Nodes != null && input.Nodes != null && !this.Nodes.SequenceEqual(input.Nodes))) return false;
             if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
 
@@ -87,8 +71,6 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.NextOffset != null) hashCode = hashCode * 59 + this.NextOffset.GetHashCode();
-                if (this.PreviousOffset != null) hashCode = hashCode * 59 + this.PreviousOffset.GetHashCode();
                 if (this.Nodes != null) hashCode = hashCode * 59 + this.Nodes.GetHashCode();
                 if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
                 return hashCode;

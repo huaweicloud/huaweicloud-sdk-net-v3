@@ -17,31 +17,31 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     {
 
         /// <summary>
-        /// IO类型。
+        /// **参数解释**： IO类型。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("io_type", NullValueHandling = NullValueHandling.Ignore)]
         public string IoType { get; set; }
 
         /// <summary>
-        /// IO规格。
+        /// **参数解释**： IO规格。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("storage_spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public string StorageSpecCode { get; set; }
 
         /// <summary>
-        /// IO未售罄的可用区列表。
+        /// **参数解释**： IO未售罄的可用区列表。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("available_zones", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AvailableZones { get; set; }
 
         /// <summary>
-        /// IO已售罄的不可用区列表。
+        /// **参数解释**： IO已售罄的不可用区列表。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("unavailable_zones", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> UnavailableZones { get; set; }
 
         /// <summary>
-        /// 磁盘类型。
+        /// **参数解释**： 磁盘类型。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("volume_type", NullValueHandling = NullValueHandling.Ignore)]
         public string VolumeType { get; set; }

@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     {
 
         /// <summary>
-        /// 用户列表。
+        /// **参数解释**： 用户列表。
         /// </summary>
         [JsonProperty("users", NullValueHandling = NullValueHandling.Ignore)]
         public List<AMQPUser> Users { get; set; }
 
         /// <summary>
-        /// 总用户个数。
+        /// **参数解释**： 总用户个数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }

@@ -124,133 +124,6 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             }
         }
 
-        /// <summary>
-        /// 产品的类型。   - advanced：专享版   - platinum：铂金版   - dec：专属云版   - exp：体验版
-        /// </summary>
-        /// <value>产品的类型。   - advanced：专享版   - platinum：铂金版   - dec：专属云版   - exp：体验版</value>
-        [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
-        public class TypeEnum
-        {
-            /// <summary>
-            /// Enum ADVANCED for value: advanced
-            /// </summary>
-            public static readonly TypeEnum ADVANCED = new TypeEnum("advanced");
-
-            /// <summary>
-            /// Enum PLATINUM for value: platinum
-            /// </summary>
-            public static readonly TypeEnum PLATINUM = new TypeEnum("platinum");
-
-            /// <summary>
-            /// Enum DEC for value: dec
-            /// </summary>
-            public static readonly TypeEnum DEC = new TypeEnum("dec");
-
-            /// <summary>
-            /// Enum EXP for value: exp
-            /// </summary>
-            public static readonly TypeEnum EXP = new TypeEnum("exp");
-
-            private static readonly Dictionary<string, TypeEnum> StaticFields =
-            new Dictionary<string, TypeEnum>()
-            {
-                { "advanced", ADVANCED },
-                { "platinum", PLATINUM },
-                { "dec", DEC },
-                { "exp", EXP },
-            };
-
-            private string _value;
-
-            public TypeEnum()
-            {
-
-            }
-
-            public TypeEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static TypeEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as TypeEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(TypeEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(TypeEnum a, TypeEnum b)
-            {
-                if (ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(TypeEnum a, TypeEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
         /// 消息引擎的类型。支持的类型为rabbitmq。
@@ -266,11 +139,12 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 产品的类型。   - advanced：专享版   - platinum：铂金版   - dec：专属云版   - exp：体验版
+        /// **参数解释**： 产品的类型。 **约束限制**： 不涉及。 **取值范围**： advanced：专享版 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
-        public TypeEnum Type { get; set; }
+        public string Type { get; set; }
+
 
 
         /// <summary>
@@ -303,7 +177,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             if (input == null) return false;
             if (this.Engine != input.Engine) return false;
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
-            if (this.Type != input.Type) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
 
             return true;
         }
@@ -318,7 +192,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                 var hashCode = 41;
                 hashCode = hashCode * 59 + this.Engine.GetHashCode();
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;
             }
         }

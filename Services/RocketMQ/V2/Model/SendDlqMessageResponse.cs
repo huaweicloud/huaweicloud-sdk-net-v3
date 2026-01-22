@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// 重发死信消息结果。
+        /// **参数解释**： 重发死信消息结果。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
         /// </summary>
         [JsonProperty("resend_results", NullValueHandling = NullValueHandling.Ignore)]
         public List<DeadletterResendRespResendResults> ResendResults { get; set; }

@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
     {
 
         /// <summary>
-        /// 修改实例参数的异步任务ID。
+        /// **参数解释：** 修改实例参数的异步任务ID。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }
 
         /// <summary>
-        /// 参数修改涉及范围（实例，组，节点）否需要重启。 - false不需要重启 - true需要重启。
+        /// **参数解释：** 参数修改涉及范围（实例，组，节点）否需要重启。 **取值范围：** - 取值为false，不需要重启。 - 取值为true，需要重启。
         /// </summary>
         [JsonProperty("restart_required", NullValueHandling = NullValueHandling.Ignore)]
         public bool? RestartRequired { get; set; }

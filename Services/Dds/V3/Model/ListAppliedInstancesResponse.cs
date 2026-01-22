@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
     {
 
         /// <summary>
-        /// 可以应用的实例列表。
+        /// **参数解释：** 可以应用的实例列表。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("instances", NullValueHandling = NullValueHandling.Ignore)]
         public List<ApplicableInstancesInfo> Instances { get; set; }
