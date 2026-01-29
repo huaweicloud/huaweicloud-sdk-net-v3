@@ -58,6 +58,18 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
+        /// <summary>
+        /// |参数名称：客户账号ID| |参数约束及描述：客户账号ID。说明：交易详细类型取值为如下值时，该字段不为空 SOURCE_OPERATION_BEADJUST：伙伴拨款 SOURCE_OPERATION_BEUNBIND：交易模式变更(切换/解除关联回收) SOURCE_OPERATION_BERETRIEVE：伙伴回收|
+        /// </summary>
+        [JsonProperty("customer_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string CustomerId { get; set; }
+
+        /// <summary>
+        /// |参数名称：客户登录名称| |参数约束及描述：客户登录名称。说明：客户账号ID不为空时，该字段不为空|
+        /// </summary>
+        [JsonProperty("account_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string AccountName { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +86,8 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
             sb.Append("  changeAmount: ").Append(ChangeAmount).Append("\n");
             sb.Append("  balanceAfterChange: ").Append(BalanceAfterChange).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  customerId: ").Append(CustomerId).Append("\n");
+            sb.Append("  accountName: ").Append(AccountName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,6 +113,8 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
             if (this.ChangeAmount != input.ChangeAmount || (this.ChangeAmount != null && !this.ChangeAmount.Equals(input.ChangeAmount))) return false;
             if (this.BalanceAfterChange != input.BalanceAfterChange || (this.BalanceAfterChange != null && !this.BalanceAfterChange.Equals(input.BalanceAfterChange))) return false;
             if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.CustomerId != input.CustomerId || (this.CustomerId != null && !this.CustomerId.Equals(input.CustomerId))) return false;
+            if (this.AccountName != input.AccountName || (this.AccountName != null && !this.AccountName.Equals(input.AccountName))) return false;
 
             return true;
         }
@@ -118,6 +134,8 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
                 if (this.ChangeAmount != null) hashCode = hashCode * 59 + this.ChangeAmount.GetHashCode();
                 if (this.BalanceAfterChange != null) hashCode = hashCode * 59 + this.BalanceAfterChange.GetHashCode();
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.CustomerId != null) hashCode = hashCode * 59 + this.CustomerId.GetHashCode();
+                if (this.AccountName != null) hashCode = hashCode * 59 + this.AccountName.GetHashCode();
                 return hashCode;
             }
         }

@@ -440,7 +440,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// **参数解释**： 资源规格标识。 **取值范围**： [- dms.instance.kafka.cluster.c3.mini：Kafka实例的基准带宽为100MByte/秒。 - dms.instance.kafka.cluster.c3.small.2：Kafka实例的基准带宽为300MByte/秒。 - dms.instance.kafka.cluster.c3.middle.2：Kafka实例的基准带宽为600MByte/秒。 - dms.instance.kafka.cluster.c3.high.2：Kafka实例的基准带宽为1200MByte/秒。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt,ax)
+        /// **参数解释**： 资源规格标识。 **取值范围**： [- dms.instance.kafka.cluster.c3.mini：Kafka实例的基准带宽为100MByte/秒。 - dms.instance.kafka.cluster.c3.small.2：Kafka实例的基准带宽为300MByte/秒。 - dms.instance.kafka.cluster.c3.middle.2：Kafka实例的基准带宽为600MByte/秒。 - dms.instance.kafka.cluster.c3.high.2：Kafka实例的基准带宽为1200MByte/秒。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt,ax) [不涉及。](tag:hcs)
         /// </summary>
         [JsonProperty("resource_spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceSpecCode { get; set; }
@@ -710,13 +710,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// **参数解释**： 跨VPC访问信息。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("cross_vpc_info", NullValueHandling = NullValueHandling.Ignore)]
-        public Object CrossVpcInfo { get; set; }
+        public string CrossVpcInfo { get; set; }
 
         /// <summary>
         /// **参数解释**： 公网跨VPC访问信息。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("public_cross_vpc_info", NullValueHandling = NullValueHandling.Ignore)]
-        public Object PublicCrossVpcInfo { get; set; }
+        public string PublicCrossVpcInfo { get; set; }
 
         /// <summary>
         /// **参数解释**： 是否开启IPv6。 **取值范围**： - true：开启 - false：不开启

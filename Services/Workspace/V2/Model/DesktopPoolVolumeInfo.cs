@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? Throughput { get; set; }
 
         /// <summary>
-        /// kms密钥id。变更密钥是传入密钥id；如需删除密钥则传入空字符串；默认null，不变更密钥。
+        /// kms密钥id。变更密钥时传入密钥id；如需删除密钥则传入空字符串；默认null，不变更密钥。
         /// </summary>
         [JsonProperty("kms_id", NullValueHandling = NullValueHandling.Ignore)]
         public string KmsId { get; set; }

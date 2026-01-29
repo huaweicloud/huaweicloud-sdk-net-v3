@@ -124,6 +124,127 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             }
         }
 
+        /// <summary>
+        /// **参数解释**： 频道对应的region类型，是主region，还是备region **约束限制**： 如果region_type不填，或是没有该字段，则按照主region处理 **取值范围**： - master: 主region - slave: 备region - all: 所有region 
+        /// </summary>
+        /// <value>**参数解释**： 频道对应的region类型，是主region，还是备region **约束限制**： 如果region_type不填，或是没有该字段，则按照主region处理 **取值范围**： - master: 主region - slave: 备region - all: 所有region </value>
+        [JsonConverter(typeof(EnumClassConverter<RegionTypeEnum>))]
+        public class RegionTypeEnum
+        {
+            /// <summary>
+            /// Enum MASTER for value: master
+            /// </summary>
+            public static readonly RegionTypeEnum MASTER = new RegionTypeEnum("master");
+
+            /// <summary>
+            /// Enum SLAVE for value: slave
+            /// </summary>
+            public static readonly RegionTypeEnum SLAVE = new RegionTypeEnum("slave");
+
+            /// <summary>
+            /// Enum ALL for value: all
+            /// </summary>
+            public static readonly RegionTypeEnum ALL = new RegionTypeEnum("all");
+
+            private static readonly Dictionary<string, RegionTypeEnum> StaticFields =
+            new Dictionary<string, RegionTypeEnum>()
+            {
+                { "master", MASTER },
+                { "slave", SLAVE },
+                { "all", ALL },
+            };
+
+            private string _value;
+
+            public RegionTypeEnum()
+            {
+
+            }
+
+            public RegionTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static RegionTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as RegionTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(RegionTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(RegionTypeEnum a, RegionTypeEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(RegionTypeEnum a, RegionTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 频道推流域名。
@@ -154,6 +275,11 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         [JsonProperty("scte35", NullValueHandling = NullValueHandling.Ignore)]
         public SCTE35StatisticReq Scte35 { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 频道对应的region类型，是主region，还是备region **约束限制**： 如果region_type不填，或是没有该字段，则按照主region处理 **取值范围**： - master: 主region - slave: 备region - all: 所有region 
+        /// </summary>
+        [JsonProperty("region_type", NullValueHandling = NullValueHandling.Ignore)]
+        public RegionTypeEnum RegionType { get; set; }
 
 
         /// <summary>
@@ -168,6 +294,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  scte35: ").Append(Scte35).Append("\n");
+            sb.Append("  regionType: ").Append(RegionType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -191,6 +318,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Type != input.Type) return false;
             if (this.Scte35 != input.Scte35 || (this.Scte35 != null && !this.Scte35.Equals(input.Scte35))) return false;
+            if (this.RegionType != input.RegionType) return false;
 
             return true;
         }
@@ -208,6 +336,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Scte35 != null) hashCode = hashCode * 59 + this.Scte35.GetHashCode();
+                hashCode = hashCode * 59 + this.RegionType.GetHashCode();
                 return hashCode;
             }
         }

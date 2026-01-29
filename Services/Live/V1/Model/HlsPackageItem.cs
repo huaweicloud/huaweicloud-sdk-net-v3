@@ -17,6 +17,12 @@ namespace HuaweiCloud.SDK.Live.V1.Model
     {
 
         /// <summary>
+        /// package唯一标识id，由服务创建并在查询时返回，修改endpoints时需要携带。
+        /// </summary>
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
         /// 客户自定义的拉流地址，包括方法、域名、路径
         /// </summary>
         [JsonProperty("url", NullValueHandling = NullValueHandling.Ignore)]
@@ -124,6 +130,12 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         [JsonProperty("slave_url", NullValueHandling = NullValueHandling.Ignore)]
         public string SlaveUrl { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("manifest_selection", NullValueHandling = NullValueHandling.Ignore)]
+        public ManifestSelection ManifestSelection { get; set; }
+
 
 
         /// <summary>
@@ -133,6 +145,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class HlsPackageItem {\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  url: ").Append(Url).Append("\n");
             sb.Append("  streamSelection: ").Append(StreamSelection).Append("\n");
             sb.Append("  hlsVersion: ").Append(HlsVersion).Append("\n");
@@ -151,6 +164,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             sb.Append("  originDomainSlave: ").Append(OriginDomainSlave).Append("\n");
             sb.Append("  manifestName: ").Append(ManifestName).Append("\n");
             sb.Append("  slaveUrl: ").Append(SlaveUrl).Append("\n");
+            sb.Append("  manifestSelection: ").Append(ManifestSelection).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -169,6 +183,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         public bool Equals(HlsPackageItem input)
         {
             if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
             if (this.StreamSelection != input.StreamSelection || (this.StreamSelection != null && input.StreamSelection != null && !this.StreamSelection.SequenceEqual(input.StreamSelection))) return false;
             if (this.HlsVersion != input.HlsVersion || (this.HlsVersion != null && !this.HlsVersion.Equals(input.HlsVersion))) return false;
@@ -187,6 +202,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             if (this.OriginDomainSlave != input.OriginDomainSlave || (this.OriginDomainSlave != null && !this.OriginDomainSlave.Equals(input.OriginDomainSlave))) return false;
             if (this.ManifestName != input.ManifestName || (this.ManifestName != null && !this.ManifestName.Equals(input.ManifestName))) return false;
             if (this.SlaveUrl != input.SlaveUrl || (this.SlaveUrl != null && !this.SlaveUrl.Equals(input.SlaveUrl))) return false;
+            if (this.ManifestSelection != input.ManifestSelection || (this.ManifestSelection != null && !this.ManifestSelection.Equals(input.ManifestSelection))) return false;
 
             return true;
         }
@@ -199,6 +215,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
                 if (this.StreamSelection != null) hashCode = hashCode * 59 + this.StreamSelection.GetHashCode();
                 if (this.HlsVersion != null) hashCode = hashCode * 59 + this.HlsVersion.GetHashCode();
@@ -217,6 +234,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
                 if (this.OriginDomainSlave != null) hashCode = hashCode * 59 + this.OriginDomainSlave.GetHashCode();
                 if (this.ManifestName != null) hashCode = hashCode * 59 + this.ManifestName.GetHashCode();
                 if (this.SlaveUrl != null) hashCode = hashCode * 59 + this.SlaveUrl.GetHashCode();
+                if (this.ManifestSelection != null) hashCode = hashCode * 59 + this.ManifestSelection.GetHashCode();
                 return hashCode;
             }
         }

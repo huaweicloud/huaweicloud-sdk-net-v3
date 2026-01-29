@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
     {
 
         /// <summary>
-        /// 日志存储时间 天。 取值范围为 [1, 30]
+        /// 日志存储时间 天。 取值范围为 [1, 365]
         /// </summary>
         [JsonProperty("ttl_in_days", NullValueHandling = NullValueHandling.Ignore)]
         public int? TtlInDays { get; set; }

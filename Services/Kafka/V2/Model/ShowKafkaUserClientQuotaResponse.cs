@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// 客户端流控配置列表。 
         /// </summary>
         [JsonProperty("quotas", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Quota> Quotas { get; set; }
+        public List<QuotaResp> Quotas { get; set; }
 
         /// <summary>
         /// 用户/客户端流控配置数目。 

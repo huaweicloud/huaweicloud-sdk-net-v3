@@ -464,30 +464,6 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 创建实例
-        ///
-        /// 创建按需计费类型的Kafka实例。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<CreatePostPaidInstanceResponse> CreatePostPaidInstanceAsync(CreatePostPaidInstanceRequest createPostPaidInstanceRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPostPaidInstanceRequest);
-            var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerialize<CreatePostPaidInstanceResponse>(response);
-        }
-
-        public AsyncInvoker<CreatePostPaidInstanceResponse> CreatePostPaidInstanceAsyncInvoker(CreatePostPaidInstanceRequest createPostPaidInstanceRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPostPaidInstanceRequest);
-            return new AsyncInvoker<CreatePostPaidInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<CreatePostPaidInstanceResponse>);
-        }
-        
-        /// <summary>
         /// 创建Kafka实例
         ///
         /// 创建实例。
@@ -511,32 +487,6 @@ namespace HuaweiCloud.SDK.Kafka.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPostPaidKafkaInstanceRequest);
             return new AsyncInvoker<CreatePostPaidKafkaInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<CreatePostPaidKafkaInstanceResponse>);
-        }
-        
-        /// <summary>
-        /// Kafka实例开始分区平衡任务
-        ///
-        /// 该接口用于向Kafka实例提交分区平衡任务或计算分区平衡预估时间。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<CreateReassignmentTaskResponse> CreateReassignmentTaskAsync(CreateReassignmentTaskRequest createReassignmentTaskRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(createReassignmentTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/reassign", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createReassignmentTaskRequest);
-            var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerialize<CreateReassignmentTaskResponse>(response);
-        }
-
-        public AsyncInvoker<CreateReassignmentTaskResponse> CreateReassignmentTaskAsyncInvoker(CreateReassignmentTaskRequest createReassignmentTaskRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(createReassignmentTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/reassign", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createReassignmentTaskRequest);
-            return new AsyncInvoker<CreateReassignmentTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateReassignmentTaskResponse>);
         }
         
         /// <summary>
@@ -679,34 +629,6 @@ namespace HuaweiCloud.SDK.Kafka.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceConsumerGroupRequest);
             return new AsyncInvoker<DeleteInstanceConsumerGroupResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceConsumerGroupResponse>);
-        }
-        
-        /// <summary>
-        /// Kafka删除消息
-        ///
-        /// Kafka删除消息。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<DeleteKafkaMessageResponse> DeleteKafkaMessageAsync(DeleteKafkaMessageRequest deleteKafkaMessageRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(deleteKafkaMessageRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            if (StringUtils.TryConvertToNonEmptyString(deleteKafkaMessageRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/topics/{topic}/messages", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKafkaMessageRequest);
-            var response = await DoHttpRequestAsync("DELETE", request);
-            return JsonUtils.DeSerialize<DeleteKafkaMessageResponse>(response);
-        }
-
-        public AsyncInvoker<DeleteKafkaMessageResponse> DeleteKafkaMessageAsyncInvoker(DeleteKafkaMessageRequest deleteKafkaMessageRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(deleteKafkaMessageRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            if (StringUtils.TryConvertToNonEmptyString(deleteKafkaMessageRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/topics/{topic}/messages", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKafkaMessageRequest);
-            return new AsyncInvoker<DeleteKafkaMessageResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteKafkaMessageResponse>);
         }
         
         /// <summary>
@@ -1166,36 +1088,6 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 查询产品规格列表
-        ///
-        /// 在创建kafka实例时，需要配置订购的产品ID（即product_id），可通过该接口查询产品规格。
-        /// 
-        /// 例如，要订购按需计费、基准带宽为100MB的kafka实例，可从接口响应消息中，查找Hourly的消息体，然后找到bandwidth为100MB的记录对应的product_id，该product_id的值即是创建上述kafka实例时需要配置的产品ID。
-        /// 
-        /// 同时，unavailable_zones字段表示资源不足的可用区列表，如果为空，则表示所有可用区都有资源，如果不为空，则表示字段值的可用区没有资源。所以必须确保您购买的资源所在的可用区有资源，不在该字段列表内。
-        /// 
-        /// [例如，响应消息中bandwidth字段为1200MB的记录，unavailable_zones字段包含cn-east-2b、cn-east-2a和cn-east-2d，表示在华东-上海2的可用区1、可用区2、可用区3都没有该资源。](tag:hws)
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ListProductsResponse> ListProductsAsync(ListProductsRequest listProductsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/products", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProductsRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ListProductsResponse>(response);
-        }
-
-        public AsyncInvoker<ListProductsResponse> ListProductsAsyncInvoker(ListProductsRequest listProductsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/products", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProductsRequest);
-            return new AsyncInvoker<ListProductsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListProductsResponse>);
-        }
-        
-        /// <summary>
         /// 查询实例的定时任务列表
         ///
         /// 查询实例的定时任务列表。
@@ -1275,38 +1167,6 @@ namespace HuaweiCloud.SDK.Kafka.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/topics/{topic}/producers", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTopicProducersRequest);
             return new AsyncInvoker<ListTopicProducersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTopicProducersResponse>);
-        }
-        
-        /// <summary>
-        /// 查询用户策略
-        ///
-        /// 查询用户策略。
-        /// 
-        /// Kafka实例开启SASL功能后，才支持查询用户策略功能。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ListUserPoliciesResponse> ListUserPoliciesAsync(ListUserPoliciesRequest listUserPoliciesRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listUserPoliciesRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
-            if (StringUtils.TryConvertToNonEmptyString(listUserPoliciesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            if (StringUtils.TryConvertToNonEmptyString(listUserPoliciesRequest.UserName, out var valueOfUserName)) urlParam.Add("user_name", valueOfUserName);
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{engine}/instances/{instance_id}/users/{user_name}/access-policy", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUserPoliciesRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ListUserPoliciesResponse>(response);
-        }
-
-        public AsyncInvoker<ListUserPoliciesResponse> ListUserPoliciesAsyncInvoker(ListUserPoliciesRequest listUserPoliciesRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listUserPoliciesRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
-            if (StringUtils.TryConvertToNonEmptyString(listUserPoliciesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            if (StringUtils.TryConvertToNonEmptyString(listUserPoliciesRequest.UserName, out var valueOfUserName)) urlParam.Add("user_name", valueOfUserName);
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{engine}/instances/{instance_id}/users/{user_name}/access-policy", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUserPoliciesRequest);
-            return new AsyncInvoker<ListUserPoliciesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListUserPoliciesResponse>);
         }
         
         /// <summary>
@@ -1554,60 +1414,6 @@ namespace HuaweiCloud.SDK.Kafka.V2
         /// <summary>
         /// 实例扩容
         ///
-        /// 实例规格变更。[当前通过调用API，只支持按需实例进行实例扩容。](tag:hws,hws_hk,ctc,cmcc,hws_eu)
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ResizeEngineInstanceResponse> ResizeEngineInstanceAsync(ResizeEngineInstanceRequest resizeEngineInstanceRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(resizeEngineInstanceRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
-            if (StringUtils.TryConvertToNonEmptyString(resizeEngineInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/extend", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeEngineInstanceRequest);
-            var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerialize<ResizeEngineInstanceResponse>(response);
-        }
-
-        public AsyncInvoker<ResizeEngineInstanceResponse> ResizeEngineInstanceAsyncInvoker(ResizeEngineInstanceRequest resizeEngineInstanceRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(resizeEngineInstanceRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
-            if (StringUtils.TryConvertToNonEmptyString(resizeEngineInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/extend", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeEngineInstanceRequest);
-            return new AsyncInvoker<ResizeEngineInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<ResizeEngineInstanceResponse>);
-        }
-        
-        /// <summary>
-        /// 实例扩容
-        ///
-        /// 实例扩容。[当前通过调用API，只支持按需实例进行实例扩容。](tag:hws,hws_hk,ctc,cmcc,hws_eu)
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ResizeInstanceResponse> ResizeInstanceAsync(ResizeInstanceRequest resizeInstanceRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(resizeInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/extend", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeInstanceRequest);
-            var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerialize<ResizeInstanceResponse>(response);
-        }
-
-        public AsyncInvoker<ResizeInstanceResponse> ResizeInstanceAsyncInvoker(ResizeInstanceRequest resizeInstanceRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(resizeInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/extend", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeInstanceRequest);
-            return new AsyncInvoker<ResizeInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<ResizeInstanceResponse>);
-        }
-        
-        /// <summary>
-        /// 实例扩容
-        ///
         /// 实例规格变更。[当前通过调用API，只支持按需实例进行实例扩容。](tag:hws,hws_hk,ctc,cmcc,hws_eu,ax)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
@@ -1705,38 +1511,6 @@ namespace HuaweiCloud.SDK.Kafka.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/messages/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", sendKafkaMessageRequest);
             return new AsyncInvoker<SendKafkaMessageResponse>(this, "POST", request, JsonUtils.DeSerialize<SendKafkaMessageResponse>);
-        }
-        
-        /// <summary>
-        /// 创建/删除用户策略
-        ///
-        /// 创建/删除用户策略。
-        /// 
-        /// Kafka实例开启SASL功能后，才支持创建/删除用户策略。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<SetUserPoliciesResponse> SetUserPoliciesAsync(SetUserPoliciesRequest setUserPoliciesRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(setUserPoliciesRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
-            if (StringUtils.TryConvertToNonEmptyString(setUserPoliciesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            if (StringUtils.TryConvertToNonEmptyString(setUserPoliciesRequest.UserName, out var valueOfUserName)) urlParam.Add("user_name", valueOfUserName);
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{engine}/instances/{instance_id}/users/{user_name}/access-policy", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setUserPoliciesRequest);
-            var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerialize<SetUserPoliciesResponse>(response);
-        }
-
-        public AsyncInvoker<SetUserPoliciesResponse> SetUserPoliciesAsyncInvoker(SetUserPoliciesRequest setUserPoliciesRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(setUserPoliciesRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
-            if (StringUtils.TryConvertToNonEmptyString(setUserPoliciesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            if (StringUtils.TryConvertToNonEmptyString(setUserPoliciesRequest.UserName, out var valueOfUserName)) urlParam.Add("user_name", valueOfUserName);
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{engine}/instances/{instance_id}/users/{user_name}/access-policy", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setUserPoliciesRequest);
-            return new AsyncInvoker<SetUserPoliciesResponse>(this, "POST", request, JsonUtils.DeSerialize<SetUserPoliciesResponse>);
         }
         
         /// <summary>
@@ -1907,34 +1681,6 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 查询实例的扩容规格列表
-        ///
-        /// 查询实例的扩容规格列表。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowEngineInstanceExtendProductInfoResponse> ShowEngineInstanceExtendProductInfoAsync(ShowEngineInstanceExtendProductInfoRequest showEngineInstanceExtendProductInfoRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(showEngineInstanceExtendProductInfoRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
-            if (StringUtils.TryConvertToNonEmptyString(showEngineInstanceExtendProductInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/extend", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEngineInstanceExtendProductInfoRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ShowEngineInstanceExtendProductInfoResponse>(response);
-        }
-
-        public AsyncInvoker<ShowEngineInstanceExtendProductInfoResponse> ShowEngineInstanceExtendProductInfoAsyncInvoker(ShowEngineInstanceExtendProductInfoRequest showEngineInstanceExtendProductInfoRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(showEngineInstanceExtendProductInfoRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
-            if (StringUtils.TryConvertToNonEmptyString(showEngineInstanceExtendProductInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/extend", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEngineInstanceExtendProductInfoRequest);
-            return new AsyncInvoker<ShowEngineInstanceExtendProductInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowEngineInstanceExtendProductInfoResponse>);
-        }
-        
-        /// <summary>
         /// 查询指定消费组信息
         ///
         /// 查询指定消费组信息
@@ -2040,32 +1786,6 @@ namespace HuaweiCloud.SDK.Kafka.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/configs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceConfigsRequest);
             return new AsyncInvoker<ShowInstanceConfigsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceConfigsResponse>);
-        }
-        
-        /// <summary>
-        /// 查询实例的扩容规格列表
-        ///
-        /// 查询实例的扩容规格列表。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowInstanceExtendProductInfoResponse> ShowInstanceExtendProductInfoAsync(ShowInstanceExtendProductInfoRequest showInstanceExtendProductInfoRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(showInstanceExtendProductInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/extend", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceExtendProductInfoRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ShowInstanceExtendProductInfoResponse>(response);
-        }
-
-        public AsyncInvoker<ShowInstanceExtendProductInfoResponse> ShowInstanceExtendProductInfoAsyncInvoker(ShowInstanceExtendProductInfoRequest showInstanceExtendProductInfoRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(showInstanceExtendProductInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/extend", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceExtendProductInfoRequest);
-            return new AsyncInvoker<ShowInstanceExtendProductInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceExtendProductInfoResponse>);
         }
         
         /// <summary>
@@ -2346,7 +2066,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaTopicDetailRequest);
             var response = await DoHttpRequestAsync("GET", request);
             var showKafkaTopicDetailResponse = JsonUtils.DeSerializeNull<ShowKafkaTopicDetailResponse>(response);
-            showKafkaTopicDetailResponse.Body = JsonUtils.DeSerializeList<ShowKafkaTopicDetailResponseBody>(response);
+            showKafkaTopicDetailResponse.Body = JsonUtils.DeSerializeList<KafkaTopicDetailEntity>(response);
             return showKafkaTopicDetailResponse;
         }
 
@@ -2360,7 +2080,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
             return new AsyncInvoker<ShowKafkaTopicDetailResponse>(this, "GET", request, response =>
             {
                 var showKafkaTopicDetailResponse = JsonUtils.DeSerializeNull<ShowKafkaTopicDetailResponse>(response);
-                showKafkaTopicDetailResponse.Body = JsonUtils.DeSerializeList<ShowKafkaTopicDetailResponseBody>(response);
+                showKafkaTopicDetailResponse.Body = JsonUtils.DeSerializeList<KafkaTopicDetailEntity>(response);
                 return showKafkaTopicDetailResponse;
             });
         }
@@ -2659,32 +2379,6 @@ namespace HuaweiCloud.SDK.Kafka.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/recycle", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecycleInstancesRequest);
             return new AsyncInvoker<ShowRecycleInstancesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRecycleInstancesResponse>);
-        }
-        
-        /// <summary>
-        /// 查询旧规格升级新规格映射
-        ///
-        /// 查询旧规格实例可升级的新规格信息。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowSpecConvertProductResponse> ShowSpecConvertProductAsync(ShowSpecConvertProductRequest showSpecConvertProductRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(showSpecConvertProductRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/spec-convert", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSpecConvertProductRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ShowSpecConvertProductResponse>(response);
-        }
-
-        public AsyncInvoker<ShowSpecConvertProductResponse> ShowSpecConvertProductAsyncInvoker(ShowSpecConvertProductRequest showSpecConvertProductRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(showSpecConvertProductRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/spec-convert", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSpecConvertProductRequest);
-            return new AsyncInvoker<ShowSpecConvertProductResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSpecConvertProductResponse>);
         }
         
         /// <summary>
@@ -3297,7 +2991,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listObsBucketsRequest);
             var response = await DoHttpRequestAsync("GET", request);
             var listObsBucketsResponse = JsonUtils.DeSerializeNull<ListObsBucketsResponse>(response);
-            listObsBucketsResponse.Body = JsonUtils.DeSerializeList<ListObsBucketsResponseBody>(response);
+            listObsBucketsResponse.Body = JsonUtils.DeSerializeList<ObsBucketEntity>(response);
             return listObsBucketsResponse;
         }
 
@@ -3309,7 +3003,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
             return new AsyncInvoker<ListObsBucketsResponse>(this, "GET", request, response =>
             {
                 var listObsBucketsResponse = JsonUtils.DeSerializeNull<ListObsBucketsResponse>(response);
-                listObsBucketsResponse.Body = JsonUtils.DeSerializeList<ListObsBucketsResponseBody>(response);
+                listObsBucketsResponse.Body = JsonUtils.DeSerializeList<ObsBucketEntity>(response);
                 return listObsBucketsResponse;
             });
         }

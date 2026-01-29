@@ -130,6 +130,121 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             }
         }
 
+        /// <summary>
+        /// **参数解释**： 转推流状态 **约束限制**： 不涉及 **取值范围**： - CONNECTED：转推中 - DISCONNECTED：转推中断 
+        /// </summary>
+        /// <value>**参数解释**： 转推流状态 **约束限制**： 不涉及 **取值范围**： - CONNECTED：转推中 - DISCONNECTED：转推中断 </value>
+        [JsonConverter(typeof(EnumClassConverter<HealthStatusEnum>))]
+        public class HealthStatusEnum
+        {
+            /// <summary>
+            /// Enum CONNECTED for value: CONNECTED
+            /// </summary>
+            public static readonly HealthStatusEnum CONNECTED = new HealthStatusEnum("CONNECTED");
+
+            /// <summary>
+            /// Enum DISCONNECTED for value: DISCONNECTED
+            /// </summary>
+            public static readonly HealthStatusEnum DISCONNECTED = new HealthStatusEnum("DISCONNECTED");
+
+            private static readonly Dictionary<string, HealthStatusEnum> StaticFields =
+            new Dictionary<string, HealthStatusEnum>()
+            {
+                { "CONNECTED", CONNECTED },
+                { "DISCONNECTED", DISCONNECTED },
+            };
+
+            private string _value;
+
+            public HealthStatusEnum()
+            {
+
+            }
+
+            public HealthStatusEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static HealthStatusEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as HealthStatusEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(HealthStatusEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(HealthStatusEnum a, HealthStatusEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(HealthStatusEnum a, HealthStatusEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 拉流地址
@@ -184,6 +299,11 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         [JsonProperty("decryption", NullValueHandling = NullValueHandling.Ignore)]
         public FlowSourceDecryption Decryption { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 转推流状态 **约束限制**： 不涉及 **取值范围**： - CONNECTED：转推中 - DISCONNECTED：转推中断 
+        /// </summary>
+        [JsonProperty("health_status", NullValueHandling = NullValueHandling.Ignore)]
+        public HealthStatusEnum HealthStatus { get; set; }
 
 
         /// <summary>
@@ -202,6 +322,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             sb.Append("  protocol: ").Append(Protocol).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  decryption: ").Append(Decryption).Append("\n");
+            sb.Append("  healthStatus: ").Append(HealthStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -229,6 +350,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             if (this.Protocol != input.Protocol) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Decryption != input.Decryption || (this.Decryption != null && !this.Decryption.Equals(input.Decryption))) return false;
+            if (this.HealthStatus != input.HealthStatus) return false;
 
             return true;
         }
@@ -250,6 +372,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
                 hashCode = hashCode * 59 + this.Protocol.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Decryption != null) hashCode = hashCode * 59 + this.Decryption.GetHashCode();
+                hashCode = hashCode * 59 + this.HealthStatus.GetHashCode();
                 return hashCode;
             }
         }

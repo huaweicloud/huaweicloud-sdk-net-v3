@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// Topic详情。
+        /// 查询Kafka主题详情
         /// </summary>
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ShowKafkaTopicDetailResponseBody> Body { get; set; }
+        public List<KafkaTopicDetailEntity> Body { get; set; }
 
 
 

@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public string JobId { get; set; }
 
         /// <summary>
-        /// 实例是否需要重启。 - “true”需要重启。 - “false”不需要重启。
+        /// **参数解释：** 实例是否需要重启。 **取值范围：** - “true”需要重启。 - “false”不需要重启。
         /// </summary>
         [JsonProperty("restart_required", NullValueHandling = NullValueHandling.Ignore)]
         public bool? RestartRequired { get; set; }

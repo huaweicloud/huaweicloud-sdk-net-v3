@@ -40,6 +40,18 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
         [JsonProperty("taxAmount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? TaxAmount { get; set; }
 
+        /// <summary>
+        /// |参数名称：是否展示| |参数的约束及描述：是否展示。Y：展示 N：不展示|
+        /// </summary>
+        [JsonProperty("taxVisibleFlag", NullValueHandling = NullValueHandling.Ignore)]
+        public string TaxVisibleFlag { get; set; }
+
+        /// <summary>
+        /// |参数名称：是否入账| |参数的约束及描述：是否入账。Y：入账 N：不入账|
+        /// </summary>
+        [JsonProperty("taxAccountingFlag", NullValueHandling = NullValueHandling.Ignore)]
+        public string TaxAccountingFlag { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +65,8 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
             sb.Append("  taxRate: ").Append(TaxRate).Append("\n");
             sb.Append("  subTaxClass: ").Append(SubTaxClass).Append("\n");
             sb.Append("  taxAmount: ").Append(TaxAmount).Append("\n");
+            sb.Append("  taxVisibleFlag: ").Append(TaxVisibleFlag).Append("\n");
+            sb.Append("  taxAccountingFlag: ").Append(TaxAccountingFlag).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,6 +89,8 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
             if (this.TaxRate != input.TaxRate || (this.TaxRate != null && !this.TaxRate.Equals(input.TaxRate))) return false;
             if (this.SubTaxClass != input.SubTaxClass || (this.SubTaxClass != null && !this.SubTaxClass.Equals(input.SubTaxClass))) return false;
             if (this.TaxAmount != input.TaxAmount || (this.TaxAmount != null && !this.TaxAmount.Equals(input.TaxAmount))) return false;
+            if (this.TaxVisibleFlag != input.TaxVisibleFlag || (this.TaxVisibleFlag != null && !this.TaxVisibleFlag.Equals(input.TaxVisibleFlag))) return false;
+            if (this.TaxAccountingFlag != input.TaxAccountingFlag || (this.TaxAccountingFlag != null && !this.TaxAccountingFlag.Equals(input.TaxAccountingFlag))) return false;
 
             return true;
         }
@@ -91,6 +107,8 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
                 if (this.TaxRate != null) hashCode = hashCode * 59 + this.TaxRate.GetHashCode();
                 if (this.SubTaxClass != null) hashCode = hashCode * 59 + this.SubTaxClass.GetHashCode();
                 if (this.TaxAmount != null) hashCode = hashCode * 59 + this.TaxAmount.GetHashCode();
+                if (this.TaxVisibleFlag != null) hashCode = hashCode * 59 + this.TaxVisibleFlag.GetHashCode();
+                if (this.TaxAccountingFlag != null) hashCode = hashCode * 59 + this.TaxAccountingFlag.GetHashCode();
                 return hashCode;
             }
         }

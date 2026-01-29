@@ -783,6 +783,58 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 删除工作项描述中的图片
+        ///
+        /// 删除工作项描述中的图片
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteIpdImageInIssueResponse DeleteIpdImageInIssue(DeleteIpdImageInIssueRequest deleteIpdImageInIssueRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteIpdImageInIssueRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/ipdprojectservice/projects/{project_id}/images", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteIpdImageInIssueRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteIpdImageInIssueResponse>(response);
+        }
+
+        public SyncInvoker<DeleteIpdImageInIssueResponse> DeleteIpdImageInIssueInvoker(DeleteIpdImageInIssueRequest deleteIpdImageInIssueRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteIpdImageInIssueRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/ipdprojectservice/projects/{project_id}/images", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteIpdImageInIssueRequest);
+            return new SyncInvoker<DeleteIpdImageInIssueResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteIpdImageInIssueResponse>);
+        }
+        
+        /// <summary>
+        /// 下载工作项描述中的图片
+        ///
+        /// 下载工作项描述中的图片
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DownloadIpdImageInIssueResponse DownloadIpdImageInIssue(DownloadIpdImageInIssueRequest downloadIpdImageInIssueRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(downloadIpdImageInIssueRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/ipdprojectservice/projects/{project_id}/images", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadIpdImageInIssueRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<DownloadIpdImageInIssueResponse>(response);
+        }
+
+        public SyncInvoker<DownloadIpdImageInIssueResponse> DownloadIpdImageInIssueInvoker(DownloadIpdImageInIssueRequest downloadIpdImageInIssueRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(downloadIpdImageInIssueRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/ipdprojectservice/projects/{project_id}/images", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadIpdImageInIssueRequest);
+            return new SyncInvoker<DownloadIpdImageInIssueResponse>(this, "GET", request, JsonUtils.DeSerialize<DownloadIpdImageInIssueResponse>);
+        }
+        
+        /// <summary>
         /// 查询项目工作项列表
         ///
         /// 查询Ipd项目的工作项列表
@@ -968,6 +1020,32 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/work-item/flow/transfer", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", transferWorkItemFlowRequest);
             return new SyncInvoker<TransferWorkItemFlowResponse>(this, "POST", request, JsonUtils.DeSerialize<TransferWorkItemFlowResponse>);
+        }
+        
+        /// <summary>
+        /// 上传图片到工作项描述中
+        ///
+        /// 上传图片并更新到工作项描述中
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UploadIpdImageInIssueResponse UploadIpdImageInIssue(UploadIpdImageInIssueRequest uploadIpdImageInIssueRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(uploadIpdImageInIssueRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/ipdprojectservice/projects/{project_id}/images", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", uploadIpdImageInIssueRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<UploadIpdImageInIssueResponse>(response);
+        }
+
+        public SyncInvoker<UploadIpdImageInIssueResponse> UploadIpdImageInIssueInvoker(UploadIpdImageInIssueRequest uploadIpdImageInIssueRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(uploadIpdImageInIssueRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/ipdprojectservice/projects/{project_id}/images", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", uploadIpdImageInIssueRequest);
+            return new SyncInvoker<UploadIpdImageInIssueResponse>(this, "POST", request, JsonUtils.DeSerialize<UploadIpdImageInIssueResponse>);
         }
         
         /// <summary>

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     {
 
         /// <summary>
-        /// **参数解释**： 产品类型。 **取值范围**： - single：单机。    - cluster：集群。 [- single.professional：单机专业版，AMQP版本产品类型。](tag:hws,hws_hk,hws_eu) [- cluster.professional：集群专业版，AMQP版本产品类型。](tag:hws,hws_hk,hws_eu)
+        /// **参数解释**： 产品类型。 **取值范围**： - single：单机。    - cluster：集群。 [- single.professional：单机专业版，AMQP版本产品类型。](tag:hws,hws_hk,hws_eu,srg) [- cluster.professional：集群专业版，AMQP版本产品类型。](tag:hws,hws_hk,hws_eu,srg)
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

@@ -70,6 +70,12 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         [JsonProperty("consume_orderly", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ConsumeOrderly { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 消费组是否在线。 **约束限制**： 不涉及。 **取值范围**： - true：消费组在线。 - false：消费组不在线。 **默认取值**： 不涉及。
+        /// </summary>
+        [JsonProperty("group_online", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? GroupOnline { get; set; }
+
 
 
         /// <summary>
@@ -88,6 +94,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             sb.Append("  retryMaxTime: ").Append(RetryMaxTime).Append("\n");
             sb.Append("  permissions: ").Append(Permissions).Append("\n");
             sb.Append("  consumeOrderly: ").Append(ConsumeOrderly).Append("\n");
+            sb.Append("  groupOnline: ").Append(GroupOnline).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,6 +122,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             if (this.RetryMaxTime != input.RetryMaxTime || (this.RetryMaxTime != null && !this.RetryMaxTime.Equals(input.RetryMaxTime))) return false;
             if (this.Permissions != input.Permissions || (this.Permissions != null && input.Permissions != null && !this.Permissions.SequenceEqual(input.Permissions))) return false;
             if (this.ConsumeOrderly != input.ConsumeOrderly || (this.ConsumeOrderly != null && !this.ConsumeOrderly.Equals(input.ConsumeOrderly))) return false;
+            if (this.GroupOnline != input.GroupOnline || (this.GroupOnline != null && !this.GroupOnline.Equals(input.GroupOnline))) return false;
 
             return true;
         }
@@ -136,6 +144,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 if (this.RetryMaxTime != null) hashCode = hashCode * 59 + this.RetryMaxTime.GetHashCode();
                 if (this.Permissions != null) hashCode = hashCode * 59 + this.Permissions.GetHashCode();
                 if (this.ConsumeOrderly != null) hashCode = hashCode * 59 + this.ConsumeOrderly.GetHashCode();
+                if (this.GroupOnline != null) hashCode = hashCode * 59 + this.GroupOnline.GetHashCode();
                 return hashCode;
             }
         }

@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// **参数解释**： 报告数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("total_num", NullValueHandling = NullValueHandling.Ignore)]
-        public Object TotalNum { get; set; }
+        public long? TotalNum { get; set; }
 
 
 

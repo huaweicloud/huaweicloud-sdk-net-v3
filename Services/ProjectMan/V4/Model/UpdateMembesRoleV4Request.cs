@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public UpdateMembesRoleV4RequestBody Body { get; set; }
+        public UpdateMembersRoleV4RequestBody Body { get; set; }
 
 
 

@@ -141,7 +141,7 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
         /// 调整的目标金额。 单位：元。精确至小数点后2位。
         /// </summary>
         [JsonProperty("budget_amount", NullValueHandling = NullValueHandling.Ignore)]
-        public double? BudgetAmount { get; set; }
+        public decimal? BudgetAmount { get; set; }
 
         /// <summary>
         /// 是否在设置客户预算的同时解除账号冻结： 0：否1：是 默认值为0。

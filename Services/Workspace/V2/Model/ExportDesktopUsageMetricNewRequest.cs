@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 查询截至时间(0时区)。
+        /// 查询截止时间(0时区)。
         /// </summary>
         [SDKProperty("end_time", IsQuery = true)]
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]

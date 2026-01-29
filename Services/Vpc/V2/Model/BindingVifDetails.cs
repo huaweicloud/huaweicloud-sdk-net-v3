@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// 辅助弹性网卡的vlan ID。
         /// </summary>
         [JsonProperty("vlan_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string VlanId { get; set; }
+        public int? VlanId { get; set; }
 
         /// <summary>
         /// 辅助弹性网卡的宿主网卡ID。

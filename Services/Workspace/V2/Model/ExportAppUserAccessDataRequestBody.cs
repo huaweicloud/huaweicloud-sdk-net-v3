@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 查询截至时间，格式为：UTC格式，例如\&quot;2022-05-11T11:45:42Z\&quot;。
+        /// 查询截止时间，格式为：UTC格式，例如\&quot;2022-05-11T11:45:42Z\&quot;。
         /// </summary>
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string EndTime { get; set; }

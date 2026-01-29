@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// Obs桶查询列表
         /// </summary>
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ListObsBucketsResponseBody> Body { get; set; }
+        public List<ObsBucketEntity> Body { get; set; }
 
 
 

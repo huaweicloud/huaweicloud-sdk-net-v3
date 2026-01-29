@@ -657,6 +657,32 @@ namespace HuaweiCloud.SDK.CodeArtsArtifact.V2
         }
         
         /// <summary>
+        /// 查询用户权限
+        ///
+        /// 查询用户在项目下的角色及权限，如创建仓库、编辑仓库、上传、下载、导入和导出等权限。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListUserPrivilegesResponse ListUserPrivileges(ListUserPrivilegesRequest listUserPrivilegesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listUserPrivilegesRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/user/{project_id}/privileges", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUserPrivilegesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListUserPrivilegesResponse>(response);
+        }
+
+        public SyncInvoker<ListUserPrivilegesResponse> ListUserPrivilegesInvoker(ListUserPrivilegesRequest listUserPrivilegesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listUserPrivilegesRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/user/{project_id}/privileges", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUserPrivilegesRequest);
+            return new SyncInvoker<ListUserPrivilegesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListUserPrivilegesResponse>);
+        }
+        
+        /// <summary>
         /// 编辑仓库
         ///
         /// 编辑仓库
@@ -1087,6 +1113,30 @@ namespace HuaweiCloud.SDK.CodeArtsArtifact.V2
         }
         
         /// <summary>
+        /// 查询项目列表
+        ///
+        /// 调用该接口可以快速查询项目列表信息，包含仓库和项目的关联关系，以便于仓库的管理和协作。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowProjectRelatedRepositoryResponse ShowProjectRelatedRepository(ShowProjectRelatedRepositoryRequest showProjectRelatedRepositoryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/maven/project/repository", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectRelatedRepositoryRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowProjectRelatedRepositoryResponse>(response);
+        }
+
+        public SyncInvoker<ShowProjectRelatedRepositoryResponse> ShowProjectRelatedRepositoryInvoker(ShowProjectRelatedRepositoryRequest showProjectRelatedRepositoryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/maven/project/repository", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectRelatedRepositoryRequest);
+            return new SyncInvoker<ShowProjectRelatedRepositoryResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowProjectRelatedRepositoryResponse>);
+        }
+        
+        /// <summary>
         /// 获取项目下文件版本信息列表
         ///
         /// 获取项目下文件版本信息列表
@@ -1136,6 +1186,32 @@ namespace HuaweiCloud.SDK.CodeArtsArtifact.V2
             var urlPath = HttpUtils.AddUrlPath("/devreposerver/v5/{project_id}/storage", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectStorageInfoRequest);
             return new SyncInvoker<ShowProjectStorageInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowProjectStorageInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 查询项目下的版本数量
+        ///
+        /// 当发布库版本众多时，用户可根据项目ID查询对应发布库的版本数量，以便于管理和跟踪不同版本的发布情况。该接口支持通过版本名称过滤。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowProjectVersionsCountResponse ShowProjectVersionsCount(ShowProjectVersionsCountRequest showProjectVersionsCountRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showProjectVersionsCountRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/versions/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectVersionsCountRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowProjectVersionsCountResponse>(response);
+        }
+
+        public SyncInvoker<ShowProjectVersionsCountResponse> ShowProjectVersionsCountInvoker(ShowProjectVersionsCountRequest showProjectVersionsCountRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showProjectVersionsCountRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/versions/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectVersionsCountRequest);
+            return new SyncInvoker<ShowProjectVersionsCountResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowProjectVersionsCountResponse>);
         }
         
         /// <summary>
@@ -1247,6 +1323,34 @@ namespace HuaweiCloud.SDK.CodeArtsArtifact.V2
         }
         
         /// <summary>
+        /// 查询仓库权限
+        ///
+        /// 根据仓库ID查询指定仓库的权限，包含各角色对该仓库的权限信息。当用户需要指定仓库的指定权限时，可调用该接口查看需要授权的角色。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowRepositoryRolesPrivilegeResponse ShowRepositoryRolesPrivilege(ShowRepositoryRolesPrivilegeRequest showRepositoryRolesPrivilegeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showRepositoryRolesPrivilegeRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(showRepositoryRolesPrivilegeRequest.RepoId, out var valueOfRepoId)) urlParam.Add("repo_id", valueOfRepoId);
+            var urlPath = HttpUtils.AddUrlPath("/cloudartifact/v5/repositories/{project_id}/{repo_id}/privileges", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRepositoryRolesPrivilegeRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowRepositoryRolesPrivilegeResponse>(response);
+        }
+
+        public SyncInvoker<ShowRepositoryRolesPrivilegeResponse> ShowRepositoryRolesPrivilegeInvoker(ShowRepositoryRolesPrivilegeRequest showRepositoryRolesPrivilegeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showRepositoryRolesPrivilegeRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(showRepositoryRolesPrivilegeRequest.RepoId, out var valueOfRepoId)) urlParam.Add("repo_id", valueOfRepoId);
+            var urlPath = HttpUtils.AddUrlPath("/cloudartifact/v5/repositories/{project_id}/{repo_id}/privileges", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRepositoryRolesPrivilegeRequest);
+            return new SyncInvoker<ShowRepositoryRolesPrivilegeResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRepositoryRolesPrivilegeResponse>);
+        }
+        
+        /// <summary>
         /// 仓库用量查询
         ///
         /// 仓库用量查询
@@ -1321,6 +1425,32 @@ namespace HuaweiCloud.SDK.CodeArtsArtifact.V2
         }
         
         /// <summary>
+        /// 查询发布库版本列表
+        ///
+        /// 当发布库版本众多时，用户可根据项目ID分页查询对应发布库下的版本列表。该接口支持版本名称的模糊搜索。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowVersionListResponse ShowVersionList(ShowVersionListRequest showVersionListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showVersionListRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/versions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVersionListRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowVersionListResponse>(response);
+        }
+
+        public SyncInvoker<ShowVersionListResponse> ShowVersionListInvoker(ShowVersionListRequest showVersionListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showVersionListRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/versions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVersionListRequest);
+            return new SyncInvoker<ShowVersionListResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVersionListResponse>);
+        }
+        
+        /// <summary>
         /// 编辑非maven仓库信息
         ///
         /// 编辑非maven仓库信息
@@ -1342,6 +1472,32 @@ namespace HuaweiCloud.SDK.CodeArtsArtifact.V2
             var urlPath = HttpUtils.AddUrlPath("/cloudartifact/v5/artifact/", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateArtifactoryRequest);
             return new SyncInvoker<UpdateArtifactoryResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateArtifactoryResponse>);
+        }
+        
+        /// <summary>
+        /// 更新角色权限
+        ///
+        /// 根据角色ID更新指定角色的权限，如创建仓库、编辑仓库、上传、下载、导入和导出等权限，实现权限的集中管理和自动化分配。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateRepoRolesPrivilegeResponse UpdateRepoRolesPrivilege(UpdateRepoRolesPrivilegeRequest updateRepoRolesPrivilegeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateRepoRolesPrivilegeRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
+            var urlPath = HttpUtils.AddUrlPath("/cloudartifact/v5/repositories/{role_id}/privileges", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRepoRolesPrivilegeRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateRepoRolesPrivilegeResponse>(response);
+        }
+
+        public SyncInvoker<UpdateRepoRolesPrivilegeResponse> UpdateRepoRolesPrivilegeInvoker(UpdateRepoRolesPrivilegeRequest updateRepoRolesPrivilegeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateRepoRolesPrivilegeRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
+            var urlPath = HttpUtils.AddUrlPath("/cloudartifact/v5/repositories/{role_id}/privileges", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRepoRolesPrivilegeRequest);
+            return new SyncInvoker<UpdateRepoRolesPrivilegeResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateRepoRolesPrivilegeResponse>);
         }
         
     }

@@ -23,10 +23,10 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public string Message { get; set; }
 
         /// <summary>
-        /// 返回对象
+        /// 
         /// </summary>
         [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Result { get; set; }
+        public IssueListResult Result { get; set; }
 
         /// <summary>
         /// 返回状态

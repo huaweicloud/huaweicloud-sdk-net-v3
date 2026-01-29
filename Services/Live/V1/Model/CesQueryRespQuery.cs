@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         [JsonProperty("medialive_tailor", NullValueHandling = NullValueHandling.Ignore)]
         public CesDimsItem MedialiveTailor { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("region", NullValueHandling = NullValueHandling.Ignore)]
+        public CesDimsItem Region { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             sb.Append("  medialivePackage: ").Append(MedialivePackage).Append("\n");
             sb.Append("  medialiveConnect: ").Append(MedialiveConnect).Append("\n");
             sb.Append("  medialiveTailor: ").Append(MedialiveTailor).Append("\n");
+            sb.Append("  region: ").Append(Region).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,6 +106,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             if (this.MedialivePackage != input.MedialivePackage || (this.MedialivePackage != null && !this.MedialivePackage.Equals(input.MedialivePackage))) return false;
             if (this.MedialiveConnect != input.MedialiveConnect || (this.MedialiveConnect != null && !this.MedialiveConnect.Equals(input.MedialiveConnect))) return false;
             if (this.MedialiveTailor != input.MedialiveTailor || (this.MedialiveTailor != null && !this.MedialiveTailor.Equals(input.MedialiveTailor))) return false;
+            if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
 
             return true;
         }
@@ -118,6 +126,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
                 if (this.MedialivePackage != null) hashCode = hashCode * 59 + this.MedialivePackage.GetHashCode();
                 if (this.MedialiveConnect != null) hashCode = hashCode * 59 + this.MedialiveConnect.GetHashCode();
                 if (this.MedialiveTailor != null) hashCode = hashCode * 59 + this.MedialiveTailor.GetHashCode();
+                if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
                 return hashCode;
             }
         }

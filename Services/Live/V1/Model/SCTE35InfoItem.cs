@@ -287,6 +287,121 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             }
         }
 
+        /// <summary>
+        /// **参数解释**： 该广告信号对应的region类型，是主region，还是备region **取值范围**：  - master: 主region  - slave: 备region 
+        /// </summary>
+        /// <value>**参数解释**： 该广告信号对应的region类型，是主region，还是备region **取值范围**：  - master: 主region  - slave: 备region </value>
+        [JsonConverter(typeof(EnumClassConverter<RegionTypeEnum>))]
+        public class RegionTypeEnum
+        {
+            /// <summary>
+            /// Enum MASTER for value: master
+            /// </summary>
+            public static readonly RegionTypeEnum MASTER = new RegionTypeEnum("master");
+
+            /// <summary>
+            /// Enum SLAVE for value: slave
+            /// </summary>
+            public static readonly RegionTypeEnum SLAVE = new RegionTypeEnum("slave");
+
+            private static readonly Dictionary<string, RegionTypeEnum> StaticFields =
+            new Dictionary<string, RegionTypeEnum>()
+            {
+                { "master", MASTER },
+                { "slave", SLAVE },
+            };
+
+            private string _value;
+
+            public RegionTypeEnum()
+            {
+
+            }
+
+            public RegionTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static RegionTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as RegionTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(RegionTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(RegionTypeEnum a, RegionTypeEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(RegionTypeEnum a, RegionTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 信号类型，splice_insert/time_signal。
@@ -328,6 +443,17 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         [JsonProperty("raw_splice", NullValueHandling = NullValueHandling.Ignore)]
         public string RawSplice { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 该广告信号对应的region类型，是主region，还是备region **取值范围**：  - master: 主region  - slave: 备region 
+        /// </summary>
+        [JsonProperty("region_type", NullValueHandling = NullValueHandling.Ignore)]
+        public RegionTypeEnum RegionType { get; set; }
+        /// <summary>
+        /// **参数解释**： 该广告信号对应的region区域 **取值范围**： 华为云的region 
+        /// </summary>
+        [JsonProperty("region", NullValueHandling = NullValueHandling.Ignore)]
+        public string Region { get; set; }
+
 
 
         /// <summary>
@@ -344,6 +470,8 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             sb.Append("  segmentationType: ").Append(SegmentationType).Append("\n");
             sb.Append("  base64Data: ").Append(Base64Data).Append("\n");
             sb.Append("  rawSplice: ").Append(RawSplice).Append("\n");
+            sb.Append("  regionType: ").Append(RegionType).Append("\n");
+            sb.Append("  region: ").Append(Region).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -369,6 +497,8 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             if (this.SegmentationType != input.SegmentationType) return false;
             if (this.Base64Data != input.Base64Data || (this.Base64Data != null && !this.Base64Data.Equals(input.Base64Data))) return false;
             if (this.RawSplice != input.RawSplice || (this.RawSplice != null && !this.RawSplice.Equals(input.RawSplice))) return false;
+            if (this.RegionType != input.RegionType) return false;
+            if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
 
             return true;
         }
@@ -388,6 +518,8 @@ namespace HuaweiCloud.SDK.Live.V1.Model
                 hashCode = hashCode * 59 + this.SegmentationType.GetHashCode();
                 if (this.Base64Data != null) hashCode = hashCode * 59 + this.Base64Data.GetHashCode();
                 if (this.RawSplice != null) hashCode = hashCode * 59 + this.RawSplice.GetHashCode();
+                hashCode = hashCode * 59 + this.RegionType.GetHashCode();
+                if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
                 return hashCode;
             }
         }

@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string Source { get; set; }
 
         /// <summary>
-        /// **参数解释**： 绑定目标端类型。 **取值范围**： - exchange：交换机。 - queue：队列。[AMQP版本只支持绑定queue。](tag:hws,hws_hk,hws_eu)
+        /// **参数解释**： 绑定目标端类型。 **取值范围**： - exchange：交换机。 - queue：队列。[AMQP版本只支持绑定queue。](tag:hws,hws_hk,hws_eu,srg)
         /// </summary>
         [JsonProperty("destination_type", NullValueHandling = NullValueHandling.Ignore)]
         public string DestinationType { get; set; }

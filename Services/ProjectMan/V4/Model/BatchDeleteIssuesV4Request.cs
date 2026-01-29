@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public BatchDelelteIssuesRequestV4 Body { get; set; }
+        public BatchDeleteIssuesRequestV4 Body { get; set; }
 
 
 

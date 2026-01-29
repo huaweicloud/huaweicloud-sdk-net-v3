@@ -1,3 +1,260 @@
+# 3.1.182 2026-01-29
+
+### HuaweiCloud SDK BSS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListPartnerAccountChangeRecords**
+    - 响应参数变更
+      - `+ records.customer_id`
+      - `+ records.account_name`
+
+### HuaweiCloud SDK BSSINTL
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpdateSubCustomerBudget**
+    - 请求参数变更
+      - `* budget_amount: double -> bigdecimal`
+  - **ListInvoices**
+    - 响应参数变更
+      - `+ invoices.taxList.taxVisibleFlag`
+      - `+ invoices.taxList.taxAccountingFlag`
+
+### HuaweiCloud SDK CodeArtsArtifact
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持以下接口：
+    - `ListUserPrivileges`
+    - `ShowProjectRelatedRepository`
+    - `ShowVersionList`
+    - `ShowProjectVersionsCount`
+    - `ShowRepositoryRolesPrivilege`
+    - `UpdateRepoRolesPrivilege`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowApplicableInstances**
+    - 请求参数变更
+      - `+ instance_name`
+      - `+ instance_id`
+
+### HuaweiCloud SDK Kafka
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除以下接口：
+    - `ShowInstanceExtendProductInfo`
+    - `ResizeInstance`
+    - `ShowEngineInstanceExtendProductInfo`
+    - `ResizeEngineInstance`
+    - `ListUserPolicies`
+    - `SetUserPolicies`
+    - `DeleteKafkaMessage`
+    - `ListProducts`
+    - `CreateReassignmentTask`
+    - `ShowSpecConvertProduct`
+    - `CreatePostPaidInstance`
+  - **ShowInstance**
+    - 响应参数变更
+      - `* cross_vpc_info: object -> string`
+      - `* public_cross_vpc_info: object -> string`
+  - **ListInstances**
+    - 响应参数变更
+      - `* instances.cross_vpc_info: object -> string`
+      - `* instances.public_cross_vpc_info: object -> string`
+
+### HuaweiCloud SDK Live
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListCesDimsInfo**
+    - 响应参数变更
+      - `+ query.region`
+  - **ShowChannelStatistic**
+    - 请求参数变更
+      - `+ region_type`
+    - 响应参数变更
+      - `+ scte35.scte35_info.region_type`
+      - `+ scte35.scte35_info.region`
+  - **ShowFlowDetail**
+    - 响应参数变更
+      - `+ sources.health_status`
+  - **ModifyFlowSources**
+    - 请求参数变更
+      - `+ source.health_status`
+    - 响应参数变更
+      - `+ source.health_status`
+  - **CreateFlows**
+    - 请求参数变更
+      - `+ sources.health_status`
+    - 响应参数变更
+      - `+ flow.sources.health_status`
+  - **ModifyOttChannelInfoEndPoints**
+    - 请求参数变更
+      - `+ endpoints.dash_package.id`
+      - `+ endpoints.dash_package.manifest_selection`
+      - `+ endpoints.mss_package.id`
+      - `+ endpoints.mss_package.manifest_selection`
+      - `+ endpoints.hls_package.id`
+      - `+ endpoints.hls_package.manifest_selection`
+  - **CreateOttChannelInfo**
+    - 请求参数变更
+      - `+ endpoints.dash_package.id`
+      - `+ endpoints.dash_package.manifest_selection`
+      - `+ endpoints.mss_package.id`
+      - `+ endpoints.mss_package.manifest_selection`
+      - `+ endpoints.hls_package.id`
+      - `+ endpoints.hls_package.manifest_selection`
+  - **ListOttChannelInfo**
+    - 响应参数变更
+      - `+ channels.endpoints.dash_package.id`
+      - `+ channels.endpoints.dash_package.manifest_selection`
+      - `+ channels.endpoints.mss_package.id`
+      - `+ channels.endpoints.mss_package.manifest_selection`
+      - `+ channels.endpoints.hls_package.id`
+      - `+ channels.endpoints.hls_package.manifest_selection`
+
+### HuaweiCloud SDK ProjectMan
+
+- _接口版本_
+  - V4
+- _新增特性_
+  - 支持接口`DownloadIpdImageInIssue`、`UploadIpdImageInIssue`、`DeleteIpdImageInIssue`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListIpdProjectIssues**
+    - 响应参数变更
+      - `+ result.issues`
+      - `+ result.total`
+      - `* result: object -> object<IssueListResult>`
+
+### HuaweiCloud SDK RabbitMQ
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`ShowInstanceExtendProductInfo`、`ResizeInstance`、`CreatePostPaidInstance`
+
+### HuaweiCloud SDK RocketMQ
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除以下接口：
+    - `ExportDlqMessage`
+    - `ShowUpgradeInstanceVersion`
+    - `BatchResetRocketMqMessageOffsets`
+    - `DeleteRocketMqMigrationTask`
+    - `BatchDeleteDiagnosisReport`
+  - **ShowGroup**
+    - 响应参数变更
+      - `+ group_online`
+  - **ListDiagnosisReports**
+    - 响应参数变更
+      - `* total_num: object -> int64`
+  - **ListDiagnosisReportsForRocketMq**
+    - 响应参数变更
+      - `* total_num: object -> int64`
+
+### HuaweiCloud SDK VPC
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListPorts**
+    - 响应参数变更
+      - `* ports.binding:vif_details.vlan_id: string -> int32`
+  - **CreatePort**
+    - 响应参数变更
+      - `* port.binding:vif_details.vlan_id: string -> int32`
+  - **ShowPort**
+    - 响应参数变更
+      - `* port.binding:vif_details.vlan_id: string -> int32`
+  - **UpdatePort**
+    - 响应参数变更
+      - `* port.binding:vif_details.vlan_id: string -> int32`
+  - **NeutronListPorts**
+    - 响应参数变更
+      - `* ports.binding:vif_details.vlan_id: string -> int32`
+  - **NeutronCreatePort**
+    - 响应参数变更
+      - `* port.binding:vif_details.vlan_id: string -> int32`
+  - **NeutronShowPort**
+    - 响应参数变更
+      - `* port.binding:vif_details.vlan_id: string -> int32`
+  - **NeutronUpdatePort**
+    - 响应参数变更
+      - `* port.binding:vif_details.vlan_id: string -> int32`
+
+### HuaweiCloud SDK VPC
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListPorts**
+    - 响应参数变更
+      - `* ports.binding:vif_details.vlan_id: string -> int32`
+  - **ShowPort**
+    - 响应参数变更
+      - `* port.binding:vif_details.vlan_id: string -> int32`
+  - **AddSecurityGroups**
+    - 响应参数变更
+      - `* port.binding:vif_details.vlan_id: string -> int32`
+  - **RemoveSecurityGroups**
+    - 响应参数变更
+      - `* port.binding:vif_details.vlan_id: string -> int32`
+
 # 3.1.181 2026-01-22
 
 ### HuaweiCloud SDK CDN

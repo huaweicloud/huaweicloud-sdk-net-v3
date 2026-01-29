@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     {
 
         /// <summary>
-        /// **参数解释**： 存储IO规格。 **取值范围**： - dms.physical.storage.high.v2：高IO云硬盘。 - dms.physical.storage.ultra.v2：超高IO云硬盘。 [- dms.physical.storage.general：通用型SSD云硬盘。](tag:hws,hws_hk,ax) [- dms.physical.storage.extreme：极速型SSD云硬盘。](tag:hws,hws_hk,ax)
+        /// **参数解释**： 存储IO规格。 **取值范围**： - dms.physical.storage.high.v2：高IO云硬盘。 - dms.physical.storage.ultra.v2：超高IO云硬盘。 [- dms.physical.storage.general：通用型SSD云硬盘。](tag:hws,hws_hk,ax,dt) [- dms.physical.storage.extreme：极速型SSD云硬盘。](tag:hws,hws_hk,ax,dt)
         /// </summary>
         [JsonProperty("io_spec", NullValueHandling = NullValueHandling.Ignore)]
         public string IoSpec { get; set; }
