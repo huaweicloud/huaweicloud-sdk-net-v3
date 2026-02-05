@@ -18,6 +18,7 @@
         <Description>HuaweiCloud .net SDK</Description>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageReadmeFile>README.md</PackageReadmeFile>
+        <ProjectGuid>{E7028C42-3FA4-4994-98DE-47B029421C85}</ProjectGuid>
     </PropertyGroup>
 
     <ItemGroup>

@@ -1,3 +1,155 @@
+# 3.1.183 2026-02-05
+
+### HuaweiCloud SDK DDM
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `BatchModifyReadWriteStrategy`
+    - `ListSqlBlack`
+    - `ModifySqlBlackList`
+    - `ListSlowLogAnalysis`
+    - `ShowIpGroup`
+    - `SwitchIpGroup`
+    - `ShowMigrationLog`
+    - `CheckDataNodeConnection`
+    - `ListDdms`
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the API `CheckDataNodeConnectionV0V3`
+  - **ListConfigurationApplyHistories**
+    - changes of response param
+      - `+ total`
+      - `+ histories`
+      - `- rds_check_infos`
+  - **CopyConfiguration**
+    - changes of request param
+      - `+ new_name`
+      - `+ description`
+      - `- copy_para`
+      - `- source_id`
+  - **ListInstancesConfigurations**
+    - changes of response param
+      - `+ total`
+      - `- instance_count_limit`
+      - `+ entities.instance_id`
+      - `+ entities.instance_name`
+      - `- entities.entity_id`
+      - `- entities.config_id`
+  - **CompareParameterGroups**
+    - changes of request param
+      - `+ source_id`
+      - `+ target_id`
+      - `- diff_para`
+  - **ShowDdmDetail**
+    - changes of response param
+      - `* instances.tags_info: list<TagsInfo> -> object`
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `DeleteBackupSelection`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK WorkspaceApp
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `CheckPublishApp`
+    - `ChangeCluster`
+    - `ListHotspotSessionConfig`
+    - `CreateHotspotSessionConfig`
+    - `UpdateHotspotSessionConfig`
+    - `ListNonMigrationUsers`
+    - `UpdateNonMigrationUsers`
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the APIs `ShowPrivacyStatement`, `SignPrivacyStatement`
+  - **RecreateServerImage**
+    - changes of request param
+      - `+ execute_sysprep`
+  - **ListAppConnection**
+    - changes of response param
+      - `+ items.app_id`
+  - **ShowScalingPolicy**
+    - changes of response param
+      - `+ scaling_policy_by_resource`
+  - **CreateOrUpdateScalingPolicy**
+    - changes of request param
+      - `+ scaling_policy_by_resource`
+    - changes of response param
+      - `+ scaling_policy_by_resource`
+  - **ListProjectConfigs**
+    - changes of response param
+      - `+ items.cluster_group_id`
+  - **ShowProjectConfig**
+    - changes of response param
+      - `+ project_config.cluster_group_id`
+  - **CreateCloudStorage**
+    - changes of request param
+      - `+ project_config_cluster_group_id_list`
+      - `- project_config_ids`
+  - **ListCloudStorage**
+    - changes of response param
+      - `+ items.cluster_group_id`
+  - **ShowServerGroup**
+    - changes of response param
+      - `+ scaling_policy_by_resource`
+      - `+ scaling_policy.scaling_policy_by_resource`
+  - **CreateImageServer**
+    - changes of request param
+      - `+ X-Linked-Id`
+  - **CreateServerGroup**
+    - changes of response param
+      - `+ scaling_policy_by_resource`
+      - `+ scaling_policy.scaling_policy_by_resource`
+  - **ListServerGroups**
+    - changes of response param
+      - `+ scaling_policy_by_resource`
+      - `+ items.scaling_policy.scaling_policy_by_resource`
+  - **ShowOriginalPolicyInfo**
+    - changes of response param
+      - `+ policies.user_profile_management`
+  - **ListPolicyOfPolicyGroup**
+    - changes of response param
+      - `+ policies.user_profile_management`
+  - **ListPolicyGroup**
+    - changes of response param
+      - `+ items.policies.user_profile_management`
+  - **CreatePolicyGroup**
+    - changes of request param
+      - `+ policy_group.policies.user_profile_management`
+  - **ShowPolicyGroup**
+    - changes of response param
+      - `+ policy_group.policies.user_profile_management`
+  - **UpdatePolicyGroup**
+    - changes of request param
+      - `+ policy_group.policies.user_profile_management`
+  - **ListPolicyGroupDetailInfo**
+    - changes of response param
+      - `+ items.policies.user_profile_management`
+  - **ListPolicyTemplate**
+    - changes of response param
+      - `- items.targets`
+      - `- items.policies`
+      - `* items: list<PolicyGroup> -> list<PolicyGroupForTemplate>`
+  - **CreatePolicyTemplate**
+    - changes of request param
+      - `+ policy_group.policies.user_profile_management`
+  - **UpdatePolicyTemplate**
+    - changes of request param
+      - `+ policy_group.policies.user_profile_management`
+
 # 3.1.182 2026-01-29
 
 ### HuaweiCloud SDK BSS

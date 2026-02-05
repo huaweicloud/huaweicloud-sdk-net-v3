@@ -158,7 +158,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string PrimaryServerGroupId { get; set; }
 
         /// <summary>
-        /// 是否启用服务器组。
+        /// 是否启用服务器组： - true： 启用 - false： 禁用
         /// </summary>
         [JsonProperty("server_group_status", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ServerGroupStatus { get; set; }

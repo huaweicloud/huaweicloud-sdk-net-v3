@@ -113,7 +113,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string CloudServiceType { get; set; }
 
         /// <summary>
-        /// 磁盘产品类型。
+        /// 磁盘产品类型： - workspace
         /// </summary>
         [JsonProperty("volume_product_type", NullValueHandling = NullValueHandling.Ignore)]
         public string VolumeProductType { get; set; }
@@ -155,7 +155,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string PackageType { get; set; }
 
         /// <summary>
-        /// 系列类型。
+        /// 系列类型： - d7 - c7
         /// </summary>
         [JsonProperty("series_type", NullValueHandling = NullValueHandling.Ignore)]
         public string SeriesType { get; set; }

@@ -23,13 +23,13 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public Dictionary<string, List<AvailabilityZoneInfo>> Azs { get; set; }
 
         /// <summary>
-        /// 默认站点类型。
+        /// 默认站点类型： - CENTER - IES
         /// </summary>
         [JsonProperty("default_type", NullValueHandling = NullValueHandling.Ignore)]
         public string DefaultType { get; set; }
 
         /// <summary>
-        /// 云应用支持的站点类型。
+        /// 云应用支持的站点类型： - CENTER - IES
         /// </summary>
         [JsonProperty("support_type", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> SupportType { get; set; }

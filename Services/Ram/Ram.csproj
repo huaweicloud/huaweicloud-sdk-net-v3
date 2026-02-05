@@ -15,13 +15,14 @@
         <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
         <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
         <PackageId>HuaweiCloud.SDK.Ram</PackageId>
-        <Version>3.1.182</Version>
+        <Version>3.1.183</Version>
         <Authors>HuaweiCloud</Authors>
         <Copyright>Copyright 2023 Huawei Technologies Co., Ltd.</Copyright>
         <Company>Huawei Technologies Co., Ltd.</Company>
         <Description>HuaweiCloud .net SDK</Description>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageReadmeFile>README.md</PackageReadmeFile>
+        <ProjectGuid>{3dbd55e0-4b6b-03fe-f82f-961c2fc28386}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
         <None Include="..\..\LICENSE" Pack="true" PackagePath=""/>

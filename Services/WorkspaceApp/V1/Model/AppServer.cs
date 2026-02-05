@@ -125,7 +125,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string OrderId { get; set; }
 
         /// <summary>
-        /// 是否维护状态。
+        /// 服务器维护状态： - true : 维护态的实例。 - false: 非维护态的实例。
         /// </summary>
         [JsonProperty("maintain_status", NullValueHandling = NullValueHandling.Ignore)]
         public bool? MaintainStatus { get; set; }

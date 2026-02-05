@@ -17,61 +17,61 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
     {
 
         /// <summary>
-        /// 组ID。
+        /// **参数解释**：  组ID。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 名称。
+        /// **参数解释**：  名称。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 角色。
+        /// **参数解释**：  角色。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("role", NullValueHandling = NullValueHandling.Ignore)]
         public string Role { get; set; }
 
         /// <summary>
-        /// 组ip。
+        /// **参数解释**：  组ip。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("endpoint", NullValueHandling = NullValueHandling.Ignore)]
         public string Endpoint { get; set; }
 
         /// <summary>
-        /// ipv6。
+        /// **参数解释**：  ipv6。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("ipv6_endpoint", NullValueHandling = NullValueHandling.Ignore)]
         public string Ipv6Endpoint { get; set; }
 
         /// <summary>
-        /// 节点数量。
+        /// **参数解释**：  节点数量。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("node_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? NodeCount { get; set; }
 
         /// <summary>
-        /// 负载均衡。
+        /// **参数解释**：  负载均衡。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("load_balance", NullValueHandling = NullValueHandling.Ignore)]
         public bool? LoadBalance { get; set; }
 
         /// <summary>
-        /// 是否默认组。
+        /// **参数解释**：  是否默认组。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("is_default_group", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsDefaultGroup { get; set; }
 
         /// <summary>
-        /// 其他信息。
+        /// **参数解释**：  其他信息。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("extend_map", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, string> ExtendMap { get; set; }
 
         /// <summary>
-        /// 节点信息。
+        /// **参数解释**：  节点信息。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("nodes", NullValueHandling = NullValueHandling.Ignore)]
         public List<DdmNodeInfo> Nodes { get; set; }

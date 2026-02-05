@@ -17,199 +17,199 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
     {
 
         /// <summary>
-        /// 实例ID。
+        /// **参数解释**：  实例ID，此参数是实例的唯一标识。  **参数范围**：  只能由英文字母、数字组成，后缀为in09，长度为36个字符。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 实例名称。
+        /// **参数解释**：  实例名称。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 实例别名。
+        /// **参数解释**：  实例别名。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("alias", NullValueHandling = NullValueHandling.Ignore)]
         public string Alias { get; set; }
 
         /// <summary>
-        /// 项目ID。
+        /// **参数解释**：  租户在某一Region下的project ID。  获取方法请参见[获取项目ID](https://support.huaweicloud.com/api-ddm/ddm_api_01_0063.html)。  **参数范围**：  只能由英文字母、数字组成，且长度为32个字符。 
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 集群模式。
+        /// **参数解释**：  集群模式。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("cluster_mode", NullValueHandling = NullValueHandling.Ignore)]
         public string ClusterMode { get; set; }
 
         /// <summary>
-        /// 状态。
+        /// **参数解释**：  状态。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// bpdomain_id
+        /// **参数解释**：  bpdomain_id。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("bpdomain_id", NullValueHandling = NullValueHandling.Ignore)]
         public string BpdomainId { get; set; }
 
         /// <summary>
-        /// 账户ID。
+        /// **参数解释**：  账户ID。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("user_id", NullValueHandling = NullValueHandling.Ignore)]
         public string UserId { get; set; }
 
         /// <summary>
-        /// 数据库版本。
+        /// **参数解释**：  数据库版本。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("datastore_version", NullValueHandling = NullValueHandling.Ignore)]
         public string DatastoreVersion { get; set; }
 
         /// <summary>
-        /// 数据库类型。
+        /// **参数解释**：  数据库类型。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("datastore_type", NullValueHandling = NullValueHandling.Ignore)]
         public string DatastoreType { get; set; }
 
         /// <summary>
-        /// 创建时间。
+        /// **参数解释**：  创建时间。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("create_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreateAt { get; set; }
 
         /// <summary>
-        /// 更新时间。
+        /// **参数解释**：  更新时间。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("update_at", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdateAt { get; set; }
 
         /// <summary>
-        /// 删除时间。
+        /// **参数解释**：  删除时间。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("delete_at", NullValueHandling = NullValueHandling.Ignore)]
         public string DeleteAt { get; set; }
 
         /// <summary>
-        /// 是否有版本可升级。
+        /// **参数解释**：  是否有版本可升级。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("new_version_available", NullValueHandling = NullValueHandling.Ignore)]
         public bool? NewVersionAvailable { get; set; }
 
         /// <summary>
-        /// 是否有版本可回滚。
+        /// **参数解释**：  是否有版本可回滚。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("rollback_version_available", NullValueHandling = NullValueHandling.Ignore)]
         public bool? RollbackVersionAvailable { get; set; }
 
         /// <summary>
-        /// 是否有版本可降级。
+        /// **参数解释**：  是否有版本可降级。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("degrade_version_available", NullValueHandling = NullValueHandling.Ignore)]
         public bool? DegradeVersionAvailable { get; set; }
 
         /// <summary>
-        /// 公共ip。
+        /// **参数解释**：  公共ip。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("public_ip", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicIp { get; set; }
 
         /// <summary>
-        /// 端口。
+        /// **参数解释**：  端口。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
         public string Port { get; set; }
 
         /// <summary>
-        /// 创建失败原因编码。
+        /// **参数解释**：  创建失败原因编码。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("create_fail_error_code", NullValueHandling = NullValueHandling.Ignore)]
         public string CreateFailErrorCode { get; set; }
 
         /// <summary>
-        /// 时区。
+        /// **参数解释**：  时区。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("time_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string TimeZone { get; set; }
 
         /// <summary>
-        /// 付费模式。
+        /// **参数解释**：  付费模式。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("pay_model", NullValueHandling = NullValueHandling.Ignore)]
         public string PayModel { get; set; }
 
         /// <summary>
-        /// 订单ID。
+        /// **参数解释**：  订单ID。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
         public string OrderId { get; set; }
 
         /// <summary>
-        /// 周期。
+        /// **参数解释**：  周期。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("period", NullValueHandling = NullValueHandling.Ignore)]
         public int? Period { get; set; }
 
         /// <summary>
-        /// 是否冻结。
+        /// **参数解释**：  是否冻结。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("is_frozen", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsFrozen { get; set; }
 
         /// <summary>
-        /// 冻结时间。
+        /// **参数解释**：  冻结时间。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("frozen_time", NullValueHandling = NullValueHandling.Ignore)]
         public string FrozenTime { get; set; }
 
         /// <summary>
-        /// 锁状态。
+        /// **参数解释**：  锁状态。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("actions", NullValueHandling = NullValueHandling.Ignore)]
         public List<ActionInfo> Actions { get; set; }
 
         /// <summary>
-        /// 是否只有默认组。
+        /// **参数解释**：  是否只有默认组。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("only_default_group", NullValueHandling = NullValueHandling.Ignore)]
         public bool? OnlyDefaultGroup { get; set; }
 
         /// <summary>
-        /// 组信息。
+        /// **参数解释**：  组信息。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("groups", NullValueHandling = NullValueHandling.Ignore)]
         public List<DdmGroupInfo> Groups { get; set; }
 
         /// <summary>
-        /// 其他信息。
+        /// **参数解释**：  其他信息。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("extend_map", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, string> ExtendMap { get; set; }
 
         /// <summary>
-        /// 标签信息。
+        /// **参数解释**：  标签信息。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("tags_info", NullValueHandling = NullValueHandling.Ignore)]
-        public List<TagsInfo> TagsInfo { get; set; }
+        public Object TagsInfo { get; set; }
 
         /// <summary>
-        /// 管理员账号。
+        /// **参数解释**：  管理员账号。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("admin_user_name", NullValueHandling = NullValueHandling.Ignore)]
         public string AdminUserName { get; set; }
 
         /// <summary>
-        /// 绑定eip信息。
+        /// **参数解释**：  绑定eip信息。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("eip_binding_info", NullValueHandling = NullValueHandling.Ignore)]
         public Object EipBindingInfo { get; set; }
 
         /// <summary>
-        /// 是否支持ssl。
+        /// **参数解释**：  是否支持ssl。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("enable_ssl", NullValueHandling = NullValueHandling.Ignore)]
         public int? EnableSsl { get; set; }
@@ -303,7 +303,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
             if (this.OnlyDefaultGroup != input.OnlyDefaultGroup || (this.OnlyDefaultGroup != null && !this.OnlyDefaultGroup.Equals(input.OnlyDefaultGroup))) return false;
             if (this.Groups != input.Groups || (this.Groups != null && input.Groups != null && !this.Groups.SequenceEqual(input.Groups))) return false;
             if (this.ExtendMap != input.ExtendMap || (this.ExtendMap != null && input.ExtendMap != null && !this.ExtendMap.SequenceEqual(input.ExtendMap))) return false;
-            if (this.TagsInfo != input.TagsInfo || (this.TagsInfo != null && input.TagsInfo != null && !this.TagsInfo.SequenceEqual(input.TagsInfo))) return false;
+            if (this.TagsInfo != input.TagsInfo || (this.TagsInfo != null && !this.TagsInfo.Equals(input.TagsInfo))) return false;
             if (this.AdminUserName != input.AdminUserName || (this.AdminUserName != null && !this.AdminUserName.Equals(input.AdminUserName))) return false;
             if (this.EipBindingInfo != input.EipBindingInfo || (this.EipBindingInfo != null && !this.EipBindingInfo.Equals(input.EipBindingInfo))) return false;
             if (this.EnableSsl != input.EnableSsl || (this.EnableSsl != null && !this.EnableSsl.Equals(input.EnableSsl))) return false;

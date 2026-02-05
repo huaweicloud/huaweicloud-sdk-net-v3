@@ -17,16 +17,16 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// **参数解释**：  新参数组的名称。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
         /// </summary>
-        [JsonProperty("copy_para", NullValueHandling = NullValueHandling.Ignore)]
-        public ParaGroupCopy CopyPara { get; set; }
+        [JsonProperty("new_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string NewName { get; set; }
 
         /// <summary>
-        /// **参数解释**：  目标参数组ID。  **约束限制**：  不涉及。  **取值范围**：  只能由英文字母、数字组成，长度为36个字符。  **默认取值**：  不涉及。
+        /// **参数解释**：  描述。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
         /// </summary>
-        [JsonProperty("source_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string SourceId { get; set; }
+        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
+        public string Description { get; set; }
 
 
 
@@ -37,8 +37,8 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ConfigurationCopyReqV3 {\n");
-            sb.Append("  copyPara: ").Append(CopyPara).Append("\n");
-            sb.Append("  sourceId: ").Append(SourceId).Append("\n");
+            sb.Append("  newName: ").Append(NewName).Append("\n");
+            sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -57,8 +57,8 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
         public bool Equals(ConfigurationCopyReqV3 input)
         {
             if (input == null) return false;
-            if (this.CopyPara != input.CopyPara || (this.CopyPara != null && !this.CopyPara.Equals(input.CopyPara))) return false;
-            if (this.SourceId != input.SourceId || (this.SourceId != null && !this.SourceId.Equals(input.SourceId))) return false;
+            if (this.NewName != input.NewName || (this.NewName != null && !this.NewName.Equals(input.NewName))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
 
             return true;
         }
@@ -71,8 +71,8 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.CopyPara != null) hashCode = hashCode * 59 + this.CopyPara.GetHashCode();
-                if (this.SourceId != null) hashCode = hashCode * 59 + this.SourceId.GetHashCode();
+                if (this.NewName != null) hashCode = hashCode * 59 + this.NewName.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;
             }
         }

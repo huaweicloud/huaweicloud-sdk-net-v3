@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
     {
 
         /// <summary>
-        /// 实例详情。
+        /// **参数解释**：  查询实例详情相关信息的返回集合。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("instances", NullValueHandling = NullValueHandling.Ignore)]
         public List<InstanceDetail> Instances { get; set; }

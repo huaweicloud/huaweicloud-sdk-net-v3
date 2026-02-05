@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
     {
 
         /// <summary>
-        /// **参数解释**：  参数组ID。  **约束限制**：  不涉及。  **取值范围**：  只能由英文字母、数字组成，长度为36个字符。  **默认取值**：  不涉及。
+        /// **参数解释**：  参数组ID。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("target_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TargetId { get; set; }
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
         public string ApplyResult { get; set; }
 
         /// <summary>
-        /// **参数解释**：  应用日期。  格式为yyyy-mm-dd Thh:mm:ssZ。  其中，T指定某个时间的开始；Z指示 UTC 时间。  **参数范围**：  不涉及。
+        /// **参数解释**：  应用日期。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("applied_at", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? AppliedAt { get; set; }

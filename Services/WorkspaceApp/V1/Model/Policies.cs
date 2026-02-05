@@ -100,6 +100,12 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         [JsonProperty("folder_redirection", NullValueHandling = NullValueHandling.Ignore)]
         public PoliciesFolderRedirection FolderRedirection { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("user_profile_management", NullValueHandling = NullValueHandling.Ignore)]
+        public PoliciesUserProfileManagement UserProfileManagement { get; set; }
+
 
 
         /// <summary>
@@ -123,6 +129,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             sb.Append("  userProfile: ").Append(UserProfile).Append("\n");
             sb.Append("  urlRedirection: ").Append(UrlRedirection).Append("\n");
             sb.Append("  folderRedirection: ").Append(FolderRedirection).Append("\n");
+            sb.Append("  userProfileManagement: ").Append(UserProfileManagement).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -155,6 +162,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.UserProfile != input.UserProfile || (this.UserProfile != null && !this.UserProfile.Equals(input.UserProfile))) return false;
             if (this.UrlRedirection != input.UrlRedirection || (this.UrlRedirection != null && !this.UrlRedirection.Equals(input.UrlRedirection))) return false;
             if (this.FolderRedirection != input.FolderRedirection || (this.FolderRedirection != null && !this.FolderRedirection.Equals(input.FolderRedirection))) return false;
+            if (this.UserProfileManagement != input.UserProfileManagement || (this.UserProfileManagement != null && !this.UserProfileManagement.Equals(input.UserProfileManagement))) return false;
 
             return true;
         }
@@ -181,6 +189,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.UserProfile != null) hashCode = hashCode * 59 + this.UserProfile.GetHashCode();
                 if (this.UrlRedirection != null) hashCode = hashCode * 59 + this.UrlRedirection.GetHashCode();
                 if (this.FolderRedirection != null) hashCode = hashCode * 59 + this.FolderRedirection.GetHashCode();
+                if (this.UserProfileManagement != null) hashCode = hashCode * 59 + this.UserProfileManagement.GetHashCode();
                 return hashCode;
             }
         }

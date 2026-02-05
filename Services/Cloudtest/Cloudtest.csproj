@@ -15,13 +15,14 @@
         <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
         <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
         <PackageId>HuaweiCloud.SDK.Cloudtest</PackageId>
-        <Version>3.1.182</Version>
+        <Version>3.1.183</Version>
         <Authors>HuaweiCloud</Authors>
         <Copyright>Copyright 2023 Huawei Technologies Co., Ltd.</Copyright>
         <Company>Huawei Technologies Co., Ltd.</Company>
         <Description>HuaweiCloud .net SDK</Description>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageReadmeFile>README.md</PackageReadmeFile>
+        <ProjectGuid>{535cfc94-6d5b-4da2-bbbd-e9faa9014999}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
         <None Include="..\..\LICENSE" Pack="true" PackagePath=""/>

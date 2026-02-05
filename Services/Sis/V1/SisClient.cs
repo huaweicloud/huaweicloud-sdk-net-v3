@@ -65,6 +65,30 @@ namespace HuaweiCloud.SDK.Sis.V1
         }
         
         /// <summary>
+        /// 注册接口
+        ///
+        /// 客户上传一段录音，并指定voice_name，在系统中注册声音。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateVoiceResponse CreateVoice(CreateVoiceRequest createVoiceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vcs/voices", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVoiceRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateVoiceResponse>(response);
+        }
+
+        public SyncInvoker<CreateVoiceResponse> CreateVoiceInvoker(CreateVoiceRequest createVoiceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vcs/voices", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVoiceRequest);
+            return new SyncInvoker<CreateVoiceResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateVoiceResponse>);
+        }
+        
+        /// <summary>
         /// 删除热词表
         ///
         /// 通过热词表id删除热词表。
@@ -88,6 +112,54 @@ namespace HuaweiCloud.SDK.Sis.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/vocabularies/{vocabulary_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVocabularyRequest);
             return new SyncInvoker<DeleteVocabularyResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteVocabularyResponse>);
+        }
+        
+        /// <summary>
+        /// 合成接口
+        ///
+        /// 用户指定一个声色名称，并指定对应的文本，合成对应的复刻的声音
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public GenerateSpeechResponse GenerateSpeech(GenerateSpeechRequest generateSpeechRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vcs/voices/clone", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", generateSpeechRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<GenerateSpeechResponse>(response);
+        }
+
+        public SyncInvoker<GenerateSpeechResponse> GenerateSpeechInvoker(GenerateSpeechRequest generateSpeechRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vcs/voices/clone", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", generateSpeechRequest);
+            return new SyncInvoker<GenerateSpeechResponse>(this, "POST", request, JsonUtils.DeSerialize<GenerateSpeechResponse>);
+        }
+        
+        /// <summary>
+        /// 查询接口
+        ///
+        /// 查询已注册的声音列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListVoicesResponse ListVoices(ListVoicesRequest listVoicesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vcs/voices", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVoicesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListVoicesResponse>(response);
+        }
+
+        public SyncInvoker<ListVoicesResponse> ListVoicesInvoker(ListVoicesRequest listVoicesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vcs/voices", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVoicesRequest);
+            return new SyncInvoker<ListVoicesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListVoicesResponse>);
         }
         
         /// <summary>

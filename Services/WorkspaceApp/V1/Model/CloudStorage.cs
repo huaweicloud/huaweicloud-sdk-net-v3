@@ -35,6 +35,12 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string ProjectConfigId { get; set; }
 
         /// <summary>
+        /// sfs集群ID。
+        /// </summary>
+        [JsonProperty("cluster_group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ClusterGroupId { get; set; }
+
+        /// <summary>
         /// 创建时间。
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
@@ -64,6 +70,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  projectConfigId: ").Append(ProjectConfigId).Append("\n");
+            sb.Append("  clusterGroupId: ").Append(ClusterGroupId).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
             sb.Append("  userClaimCount: ").Append(UserClaimCount).Append("\n");
             sb.Append("  shareClaimCount: ").Append(ShareClaimCount).Append("\n");
@@ -88,6 +95,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.ProjectConfigId != input.ProjectConfigId || (this.ProjectConfigId != null && !this.ProjectConfigId.Equals(input.ProjectConfigId))) return false;
+            if (this.ClusterGroupId != input.ClusterGroupId || (this.ClusterGroupId != null && !this.ClusterGroupId.Equals(input.ClusterGroupId))) return false;
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
             if (this.UserClaimCount != input.UserClaimCount || (this.UserClaimCount != null && !this.UserClaimCount.Equals(input.UserClaimCount))) return false;
             if (this.ShareClaimCount != input.ShareClaimCount || (this.ShareClaimCount != null && !this.ShareClaimCount.Equals(input.ShareClaimCount))) return false;
@@ -106,6 +114,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.ProjectConfigId != null) hashCode = hashCode * 59 + this.ProjectConfigId.GetHashCode();
+                if (this.ClusterGroupId != null) hashCode = hashCode * 59 + this.ClusterGroupId.GetHashCode();
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.UserClaimCount != null) hashCode = hashCode * 59 + this.UserClaimCount.GetHashCode();
                 if (this.ShareClaimCount != null) hashCode = hashCode * 59 + this.ShareClaimCount.GetHashCode();

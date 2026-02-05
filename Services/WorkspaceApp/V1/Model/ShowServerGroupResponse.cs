@@ -233,7 +233,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string ImageProductId { get; set; }
 
         /// <summary>
-        /// 镜像类型。
+        /// 镜像类型： - gold：云市场镜像 - private：私有镜像
         /// </summary>
         [JsonProperty("image_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ImageType { get; set; }

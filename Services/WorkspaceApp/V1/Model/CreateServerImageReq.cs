@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// 是否执行系统封装步骤。
+        /// </summary>
+        [JsonProperty("execute_sysprep", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ExecuteSysprep { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  executeSysprep: ").Append(ExecuteSysprep).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +74,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.ExecuteSysprep != input.ExecuteSysprep || (this.ExecuteSysprep != null && !this.ExecuteSysprep.Equals(input.ExecuteSysprep))) return false;
 
             return true;
         }
@@ -82,6 +90,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.ExecuteSysprep != null) hashCode = hashCode * 59 + this.ExecuteSysprep.GetHashCode();
                 return hashCode;
             }
         }

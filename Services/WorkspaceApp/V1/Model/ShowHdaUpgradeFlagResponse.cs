@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
     {
 
         /// <summary>
-        /// hda是否需要升级标识。
+        /// hda是否需要升级标识。0为无需提示升级, 1为需提示升级
         /// </summary>
         [JsonProperty("upgrade_flag", NullValueHandling = NullValueHandling.Ignore)]
         public int? UpgradeFlag { get; set; }

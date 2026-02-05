@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string TargetVersion { get; set; }
 
         /// <summary>
-        /// HDA升级状态。
+        /// HDA升级状态： - fail：升级失败 - upgrade success：升级成功
         /// </summary>
         [JsonProperty("upgrade_status", NullValueHandling = NullValueHandling.Ignore)]
         public string UpgradeStatus { get; set; }

@@ -17,10 +17,16 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// **参数解释**：  源参数组ID。  **约束限制**：  不涉及。  **取值范围**：  只能由英文字母、数字组成，长度为36个字符。  **默认取值**：  不涉及。
         /// </summary>
-        [JsonProperty("diff_para", NullValueHandling = NullValueHandling.Ignore)]
-        public ParaGroupDiff DiffPara { get; set; }
+        [JsonProperty("source_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string SourceId { get; set; }
+
+        /// <summary>
+        /// **参数解释**：  目标参数组ID。  **约束限制**：  不涉及。  **取值范围**：  只能由英文字母、数字组成，长度为36个字符。  **默认取值**：  不涉及。
+        /// </summary>
+        [JsonProperty("target_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string TargetId { get; set; }
 
 
 
@@ -31,7 +37,8 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ConfigurationDiffReqV3 {\n");
-            sb.Append("  diffPara: ").Append(DiffPara).Append("\n");
+            sb.Append("  sourceId: ").Append(SourceId).Append("\n");
+            sb.Append("  targetId: ").Append(TargetId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -50,7 +57,8 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
         public bool Equals(ConfigurationDiffReqV3 input)
         {
             if (input == null) return false;
-            if (this.DiffPara != input.DiffPara || (this.DiffPara != null && !this.DiffPara.Equals(input.DiffPara))) return false;
+            if (this.SourceId != input.SourceId || (this.SourceId != null && !this.SourceId.Equals(input.SourceId))) return false;
+            if (this.TargetId != input.TargetId || (this.TargetId != null && !this.TargetId.Equals(input.TargetId))) return false;
 
             return true;
         }
@@ -63,7 +71,8 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.DiffPara != null) hashCode = hashCode * 59 + this.DiffPara.GetHashCode();
+                if (this.SourceId != null) hashCode = hashCode * 59 + this.SourceId.GetHashCode();
+                if (this.TargetId != null) hashCode = hashCode * 59 + this.TargetId.GetHashCode();
                 return hashCode;
             }
         }

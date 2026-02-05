@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string OsSessionId { get; set; }
 
         /// <summary>
-        /// 协议类型。
+        /// 协议类型： - HDP
         /// </summary>
         [JsonProperty("protocol_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ProtocolType { get; set; }
@@ -101,7 +101,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string MachineName { get; set; }
 
         /// <summary>
-        /// 会话状态。
+        /// 会话状态： - Active：运行中  - Disconnecte：断开连接 - AppcInit：初始化 - SignedOut：已注销 - InitFail：初始化失败
         /// </summary>
         [JsonProperty("session_state", NullValueHandling = NullValueHandling.Ignore)]
         public string SessionState { get; set; }

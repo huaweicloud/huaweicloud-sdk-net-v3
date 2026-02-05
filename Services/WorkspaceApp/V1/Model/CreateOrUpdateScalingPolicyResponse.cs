@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         [JsonProperty("scaling_policy_by_session", NullValueHandling = NullValueHandling.Ignore)]
         public ScalingPolicyBySession ScalingPolicyBySession { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("scaling_policy_by_resource", NullValueHandling = NullValueHandling.Ignore)]
+        public ScalingPolicyByResource ScalingPolicyByResource { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             sb.Append("  maxScalingAmount: ").Append(MaxScalingAmount).Append("\n");
             sb.Append("  singleExpansionCount: ").Append(SingleExpansionCount).Append("\n");
             sb.Append("  scalingPolicyBySession: ").Append(ScalingPolicyBySession).Append("\n");
+            sb.Append("  scalingPolicyByResource: ").Append(ScalingPolicyByResource).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,6 +82,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.MaxScalingAmount != input.MaxScalingAmount || (this.MaxScalingAmount != null && !this.MaxScalingAmount.Equals(input.MaxScalingAmount))) return false;
             if (this.SingleExpansionCount != input.SingleExpansionCount || (this.SingleExpansionCount != null && !this.SingleExpansionCount.Equals(input.SingleExpansionCount))) return false;
             if (this.ScalingPolicyBySession != input.ScalingPolicyBySession || (this.ScalingPolicyBySession != null && !this.ScalingPolicyBySession.Equals(input.ScalingPolicyBySession))) return false;
+            if (this.ScalingPolicyByResource != input.ScalingPolicyByResource || (this.ScalingPolicyByResource != null && !this.ScalingPolicyByResource.Equals(input.ScalingPolicyByResource))) return false;
 
             return true;
         }
@@ -91,6 +99,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.MaxScalingAmount != null) hashCode = hashCode * 59 + this.MaxScalingAmount.GetHashCode();
                 if (this.SingleExpansionCount != null) hashCode = hashCode * 59 + this.SingleExpansionCount.GetHashCode();
                 if (this.ScalingPolicyBySession != null) hashCode = hashCode * 59 + this.ScalingPolicyBySession.GetHashCode();
+                if (this.ScalingPolicyByResource != null) hashCode = hashCode * 59 + this.ScalingPolicyByResource.GetHashCode();
                 return hashCode;
             }
         }

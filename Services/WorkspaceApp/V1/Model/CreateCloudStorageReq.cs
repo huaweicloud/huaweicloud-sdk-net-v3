@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
     {
 
         /// <summary>
-        /// project_config_id,数量区间 [1, 50]。
+        /// 创建项目配置关联ID列表。
         /// </summary>
-        [JsonProperty("project_config_ids", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> ProjectConfigIds { get; set; }
+        [JsonProperty("project_config_cluster_group_id_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ProjectConfigClusterGroupIdEntity> ProjectConfigClusterGroupIdList { get; set; }
 
 
 
@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CreateCloudStorageReq {\n");
-            sb.Append("  projectConfigIds: ").Append(ProjectConfigIds).Append("\n");
+            sb.Append("  projectConfigClusterGroupIdList: ").Append(ProjectConfigClusterGroupIdList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public bool Equals(CreateCloudStorageReq input)
         {
             if (input == null) return false;
-            if (this.ProjectConfigIds != input.ProjectConfigIds || (this.ProjectConfigIds != null && input.ProjectConfigIds != null && !this.ProjectConfigIds.SequenceEqual(input.ProjectConfigIds))) return false;
+            if (this.ProjectConfigClusterGroupIdList != input.ProjectConfigClusterGroupIdList || (this.ProjectConfigClusterGroupIdList != null && input.ProjectConfigClusterGroupIdList != null && !this.ProjectConfigClusterGroupIdList.SequenceEqual(input.ProjectConfigClusterGroupIdList))) return false;
 
             return true;
         }
@@ -63,7 +63,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.ProjectConfigIds != null) hashCode = hashCode * 59 + this.ProjectConfigIds.GetHashCode();
+                if (this.ProjectConfigClusterGroupIdList != null) hashCode = hashCode * 59 + this.ProjectConfigClusterGroupIdList.GetHashCode();
                 return hashCode;
             }
         }

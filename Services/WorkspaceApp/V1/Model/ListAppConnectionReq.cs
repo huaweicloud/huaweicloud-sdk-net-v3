@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
 {
     /// <summary>
-    /// 请求应用使用记录响应体。
+    /// 请求应用使用记录请求体。
     /// </summary>
     public class ListAppConnectionReq 
     {
@@ -83,7 +83,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string ClientVersion { get; set; }
 
         /// <summary>
-        /// 客户端操作系统类型。
+        /// 客户端操作系统类型： - Windows - Mac
         /// </summary>
         [JsonProperty("client_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ClientType { get; set; }
@@ -119,13 +119,13 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string TenantId { get; set; }
 
         /// <summary>
-        /// 登录应用开始时间，格式 2022-10-31T08:07:39Z。
+        /// 登录应用开始时间，只支持导出30天内数据，格式 2022-10-31T08:07:39Z，参数中brokering_start_time与brokering_end_time必须同时存在或都不存在，都不存在时导出近一个月的数据。
         /// </summary>
         [JsonProperty("brokering_start_time", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? BrokeringStartTime { get; set; }
 
         /// <summary>
-        /// 登录应用结束时间，格式 2022-10-31T08:07:39Z。
+        /// 登录应用结束时间，只支持导出30天内数据，格式 2022-10-31T08:07:39Z，参数中brokering_start_time与brokering_end_time必须同时存在或都不存在，都不存在时导出近一个月的数据。
         /// </summary>
         [JsonProperty("brokering_end_time", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? BrokeringEndTime { get; set; }

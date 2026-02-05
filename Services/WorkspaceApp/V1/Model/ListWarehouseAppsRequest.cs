@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 审核状态。
+        /// 审核状态： - VERIFYING：审核中 - VERIFY_PASS：审核通过 - Verify_FAIL：审核不通过
         /// </summary>
         [SDKProperty("verify_status", IsQuery = true)]
         [JsonProperty("verify_status", NullValueHandling = NullValueHandling.Ignore)]

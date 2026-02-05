@@ -17,16 +17,16 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
     {
 
         /// <summary>
-        /// **参数解释**：  实例ID，此参数是实例的唯一标识。  **约束限制**：  不涉及。  **取值范围**：  只能由英文字母、数字组成，后缀为in09，长度为36个字符。  **默认取值**：  不涉及。
+        /// **参数解释**：  实例ID，此参数是实例的唯一标识。  **参数范围**：  只能由英文字母、数字组成，后缀为in09，长度为36个字符。
         /// </summary>
-        [JsonProperty("entity_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string EntityId { get; set; }
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceId { get; set; }
 
         /// <summary>
-        /// **参数解释**：  参数组ID。  **约束限制**：  不涉及。  **取值范围**：  只能由英文字母、数字组成，长度为36个字符。  **默认取值**：  不涉及。
+        /// **参数解释**：  实例名称。  **参数范围**：  不涉及。
         /// </summary>
-        [JsonProperty("config_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ConfigId { get; set; }
+        [JsonProperty("instance_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceName { get; set; }
 
 
 
@@ -37,8 +37,8 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApplicableInstance {\n");
-            sb.Append("  entityId: ").Append(EntityId).Append("\n");
-            sb.Append("  configId: ").Append(ConfigId).Append("\n");
+            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
+            sb.Append("  instanceName: ").Append(InstanceName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -57,8 +57,8 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
         public bool Equals(ApplicableInstance input)
         {
             if (input == null) return false;
-            if (this.EntityId != input.EntityId || (this.EntityId != null && !this.EntityId.Equals(input.EntityId))) return false;
-            if (this.ConfigId != input.ConfigId || (this.ConfigId != null && !this.ConfigId.Equals(input.ConfigId))) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.InstanceName != input.InstanceName || (this.InstanceName != null && !this.InstanceName.Equals(input.InstanceName))) return false;
 
             return true;
         }
@@ -71,8 +71,8 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.EntityId != null) hashCode = hashCode * 59 + this.EntityId.GetHashCode();
-                if (this.ConfigId != null) hashCode = hashCode * 59 + this.ConfigId.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.InstanceName != null) hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
                 return hashCode;
             }
         }

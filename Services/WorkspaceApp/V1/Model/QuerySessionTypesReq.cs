@@ -23,19 +23,19 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string ResourceSpecCode { get; set; }
 
         /// <summary>
-        /// 磁盘类型。
+        /// 会话类型： - CPU - GPU
         /// </summary>
         [JsonProperty("session_type", NullValueHandling = NullValueHandling.Ignore)]
         public string SessionType { get; set; }
 
         /// <summary>
-        /// 资源类型字段。
+        /// 资源类型: -hws.resource.type.workspace.volume： 云办公桌面磁盘 -hws.resource.type.workspace.desktop： 云办公桌面 -hws.resource.type.workspace.appstream： 云应用 -hws.resource.type.workspace.appstreamsession： 云应用多会话
         /// </summary>
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceType { get; set; }
 
         /// <summary>
-        /// 资源所属云服务类型编码。
+        /// 资源所属云服务类型编码： - hws.service.type.vdi - hws.service.type.marketplace
         /// </summary>
         [JsonProperty("cloud_service_type", NullValueHandling = NullValueHandling.Ignore)]
         public string CloudServiceType { get; set; }

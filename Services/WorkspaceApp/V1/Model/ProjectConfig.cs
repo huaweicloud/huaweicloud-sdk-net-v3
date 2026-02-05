@@ -41,6 +41,12 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public bool? IsRelevance { get; set; }
 
         /// <summary>
+        /// sfs集群ID。
+        /// </summary>
+        [JsonProperty("cluster_group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ClusterGroupId { get; set; }
+
+        /// <summary>
         /// 创建时间。
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
@@ -59,6 +65,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             sb.Append("  projectConfigName: ").Append(ProjectConfigName).Append("\n");
             sb.Append("  storageQuota: ").Append(StorageQuota).Append("\n");
             sb.Append("  isRelevance: ").Append(IsRelevance).Append("\n");
+            sb.Append("  clusterGroupId: ").Append(ClusterGroupId).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -82,6 +89,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.ProjectConfigName != input.ProjectConfigName || (this.ProjectConfigName != null && !this.ProjectConfigName.Equals(input.ProjectConfigName))) return false;
             if (this.StorageQuota != input.StorageQuota || (this.StorageQuota != null && !this.StorageQuota.Equals(input.StorageQuota))) return false;
             if (this.IsRelevance != input.IsRelevance || (this.IsRelevance != null && !this.IsRelevance.Equals(input.IsRelevance))) return false;
+            if (this.ClusterGroupId != input.ClusterGroupId || (this.ClusterGroupId != null && !this.ClusterGroupId.Equals(input.ClusterGroupId))) return false;
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
 
             return true;
@@ -99,6 +107,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.ProjectConfigName != null) hashCode = hashCode * 59 + this.ProjectConfigName.GetHashCode();
                 if (this.StorageQuota != null) hashCode = hashCode * 59 + this.StorageQuota.GetHashCode();
                 if (this.IsRelevance != null) hashCode = hashCode * 59 + this.IsRelevance.GetHashCode();
+                if (this.ClusterGroupId != null) hashCode = hashCode * 59 + this.ClusterGroupId.GetHashCode();
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 return hashCode;
             }

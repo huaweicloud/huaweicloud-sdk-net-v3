@@ -717,6 +717,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 删除实例选择是否保留自动备份
+        ///
+        /// 删除实例时选择是否删除或保留自动备份。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteBackupSelectionResponse DeleteBackupSelection(DeleteBackupSelectionRequest deleteBackupSelectionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteBackupSelectionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/delete-selection", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBackupSelectionRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<DeleteBackupSelectionResponse>(response);
+        }
+
+        public SyncInvoker<DeleteBackupSelectionResponse> DeleteBackupSelectionInvoker(DeleteBackupSelectionRequest deleteBackupSelectionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteBackupSelectionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/delete-selection", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBackupSelectionRequest);
+            return new SyncInvoker<DeleteBackupSelectionResponse>(this, "POST", request, JsonUtils.DeSerialize<DeleteBackupSelectionResponse>);
+        }
+        
+        /// <summary>
         /// 删除参数模板
         ///
         /// 删除参数模板。

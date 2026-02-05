@@ -29,6 +29,12 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string Sid { get; set; }
 
         /// <summary>
+        /// 应用id。
+        /// </summary>
+        [JsonProperty("app_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string AppId { get; set; }
+
+        /// <summary>
         /// 应用服务器名称。
         /// </summary>
         [JsonProperty("machine_name", NullValueHandling = NullValueHandling.Ignore)]
@@ -195,6 +201,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             sb.Append("class AppConnectionInfo {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  sid: ").Append(Sid).Append("\n");
+            sb.Append("  appId: ").Append(AppId).Append("\n");
             sb.Append("  machineName: ").Append(MachineName).Append("\n");
             sb.Append("  userName: ").Append(UserName).Append("\n");
             sb.Append("  appGroupName: ").Append(AppGroupName).Append("\n");
@@ -241,6 +248,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (input == null) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Sid != input.Sid || (this.Sid != null && !this.Sid.Equals(input.Sid))) return false;
+            if (this.AppId != input.AppId || (this.AppId != null && !this.AppId.Equals(input.AppId))) return false;
             if (this.MachineName != input.MachineName || (this.MachineName != null && !this.MachineName.Equals(input.MachineName))) return false;
             if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
             if (this.AppGroupName != input.AppGroupName || (this.AppGroupName != null && !this.AppGroupName.Equals(input.AppGroupName))) return false;
@@ -281,6 +289,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 var hashCode = 41;
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Sid != null) hashCode = hashCode * 59 + this.Sid.GetHashCode();
+                if (this.AppId != null) hashCode = hashCode * 59 + this.AppId.GetHashCode();
                 if (this.MachineName != null) hashCode = hashCode * 59 + this.MachineName.GetHashCode();
                 if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
                 if (this.AppGroupName != null) hashCode = hashCode * 59 + this.AppGroupName.GetHashCode();

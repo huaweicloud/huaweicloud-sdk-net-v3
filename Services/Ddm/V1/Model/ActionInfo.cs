@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
     {
 
         /// <summary>
-        /// 锁。
+        /// **参数解释**：  锁。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public string Action { get; set; }

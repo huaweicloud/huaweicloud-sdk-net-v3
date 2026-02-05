@@ -17,37 +17,37 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
     {
 
         /// <summary>
-        /// 节点ID。
+        /// **参数解释**：  节点ID。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 状态。
+        /// **参数解释**：  状态。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 名称。
+        /// **参数解释**：  名称。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 可用区编码。
+        /// **参数解释**：  可用区编码。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("az_code", NullValueHandling = NullValueHandling.Ignore)]
         public string AzCode { get; set; }
 
         /// <summary>
-        /// 锁状态。
+        /// **参数解释**：  锁状态。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("actions", NullValueHandling = NullValueHandling.Ignore)]
         public List<ActionInfo> Actions { get; set; }
 
         /// <summary>
-        /// 子网ID。
+        /// **参数解释**：  子网ID。  **参数范围**：  不涉及。
         /// </summary>
         [JsonProperty("subnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetId { get; set; }

@@ -71,6 +71,10 @@ namespace HuaweiCloud.SDK.Dds.V3
             "https://dds.ap-southeast-5.myhuaweicloud.com");
         public static readonly Region CN_NORTH_11 = new Region("cn-north-11",
             "https://dds.cn-north-11.myhuaweicloud.com");
+        public static readonly Region CN_SOUTHWEST_3 = new Region("cn-southwest-3",
+            "https://dds.cn-southwest-3.myhuaweicloud.com");
+        public static readonly Region CN_SOUTH_4 = new Region("cn-south-4",
+            "https://dds.cn-south-4.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("DDS");
 
@@ -108,6 +112,8 @@ namespace HuaweiCloud.SDK.Dds.V3
                 { "af-north-1", AF_NORTH_1 },
                 { "ap-southeast-5", AP_SOUTHEAST_5 },
                 { "cn-north-11", CN_NORTH_11 },
+                { "cn-southwest-3", CN_SOUTHWEST_3 },
+                { "cn-south-4", CN_SOUTH_4 },
         };
 
         public static Region ValueOf(string regionId)

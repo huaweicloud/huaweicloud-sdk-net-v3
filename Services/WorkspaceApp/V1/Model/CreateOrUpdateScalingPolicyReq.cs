@@ -41,6 +41,12 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public ScalingPolicyBySession ScalingPolicyBySession { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("scaling_policy_by_resource", NullValueHandling = NullValueHandling.Ignore)]
+        public ScalingPolicyByResource ScalingPolicyByResource { get; set; }
+
+        /// <summary>
         /// 服务器组唯一标识(仅按需服务器组支持该操作)。
         /// </summary>
         [JsonProperty("server_group_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -59,6 +65,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             sb.Append("  maxScalingAmount: ").Append(MaxScalingAmount).Append("\n");
             sb.Append("  singleExpansionCount: ").Append(SingleExpansionCount).Append("\n");
             sb.Append("  scalingPolicyBySession: ").Append(ScalingPolicyBySession).Append("\n");
+            sb.Append("  scalingPolicyByResource: ").Append(ScalingPolicyByResource).Append("\n");
             sb.Append("  serverGroupId: ").Append(ServerGroupId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -82,6 +89,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.MaxScalingAmount != input.MaxScalingAmount || (this.MaxScalingAmount != null && !this.MaxScalingAmount.Equals(input.MaxScalingAmount))) return false;
             if (this.SingleExpansionCount != input.SingleExpansionCount || (this.SingleExpansionCount != null && !this.SingleExpansionCount.Equals(input.SingleExpansionCount))) return false;
             if (this.ScalingPolicyBySession != input.ScalingPolicyBySession || (this.ScalingPolicyBySession != null && !this.ScalingPolicyBySession.Equals(input.ScalingPolicyBySession))) return false;
+            if (this.ScalingPolicyByResource != input.ScalingPolicyByResource || (this.ScalingPolicyByResource != null && !this.ScalingPolicyByResource.Equals(input.ScalingPolicyByResource))) return false;
             if (this.ServerGroupId != input.ServerGroupId || (this.ServerGroupId != null && !this.ServerGroupId.Equals(input.ServerGroupId))) return false;
 
             return true;
@@ -99,6 +107,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.MaxScalingAmount != null) hashCode = hashCode * 59 + this.MaxScalingAmount.GetHashCode();
                 if (this.SingleExpansionCount != null) hashCode = hashCode * 59 + this.SingleExpansionCount.GetHashCode();
                 if (this.ScalingPolicyBySession != null) hashCode = hashCode * 59 + this.ScalingPolicyBySession.GetHashCode();
+                if (this.ScalingPolicyByResource != null) hashCode = hashCode * 59 + this.ScalingPolicyByResource.GetHashCode();
                 if (this.ServerGroupId != null) hashCode = hashCode * 59 + this.ServerGroupId.GetHashCode();
                 return hashCode;
             }

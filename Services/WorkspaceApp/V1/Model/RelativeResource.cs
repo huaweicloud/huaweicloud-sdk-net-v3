@@ -35,13 +35,13 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public int? RelativeType { get; set; }
 
         /// <summary>
-        /// 比如ECS云服务类型为‘hws.service.type.ec2’。
+        /// 依赖云服务类型： - hws.service.type.ec2
         /// </summary>
         [JsonProperty("relative_cloud_service_type", NullValueHandling = NullValueHandling.Ignore)]
         public string RelativeCloudServiceType { get; set; }
 
         /// <summary>
-        /// 比如VM的资源类型为‘hws.resource.type.vm’。
+        /// 依赖资源类型： - hws.resource.type.vm
         /// </summary>
         [JsonProperty("relative_resource_type", NullValueHandling = NullValueHandling.Ignore)]
         public string RelativeResourceType { get; set; }
