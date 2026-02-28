@@ -374,7 +374,7 @@ var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
 var securityToken = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SECURITY_TOKEN");
 var projectId = "{your projectId string}";
 
-Credentials basicCredentials = new BasicCredentials(ak, sk, projectId).WithSecurityToken(securityToken);
+var basicCredentials = new BasicCredentials(ak, sk, projectId).WithSecurityToken(securityToken);
     
 // Global级服务
 var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
@@ -382,7 +382,7 @@ var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
 var securityToken = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SECURITY_TOKEN");
 var domainId = "{your domainId string}";
 
-Credentials globalCredentials = new GlobalCredentials(ak, sk, domainId).WithSecurityToken(securityToken);
+var globalCredentials = new GlobalCredentials(ak, sk, domainId).WithSecurityToken(securityToken);
 ```
 
 #### 2.2 使用永久 AK 和 SK [:top:](#用户手册-top)
@@ -396,14 +396,14 @@ var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
 var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
 var projectId = "{your projectId string}";
             
-Credentials basicCredentials = new BasicCredentials(ak, sk, projectId);
+var basicCredentials = new BasicCredentials(ak, sk, projectId);
 
 // Global级服务
 var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
 var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
 var domainId = "{your domainId string}";
 
-Credentials globalCredentials = new GlobalCredentials(ak, sk, domainId);
+var globalCredentials = new GlobalCredentials(ak, sk, domainId);
 ```
 
 **说明**：
@@ -538,20 +538,18 @@ var credentials = chain.GetCredentials();
 
 ``` csharp
 // 指定终端节点，以 VPC 服务北京四的 endpoint 为例
-String endpoint = "https://vpc.cn-north-4.myhuaweicloud.com";
+var endpoint = "https://vpc.cn-north-4.myhuaweicloud.com";
 
 // 初始化客户端认证信息，需要填写相应 projectId/domainId，以初始化 BasicCredentials 为例
 var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
 var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
 var projectId = "{your projectId string}";
-Credentials basicCredentials = new BasicCredentials(ak, sk, projectId);
+var basicCredentials = new BasicCredentials(ak, sk, projectId);
 
 // 初始化指定云服务的客户端 {Service}Client，以初始化 Region 级服务 VPC 的 VpcClient 为例
-VpcClient vpcClient = VpcClient.NewBuilder()
+var vpcClient = VpcClient.NewBuilder()
     .WithCredential(basicCredentials)
     .WithEndPoint(endpoint)
-    .WithHttpConfig(config)
-    .WithLogging(LogLevel.Information)
     .Build();
 ```
 
@@ -566,13 +564,12 @@ VpcClient vpcClient = VpcClient.NewBuilder()
 // 初始化客户端认证信息，使用当前客户端初始化方式可不填 projectId/domainId，以初始化 GlobalCredentials 为例
 var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
 var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
-Credentials globalCredentials = new GlobalCredentials(ak, sk);
+var globalCredentials = new GlobalCredentials(ak, sk);
 
 // 初始化指定云服务的客户端 {Service}Client ，以初始化 Global 级服务 IAM 的 IamClient 为例
-IamClient iamClient = IamClient.NewBuilder()
+var iamClient = IamClient.NewBuilder()
     .WithCredential(globalCredentials)
     .WithRegion(IamRegion.CN_NORTH_4)
-    .WithHttpConfig(config)
     .Build();
 ```
 
@@ -638,7 +635,7 @@ using HuaweiCloud.SDK.Core;
 using HuaweiCloud.SDK.Ecs.V2;
 
 // 使用自定义的regionId和endpoint创建一个region
-var region = new Region("cn-north-9", "https://ecs.cn-north-9.myhuaweicloud.com")
+var region = new Region("cn-north-9", "https://ecs.cn-north-9.myhuaweicloud.com");
 
 var client = EcsClient.NewBuilder()
     .WithCredential(auth)
@@ -689,19 +686,6 @@ using HuaweiCloud.SDK.Ecs.V2;
 var region = EcsRegion.ValueOf("cn-north-9");
 ```
 
-### 4. 发送请求并查看响应 [:top:](#用户手册-top)
-
-``` csharp
-// 初始化请求，以调用接口 ListVpcs 为例
-var request = new ListVpcsRequest
-{
-    Limit = 1,
-};
-
-var response = vpcClient.ListVpcs(request)
-Console.WriteLine(JsonUtils.Serialize(response.Vpcs));
-```
-
 #### 3.4 用户代理 [:top:](#用户手册-top)
 
 从**3.1.165**版本起，默认会在请求头User-Agent中附加额外信息，用于识别客户端调用服务时所使用的SDK语言、客户端库版本以及平台信息等。 User-Agent包含.NET版本、操作系统和时区语言信息，同时会生成一个随机标识符追加到User-Agent信息中。随机标识符会存储在用户主目录下，linux为 `~/.huaweicloud/application_id`，windows为`C:\Users\USER_NAME\.huaweicloud\application_id`。
@@ -717,6 +701,19 @@ var httpConfig = HttpConfig.GetDefaultConfig().WithUserAgent("custom user agent.
 var client = VpcClient.NewBuilder()
     .WithHttpConfig(httpConfig)
     .Build();
+```
+
+### 4. 发送请求并查看响应 [:top:](#用户手册-top)
+
+``` csharp
+// 初始化请求，以调用接口 ListVpcs 为例
+var request = new ListVpcsRequest
+{
+    Limit = 1,
+};
+
+var response = vpcClient.ListVpcs(request)
+Console.WriteLine(JsonUtils.Serialize(response.Vpcs));
 ```
 
 #### 4.1 异常处理 [:top:](#用户手册-top)
@@ -758,7 +755,6 @@ catch (ServiceResponseException serviceResponseException)
 var vpcAsyncClient = VpcAsyncClient.NewBuilder()
     .WithCredential(auth)
     .WithEndPoint(endpoint)
-    .WithHttpConfig(config)
     .Build();
 
 
@@ -783,7 +779,6 @@ var vpcClient = VpcClient.NewBuilder()
     .WithEndPoint(endpoint)
     // 设置打印日志的级别即可在控制台打印日志
     .WithLogging(LogLevel.Information)
-    .WithHttpConfig(config)
     .Build();
 ```
 

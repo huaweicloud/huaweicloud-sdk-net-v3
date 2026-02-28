@@ -362,7 +362,7 @@ var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
 var securityToken = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SECURITY_TOKEN");
 var projectId = "{your projectId string}";
 
-Credentials basicCredentials = new BasicCredentials(ak, sk, projectId).WithSecurityToken(securityToken);
+var basicCredentials = new BasicCredentials(ak, sk, projectId).WithSecurityToken(securityToken);
     
 // Global services
 var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
@@ -370,7 +370,7 @@ var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
 var securityToken = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SECURITY_TOKEN");
 var domainId = "{your domainId string}";
 
-Credentials globalCredentials = new GlobalCredentials(ak, sk, domainId).WithSecurityToken(securityToken);
+var globalCredentials = new GlobalCredentials(ak, sk, domainId).WithSecurityToken(securityToken);
 ```
 
 #### 2.2 Use Permanent AK&SK [:top:](#user-manual-top)
@@ -384,14 +384,14 @@ var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
 var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
 var projectId = "{your projectId string}";
 
-Credentials basicCredentials = new BasicCredentials(ak, sk, projectId);
+var basicCredentials = new BasicCredentials(ak, sk, projectId);
 
 // Global services
 var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
 var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
 var domainId = "{your domainId string}";
 
-Credentials globalCredentials = new GlobalCredentials(ak, sk, domainId);
+var globalCredentials = new GlobalCredentials(ak, sk, domainId);
 ```
 
 **Notice**:
@@ -528,19 +528,18 @@ There are two ways to initialize the {Service}Client, you could choose one you p
 
 ``` csharp
 // Specify the endpoint, take the endpoint of VPC service in region of cn-north-4 for example
-String endpoint = "https://vpc.cn-north-4.myhuaweicloud.com";
+var endpoint = "https://vpc.cn-north-4.myhuaweicloud.com";
 
 // Initialize the credentials, you should provide projectId or domainId in this way, take initializing BasicCredentials for example
 var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
 var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
 var projectId = "{your projectId string}";
-Credentials basicCredentials = new BasicCredentials(ak, sk, projectId);
+var basicCredentials = new BasicCredentials(ak, sk, projectId);
 
 // Initialize specified {Service}Client instance, take initializing the regional service VPC's VpcClient for example
-VpcClient vpcClient = VpcClient.NewBuilder()
+var vpcClient = VpcClient.NewBuilder()
     .WithCredential(basicCredentials)
     .WithEndPoint(endpoint)
-    .WithHttpConfig(config)
     .Build();
 ```
 
@@ -557,13 +556,12 @@ VpcClient vpcClient = VpcClient.NewBuilder()
 // Initialize the credentials, projectId or domainId could be unassigned in this situation, take initializing GlobalCredentials for example
 var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
 var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
-Credentials globalCredentials = new GlobalCredentials(ak, sk);
+var globalCredentials = new GlobalCredentials(ak, sk);
 
 // Initialize specified {Service}Client instance, take initializing the global service IAM's IamClient for example
-IamClient iamClient = IamClient.NewBuilder()
+var iamClient = IamClient.NewBuilder()
     .WithCredential(globalCredentials)
     .WithRegion(IamRegion.CN_NORTH_4)
-    .WithHttpConfig(config)
     .Build();
 ```
 
@@ -631,7 +629,7 @@ using HuaweiCloud.SDK.Core;
 using HuaweiCloud.SDK.Ecs.V2;
 
 // Create a region with custom region id and endpoint
-var region = new Region("cn-north-9", "https://ecs.cn-north-9.myhuaweicloud.com")
+var region = new Region("cn-north-9", "https://ecs.cn-north-9.myhuaweicloud.com");
 
 var client = EcsClient.NewBuilder()
     .WithCredential(auth)
@@ -755,7 +753,6 @@ catch (ServiceResponseException serviceResponseException)
 var vpcAsyncClient = VpcAsyncClient.NewBuilder()
     .WithCredential(auth)
     .WithEndPoint(endpoint)
-    .WithHttpConfig(config)
     .Build();
 
 
@@ -782,7 +779,6 @@ var vpcClient = VpcClient.NewBuilder()
     .WithEndPoint(endpoint)
     // configure log level and request will be print on the console
     .WithLogging(LogLevel.Information)
-    .WithHttpConfig(config)
     .Build();
 ```
 
