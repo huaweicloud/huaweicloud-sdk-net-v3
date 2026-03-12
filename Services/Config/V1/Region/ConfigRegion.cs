@@ -10,12 +10,16 @@ namespace HuaweiCloud.SDK.Config.V1
         public static readonly Region CN_NORTH_4 = new Region("cn-north-4",
             "https://rms.myhuaweicloud.com",
             "https://rms.myhuaweicloud.cn");
+        public static readonly Region EU_WEST_101 = new Region("eu-west-101",
+            "https://rms.eu-west-101.myhuaweicloud.com",
+            "https://rms.eu-west-101.myhuaweicloud.cn");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("CONFIG");
 
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>
         {
                 { "cn-north-4", CN_NORTH_4 },
+                { "eu-west-101", EU_WEST_101 },
         };
 
         public static Region ValueOf(string regionId)

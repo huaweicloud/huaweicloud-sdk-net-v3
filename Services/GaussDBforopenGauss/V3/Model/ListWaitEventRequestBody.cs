@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// 
         /// </summary>
         [JsonProperty("wait_event_query_info", NullValueHandling = NullValueHandling.Ignore)]
-        public WaitEventQueryInfo WaitEventQueryInfo { get; set; }
+        public WaitEventQueryInfoOption WaitEventQueryInfo { get; set; }
 
 
 

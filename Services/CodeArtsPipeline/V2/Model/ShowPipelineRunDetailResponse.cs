@@ -83,6 +83,12 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
         public int? RunNumber { get; set; }
 
         /// <summary>
+        /// **参数解释**： 流水线中断时间，单位毫秒。 **取值范围**： 大于等于 0。 
+        /// </summary>
+        [JsonProperty("pause_time", NullValueHandling = NullValueHandling.Ignore)]
+        public long? PauseTime { get; set; }
+
+        /// <summary>
         /// **参数解释**： 流水线开始时间。 **取值范围**： 不涉及。 
         /// </summary>
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
@@ -192,6 +198,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  triggerType: ").Append(TriggerType).Append("\n");
             sb.Append("  runNumber: ").Append(RunNumber).Append("\n");
+            sb.Append("  pauseTime: ").Append(PauseTime).Append("\n");
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("  stages: ").Append(Stages).Append("\n");
@@ -236,6 +243,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.TriggerType != input.TriggerType || (this.TriggerType != null && !this.TriggerType.Equals(input.TriggerType))) return false;
             if (this.RunNumber != input.RunNumber || (this.RunNumber != null && !this.RunNumber.Equals(input.RunNumber))) return false;
+            if (this.PauseTime != input.PauseTime || (this.PauseTime != null && !this.PauseTime.Equals(input.PauseTime))) return false;
             if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
             if (this.Stages != input.Stages || (this.Stages != null && input.Stages != null && !this.Stages.SequenceEqual(input.Stages))) return false;
@@ -274,6 +282,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.TriggerType != null) hashCode = hashCode * 59 + this.TriggerType.GetHashCode();
                 if (this.RunNumber != null) hashCode = hashCode * 59 + this.RunNumber.GetHashCode();
+                if (this.PauseTime != null) hashCode = hashCode * 59 + this.PauseTime.GetHashCode();
                 if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 if (this.Stages != null) hashCode = hashCode * 59 + this.Stages.GetHashCode();

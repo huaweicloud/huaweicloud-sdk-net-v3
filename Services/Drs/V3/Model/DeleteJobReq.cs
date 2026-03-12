@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
     public class DeleteJobReq 
     {
         /// <summary>
-        /// terminate:结束迁移任务,force_terminate:强制结束迁移任务,delete:删除迁移任务
+        /// terminate:结束迁移任务,force_terminate:强制结束迁移任务,delete:删除迁移任务,roll_back_upgrade_active_standby:转主备任务回滚
         /// </summary>
-        /// <value>terminate:结束迁移任务,force_terminate:强制结束迁移任务,delete:删除迁移任务</value>
+        /// <value>terminate:结束迁移任务,force_terminate:强制结束迁移任务,delete:删除迁移任务,roll_back_upgrade_active_standby:转主备任务回滚</value>
         [JsonConverter(typeof(EnumClassConverter<DeleteTypeEnum>))]
         public class DeleteTypeEnum
         {
@@ -37,12 +37,18 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
             /// </summary>
             public static readonly DeleteTypeEnum DELETE = new DeleteTypeEnum("delete");
 
+            /// <summary>
+            /// Enum ROLL_BACK_UPGRADE_ACTIVE_STANDBY for value: roll_back_upgrade_active_standby
+            /// </summary>
+            public static readonly DeleteTypeEnum ROLL_BACK_UPGRADE_ACTIVE_STANDBY = new DeleteTypeEnum("roll_back_upgrade_active_standby");
+
             private static readonly Dictionary<string, DeleteTypeEnum> StaticFields =
             new Dictionary<string, DeleteTypeEnum>()
             {
                 { "terminate", TERMINATE },
                 { "force_terminate", FORCE_TERMINATE },
                 { "delete", DELETE },
+                { "roll_back_upgrade_active_standby", ROLL_BACK_UPGRADE_ACTIVE_STANDBY },
             };
 
             private string _value;
@@ -138,7 +144,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
 
 
         /// <summary>
-        /// terminate:结束迁移任务,force_terminate:强制结束迁移任务,delete:删除迁移任务
+        /// terminate:结束迁移任务,force_terminate:强制结束迁移任务,delete:删除迁移任务,roll_back_upgrade_active_standby:转主备任务回滚
         /// </summary>
         [JsonProperty("delete_type", NullValueHandling = NullValueHandling.Ignore)]
         public DeleteTypeEnum DeleteType { get; set; }

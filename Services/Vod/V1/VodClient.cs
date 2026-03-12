@@ -680,6 +680,30 @@ namespace HuaweiCloud.SDK.Vod.V1
         }
         
         /// <summary>
+        /// 删除媒资下的多个截图
+        ///
+        /// 删除媒资对应的截图，支持批量删除单个媒资下的多个截图结果，一次最多能删除十个。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteThumbnailsResponse DeleteThumbnails(DeleteThumbnailsRequest deleteThumbnailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/thumbnails", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteThumbnailsRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteThumbnailsResponse>(response);
+        }
+
+        public SyncInvoker<DeleteThumbnailsResponse> DeleteThumbnailsInvoker(DeleteThumbnailsRequest deleteThumbnailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/thumbnails", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteThumbnailsRequest);
+            return new SyncInvoker<DeleteThumbnailsResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteThumbnailsResponse>);
+        }
+        
+        /// <summary>
         /// 删除转码产物
         ///
         /// 删除转码产物。
@@ -985,6 +1009,54 @@ namespace HuaweiCloud.SDK.Vod.V1
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/template-collection/transcodings", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplateGroupCollectionRequest);
             return new SyncInvoker<ListTemplateGroupCollectionResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTemplateGroupCollectionResponse>);
+        }
+        
+        /// <summary>
+        /// 查询截图详情
+        ///
+        /// 查询截图结果
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListThumbnailDetailsResponse ListThumbnailDetails(ListThumbnailDetailsRequest listThumbnailDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/thumbnail/details", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listThumbnailDetailsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListThumbnailDetailsResponse>(response);
+        }
+
+        public SyncInvoker<ListThumbnailDetailsResponse> ListThumbnailDetailsInvoker(ListThumbnailDetailsRequest listThumbnailDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/thumbnail/details", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listThumbnailDetailsRequest);
+            return new SyncInvoker<ListThumbnailDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListThumbnailDetailsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询截图任务结果列表
+        ///
+        /// 查询截图任务结果列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListThumbnailInfoResponse ListThumbnailInfo(ListThumbnailInfoRequest listThumbnailInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/thumbnails", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listThumbnailInfoRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListThumbnailInfoResponse>(response);
+        }
+
+        public SyncInvoker<ListThumbnailInfoResponse> ListThumbnailInfoInvoker(ListThumbnailInfoRequest listThumbnailInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/thumbnails", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listThumbnailInfoRequest);
+            return new SyncInvoker<ListThumbnailInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ListThumbnailInfoResponse>);
         }
         
         /// <summary>

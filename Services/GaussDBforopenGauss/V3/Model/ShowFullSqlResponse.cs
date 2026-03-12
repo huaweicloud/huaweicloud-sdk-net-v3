@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
     {
 
         /// <summary>
-        /// **参数解释**: 链路详情。
+        /// 
         /// </summary>
         [JsonProperty("trace_statistics", NullValueHandling = NullValueHandling.Ignore)]
-        public Object TraceStatistics { get; set; }
+        public FullSqlTraceStatisticsResult TraceStatistics { get; set; }
 
         /// <summary>
         /// **参数解释**: 组件上SQL执行记录列表。

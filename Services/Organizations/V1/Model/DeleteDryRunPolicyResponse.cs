@@ -8,12 +8,12 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Drs.V5.Model
+namespace HuaweiCloud.SDK.Organizations.V1.Model
 {
     /// <summary>
-    /// 空响应体。
+    /// Response Object
     /// </summary>
-    public class ApiHttpNullResp 
+    public class DeleteDryRunPolicyResponse : SdkResponse
     {
 
 

@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         }
 
         /// <summary>
-        /// 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级
+        /// 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级 - partition：partition分区级导入
         /// </summary>
-        /// <value>文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级</value>
+        /// <value>文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级 - partition：partition分区级导入</value>
         [JsonConverter(typeof(EnumClassConverter<FileImportDbLevelEnum>))]
         public class FileImportDbLevelEnum
         {
@@ -152,12 +152,18 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             /// </summary>
             public static readonly FileImportDbLevelEnum COLUMN = new FileImportDbLevelEnum("column");
 
+            /// <summary>
+            /// Enum PARTITION for value: partition
+            /// </summary>
+            public static readonly FileImportDbLevelEnum PARTITION = new FileImportDbLevelEnum("partition");
+
             private static readonly Dictionary<string, FileImportDbLevelEnum> StaticFields =
             new Dictionary<string, FileImportDbLevelEnum>()
             {
                 { "database", DATABASE },
                 { "table", TABLE },
                 { "column", COLUMN },
+                { "partition", PARTITION },
             };
 
             private string _value;
@@ -266,7 +272,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
         public XLanguageEnum XLanguage { get; set; }
         /// <summary>
-        /// 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级
+        /// 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级 - partition：partition分区级导入
         /// </summary>
         [SDKProperty("file_import_db_level", IsQuery = true)]
         [JsonProperty("file_import_db_level", NullValueHandling = NullValueHandling.Ignore)]

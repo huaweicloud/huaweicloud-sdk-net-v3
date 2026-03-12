@@ -2678,6 +2678,30 @@ namespace HuaweiCloud.SDK.Swr.V2
         }
         
         /// <summary>
+        /// 获取当前项目下所有企业仓库实例的仓库列表
+        ///
+        /// 获取当前项目下所有企业仓库实例的仓库列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListAllInstanceRepositoriesResponse ListAllInstanceRepositories(ListAllInstanceRepositoriesRequest listAllInstanceRepositoriesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/repositories", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAllInstanceRepositoriesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListAllInstanceRepositoriesResponse>(response);
+        }
+
+        public SyncInvoker<ListAllInstanceRepositoriesResponse> ListAllInstanceRepositoriesInvoker(ListAllInstanceRepositoriesRequest listAllInstanceRepositoriesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/repositories", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAllInstanceRepositoriesRequest);
+            return new SyncInvoker<ListAllInstanceRepositoriesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAllInstanceRepositoriesResponse>);
+        }
+        
+        /// <summary>
         /// 获取上传下载的相关审计日志列表
         ///
         /// 获取上传下载的相关审计日志列表

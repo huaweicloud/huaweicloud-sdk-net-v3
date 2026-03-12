@@ -154,6 +154,18 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         [JsonProperty("state", NullValueHandling = NullValueHandling.Ignore)]
         public StateEnum State { get; set; }
+        /// <summary>
+        /// **参数解释**: 任务ID，当无请求参数时返回。 **取值范围**: 不涉及。 
+        /// </summary>
+        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string JobId { get; set; }
+
+        /// <summary>
+        /// **参数解释**: 工作流执行节点ID，当无请求参数时返回。 **取值范围**: 不涉及。 
+        /// </summary>
+        [JsonProperty("node_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string NodeId { get; set; }
+
 
 
         /// <summary>
@@ -166,6 +178,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("  tableVolumes: ").Append(TableVolumes).Append("\n");
             sb.Append("  totalCount: ").Append(TotalCount).Append("\n");
             sb.Append("  state: ").Append(State).Append("\n");
+            sb.Append("  jobId: ").Append(JobId).Append("\n");
+            sb.Append("  nodeId: ").Append(NodeId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -187,6 +201,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             if (this.TableVolumes != input.TableVolumes || (this.TableVolumes != null && input.TableVolumes != null && !this.TableVolumes.SequenceEqual(input.TableVolumes))) return false;
             if (this.TotalCount != input.TotalCount || (this.TotalCount != null && !this.TotalCount.Equals(input.TotalCount))) return false;
             if (this.State != input.State) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.NodeId != input.NodeId || (this.NodeId != null && !this.NodeId.Equals(input.NodeId))) return false;
 
             return true;
         }
@@ -202,6 +218,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                 if (this.TableVolumes != null) hashCode = hashCode * 59 + this.TableVolumes.GetHashCode();
                 if (this.TotalCount != null) hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
                 hashCode = hashCode * 59 + this.State.GetHashCode();
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.NodeId != null) hashCode = hashCode * 59 + this.NodeId.GetHashCode();
                 return hashCode;
             }
         }

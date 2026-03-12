@@ -64,12 +64,6 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         [JsonProperty("backup_parallel_degree", NullValueHandling = NullValueHandling.Ignore)]
         public int? BackupParallelDegree { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("backup_node_info", NullValueHandling = NullValueHandling.Ignore)]
-        public BackupNodeInfoResult BackupNodeInfo { get; set; }
-
 
 
         /// <summary>
@@ -87,7 +81,6 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("  defaultBackupMediaType: ").Append(DefaultBackupMediaType).Append("\n");
             sb.Append("  defaultBackupMethod: ").Append(DefaultBackupMethod).Append("\n");
             sb.Append("  backupParallelDegree: ").Append(BackupParallelDegree).Append("\n");
-            sb.Append("  backupNodeInfo: ").Append(BackupNodeInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -114,7 +107,6 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             if (this.DefaultBackupMediaType != input.DefaultBackupMediaType || (this.DefaultBackupMediaType != null && !this.DefaultBackupMediaType.Equals(input.DefaultBackupMediaType))) return false;
             if (this.DefaultBackupMethod != input.DefaultBackupMethod || (this.DefaultBackupMethod != null && !this.DefaultBackupMethod.Equals(input.DefaultBackupMethod))) return false;
             if (this.BackupParallelDegree != input.BackupParallelDegree || (this.BackupParallelDegree != null && !this.BackupParallelDegree.Equals(input.BackupParallelDegree))) return false;
-            if (this.BackupNodeInfo != input.BackupNodeInfo || (this.BackupNodeInfo != null && !this.BackupNodeInfo.Equals(input.BackupNodeInfo))) return false;
 
             return true;
         }
@@ -135,7 +127,6 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                 if (this.DefaultBackupMediaType != null) hashCode = hashCode * 59 + this.DefaultBackupMediaType.GetHashCode();
                 if (this.DefaultBackupMethod != null) hashCode = hashCode * 59 + this.DefaultBackupMethod.GetHashCode();
                 if (this.BackupParallelDegree != null) hashCode = hashCode * 59 + this.BackupParallelDegree.GetHashCode();
-                if (this.BackupNodeInfo != null) hashCode = hashCode * 59 + this.BackupNodeInfo.GetHashCode();
                 return hashCode;
             }
         }

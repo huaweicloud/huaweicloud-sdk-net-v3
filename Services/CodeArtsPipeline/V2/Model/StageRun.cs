@@ -95,6 +95,12 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
         public long? EndTime { get; set; }
 
         /// <summary>
+        /// **参数解释**： 阶段中断时间，单位毫秒。 **取值范围**： 大于等于 0。 
+        /// </summary>
+        [JsonProperty("pause_time", NullValueHandling = NullValueHandling.Ignore)]
+        public long? PauseTime { get; set; }
+
+        /// <summary>
         /// **参数解释**： 阶段准入。 **取值范围**： 不涉及。 
         /// </summary>
         [JsonProperty("pre", NullValueHandling = NullValueHandling.Ignore)]
@@ -134,6 +140,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
+            sb.Append("  pauseTime: ").Append(PauseTime).Append("\n");
             sb.Append("  pre: ").Append(Pre).Append("\n");
             sb.Append("  post: ").Append(Post).Append("\n");
             sb.Append("  jobs: ").Append(Jobs).Append("\n");
@@ -168,6 +175,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.PauseTime != input.PauseTime || (this.PauseTime != null && !this.PauseTime.Equals(input.PauseTime))) return false;
             if (this.Pre != input.Pre || (this.Pre != null && input.Pre != null && !this.Pre.SequenceEqual(input.Pre))) return false;
             if (this.Post != input.Post || (this.Post != null && input.Post != null && !this.Post.SequenceEqual(input.Post))) return false;
             if (this.Jobs != input.Jobs || (this.Jobs != null && input.Jobs != null && !this.Jobs.SequenceEqual(input.Jobs))) return false;
@@ -196,6 +204,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.PauseTime != null) hashCode = hashCode * 59 + this.PauseTime.GetHashCode();
                 if (this.Pre != null) hashCode = hashCode * 59 + this.Pre.GetHashCode();
                 if (this.Post != null) hashCode = hashCode * 59 + this.Post.GetHashCode();
                 if (this.Jobs != null) hashCode = hashCode * 59 + this.Jobs.GetHashCode();

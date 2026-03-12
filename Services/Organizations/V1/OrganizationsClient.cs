@@ -413,6 +413,258 @@ namespace HuaweiCloud.SDK.Organizations.V1
         }
         
         /// <summary>
+        /// 查询组织策略试运行的配置
+        ///
+        /// 查询组织策略试运行的配置。此操作只能由组织的管理或云服务委托管理员账号调用。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowDryRunConfigResponse ShowDryRunConfig(ShowDryRunConfigRequest showDryRunConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/organizations/dry-run-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDryRunConfigRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowDryRunConfigResponse>(response);
+        }
+
+        public SyncInvoker<ShowDryRunConfigResponse> ShowDryRunConfigInvoker(ShowDryRunConfigRequest showDryRunConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/organizations/dry-run-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDryRunConfigRequest);
+            return new SyncInvoker<ShowDryRunConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDryRunConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 更新组织策略试运行的配置
+        ///
+        /// 更新组织策略试运行的配置。此操作只能由组织的管理账号调用。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateDryRunConfigResponse UpdateDryRunConfig(UpdateDryRunConfigRequest updateDryRunConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/organizations/dry-run-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDryRunConfigRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<UpdateDryRunConfigResponse>(response);
+        }
+
+        public SyncInvoker<UpdateDryRunConfigResponse> UpdateDryRunConfigInvoker(UpdateDryRunConfigRequest updateDryRunConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/organizations/dry-run-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDryRunConfigRequest);
+            return new SyncInvoker<UpdateDryRunConfigResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateDryRunConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 将试运行策略跟实体绑定
+        ///
+        /// 绑定试运行策略到根、组织单元或个人账户。此操作只能由组织的管理账号调用。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public AttachDryRunPolicyResponse AttachDryRunPolicy(AttachDryRunPolicyRequest attachDryRunPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(attachDryRunPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/organizations/dry-run-policies/{policy_id}/attach", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", attachDryRunPolicyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<AttachDryRunPolicyResponse>(response);
+        }
+
+        public SyncInvoker<AttachDryRunPolicyResponse> AttachDryRunPolicyInvoker(AttachDryRunPolicyRequest attachDryRunPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(attachDryRunPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/organizations/dry-run-policies/{policy_id}/attach", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", attachDryRunPolicyRequest);
+            return new SyncInvoker<AttachDryRunPolicyResponse>(this, "POST", request, JsonUtils.DeSerializeNull<AttachDryRunPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 创建试运行策略
+        ///
+        /// 创建指定类型的试运行策略。此操作只能由组织的管理账号调用。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateDryRunPolicyResponse CreateDryRunPolicy(CreateDryRunPolicyRequest createDryRunPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/organizations/dry-run-policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDryRunPolicyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateDryRunPolicyResponse>(response);
+        }
+
+        public SyncInvoker<CreateDryRunPolicyResponse> CreateDryRunPolicyInvoker(CreateDryRunPolicyRequest createDryRunPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/organizations/dry-run-policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDryRunPolicyRequest);
+            return new SyncInvoker<CreateDryRunPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDryRunPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 删除试运行策略
+        ///
+        /// 从组织中删除指定的试运行策略。在执行此操作之前，必须首先将策略跟所有组织单元、根和账号解绑。此操作只能由组织的管理账号调用。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteDryRunPolicyResponse DeleteDryRunPolicy(DeleteDryRunPolicyRequest deleteDryRunPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteDryRunPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/organizations/dry-run-policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDryRunPolicyRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteDryRunPolicyResponse>(response);
+        }
+
+        public SyncInvoker<DeleteDryRunPolicyResponse> DeleteDryRunPolicyInvoker(DeleteDryRunPolicyRequest deleteDryRunPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteDryRunPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/organizations/dry-run-policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDryRunPolicyRequest);
+            return new SyncInvoker<DeleteDryRunPolicyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteDryRunPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 将试运行策略跟实体解绑
+        ///
+        /// 从根、组织单元或账号解绑试运行策略。此操作只能由组织的管理账号调用。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DetachDryRunPolicyResponse DetachDryRunPolicy(DetachDryRunPolicyRequest detachDryRunPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(detachDryRunPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/organizations/dry-run-policies/{policy_id}/detach", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detachDryRunPolicyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<DetachDryRunPolicyResponse>(response);
+        }
+
+        public SyncInvoker<DetachDryRunPolicyResponse> DetachDryRunPolicyInvoker(DetachDryRunPolicyRequest detachDryRunPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(detachDryRunPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/organizations/dry-run-policies/{policy_id}/detach", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detachDryRunPolicyRequest);
+            return new SyncInvoker<DetachDryRunPolicyResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DetachDryRunPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 列出试运行策略
+        ///
+        /// 列出组织中的所有试运行策略。如果指定了资源ID，例如组织单元ID或账号ID，则将获得该资源已绑定的策略列表。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListDryRunPoliciesResponse ListDryRunPolicies(ListDryRunPoliciesRequest listDryRunPoliciesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/organizations/dry-run-policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDryRunPoliciesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListDryRunPoliciesResponse>(response);
+        }
+
+        public SyncInvoker<ListDryRunPoliciesResponse> ListDryRunPoliciesInvoker(ListDryRunPoliciesRequest listDryRunPoliciesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/organizations/dry-run-policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDryRunPoliciesRequest);
+            return new SyncInvoker<ListDryRunPoliciesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDryRunPoliciesResponse>);
+        }
+        
+        /// <summary>
+        /// 列出跟指定试运行策略绑定的所有实体
+        ///
+        /// 列出跟指定试运行策略绑定的所有根、组织单元和账号。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListEntitiesForDryRunPolicyResponse ListEntitiesForDryRunPolicy(ListEntitiesForDryRunPolicyRequest listEntitiesForDryRunPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listEntitiesForDryRunPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/organizations/dry-run-policies/{policy_id}/attached-entities", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEntitiesForDryRunPolicyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListEntitiesForDryRunPolicyResponse>(response);
+        }
+
+        public SyncInvoker<ListEntitiesForDryRunPolicyResponse> ListEntitiesForDryRunPolicyInvoker(ListEntitiesForDryRunPolicyRequest listEntitiesForDryRunPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listEntitiesForDryRunPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/organizations/dry-run-policies/{policy_id}/attached-entities", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEntitiesForDryRunPolicyRequest);
+            return new SyncInvoker<ListEntitiesForDryRunPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ListEntitiesForDryRunPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 查询试运行策略相关信息
+        ///
+        /// 检索试运行策略的相关信息。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowDryRunPolicyResponse ShowDryRunPolicy(ShowDryRunPolicyRequest showDryRunPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showDryRunPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/organizations/dry-run-policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDryRunPolicyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowDryRunPolicyResponse>(response);
+        }
+
+        public SyncInvoker<ShowDryRunPolicyResponse> ShowDryRunPolicyInvoker(ShowDryRunPolicyRequest showDryRunPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showDryRunPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/organizations/dry-run-policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDryRunPolicyRequest);
+            return new SyncInvoker<ShowDryRunPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDryRunPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 更新试运行策略
+        ///
+        /// 更新试运行策略，可以更新试运行策略的名称、描述或内容。如果不提供任何参数，则策略将保持不变。您不能更改策略的类型。此操作只能由组织的管理账号调用。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateDryRunPolicyResponse UpdateDryRunPolicy(UpdateDryRunPolicyRequest updateDryRunPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateDryRunPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/organizations/dry-run-policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDryRunPolicyRequest);
+            var response = DoHttpRequestSync("PATCH", request);
+            return JsonUtils.DeSerialize<UpdateDryRunPolicyResponse>(response);
+        }
+
+        public SyncInvoker<UpdateDryRunPolicyResponse> UpdateDryRunPolicyInvoker(UpdateDryRunPolicyRequest updateDryRunPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateDryRunPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/organizations/dry-run-policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDryRunPolicyRequest);
+            return new SyncInvoker<UpdateDryRunPolicyResponse>(this, "PATCH", request, JsonUtils.DeSerialize<UpdateDryRunPolicyResponse>);
+        }
+        
+        /// <summary>
         /// 接受邀请
         ///
         /// 向邀请的发起方发送应答，接受加入组织邀请。在您接受邀请后，此邀请信息将继续保留并出现在相关API的返回结果中，保留期限为30天。

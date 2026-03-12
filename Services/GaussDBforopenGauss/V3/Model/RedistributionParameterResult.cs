@@ -44,7 +44,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// **参数解释**: 参数类型。 **取值范围**: - integer：整数。 - boolean：布尔类型。 - string：字符串类型。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Type { get; set; }
+        public string Type { get; set; }
 
         /// <summary>
         /// **参数解释**: 参数解释。 **取值范围**: 不涉及。

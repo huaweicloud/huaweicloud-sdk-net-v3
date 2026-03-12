@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         }
 
         /// <summary>
-        /// 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级
+        /// 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级 - partition：partition分区级导入
         /// </summary>
-        /// <value>文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级</value>
+        /// <value>文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级 - partition：partition分区级导入</value>
         [JsonConverter(typeof(EnumClassConverter<FileImportDbLevelEnum>))]
         public class FileImportDbLevelEnum
         {
@@ -152,12 +152,18 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             /// </summary>
             public static readonly FileImportDbLevelEnum COLUMN = new FileImportDbLevelEnum("column");
 
+            /// <summary>
+            /// Enum PARTITION for value: partition
+            /// </summary>
+            public static readonly FileImportDbLevelEnum PARTITION = new FileImportDbLevelEnum("partition");
+
             private static readonly Dictionary<string, FileImportDbLevelEnum> StaticFields =
             new Dictionary<string, FileImportDbLevelEnum>()
             {
                 { "database", DATABASE },
                 { "table", TABLE },
                 { "column", COLUMN },
+                { "partition", PARTITION },
             };
 
             private string _value;
@@ -266,11 +272,18 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
         public XLanguageEnum XLanguage { get; set; }
         /// <summary>
-        /// 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级
+        /// 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级 - partition：partition分区级导入
         /// </summary>
         [SDKProperty("file_import_db_level", IsQuery = true)]
         [JsonProperty("file_import_db_level", NullValueHandling = NullValueHandling.Ignore)]
         public FileImportDbLevelEnum FileImportDbLevel { get; set; }
+        /// <summary>
+        /// 导入文件模板的映射场景，取值： - table_mapping：表名映射 - topic_mapping：topic名映射
+        /// </summary>
+        [SDKProperty("file_import_mapping_type", IsQuery = true)]
+        [JsonProperty("file_import_mapping_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string FileImportMappingType { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
@@ -290,6 +303,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("  xLanguage: ").Append(XLanguage).Append("\n");
             sb.Append("  fileImportDbLevel: ").Append(FileImportDbLevel).Append("\n");
+            sb.Append("  fileImportMappingType: ").Append(FileImportMappingType).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -312,6 +326,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
             if (this.XLanguage != input.XLanguage) return false;
             if (this.FileImportDbLevel != input.FileImportDbLevel) return false;
+            if (this.FileImportMappingType != input.FileImportMappingType || (this.FileImportMappingType != null && !this.FileImportMappingType.Equals(input.FileImportMappingType))) return false;
             if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
             return true;
@@ -328,6 +343,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
                 hashCode = hashCode * 59 + this.FileImportDbLevel.GetHashCode();
+                if (this.FileImportMappingType != null) hashCode = hashCode * 59 + this.FileImportMappingType.GetHashCode();
                 if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }

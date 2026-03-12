@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
     /// <summary>
     /// 
     /// </summary>
-    public class WaitEventQueryInfo 
+    public class WaitEventQueryInfoOption 
     {
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// **参数解释**: 阻塞当前会话的会话数。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
         /// </summary>
         [JsonProperty("block_count", NullValueHandling = NullValueHandling.Ignore)]
-        public string BlockCount { get; set; }
+        public int? BlockCount { get; set; }
 
         /// <summary>
         /// **参数解释**: 唯一的SQL ID。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
@@ -90,7 +90,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class WaitEventQueryInfo {\n");
+            sb.Append("class WaitEventQueryInfoOption {\n");
             sb.Append("  databaseName: ").Append(DatabaseName).Append("\n");
             sb.Append("  userName: ").Append(UserName).Append("\n");
             sb.Append("  waiting: ").Append(Waiting).Append("\n");
@@ -111,13 +111,13 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as WaitEventQueryInfo);
+            return this.Equals(input as WaitEventQueryInfoOption);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(WaitEventQueryInfo input)
+        public bool Equals(WaitEventQueryInfoOption input)
         {
             if (input == null) return false;
             if (this.DatabaseName != input.DatabaseName || (this.DatabaseName != null && !this.DatabaseName.Equals(input.DatabaseName))) return false;

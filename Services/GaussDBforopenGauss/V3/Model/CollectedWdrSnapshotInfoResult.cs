@@ -64,6 +64,42 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         [JsonProperty("notes", NullValueHandling = NullValueHandling.Ignore)]
         public string Notes { get; set; }
 
+        /// <summary>
+        /// **参数解释**： WDR报告生成任务的创建时间。格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始，Z指时区偏移量，当前时间固定为+0时区。例如，\&quot;2025-07-08T10:57:59+0000\&quot;。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("job_create_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string JobCreateTime { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 用于生成WDR报告的第一个对比快照ID。例如：\&quot;20024\&quot;。只针对使用报告生成模式为对比快照ID（mode&#x3D;snapshot_id）的采集任务生效；如果该任务使用的是时间区间查询方式（mode&#x3D;time_range），则该字段为空。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("start_snapshot_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string StartSnapshotId { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 用于生成WDR报告的第二个对比快照ID。例如：\&quot;20025\&quot;。只针对使用报告生成模式为对比快照ID（mode&#x3D;snapshot_id）的采集任务生效；如果该任务使用的是时间区间查询方式（mode&#x3D;time_range）来生成的，则该字段为空。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("end_snapshot_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EndSnapshotId { get; set; }
+
+        /// <summary>
+        /// **参数解释**： WDR报告临时文件名称。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("file_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string FileName { get; set; }
+
+        /// <summary>
+        /// **参数解释**： WDR报告临时文件保存路径。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("file_path", NullValueHandling = NullValueHandling.Ignore)]
+        public string FilePath { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("obs_bucket", NullValueHandling = NullValueHandling.Ignore)]
+        public CollectedWdrSnapshotInfoResultObsBucket ObsBucket { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +117,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("  downloadUrl: ").Append(DownloadUrl).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  notes: ").Append(Notes).Append("\n");
+            sb.Append("  jobCreateTime: ").Append(JobCreateTime).Append("\n");
+            sb.Append("  startSnapshotId: ").Append(StartSnapshotId).Append("\n");
+            sb.Append("  endSnapshotId: ").Append(EndSnapshotId).Append("\n");
+            sb.Append("  fileName: ").Append(FileName).Append("\n");
+            sb.Append("  filePath: ").Append(FilePath).Append("\n");
+            sb.Append("  obsBucket: ").Append(ObsBucket).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +149,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             if (this.DownloadUrl != input.DownloadUrl || (this.DownloadUrl != null && !this.DownloadUrl.Equals(input.DownloadUrl))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.Notes != input.Notes || (this.Notes != null && !this.Notes.Equals(input.Notes))) return false;
+            if (this.JobCreateTime != input.JobCreateTime || (this.JobCreateTime != null && !this.JobCreateTime.Equals(input.JobCreateTime))) return false;
+            if (this.StartSnapshotId != input.StartSnapshotId || (this.StartSnapshotId != null && !this.StartSnapshotId.Equals(input.StartSnapshotId))) return false;
+            if (this.EndSnapshotId != input.EndSnapshotId || (this.EndSnapshotId != null && !this.EndSnapshotId.Equals(input.EndSnapshotId))) return false;
+            if (this.FileName != input.FileName || (this.FileName != null && !this.FileName.Equals(input.FileName))) return false;
+            if (this.FilePath != input.FilePath || (this.FilePath != null && !this.FilePath.Equals(input.FilePath))) return false;
+            if (this.ObsBucket != input.ObsBucket || (this.ObsBucket != null && !this.ObsBucket.Equals(input.ObsBucket))) return false;
 
             return true;
         }
@@ -127,6 +175,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                 if (this.DownloadUrl != null) hashCode = hashCode * 59 + this.DownloadUrl.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Notes != null) hashCode = hashCode * 59 + this.Notes.GetHashCode();
+                if (this.JobCreateTime != null) hashCode = hashCode * 59 + this.JobCreateTime.GetHashCode();
+                if (this.StartSnapshotId != null) hashCode = hashCode * 59 + this.StartSnapshotId.GetHashCode();
+                if (this.EndSnapshotId != null) hashCode = hashCode * 59 + this.EndSnapshotId.GetHashCode();
+                if (this.FileName != null) hashCode = hashCode * 59 + this.FileName.GetHashCode();
+                if (this.FilePath != null) hashCode = hashCode * 59 + this.FilePath.GetHashCode();
+                if (this.ObsBucket != null) hashCode = hashCode * 59 + this.ObsBucket.GetHashCode();
                 return hashCode;
             }
         }

@@ -44,7 +44,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// 参数对象，用户基于默认参数模板自定义的参数配置。
         /// </summary>
         [JsonProperty("configuration_parameters", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ConfigurationParameter> ConfigurationParameters { get; set; }
+        public List<ConfigurationParameterResult> ConfigurationParameters { get; set; }
 
 
 

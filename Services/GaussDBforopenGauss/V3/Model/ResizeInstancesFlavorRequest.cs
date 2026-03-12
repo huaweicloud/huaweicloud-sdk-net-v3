@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public OpenGaussResizeRequest Body { get; set; }
+        public OpenGaussResizeRequestBody Body { get; set; }
 
 
 

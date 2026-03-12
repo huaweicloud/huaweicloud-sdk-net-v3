@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
     /// <summary>
     /// 
     /// </summary>
-    public class ConfigurationParameter 
+    public class ConfigurationParameterResult 
     {
         /// <summary>
         /// 参数类型，取值为“string”、“integer”、“boolean”、“list”或“float”之一。
@@ -168,6 +168,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public bool? RestartRequired { get; set; }
 
         /// <summary>
+        /// **参数解释**: 该参数的value值是否为只读，无法直接修改。 **取值范围**: - true：该参数的value值只读，不允许用户直接修改。 - false：允许修改。
+        /// </summary>
+        [JsonProperty("readonly", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Readonly { get; set; }
+
+        /// <summary>
         /// 参数取值范围。
         /// </summary>
         [JsonProperty("value_range", NullValueHandling = NullValueHandling.Ignore)]
@@ -192,10 +198,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ConfigurationParameter {\n");
+            sb.Append("class ConfigurationParameterResult {\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  value: ").Append(Value).Append("\n");
             sb.Append("  restartRequired: ").Append(RestartRequired).Append("\n");
+            sb.Append("  Readonly: ").Append(Readonly).Append("\n");
             sb.Append("  valueRange: ").Append(ValueRange).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
@@ -208,18 +215,19 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ConfigurationParameter);
+            return this.Equals(input as ConfigurationParameterResult);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ConfigurationParameter input)
+        public bool Equals(ConfigurationParameterResult input)
         {
             if (input == null) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Value != input.Value || (this.Value != null && !this.Value.Equals(input.Value))) return false;
             if (this.RestartRequired != input.RestartRequired || (this.RestartRequired != null && !this.RestartRequired.Equals(input.RestartRequired))) return false;
+            if (this.Readonly != input.Readonly || (this.Readonly != null && !this.Readonly.Equals(input.Readonly))) return false;
             if (this.ValueRange != input.ValueRange || (this.ValueRange != null && !this.ValueRange.Equals(input.ValueRange))) return false;
             if (this.Type != input.Type) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
@@ -238,6 +246,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Value != null) hashCode = hashCode * 59 + this.Value.GetHashCode();
                 if (this.RestartRequired != null) hashCode = hashCode * 59 + this.RestartRequired.GetHashCode();
+                if (this.Readonly != null) hashCode = hashCode * 59 + this.Readonly.GetHashCode();
                 if (this.ValueRange != null) hashCode = hashCode * 59 + this.ValueRange.GetHashCode();
                 hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();

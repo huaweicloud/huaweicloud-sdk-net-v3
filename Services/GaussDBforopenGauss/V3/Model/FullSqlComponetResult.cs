@@ -115,14 +115,14 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// <summary>
         /// **参数解释**: 开始时间，格式为“yyyy-mm-ddThh:mm:ss.SSSSSZ”。 **取值范围**: 不涉及。
         /// </summary>
-        [JsonProperty("begin_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string BeginTime { get; set; }
+        [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string StartTime { get; set; }
 
         /// <summary>
         /// **参数解释**: 结束时间，格式为“yyyy-mm-ddThh:mm:ss.SSSSSZ”。 **取值范围**: 不涉及。
         /// </summary>
-        [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string EndTime { get; set; }
+        [JsonProperty("finish_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string FinishTime { get; set; }
 
         /// <summary>
         /// **参数解释**: 慢SQL阈值。 **取值范围**: 不涉及。
@@ -151,8 +151,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// <summary>
         /// **参数解释**: SELECT语句的返回结果集行数。 **取值范围**: 不涉及。
         /// </summary>
-        [JsonProperty("n_return_rows", NullValueHandling = NullValueHandling.Ignore)]
-        public long? NReturnRows { get; set; }
+        [JsonProperty("n_returned_rows", NullValueHandling = NullValueHandling.Ignore)]
+        public long? NReturnedRows { get; set; }
 
         /// <summary>
         /// **参数解释**: 随机扫描行。 **取值范围**: 不涉及。
@@ -347,13 +347,13 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("  query: ").Append(Query).Append("\n");
             sb.Append("  threadId: ").Append(ThreadId).Append("\n");
             sb.Append("  sessionId: ").Append(SessionId).Append("\n");
-            sb.Append("  beginTime: ").Append(BeginTime).Append("\n");
-            sb.Append("  endTime: ").Append(EndTime).Append("\n");
+            sb.Append("  startTime: ").Append(StartTime).Append("\n");
+            sb.Append("  finishTime: ").Append(FinishTime).Append("\n");
             sb.Append("  slowQueryThreshold: ").Append(SlowQueryThreshold).Append("\n");
             sb.Append("  nSoftParse: ").Append(NSoftParse).Append("\n");
             sb.Append("  nHardParse: ").Append(NHardParse).Append("\n");
             sb.Append("  queryPlan: ").Append(QueryPlan).Append("\n");
-            sb.Append("  nReturnRows: ").Append(NReturnRows).Append("\n");
+            sb.Append("  nReturnedRows: ").Append(NReturnedRows).Append("\n");
             sb.Append("  nTuplesFetched: ").Append(NTuplesFetched).Append("\n");
             sb.Append("  nTuplesReturned: ").Append(NTuplesReturned).Append("\n");
             sb.Append("  nTuplesInserted: ").Append(NTuplesInserted).Append("\n");
@@ -416,13 +416,13 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             if (this.Query != input.Query || (this.Query != null && !this.Query.Equals(input.Query))) return false;
             if (this.ThreadId != input.ThreadId || (this.ThreadId != null && !this.ThreadId.Equals(input.ThreadId))) return false;
             if (this.SessionId != input.SessionId || (this.SessionId != null && !this.SessionId.Equals(input.SessionId))) return false;
-            if (this.BeginTime != input.BeginTime || (this.BeginTime != null && !this.BeginTime.Equals(input.BeginTime))) return false;
-            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.FinishTime != input.FinishTime || (this.FinishTime != null && !this.FinishTime.Equals(input.FinishTime))) return false;
             if (this.SlowQueryThreshold != input.SlowQueryThreshold || (this.SlowQueryThreshold != null && !this.SlowQueryThreshold.Equals(input.SlowQueryThreshold))) return false;
             if (this.NSoftParse != input.NSoftParse || (this.NSoftParse != null && !this.NSoftParse.Equals(input.NSoftParse))) return false;
             if (this.NHardParse != input.NHardParse || (this.NHardParse != null && !this.NHardParse.Equals(input.NHardParse))) return false;
             if (this.QueryPlan != input.QueryPlan || (this.QueryPlan != null && !this.QueryPlan.Equals(input.QueryPlan))) return false;
-            if (this.NReturnRows != input.NReturnRows || (this.NReturnRows != null && !this.NReturnRows.Equals(input.NReturnRows))) return false;
+            if (this.NReturnedRows != input.NReturnedRows || (this.NReturnedRows != null && !this.NReturnedRows.Equals(input.NReturnedRows))) return false;
             if (this.NTuplesFetched != input.NTuplesFetched || (this.NTuplesFetched != null && !this.NTuplesFetched.Equals(input.NTuplesFetched))) return false;
             if (this.NTuplesReturned != input.NTuplesReturned || (this.NTuplesReturned != null && !this.NTuplesReturned.Equals(input.NTuplesReturned))) return false;
             if (this.NTuplesInserted != input.NTuplesInserted || (this.NTuplesInserted != null && !this.NTuplesInserted.Equals(input.NTuplesInserted))) return false;
@@ -479,13 +479,13 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                 if (this.Query != null) hashCode = hashCode * 59 + this.Query.GetHashCode();
                 if (this.ThreadId != null) hashCode = hashCode * 59 + this.ThreadId.GetHashCode();
                 if (this.SessionId != null) hashCode = hashCode * 59 + this.SessionId.GetHashCode();
-                if (this.BeginTime != null) hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
-                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.FinishTime != null) hashCode = hashCode * 59 + this.FinishTime.GetHashCode();
                 if (this.SlowQueryThreshold != null) hashCode = hashCode * 59 + this.SlowQueryThreshold.GetHashCode();
                 if (this.NSoftParse != null) hashCode = hashCode * 59 + this.NSoftParse.GetHashCode();
                 if (this.NHardParse != null) hashCode = hashCode * 59 + this.NHardParse.GetHashCode();
                 if (this.QueryPlan != null) hashCode = hashCode * 59 + this.QueryPlan.GetHashCode();
-                if (this.NReturnRows != null) hashCode = hashCode * 59 + this.NReturnRows.GetHashCode();
+                if (this.NReturnedRows != null) hashCode = hashCode * 59 + this.NReturnedRows.GetHashCode();
                 if (this.NTuplesFetched != null) hashCode = hashCode * 59 + this.NTuplesFetched.GetHashCode();
                 if (this.NTuplesReturned != null) hashCode = hashCode * 59 + this.NTuplesReturned.GetHashCode();
                 if (this.NTuplesInserted != null) hashCode = hashCode * 59 + this.NTuplesInserted.GetHashCode();
