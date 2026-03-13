@@ -11,12 +11,13 @@ jobs:
       uses: actions/setup-dotnet@v4
     - name: Download
       run: |
-        services=$(ls Services)
         version=$(cat VERSION)
         dotnet new console -n MyDotNetApp
         cd MyDotNetApp || exit 1
-        for service in "$services"; do
-          dotnet add package "HuaweiCloud.SDK.${service}" --version "$version"
         done
-        cat MyDotNetApp.csproj
+        for dir in Services/*/ ; do
+            dirname="${dir%/}"
+            dotnet add package "HuaweiCloud.SDK.${dirname##*/}" --version "$version"
+        done
+        cat MyDotNetApp.csproj || exit 1
       shell: bash
