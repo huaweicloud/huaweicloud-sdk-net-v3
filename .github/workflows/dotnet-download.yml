@@ -12,11 +12,11 @@ jobs:
     - name: Download
       run: |
         version=$(cat VERSION)
+        services=$(find Services -maxdepth 1 -mindepth 1 -type d -printf "%f\n")
         dotnet new console -n MyDotNetApp
         cd MyDotNetApp || exit 1
-        for dir in Services/*/ ; do
-            dirname="${dir%/}"
-            dotnet add package "HuaweiCloud.SDK.${dirname##*/}" --version "$version"
+        for service in "$services"; do
+            dotnet add package "HuaweiCloud.SDK.${service}" --version "$version"
         done
         cat MyDotNetApp.csproj || exit 1
       shell: bash
