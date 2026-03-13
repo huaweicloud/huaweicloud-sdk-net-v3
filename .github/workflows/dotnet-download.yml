@@ -16,7 +16,8 @@ jobs:
         dotnet new console -n MyDotNetApp
         cd MyDotNetApp || exit 1
         for service in "$services"; do
-            dotnet add package "HuaweiCloud.SDK.${service}" --version "$version"
+            # dotnet add package "HuaweiCloud.SDK.${service}" --version "$version"
+            echo "HuaweiCloud.SDK.${service}"
         done
         cat MyDotNetApp.csproj || exit 1
       shell: bash
