@@ -14,7 +14,6 @@ jobs:
         version=$(cat VERSION)
         dotnet new console -n MyDotNetApp
         cd MyDotNetApp || exit 1
-        done
         for dir in Services/*/ ; do
             dirname="${dir%/}"
             dotnet add package "HuaweiCloud.SDK.${dirname##*/}" --version "$version"
