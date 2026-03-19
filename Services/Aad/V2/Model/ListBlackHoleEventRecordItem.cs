@@ -56,13 +56,13 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         /// 封堵开始时间
         /// </summary>
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? StartTime { get; set; }
+        public long? StartTime { get; set; }
 
         /// <summary>
         /// 封堵结束时间
         /// </summary>
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? EndTime { get; set; }
+        public long? EndTime { get; set; }
 
 
 

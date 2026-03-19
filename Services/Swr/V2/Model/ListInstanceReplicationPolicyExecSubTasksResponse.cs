@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
     {
 
         /// <summary>
-        /// 老化策略执行记录子任务列表
+        /// 镜像同步策略执行记录子任务列表
         /// </summary>
-        [JsonProperty("subtasks", NullValueHandling = NullValueHandling.Ignore)]
-        public List<SubtaskDetail> Subtasks { get; set; }
+        [JsonProperty("sub_tasks", NullValueHandling = NullValueHandling.Ignore)]
+        public List<SubtaskDetail> SubTasks { get; set; }
 
         /// <summary>
-        /// 老化策略执行记录子任务总数
+        /// 镜像同步策略执行记录子任务总数
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }
@@ -37,7 +37,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListInstanceReplicationPolicyExecSubTasksResponse {\n");
-            sb.Append("  subtasks: ").Append(Subtasks).Append("\n");
+            sb.Append("  subTasks: ").Append(SubTasks).Append("\n");
             sb.Append("  total: ").Append(Total).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -57,7 +57,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public bool Equals(ListInstanceReplicationPolicyExecSubTasksResponse input)
         {
             if (input == null) return false;
-            if (this.Subtasks != input.Subtasks || (this.Subtasks != null && input.Subtasks != null && !this.Subtasks.SequenceEqual(input.Subtasks))) return false;
+            if (this.SubTasks != input.SubTasks || (this.SubTasks != null && input.SubTasks != null && !this.SubTasks.SequenceEqual(input.SubTasks))) return false;
             if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
 
             return true;
@@ -71,7 +71,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Subtasks != null) hashCode = hashCode * 59 + this.Subtasks.GetHashCode();
+                if (this.SubTasks != null) hashCode = hashCode * 59 + this.SubTasks.GetHashCode();
                 if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
                 return hashCode;
             }

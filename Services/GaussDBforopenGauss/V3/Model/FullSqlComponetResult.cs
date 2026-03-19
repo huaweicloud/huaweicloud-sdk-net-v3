@@ -101,6 +101,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public string Query { get; set; }
 
         /// <summary>
+        /// **参数解释**: 解析后的原始SQL文本。 开启track_stmt_parameter参数后，会把SQL文本中的变量替换成真实值，展示原始的SQL。对于track_stmt_parameter参数关闭时采集的SQL文本，无法获取到SQL参数变量的值，展示的内容为空。 **取值范围**: 不涉及。
+        /// </summary>
+        [JsonProperty("sql", NullValueHandling = NullValueHandling.Ignore)]
+        public string Sql { get; set; }
+
+        /// <summary>
         /// **参数解释**: 线程ID。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("thread_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -345,6 +351,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("  transactionId: ").Append(TransactionId).Append("\n");
             sb.Append("  traceId: ").Append(TraceId).Append("\n");
             sb.Append("  query: ").Append(Query).Append("\n");
+            sb.Append("  sql: ").Append(Sql).Append("\n");
             sb.Append("  threadId: ").Append(ThreadId).Append("\n");
             sb.Append("  sessionId: ").Append(SessionId).Append("\n");
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
@@ -414,6 +421,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             if (this.TransactionId != input.TransactionId || (this.TransactionId != null && !this.TransactionId.Equals(input.TransactionId))) return false;
             if (this.TraceId != input.TraceId || (this.TraceId != null && !this.TraceId.Equals(input.TraceId))) return false;
             if (this.Query != input.Query || (this.Query != null && !this.Query.Equals(input.Query))) return false;
+            if (this.Sql != input.Sql || (this.Sql != null && !this.Sql.Equals(input.Sql))) return false;
             if (this.ThreadId != input.ThreadId || (this.ThreadId != null && !this.ThreadId.Equals(input.ThreadId))) return false;
             if (this.SessionId != input.SessionId || (this.SessionId != null && !this.SessionId.Equals(input.SessionId))) return false;
             if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
@@ -477,6 +485,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                 if (this.TransactionId != null) hashCode = hashCode * 59 + this.TransactionId.GetHashCode();
                 if (this.TraceId != null) hashCode = hashCode * 59 + this.TraceId.GetHashCode();
                 if (this.Query != null) hashCode = hashCode * 59 + this.Query.GetHashCode();
+                if (this.Sql != null) hashCode = hashCode * 59 + this.Sql.GetHashCode();
                 if (this.ThreadId != null) hashCode = hashCode * 59 + this.ThreadId.GetHashCode();
                 if (this.SessionId != null) hashCode = hashCode * 59 + this.SessionId.GetHashCode();
                 if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();

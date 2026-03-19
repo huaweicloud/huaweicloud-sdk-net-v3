@@ -32,7 +32,7 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         /// 时间戳
         /// </summary>
         [JsonProperty("time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Time { get; set; }
+        public long? Time { get; set; }
 
 
 

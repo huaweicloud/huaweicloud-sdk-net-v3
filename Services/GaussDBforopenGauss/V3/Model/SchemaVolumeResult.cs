@@ -37,8 +37,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// <summary>
         /// **参数解释**: schema名称空间的名称。 **取值范围**: 不涉及。 
         /// </summary>
-        [JsonProperty("nsp_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string NspName { get; set; }
+        [JsonProperty("schema_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string SchemaName { get; set; }
 
 
 
@@ -52,7 +52,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("  schemaSize: ").Append(SchemaSize).Append("\n");
             sb.Append("  tableCount: ").Append(TableCount).Append("\n");
             sb.Append("  userName: ").Append(UserName).Append("\n");
-            sb.Append("  nspName: ").Append(NspName).Append("\n");
+            sb.Append("  schemaName: ").Append(SchemaName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -74,7 +74,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             if (this.SchemaSize != input.SchemaSize || (this.SchemaSize != null && !this.SchemaSize.Equals(input.SchemaSize))) return false;
             if (this.TableCount != input.TableCount || (this.TableCount != null && !this.TableCount.Equals(input.TableCount))) return false;
             if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
-            if (this.NspName != input.NspName || (this.NspName != null && !this.NspName.Equals(input.NspName))) return false;
+            if (this.SchemaName != input.SchemaName || (this.SchemaName != null && !this.SchemaName.Equals(input.SchemaName))) return false;
 
             return true;
         }
@@ -90,7 +90,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                 if (this.SchemaSize != null) hashCode = hashCode * 59 + this.SchemaSize.GetHashCode();
                 if (this.TableCount != null) hashCode = hashCode * 59 + this.TableCount.GetHashCode();
                 if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
-                if (this.NspName != null) hashCode = hashCode * 59 + this.NspName.GetHashCode();
+                if (this.SchemaName != null) hashCode = hashCode * 59 + this.SchemaName.GetHashCode();
                 return hashCode;
             }
         }

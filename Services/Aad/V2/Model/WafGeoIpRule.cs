@@ -44,7 +44,7 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         /// 添加时间
         /// </summary>
         [JsonProperty("timestamp", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Timestamp { get; set; }
+        public long? Timestamp { get; set; }
 
         /// <summary>
         /// 防护动作 0-阻断，1-放行，2-仅记录

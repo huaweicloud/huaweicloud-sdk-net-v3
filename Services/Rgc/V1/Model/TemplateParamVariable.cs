@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
         [JsonProperty("validations", NullValueHandling = NullValueHandling.Ignore)]
         public List<TemplateParamVariableValidation> Validations { get; set; }
 
+        /// <summary>
+        /// 最近一次的部署参数。
+        /// </summary>
+        [JsonProperty("latest_param", NullValueHandling = NullValueHandling.Ignore)]
+        public string LatestParam { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
             sb.Append("  sensitive: ").Append(Sensitive).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  validations: ").Append(Validations).Append("\n");
+            sb.Append("  latestParam: ").Append(LatestParam).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,6 +106,7 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
             if (this.Sensitive != input.Sensitive || (this.Sensitive != null && !this.Sensitive.Equals(input.Sensitive))) return false;
             if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
             if (this.Validations != input.Validations || (this.Validations != null && input.Validations != null && !this.Validations.SequenceEqual(input.Validations))) return false;
+            if (this.LatestParam != input.LatestParam || (this.LatestParam != null && !this.LatestParam.Equals(input.LatestParam))) return false;
 
             return true;
         }
@@ -118,6 +126,7 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
                 if (this.Sensitive != null) hashCode = hashCode * 59 + this.Sensitive.GetHashCode();
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Validations != null) hashCode = hashCode * 59 + this.Validations.GetHashCode();
+                if (this.LatestParam != null) hashCode = hashCode * 59 + this.LatestParam.GetHashCode();
                 return hashCode;
             }
         }

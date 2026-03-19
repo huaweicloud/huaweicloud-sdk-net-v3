@@ -5531,7 +5531,6 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         public ListLtsConfigsResponse ListLtsConfigs(ListLtsConfigsRequest listLtsConfigsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listLtsConfigsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/logs/lts-config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLtsConfigsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -5541,7 +5540,6 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         public SyncInvoker<ListLtsConfigsResponse> ListLtsConfigsInvoker(ListLtsConfigsRequest listLtsConfigsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listLtsConfigsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/logs/lts-config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLtsConfigsRequest);
             return new SyncInvoker<ListLtsConfigsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListLtsConfigsResponse>);

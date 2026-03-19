@@ -92,7 +92,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// **参数解释**: CN节点信息列表 **约束限制**: 如果“limit_type”为SQL_ID，则“node_infos”必选。
         /// </summary>
         [JsonProperty("node_infos", NullValueHandling = NullValueHandling.Ignore)]
-        public List<CreateLimitTaskNodeOption> NodeInfos { get; set; }
+        public List<CreateSqlLimitTaskNodeOption> NodeInfos { get; set; }
 
 
 

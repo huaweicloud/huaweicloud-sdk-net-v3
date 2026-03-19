@@ -32,7 +32,7 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         /// 攻击时间
         /// </summary>
         [JsonProperty("time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Time { get; set; }
+        public long? Time { get; set; }
 
         /// <summary>
         /// 攻击源IP

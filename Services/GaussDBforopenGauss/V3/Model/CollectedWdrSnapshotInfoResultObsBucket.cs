@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// **参数解释**： OBS服务端口号。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
-        public string Port { get; set; }
+        public int? Port { get; set; }
 
         /// <summary>
         /// **参数解释**： 最终租户ID。 **取值范围**： 不涉及。

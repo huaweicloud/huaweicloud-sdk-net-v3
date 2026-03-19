@@ -38,19 +38,19 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         /// 过期时间
         /// </summary>
         [JsonProperty("expire_time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? ExpireTime { get; set; }
+        public long? ExpireTime { get; set; }
 
         /// <summary>
         /// 创建时间
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? CreateTime { get; set; }
+        public long? CreateTime { get; set; }
 
         /// <summary>
         /// 当前时间
         /// </summary>
         [JsonProperty("current_time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? CurrentTime { get; set; }
+        public long? CurrentTime { get; set; }
 
         /// <summary>
         /// 

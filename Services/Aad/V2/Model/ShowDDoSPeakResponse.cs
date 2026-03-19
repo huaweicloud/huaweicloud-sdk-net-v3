@@ -56,7 +56,7 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         /// 峰值时间
         /// </summary>
         [JsonProperty("utime", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Utime { get; set; }
+        public long? Utime { get; set; }
 
 
 
