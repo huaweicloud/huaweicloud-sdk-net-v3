@@ -121,8 +121,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// <summary>
         /// **参数解释**：  实例所有的回收站备份列表。
         /// </summary>
-        [JsonProperty("recycle_bakcups", NullValueHandling = NullValueHandling.Ignore)]
-        public List<RecycleBackupV3> RecycleBakcups { get; set; }
+        [JsonProperty("recycle_backups", NullValueHandling = NullValueHandling.Ignore)]
+        public List<RecycleBackupV3> RecycleBackups { get; set; }
 
 
 
@@ -150,7 +150,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  backupLevel: ").Append(BackupLevel).Append("\n");
             sb.Append("  recycleBackupId: ").Append(RecycleBackupId).Append("\n");
             sb.Append("  recycleStatus: ").Append(RecycleStatus).Append("\n");
-            sb.Append("  recycleBakcups: ").Append(RecycleBakcups).Append("\n");
+            sb.Append("  recycleBackups: ").Append(RecycleBackups).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -186,7 +186,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (this.BackupLevel != input.BackupLevel || (this.BackupLevel != null && !this.BackupLevel.Equals(input.BackupLevel))) return false;
             if (this.RecycleBackupId != input.RecycleBackupId || (this.RecycleBackupId != null && !this.RecycleBackupId.Equals(input.RecycleBackupId))) return false;
             if (this.RecycleStatus != input.RecycleStatus || (this.RecycleStatus != null && !this.RecycleStatus.Equals(input.RecycleStatus))) return false;
-            if (this.RecycleBakcups != input.RecycleBakcups || (this.RecycleBakcups != null && input.RecycleBakcups != null && !this.RecycleBakcups.SequenceEqual(input.RecycleBakcups))) return false;
+            if (this.RecycleBackups != input.RecycleBackups || (this.RecycleBackups != null && input.RecycleBackups != null && !this.RecycleBackups.SequenceEqual(input.RecycleBackups))) return false;
 
             return true;
         }
@@ -216,7 +216,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 if (this.BackupLevel != null) hashCode = hashCode * 59 + this.BackupLevel.GetHashCode();
                 if (this.RecycleBackupId != null) hashCode = hashCode * 59 + this.RecycleBackupId.GetHashCode();
                 if (this.RecycleStatus != null) hashCode = hashCode * 59 + this.RecycleStatus.GetHashCode();
-                if (this.RecycleBakcups != null) hashCode = hashCode * 59 + this.RecycleBakcups.GetHashCode();
+                if (this.RecycleBackups != null) hashCode = hashCode * 59 + this.RecycleBackups.GetHashCode();
                 return hashCode;
             }
         }

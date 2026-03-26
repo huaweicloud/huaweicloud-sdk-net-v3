@@ -605,6 +605,34 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 关闭自治限流
+        ///
+        /// 关闭自治限流。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteAutoSqlLimitingResponse DeleteAutoSqlLimiting(DeleteAutoSqlLimitingRequest deleteAutoSqlLimitingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteAutoSqlLimitingRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteAutoSqlLimitingRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/auto-sql-limiting", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAutoSqlLimitingRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteAutoSqlLimitingResponse>(response);
+        }
+
+        public SyncInvoker<DeleteAutoSqlLimitingResponse> DeleteAutoSqlLimitingInvoker(DeleteAutoSqlLimitingRequest deleteAutoSqlLimitingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteAutoSqlLimitingRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteAutoSqlLimitingRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/auto-sql-limiting", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAutoSqlLimitingRequest);
+            return new SyncInvoker<DeleteAutoSqlLimitingResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteAutoSqlLimitingResponse>);
+        }
+        
+        /// <summary>
         /// 删除数据库用户的数据库权限
         ///
         /// 删除云数据库 TaurusDB实例数据库用户的数据库权限。
@@ -2826,6 +2854,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 查询指定实例全量备份列表
+        ///
+        /// 查询指定实例全量备份列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowInstanceBackupsResponse ShowInstanceBackups(ShowInstanceBackupsRequest showInstanceBackupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceBackupsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceBackupsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowInstanceBackupsResponse>(response);
+        }
+
+        public SyncInvoker<ShowInstanceBackupsResponse> ShowInstanceBackupsInvoker(ShowInstanceBackupsRequest showInstanceBackupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceBackupsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceBackupsRequest);
+            return new SyncInvoker<ShowInstanceBackupsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceBackupsResponse>);
+        }
+        
+        /// <summary>
         /// 查询内核版本信息
         ///
         /// 查询内核版本信息。
@@ -5007,6 +5061,56 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 删除HTAP实例会话
+        ///
+        /// 删除HTAP实例会话。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteHtapProcessListResponse DeleteHtapProcessList(DeleteHtapProcessListRequest deleteHtapProcessListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteHtapProcessListRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/htap/process", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteHtapProcessListRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteHtapProcessListResponse>(response);
+        }
+
+        public SyncInvoker<DeleteHtapProcessListResponse> DeleteHtapProcessListInvoker(DeleteHtapProcessListRequest deleteHtapProcessListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteHtapProcessListRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/htap/process", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteHtapProcessListRequest);
+            return new SyncInvoker<DeleteHtapProcessListResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteHtapProcessListResponse>);
+        }
+        
+        /// <summary>
+        /// 批量解除LTS日志配置
+        ///
+        /// 批量解除LTS日志配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteStarRockLtsConfigResponse DeleteStarRockLtsConfig(DeleteStarRockLtsConfigRequest deleteStarRockLtsConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/starrocks/instances/logs/lts-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteStarRockLtsConfigRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteStarRockLtsConfigResponse>(response);
+        }
+
+        public SyncInvoker<DeleteStarRockLtsConfigResponse> DeleteStarRockLtsConfigInvoker(DeleteStarRockLtsConfigRequest deleteStarRockLtsConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/starrocks/instances/logs/lts-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteStarRockLtsConfigRequest);
+            return new SyncInvoker<DeleteStarRockLtsConfigResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteStarRockLtsConfigResponse>);
+        }
+        
+        /// <summary>
         /// 删除StarRocks数据同步
         ///
         /// 删除StarRocks数据同步。
@@ -6001,6 +6105,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 查询HTAP实例当前会话
+        ///
+        /// 查询HTAP实例当前会话。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowHtapProcessListResponse ShowHtapProcessList(ShowHtapProcessListRequest showHtapProcessListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showHtapProcessListRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/htap/process", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHtapProcessListRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowHtapProcessListResponse>(response);
+        }
+
+        public SyncInvoker<ShowHtapProcessListResponse> ShowHtapProcessListInvoker(ShowHtapProcessListRequest showHtapProcessListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showHtapProcessListRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/htap/process", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHtapProcessListRequest);
+            return new SyncInvoker<ShowHtapProcessListResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowHtapProcessListResponse>);
+        }
+        
+        /// <summary>
         /// 查询当前查询队列开关和阈值
         ///
         /// 查询当前查询队列开关和阈值。
@@ -6308,6 +6438,30 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/htap/query-queue/switch", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateHtapQueryQueuesControlRequest);
             return new SyncInvoker<UpdateHtapQueryQueuesControlResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateHtapQueryQueuesControlResponse>);
+        }
+        
+        /// <summary>
+        /// 批量创建LTS日志配置
+        ///
+        /// 批量创建LTS日志配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateStarRockLtsConfigResponse UpdateStarRockLtsConfig(UpdateStarRockLtsConfigRequest updateStarRockLtsConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/starrocks/instances/logs/lts-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateStarRockLtsConfigRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<UpdateStarRockLtsConfigResponse>(response);
+        }
+
+        public SyncInvoker<UpdateStarRockLtsConfigResponse> UpdateStarRockLtsConfigInvoker(UpdateStarRockLtsConfigRequest updateStarRockLtsConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/starrocks/instances/logs/lts-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateStarRockLtsConfigRequest);
+            return new SyncInvoker<UpdateStarRockLtsConfigResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateStarRockLtsConfigResponse>);
         }
         
         /// <summary>

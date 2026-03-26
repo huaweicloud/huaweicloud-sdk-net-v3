@@ -82,6 +82,18 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("fail_reason", NullValueHandling = NullValueHandling.Ignore)]
         public string FailReason { get; set; }
 
+        /// <summary>
+        /// **参数解释**：  是否支持通过[获取异步任务详情](https://support.huaweicloud.com/api-taurusdb/ShowTaskDetails.html)接口获取任务详情。  **取值范围**：  - true：是。 - false：否。
+        /// </summary>
+        [JsonProperty("show_detail", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ShowDetail { get; set; }
+
+        /// <summary>
+        /// **参数解释**：  支持筛选的任务名称。  **取值范围**：  不涉及。
+        /// </summary>
+        [JsonProperty("action_names", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> ActionNames { get; set; }
+
 
 
         /// <summary>
@@ -102,6 +114,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  createdTime: ").Append(CreatedTime).Append("\n");
             sb.Append("  endedTime: ").Append(EndedTime).Append("\n");
             sb.Append("  failReason: ").Append(FailReason).Append("\n");
+            sb.Append("  showDetail: ").Append(ShowDetail).Append("\n");
+            sb.Append("  actionNames: ").Append(ActionNames).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -131,6 +145,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (this.CreatedTime != input.CreatedTime || (this.CreatedTime != null && !this.CreatedTime.Equals(input.CreatedTime))) return false;
             if (this.EndedTime != input.EndedTime || (this.EndedTime != null && !this.EndedTime.Equals(input.EndedTime))) return false;
             if (this.FailReason != input.FailReason || (this.FailReason != null && !this.FailReason.Equals(input.FailReason))) return false;
+            if (this.ShowDetail != input.ShowDetail || (this.ShowDetail != null && !this.ShowDetail.Equals(input.ShowDetail))) return false;
+            if (this.ActionNames != input.ActionNames || (this.ActionNames != null && input.ActionNames != null && !this.ActionNames.SequenceEqual(input.ActionNames))) return false;
 
             return true;
         }
@@ -154,6 +170,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 if (this.CreatedTime != null) hashCode = hashCode * 59 + this.CreatedTime.GetHashCode();
                 if (this.EndedTime != null) hashCode = hashCode * 59 + this.EndedTime.GetHashCode();
                 if (this.FailReason != null) hashCode = hashCode * 59 + this.FailReason.GetHashCode();
+                if (this.ShowDetail != null) hashCode = hashCode * 59 + this.ShowDetail.GetHashCode();
+                if (this.ActionNames != null) hashCode = hashCode * 59 + this.ActionNames.GetHashCode();
                 return hashCode;
             }
         }

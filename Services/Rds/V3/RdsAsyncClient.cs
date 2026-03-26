@@ -290,6 +290,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 切换实例备份方式（PostgreSQL）
+        ///
+        /// 备份管理通用配置接口，目前支持切换备份方式
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ChangeBackupConfigResponse> ChangeBackupConfigAsync(ChangeBackupConfigRequest changeBackupConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(changeBackupConfigRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeBackupConfigRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<ChangeBackupConfigResponse>(response);
+        }
+
+        public AsyncInvoker<ChangeBackupConfigResponse> ChangeBackupConfigAsyncInvoker(ChangeBackupConfigRequest changeBackupConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(changeBackupConfigRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeBackupConfigRequest);
+            return new AsyncInvoker<ChangeBackupConfigResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<ChangeBackupConfigResponse>);
+        }
+        
+        /// <summary>
         /// 更改主备实例的数据同步方式
         ///
         /// 更改主备实例的数据同步方式。
@@ -3374,6 +3400,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/major-version/available-version", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAvailableVersionRequest);
             return new AsyncInvoker<ShowAvailableVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAvailableVersionResponse>);
+        }
+        
+        /// <summary>
+        /// 查询实例备份方式（PostgreSQL）
+        ///
+        /// 查询备份管理配置接口。目前支持查询备份方式。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowBackupConfigResponse> ShowBackupConfigAsync(ShowBackupConfigRequest showBackupConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showBackupConfigRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupConfigRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowBackupConfigResponse>(response);
+        }
+
+        public AsyncInvoker<ShowBackupConfigResponse> ShowBackupConfigAsyncInvoker(ShowBackupConfigRequest showBackupConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showBackupConfigRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupConfigRequest);
+            return new AsyncInvoker<ShowBackupConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBackupConfigResponse>);
         }
         
         /// <summary>

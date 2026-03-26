@@ -289,6 +289,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 切换实例备份方式（PostgreSQL）
+        ///
+        /// 备份管理通用配置接口，目前支持切换备份方式
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ChangeBackupConfigResponse ChangeBackupConfig(ChangeBackupConfigRequest changeBackupConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(changeBackupConfigRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeBackupConfigRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<ChangeBackupConfigResponse>(response);
+        }
+
+        public SyncInvoker<ChangeBackupConfigResponse> ChangeBackupConfigInvoker(ChangeBackupConfigRequest changeBackupConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(changeBackupConfigRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeBackupConfigRequest);
+            return new SyncInvoker<ChangeBackupConfigResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<ChangeBackupConfigResponse>);
+        }
+        
+        /// <summary>
         /// 更改主备实例的数据同步方式
         ///
         /// 更改主备实例的数据同步方式。
@@ -3373,6 +3399,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/major-version/available-version", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAvailableVersionRequest);
             return new SyncInvoker<ShowAvailableVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAvailableVersionResponse>);
+        }
+        
+        /// <summary>
+        /// 查询实例备份方式（PostgreSQL）
+        ///
+        /// 查询备份管理配置接口。目前支持查询备份方式。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowBackupConfigResponse ShowBackupConfig(ShowBackupConfigRequest showBackupConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showBackupConfigRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupConfigRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowBackupConfigResponse>(response);
+        }
+
+        public SyncInvoker<ShowBackupConfigResponse> ShowBackupConfigInvoker(ShowBackupConfigRequest showBackupConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showBackupConfigRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupConfigRequest);
+            return new SyncInvoker<ShowBackupConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBackupConfigResponse>);
         }
         
         /// <summary>

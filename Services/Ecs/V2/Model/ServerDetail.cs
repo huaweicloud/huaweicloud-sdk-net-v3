@@ -17,6 +17,30 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
     {
 
         /// <summary>
+        /// 容量预留ID
+        /// </summary>
+        [JsonProperty("capacity_reservation_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string CapacityReservationId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("capacity_reservation_specification", NullValueHandling = NullValueHandling.Ignore)]
+        public CapacityReservationSpecification CapacityReservationSpecification { get; set; }
+
+        /// <summary>
+        /// 共池裸机按整机柜发放的同一批次的批创ID
+        /// </summary>
+        [JsonProperty("spod_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string SpodId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("enclave_options", NullValueHandling = NullValueHandling.Ignore)]
+        public EnclaveOptions EnclaveOptions { get; set; }
+
+        /// <summary>
         /// 弹性云服务器状态。  取值范围：  ACTIVE、BUILD、DELETED、ERROR、HARD_REBOOT、MIGRATING、PAUSED、REBOOT、REBUILD、RESIZE、REVERT_RESIZE、SHUTOFF、SHELVED、SHELVED_OFFLOADED、SOFT_DELETED、SUSPENDED、VERIFY_RESIZE  弹性云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
@@ -319,6 +343,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ServerDetail {\n");
+            sb.Append("  capacityReservationId: ").Append(CapacityReservationId).Append("\n");
+            sb.Append("  capacityReservationSpecification: ").Append(CapacityReservationSpecification).Append("\n");
+            sb.Append("  spodId: ").Append(SpodId).Append("\n");
+            sb.Append("  enclaveOptions: ").Append(EnclaveOptions).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  updated: ").Append(Updated).Append("\n");
             sb.Append("  autoTerminateTime: ").Append(AutoTerminateTime).Append("\n");
@@ -386,6 +414,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public bool Equals(ServerDetail input)
         {
             if (input == null) return false;
+            if (this.CapacityReservationId != input.CapacityReservationId || (this.CapacityReservationId != null && !this.CapacityReservationId.Equals(input.CapacityReservationId))) return false;
+            if (this.CapacityReservationSpecification != input.CapacityReservationSpecification || (this.CapacityReservationSpecification != null && !this.CapacityReservationSpecification.Equals(input.CapacityReservationSpecification))) return false;
+            if (this.SpodId != input.SpodId || (this.SpodId != null && !this.SpodId.Equals(input.SpodId))) return false;
+            if (this.EnclaveOptions != input.EnclaveOptions || (this.EnclaveOptions != null && !this.EnclaveOptions.Equals(input.EnclaveOptions))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.Updated != input.Updated || (this.Updated != null && !this.Updated.Equals(input.Updated))) return false;
             if (this.AutoTerminateTime != input.AutoTerminateTime || (this.AutoTerminateTime != null && !this.AutoTerminateTime.Equals(input.AutoTerminateTime))) return false;
@@ -447,6 +479,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.CapacityReservationId != null) hashCode = hashCode * 59 + this.CapacityReservationId.GetHashCode();
+                if (this.CapacityReservationSpecification != null) hashCode = hashCode * 59 + this.CapacityReservationSpecification.GetHashCode();
+                if (this.SpodId != null) hashCode = hashCode * 59 + this.SpodId.GetHashCode();
+                if (this.EnclaveOptions != null) hashCode = hashCode * 59 + this.EnclaveOptions.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Updated != null) hashCode = hashCode * 59 + this.Updated.GetHashCode();
                 if (this.AutoTerminateTime != null) hashCode = hashCode * 59 + this.AutoTerminateTime.GetHashCode();

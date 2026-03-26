@@ -52,6 +52,13 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string StatType { get; set; }
 
         /// <summary>
+        /// - 传输协议：IPv4或IPv6,不支持同时指定  - 如果不传，默认取全部
+        /// </summary>
+        [SDKProperty("ip_version", IsQuery = true)]
+        [JsonProperty("ip_version", NullValueHandling = NullValueHandling.Ignore)]
+        public string IpVersion { get; set; }
+
+        /// <summary>
         /// 查询时间间隔，单位：秒，取值说明： - 300(5分钟)：最大查询跨度2天 - 3600(1小时)：最大查询跨度7天 - 86400(1天)：最大查询跨度31天 - 如果不传，默认取对应时间跨度的最小间隔。
         /// </summary>
         [SDKProperty("interval", IsQuery = true)]
@@ -107,6 +114,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("  domainName: ").Append(DomainName).Append("\n");
             sb.Append("  statType: ").Append(StatType).Append("\n");
+            sb.Append("  ipVersion: ").Append(IpVersion).Append("\n");
             sb.Append("  interval: ").Append(Interval).Append("\n");
             sb.Append("  country: ").Append(Country).Append("\n");
             sb.Append("  province: ").Append(Province).Append("\n");
@@ -136,6 +144,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
             if (this.DomainName != input.DomainName || (this.DomainName != null && !this.DomainName.Equals(input.DomainName))) return false;
             if (this.StatType != input.StatType || (this.StatType != null && !this.StatType.Equals(input.StatType))) return false;
+            if (this.IpVersion != input.IpVersion || (this.IpVersion != null && !this.IpVersion.Equals(input.IpVersion))) return false;
             if (this.Interval != input.Interval || (this.Interval != null && !this.Interval.Equals(input.Interval))) return false;
             if (this.Country != input.Country || (this.Country != null && !this.Country.Equals(input.Country))) return false;
             if (this.Province != input.Province || (this.Province != null && !this.Province.Equals(input.Province))) return false;
@@ -159,6 +168,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 if (this.DomainName != null) hashCode = hashCode * 59 + this.DomainName.GetHashCode();
                 if (this.StatType != null) hashCode = hashCode * 59 + this.StatType.GetHashCode();
+                if (this.IpVersion != null) hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
                 if (this.Interval != null) hashCode = hashCode * 59 + this.Interval.GetHashCode();
                 if (this.Country != null) hashCode = hashCode * 59 + this.Country.GetHashCode();
                 if (this.Province != null) hashCode = hashCode * 59 + this.Province.GetHashCode();

@@ -104,6 +104,34 @@ namespace HuaweiCloud.SDK.Cloudtest.V1
         }
         
         /// <summary>
+        /// 在任务下批量设置用例结果
+        ///
+        /// 在任务下批量设置用例结果
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchAddCaseResultInTaskResponse> BatchAddCaseResultInTaskAsync(BatchAddCaseResultInTaskRequest batchAddCaseResultInTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchAddCaseResultInTaskRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(batchAddCaseResultInTaskRequest.VersionUri, out var valueOfVersionUri)) urlParam.Add("version_uri", valueOfVersionUri);
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_id}/versions/{version_uri}/task/testcases/results", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchAddCaseResultInTaskRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<BatchAddCaseResultInTaskResponse>(response);
+        }
+
+        public AsyncInvoker<BatchAddCaseResultInTaskResponse> BatchAddCaseResultInTaskAsyncInvoker(BatchAddCaseResultInTaskRequest batchAddCaseResultInTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchAddCaseResultInTaskRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(batchAddCaseResultInTaskRequest.VersionUri, out var valueOfVersionUri)) urlParam.Add("version_uri", valueOfVersionUri);
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_id}/versions/{version_uri}/task/testcases/results", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchAddCaseResultInTaskRequest);
+            return new AsyncInvoker<BatchAddCaseResultInTaskResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchAddCaseResultInTaskResponse>);
+        }
+        
+        /// <summary>
         /// 添加需求/缺陷和多个用例关联关系
         ///
         /// 添加需求/缺陷和多个用例关联关系
