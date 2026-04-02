@@ -2109,9 +2109,9 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
-        /// 查询flavor的容量
+        /// 查询规格的容量
         ///
-        /// 查询flavor的容量
+        /// 查询规格的容量
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

@@ -1,3 +1,35 @@
+# 3.1.187 2026-04-02
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`ModifySecurityGroup`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK SWR
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持以下接口：
+    - `ListGcTasks`
+    - `ShowGcTask`
+    - `StopGcTask`
+    - `ShowGcSchedule`
+    - `UpdateGcSchedule`
+    - `ExecuteGcSchedule`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListFeatureGates**
+    - 响应参数变更
+      - `+ enableArtifactGc`
+
 # 3.1.186 2026-03-26
 
 ### HuaweiCloud SDK CDN

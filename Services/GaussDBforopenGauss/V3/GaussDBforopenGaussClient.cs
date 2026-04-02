@@ -3253,6 +3253,32 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 修改实例安全组
+        ///
+        /// 修改实例安全组。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ModifySecurityGroupResponse ModifySecurityGroup(ModifySecurityGroupRequest modifySecurityGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(modifySecurityGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/security-group", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifySecurityGroupRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<ModifySecurityGroupResponse>(response);
+        }
+
+        public SyncInvoker<ModifySecurityGroupResponse> ModifySecurityGroupInvoker(ModifySecurityGroupRequest modifySecurityGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(modifySecurityGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/security-group", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifySecurityGroupRequest);
+            return new SyncInvoker<ModifySecurityGroupResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifySecurityGroupResponse>);
+        }
+        
+        /// <summary>
         /// 重置参数模板
         ///
         /// 重置参数模板。

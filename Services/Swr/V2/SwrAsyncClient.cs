@@ -2593,6 +2593,32 @@ namespace HuaweiCloud.SDK.Swr.V2
         }
         
         /// <summary>
+        /// 执行制品清理计划
+        ///
+        /// 执行制品清理计划
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ExecuteGcScheduleResponse> ExecuteGcScheduleAsync(ExecuteGcScheduleRequest executeGcScheduleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(executeGcScheduleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/system/gc/schedule", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeGcScheduleRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ExecuteGcScheduleResponse>(response);
+        }
+
+        public AsyncInvoker<ExecuteGcScheduleResponse> ExecuteGcScheduleAsyncInvoker(ExecuteGcScheduleRequest executeGcScheduleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(executeGcScheduleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/system/gc/schedule", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeGcScheduleRequest);
+            return new AsyncInvoker<ExecuteGcScheduleResponse>(this, "POST", request, JsonUtils.DeSerialize<ExecuteGcScheduleResponse>);
+        }
+        
+        /// <summary>
         /// 手动执行镜像同步策略
         ///
         /// 手动执行同步策略
@@ -2778,6 +2804,32 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/feature-gates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFeatureGatesRequest);
             return new AsyncInvoker<ListFeatureGatesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListFeatureGatesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询制品清理的任务列表
+        ///
+        /// 查询制品清理的任务列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListGcTasksResponse> ListGcTasksAsync(ListGcTasksRequest listGcTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listGcTasksRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/system/gc", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGcTasksRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListGcTasksResponse>(response);
+        }
+
+        public AsyncInvoker<ListGcTasksResponse> ListGcTasksAsyncInvoker(ListGcTasksRequest listGcTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listGcTasksRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/system/gc", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGcTasksRequest);
+            return new AsyncInvoker<ListGcTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListGcTasksResponse>);
         }
         
         /// <summary>
@@ -3796,6 +3848,60 @@ namespace HuaweiCloud.SDK.Swr.V2
         }
         
         /// <summary>
+        /// 获取制品清理的计划信息
+        ///
+        /// 获取制品清理的计划信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowGcScheduleResponse> ShowGcScheduleAsync(ShowGcScheduleRequest showGcScheduleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showGcScheduleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/system/gc/schedule", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGcScheduleRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowGcScheduleResponse>(response);
+        }
+
+        public AsyncInvoker<ShowGcScheduleResponse> ShowGcScheduleAsyncInvoker(ShowGcScheduleRequest showGcScheduleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showGcScheduleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/system/gc/schedule", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGcScheduleRequest);
+            return new AsyncInvoker<ShowGcScheduleResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowGcScheduleResponse>);
+        }
+        
+        /// <summary>
+        /// 查询制品清理的任务详情
+        ///
+        /// 查询制品清理的任务详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowGcTaskResponse> ShowGcTaskAsync(ShowGcTaskRequest showGcTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showGcTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showGcTaskRequest.GcId, out var valueOfGcId)) urlParam.Add("gc_id", valueOfGcId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/system/gc/{gc_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGcTaskRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowGcTaskResponse>(response);
+        }
+
+        public AsyncInvoker<ShowGcTaskResponse> ShowGcTaskAsyncInvoker(ShowGcTaskRequest showGcTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showGcTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showGcTaskRequest.GcId, out var valueOfGcId)) urlParam.Add("gc_id", valueOfGcId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/system/gc/{gc_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGcTaskRequest);
+            return new AsyncInvoker<ShowGcTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowGcTaskResponse>);
+        }
+        
+        /// <summary>
         /// 获取实例详情
         ///
         /// 获取实例详情
@@ -4286,6 +4392,34 @@ namespace HuaweiCloud.SDK.Swr.V2
         }
         
         /// <summary>
+        /// 停止制品清理任务
+        ///
+        /// 停止制品清理任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<StopGcTaskResponse> StopGcTaskAsync(StopGcTaskRequest stopGcTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(stopGcTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(stopGcTaskRequest.GcId, out var valueOfGcId)) urlParam.Add("gc_id", valueOfGcId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/system/gc/{gc_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopGcTaskRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<StopGcTaskResponse>(response);
+        }
+
+        public AsyncInvoker<StopGcTaskResponse> StopGcTaskAsyncInvoker(StopGcTaskRequest stopGcTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(stopGcTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(stopGcTaskRequest.GcId, out var valueOfGcId)) urlParam.Add("gc_id", valueOfGcId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/system/gc/{gc_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopGcTaskRequest);
+            return new AsyncInvoker<StopGcTaskResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<StopGcTaskResponse>);
+        }
+        
+        /// <summary>
         /// 停止镜像同步任务
         ///
         /// 停止镜像同步任务
@@ -4339,6 +4473,32 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/domainname/{domainname_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDomainNameRequest);
             return new AsyncInvoker<UpdateDomainNameResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDomainNameResponse>);
+        }
+        
+        /// <summary>
+        /// 配置制品清理计划
+        ///
+        /// 配置制品清理计划
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateGcScheduleResponse> UpdateGcScheduleAsync(UpdateGcScheduleRequest updateGcScheduleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateGcScheduleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/system/gc/schedule", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateGcScheduleRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateGcScheduleResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateGcScheduleResponse> UpdateGcScheduleAsyncInvoker(UpdateGcScheduleRequest updateGcScheduleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateGcScheduleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/system/gc/schedule", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateGcScheduleRequest);
+            return new AsyncInvoker<UpdateGcScheduleResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateGcScheduleResponse>);
         }
         
         /// <summary>

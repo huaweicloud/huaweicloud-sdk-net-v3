@@ -9,12 +9,15 @@ namespace HuaweiCloud.SDK.Bssintl.V2
     {
         public static readonly Region AP_SOUTHEAST_1 = new Region("ap-southeast-1",
             "https://bss-intl.myhuaweicloud.com");
+        public static readonly Region EU_WEST_101 = new Region("eu-west-101",
+            "https://bss.myhuaweicloud.eu");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("BSSINTL");
 
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>
         {
                 { "ap-southeast-1", AP_SOUTHEAST_1 },
+                { "eu-west-101", EU_WEST_101 },
         };
 
         public static Region ValueOf(string regionId)

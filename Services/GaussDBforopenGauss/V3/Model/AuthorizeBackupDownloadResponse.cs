@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
     {
 
         /// <summary>
-        /// OBS桶名。
+        /// **参数解释**: 文件所在桶名。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("bucket", NullValueHandling = NullValueHandling.Ignore)]
         public string Bucket { get; set; }
 
         /// <summary>
-        /// 通过OBS Browser+下载备份文件的路径名称。
+        /// **参数解释**: 通过OBS Browser+下载备份文件的路径名称。
         /// </summary>
         [JsonProperty("file_paths", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> FilePaths { get; set; }

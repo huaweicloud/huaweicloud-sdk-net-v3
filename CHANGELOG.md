@@ -1,3 +1,35 @@
+# 3.1.187 2026-04-02
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `ModifySecurityGroup`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK SWR
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the following APIs:
+    - `ListGcTasks`
+    - `ShowGcTask`
+    - `StopGcTask`
+    - `ShowGcSchedule`
+    - `UpdateGcSchedule`
+    - `ExecuteGcSchedule`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListFeatureGates**
+    - changes of response param
+      - `+ enableArtifactGc`
+
 # 3.1.186 2026-03-26
 
 ### HuaweiCloud SDK CDN

@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public int? ExpiresAt { get; set; }
 
         /// <summary>
-        /// 漏洞列表
+        /// 漏洞列表，最多支持100条数据，且不能有重复漏洞。
         /// </summary>
         [JsonProperty("items", NullValueHandling = NullValueHandling.Ignore)]
         public List<CVEAllowlistItem> Items { get; set; }
