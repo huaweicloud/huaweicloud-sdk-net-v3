@@ -26,6 +26,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
 
 namespace HuaweiCloud.SDK.Core
 {
@@ -41,10 +42,11 @@ namespace HuaweiCloud.SDK.Core
         public Dictionary<string, List<string>> QueryParam = new Dictionary<string, List<string>>();
         public Uri Url;
         public SigningAlgorithm SigningAlgorithm;
+        public bool IgnoreBodyForGetRequest;
 
         public HttpRequest(string method = "GET", string contentType = "application/json", Uri url = null,
-            WebHeaderCollection headers = null,
-            string body = null, Stream fileStream = null, SigningAlgorithm signingAlgorithm = Constants.DefaultSigningAlgorithm)
+            WebHeaderCollection headers = null, string body = null, Stream fileStream = null,
+            SigningAlgorithm signingAlgorithm = Constants.DefaultSigningAlgorithm, bool ignoreBodyForGetRequest = true)
         {
             if (method != null)
             {
@@ -83,6 +85,7 @@ namespace HuaweiCloud.SDK.Core
             }
 
             SigningAlgorithm = signingAlgorithm;
+            IgnoreBodyForGetRequest = ignoreBodyForGetRequest;
         }
 
         public HttpRequestMessage ToHttpRequestMessage()
@@ -110,6 +113,12 @@ namespace HuaweiCloud.SDK.Core
             httpContent = null;
             if (string.Equals(Method, "GET", StringComparison.OrdinalIgnoreCase))
             {
+                if (!IgnoreBodyForGetRequest)
+                {
+                    httpContent = new StringContent(Body);
+                    httpContent.Headers.ContentType = new MediaTypeHeaderValue(HttpContentType.Process(ContentType));
+                    return true;
+                }
                 return false;
             }
 

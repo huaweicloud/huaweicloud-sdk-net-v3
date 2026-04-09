@@ -1,3 +1,126 @@
+# 3.1.188 2026-04-09
+
+### HuaweiCloud SDK Cloudtest
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **BatchAddCaseResultInTask**
+    - changes of request param
+      - `* test_case_uris: string -> list<string>`
+
+### HuaweiCloud SDK Config
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListOrganizationPolicyAssignments**
+    - changes of response param
+      - `+ policy_filter_v2`
+      - `+ organization_policy_assignments.policy_filter_v2`
+  - **CreateOrganizationPolicyAssignment**
+    - changes of request param
+      - `+ custom_policy_assignment_metadata`
+      - `+ managed_policy_assignment_metadata.policy_filter_v2`
+    - changes of response param
+      - `+ policy_filter_v2`
+  - **ShowOrganizationPolicyAssignment**
+    - changes of response param
+      - `+ policy_filter_v2`
+  - **UpdateOrganizationPolicyAssignment**
+    - changes of request param
+      - `+ custom_policy_assignment_metadata`
+      - `+ managed_policy_assignment_metadata.policy_filter_v2`
+    - changes of response param
+      - `+ policy_filter_v2`
+
+### HuaweiCloud SDK DDM
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `ListDdmUsers`
+    - `CreateDdmUser`
+    - `UpdateDdmUser`
+    - `DeleteDdmUser`
+    - `ResetDdmUserPassword`
+    - `SetReadOnlyStatus`
+    - `ShowTmlogInfos`
+    - `MoveTmlogFiles`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `SwitchLoggerReplicaAvailabilityZones`, `ChangeDemand2Period`, `SwitchLoggerReplica`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK IoTDA
+
+- _API Version_
+  - V5
+- _Features_
+  - Support the API `ConfirmBatchTask`
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateBatchTask**
+    - changes of request param
+      - `+ need_confirm`
+    - changes of response param
+      - `+ need_confirm`
+  - **ListBatchTasks**
+    - changes of response param
+      - `+ need_confirm`
+      - `+ batchtasks.need_confirm`
+  - **ShowBatchTask**
+    - changes of response param
+      - `+ need_confirm`
+      - `+ batchtask.need_confirm`
+
+### HuaweiCloud SDK LTS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListAccessConfig**
+    - changes of response param
+      - `+ result.access_config_detail.combine_stdout`
+  - **UpdateAccessConfig**
+    - changes of request param
+      - `+ access_config_detail.combine_stdout`
+    - changes of response param
+      - `+ access_config_detail.combine_stdout`
+  - **CreateAccessConfig**
+    - changes of request param
+      - `+ access_config_detail.combine_stdout`
+    - changes of response param
+      - `+ access_config_detail.combine_stdout`
+  - **DeleteAccessConfig**
+    - changes of response param
+      - `+ result.access_config_detail.combine_stdout`
+
 # 3.1.187 2026-04-02
 
 ### HuaweiCloud SDK GaussDBforopenGauss

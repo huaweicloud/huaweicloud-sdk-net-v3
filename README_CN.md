@@ -995,24 +995,7 @@ namespace UploadBatchTaskFileDemo
 
 ### 9. FAQ [:top:](#用户手册-top)
 
-1、使用 .NET Framework 集成 .Net SDK, 报错 System.Net.ProtocolViolationException: 无法发送具有此谓词类型的内容正文
-
-【问题原因】：.NET Framework 不支持生成带有请求体的 GET 请求
-
-【解决方案】：配置参数`IgnoreBodyForGetRequest` 使GET请求不带请求体， 如下：
-
-```c#
-var httpConfig = HttpConfig.GetDefaultConfig();
-httpConfig.IgnoreBodyForGetRequest = true;
-
-var client = VpcClient.NewBuilder()
-    .WithCredential(auth)
-    .WithHttpConfig(httpConfig)
-    .WithRegion(VpcRegion.ValueOf("cn-north-4"))
-    .Build();
-```
-
-2、ASP.NET MVC/WinForms/WPF项目 集成 .NET SDK，发生死锁问题
+1、ASP.NET MVC/WinForms/WPF项目 集成 .NET SDK，发生死锁问题
 
 【问题现象】使用 **同步客户端** 调用某接口，任务启动后程序挂死，无任何报错信息，也不会超时退出
 
@@ -1149,7 +1132,7 @@ namespace WpfApp1
 }
 ```
 
-3、云联盟场景如何调用
+2、云联盟场景如何调用
 
 ``` csharp
 // 指定终端节点，以 云联盟都柏林节点调用 VPC 服务为例

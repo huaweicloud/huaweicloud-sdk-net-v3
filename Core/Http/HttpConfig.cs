@@ -29,8 +29,7 @@ namespace HuaweiCloud.SDK.Core
 
         public bool IgnoreSslVerification;
         
-        [Obsolete("This configuration has been deprecated and can be safely removed. Retaining it will not cause errors, but it also has no effect.")]
-        public bool IgnoreBodyForGetRequest;
+        public bool IgnoreBodyForGetRequest = true;
 
         /// <summary>
         /// Experimental configuration, the default value is false.

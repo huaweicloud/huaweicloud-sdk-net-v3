@@ -1,3 +1,126 @@
+# 3.1.188 2026-04-09
+
+### HuaweiCloud SDK Cloudtest
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **BatchAddCaseResultInTask**
+    - 请求参数变更
+      - `* test_case_uris: string -> list<string>`
+
+### HuaweiCloud SDK Config
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListOrganizationPolicyAssignments**
+    - 响应参数变更
+      - `+ policy_filter_v2`
+      - `+ organization_policy_assignments.policy_filter_v2`
+  - **CreateOrganizationPolicyAssignment**
+    - 请求参数变更
+      - `+ custom_policy_assignment_metadata`
+      - `+ managed_policy_assignment_metadata.policy_filter_v2`
+    - 响应参数变更
+      - `+ policy_filter_v2`
+  - **ShowOrganizationPolicyAssignment**
+    - 响应参数变更
+      - `+ policy_filter_v2`
+  - **UpdateOrganizationPolicyAssignment**
+    - 请求参数变更
+      - `+ custom_policy_assignment_metadata`
+      - `+ managed_policy_assignment_metadata.policy_filter_v2`
+    - 响应参数变更
+      - `+ policy_filter_v2`
+
+### HuaweiCloud SDK DDM
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持以下接口：
+    - `ListDdmUsers`
+    - `CreateDdmUser`
+    - `UpdateDdmUser`
+    - `DeleteDdmUser`
+    - `ResetDdmUserPassword`
+    - `SetReadOnlyStatus`
+    - `ShowTmlogInfos`
+    - `MoveTmlogFiles`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`SwitchLoggerReplicaAvailabilityZones`、`ChangeDemand2Period`、`SwitchLoggerReplica`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK IoTDA
+
+- _接口版本_
+  - V5
+- _新增特性_
+  - 支持接口`ConfirmBatchTask`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateBatchTask**
+    - 请求参数变更
+      - `+ need_confirm`
+    - 响应参数变更
+      - `+ need_confirm`
+  - **ListBatchTasks**
+    - 响应参数变更
+      - `+ need_confirm`
+      - `+ batchtasks.need_confirm`
+  - **ShowBatchTask**
+    - 响应参数变更
+      - `+ need_confirm`
+      - `+ batchtask.need_confirm`
+
+### HuaweiCloud SDK LTS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListAccessConfig**
+    - 响应参数变更
+      - `+ result.access_config_detail.combine_stdout`
+  - **UpdateAccessConfig**
+    - 请求参数变更
+      - `+ access_config_detail.combine_stdout`
+    - 响应参数变更
+      - `+ access_config_detail.combine_stdout`
+  - **CreateAccessConfig**
+    - 请求参数变更
+      - `+ access_config_detail.combine_stdout`
+    - 响应参数变更
+      - `+ access_config_detail.combine_stdout`
+  - **DeleteAccessConfig**
+    - 响应参数变更
+      - `+ result.access_config_detail.combine_stdout`
+
 # 3.1.187 2026-04-02
 
 ### HuaweiCloud SDK GaussDBforopenGauss

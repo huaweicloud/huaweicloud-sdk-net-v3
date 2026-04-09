@@ -41,6 +41,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string TaskMode { get; set; }
 
         /// <summary>
+        /// **参数说明**：当需要自主控制该任务时设置此参数，当task_type为firmwareUpgrade，softwareUpgrade，moduleUpgrade支持该参数。软固件升级的场景下，当need_confirm为true时，任务分发后所有子任务一直为waitting状态，需要调确认接口后才变为processing状态，任务开始分发，不设置或者设置为false时子任务自动分发。 **取值范围**：true: 需要确认才分发子任务，false: 不需要确认自动分发子任务。
+        /// </summary>
+        [JsonProperty("need_confirm", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? NeedConfirm { get; set; }
+
+        /// <summary>
         /// **参数说明**：批量任务额外扩展信息，当task_type为firmwareUpgrade，softwareUpgrade支持该参数。软固件升级的场景下，平台下发获取版本信息通知和平台下发升级通知将携带该字段。 **取值范围**：最长不超过512个字符。
         /// </summary>
         [JsonProperty("task_ext_info", NullValueHandling = NullValueHandling.Ignore)]
@@ -89,6 +95,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  taskName: ").Append(TaskName).Append("\n");
             sb.Append("  taskType: ").Append(TaskType).Append("\n");
             sb.Append("  taskMode: ").Append(TaskMode).Append("\n");
+            sb.Append("  needConfirm: ").Append(NeedConfirm).Append("\n");
             sb.Append("  taskExtInfo: ").Append(TaskExtInfo).Append("\n");
             sb.Append("  targets: ").Append(Targets).Append("\n");
             sb.Append("  targetsFilter: ").Append(TargetsFilter).Append("\n");
@@ -117,6 +124,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             if (this.TaskName != input.TaskName || (this.TaskName != null && !this.TaskName.Equals(input.TaskName))) return false;
             if (this.TaskType != input.TaskType || (this.TaskType != null && !this.TaskType.Equals(input.TaskType))) return false;
             if (this.TaskMode != input.TaskMode || (this.TaskMode != null && !this.TaskMode.Equals(input.TaskMode))) return false;
+            if (this.NeedConfirm != input.NeedConfirm || (this.NeedConfirm != null && !this.NeedConfirm.Equals(input.NeedConfirm))) return false;
             if (this.TaskExtInfo != input.TaskExtInfo || (this.TaskExtInfo != null && !this.TaskExtInfo.Equals(input.TaskExtInfo))) return false;
             if (this.Targets != input.Targets || (this.Targets != null && input.Targets != null && !this.Targets.SequenceEqual(input.Targets))) return false;
             if (this.TargetsFilter != input.TargetsFilter || (this.TargetsFilter != null && input.TargetsFilter != null && !this.TargetsFilter.SequenceEqual(input.TargetsFilter))) return false;
@@ -139,6 +147,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                 if (this.TaskName != null) hashCode = hashCode * 59 + this.TaskName.GetHashCode();
                 if (this.TaskType != null) hashCode = hashCode * 59 + this.TaskType.GetHashCode();
                 if (this.TaskMode != null) hashCode = hashCode * 59 + this.TaskMode.GetHashCode();
+                if (this.NeedConfirm != null) hashCode = hashCode * 59 + this.NeedConfirm.GetHashCode();
                 if (this.TaskExtInfo != null) hashCode = hashCode * 59 + this.TaskExtInfo.GetHashCode();
                 if (this.Targets != null) hashCode = hashCode * 59 + this.Targets.GetHashCode();
                 if (this.TargetsFilter != null) hashCode = hashCode * 59 + this.TargetsFilter.GetHashCode();

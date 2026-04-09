@@ -174,6 +174,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         public bool? Stderr { get; set; }
 
         /// <summary>
+        /// **参数解释：** 云容器引擎CCE应用日志接入时，是否将标准输出和标准错误采集到同一个文件。 **取值范围：** - true：将标准输出和标准错误采集到同一个文件（stdout.log）。 - false：将标准输出和标准错误采集到不同的文件（stdout.log和stderr.log）。
+        /// </summary>
+        [JsonProperty("combine_stdout", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? CombineStdout { get; set; }
+
+        /// <summary>
         /// CCE接入类型，仅CCE接入类型时使用
         /// </summary>
         [JsonProperty("pathType", NullValueHandling = NullValueHandling.Ignore)]
@@ -319,6 +325,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  windowsLogInfo: ").Append(WindowsLogInfo).Append("\n");
             sb.Append("  stdout: ").Append(Stdout).Append("\n");
             sb.Append("  stderr: ").Append(Stderr).Append("\n");
+            sb.Append("  combineStdout: ").Append(CombineStdout).Append("\n");
             sb.Append("  pathType: ").Append(PathType).Append("\n");
             sb.Append("  namespaceRegex: ").Append(NamespaceRegex).Append("\n");
             sb.Append("  podNameRegex: ").Append(PodNameRegex).Append("\n");
@@ -365,6 +372,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.WindowsLogInfo != input.WindowsLogInfo || (this.WindowsLogInfo != null && !this.WindowsLogInfo.Equals(input.WindowsLogInfo))) return false;
             if (this.Stdout != input.Stdout || (this.Stdout != null && !this.Stdout.Equals(input.Stdout))) return false;
             if (this.Stderr != input.Stderr || (this.Stderr != null && !this.Stderr.Equals(input.Stderr))) return false;
+            if (this.CombineStdout != input.CombineStdout || (this.CombineStdout != null && !this.CombineStdout.Equals(input.CombineStdout))) return false;
             if (this.PathType != input.PathType) return false;
             if (this.NamespaceRegex != input.NamespaceRegex || (this.NamespaceRegex != null && !this.NamespaceRegex.Equals(input.NamespaceRegex))) return false;
             if (this.PodNameRegex != input.PodNameRegex || (this.PodNameRegex != null && !this.PodNameRegex.Equals(input.PodNameRegex))) return false;
@@ -405,6 +413,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.WindowsLogInfo != null) hashCode = hashCode * 59 + this.WindowsLogInfo.GetHashCode();
                 if (this.Stdout != null) hashCode = hashCode * 59 + this.Stdout.GetHashCode();
                 if (this.Stderr != null) hashCode = hashCode * 59 + this.Stderr.GetHashCode();
+                if (this.CombineStdout != null) hashCode = hashCode * 59 + this.CombineStdout.GetHashCode();
                 hashCode = hashCode * 59 + this.PathType.GetHashCode();
                 if (this.NamespaceRegex != null) hashCode = hashCode * 59 + this.NamespaceRegex.GetHashCode();
                 if (this.PodNameRegex != null) hashCode = hashCode * 59 + this.PodNameRegex.GetHashCode();

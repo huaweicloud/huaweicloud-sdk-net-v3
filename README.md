@@ -996,24 +996,7 @@ namespace UploadBatchTaskFileDemo
 
 ### 9. FAQ [:top:](#user-manual-top)
 
-1 Using .NET Framework 4.7 to integrate .NET SDK, an exception throws - ProtocolViolationException: Cannot send a content-body with this verb-type
-
-**[Cause]**: .NET Framework does not support generating GET requests with content-body.
-
-**[Solution]**: Configuration parameter `IgnoreBodyForGetRequest` makes GET request without content-body, as follows:
-
-```c#
-var httpConfig = HttpConfig.GetDefaultConfig();
-httpConfig.IgnoreBodyForGetRequest = true;
-
-var client = VpcClient.NewBuilder()
-    .WithCredential(auth)
-    .WithHttpConfig(httpConfig)
-    .WithRegion(VpcRegion.ValueOf("cn-north-4"))
-    .Build();
-```
-
-2 ASP.NET MVC/WinForms/WPF projects use .NET SDK, a dead lock occurs
+1 ASP.NET MVC/WinForms/WPF projects use .NET SDK, a dead lock occurs
 
 **[Symptom]** When using synchronized client to call an interface, and the program has been started, but where is no
 error message or timeout occurs.
@@ -1152,7 +1135,7 @@ namespace WpfApp1
 }
 ```
 
-3 How to use in Cloud Service Alliance Scenarios
+2 How to use in Cloud Service Alliance Scenarios
 
 ``` csharp
 // Specify the endpoint, take the endpoint of VPC service in region of eu-west-101 for example

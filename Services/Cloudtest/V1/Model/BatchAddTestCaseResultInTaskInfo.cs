@@ -35,10 +35,10 @@ namespace HuaweiCloud.SDK.Cloudtest.V1.Model
         public string TaskResultUri { get; set; }
 
         /// <summary>
-        /// 用例uri
+        /// 用例uri列表
         /// </summary>
         [JsonProperty("test_case_uris", NullValueHandling = NullValueHandling.Ignore)]
-        public string TestCaseUris { get; set; }
+        public List<string> TestCaseUris { get; set; }
 
         /// <summary>
         /// 是否异步执行
@@ -81,7 +81,7 @@ namespace HuaweiCloud.SDK.Cloudtest.V1.Model
             if (this.Result != input.Result || (this.Result != null && !this.Result.Equals(input.Result))) return false;
             if (this.TaskUri != input.TaskUri || (this.TaskUri != null && !this.TaskUri.Equals(input.TaskUri))) return false;
             if (this.TaskResultUri != input.TaskResultUri || (this.TaskResultUri != null && !this.TaskResultUri.Equals(input.TaskResultUri))) return false;
-            if (this.TestCaseUris != input.TestCaseUris || (this.TestCaseUris != null && !this.TestCaseUris.Equals(input.TestCaseUris))) return false;
+            if (this.TestCaseUris != input.TestCaseUris || (this.TestCaseUris != null && input.TestCaseUris != null && !this.TestCaseUris.SequenceEqual(input.TestCaseUris))) return false;
             if (this.IsAsyn != input.IsAsyn || (this.IsAsyn != null && !this.IsAsyn.Equals(input.IsAsyn))) return false;
 
             return true;

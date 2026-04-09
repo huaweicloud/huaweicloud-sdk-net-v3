@@ -120,7 +120,7 @@ namespace HuaweiCloud.SDK.Core
                             {
                                 throw;
                             }
-                            
+
                             exceptions.Add(exception);
                             var aggregateException = new AggregateException(exceptions);
                             throw new ConnectionException(aggregateException.Message, aggregateException);
@@ -252,7 +252,8 @@ namespace HuaweiCloud.SDK.Core
                 Body = sdkRequest.Body ?? string.Empty,
                 FileStream = sdkRequest.FileStream,
                 FormData = sdkRequest.FormData,
-                SigningAlgorithm = _httpConfig.SigningAlgorithm
+                SigningAlgorithm = _httpConfig.SigningAlgorithm,
+                IgnoreBodyForGetRequest = _httpConfig.IgnoreBodyForGetRequest
             };
 
             UpdateHeaders(request, sdkRequest.Header);

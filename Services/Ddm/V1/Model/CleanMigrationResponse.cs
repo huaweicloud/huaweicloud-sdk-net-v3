@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
     {
 
         /// <summary>
-        /// 任务id
+        /// **参数解释**：  工作流ID。  **取值范围**：  不涉及。
         /// </summary>
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }

@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Config.V1.Model
         [JsonProperty("managed_policy_assignment_metadata", NullValueHandling = NullValueHandling.Ignore)]
         public ManagedPolicyAssignmentMetadata ManagedPolicyAssignmentMetadata { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("custom_policy_assignment_metadata", NullValueHandling = NullValueHandling.Ignore)]
+        public CustomPolicyAssignmentMetadata CustomPolicyAssignmentMetadata { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Config.V1.Model
             sb.Append("  excludedAccounts: ").Append(ExcludedAccounts).Append("\n");
             sb.Append("  organizationPolicyAssignmentName: ").Append(OrganizationPolicyAssignmentName).Append("\n");
             sb.Append("  managedPolicyAssignmentMetadata: ").Append(ManagedPolicyAssignmentMetadata).Append("\n");
+            sb.Append("  customPolicyAssignmentMetadata: ").Append(CustomPolicyAssignmentMetadata).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +74,7 @@ namespace HuaweiCloud.SDK.Config.V1.Model
             if (this.ExcludedAccounts != input.ExcludedAccounts || (this.ExcludedAccounts != null && input.ExcludedAccounts != null && !this.ExcludedAccounts.SequenceEqual(input.ExcludedAccounts))) return false;
             if (this.OrganizationPolicyAssignmentName != input.OrganizationPolicyAssignmentName || (this.OrganizationPolicyAssignmentName != null && !this.OrganizationPolicyAssignmentName.Equals(input.OrganizationPolicyAssignmentName))) return false;
             if (this.ManagedPolicyAssignmentMetadata != input.ManagedPolicyAssignmentMetadata || (this.ManagedPolicyAssignmentMetadata != null && !this.ManagedPolicyAssignmentMetadata.Equals(input.ManagedPolicyAssignmentMetadata))) return false;
+            if (this.CustomPolicyAssignmentMetadata != input.CustomPolicyAssignmentMetadata || (this.CustomPolicyAssignmentMetadata != null && !this.CustomPolicyAssignmentMetadata.Equals(input.CustomPolicyAssignmentMetadata))) return false;
 
             return true;
         }
@@ -82,6 +90,7 @@ namespace HuaweiCloud.SDK.Config.V1.Model
                 if (this.ExcludedAccounts != null) hashCode = hashCode * 59 + this.ExcludedAccounts.GetHashCode();
                 if (this.OrganizationPolicyAssignmentName != null) hashCode = hashCode * 59 + this.OrganizationPolicyAssignmentName.GetHashCode();
                 if (this.ManagedPolicyAssignmentMetadata != null) hashCode = hashCode * 59 + this.ManagedPolicyAssignmentMetadata.GetHashCode();
+                if (this.CustomPolicyAssignmentMetadata != null) hashCode = hashCode * 59 + this.CustomPolicyAssignmentMetadata.GetHashCode();
                 return hashCode;
             }
         }

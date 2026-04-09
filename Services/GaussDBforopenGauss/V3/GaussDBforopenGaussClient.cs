@@ -273,6 +273,30 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 按需转包周期
+        ///
+        /// 按需转包周期
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ChangeDemand2PeriodResponse ChangeDemand2Period(ChangeDemand2PeriodRequest changeDemand2PeriodRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/change-charge-mode", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeDemand2PeriodRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<ChangeDemand2PeriodResponse>(response);
+        }
+
+        public SyncInvoker<ChangeDemand2PeriodResponse> ChangeDemand2PeriodInvoker(ChangeDemand2PeriodRequest changeDemand2PeriodRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/change-charge-mode", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeDemand2PeriodRequest);
+            return new SyncInvoker<ChangeDemand2PeriodResponse>(this, "PUT", request, JsonUtils.DeSerialize<ChangeDemand2PeriodResponse>);
+        }
+        
+        /// <summary>
         /// 备份恢复到目标实例数据后执行数据确认
         ///
         /// 确认备份恢复到目标实例的数据正常。
@@ -4909,6 +4933,58 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/error-log/switch/{status}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchLogCollectionStatusRequest);
             return new SyncInvoker<SwitchLogCollectionStatusResponse>(this, "POST", request, JsonUtils.DeSerializeNull<SwitchLogCollectionStatusResponse>);
+        }
+        
+        /// <summary>
+        /// 一主两备切换一主一备一日志
+        ///
+        /// 一主两备切换一主一备一日志
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SwitchLoggerReplicaResponse SwitchLoggerReplica(SwitchLoggerReplicaRequest switchLoggerReplicaRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(switchLoggerReplicaRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instance/{instance_id}/switch-logger-replica", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", switchLoggerReplicaRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<SwitchLoggerReplicaResponse>(response);
+        }
+
+        public SyncInvoker<SwitchLoggerReplicaResponse> SwitchLoggerReplicaInvoker(SwitchLoggerReplicaRequest switchLoggerReplicaRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(switchLoggerReplicaRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instance/{instance_id}/switch-logger-replica", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", switchLoggerReplicaRequest);
+            return new SyncInvoker<SwitchLoggerReplicaResponse>(this, "POST", request, JsonUtils.DeSerialize<SwitchLoggerReplicaResponse>);
+        }
+        
+        /// <summary>
+        /// 选择日志节点AZ
+        ///
+        /// 选择日志节点AZ
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SwitchLoggerReplicaAvailabilityZonesResponse SwitchLoggerReplicaAvailabilityZones(SwitchLoggerReplicaAvailabilityZonesRequest switchLoggerReplicaAvailabilityZonesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(switchLoggerReplicaAvailabilityZonesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/switch-logger-replica/availability_zones", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchLoggerReplicaAvailabilityZonesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<SwitchLoggerReplicaAvailabilityZonesResponse>(response);
+        }
+
+        public SyncInvoker<SwitchLoggerReplicaAvailabilityZonesResponse> SwitchLoggerReplicaAvailabilityZonesInvoker(SwitchLoggerReplicaAvailabilityZonesRequest switchLoggerReplicaAvailabilityZonesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(switchLoggerReplicaAvailabilityZonesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/switch-logger-replica/availability_zones", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchLoggerReplicaAvailabilityZonesRequest);
+            return new SyncInvoker<SwitchLoggerReplicaAvailabilityZonesResponse>(this, "GET", request, JsonUtils.DeSerialize<SwitchLoggerReplicaAvailabilityZonesResponse>);
         }
         
         /// <summary>
