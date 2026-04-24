@@ -1639,6 +1639,32 @@ namespace HuaweiCloud.SDK.Ddm.V1
         }
         
         /// <summary>
+        /// 表数据重载
+        ///
+        /// 表数据重载。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RebuildDdmConfigResponse RebuildDdmConfig(RebuildDdmConfigRequest rebuildDdmConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(rebuildDdmConfigRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/reload-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rebuildDdmConfigRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<RebuildDdmConfigResponse>(response);
+        }
+
+        public SyncInvoker<RebuildDdmConfigResponse> RebuildDdmConfigInvoker(RebuildDdmConfigRequest rebuildDdmConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(rebuildDdmConfigRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/reload-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rebuildDdmConfigRequest);
+            return new SyncInvoker<RebuildDdmConfigResponse>(this, "POST", request, JsonUtils.DeSerializeNull<RebuildDdmConfigResponse>);
+        }
+        
+        /// <summary>
         /// DDM管理员账号密码管理
         ///
         /// 首次调用时新建DDM管理员帐号并设置密码。后续调用时仅更新管理员密码。
@@ -2606,6 +2632,58 @@ namespace HuaweiCloud.SDK.Ddm.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/instances/{instance_id}/rds/sync", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDatabaseInfoRequest);
             return new SyncInvoker<UpdateDatabaseInfoResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateDatabaseInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 修改实例名称
+        ///
+        /// 修改实例名称。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateDdmInstanceNameResponse UpdateDdmInstanceName(UpdateDdmInstanceNameRequest updateDdmInstanceNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateDdmInstanceNameRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/name", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateDdmInstanceNameRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateDdmInstanceNameResponse>(response);
+        }
+
+        public SyncInvoker<UpdateDdmInstanceNameResponse> UpdateDdmInstanceNameInvoker(UpdateDdmInstanceNameRequest updateDdmInstanceNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateDdmInstanceNameRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/name", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateDdmInstanceNameRequest);
+            return new SyncInvoker<UpdateDdmInstanceNameResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDdmInstanceNameResponse>);
+        }
+        
+        /// <summary>
+        /// 修改实例安全组
+        ///
+        /// 修改实例安全组。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateDdmInstanceSecurityGroupResponse UpdateDdmInstanceSecurityGroup(UpdateDdmInstanceSecurityGroupRequest updateDdmInstanceSecurityGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateDdmInstanceSecurityGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/security-group", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateDdmInstanceSecurityGroupRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateDdmInstanceSecurityGroupResponse>(response);
+        }
+
+        public SyncInvoker<UpdateDdmInstanceSecurityGroupResponse> UpdateDdmInstanceSecurityGroupInvoker(UpdateDdmInstanceSecurityGroupRequest updateDdmInstanceSecurityGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateDdmInstanceSecurityGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/security-group", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateDdmInstanceSecurityGroupRequest);
+            return new SyncInvoker<UpdateDdmInstanceSecurityGroupResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateDdmInstanceSecurityGroupResponse>);
         }
         
         /// <summary>

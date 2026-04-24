@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     public class CreateAgenciesReq 
     {
         /// <summary>
-        /// 委托场景。   - WORKSPACE：云桌面。   - CLOUD_GAME：云游戏。   - CLOUD_STORAGE：云存储。   - SCREEN_RECORD：录屏审计。
+        /// 委托场景。   - WORKSPACE：云桌面。   - CLOUD_GAME：云游戏。   - CLOUD_STORAGE：云存储。   - SCREEN_RECORD：录屏审计。   - IMAGE_CREATION: 镜像制作
         /// </summary>
-        /// <value>委托场景。   - WORKSPACE：云桌面。   - CLOUD_GAME：云游戏。   - CLOUD_STORAGE：云存储。   - SCREEN_RECORD：录屏审计。</value>
+        /// <value>委托场景。   - WORKSPACE：云桌面。   - CLOUD_GAME：云游戏。   - CLOUD_STORAGE：云存储。   - SCREEN_RECORD：录屏审计。   - IMAGE_CREATION: 镜像制作</value>
         [JsonConverter(typeof(EnumClassConverter<SceneEnum>))]
         public class SceneEnum
         {
@@ -42,6 +42,11 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             /// </summary>
             public static readonly SceneEnum SCREEN_RECORD = new SceneEnum("SCREEN_RECORD");
 
+            /// <summary>
+            /// Enum IMAGE_CREATION for value: IMAGE_CREATION
+            /// </summary>
+            public static readonly SceneEnum IMAGE_CREATION = new SceneEnum("IMAGE_CREATION");
+
             private static readonly Dictionary<string, SceneEnum> StaticFields =
             new Dictionary<string, SceneEnum>()
             {
@@ -49,6 +54,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 { "CLOUD_GAME", CLOUD_GAME },
                 { "CLOUD_STORAGE", CLOUD_STORAGE },
                 { "SCREEN_RECORD", SCREEN_RECORD },
+                { "IMAGE_CREATION", IMAGE_CREATION },
             };
 
             private string _value;
@@ -259,7 +265,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
 
 
         /// <summary>
-        /// 委托场景。   - WORKSPACE：云桌面。   - CLOUD_GAME：云游戏。   - CLOUD_STORAGE：云存储。   - SCREEN_RECORD：录屏审计。
+        /// 委托场景。   - WORKSPACE：云桌面。   - CLOUD_GAME：云游戏。   - CLOUD_STORAGE：云存储。   - SCREEN_RECORD：录屏审计。   - IMAGE_CREATION: 镜像制作
         /// </summary>
         [JsonProperty("scene", NullValueHandling = NullValueHandling.Ignore)]
         public SceneEnum Scene { get; set; }

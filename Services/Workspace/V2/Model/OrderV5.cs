@@ -23,6 +23,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string OrderId { get; set; }
 
         /// <summary>
+        /// jobId。
+        /// </summary>
+        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string JobId { get; set; }
+
+        /// <summary>
         /// 订单状态:0:初始化; 1:待审核; 2:待退款; 3:处理中; 4:已取消; 5:已完成; 6:待支付; 7:补偿中; 8:待审批; 9:待确认; 10:待发货; 11:待收货; 12:待上门取货; 13:换新中; 14:待商家收货。
         /// </summary>
         [JsonProperty("order_status", NullValueHandling = NullValueHandling.Ignore)]
@@ -56,6 +62,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             var sb = new StringBuilder();
             sb.Append("class OrderV5 {\n");
             sb.Append("  orderId: ").Append(OrderId).Append("\n");
+            sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("  orderStatus: ").Append(OrderStatus).Append("\n");
             sb.Append("  result: ").Append(Result).Append("\n");
             sb.Append("  resultCode: ").Append(ResultCode).Append("\n");
@@ -79,6 +86,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             if (input == null) return false;
             if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
             if (this.OrderStatus != input.OrderStatus || (this.OrderStatus != null && !this.OrderStatus.Equals(input.OrderStatus))) return false;
             if (this.Result != input.Result || (this.Result != null && !this.Result.Equals(input.Result))) return false;
             if (this.ResultCode != input.ResultCode || (this.ResultCode != null && !this.ResultCode.Equals(input.ResultCode))) return false;
@@ -96,6 +104,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             {
                 var hashCode = 41;
                 if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 if (this.OrderStatus != null) hashCode = hashCode * 59 + this.OrderStatus.GetHashCode();
                 if (this.Result != null) hashCode = hashCode * 59 + this.Result.GetHashCode();
                 if (this.ResultCode != null) hashCode = hashCode * 59 + this.ResultCode.GetHashCode();

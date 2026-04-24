@@ -184,6 +184,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// </summary>
         [JsonProperty("target_type", NullValueHandling = NullValueHandling.Ignore)]
         public TargetTypeEnum TargetType { get; set; }
+        /// <summary>
+        /// 对象所在域。
+        /// </summary>
+        [JsonProperty("target_domain", NullValueHandling = NullValueHandling.Ignore)]
+        public string TargetDomain { get; set; }
+
 
 
         /// <summary>
@@ -196,6 +202,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  targetId: ").Append(TargetId).Append("\n");
             sb.Append("  targetName: ").Append(TargetName).Append("\n");
             sb.Append("  targetType: ").Append(TargetType).Append("\n");
+            sb.Append("  targetDomain: ").Append(TargetDomain).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -217,6 +224,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.TargetId != input.TargetId || (this.TargetId != null && !this.TargetId.Equals(input.TargetId))) return false;
             if (this.TargetName != input.TargetName || (this.TargetName != null && !this.TargetName.Equals(input.TargetName))) return false;
             if (this.TargetType != input.TargetType) return false;
+            if (this.TargetDomain != input.TargetDomain || (this.TargetDomain != null && !this.TargetDomain.Equals(input.TargetDomain))) return false;
 
             return true;
         }
@@ -232,6 +240,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.TargetId != null) hashCode = hashCode * 59 + this.TargetId.GetHashCode();
                 if (this.TargetName != null) hashCode = hashCode * 59 + this.TargetName.GetHashCode();
                 hashCode = hashCode * 59 + this.TargetType.GetHashCode();
+                if (this.TargetDomain != null) hashCode = hashCode * 59 + this.TargetDomain.GetHashCode();
                 return hashCode;
             }
         }

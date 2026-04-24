@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     public class PoliciesDisplay 
     {
         /// <summary>
-        /// 显示级别。取值为： LEVEL1：表示等级1。 LEVEL2：表示等级2。 LEVEL3：表示等级3。 LEVEL4：表示等级4（默认/推荐）。 LEVEL5：表示等级5。
+        /// 显示级别。取值为： LEVEL1：表示等级1。 LEVEL2：表示等级2。 LEVEL3：表示等级3。 LEVEL4：表示等级4（默认/推荐）。 LEVEL5：表示等级5。 LEVEL6：表示画质优先。 LEVEL7：表示流畅优先。 LEVEL8：表示自定义。
         /// </summary>
-        /// <value>显示级别。取值为： LEVEL1：表示等级1。 LEVEL2：表示等级2。 LEVEL3：表示等级3。 LEVEL4：表示等级4（默认/推荐）。 LEVEL5：表示等级5。</value>
+        /// <value>显示级别。取值为： LEVEL1：表示等级1。 LEVEL2：表示等级2。 LEVEL3：表示等级3。 LEVEL4：表示等级4（默认/推荐）。 LEVEL5：表示等级5。 LEVEL6：表示画质优先。 LEVEL7：表示流畅优先。 LEVEL8：表示自定义。</value>
         [JsonConverter(typeof(EnumClassConverter<DisplayLevelEnum>))]
         public class DisplayLevelEnum
         {
@@ -47,6 +47,21 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             /// </summary>
             public static readonly DisplayLevelEnum LEVEL5 = new DisplayLevelEnum("LEVEL5");
 
+            /// <summary>
+            /// Enum LEVEL6 for value: LEVEL6
+            /// </summary>
+            public static readonly DisplayLevelEnum LEVEL6 = new DisplayLevelEnum("LEVEL6");
+
+            /// <summary>
+            /// Enum LEVEL7 for value: LEVEL7
+            /// </summary>
+            public static readonly DisplayLevelEnum LEVEL7 = new DisplayLevelEnum("LEVEL7");
+
+            /// <summary>
+            /// Enum LEVEL8 for value: LEVEL8
+            /// </summary>
+            public static readonly DisplayLevelEnum LEVEL8 = new DisplayLevelEnum("LEVEL8");
+
             private static readonly Dictionary<string, DisplayLevelEnum> StaticFields =
             new Dictionary<string, DisplayLevelEnum>()
             {
@@ -55,6 +70,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 { "LEVEL3", LEVEL3 },
                 { "LEVEL4", LEVEL4 },
                 { "LEVEL5", LEVEL5 },
+                { "LEVEL6", LEVEL6 },
+                { "LEVEL7", LEVEL7 },
+                { "LEVEL8", LEVEL8 },
             };
 
             private string _value;
@@ -150,7 +168,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
 
 
         /// <summary>
-        /// 显示级别。取值为： LEVEL1：表示等级1。 LEVEL2：表示等级2。 LEVEL3：表示等级3。 LEVEL4：表示等级4（默认/推荐）。 LEVEL5：表示等级5。
+        /// 显示级别。取值为： LEVEL1：表示等级1。 LEVEL2：表示等级2。 LEVEL3：表示等级3。 LEVEL4：表示等级4（默认/推荐）。 LEVEL5：表示等级5。 LEVEL6：表示画质优先。 LEVEL7：表示流畅优先。 LEVEL8：表示自定义。
         /// </summary>
         [JsonProperty("display_level", NullValueHandling = NullValueHandling.Ignore)]
         public DisplayLevelEnum DisplayLevel { get; set; }

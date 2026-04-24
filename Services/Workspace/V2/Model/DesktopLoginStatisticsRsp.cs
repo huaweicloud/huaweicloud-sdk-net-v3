@@ -17,31 +17,31 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 使用中。
+        /// 使用中个数。
         /// </summary>
         [JsonProperty("in_use_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? InUseNum { get; set; }
 
         /// <summary>
-        /// 未注册数目。
+        /// 未注册个数。
         /// </summary>
         [JsonProperty("unregistered_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? UnregisteredNum { get; set; }
 
         /// <summary>
-        /// 未注册数目。
+        /// 无法连接个数。
         /// </summary>
         [JsonProperty("unable_to_connect_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? UnableToConnectNum { get; set; }
 
         /// <summary>
-        /// 空闲数目。
+        /// 就绪个数。
         /// </summary>
         [JsonProperty("ready_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? ReadyNum { get; set; }
 
         /// <summary>
-        /// 断开连接数目。
+        /// 断开连接个数。
         /// </summary>
         [JsonProperty("disconnected_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? DisconnectedNum { get; set; }

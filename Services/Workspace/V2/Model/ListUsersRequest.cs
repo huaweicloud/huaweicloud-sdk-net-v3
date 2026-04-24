@@ -94,11 +94,25 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
+        /// 用户是否被禁用
+        /// </summary>
+        [SDKProperty("disabled", IsQuery = true)]
+        [JsonProperty("disabled", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Disabled { get; set; }
+
+        /// <summary>
         /// 域。
         /// </summary>
         [SDKProperty("domain", IsQuery = true)]
         [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
         public string Domain { get; set; }
+
+        /// <summary>
+        /// 用户类型。 * AD： AD域用户 * LOCAL： 本地liteAs用户 * UOS： UOS域用户
+        /// </summary>
+        [SDKProperty("platform_type", IsQuery = true)]
+        [JsonProperty("platform_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string PlatformType { get; set; }
 
 
 
@@ -120,7 +134,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  shareSpaceDesktops: ").Append(ShareSpaceDesktops).Append("\n");
             sb.Append("  isQueryTotalDesktops: ").Append(IsQueryTotalDesktops).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  disabled: ").Append(Disabled).Append("\n");
             sb.Append("  domain: ").Append(Domain).Append("\n");
+            sb.Append("  platformType: ").Append(PlatformType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -150,7 +166,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.ShareSpaceDesktops != input.ShareSpaceDesktops || (this.ShareSpaceDesktops != null && !this.ShareSpaceDesktops.Equals(input.ShareSpaceDesktops))) return false;
             if (this.IsQueryTotalDesktops != input.IsQueryTotalDesktops || (this.IsQueryTotalDesktops != null && !this.IsQueryTotalDesktops.Equals(input.IsQueryTotalDesktops))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.Disabled != input.Disabled || (this.Disabled != null && !this.Disabled.Equals(input.Disabled))) return false;
             if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
+            if (this.PlatformType != input.PlatformType || (this.PlatformType != null && !this.PlatformType.Equals(input.PlatformType))) return false;
 
             return true;
         }
@@ -174,7 +192,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.ShareSpaceDesktops != null) hashCode = hashCode * 59 + this.ShareSpaceDesktops.GetHashCode();
                 if (this.IsQueryTotalDesktops != null) hashCode = hashCode * 59 + this.IsQueryTotalDesktops.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.Disabled != null) hashCode = hashCode * 59 + this.Disabled.GetHashCode();
                 if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
+                if (this.PlatformType != null) hashCode = hashCode * 59 + this.PlatformType.GetHashCode();
                 return hashCode;
             }
         }

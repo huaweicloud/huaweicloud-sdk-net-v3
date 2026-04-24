@@ -52,6 +52,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("vpc_config_infos", NullValueHandling = NullValueHandling.Ignore)]
         public List<VpcConfigInfo> VpcConfigInfos { get; set; }
 
+        /// <summary>
+        /// 自定义的专线VNC地址。
+        /// </summary>
+        [JsonProperty("dc_vnc_ip", NullValueHandling = NullValueHandling.Ignore)]
+        public string DcVncIp { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +73,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  managementSubnetCidr: ").Append(ManagementSubnetCidr).Append("\n");
             sb.Append("  managementNodeSubnetId: ").Append(ManagementNodeSubnetId).Append("\n");
             sb.Append("  vpcConfigInfos: ").Append(VpcConfigInfos).Append("\n");
+            sb.Append("  dcVncIp: ").Append(DcVncIp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +98,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.ManagementSubnetCidr != input.ManagementSubnetCidr || (this.ManagementSubnetCidr != null && !this.ManagementSubnetCidr.Equals(input.ManagementSubnetCidr))) return false;
             if (this.ManagementNodeSubnetId != input.ManagementNodeSubnetId || (this.ManagementNodeSubnetId != null && !this.ManagementNodeSubnetId.Equals(input.ManagementNodeSubnetId))) return false;
             if (this.VpcConfigInfos != input.VpcConfigInfos || (this.VpcConfigInfos != null && input.VpcConfigInfos != null && !this.VpcConfigInfos.SequenceEqual(input.VpcConfigInfos))) return false;
+            if (this.DcVncIp != input.DcVncIp || (this.DcVncIp != null && !this.DcVncIp.Equals(input.DcVncIp))) return false;
 
             return true;
         }
@@ -109,6 +117,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.ManagementSubnetCidr != null) hashCode = hashCode * 59 + this.ManagementSubnetCidr.GetHashCode();
                 if (this.ManagementNodeSubnetId != null) hashCode = hashCode * 59 + this.ManagementNodeSubnetId.GetHashCode();
                 if (this.VpcConfigInfos != null) hashCode = hashCode * 59 + this.VpcConfigInfos.GetHashCode();
+                if (this.DcVncIp != null) hashCode = hashCode * 59 + this.DcVncIp.GetHashCode();
                 return hashCode;
             }
         }

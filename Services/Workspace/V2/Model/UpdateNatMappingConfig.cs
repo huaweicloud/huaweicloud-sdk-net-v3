@@ -173,6 +173,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
+        /// 地址映射的辅助认证的开关
+        /// </summary>
+        [JsonProperty("assist_auth_enabled", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? AssistAuthEnabled { get; set; }
+
+        /// <summary>
         /// 标签对象。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
@@ -194,6 +200,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  vagIp: ").Append(VagIp).Append("\n");
             sb.Append("  accessFilterType: ").Append(AccessFilterType).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  assistAuthEnabled: ").Append(AssistAuthEnabled).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -220,6 +227,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.VagIp != input.VagIp || (this.VagIp != null && !this.VagIp.Equals(input.VagIp))) return false;
             if (this.AccessFilterType != input.AccessFilterType || (this.AccessFilterType != null && !this.AccessFilterType.Equals(input.AccessFilterType))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.AssistAuthEnabled != input.AssistAuthEnabled || (this.AssistAuthEnabled != null && !this.AssistAuthEnabled.Equals(input.AssistAuthEnabled))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
 
             return true;
@@ -240,6 +248,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.VagIp != null) hashCode = hashCode * 59 + this.VagIp.GetHashCode();
                 if (this.AccessFilterType != null) hashCode = hashCode * 59 + this.AccessFilterType.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.AssistAuthEnabled != null) hashCode = hashCode * 59 + this.AssistAuthEnabled.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }

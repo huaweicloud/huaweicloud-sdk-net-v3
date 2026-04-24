@@ -42,6 +42,11 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             /// </summary>
             public static readonly InconsistentTypeEnum DISK_SIZE = new InconsistentTypeEnum("DISK_SIZE");
 
+            /// <summary>
+            /// Enum AUTO_ISOLATION for value: AUTO_ISOLATION
+            /// </summary>
+            public static readonly InconsistentTypeEnum AUTO_ISOLATION = new InconsistentTypeEnum("AUTO_ISOLATION");
+
             private static readonly Dictionary<string, InconsistentTypeEnum> StaticFields =
             new Dictionary<string, InconsistentTypeEnum>()
             {
@@ -49,6 +54,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 { "IMAGE_ID", IMAGE_ID },
                 { "DISK_NUM", DISK_NUM },
                 { "DISK_SIZE", DISK_SIZE },
+                { "AUTO_ISOLATION", AUTO_ISOLATION },
             };
 
             private string _value;
@@ -538,6 +544,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string AvailabilityZone { get; set; }
 
+        /// <summary>
+        /// 动态池桌面隔离状态：false表示未隔离，true表示已隔离。
+        /// </summary>
+        [SDKProperty("isolated", IsQuery = true)]
+        [JsonProperty("isolated", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Isolated { get; set; }
+
 
 
         /// <summary>
@@ -571,6 +584,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
             sb.Append("  isSupportInternet: ").Append(IsSupportInternet).Append("\n");
             sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
+            sb.Append("  isolated: ").Append(Isolated).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -613,6 +627,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
             if (this.IsSupportInternet != input.IsSupportInternet || (this.IsSupportInternet != null && !this.IsSupportInternet.Equals(input.IsSupportInternet))) return false;
             if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
+            if (this.Isolated != input.Isolated || (this.Isolated != null && !this.Isolated.Equals(input.Isolated))) return false;
 
             return true;
         }
@@ -649,6 +664,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
                 if (this.IsSupportInternet != null) hashCode = hashCode * 59 + this.IsSupportInternet.GetHashCode();
                 if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
+                if (this.Isolated != null) hashCode = hashCode * 59 + this.Isolated.GetHashCode();
                 return hashCode;
             }
         }

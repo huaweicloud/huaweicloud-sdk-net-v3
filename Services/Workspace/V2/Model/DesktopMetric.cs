@@ -29,6 +29,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string ResourcePoolId { get; set; }
 
         /// <summary>
+        /// 桌面池名称(仅桌面池中的桌面存在该字段)。
+        /// </summary>
+        [JsonProperty("resource_pool_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string ResourcePoolName { get; set; }
+
+        /// <summary>
         /// 桌面名称。
         /// </summary>
         [JsonProperty("resource_name", NullValueHandling = NullValueHandling.Ignore)]
@@ -39,6 +45,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
+        /// 虚机sid
+        /// </summary>
+        [JsonProperty("machine_sid", NullValueHandling = NullValueHandling.Ignore)]
+        public string MachineSid { get; set; }
+
+        /// <summary>
+        /// 最近一个登录的用户
+        /// </summary>
+        [JsonProperty("latest_connect_username", NullValueHandling = NullValueHandling.Ignore)]
+        public string LatestConnectUsername { get; set; }
 
         /// <summary>
         /// 统计信息 * &#x60;desktop_usage&#x60; -  桌面使用时长(单位:秒) * &#x60;desktop_idle_duration&#x60; -  桌面空闲时长(单位:秒)
@@ -57,8 +75,11 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("class DesktopMetric {\n");
             sb.Append("  resourceId: ").Append(ResourceId).Append("\n");
             sb.Append("  resourcePoolId: ").Append(ResourcePoolId).Append("\n");
+            sb.Append("  resourcePoolName: ").Append(ResourcePoolName).Append("\n");
             sb.Append("  resourceName: ").Append(ResourceName).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  machineSid: ").Append(MachineSid).Append("\n");
+            sb.Append("  latestConnectUsername: ").Append(LatestConnectUsername).Append("\n");
             sb.Append("  metric: ").Append(Metric).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -80,8 +101,11 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (input == null) return false;
             if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
             if (this.ResourcePoolId != input.ResourcePoolId || (this.ResourcePoolId != null && !this.ResourcePoolId.Equals(input.ResourcePoolId))) return false;
+            if (this.ResourcePoolName != input.ResourcePoolName || (this.ResourcePoolName != null && !this.ResourcePoolName.Equals(input.ResourcePoolName))) return false;
             if (this.ResourceName != input.ResourceName || (this.ResourceName != null && !this.ResourceName.Equals(input.ResourceName))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.MachineSid != input.MachineSid || (this.MachineSid != null && !this.MachineSid.Equals(input.MachineSid))) return false;
+            if (this.LatestConnectUsername != input.LatestConnectUsername || (this.LatestConnectUsername != null && !this.LatestConnectUsername.Equals(input.LatestConnectUsername))) return false;
             if (this.Metric != input.Metric || (this.Metric != null && input.Metric != null && !this.Metric.SequenceEqual(input.Metric))) return false;
 
             return true;
@@ -97,8 +121,11 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 var hashCode = 41;
                 if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
                 if (this.ResourcePoolId != null) hashCode = hashCode * 59 + this.ResourcePoolId.GetHashCode();
+                if (this.ResourcePoolName != null) hashCode = hashCode * 59 + this.ResourcePoolName.GetHashCode();
                 if (this.ResourceName != null) hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.MachineSid != null) hashCode = hashCode * 59 + this.MachineSid.GetHashCode();
+                if (this.LatestConnectUsername != null) hashCode = hashCode * 59 + this.LatestConnectUsername.GetHashCode();
                 if (this.Metric != null) hashCode = hashCode * 59 + this.Metric.GetHashCode();
                 return hashCode;
             }

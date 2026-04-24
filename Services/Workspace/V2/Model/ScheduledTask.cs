@@ -47,6 +47,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string LifeCycleType { get; set; }
 
         /// <summary>
+        /// 触发式任务执行周期，单位分钟。最小1分钟，最大10080分钟（7天），默认1440分钟（1天）。
+        /// </summary>
+        [JsonProperty("life_cycle_exec_period", NullValueHandling = NullValueHandling.Ignore)]
+        public int? LifeCycleExecPeriod { get; set; }
+
+        /// <summary>
         /// 最近一次执行状态。SUCCESS：成功，SKIP：跳过，FAIL：失败。
         /// </summary>
         [JsonProperty("last_status", NullValueHandling = NullValueHandling.Ignore)]
@@ -114,6 +120,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  taskType: ").Append(TaskType).Append("\n");
             sb.Append("  scheduledType: ").Append(ScheduledType).Append("\n");
             sb.Append("  lifeCycleType: ").Append(LifeCycleType).Append("\n");
+            sb.Append("  lifeCycleExecPeriod: ").Append(LifeCycleExecPeriod).Append("\n");
             sb.Append("  lastStatus: ").Append(LastStatus).Append("\n");
             sb.Append("  nextExecutionTime: ").Append(NextExecutionTime).Append("\n");
             sb.Append("  expireTime: ").Append(ExpireTime).Append("\n");
@@ -146,6 +153,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.TaskType != input.TaskType || (this.TaskType != null && !this.TaskType.Equals(input.TaskType))) return false;
             if (this.ScheduledType != input.ScheduledType || (this.ScheduledType != null && !this.ScheduledType.Equals(input.ScheduledType))) return false;
             if (this.LifeCycleType != input.LifeCycleType || (this.LifeCycleType != null && !this.LifeCycleType.Equals(input.LifeCycleType))) return false;
+            if (this.LifeCycleExecPeriod != input.LifeCycleExecPeriod || (this.LifeCycleExecPeriod != null && !this.LifeCycleExecPeriod.Equals(input.LifeCycleExecPeriod))) return false;
             if (this.LastStatus != input.LastStatus || (this.LastStatus != null && !this.LastStatus.Equals(input.LastStatus))) return false;
             if (this.NextExecutionTime != input.NextExecutionTime || (this.NextExecutionTime != null && !this.NextExecutionTime.Equals(input.NextExecutionTime))) return false;
             if (this.ExpireTime != input.ExpireTime || (this.ExpireTime != null && !this.ExpireTime.Equals(input.ExpireTime))) return false;
@@ -172,6 +180,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.TaskType != null) hashCode = hashCode * 59 + this.TaskType.GetHashCode();
                 if (this.ScheduledType != null) hashCode = hashCode * 59 + this.ScheduledType.GetHashCode();
                 if (this.LifeCycleType != null) hashCode = hashCode * 59 + this.LifeCycleType.GetHashCode();
+                if (this.LifeCycleExecPeriod != null) hashCode = hashCode * 59 + this.LifeCycleExecPeriod.GetHashCode();
                 if (this.LastStatus != null) hashCode = hashCode * 59 + this.LastStatus.GetHashCode();
                 if (this.NextExecutionTime != null) hashCode = hashCode * 59 + this.NextExecutionTime.GetHashCode();
                 if (this.ExpireTime != null) hashCode = hashCode * 59 + this.ExpireTime.GetHashCode();

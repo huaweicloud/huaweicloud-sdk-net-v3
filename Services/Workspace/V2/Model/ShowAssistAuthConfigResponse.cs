@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("otp_config_info", NullValueHandling = NullValueHandling.Ignore)]
         public OtpConfigInfo OtpConfigInfo { get; set; }
 
+        /// <summary>
+        /// 主认证配置id
+        /// </summary>
+        [JsonProperty("main_auth_config_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string MainAuthConfigId { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ShowAssistAuthConfigResponse {\n");
             sb.Append("  otpConfigInfo: ").Append(OtpConfigInfo).Append("\n");
+            sb.Append("  mainAuthConfigId: ").Append(MainAuthConfigId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             if (input == null) return false;
             if (this.OtpConfigInfo != input.OtpConfigInfo || (this.OtpConfigInfo != null && !this.OtpConfigInfo.Equals(input.OtpConfigInfo))) return false;
+            if (this.MainAuthConfigId != input.MainAuthConfigId || (this.MainAuthConfigId != null && !this.MainAuthConfigId.Equals(input.MainAuthConfigId))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             {
                 var hashCode = 41;
                 if (this.OtpConfigInfo != null) hashCode = hashCode * 59 + this.OtpConfigInfo.GetHashCode();
+                if (this.MainAuthConfigId != null) hashCode = hashCode * 59 + this.MainAuthConfigId.GetHashCode();
                 return hashCode;
             }
         }

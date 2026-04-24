@@ -166,6 +166,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
         public string CreateTime { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("network_config", NullValueHandling = NullValueHandling.Ignore)]
+        public NetworkConfig NetworkConfig { get; set; }
+
 
 
         /// <summary>
@@ -181,6 +187,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
+            sb.Append("  networkConfig: ").Append(NetworkConfig).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -205,6 +212,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.NetworkConfig != input.NetworkConfig || (this.NetworkConfig != null && !this.NetworkConfig.Equals(input.NetworkConfig))) return false;
 
             return true;
         }
@@ -223,6 +231,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.NetworkConfig != null) hashCode = hashCode * 59 + this.NetworkConfig.GetHashCode();
                 return hashCode;
             }
         }

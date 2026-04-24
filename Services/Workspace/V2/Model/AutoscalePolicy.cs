@@ -166,6 +166,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("idle_retention_duration", NullValueHandling = NullValueHandling.Ignore)]
         public int? IdleRetentionDuration { get; set; }
 
+        /// <summary>
+        /// 自动故障隔离开关。
+        /// </summary>
+        [JsonProperty("auto_isolation_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? AutoIsolationEnable { get; set; }
+
+        /// <summary>
+        /// 自动隔离桌面数量上限，默认上限1000。
+        /// </summary>
+        [JsonProperty("auto_isolation_max_num", NullValueHandling = NullValueHandling.Ignore)]
+        public int? AutoIsolationMaxNum { get; set; }
+
 
 
         /// <summary>
@@ -181,6 +193,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  onceAutoCreated: ").Append(OnceAutoCreated).Append("\n");
             sb.Append("  minRetention: ").Append(MinRetention).Append("\n");
             sb.Append("  idleRetentionDuration: ").Append(IdleRetentionDuration).Append("\n");
+            sb.Append("  autoIsolationEnable: ").Append(AutoIsolationEnable).Append("\n");
+            sb.Append("  autoIsolationMaxNum: ").Append(AutoIsolationMaxNum).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -205,6 +219,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.OnceAutoCreated != input.OnceAutoCreated || (this.OnceAutoCreated != null && !this.OnceAutoCreated.Equals(input.OnceAutoCreated))) return false;
             if (this.MinRetention != input.MinRetention || (this.MinRetention != null && !this.MinRetention.Equals(input.MinRetention))) return false;
             if (this.IdleRetentionDuration != input.IdleRetentionDuration || (this.IdleRetentionDuration != null && !this.IdleRetentionDuration.Equals(input.IdleRetentionDuration))) return false;
+            if (this.AutoIsolationEnable != input.AutoIsolationEnable || (this.AutoIsolationEnable != null && !this.AutoIsolationEnable.Equals(input.AutoIsolationEnable))) return false;
+            if (this.AutoIsolationMaxNum != input.AutoIsolationMaxNum || (this.AutoIsolationMaxNum != null && !this.AutoIsolationMaxNum.Equals(input.AutoIsolationMaxNum))) return false;
 
             return true;
         }
@@ -223,6 +239,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.OnceAutoCreated != null) hashCode = hashCode * 59 + this.OnceAutoCreated.GetHashCode();
                 if (this.MinRetention != null) hashCode = hashCode * 59 + this.MinRetention.GetHashCode();
                 if (this.IdleRetentionDuration != null) hashCode = hashCode * 59 + this.IdleRetentionDuration.GetHashCode();
+                if (this.AutoIsolationEnable != null) hashCode = hashCode * 59 + this.AutoIsolationEnable.GetHashCode();
+                if (this.AutoIsolationMaxNum != null) hashCode = hashCode * 59 + this.AutoIsolationMaxNum.GetHashCode();
                 return hashCode;
             }
         }

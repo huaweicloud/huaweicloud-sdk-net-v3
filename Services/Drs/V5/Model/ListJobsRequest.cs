@@ -728,6 +728,145 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             }
         }
 
+        /// <summary>
+        /// 返回结果按该关键字排序，默认为“create_time”。 当前支持排序的关键字： - name - status - create_time - net_type - job_direction - pay_mode
+        /// </summary>
+        /// <value>返回结果按该关键字排序，默认为“create_time”。 当前支持排序的关键字： - name - status - create_time - net_type - job_direction - pay_mode</value>
+        [JsonConverter(typeof(EnumClassConverter<SortKeyEnum>))]
+        public class SortKeyEnum
+        {
+            /// <summary>
+            /// Enum NAME for value: name
+            /// </summary>
+            public static readonly SortKeyEnum NAME = new SortKeyEnum("name");
+
+            /// <summary>
+            /// Enum STATUS for value: status
+            /// </summary>
+            public static readonly SortKeyEnum STATUS = new SortKeyEnum("status");
+
+            /// <summary>
+            /// Enum CREATE_TIME for value: create_time
+            /// </summary>
+            public static readonly SortKeyEnum CREATE_TIME = new SortKeyEnum("create_time");
+
+            /// <summary>
+            /// Enum NET_TYPE for value: net_type
+            /// </summary>
+            public static readonly SortKeyEnum NET_TYPE = new SortKeyEnum("net_type");
+
+            /// <summary>
+            /// Enum JOB_DIRECTION for value: job_direction
+            /// </summary>
+            public static readonly SortKeyEnum JOB_DIRECTION = new SortKeyEnum("job_direction");
+
+            /// <summary>
+            /// Enum PAY_MODE for value: pay_mode
+            /// </summary>
+            public static readonly SortKeyEnum PAY_MODE = new SortKeyEnum("pay_mode");
+
+            private static readonly Dictionary<string, SortKeyEnum> StaticFields =
+            new Dictionary<string, SortKeyEnum>()
+            {
+                { "name", NAME },
+                { "status", STATUS },
+                { "create_time", CREATE_TIME },
+                { "net_type", NET_TYPE },
+                { "job_direction", JOB_DIRECTION },
+                { "pay_mode", PAY_MODE },
+            };
+
+            private string _value;
+
+            public SortKeyEnum()
+            {
+
+            }
+
+            public SortKeyEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static SortKeyEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as SortKeyEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(SortKeyEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(SortKeyEnum a, SortKeyEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(SortKeyEnum a, SortKeyEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 请求语言类型。
@@ -788,12 +927,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 返回结果按该关键字排序，默认为“create_time”。
+        /// 返回结果按该关键字排序，默认为“create_time”。 当前支持排序的关键字： - name - status - create_time - net_type - job_direction - pay_mode
         /// </summary>
         [SDKProperty("sort_key", IsQuery = true)]
         [JsonProperty("sort_key", NullValueHandling = NullValueHandling.Ignore)]
-        public string SortKey { get; set; }
-
+        public SortKeyEnum SortKey { get; set; }
         /// <summary>
         /// 降序或升序（分别对应desc和asc，默认为“desc”）。
         /// </summary>
@@ -864,7 +1002,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
-            if (this.SortKey != input.SortKey || (this.SortKey != null && !this.SortKey.Equals(input.SortKey))) return false;
+            if (this.SortKey != input.SortKey) return false;
             if (this.SortDir != input.SortDir || (this.SortDir != null && !this.SortDir.Equals(input.SortDir))) return false;
             if (this.InstanceIds != input.InstanceIds || (this.InstanceIds != null && input.InstanceIds != null && !this.InstanceIds.SequenceEqual(input.InstanceIds))) return false;
             if (this.InstanceIp != input.InstanceIp || (this.InstanceIp != null && !this.InstanceIp.Equals(input.InstanceIp))) return false;
@@ -889,7 +1027,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.SortKey != null) hashCode = hashCode * 59 + this.SortKey.GetHashCode();
+                hashCode = hashCode * 59 + this.SortKey.GetHashCode();
                 if (this.SortDir != null) hashCode = hashCode * 59 + this.SortDir.GetHashCode();
                 if (this.InstanceIds != null) hashCode = hashCode * 59 + this.InstanceIds.GetHashCode();
                 if (this.InstanceIp != null) hashCode = hashCode * 59 + this.InstanceIp.GetHashCode();

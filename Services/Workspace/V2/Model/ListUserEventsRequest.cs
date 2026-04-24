@@ -59,6 +59,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string ResourceName { get; set; }
 
         /// <summary>
+        /// 域名
+        /// </summary>
+        [SDKProperty("domain", IsQuery = true)]
+        [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
+        public string Domain { get; set; }
+
+        /// <summary>
         /// 用于分页查询，查询的起始记录序号，从0开始。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
@@ -87,6 +94,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  eventType: ").Append(EventType).Append("\n");
             sb.Append("  resourceId: ").Append(ResourceId).Append("\n");
             sb.Append("  resourceName: ").Append(ResourceName).Append("\n");
+            sb.Append("  domain: ").Append(Domain).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("}\n");
@@ -113,6 +121,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.EventType != input.EventType || (this.EventType != null && !this.EventType.Equals(input.EventType))) return false;
             if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
             if (this.ResourceName != input.ResourceName || (this.ResourceName != null && !this.ResourceName.Equals(input.ResourceName))) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
 
@@ -133,6 +142,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.EventType != null) hashCode = hashCode * 59 + this.EventType.GetHashCode();
                 if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
                 if (this.ResourceName != null) hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 return hashCode;

@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
 
 
         /// <summary>
-        /// 桌面池名称，桌面池名称必须保证唯一。桌面名称只允许输入中文、大写字母、小写字母、数字、中划线，长度范围为1~255。
+        /// 桌面池名称，桌面池名称必须保证唯一。桌面名称只允许输入中文、大写字母、小写字母、数字、中划线，长度范围为1~64。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
@@ -257,10 +257,22 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public AutoscalePolicy AutoscalePolicy { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("user_reset_policy", NullValueHandling = NullValueHandling.Ignore)]
+        public UserResetPolicy UserResetPolicy { get; set; }
+
+        /// <summary>
         /// 策略id，用于指定生成桌面名称策略。
         /// </summary>
         [JsonProperty("desktop_name_policy_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DesktopNamePolicyId { get; set; }
+
+        /// <summary>
+        /// 桌面分配的域。
+        /// </summary>
+        [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
+        public string Domain { get; set; }
 
 
 
@@ -292,7 +304,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  disconnectedRetentionPeriod: ").Append(DisconnectedRetentionPeriod).Append("\n");
             sb.Append("  enableAutoscale: ").Append(EnableAutoscale).Append("\n");
             sb.Append("  autoscalePolicy: ").Append(AutoscalePolicy).Append("\n");
+            sb.Append("  userResetPolicy: ").Append(UserResetPolicy).Append("\n");
             sb.Append("  desktopNamePolicyId: ").Append(DesktopNamePolicyId).Append("\n");
+            sb.Append("  domain: ").Append(Domain).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -332,7 +346,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.DisconnectedRetentionPeriod != input.DisconnectedRetentionPeriod || (this.DisconnectedRetentionPeriod != null && !this.DisconnectedRetentionPeriod.Equals(input.DisconnectedRetentionPeriod))) return false;
             if (this.EnableAutoscale != input.EnableAutoscale || (this.EnableAutoscale != null && !this.EnableAutoscale.Equals(input.EnableAutoscale))) return false;
             if (this.AutoscalePolicy != input.AutoscalePolicy || (this.AutoscalePolicy != null && !this.AutoscalePolicy.Equals(input.AutoscalePolicy))) return false;
+            if (this.UserResetPolicy != input.UserResetPolicy || (this.UserResetPolicy != null && !this.UserResetPolicy.Equals(input.UserResetPolicy))) return false;
             if (this.DesktopNamePolicyId != input.DesktopNamePolicyId || (this.DesktopNamePolicyId != null && !this.DesktopNamePolicyId.Equals(input.DesktopNamePolicyId))) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
 
             return true;
         }
@@ -366,7 +382,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.DisconnectedRetentionPeriod != null) hashCode = hashCode * 59 + this.DisconnectedRetentionPeriod.GetHashCode();
                 if (this.EnableAutoscale != null) hashCode = hashCode * 59 + this.EnableAutoscale.GetHashCode();
                 if (this.AutoscalePolicy != null) hashCode = hashCode * 59 + this.AutoscalePolicy.GetHashCode();
+                if (this.UserResetPolicy != null) hashCode = hashCode * 59 + this.UserResetPolicy.GetHashCode();
                 if (this.DesktopNamePolicyId != null) hashCode = hashCode * 59 + this.DesktopNamePolicyId.GetHashCode();
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
                 return hashCode;
             }
         }

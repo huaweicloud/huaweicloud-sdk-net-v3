@@ -149,9 +149,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         }
 
         /// <summary>
-        /// 任务类型，可选值为： - START：开机。 - STOP：关机。 - REBOOT：重启。 - HIBERNATE：休眠。 - REBUILD：重建系统盘。 - EXECUTE_SCRIPT：执行脚本。 - CREATE_SNAPSHOT：创建快照。 - DELETE_BLACK_ECS: 删除黑产ecs
+        /// 任务类型，可选值为： - START：开机。 - STOP：关机。 - REBOOT：重启。 - HIBERNATE：休眠。 - REBUILD：重建系统盘。 - EXECUTE_SCRIPT：执行脚本。 - CREATE_SNAPSHOT：创建快照
         /// </summary>
-        /// <value>任务类型，可选值为： - START：开机。 - STOP：关机。 - REBOOT：重启。 - HIBERNATE：休眠。 - REBUILD：重建系统盘。 - EXECUTE_SCRIPT：执行脚本。 - CREATE_SNAPSHOT：创建快照。 - DELETE_BLACK_ECS: 删除黑产ecs</value>
+        /// <value>任务类型，可选值为： - START：开机。 - STOP：关机。 - REBOOT：重启。 - HIBERNATE：休眠。 - REBUILD：重建系统盘。 - EXECUTE_SCRIPT：执行脚本。 - CREATE_SNAPSHOT：创建快照</value>
         [JsonConverter(typeof(EnumClassConverter<TaskTypeEnum>))]
         public class TaskTypeEnum
         {
@@ -190,11 +190,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             /// </summary>
             public static readonly TaskTypeEnum CREATE_SNAPSHOT = new TaskTypeEnum("CREATE_SNAPSHOT");
 
-            /// <summary>
-            /// Enum DELETE_BLACK_ECS for value: DELETE_BLACK_ECS
-            /// </summary>
-            public static readonly TaskTypeEnum DELETE_BLACK_ECS = new TaskTypeEnum("DELETE_BLACK_ECS");
-
             private static readonly Dictionary<string, TaskTypeEnum> StaticFields =
             new Dictionary<string, TaskTypeEnum>()
             {
@@ -205,7 +200,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 { "REBUILD", REBUILD },
                 { "EXECUTE_SCRIPT", EXECUTE_SCRIPT },
                 { "CREATE_SNAPSHOT", CREATE_SNAPSHOT },
-                { "DELETE_BLACK_ECS", DELETE_BLACK_ECS },
             };
 
             private string _value;
@@ -378,7 +372,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string TimeZone { get; set; }
 
         /// <summary>
-        /// 任务类型，可选值为： - START：开机。 - STOP：关机。 - REBOOT：重启。 - HIBERNATE：休眠。 - REBUILD：重建系统盘。 - EXECUTE_SCRIPT：执行脚本。 - CREATE_SNAPSHOT：创建快照。 - DELETE_BLACK_ECS: 删除黑产ecs
+        /// 任务类型，可选值为： - START：开机。 - STOP：关机。 - REBOOT：重启。 - HIBERNATE：休眠。 - REBUILD：重建系统盘。 - EXECUTE_SCRIPT：执行脚本。 - CREATE_SNAPSHOT：创建快照
         /// </summary>
         [JsonProperty("task_type", NullValueHandling = NullValueHandling.Ignore)]
         public TaskTypeEnum TaskType { get; set; }
@@ -418,6 +412,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("wait_time", NullValueHandling = NullValueHandling.Ignore)]
         public int? WaitTime { get; set; }
 
+        /// <summary>
+        /// 触发式任务执行周期，单位分钟。最小1分钟，最大10080分钟（7天），默认1440分钟（1天）。
+        /// </summary>
+        [JsonProperty("life_cycle_exec_period", NullValueHandling = NullValueHandling.Ignore)]
+        public int? LifeCycleExecPeriod { get; set; }
+
 
 
         /// <summary>
@@ -447,6 +447,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  extraParams: ").Append(ExtraParams).Append("\n");
             sb.Append("  applyObjects: ").Append(ApplyObjects).Append("\n");
             sb.Append("  waitTime: ").Append(WaitTime).Append("\n");
+            sb.Append("  lifeCycleExecPeriod: ").Append(LifeCycleExecPeriod).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -485,6 +486,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.ExtraParams != input.ExtraParams || (this.ExtraParams != null && !this.ExtraParams.Equals(input.ExtraParams))) return false;
             if (this.ApplyObjects != input.ApplyObjects || (this.ApplyObjects != null && input.ApplyObjects != null && !this.ApplyObjects.SequenceEqual(input.ApplyObjects))) return false;
             if (this.WaitTime != input.WaitTime || (this.WaitTime != null && !this.WaitTime.Equals(input.WaitTime))) return false;
+            if (this.LifeCycleExecPeriod != input.LifeCycleExecPeriod || (this.LifeCycleExecPeriod != null && !this.LifeCycleExecPeriod.Equals(input.LifeCycleExecPeriod))) return false;
 
             return true;
         }
@@ -517,6 +519,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.ExtraParams != null) hashCode = hashCode * 59 + this.ExtraParams.GetHashCode();
                 if (this.ApplyObjects != null) hashCode = hashCode * 59 + this.ApplyObjects.GetHashCode();
                 if (this.WaitTime != null) hashCode = hashCode * 59 + this.WaitTime.GetHashCode();
+                if (this.LifeCycleExecPeriod != null) hashCode = hashCode * 59 + this.LifeCycleExecPeriod.GetHashCode();
                 return hashCode;
             }
         }

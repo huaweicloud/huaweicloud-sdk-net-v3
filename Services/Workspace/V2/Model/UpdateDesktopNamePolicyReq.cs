@@ -52,6 +52,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("is_default_policy", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsDefaultPolicy { get; set; }
 
+        /// <summary>
+        /// 当名称前缀加数字长度生成的桌面名称长度超15位时，是否截断名称前缀部分。
+        /// </summary>
+        [JsonProperty("prefix_truncation_enabled", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? PrefixTruncationEnabled { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +73,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  startNumber: ").Append(StartNumber).Append("\n");
             sb.Append("  singleDomainUserInc: ").Append(SingleDomainUserInc).Append("\n");
             sb.Append("  isDefaultPolicy: ").Append(IsDefaultPolicy).Append("\n");
+            sb.Append("  prefixTruncationEnabled: ").Append(PrefixTruncationEnabled).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +98,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.StartNumber != input.StartNumber || (this.StartNumber != null && !this.StartNumber.Equals(input.StartNumber))) return false;
             if (this.SingleDomainUserInc != input.SingleDomainUserInc || (this.SingleDomainUserInc != null && !this.SingleDomainUserInc.Equals(input.SingleDomainUserInc))) return false;
             if (this.IsDefaultPolicy != input.IsDefaultPolicy || (this.IsDefaultPolicy != null && !this.IsDefaultPolicy.Equals(input.IsDefaultPolicy))) return false;
+            if (this.PrefixTruncationEnabled != input.PrefixTruncationEnabled || (this.PrefixTruncationEnabled != null && !this.PrefixTruncationEnabled.Equals(input.PrefixTruncationEnabled))) return false;
 
             return true;
         }
@@ -109,6 +117,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.StartNumber != null) hashCode = hashCode * 59 + this.StartNumber.GetHashCode();
                 if (this.SingleDomainUserInc != null) hashCode = hashCode * 59 + this.SingleDomainUserInc.GetHashCode();
                 if (this.IsDefaultPolicy != null) hashCode = hashCode * 59 + this.IsDefaultPolicy.GetHashCode();
+                if (this.PrefixTruncationEnabled != null) hashCode = hashCode * 59 + this.PrefixTruncationEnabled.GetHashCode();
                 return hashCode;
             }
         }

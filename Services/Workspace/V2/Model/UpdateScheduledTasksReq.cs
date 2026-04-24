@@ -148,6 +148,121 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             }
         }
 
+        /// <summary>
+        /// 应用对象更新类型，FULL_COVERAGE：全量覆盖；CLEAR_ALL：清空所有。
+        /// </summary>
+        /// <value>应用对象更新类型，FULL_COVERAGE：全量覆盖；CLEAR_ALL：清空所有。</value>
+        [JsonConverter(typeof(EnumClassConverter<ApplyObjectUpdateTypeEnum>))]
+        public class ApplyObjectUpdateTypeEnum
+        {
+            /// <summary>
+            /// Enum CLEAR_ALL for value: CLEAR_ALL
+            /// </summary>
+            public static readonly ApplyObjectUpdateTypeEnum CLEAR_ALL = new ApplyObjectUpdateTypeEnum("CLEAR_ALL");
+
+            /// <summary>
+            /// Enum FULL_COVERAGE for value: FULL_COVERAGE
+            /// </summary>
+            public static readonly ApplyObjectUpdateTypeEnum FULL_COVERAGE = new ApplyObjectUpdateTypeEnum("FULL_COVERAGE");
+
+            private static readonly Dictionary<string, ApplyObjectUpdateTypeEnum> StaticFields =
+            new Dictionary<string, ApplyObjectUpdateTypeEnum>()
+            {
+                { "CLEAR_ALL", CLEAR_ALL },
+                { "FULL_COVERAGE", FULL_COVERAGE },
+            };
+
+            private string _value;
+
+            public ApplyObjectUpdateTypeEnum()
+            {
+
+            }
+
+            public ApplyObjectUpdateTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static ApplyObjectUpdateTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ApplyObjectUpdateTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ApplyObjectUpdateTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(ApplyObjectUpdateTypeEnum a, ApplyObjectUpdateTypeEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ApplyObjectUpdateTypeEnum a, ApplyObjectUpdateTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 执行周期类型，可选值为： - FIXED_TIME：指定时间。 - DAY：按天。 - WEEK：按周。 - MONTH：按月。 - LIFE_CYCLE：指定场景下触发。
@@ -257,6 +372,11 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string ExtraParams { get; set; }
 
         /// <summary>
+        /// 应用对象更新类型，FULL_COVERAGE：全量覆盖；CLEAR_ALL：清空所有。
+        /// </summary>
+        [JsonProperty("apply_object_update_type", NullValueHandling = NullValueHandling.Ignore)]
+        public ApplyObjectUpdateTypeEnum ApplyObjectUpdateType { get; set; }
+        /// <summary>
         /// 定时任务应用的对象列表。
         /// </summary>
         [JsonProperty("apply_objects", NullValueHandling = NullValueHandling.Ignore)]
@@ -279,6 +399,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// </summary>
         [JsonProperty("wait_time", NullValueHandling = NullValueHandling.Ignore)]
         public int? WaitTime { get; set; }
+
+        /// <summary>
+        /// 触发式任务执行周期，单位分钟。最小1分钟，最大10080分钟（7天）。
+        /// </summary>
+        [JsonProperty("life_cycle_exec_period", NullValueHandling = NullValueHandling.Ignore)]
+        public int? LifeCycleExecPeriod { get; set; }
 
 
 
@@ -307,10 +433,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  enable: ").Append(Enable).Append("\n");
             sb.Append("  extraParams: ").Append(ExtraParams).Append("\n");
+            sb.Append("  applyObjectUpdateType: ").Append(ApplyObjectUpdateType).Append("\n");
             sb.Append("  applyObjects: ").Append(ApplyObjects).Append("\n");
             sb.Append("  priority: ").Append(Priority).Append("\n");
             sb.Append("  isGray: ").Append(IsGray).Append("\n");
             sb.Append("  waitTime: ").Append(WaitTime).Append("\n");
+            sb.Append("  lifeCycleExecPeriod: ").Append(LifeCycleExecPeriod).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -347,10 +475,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.Enable != input.Enable || (this.Enable != null && !this.Enable.Equals(input.Enable))) return false;
             if (this.ExtraParams != input.ExtraParams || (this.ExtraParams != null && !this.ExtraParams.Equals(input.ExtraParams))) return false;
+            if (this.ApplyObjectUpdateType != input.ApplyObjectUpdateType) return false;
             if (this.ApplyObjects != input.ApplyObjects || (this.ApplyObjects != null && input.ApplyObjects != null && !this.ApplyObjects.SequenceEqual(input.ApplyObjects))) return false;
             if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
             if (this.IsGray != input.IsGray || (this.IsGray != null && !this.IsGray.Equals(input.IsGray))) return false;
             if (this.WaitTime != input.WaitTime || (this.WaitTime != null && !this.WaitTime.Equals(input.WaitTime))) return false;
+            if (this.LifeCycleExecPeriod != input.LifeCycleExecPeriod || (this.LifeCycleExecPeriod != null && !this.LifeCycleExecPeriod.Equals(input.LifeCycleExecPeriod))) return false;
 
             return true;
         }
@@ -381,10 +511,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Enable != null) hashCode = hashCode * 59 + this.Enable.GetHashCode();
                 if (this.ExtraParams != null) hashCode = hashCode * 59 + this.ExtraParams.GetHashCode();
+                hashCode = hashCode * 59 + this.ApplyObjectUpdateType.GetHashCode();
                 if (this.ApplyObjects != null) hashCode = hashCode * 59 + this.ApplyObjects.GetHashCode();
                 if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
                 if (this.IsGray != null) hashCode = hashCode * 59 + this.IsGray.GetHashCode();
                 if (this.WaitTime != null) hashCode = hashCode * 59 + this.WaitTime.GetHashCode();
+                if (this.LifeCycleExecPeriod != null) hashCode = hashCode * 59 + this.LifeCycleExecPeriod.GetHashCode();
                 return hashCode;
             }
         }

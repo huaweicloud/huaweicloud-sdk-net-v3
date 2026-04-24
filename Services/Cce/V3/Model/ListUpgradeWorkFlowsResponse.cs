@@ -32,7 +32,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// 
         /// </summary>
         [JsonProperty("items", NullValueHandling = NullValueHandling.Ignore)]
-        public UpgradeWorkFlow Items { get; set; }
+        public List<UpgradeWorkFlow> Items { get; set; }
 
 
 
@@ -66,7 +66,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (input == null) return false;
             if (this.Kind != input.Kind || (this.Kind != null && !this.Kind.Equals(input.Kind))) return false;
             if (this.ApiVersion != input.ApiVersion || (this.ApiVersion != null && !this.ApiVersion.Equals(input.ApiVersion))) return false;
-            if (this.Items != input.Items || (this.Items != null && !this.Items.Equals(input.Items))) return false;
+            if (this.Items != input.Items || (this.Items != null && input.Items != null && !this.Items.SequenceEqual(input.Items))) return false;
 
             return true;
         }

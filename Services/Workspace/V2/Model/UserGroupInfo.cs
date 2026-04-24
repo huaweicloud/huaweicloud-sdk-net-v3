@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     public class UserGroupInfo 
     {
         /// <summary>
-        /// 用户组类型。 * AD： AD域用户组 * LOCAL： 本地liteAs用户组
+        /// 用户组类型。 * AD： AD域用户组 * LOCAL： 本地liteAs用户组 * UOS： UOS域用户组
         /// </summary>
-        /// <value>用户组类型。 * AD： AD域用户组 * LOCAL： 本地liteAs用户组</value>
+        /// <value>用户组类型。 * AD： AD域用户组 * LOCAL： 本地liteAs用户组 * UOS： UOS域用户组</value>
         [JsonConverter(typeof(EnumClassConverter<PlatformTypeEnum>))]
         public class PlatformTypeEnum
         {
@@ -32,11 +32,17 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             /// </summary>
             public static readonly PlatformTypeEnum LOCAL = new PlatformTypeEnum("LOCAL");
 
+            /// <summary>
+            /// Enum UOS for value: UOS
+            /// </summary>
+            public static readonly PlatformTypeEnum UOS = new PlatformTypeEnum("UOS");
+
             private static readonly Dictionary<string, PlatformTypeEnum> StaticFields =
             new Dictionary<string, PlatformTypeEnum>()
             {
                 { "AD", AD },
                 { "LOCAL", LOCAL },
+                { "UOS", UOS },
             };
 
             private string _value;
@@ -174,7 +180,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string RealmId { get; set; }
 
         /// <summary>
-        /// 用户组类型。 * AD： AD域用户组 * LOCAL： 本地liteAs用户组
+        /// 用户组类型。 * AD： AD域用户组 * LOCAL： 本地liteAs用户组 * UOS： UOS域用户组
         /// </summary>
         [JsonProperty("platform_type", NullValueHandling = NullValueHandling.Ignore)]
         public PlatformTypeEnum PlatformType { get; set; }

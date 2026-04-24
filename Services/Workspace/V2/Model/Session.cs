@@ -46,6 +46,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("auto_lock_end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string AutoLockEndTime { get; set; }
 
+        /// <summary>
+        /// 是否断连锁屏。
+        /// </summary>
+        [JsonProperty("is_lock_screen_on_disconnect", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsLockScreenOnDisconnect { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +66,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  disconnectOnLockFlag: ").Append(DisconnectOnLockFlag).Append("\n");
             sb.Append("  autoLockStartTime: ").Append(AutoLockStartTime).Append("\n");
             sb.Append("  autoLockEndTime: ").Append(AutoLockEndTime).Append("\n");
+            sb.Append("  isLockScreenOnDisconnect: ").Append(IsLockScreenOnDisconnect).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,6 +90,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.DisconnectOnLockFlag != input.DisconnectOnLockFlag || (this.DisconnectOnLockFlag != null && !this.DisconnectOnLockFlag.Equals(input.DisconnectOnLockFlag))) return false;
             if (this.AutoLockStartTime != input.AutoLockStartTime || (this.AutoLockStartTime != null && !this.AutoLockStartTime.Equals(input.AutoLockStartTime))) return false;
             if (this.AutoLockEndTime != input.AutoLockEndTime || (this.AutoLockEndTime != null && !this.AutoLockEndTime.Equals(input.AutoLockEndTime))) return false;
+            if (this.IsLockScreenOnDisconnect != input.IsLockScreenOnDisconnect || (this.IsLockScreenOnDisconnect != null && !this.IsLockScreenOnDisconnect.Equals(input.IsLockScreenOnDisconnect))) return false;
 
             return true;
         }
@@ -100,6 +108,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.DisconnectOnLockFlag != null) hashCode = hashCode * 59 + this.DisconnectOnLockFlag.GetHashCode();
                 if (this.AutoLockStartTime != null) hashCode = hashCode * 59 + this.AutoLockStartTime.GetHashCode();
                 if (this.AutoLockEndTime != null) hashCode = hashCode * 59 + this.AutoLockEndTime.GetHashCode();
+                if (this.IsLockScreenOnDisconnect != null) hashCode = hashCode * 59 + this.IsLockScreenOnDisconnect.GetHashCode();
                 return hashCode;
             }
         }

@@ -64,6 +64,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("no_operation_hibernate_options", NullValueHandling = NullValueHandling.Ignore)]
         public VdiNoOperationHibernateOptions NoOperationHibernateOptions { get; set; }
 
+        /// <summary>
+        /// 强制电源管理。
+        /// </summary>
+        [JsonProperty("ignore_power_status", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IgnorePowerStatus { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +87,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  disconnectHibernateOptions: ").Append(DisconnectHibernateOptions).Append("\n");
             sb.Append("  noOperationHibernateEnable: ").Append(NoOperationHibernateEnable).Append("\n");
             sb.Append("  noOperationHibernateOptions: ").Append(NoOperationHibernateOptions).Append("\n");
+            sb.Append("  ignorePowerStatus: ").Append(IgnorePowerStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +114,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.DisconnectHibernateOptions != input.DisconnectHibernateOptions || (this.DisconnectHibernateOptions != null && !this.DisconnectHibernateOptions.Equals(input.DisconnectHibernateOptions))) return false;
             if (this.NoOperationHibernateEnable != input.NoOperationHibernateEnable || (this.NoOperationHibernateEnable != null && !this.NoOperationHibernateEnable.Equals(input.NoOperationHibernateEnable))) return false;
             if (this.NoOperationHibernateOptions != input.NoOperationHibernateOptions || (this.NoOperationHibernateOptions != null && !this.NoOperationHibernateOptions.Equals(input.NoOperationHibernateOptions))) return false;
+            if (this.IgnorePowerStatus != input.IgnorePowerStatus || (this.IgnorePowerStatus != null && !this.IgnorePowerStatus.Equals(input.IgnorePowerStatus))) return false;
 
             return true;
         }
@@ -127,6 +135,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.DisconnectHibernateOptions != null) hashCode = hashCode * 59 + this.DisconnectHibernateOptions.GetHashCode();
                 if (this.NoOperationHibernateEnable != null) hashCode = hashCode * 59 + this.NoOperationHibernateEnable.GetHashCode();
                 if (this.NoOperationHibernateOptions != null) hashCode = hashCode * 59 + this.NoOperationHibernateOptions.GetHashCode();
+                if (this.IgnorePowerStatus != null) hashCode = hashCode * 59 + this.IgnorePowerStatus.GetHashCode();
                 return hashCode;
             }
         }

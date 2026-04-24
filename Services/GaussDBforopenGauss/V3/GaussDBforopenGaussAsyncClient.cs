@@ -248,6 +248,32 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 绑定/解绑NAT网关
+        ///
+        /// 绑定/解绑NAT网关。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BindDNatResponse> BindDNatAsync(BindDNatRequest bindDNatRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(bindDNatRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/dnat", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", bindDNatRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<BindDNatResponse>(response);
+        }
+
+        public AsyncInvoker<BindDNatResponse> BindDNatAsyncInvoker(BindDNatRequest bindDNatRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(bindDNatRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/dnat", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", bindDNatRequest);
+            return new AsyncInvoker<BindDNatResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<BindDNatResponse>);
+        }
+        
+        /// <summary>
         /// 取消定时任务
         ///
         /// 取消定时任务
@@ -1569,6 +1595,32 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/comparison", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listConfigurationsDiffRequest);
             return new AsyncInvoker<ListConfigurationsDiffResponse>(this, "POST", request, JsonUtils.DeSerialize<ListConfigurationsDiffResponse>);
+        }
+        
+        /// <summary>
+        /// 查询已绑定的NAT网关列表
+        ///
+        /// 查询已绑定的NAT网关列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListDNatInfoResponse> ListDNatInfoAsync(ListDNatInfoRequest listDNatInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listDNatInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/dnat", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDNatInfoRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListDNatInfoResponse>(response);
+        }
+
+        public AsyncInvoker<ListDNatInfoResponse> ListDNatInfoAsyncInvoker(ListDNatInfoRequest listDNatInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listDNatInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/dnat", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDNatInfoRequest);
+            return new AsyncInvoker<ListDNatInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDNatInfoResponse>);
         }
         
         /// <summary>

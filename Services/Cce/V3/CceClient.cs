@@ -1331,7 +1331,9 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/hypernodes", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHyperNodesRequest);
             var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ListHyperNodesResponse>(response);
+            var listHyperNodesResponse = JsonUtils.DeSerializeNull<ListHyperNodesResponse>(response);
+            listHyperNodesResponse.Body = JsonUtils.DeSerializeList<HyperNode>(response);
+            return listHyperNodesResponse;
         }
 
         public SyncInvoker<ListHyperNodesResponse> ListHyperNodesInvoker(ListHyperNodesRequest listHyperNodesRequest)
@@ -1340,7 +1342,12 @@ namespace HuaweiCloud.SDK.Cce.V3
             if (StringUtils.TryConvertToNonEmptyString(listHyperNodesRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
             var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/hypernodes", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHyperNodesRequest);
-            return new SyncInvoker<ListHyperNodesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListHyperNodesResponse>);
+            return new SyncInvoker<ListHyperNodesResponse>(this, "GET", request, response =>
+            {
+                var listHyperNodesResponse = JsonUtils.DeSerializeNull<ListHyperNodesResponse>(response);
+                listHyperNodesResponse.Body = JsonUtils.DeSerializeList<HyperNode>(response);
+                return listHyperNodesResponse;
+            });
         }
         
         /// <summary>

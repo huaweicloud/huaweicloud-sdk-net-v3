@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 停止个数。
+        /// 已关机个数。
         /// </summary>
         [JsonProperty("stop_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? StopNum { get; set; }
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? ErrorNum { get; set; }
 
         /// <summary>
-        /// 休眠个数。
+        /// 已休眠个数。
         /// </summary>
         [JsonProperty("hibernated_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? HibernatedNum { get; set; }

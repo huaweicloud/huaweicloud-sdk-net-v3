@@ -125,6 +125,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string ImageProductCode { get; set; }
 
         /// <summary>
+        /// 镜像的cloudServiceType
+        /// </summary>
+        [JsonProperty("image_cloud_service_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string ImageCloudServiceType { get; set; }
+
+        /// <summary>
+        /// 镜像的resourceType。
+        /// </summary>
+        [JsonProperty("image_resource_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string ImageResourceType { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("root_volume", NullValueHandling = NullValueHandling.Ignore)]
@@ -159,6 +171,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// </summary>
         [JsonProperty("autoscale_policy", NullValueHandling = NullValueHandling.Ignore)]
         public AutoscalePolicy AutoscalePolicy { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("user_reset_policy", NullValueHandling = NullValueHandling.Ignore)]
+        public UserResetPolicy UserResetPolicy { get; set; }
 
         /// <summary>
         /// 桌面池状态。 - STEADY：稳态 - TEMPORARY：临时态 - EXIST_FROZEN：存在冻结桌面 - UNKNOWN：未知态
@@ -202,6 +220,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VpcId { get; set; }
 
+        /// <summary>
+        /// 统计无法连接桌面数量。适用于桌面池详情查询。
+        /// </summary>
+        [JsonProperty("isolation_num", NullValueHandling = NullValueHandling.Ignore)]
+        public int? IsolationNum { get; set; }
+
+        /// <summary>
+        /// 桌面池分配的域。
+        /// </summary>
+        [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
+        public string Domain { get; set; }
+
 
 
         /// <summary>
@@ -229,12 +259,15 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  imageOsVersion: ").Append(ImageOsVersion).Append("\n");
             sb.Append("  imageOsPlatform: ").Append(ImageOsPlatform).Append("\n");
             sb.Append("  imageProductCode: ").Append(ImageProductCode).Append("\n");
+            sb.Append("  imageCloudServiceType: ").Append(ImageCloudServiceType).Append("\n");
+            sb.Append("  imageResourceType: ").Append(ImageResourceType).Append("\n");
             sb.Append("  rootVolume: ").Append(RootVolume).Append("\n");
             sb.Append("  dataVolumes: ").Append(DataVolumes).Append("\n");
             sb.Append("  securityGroups: ").Append(SecurityGroups).Append("\n");
             sb.Append("  disconnectedRetentionPeriod: ").Append(DisconnectedRetentionPeriod).Append("\n");
             sb.Append("  enableAutoscale: ").Append(EnableAutoscale).Append("\n");
             sb.Append("  autoscalePolicy: ").Append(AutoscalePolicy).Append("\n");
+            sb.Append("  userResetPolicy: ").Append(UserResetPolicy).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  inMaintenanceMode: ").Append(InMaintenanceMode).Append("\n");
@@ -242,6 +275,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  ouName: ").Append(OuName).Append("\n");
             sb.Append("  vpcId: ").Append(VpcId).Append("\n");
+            sb.Append("  isolationNum: ").Append(IsolationNum).Append("\n");
+            sb.Append("  domain: ").Append(Domain).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -278,12 +313,15 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.ImageOsVersion != input.ImageOsVersion || (this.ImageOsVersion != null && !this.ImageOsVersion.Equals(input.ImageOsVersion))) return false;
             if (this.ImageOsPlatform != input.ImageOsPlatform || (this.ImageOsPlatform != null && !this.ImageOsPlatform.Equals(input.ImageOsPlatform))) return false;
             if (this.ImageProductCode != input.ImageProductCode || (this.ImageProductCode != null && !this.ImageProductCode.Equals(input.ImageProductCode))) return false;
+            if (this.ImageCloudServiceType != input.ImageCloudServiceType || (this.ImageCloudServiceType != null && !this.ImageCloudServiceType.Equals(input.ImageCloudServiceType))) return false;
+            if (this.ImageResourceType != input.ImageResourceType || (this.ImageResourceType != null && !this.ImageResourceType.Equals(input.ImageResourceType))) return false;
             if (this.RootVolume != input.RootVolume || (this.RootVolume != null && !this.RootVolume.Equals(input.RootVolume))) return false;
             if (this.DataVolumes != input.DataVolumes || (this.DataVolumes != null && input.DataVolumes != null && !this.DataVolumes.SequenceEqual(input.DataVolumes))) return false;
             if (this.SecurityGroups != input.SecurityGroups || (this.SecurityGroups != null && input.SecurityGroups != null && !this.SecurityGroups.SequenceEqual(input.SecurityGroups))) return false;
             if (this.DisconnectedRetentionPeriod != input.DisconnectedRetentionPeriod || (this.DisconnectedRetentionPeriod != null && !this.DisconnectedRetentionPeriod.Equals(input.DisconnectedRetentionPeriod))) return false;
             if (this.EnableAutoscale != input.EnableAutoscale || (this.EnableAutoscale != null && !this.EnableAutoscale.Equals(input.EnableAutoscale))) return false;
             if (this.AutoscalePolicy != input.AutoscalePolicy || (this.AutoscalePolicy != null && !this.AutoscalePolicy.Equals(input.AutoscalePolicy))) return false;
+            if (this.UserResetPolicy != input.UserResetPolicy || (this.UserResetPolicy != null && !this.UserResetPolicy.Equals(input.UserResetPolicy))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.InMaintenanceMode != input.InMaintenanceMode || (this.InMaintenanceMode != null && !this.InMaintenanceMode.Equals(input.InMaintenanceMode))) return false;
@@ -291,6 +329,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
             if (this.OuName != input.OuName || (this.OuName != null && !this.OuName.Equals(input.OuName))) return false;
             if (this.VpcId != input.VpcId || (this.VpcId != null && !this.VpcId.Equals(input.VpcId))) return false;
+            if (this.IsolationNum != input.IsolationNum || (this.IsolationNum != null && !this.IsolationNum.Equals(input.IsolationNum))) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
 
             return true;
         }
@@ -321,12 +361,15 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.ImageOsVersion != null) hashCode = hashCode * 59 + this.ImageOsVersion.GetHashCode();
                 if (this.ImageOsPlatform != null) hashCode = hashCode * 59 + this.ImageOsPlatform.GetHashCode();
                 if (this.ImageProductCode != null) hashCode = hashCode * 59 + this.ImageProductCode.GetHashCode();
+                if (this.ImageCloudServiceType != null) hashCode = hashCode * 59 + this.ImageCloudServiceType.GetHashCode();
+                if (this.ImageResourceType != null) hashCode = hashCode * 59 + this.ImageResourceType.GetHashCode();
                 if (this.RootVolume != null) hashCode = hashCode * 59 + this.RootVolume.GetHashCode();
                 if (this.DataVolumes != null) hashCode = hashCode * 59 + this.DataVolumes.GetHashCode();
                 if (this.SecurityGroups != null) hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
                 if (this.DisconnectedRetentionPeriod != null) hashCode = hashCode * 59 + this.DisconnectedRetentionPeriod.GetHashCode();
                 if (this.EnableAutoscale != null) hashCode = hashCode * 59 + this.EnableAutoscale.GetHashCode();
                 if (this.AutoscalePolicy != null) hashCode = hashCode * 59 + this.AutoscalePolicy.GetHashCode();
+                if (this.UserResetPolicy != null) hashCode = hashCode * 59 + this.UserResetPolicy.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.InMaintenanceMode != null) hashCode = hashCode * 59 + this.InMaintenanceMode.GetHashCode();
@@ -334,6 +377,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.OuName != null) hashCode = hashCode * 59 + this.OuName.GetHashCode();
                 if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
+                if (this.IsolationNum != null) hashCode = hashCode * 59 + this.IsolationNum.GetHashCode();
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
                 return hashCode;
             }
         }

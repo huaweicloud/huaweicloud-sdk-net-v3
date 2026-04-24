@@ -19,8 +19,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("hyperNodeList", NullValueHandling = NullValueHandling.Ignore)]
-        public List<HyperNode> HyperNodeList { get; set; }
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
+        public List<HyperNode> Body { get; set; }
 
 
 
@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListHyperNodesResponse {\n");
-            sb.Append("  hyperNodeList: ").Append(HyperNodeList).Append("\n");
+            sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public bool Equals(ListHyperNodesResponse input)
         {
             if (input == null) return false;
-            if (this.HyperNodeList != input.HyperNodeList || (this.HyperNodeList != null && input.HyperNodeList != null && !this.HyperNodeList.SequenceEqual(input.HyperNodeList))) return false;
+            if (this.Body != input.Body || (this.Body != null && input.Body != null && !this.Body.SequenceEqual(input.Body))) return false;
 
             return true;
         }
@@ -63,7 +63,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.HyperNodeList != null) hashCode = hashCode * 59 + this.HyperNodeList.GetHashCode();
+                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

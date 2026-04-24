@@ -268,6 +268,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("if_mount_old_desktop_disk", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IfMountOldDesktopDisk { get; set; }
 
+        /// <summary>
+        /// 桌面分配的域。
+        /// </summary>
+        [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
+        public string Domain { get; set; }
+
 
 
         /// <summary>
@@ -300,6 +306,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  hourPackageProductId: ").Append(HourPackageProductId).Append("\n");
             sb.Append("  hourPackageOfferingId: ").Append(HourPackageOfferingId).Append("\n");
             sb.Append("  ifMountOldDesktopDisk: ").Append(IfMountOldDesktopDisk).Append("\n");
+            sb.Append("  domain: ").Append(Domain).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -341,6 +348,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.HourPackageProductId != input.HourPackageProductId || (this.HourPackageProductId != null && !this.HourPackageProductId.Equals(input.HourPackageProductId))) return false;
             if (this.HourPackageOfferingId != input.HourPackageOfferingId || (this.HourPackageOfferingId != null && !this.HourPackageOfferingId.Equals(input.HourPackageOfferingId))) return false;
             if (this.IfMountOldDesktopDisk != input.IfMountOldDesktopDisk || (this.IfMountOldDesktopDisk != null && !this.IfMountOldDesktopDisk.Equals(input.IfMountOldDesktopDisk))) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
 
             return true;
         }
@@ -376,6 +384,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.HourPackageProductId != null) hashCode = hashCode * 59 + this.HourPackageProductId.GetHashCode();
                 if (this.HourPackageOfferingId != null) hashCode = hashCode * 59 + this.HourPackageOfferingId.GetHashCode();
                 if (this.IfMountOldDesktopDisk != null) hashCode = hashCode * 59 + this.IfMountOldDesktopDisk.GetHashCode();
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
                 return hashCode;
             }
         }

@@ -15,6 +15,121 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     /// </summary>
     public class ModifyComparePolicyReq 
     {
+        /// <summary>
+        /// 对比策略： - normal：普通对比。 - manyToOne：多对一对比。
+        /// </summary>
+        /// <value>对比策略： - normal：普通对比。 - manyToOne：多对一对比。</value>
+        [JsonConverter(typeof(EnumClassConverter<ComparePolicyEnum>))]
+        public class ComparePolicyEnum
+        {
+            /// <summary>
+            /// Enum NORMAL for value: normal
+            /// </summary>
+            public static readonly ComparePolicyEnum NORMAL = new ComparePolicyEnum("normal");
+
+            /// <summary>
+            /// Enum MANYTOONE for value: manyToOne
+            /// </summary>
+            public static readonly ComparePolicyEnum MANYTOONE = new ComparePolicyEnum("manyToOne");
+
+            private static readonly Dictionary<string, ComparePolicyEnum> StaticFields =
+            new Dictionary<string, ComparePolicyEnum>()
+            {
+                { "normal", NORMAL },
+                { "manyToOne", MANYTOONE },
+            };
+
+            private string _value;
+
+            public ComparePolicyEnum()
+            {
+
+            }
+
+            public ComparePolicyEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static ComparePolicyEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ComparePolicyEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ComparePolicyEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(ComparePolicyEnum a, ComparePolicyEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ComparePolicyEnum a, ComparePolicyEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 对比策略开关-open|close。
@@ -50,8 +165,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// 对比策略： - normal：普通对比。 - manyToOne：多对一对比。
         /// </summary>
         [JsonProperty("compare_policy", NullValueHandling = NullValueHandling.Ignore)]
-        public string ComparePolicy { get; set; }
-
+        public ComparePolicyEnum ComparePolicy { get; set; }
         /// <summary>
         /// 间隔时间，按小时对比时填写，表示每隔多久执行一次对比，单位是小时。
         /// </summary>
@@ -97,7 +211,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             if (this.BeginTime != input.BeginTime || (this.BeginTime != null && !this.BeginTime.Equals(input.BeginTime))) return false;
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
             if (this.CompareType != input.CompareType || (this.CompareType != null && input.CompareType != null && !this.CompareType.SequenceEqual(input.CompareType))) return false;
-            if (this.ComparePolicy != input.ComparePolicy || (this.ComparePolicy != null && !this.ComparePolicy.Equals(input.ComparePolicy))) return false;
+            if (this.ComparePolicy != input.ComparePolicy) return false;
             if (this.IntervalHour != input.IntervalHour || (this.IntervalHour != null && !this.IntervalHour.Equals(input.IntervalHour))) return false;
 
             return true;
@@ -116,7 +230,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 if (this.BeginTime != null) hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 if (this.CompareType != null) hashCode = hashCode * 59 + this.CompareType.GetHashCode();
-                if (this.ComparePolicy != null) hashCode = hashCode * 59 + this.ComparePolicy.GetHashCode();
+                hashCode = hashCode * 59 + this.ComparePolicy.GetHashCode();
                 if (this.IntervalHour != null) hashCode = hashCode * 59 + this.IntervalHour.GetHashCode();
                 return hashCode;
             }

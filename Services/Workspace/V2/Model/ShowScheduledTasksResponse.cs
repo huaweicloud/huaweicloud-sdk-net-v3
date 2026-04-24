@@ -53,6 +53,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string LifeCycleType { get; set; }
 
         /// <summary>
+        /// 触发式任务执行周期，单位分钟。最小1分钟，最大10080分钟（7天），默认1440分钟（1天）。
+        /// </summary>
+        [JsonProperty("life_cycle_exec_period", NullValueHandling = NullValueHandling.Ignore)]
+        public int? LifeCycleExecPeriod { get; set; }
+
+        /// <summary>
         /// 周期按天时：按x天间隔执行。
         /// </summary>
         [JsonProperty("day_interval", NullValueHandling = NullValueHandling.Ignore)]
@@ -157,6 +163,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  forceExecute: ").Append(ForceExecute).Append("\n");
             sb.Append("  scheduledType: ").Append(ScheduledType).Append("\n");
             sb.Append("  lifeCycleType: ").Append(LifeCycleType).Append("\n");
+            sb.Append("  lifeCycleExecPeriod: ").Append(LifeCycleExecPeriod).Append("\n");
             sb.Append("  dayInterval: ").Append(DayInterval).Append("\n");
             sb.Append("  weekList: ").Append(WeekList).Append("\n");
             sb.Append("  monthList: ").Append(MonthList).Append("\n");
@@ -196,6 +203,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.ForceExecute != input.ForceExecute || (this.ForceExecute != null && !this.ForceExecute.Equals(input.ForceExecute))) return false;
             if (this.ScheduledType != input.ScheduledType || (this.ScheduledType != null && !this.ScheduledType.Equals(input.ScheduledType))) return false;
             if (this.LifeCycleType != input.LifeCycleType || (this.LifeCycleType != null && !this.LifeCycleType.Equals(input.LifeCycleType))) return false;
+            if (this.LifeCycleExecPeriod != input.LifeCycleExecPeriod || (this.LifeCycleExecPeriod != null && !this.LifeCycleExecPeriod.Equals(input.LifeCycleExecPeriod))) return false;
             if (this.DayInterval != input.DayInterval || (this.DayInterval != null && !this.DayInterval.Equals(input.DayInterval))) return false;
             if (this.WeekList != input.WeekList || (this.WeekList != null && !this.WeekList.Equals(input.WeekList))) return false;
             if (this.MonthList != input.MonthList || (this.MonthList != null && !this.MonthList.Equals(input.MonthList))) return false;
@@ -229,6 +237,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.ForceExecute != null) hashCode = hashCode * 59 + this.ForceExecute.GetHashCode();
                 if (this.ScheduledType != null) hashCode = hashCode * 59 + this.ScheduledType.GetHashCode();
                 if (this.LifeCycleType != null) hashCode = hashCode * 59 + this.LifeCycleType.GetHashCode();
+                if (this.LifeCycleExecPeriod != null) hashCode = hashCode * 59 + this.LifeCycleExecPeriod.GetHashCode();
                 if (this.DayInterval != null) hashCode = hashCode * 59 + this.DayInterval.GetHashCode();
                 if (this.WeekList != null) hashCode = hashCode * 59 + this.WeekList.GetHashCode();
                 if (this.MonthList != null) hashCode = hashCode * 59 + this.MonthList.GetHashCode();

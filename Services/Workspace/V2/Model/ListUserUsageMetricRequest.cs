@@ -73,6 +73,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string SortType { get; set; }
 
         /// <summary>
+        /// 域名
+        /// </summary>
+        [SDKProperty("domain", IsQuery = true)]
+        [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
+        public string Domain { get; set; }
+
+        /// <summary>
         /// 查询的偏移量,默认值0。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
@@ -103,6 +110,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  sortField: ").Append(SortField).Append("\n");
             sb.Append("  sortType: ").Append(SortType).Append("\n");
+            sb.Append("  domain: ").Append(Domain).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("}\n");
@@ -131,6 +139,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.SortField != input.SortField || (this.SortField != null && !this.SortField.Equals(input.SortField))) return false;
             if (this.SortType != input.SortType || (this.SortType != null && !this.SortType.Equals(input.SortType))) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
 
@@ -153,6 +162,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.SortField != null) hashCode = hashCode * 59 + this.SortField.GetHashCode();
                 if (this.SortType != null) hashCode = hashCode * 59 + this.SortType.GetHashCode();
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 return hashCode;

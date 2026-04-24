@@ -23,6 +23,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string UserName { get; set; }
 
         /// <summary>
+        /// 桌面用户名列表
+        /// </summary>
+        [JsonProperty("user_names", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> UserNames { get; set; }
+
+        /// <summary>
         /// 描述，支持模糊查询导出。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
@@ -56,6 +62,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ExportUsersNewReq {\n");
             sb.Append("  userName: ").Append(UserName).Append("\n");
+            sb.Append("  userNames: ").Append(UserNames).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  activeType: ").Append(ActiveType).Append("\n");
             sb.Append("  language: ").Append(Language).Append("\n");
@@ -79,6 +86,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             if (input == null) return false;
             if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
+            if (this.UserNames != input.UserNames || (this.UserNames != null && input.UserNames != null && !this.UserNames.SequenceEqual(input.UserNames))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.ActiveType != input.ActiveType || (this.ActiveType != null && !this.ActiveType.Equals(input.ActiveType))) return false;
             if (this.Language != input.Language || (this.Language != null && !this.Language.Equals(input.Language))) return false;
@@ -96,6 +104,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             {
                 var hashCode = 41;
                 if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.UserNames != null) hashCode = hashCode * 59 + this.UserNames.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.ActiveType != null) hashCode = hashCode * 59 + this.ActiveType.GetHashCode();
                 if (this.Language != null) hashCode = hashCode * 59 + this.Language.GetHashCode();

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     public class UserAccessStage 
     {
         /// <summary>
-        /// 接入阶段 | LOGIN - 登录 PRECONNECT - 预连接 CONNECT - 正式连接。
+        /// 接入阶段 | LOGIN - 登录 PRECONNECT - 预连接 CONNECT - 正式连接 MAIN_AUTH - 主认证 MFA_AUTH - 辅助认证 CLICK_ICON - 点击应用/桌面。
         /// </summary>
-        /// <value>接入阶段 | LOGIN - 登录 PRECONNECT - 预连接 CONNECT - 正式连接。</value>
+        /// <value>接入阶段 | LOGIN - 登录 PRECONNECT - 预连接 CONNECT - 正式连接 MAIN_AUTH - 主认证 MFA_AUTH - 辅助认证 CLICK_ICON - 点击应用/桌面。</value>
         [JsonConverter(typeof(EnumClassConverter<StageEnum>))]
         public class StageEnum
         {
@@ -37,12 +37,30 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             /// </summary>
             public static readonly StageEnum CONNECT = new StageEnum("CONNECT");
 
+            /// <summary>
+            /// Enum MAIN_AUTH for value: MAIN_AUTH
+            /// </summary>
+            public static readonly StageEnum MAIN_AUTH = new StageEnum("MAIN_AUTH");
+
+            /// <summary>
+            /// Enum MFA_AUTH for value: MFA_AUTH
+            /// </summary>
+            public static readonly StageEnum MFA_AUTH = new StageEnum("MFA_AUTH");
+
+            /// <summary>
+            /// Enum CLICK_ICON for value: CLICK_ICON
+            /// </summary>
+            public static readonly StageEnum CLICK_ICON = new StageEnum("CLICK_ICON");
+
             private static readonly Dictionary<string, StageEnum> StaticFields =
             new Dictionary<string, StageEnum>()
             {
                 { "LOGIN", LOGIN },
                 { "PRECONNECT", PRECONNECT },
                 { "CONNECT", CONNECT },
+                { "MAIN_AUTH", MAIN_AUTH },
+                { "MFA_AUTH", MFA_AUTH },
+                { "CLICK_ICON", CLICK_ICON },
             };
 
             private string _value;
@@ -138,7 +156,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
 
 
         /// <summary>
-        /// 接入阶段 | LOGIN - 登录 PRECONNECT - 预连接 CONNECT - 正式连接。
+        /// 接入阶段 | LOGIN - 登录 PRECONNECT - 预连接 CONNECT - 正式连接 MAIN_AUTH - 主认证 MFA_AUTH - 辅助认证 CLICK_ICON - 点击应用/桌面。
         /// </summary>
         [JsonProperty("stage", NullValueHandling = NullValueHandling.Ignore)]
         public StageEnum Stage { get; set; }

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     public class ShowUserAccessStagesResponse : SdkResponse
     {
         /// <summary>
-        /// 接入阶段 | APP - 应用 DESKTOP - 桌面。
+        /// 接入阶段 | APP、SHARE_APP - 应用 DESKTOP、VDI - 桌面。
         /// </summary>
-        /// <value>接入阶段 | APP - 应用 DESKTOP - 桌面。</value>
+        /// <value>接入阶段 | APP、SHARE_APP - 应用 DESKTOP、VDI - 桌面。</value>
         [JsonConverter(typeof(EnumClassConverter<BizTypeEnum>))]
         public class BizTypeEnum
         {
@@ -32,11 +32,23 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             /// </summary>
             public static readonly BizTypeEnum DESKTOP = new BizTypeEnum("DESKTOP");
 
+            /// <summary>
+            /// Enum SHARE_APP for value: SHARE_APP
+            /// </summary>
+            public static readonly BizTypeEnum SHARE_APP = new BizTypeEnum("SHARE_APP");
+
+            /// <summary>
+            /// Enum VDI for value: VDI
+            /// </summary>
+            public static readonly BizTypeEnum VDI = new BizTypeEnum("VDI");
+
             private static readonly Dictionary<string, BizTypeEnum> StaticFields =
             new Dictionary<string, BizTypeEnum>()
             {
                 { "APP", APP },
                 { "DESKTOP", DESKTOP },
+                { "SHARE_APP", SHARE_APP },
+                { "VDI", VDI },
             };
 
             private string _value;
@@ -138,7 +150,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Username { get; set; }
 
         /// <summary>
-        /// 接入阶段 | APP - 应用 DESKTOP - 桌面。
+        /// 接入阶段 | APP、SHARE_APP - 应用 DESKTOP、VDI - 桌面。
         /// </summary>
         [JsonProperty("biz_type", NullValueHandling = NullValueHandling.Ignore)]
         public BizTypeEnum BizType { get; set; }

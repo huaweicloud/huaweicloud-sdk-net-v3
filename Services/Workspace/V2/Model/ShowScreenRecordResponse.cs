@@ -130,6 +130,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("duration", NullValueHandling = NullValueHandling.Ignore)]
         public int? Duration { get; set; }
 
+        /// <summary>
+        /// 上传类型。
+        /// </summary>
+        [JsonProperty("upload_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string UploadType { get; set; }
+
+        /// <summary>
+        /// 站点类型。
+        /// </summary>
+        [JsonProperty("site_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string SiteType { get; set; }
+
 
 
         /// <summary>
@@ -158,6 +170,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
             sb.Append("  duration: ").Append(Duration).Append("\n");
+            sb.Append("  uploadType: ").Append(UploadType).Append("\n");
+            sb.Append("  siteType: ").Append(SiteType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -195,6 +209,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
             if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
             if (this.Duration != input.Duration || (this.Duration != null && !this.Duration.Equals(input.Duration))) return false;
+            if (this.UploadType != input.UploadType || (this.UploadType != null && !this.UploadType.Equals(input.UploadType))) return false;
+            if (this.SiteType != input.SiteType || (this.SiteType != null && !this.SiteType.Equals(input.SiteType))) return false;
 
             return true;
         }
@@ -226,6 +242,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 if (this.Duration != null) hashCode = hashCode * 59 + this.Duration.GetHashCode();
+                if (this.UploadType != null) hashCode = hashCode * 59 + this.UploadType.GetHashCode();
+                if (this.SiteType != null) hashCode = hashCode * 59 + this.SiteType.GetHashCode();
                 return hashCode;
             }
         }

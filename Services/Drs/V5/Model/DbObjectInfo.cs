@@ -17,6 +17,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     {
 
         /// <summary>
+        /// 对象名
+        /// </summary>
+        [JsonProperty("object_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string ObjectName { get; set; }
+
+        /// <summary>
         /// 源数据库库名。
         /// </summary>
         [JsonProperty("source_db_name", NullValueHandling = NullValueHandling.Ignore)]
@@ -67,6 +73,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DbObjectInfo {\n");
+            sb.Append("  objectName: ").Append(ObjectName).Append("\n");
             sb.Append("  sourceDbName: ").Append(SourceDbName).Append("\n");
             sb.Append("  sourceSchemaName: ").Append(SourceSchemaName).Append("\n");
             sb.Append("  sourceTableName: ").Append(SourceTableName).Append("\n");
@@ -92,6 +99,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public bool Equals(DbObjectInfo input)
         {
             if (input == null) return false;
+            if (this.ObjectName != input.ObjectName || (this.ObjectName != null && !this.ObjectName.Equals(input.ObjectName))) return false;
             if (this.SourceDbName != input.SourceDbName || (this.SourceDbName != null && !this.SourceDbName.Equals(input.SourceDbName))) return false;
             if (this.SourceSchemaName != input.SourceSchemaName || (this.SourceSchemaName != null && !this.SourceSchemaName.Equals(input.SourceSchemaName))) return false;
             if (this.SourceTableName != input.SourceTableName || (this.SourceTableName != null && !this.SourceTableName.Equals(input.SourceTableName))) return false;
@@ -111,6 +119,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.ObjectName != null) hashCode = hashCode * 59 + this.ObjectName.GetHashCode();
                 if (this.SourceDbName != null) hashCode = hashCode * 59 + this.SourceDbName.GetHashCode();
                 if (this.SourceSchemaName != null) hashCode = hashCode * 59 + this.SourceSchemaName.GetHashCode();
                 if (this.SourceTableName != null) hashCode = hashCode * 59 + this.SourceTableName.GetHashCode();

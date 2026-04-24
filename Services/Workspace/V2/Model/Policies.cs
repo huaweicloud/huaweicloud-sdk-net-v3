@@ -106,6 +106,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("user_profile", NullValueHandling = NullValueHandling.Ignore)]
         public PoliciesUserProfile UserProfile { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("domain_control", NullValueHandling = NullValueHandling.Ignore)]
+        public PoliciesDomainControl DomainControl { get; set; }
+
 
 
         /// <summary>
@@ -130,6 +136,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  recordAudit: ").Append(RecordAudit).Append("\n");
             sb.Append("  cloudStorage: ").Append(CloudStorage).Append("\n");
             sb.Append("  userProfile: ").Append(UserProfile).Append("\n");
+            sb.Append("  domainControl: ").Append(DomainControl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -163,6 +170,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.RecordAudit != input.RecordAudit || (this.RecordAudit != null && !this.RecordAudit.Equals(input.RecordAudit))) return false;
             if (this.CloudStorage != input.CloudStorage || (this.CloudStorage != null && !this.CloudStorage.Equals(input.CloudStorage))) return false;
             if (this.UserProfile != input.UserProfile || (this.UserProfile != null && !this.UserProfile.Equals(input.UserProfile))) return false;
+            if (this.DomainControl != input.DomainControl || (this.DomainControl != null && !this.DomainControl.Equals(input.DomainControl))) return false;
 
             return true;
         }
@@ -190,6 +198,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.RecordAudit != null) hashCode = hashCode * 59 + this.RecordAudit.GetHashCode();
                 if (this.CloudStorage != null) hashCode = hashCode * 59 + this.CloudStorage.GetHashCode();
                 if (this.UserProfile != null) hashCode = hashCode * 59 + this.UserProfile.GetHashCode();
+                if (this.DomainControl != null) hashCode = hashCode * 59 + this.DomainControl.GetHashCode();
                 return hashCode;
             }
         }

@@ -32,7 +32,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// 表示是否为关键线路（关键线路未执行无法取消升级流程）
         /// </summary>
         [JsonProperty("critical", NullValueHandling = NullValueHandling.Ignore)]
-        public string Critical { get; set; }
+        public bool? Critical { get; set; }
 
 
 

@@ -86,6 +86,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("public_ip", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicIp { get; set; }
 
+        /// <summary>
+        /// 域名
+        /// </summary>
+        [SDKProperty("domain", IsQuery = true)]
+        [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
+        public string Domain { get; set; }
+
 
 
         /// <summary>
@@ -105,6 +112,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  maxE2eRtt: ").Append(MaxE2eRtt).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  publicIp: ").Append(PublicIp).Append("\n");
+            sb.Append("  domain: ").Append(Domain).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -133,6 +141,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.MaxE2eRtt != input.MaxE2eRtt || (this.MaxE2eRtt != null && !this.MaxE2eRtt.Equals(input.MaxE2eRtt))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.PublicIp != input.PublicIp || (this.PublicIp != null && !this.PublicIp.Equals(input.PublicIp))) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
 
             return true;
         }
@@ -155,6 +164,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.MaxE2eRtt != null) hashCode = hashCode * 59 + this.MaxE2eRtt.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.PublicIp != null) hashCode = hashCode * 59 + this.PublicIp.GetHashCode();
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
                 return hashCode;
             }
         }

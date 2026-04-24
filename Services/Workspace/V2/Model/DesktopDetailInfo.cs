@@ -361,7 +361,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string DesktopType { get; set; }
 
         /// <summary>
-        /// 桌面元数据。   - image_name 创建桌面的镜像名称。 - bill_resource_id 镜像计费资源ID。 - metering.image_id 镜像ID。 - metering.resourcespeccode 桌面资源编码。 - metering.resourcetype 桌面资源类型。 - os_bit 操作系统位数：32或64。 - os_type 操作系统类型：Linux、Windows或Others。 - desktop_os_version 操作系统版本。
+        /// 桌面元数据。   - image_name 创建桌面的镜像名称。 - image_cloud_service_type 镜像云服务类型。 - image_resource_type 镜像资源类型。 - image_spec_code 镜像规格编码。 - image_bill_resource_id 镜像计费资源ID。 - metering.image_id 镜像ID。 - metering.resourcespeccode 桌面资源编码。 - metering.resourcetype 桌面资源类型。 - os_bit 操作系统位数：32或64。 - os_type 操作系统类型：Linux、Windows或Others。 - desktop_os_version 操作系统版本。
         /// </summary>
         [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, string> Metadata { get; set; }
@@ -574,6 +574,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("is_freeze", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsFreeze { get; set; }
 
+        /// <summary>
+        /// 动态池桌面隔离状态，false表示未隔离，true表示已隔离。
+        /// </summary>
+        [JsonProperty("isolated", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Isolated { get; set; }
+
+        /// <summary>
+        /// 桌面分配的域。
+        /// </summary>
+        [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
+        public string Domain { get; set; }
+
 
 
         /// <summary>
@@ -629,6 +641,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  rootResourceId: ").Append(RootResourceId).Append("\n");
             sb.Append("  hourPackageInfo: ").Append(HourPackageInfo).Append("\n");
             sb.Append("  isFreeze: ").Append(IsFreeze).Append("\n");
+            sb.Append("  isolated: ").Append(Isolated).Append("\n");
+            sb.Append("  domain: ").Append(Domain).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -693,6 +707,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.RootResourceId != input.RootResourceId || (this.RootResourceId != null && !this.RootResourceId.Equals(input.RootResourceId))) return false;
             if (this.HourPackageInfo != input.HourPackageInfo || (this.HourPackageInfo != null && !this.HourPackageInfo.Equals(input.HourPackageInfo))) return false;
             if (this.IsFreeze != input.IsFreeze || (this.IsFreeze != null && !this.IsFreeze.Equals(input.IsFreeze))) return false;
+            if (this.Isolated != input.Isolated || (this.Isolated != null && !this.Isolated.Equals(input.Isolated))) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
 
             return true;
         }
@@ -751,6 +767,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.RootResourceId != null) hashCode = hashCode * 59 + this.RootResourceId.GetHashCode();
                 if (this.HourPackageInfo != null) hashCode = hashCode * 59 + this.HourPackageInfo.GetHashCode();
                 if (this.IsFreeze != null) hashCode = hashCode * 59 + this.IsFreeze.GetHashCode();
+                if (this.Isolated != null) hashCode = hashCode * 59 + this.Isolated.GetHashCode();
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
                 return hashCode;
             }
         }

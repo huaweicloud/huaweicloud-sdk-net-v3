@@ -37,6 +37,20 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("keyword", NullValueHandling = NullValueHandling.Ignore)]
         public string Keyword { get; set; }
 
+        /// <summary>
+        /// 根据用户组的域名进行过滤。
+        /// </summary>
+        [SDKProperty("domain", IsQuery = true)]
+        [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
+        public string Domain { get; set; }
+
+        /// <summary>
+        /// 用户类型。 * AD： AD域用户 * LOCAL： 本地liteAs用户 * UOS： UOS域用户
+        /// </summary>
+        [SDKProperty("platform_type", IsQuery = true)]
+        [JsonProperty("platform_type", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> PlatformType { get; set; }
+
 
 
         /// <summary>
@@ -49,6 +63,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  keyword: ").Append(Keyword).Append("\n");
+            sb.Append("  domain: ").Append(Domain).Append("\n");
+            sb.Append("  platformType: ").Append(PlatformType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -70,6 +86,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Keyword != input.Keyword || (this.Keyword != null && !this.Keyword.Equals(input.Keyword))) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
+            if (this.PlatformType != input.PlatformType || (this.PlatformType != null && input.PlatformType != null && !this.PlatformType.SequenceEqual(input.PlatformType))) return false;
 
             return true;
         }
@@ -85,6 +103,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Keyword != null) hashCode = hashCode * 59 + this.Keyword.GetHashCode();
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
+                if (this.PlatformType != null) hashCode = hashCode * 59 + this.PlatformType.GetHashCode();
                 return hashCode;
             }
         }

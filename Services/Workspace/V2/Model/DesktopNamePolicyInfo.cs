@@ -64,6 +64,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("is_contain_user", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsContainUser { get; set; }
 
+        /// <summary>
+        /// 当名称前缀加数字长度生成的桌面名称长度超15位时，是否截断名称前缀部分。
+        /// </summary>
+        [JsonProperty("prefix_truncation_enabled", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? PrefixTruncationEnabled { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +87,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  singleDomainUserInc: ").Append(SingleDomainUserInc).Append("\n");
             sb.Append("  isDefaultPolicy: ").Append(IsDefaultPolicy).Append("\n");
             sb.Append("  isContainUser: ").Append(IsContainUser).Append("\n");
+            sb.Append("  prefixTruncationEnabled: ").Append(PrefixTruncationEnabled).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +114,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.SingleDomainUserInc != input.SingleDomainUserInc || (this.SingleDomainUserInc != null && !this.SingleDomainUserInc.Equals(input.SingleDomainUserInc))) return false;
             if (this.IsDefaultPolicy != input.IsDefaultPolicy || (this.IsDefaultPolicy != null && !this.IsDefaultPolicy.Equals(input.IsDefaultPolicy))) return false;
             if (this.IsContainUser != input.IsContainUser || (this.IsContainUser != null && !this.IsContainUser.Equals(input.IsContainUser))) return false;
+            if (this.PrefixTruncationEnabled != input.PrefixTruncationEnabled || (this.PrefixTruncationEnabled != null && !this.PrefixTruncationEnabled.Equals(input.PrefixTruncationEnabled))) return false;
 
             return true;
         }
@@ -127,6 +135,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.SingleDomainUserInc != null) hashCode = hashCode * 59 + this.SingleDomainUserInc.GetHashCode();
                 if (this.IsDefaultPolicy != null) hashCode = hashCode * 59 + this.IsDefaultPolicy.GetHashCode();
                 if (this.IsContainUser != null) hashCode = hashCode * 59 + this.IsContainUser.GetHashCode();
+                if (this.PrefixTruncationEnabled != null) hashCode = hashCode * 59 + this.PrefixTruncationEnabled.GetHashCode();
                 return hashCode;
             }
         }

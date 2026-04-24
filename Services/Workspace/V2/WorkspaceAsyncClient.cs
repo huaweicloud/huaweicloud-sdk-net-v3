@@ -310,6 +310,78 @@ namespace HuaweiCloud.SDK.Workspace.V2
         }
         
         /// <summary>
+        /// 查询订阅AI助手的项目，用户组，用户列表
+        ///
+        /// 查询订阅AI助手的项目，用户组，用户列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListSubscribeAiAssistantUsersResponse> ListSubscribeAiAssistantUsersAsync(ListSubscribeAiAssistantUsersRequest listSubscribeAiAssistantUsersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/users/ai-assistant/subscribe", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSubscribeAiAssistantUsersRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListSubscribeAiAssistantUsersResponse>(response);
+        }
+
+        public AsyncInvoker<ListSubscribeAiAssistantUsersResponse> ListSubscribeAiAssistantUsersAsyncInvoker(ListSubscribeAiAssistantUsersRequest listSubscribeAiAssistantUsersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/users/ai-assistant/subscribe", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSubscribeAiAssistantUsersRequest);
+            return new AsyncInvoker<ListSubscribeAiAssistantUsersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSubscribeAiAssistantUsersResponse>);
+        }
+        
+        /// <summary>
+        /// 查询用户使用频次统计
+        ///
+        /// 查询用户使用频次统计。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAiAssistantUsageFrequencyResponse> ShowAiAssistantUsageFrequencyAsync(ShowAiAssistantUsageFrequencyRequest showAiAssistantUsageFrequencyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/users/ai-assistant/statistics/usage-frequency", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAiAssistantUsageFrequencyRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowAiAssistantUsageFrequencyResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAiAssistantUsageFrequencyResponse> ShowAiAssistantUsageFrequencyAsyncInvoker(ShowAiAssistantUsageFrequencyRequest showAiAssistantUsageFrequencyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/users/ai-assistant/statistics/usage-frequency", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAiAssistantUsageFrequencyRequest);
+            return new AsyncInvoker<ShowAiAssistantUsageFrequencyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAiAssistantUsageFrequencyResponse>);
+        }
+        
+        /// <summary>
+        /// 订阅和取消AI助手
+        ///
+        /// 订阅用户可以使用ai提供的能力。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SubscribeAiAssistantResponse> SubscribeAiAssistantAsync(SubscribeAiAssistantRequest subscribeAiAssistantRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/users/ai-assistant/subscribe", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", subscribeAiAssistantRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<SubscribeAiAssistantResponse>(response);
+        }
+
+        public AsyncInvoker<SubscribeAiAssistantResponse> SubscribeAiAssistantAsyncInvoker(SubscribeAiAssistantRequest subscribeAiAssistantRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/users/ai-assistant/subscribe", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", subscribeAiAssistantRequest);
+            return new AsyncInvoker<SubscribeAiAssistantResponse>(this, "POST", request, JsonUtils.DeSerializeNull<SubscribeAiAssistantResponse>);
+        }
+        
+        /// <summary>
         /// 查询告警统计
         ///
         /// 返回各级别告警数。
@@ -1044,7 +1116,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 查询管控规则
         ///
-        /// 查询管控规则。
+        /// 查询对应管控规则。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1113,6 +1185,30 @@ namespace HuaweiCloud.SDK.Workspace.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/auth-config/saml2/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadMetadataRequest);
             return new AsyncInvoker<DownloadMetadataResponse>(this, "GET", request, JsonUtils.DeSerializeNull<DownloadMetadataResponse>);
+        }
+        
+        /// <summary>
+        /// 下载SAML 2.0 SP元数据信息
+        ///
+        /// 下载SAML 2.0 SP元数据信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DownloadSpMetadataResponse> DownloadSpMetadataAsync(DownloadSpMetadataRequest downloadSpMetadataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/auth-config/saml2/sp/metadata", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadSpMetadataRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerializeNull<DownloadSpMetadataResponse>(response);
+        }
+
+        public AsyncInvoker<DownloadSpMetadataResponse> DownloadSpMetadataAsyncInvoker(DownloadSpMetadataRequest downloadSpMetadataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/auth-config/saml2/sp/metadata", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadSpMetadataRequest);
+            return new AsyncInvoker<DownloadSpMetadataResponse>(this, "GET", request, JsonUtils.DeSerializeNull<DownloadSpMetadataResponse>);
         }
         
         /// <summary>
@@ -5750,6 +5846,37 @@ namespace HuaweiCloud.SDK.Workspace.V2
         }
         
         /// <summary>
+        /// 查询生命周期类型配置
+        ///
+        /// 根据type查询Apollo配置项life.cycle.type.action，获取对应的配置信息。不传type时返回所有配置项。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListLifeCycleTypeConfigurationsResponse> ListLifeCycleTypeConfigurationsAsync(ListLifeCycleTypeConfigurationsRequest listLifeCycleTypeConfigurationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/scheduled-tasks/life-cycle-type/configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLifeCycleTypeConfigurationsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            var listLifeCycleTypeConfigurationsResponse = JsonUtils.DeSerializeNull<ListLifeCycleTypeConfigurationsResponse>(response);
+            listLifeCycleTypeConfigurationsResponse.Body = JsonUtils.DeSerializeMap<string, LifeCycleTypeConfigRsp>(response);
+            return listLifeCycleTypeConfigurationsResponse;
+        }
+
+        public AsyncInvoker<ListLifeCycleTypeConfigurationsResponse> ListLifeCycleTypeConfigurationsAsyncInvoker(ListLifeCycleTypeConfigurationsRequest listLifeCycleTypeConfigurationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/scheduled-tasks/life-cycle-type/configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLifeCycleTypeConfigurationsRequest);
+            return new AsyncInvoker<ListLifeCycleTypeConfigurationsResponse>(this, "GET", request, response =>
+            {
+                var listLifeCycleTypeConfigurationsResponse = JsonUtils.DeSerializeNull<ListLifeCycleTypeConfigurationsResponse>(response);
+                listLifeCycleTypeConfigurationsResponse.Body = JsonUtils.DeSerializeMap<string, LifeCycleTypeConfigRsp>(response);
+                return listLifeCycleTypeConfigurationsResponse;
+            });
+        }
+        
+        /// <summary>
         /// 查询定时任务列表
         ///
         /// 查询定时任务列表。
@@ -6002,6 +6129,30 @@ namespace HuaweiCloud.SDK.Workspace.V2
         }
         
         /// <summary>
+        /// 查询站点录屏限速配置
+        ///
+        /// 查询站点录屏限速配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListScreenRecordsTrafficLimitConfigResponse> ListScreenRecordsTrafficLimitConfigAsync(ListScreenRecordsTrafficLimitConfigRequest listScreenRecordsTrafficLimitConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/screen-records/traffic-limit/configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScreenRecordsTrafficLimitConfigRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListScreenRecordsTrafficLimitConfigResponse>(response);
+        }
+
+        public AsyncInvoker<ListScreenRecordsTrafficLimitConfigResponse> ListScreenRecordsTrafficLimitConfigAsyncInvoker(ListScreenRecordsTrafficLimitConfigRequest listScreenRecordsTrafficLimitConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/screen-records/traffic-limit/configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScreenRecordsTrafficLimitConfigRequest);
+            return new AsyncInvoker<ListScreenRecordsTrafficLimitConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ListScreenRecordsTrafficLimitConfigResponse>);
+        }
+        
+        /// <summary>
         /// 查询录屏详情
         ///
         /// 查询录屏详情。
@@ -6025,6 +6176,56 @@ namespace HuaweiCloud.SDK.Workspace.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/screen-records/{record_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showScreenRecordRequest);
             return new AsyncInvoker<ShowScreenRecordResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowScreenRecordResponse>);
+        }
+        
+        /// <summary>
+        /// 更新录屏全速上传详情
+        ///
+        /// 更新录屏全速上传详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateFullSpeedRecordConfigResponse> UpdateFullSpeedRecordConfigAsync(UpdateFullSpeedRecordConfigRequest updateFullSpeedRecordConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateFullSpeedRecordConfigRequest.RecordId, out var valueOfRecordId)) urlParam.Add("record_id", valueOfRecordId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/screen-records/{record_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFullSpeedRecordConfigRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateFullSpeedRecordConfigResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateFullSpeedRecordConfigResponse> UpdateFullSpeedRecordConfigAsyncInvoker(UpdateFullSpeedRecordConfigRequest updateFullSpeedRecordConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateFullSpeedRecordConfigRequest.RecordId, out var valueOfRecordId)) urlParam.Add("record_id", valueOfRecordId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/screen-records/{record_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFullSpeedRecordConfigRequest);
+            return new AsyncInvoker<UpdateFullSpeedRecordConfigResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateFullSpeedRecordConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 更新站点录屏限速配置
+        ///
+        /// 更新站点录屏限速配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateScreenRecordsTrafficLimitConfigResponse> UpdateScreenRecordsTrafficLimitConfigAsync(UpdateScreenRecordsTrafficLimitConfigRequest updateScreenRecordsTrafficLimitConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/screen-records/traffic-limit/configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", updateScreenRecordsTrafficLimitConfigRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<UpdateScreenRecordsTrafficLimitConfigResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateScreenRecordsTrafficLimitConfigResponse> UpdateScreenRecordsTrafficLimitConfigAsyncInvoker(UpdateScreenRecordsTrafficLimitConfigRequest updateScreenRecordsTrafficLimitConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/screen-records/traffic-limit/configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", updateScreenRecordsTrafficLimitConfigRequest);
+            return new AsyncInvoker<UpdateScreenRecordsTrafficLimitConfigResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateScreenRecordsTrafficLimitConfigResponse>);
         }
         
         /// <summary>
@@ -6422,7 +6623,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 新增站点
         ///
-        /// 用于查询站点信息的接口。
+        /// 新增站点信息的接口。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -6565,6 +6766,32 @@ namespace HuaweiCloud.SDK.Workspace.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/sites/{site_id}/access-mode", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAccessModeRequest);
             return new AsyncInvoker<UpdateAccessModeResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAccessModeResponse>);
+        }
+        
+        /// <summary>
+        /// 修改站点专线自助维护通道
+        ///
+        /// 用于更新站点属性的接口。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateDcVncResponse> UpdateDcVncAsync(UpdateDcVncRequest updateDcVncRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateDcVncRequest.SiteId, out var valueOfSiteId)) urlParam.Add("site_id", valueOfSiteId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/sites/{site_id}/dc-vnc", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDcVncRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateDcVncResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateDcVncResponse> UpdateDcVncAsyncInvoker(UpdateDcVncRequest updateDcVncRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateDcVncRequest.SiteId, out var valueOfSiteId)) urlParam.Add("site_id", valueOfSiteId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/sites/{site_id}/dc-vnc", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDcVncRequest);
+            return new AsyncInvoker<UpdateDcVncResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateDcVncResponse>);
         }
         
         /// <summary>
@@ -8358,6 +8585,126 @@ namespace HuaweiCloud.SDK.Workspace.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/domain-controllers/validation", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", validateDomainControllerRequest);
             return new AsyncInvoker<ValidateDomainControllerResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ValidateDomainControllerResponse>);
+        }
+        
+        /// <summary>
+        /// 关闭域控的配置信息
+        ///
+        /// 关闭域控的配置信息。暂不支持关闭AD域控。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CloseDomainNewResponse> CloseDomainNewAsync(CloseDomainNewRequest closeDomainNewRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/domains", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", closeDomainNewRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<CloseDomainNewResponse>(response);
+        }
+
+        public AsyncInvoker<CloseDomainNewResponse> CloseDomainNewAsyncInvoker(CloseDomainNewRequest closeDomainNewRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/domains", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", closeDomainNewRequest);
+            return new AsyncInvoker<CloseDomainNewResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<CloseDomainNewResponse>);
+        }
+        
+        /// <summary>
+        /// 配置域控
+        ///
+        /// 配置域控。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateDomainNewResponse> CreateDomainNewAsync(CreateDomainNewRequest createDomainNewRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/domains", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDomainNewRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<CreateDomainNewResponse>(response);
+        }
+
+        public AsyncInvoker<CreateDomainNewResponse> CreateDomainNewAsyncInvoker(CreateDomainNewRequest createDomainNewRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/domains", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDomainNewRequest);
+            return new AsyncInvoker<CreateDomainNewResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateDomainNewResponse>);
+        }
+        
+        /// <summary>
+        /// 查询域控的配置信息
+        ///
+        /// 查询域控的配置信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowDomainsNewResponse> ShowDomainsNewAsync(ShowDomainsNewRequest showDomainsNewRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/domains", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainsNewRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowDomainsNewResponse>(response);
+        }
+
+        public AsyncInvoker<ShowDomainsNewResponse> ShowDomainsNewAsyncInvoker(ShowDomainsNewRequest showDomainsNewRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/domains", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainsNewRequest);
+            return new AsyncInvoker<ShowDomainsNewResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainsNewResponse>);
+        }
+        
+        /// <summary>
+        /// 同步域控用户（组）
+        ///
+        /// 同步域控用户（组）。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SyncExternalUserResponse> SyncExternalUserAsync(SyncExternalUserRequest syncExternalUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/domains/sync-external-user", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", syncExternalUserRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<SyncExternalUserResponse>(response);
+        }
+
+        public AsyncInvoker<SyncExternalUserResponse> SyncExternalUserAsyncInvoker(SyncExternalUserRequest syncExternalUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/domains/sync-external-user", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", syncExternalUserRequest);
+            return new AsyncInvoker<SyncExternalUserResponse>(this, "GET", request, JsonUtils.DeSerialize<SyncExternalUserResponse>);
+        }
+        
+        /// <summary>
+        /// 修改域控
+        ///
+        /// 修改域控。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateDomainNewResponse> UpdateDomainNewAsync(UpdateDomainNewRequest updateDomainNewRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/domains", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDomainNewRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateDomainNewResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateDomainNewResponse> UpdateDomainNewAsyncInvoker(UpdateDomainNewRequest updateDomainNewRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/domains", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDomainNewRequest);
+            return new AsyncInvoker<UpdateDomainNewResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateDomainNewResponse>);
         }
         
     }
