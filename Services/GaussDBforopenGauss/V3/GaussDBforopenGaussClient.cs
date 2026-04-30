@@ -4998,7 +4998,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         {
             var urlParam = new Dictionary<string, string>();
             if (StringUtils.TryConvertToNonEmptyString(switchLoggerReplicaRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instance/{instance_id}/switch-logger-replica", urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/switch-logger-replica", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", switchLoggerReplicaRequest);
             var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<SwitchLoggerReplicaResponse>(response);
@@ -5008,7 +5008,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         {
             var urlParam = new Dictionary<string, string>();
             if (StringUtils.TryConvertToNonEmptyString(switchLoggerReplicaRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instance/{instance_id}/switch-logger-replica", urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/switch-logger-replica", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", switchLoggerReplicaRequest);
             return new SyncInvoker<SwitchLoggerReplicaResponse>(this, "POST", request, JsonUtils.DeSerialize<SwitchLoggerReplicaResponse>);
         }

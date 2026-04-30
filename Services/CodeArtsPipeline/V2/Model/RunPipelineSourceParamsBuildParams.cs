@@ -94,6 +94,18 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
         [JsonProperty("source_codehub_http_url", NullValueHandling = NullValueHandling.Ignore)]
         public string SourceCodehubHttpUrl { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 预合并分支。 **取值范围**： 不涉及。 
+        /// </summary>
+        [JsonProperty("virtual_merge_branch", NullValueHandling = NullValueHandling.Ignore)]
+        public string VirtualMergeBranch { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 预合并提交ID。 **取值范围**： 不涉及。 
+        /// </summary>
+        [JsonProperty("virtual_merge_commitId", NullValueHandling = NullValueHandling.Ignore)]
+        public string VirtualMergeCommitId { get; set; }
+
 
 
         /// <summary>
@@ -116,6 +128,8 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             sb.Append("  sourceCodehubId: ").Append(SourceCodehubId).Append("\n");
             sb.Append("  sourceCodehubUrl: ").Append(SourceCodehubUrl).Append("\n");
             sb.Append("  sourceCodehubHttpUrl: ").Append(SourceCodehubHttpUrl).Append("\n");
+            sb.Append("  virtualMergeBranch: ").Append(VirtualMergeBranch).Append("\n");
+            sb.Append("  virtualMergeCommitId: ").Append(VirtualMergeCommitId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -147,6 +161,8 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             if (this.SourceCodehubId != input.SourceCodehubId || (this.SourceCodehubId != null && !this.SourceCodehubId.Equals(input.SourceCodehubId))) return false;
             if (this.SourceCodehubUrl != input.SourceCodehubUrl || (this.SourceCodehubUrl != null && !this.SourceCodehubUrl.Equals(input.SourceCodehubUrl))) return false;
             if (this.SourceCodehubHttpUrl != input.SourceCodehubHttpUrl || (this.SourceCodehubHttpUrl != null && !this.SourceCodehubHttpUrl.Equals(input.SourceCodehubHttpUrl))) return false;
+            if (this.VirtualMergeBranch != input.VirtualMergeBranch || (this.VirtualMergeBranch != null && !this.VirtualMergeBranch.Equals(input.VirtualMergeBranch))) return false;
+            if (this.VirtualMergeCommitId != input.VirtualMergeCommitId || (this.VirtualMergeCommitId != null && !this.VirtualMergeCommitId.Equals(input.VirtualMergeCommitId))) return false;
 
             return true;
         }
@@ -172,6 +188,8 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
                 if (this.SourceCodehubId != null) hashCode = hashCode * 59 + this.SourceCodehubId.GetHashCode();
                 if (this.SourceCodehubUrl != null) hashCode = hashCode * 59 + this.SourceCodehubUrl.GetHashCode();
                 if (this.SourceCodehubHttpUrl != null) hashCode = hashCode * 59 + this.SourceCodehubHttpUrl.GetHashCode();
+                if (this.VirtualMergeBranch != null) hashCode = hashCode * 59 + this.VirtualMergeBranch.GetHashCode();
+                if (this.VirtualMergeCommitId != null) hashCode = hashCode * 59 + this.VirtualMergeCommitId.GetHashCode();
                 return hashCode;
             }
         }

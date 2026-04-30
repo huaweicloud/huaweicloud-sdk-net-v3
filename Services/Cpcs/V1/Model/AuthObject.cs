@@ -19,14 +19,8 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("auth", NullValueHandling = NullValueHandling.Ignore)]
-        public AuthObjectAuth Auth { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("scope", NullValueHandling = NullValueHandling.Ignore)]
-        public AuthObjectScope Scope { get; set; }
+        [JsonProperty("app_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string AppId { get; set; }
 
 
 
@@ -37,8 +31,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class AuthObject {\n");
-            sb.Append("  auth: ").Append(Auth).Append("\n");
-            sb.Append("  scope: ").Append(Scope).Append("\n");
+            sb.Append("  appId: ").Append(AppId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -57,8 +50,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
         public bool Equals(AuthObject input)
         {
             if (input == null) return false;
-            if (this.Auth != input.Auth || (this.Auth != null && !this.Auth.Equals(input.Auth))) return false;
-            if (this.Scope != input.Scope || (this.Scope != null && !this.Scope.Equals(input.Scope))) return false;
+            if (this.AppId != input.AppId || (this.AppId != null && !this.AppId.Equals(input.AppId))) return false;
 
             return true;
         }
@@ -71,8 +63,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Auth != null) hashCode = hashCode * 59 + this.Auth.GetHashCode();
-                if (this.Scope != null) hashCode = hashCode * 59 + this.Scope.GetHashCode();
+                if (this.AppId != null) hashCode = hashCode * 59 + this.AppId.GetHashCode();
                 return hashCode;
             }
         }

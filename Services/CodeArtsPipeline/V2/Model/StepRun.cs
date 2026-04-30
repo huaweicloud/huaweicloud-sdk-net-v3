@@ -106,6 +106,12 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? EndTime { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 构建编号。 **取值范围**： 不涉及。 
+        /// </summary>
+        [JsonProperty("daily_build_number", NullValueHandling = NullValueHandling.Ignore)]
+        public string DailyBuildNumber { get; set; }
+
 
 
         /// <summary>
@@ -130,6 +136,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             sb.Append("  message: ").Append(Message).Append("\n");
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
+            sb.Append("  dailyBuildNumber: ").Append(DailyBuildNumber).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -163,6 +170,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             if (this.Message != input.Message || (this.Message != null && !this.Message.Equals(input.Message))) return false;
             if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.DailyBuildNumber != input.DailyBuildNumber || (this.DailyBuildNumber != null && !this.DailyBuildNumber.Equals(input.DailyBuildNumber))) return false;
 
             return true;
         }
@@ -190,6 +198,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
                 if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();
                 if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.DailyBuildNumber != null) hashCode = hashCode * 59 + this.DailyBuildNumber.GetHashCode();
                 return hashCode;
             }
         }

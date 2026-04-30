@@ -143,15 +143,15 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             public static readonly DbTypeEnum GAUSSDBV5 = new DbTypeEnum("gaussdbv5");
 
             /// <summary>
-            /// Enum _DDM for value:  ddm
+            /// Enum DDM for value: ddm
             /// </summary>
-            public static readonly DbTypeEnum _DDM = new DbTypeEnum(" ddm");
+            public static readonly DbTypeEnum DDM = new DbTypeEnum("ddm");
 
             private static readonly Dictionary<string, DbTypeEnum> StaticFields =
             new Dictionary<string, DbTypeEnum>()
             {
                 { "gaussdbv5", GAUSSDBV5 },
-                { " ddm", _DDM },
+                { "ddm", DDM },
             };
 
             private string _value;

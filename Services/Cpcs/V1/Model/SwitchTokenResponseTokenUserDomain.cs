@@ -11,16 +11,22 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cpcs.V1.Model
 {
     /// <summary>
-    /// 鉴权范围
+    /// 主账号信息
     /// </summary>
-    public class AuthObjectScope 
+    public class SwitchTokenResponseTokenUserDomain 
     {
 
         /// <summary>
-        /// 
+        /// 主账号名称
         /// </summary>
-        [JsonProperty("cluster", NullValueHandling = NullValueHandling.Ignore)]
-        public AuthObjectScopeCluster Cluster { get; set; }
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// 主账号ID
+        /// </summary>
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
 
 
 
@@ -30,8 +36,9 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class AuthObjectScope {\n");
-            sb.Append("  cluster: ").Append(Cluster).Append("\n");
+            sb.Append("class SwitchTokenResponseTokenUserDomain {\n");
+            sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,16 +48,17 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AuthObjectScope);
+            return this.Equals(input as SwitchTokenResponseTokenUserDomain);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(AuthObjectScope input)
+        public bool Equals(SwitchTokenResponseTokenUserDomain input)
         {
             if (input == null) return false;
-            if (this.Cluster != input.Cluster || (this.Cluster != null && !this.Cluster.Equals(input.Cluster))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
 
             return true;
         }
@@ -63,7 +71,8 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Cluster != null) hashCode = hashCode * 59 + this.Cluster.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 return hashCode;
             }
         }

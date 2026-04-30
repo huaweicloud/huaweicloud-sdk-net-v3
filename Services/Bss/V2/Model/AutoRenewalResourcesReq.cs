@@ -15,6 +15,121 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
     /// </summary>
     public class AutoRenewalResourcesReq 
     {
+        /// <summary>
+        /// |参数名称：自动续费的周期类型| |参数的约束及描述：该参数非必填，自动续费的周期类型，支持枚举| |MONTH：包月，YEAR：包年。此参数不携带或携带值为null时，按照如下规则处理。购买时未设置自动续费功能，默认与设置资源最后一个订单的订购周期类型一致。|
+        /// </summary>
+        /// <value>|参数名称：自动续费的周期类型| |参数的约束及描述：该参数非必填，自动续费的周期类型，支持枚举| |MONTH：包月，YEAR：包年。此参数不携带或携带值为null时，按照如下规则处理。购买时未设置自动续费功能，默认与设置资源最后一个订单的订购周期类型一致。|</value>
+        [JsonConverter(typeof(EnumClassConverter<PeriodTypeEnum>))]
+        public class PeriodTypeEnum
+        {
+            /// <summary>
+            /// Enum MONTH for value: MONTH
+            /// </summary>
+            public static readonly PeriodTypeEnum MONTH = new PeriodTypeEnum("MONTH");
+
+            /// <summary>
+            /// Enum YEAR for value: YEAR
+            /// </summary>
+            public static readonly PeriodTypeEnum YEAR = new PeriodTypeEnum("YEAR");
+
+            private static readonly Dictionary<string, PeriodTypeEnum> StaticFields =
+            new Dictionary<string, PeriodTypeEnum>()
+            {
+                { "MONTH", MONTH },
+                { "YEAR", YEAR },
+            };
+
+            private string _value;
+
+            public PeriodTypeEnum()
+            {
+
+            }
+
+            public PeriodTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static PeriodTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as PeriodTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(PeriodTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(PeriodTypeEnum a, PeriodTypeEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(PeriodTypeEnum a, PeriodTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// |参数名称：自动续费次数| |参数的约束及描述：该参数非必填，范围限制：0-99，0代表不限制次数。 首次开通自动续费，此参数不携带或携带值为null时，默认为不限制次数 已开通自动续费，重置自动续费次数时此参数必填，否则不做处理，不进行修改|
@@ -22,6 +137,11 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
         [JsonProperty("auto_renew_times", NullValueHandling = NullValueHandling.Ignore)]
         public int? AutoRenewTimes { get; set; }
 
+        /// <summary>
+        /// |参数名称：自动续费的周期类型| |参数的约束及描述：该参数非必填，自动续费的周期类型，支持枚举| |MONTH：包月，YEAR：包年。此参数不携带或携带值为null时，按照如下规则处理。购买时未设置自动续费功能，默认与设置资源最后一个订单的订购周期类型一致。|
+        /// </summary>
+        [JsonProperty("period_type", NullValueHandling = NullValueHandling.Ignore)]
+        public PeriodTypeEnum PeriodType { get; set; }
 
 
         /// <summary>
@@ -32,6 +152,7 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
             var sb = new StringBuilder();
             sb.Append("class AutoRenewalResourcesReq {\n");
             sb.Append("  autoRenewTimes: ").Append(AutoRenewTimes).Append("\n");
+            sb.Append("  periodType: ").Append(PeriodType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +172,7 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
         {
             if (input == null) return false;
             if (this.AutoRenewTimes != input.AutoRenewTimes || (this.AutoRenewTimes != null && !this.AutoRenewTimes.Equals(input.AutoRenewTimes))) return false;
+            if (this.PeriodType != input.PeriodType) return false;
 
             return true;
         }
@@ -64,6 +186,7 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
             {
                 var hashCode = 41;
                 if (this.AutoRenewTimes != null) hashCode = hashCode * 59 + this.AutoRenewTimes.GetHashCode();
+                hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
                 return hashCode;
             }
         }

@@ -55,20 +55,20 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
         /// <summary>
         /// 操作状态
         /// </summary>
-        [JsonProperty("operate_status", NullValueHandling = NullValueHandling.Ignore)]
-        public int? OperateStatus { get; set; }
+        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
+        public string Status { get; set; }
 
         /// <summary>
-        /// 操作结果消息
+        /// 操作失败消息
         /// </summary>
-        [JsonProperty("operate_message", NullValueHandling = NullValueHandling.Ignore)]
-        public string OperateMessage { get; set; }
+        [JsonProperty("failure_message", NullValueHandling = NullValueHandling.Ignore)]
+        public string FailureMessage { get; set; }
 
         /// <summary>
-        /// 审计状态
+        /// 操作验证信息
         /// </summary>
-        [JsonProperty("audit_status", NullValueHandling = NullValueHandling.Ignore)]
-        public int? AuditStatus { get; set; }
+        [JsonProperty("verification", NullValueHandling = NullValueHandling.Ignore)]
+        public string Verification { get; set; }
 
 
 
@@ -85,9 +85,9 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
             sb.Append("  clusterType: ").Append(ClusterType).Append("\n");
             sb.Append("  operation: ").Append(Operation).Append("\n");
             sb.Append("  time: ").Append(Time).Append("\n");
-            sb.Append("  operateStatus: ").Append(OperateStatus).Append("\n");
-            sb.Append("  operateMessage: ").Append(OperateMessage).Append("\n");
-            sb.Append("  auditStatus: ").Append(AuditStatus).Append("\n");
+            sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  failureMessage: ").Append(FailureMessage).Append("\n");
+            sb.Append("  verification: ").Append(Verification).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -112,9 +112,9 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
             if (this.ClusterType != input.ClusterType || (this.ClusterType != null && !this.ClusterType.Equals(input.ClusterType))) return false;
             if (this.Operation != input.Operation || (this.Operation != null && !this.Operation.Equals(input.Operation))) return false;
             if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
-            if (this.OperateStatus != input.OperateStatus || (this.OperateStatus != null && !this.OperateStatus.Equals(input.OperateStatus))) return false;
-            if (this.OperateMessage != input.OperateMessage || (this.OperateMessage != null && !this.OperateMessage.Equals(input.OperateMessage))) return false;
-            if (this.AuditStatus != input.AuditStatus || (this.AuditStatus != null && !this.AuditStatus.Equals(input.AuditStatus))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.FailureMessage != input.FailureMessage || (this.FailureMessage != null && !this.FailureMessage.Equals(input.FailureMessage))) return false;
+            if (this.Verification != input.Verification || (this.Verification != null && !this.Verification.Equals(input.Verification))) return false;
 
             return true;
         }
@@ -133,9 +133,9 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
                 if (this.ClusterType != null) hashCode = hashCode * 59 + this.ClusterType.GetHashCode();
                 if (this.Operation != null) hashCode = hashCode * 59 + this.Operation.GetHashCode();
                 if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
-                if (this.OperateStatus != null) hashCode = hashCode * 59 + this.OperateStatus.GetHashCode();
-                if (this.OperateMessage != null) hashCode = hashCode * 59 + this.OperateMessage.GetHashCode();
-                if (this.AuditStatus != null) hashCode = hashCode * 59 + this.AuditStatus.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.FailureMessage != null) hashCode = hashCode * 59 + this.FailureMessage.GetHashCode();
+                if (this.Verification != null) hashCode = hashCode * 59 + this.Verification.GetHashCode();
                 return hashCode;
             }
         }

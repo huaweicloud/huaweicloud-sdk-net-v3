@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
     {
 
         /// <summary>
-        /// 审计日志保存天数，取值范围0~732。0表示关闭审计日志策略。
+        /// 审计日志保存天数，取值范围0~3660。0表示关闭审计日志策略。
         /// </summary>
         [JsonProperty("keep_days", NullValueHandling = NullValueHandling.Ignore)]
         public int? KeepDays { get; set; }
@@ -29,10 +29,16 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public bool? ReserveAuditlogs { get; set; }
 
         /// <summary>
-        /// 审计记录的操作类型，动态范围。空表示不过滤任何操作类型。
+        /// 审计记录的操作类型，动态范围。空表示不过滤任何操作类型。该参数仅针对RDS for MySQL实例。
         /// </summary>
         [JsonProperty("audit_types", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AuditTypes { get; set; }
+
+        /// <summary>
+        /// 仅打开审计日志策略时有效。内容为打开审计日志时需自动安装pg_audit插件的数据库名称。空表示不自动安装。该参数仅针对RDS for PostgreSQL实例。
+        /// </summary>
+        [JsonProperty("databases", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Databases { get; set; }
 
 
 
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("  keepDays: ").Append(KeepDays).Append("\n");
             sb.Append("  reserveAuditlogs: ").Append(ReserveAuditlogs).Append("\n");
             sb.Append("  auditTypes: ").Append(AuditTypes).Append("\n");
+            sb.Append("  databases: ").Append(Databases).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +74,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             if (this.KeepDays != input.KeepDays || (this.KeepDays != null && !this.KeepDays.Equals(input.KeepDays))) return false;
             if (this.ReserveAuditlogs != input.ReserveAuditlogs || (this.ReserveAuditlogs != null && !this.ReserveAuditlogs.Equals(input.ReserveAuditlogs))) return false;
             if (this.AuditTypes != input.AuditTypes || (this.AuditTypes != null && input.AuditTypes != null && !this.AuditTypes.SequenceEqual(input.AuditTypes))) return false;
+            if (this.Databases != input.Databases || (this.Databases != null && input.Databases != null && !this.Databases.SequenceEqual(input.Databases))) return false;
 
             return true;
         }
@@ -82,6 +90,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                 if (this.KeepDays != null) hashCode = hashCode * 59 + this.KeepDays.GetHashCode();
                 if (this.ReserveAuditlogs != null) hashCode = hashCode * 59 + this.ReserveAuditlogs.GetHashCode();
                 if (this.AuditTypes != null) hashCode = hashCode * 59 + this.AuditTypes.GetHashCode();
+                if (this.Databases != null) hashCode = hashCode * 59 + this.Databases.GetHashCode();
                 return hashCode;
             }
         }

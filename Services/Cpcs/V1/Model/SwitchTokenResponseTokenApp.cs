@@ -11,28 +11,28 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cpcs.V1.Model
 {
     /// <summary>
-    /// 授权的ak数据
+    /// 应用信息
     /// </summary>
-    public class SwitchTokenResponseAk 
+    public class SwitchTokenResponseTokenApp 
     {
 
         /// <summary>
-        /// ak名称
+        /// 应用名称
         /// </summary>
-        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
-        public string Name { get; set; }
+        [JsonProperty("appName", NullValueHandling = NullValueHandling.Ignore)]
+        public string AppName { get; set; }
 
         /// <summary>
-        /// ak id
+        /// 应用ID
         /// </summary>
-        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
-        public string Id { get; set; }
+        [JsonProperty("appId", NullValueHandling = NullValueHandling.Ignore)]
+        public string AppId { get; set; }
 
         /// <summary>
-        /// ak状态
+        /// 应用状态
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public string Status { get; set; }
+        public int? Status { get; set; }
 
 
 
@@ -42,9 +42,9 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class SwitchTokenResponseAk {\n");
-            sb.Append("  name: ").Append(Name).Append("\n");
-            sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("class SwitchTokenResponseTokenApp {\n");
+            sb.Append("  appName: ").Append(AppName).Append("\n");
+            sb.Append("  appId: ").Append(AppId).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -55,17 +55,17 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as SwitchTokenResponseAk);
+            return this.Equals(input as SwitchTokenResponseTokenApp);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(SwitchTokenResponseAk input)
+        public bool Equals(SwitchTokenResponseTokenApp input)
         {
             if (input == null) return false;
-            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
-            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.AppName != input.AppName || (this.AppName != null && !this.AppName.Equals(input.AppName))) return false;
+            if (this.AppId != input.AppId || (this.AppId != null && !this.AppId.Equals(input.AppId))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
 
             return true;
@@ -79,8 +79,8 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.AppName != null) hashCode = hashCode * 59 + this.AppName.GetHashCode();
+                if (this.AppId != null) hashCode = hashCode * 59 + this.AppId.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }

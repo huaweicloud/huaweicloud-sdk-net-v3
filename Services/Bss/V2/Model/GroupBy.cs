@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
     {
 
         /// <summary>
-        /// tag：按照成本标签过滤cost_unit：按照成本单元过滤dimension：默认取值
+        /// tag：按照成本标签过滤cost_unit：按照成本分组过滤dimension：默认取值
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

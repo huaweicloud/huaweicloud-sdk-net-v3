@@ -19,16 +19,16 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
         /// <summary>
         /// 指定查询返回记录条数，默认值10
         /// </summary>
-        [SDKProperty("page_size", IsQuery = true)]
-        [JsonProperty("page_size", NullValueHandling = NullValueHandling.Ignore)]
-        public int? PageSize { get; set; }
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Limit { get; set; }
 
         /// <summary>
-        /// 索引位置，从page_num指定的下一条数据开始查询默认值为0
+        /// 索引位置，从offset指定的下一条数据开始查询默认值为0
         /// </summary>
-        [SDKProperty("page_num", IsQuery = true)]
-        [JsonProperty("page_num", NullValueHandling = NullValueHandling.Ignore)]
-        public int? PageNum { get; set; }
+        [SDKProperty("offset", IsQuery = true)]
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Offset { get; set; }
 
         /// <summary>
         /// 镜像名称
@@ -67,8 +67,8 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListCcspTenantImagesRequest {\n");
-            sb.Append("  pageSize: ").Append(PageSize).Append("\n");
-            sb.Append("  pageNum: ").Append(PageNum).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  imageName: ").Append(ImageName).Append("\n");
             sb.Append("  serviceType: ").Append(ServiceType).Append("\n");
             sb.Append("  sortKey: ").Append(SortKey).Append("\n");
@@ -91,8 +91,8 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
         public bool Equals(ListCcspTenantImagesRequest input)
         {
             if (input == null) return false;
-            if (this.PageSize != input.PageSize || (this.PageSize != null && !this.PageSize.Equals(input.PageSize))) return false;
-            if (this.PageNum != input.PageNum || (this.PageNum != null && !this.PageNum.Equals(input.PageNum))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.ImageName != input.ImageName || (this.ImageName != null && !this.ImageName.Equals(input.ImageName))) return false;
             if (this.ServiceType != input.ServiceType || (this.ServiceType != null && !this.ServiceType.Equals(input.ServiceType))) return false;
             if (this.SortKey != input.SortKey || (this.SortKey != null && !this.SortKey.Equals(input.SortKey))) return false;
@@ -109,8 +109,8 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.PageSize != null) hashCode = hashCode * 59 + this.PageSize.GetHashCode();
-                if (this.PageNum != null) hashCode = hashCode * 59 + this.PageNum.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.ImageName != null) hashCode = hashCode * 59 + this.ImageName.GetHashCode();
                 if (this.ServiceType != null) hashCode = hashCode * 59 + this.ServiceType.GetHashCode();
                 if (this.SortKey != null) hashCode = hashCode * 59 + this.SortKey.GetHashCode();

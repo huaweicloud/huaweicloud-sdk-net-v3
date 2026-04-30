@@ -26,16 +26,16 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
         /// <summary>
         /// 指定查询返回记录条数，默认值10
         /// </summary>
-        [SDKProperty("page_size", IsQuery = true)]
-        [JsonProperty("page_size", NullValueHandling = NullValueHandling.Ignore)]
-        public int? PageSize { get; set; }
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Limit { get; set; }
 
         /// <summary>
-        /// 索引位置，从page_num指定的下一条数据开始查询默认值为0
+        /// 索引位置，从offset指定的下一条数据开始查询默认值为0
         /// </summary>
-        [SDKProperty("page_num", IsQuery = true)]
-        [JsonProperty("page_num", NullValueHandling = NullValueHandling.Ignore)]
-        public int? PageNum { get; set; }
+        [SDKProperty("offset", IsQuery = true)]
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Offset { get; set; }
 
         /// <summary>
         /// 应用名称
@@ -68,8 +68,8 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
             var sb = new StringBuilder();
             sb.Append("class ShowClusterAccessKeyListRequest {\n");
             sb.Append("  clusterId: ").Append(ClusterId).Append("\n");
-            sb.Append("  pageSize: ").Append(PageSize).Append("\n");
-            sb.Append("  pageNum: ").Append(PageNum).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  appName: ").Append(AppName).Append("\n");
             sb.Append("  sortKey: ").Append(SortKey).Append("\n");
             sb.Append("  sortDir: ").Append(SortDir).Append("\n");
@@ -92,8 +92,8 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
         {
             if (input == null) return false;
             if (this.ClusterId != input.ClusterId || (this.ClusterId != null && !this.ClusterId.Equals(input.ClusterId))) return false;
-            if (this.PageSize != input.PageSize || (this.PageSize != null && !this.PageSize.Equals(input.PageSize))) return false;
-            if (this.PageNum != input.PageNum || (this.PageNum != null && !this.PageNum.Equals(input.PageNum))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.AppName != input.AppName || (this.AppName != null && !this.AppName.Equals(input.AppName))) return false;
             if (this.SortKey != input.SortKey || (this.SortKey != null && !this.SortKey.Equals(input.SortKey))) return false;
             if (this.SortDir != input.SortDir || (this.SortDir != null && !this.SortDir.Equals(input.SortDir))) return false;
@@ -110,8 +110,8 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
             {
                 var hashCode = 41;
                 if (this.ClusterId != null) hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
-                if (this.PageSize != null) hashCode = hashCode * 59 + this.PageSize.GetHashCode();
-                if (this.PageNum != null) hashCode = hashCode * 59 + this.PageNum.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.AppName != null) hashCode = hashCode * 59 + this.AppName.GetHashCode();
                 if (this.SortKey != null) hashCode = hashCode * 59 + this.SortKey.GetHashCode();
                 if (this.SortDir != null) hashCode = hashCode * 59 + this.SortDir.GetHashCode();

@@ -28,21 +28,21 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             public static readonly StatusEnum SUCCESS = new StatusEnum("success");
 
             /// <summary>
-            /// Enum _FAILED for value:  failed
+            /// Enum FAILED for value: failed
             /// </summary>
-            public static readonly StatusEnum _FAILED = new StatusEnum(" failed");
+            public static readonly StatusEnum FAILED = new StatusEnum("failed");
 
             /// <summary>
-            /// Enum _PENDING for value:  pending
+            /// Enum PENDING for value: pending
             /// </summary>
-            public static readonly StatusEnum _PENDING = new StatusEnum(" pending");
+            public static readonly StatusEnum PENDING = new StatusEnum("pending");
 
             private static readonly Dictionary<string, StatusEnum> StaticFields =
             new Dictionary<string, StatusEnum>()
             {
                 { "success", SUCCESS },
-                { " failed", _FAILED },
-                { " pending", _PENDING },
+                { "failed", FAILED },
+                { "pending", PENDING },
             };
 
             private string _value;

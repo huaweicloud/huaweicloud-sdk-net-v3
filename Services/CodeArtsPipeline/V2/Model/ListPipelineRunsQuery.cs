@@ -35,6 +35,12 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
         public string EndTime { get; set; }
 
         /// <summary>
+        /// **参数解释**： 流水线状态更新时间。 **约束限制**： 不涉及。 **取值范围**： 时间戳或者yyyy-MM-dd HH:mm:ss格式均可。 **默认取值**： 不涉及。 
+        /// </summary>
+        [JsonProperty("update_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string UpdateTime { get; set; }
+
+        /// <summary>
         /// **参数解释**： 起始偏移。 **约束限制**： 不涉及。 **取值范围**： 大于等于零。 **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
@@ -47,7 +53,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
         public long? Limit { get; set; }
 
         /// <summary>
-        /// **参数解释**： 排序字段名称。 **约束限制**： 不涉及。 **取值范围**： \&quot;start_time\&quot; - 流水线开始时间。 **默认取值**： 不涉及。 
+        /// **参数解释**： 排序字段名称。 **约束限制**： 不涉及。 **取值范围**： \&quot;start_time\&quot; - 流水线开始时间。 \&quot;update_time\&quot; - 流水线更新时间。 **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("sort_key", NullValueHandling = NullValueHandling.Ignore)]
         public string SortKey { get; set; }
@@ -70,6 +76,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
+            sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  sortKey: ").Append(SortKey).Append("\n");
@@ -95,6 +102,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             if (this.Status != input.Status || (this.Status != null && input.Status != null && !this.Status.SequenceEqual(input.Status))) return false;
             if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.SortKey != input.SortKey || (this.SortKey != null && !this.SortKey.Equals(input.SortKey))) return false;
@@ -114,6 +122,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.SortKey != null) hashCode = hashCode * 59 + this.SortKey.GetHashCode();

@@ -11,22 +11,28 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cpcs.V1.Model
 {
     /// <summary>
-    /// 集群信息
+    /// 用户信息
     /// </summary>
-    public class AuthObjectScopeCluster 
+    public class SwitchTokenResponseTokenUser 
     {
 
         /// <summary>
-        /// 集群id
+        /// 
         /// </summary>
-        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
-        public string Id { get; set; }
+        [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
+        public SwitchTokenResponseTokenUserDomain Domain { get; set; }
 
         /// <summary>
-        /// 集群名称
+        /// 用户名称
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// 用户ID
+        /// </summary>
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
 
 
 
@@ -36,9 +42,10 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class AuthObjectScopeCluster {\n");
-            sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("class SwitchTokenResponseTokenUser {\n");
+            sb.Append("  domain: ").Append(Domain).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -48,17 +55,18 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AuthObjectScopeCluster);
+            return this.Equals(input as SwitchTokenResponseTokenUser);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(AuthObjectScopeCluster input)
+        public bool Equals(SwitchTokenResponseTokenUser input)
         {
             if (input == null) return false;
-            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
 
             return true;
         }
@@ -71,8 +79,9 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 return hashCode;
             }
         }

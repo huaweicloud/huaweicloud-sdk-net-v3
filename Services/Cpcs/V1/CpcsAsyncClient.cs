@@ -915,7 +915,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         /// <summary>
         /// 获取资源总量统计信息
         ///
-        /// 获取CPCS中\\资源总量统计信息
+        /// 获取CPCS中资源总量统计信息
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

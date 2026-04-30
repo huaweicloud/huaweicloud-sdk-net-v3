@@ -54,16 +54,16 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
         /// <summary>
         /// 页面大小，不超过1500
         /// </summary>
-        [SDKProperty("page_size", IsQuery = true)]
-        [JsonProperty("page_size", NullValueHandling = NullValueHandling.Ignore)]
-        public int? PageSize { get; set; }
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Limit { get; set; }
 
         /// <summary>
         /// 页数，默认1
         /// </summary>
-        [SDKProperty("page_num", IsQuery = true)]
-        [JsonProperty("page_num", NullValueHandling = NullValueHandling.Ignore)]
-        public int? PageNum { get; set; }
+        [SDKProperty("offset", IsQuery = true)]
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Offset { get; set; }
 
         /// <summary>
         /// 查询起始时间戳，毫秒级时间戳，默认为0，默认从三天前查询
@@ -93,8 +93,8 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
             sb.Append("  serviceType: ").Append(ServiceType).Append("\n");
             sb.Append("  algorithmType: ").Append(AlgorithmType).Append("\n");
             sb.Append("  certificateType: ").Append(CertificateType).Append("\n");
-            sb.Append("  pageSize: ").Append(PageSize).Append("\n");
-            sb.Append("  pageNum: ").Append(PageNum).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  from: ").Append(From).Append("\n");
             sb.Append("  to: ").Append(To).Append("\n");
             sb.Append("}\n");
@@ -120,8 +120,8 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
             if (this.ServiceType != input.ServiceType || (this.ServiceType != null && !this.ServiceType.Equals(input.ServiceType))) return false;
             if (this.AlgorithmType != input.AlgorithmType || (this.AlgorithmType != null && !this.AlgorithmType.Equals(input.AlgorithmType))) return false;
             if (this.CertificateType != input.CertificateType || (this.CertificateType != null && !this.CertificateType.Equals(input.CertificateType))) return false;
-            if (this.PageSize != input.PageSize || (this.PageSize != null && !this.PageSize.Equals(input.PageSize))) return false;
-            if (this.PageNum != input.PageNum || (this.PageNum != null && !this.PageNum.Equals(input.PageNum))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.From != input.From || (this.From != null && !this.From.Equals(input.From))) return false;
             if (this.To != input.To || (this.To != null && !this.To.Equals(input.To))) return false;
 
@@ -141,8 +141,8 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
                 if (this.ServiceType != null) hashCode = hashCode * 59 + this.ServiceType.GetHashCode();
                 if (this.AlgorithmType != null) hashCode = hashCode * 59 + this.AlgorithmType.GetHashCode();
                 if (this.CertificateType != null) hashCode = hashCode * 59 + this.CertificateType.GetHashCode();
-                if (this.PageSize != null) hashCode = hashCode * 59 + this.PageSize.GetHashCode();
-                if (this.PageNum != null) hashCode = hashCode * 59 + this.PageNum.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.From != null) hashCode = hashCode * 59 + this.From.GetHashCode();
                 if (this.To != null) hashCode = hashCode * 59 + this.To.GetHashCode();
                 return hashCode;

@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
         /// **参数解释**： 步骤输出value值。 **取值范围**： 不涉及。 
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
-        public string Value { get; set; }
+        public Object Value { get; set; }
 
 
 

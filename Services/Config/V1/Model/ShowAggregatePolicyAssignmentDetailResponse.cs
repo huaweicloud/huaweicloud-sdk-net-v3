@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Config.V1.Model
     public class ShowAggregatePolicyAssignmentDetailResponse : SdkResponse
     {
         /// <summary>
-        /// 规则类型，包括预定义合规规则(builtin)和用户自定义合规规则(custom)
+        /// 规则所有方
         /// </summary>
-        /// <value>规则类型，包括预定义合规规则(builtin)和用户自定义合规规则(custom)</value>
+        /// <value>规则所有方</value>
         [JsonConverter(typeof(EnumClassConverter<PolicyAssignmentTypeEnum>))]
         public class PolicyAssignmentTypeEnum
         {
@@ -132,7 +132,13 @@ namespace HuaweiCloud.SDK.Config.V1.Model
 
 
         /// <summary>
-        /// 规则类型，包括预定义合规规则(builtin)和用户自定义合规规则(custom)
+        /// 聚合器规则的聚合器名称
+        /// </summary>
+        [JsonProperty("aggregator_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string AggregatorName { get; set; }
+
+        /// <summary>
+        /// 规则所有方
         /// </summary>
         [JsonProperty("policy_assignment_type", NullValueHandling = NullValueHandling.Ignore)]
         public PolicyAssignmentTypeEnum PolicyAssignmentType { get; set; }
@@ -167,7 +173,7 @@ namespace HuaweiCloud.SDK.Config.V1.Model
         public PolicyFilterDefinitionV2 PolicyFilterV2 { get; set; }
 
         /// <summary>
-        /// 触发周期值，可选值：One_Hour, Three_Hours, Six_Hours, Twelve_Hours, TwentyFour_Hours
+        /// 触发周期
         /// </summary>
         [JsonProperty("period", NullValueHandling = NullValueHandling.Ignore)]
         public string Period { get; set; }
@@ -209,7 +215,7 @@ namespace HuaweiCloud.SDK.Config.V1.Model
         public Dictionary<string, PolicyParameterValue> Parameters { get; set; }
 
         /// <summary>
-        /// 
+        /// 标签列表
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<ResourceTag> Tags { get; set; }
@@ -227,7 +233,7 @@ namespace HuaweiCloud.SDK.Config.V1.Model
         public string TargetType { get; set; }
 
         /// <summary>
-        /// 修正执行的目标id。
+        /// 修正执行的目标urn。
         /// </summary>
         [JsonProperty("target_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TargetId { get; set; }
@@ -241,6 +247,7 @@ namespace HuaweiCloud.SDK.Config.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShowAggregatePolicyAssignmentDetailResponse {\n");
+            sb.Append("  aggregatorName: ").Append(AggregatorName).Append("\n");
             sb.Append("  policyAssignmentType: ").Append(PolicyAssignmentType).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
@@ -276,6 +283,7 @@ namespace HuaweiCloud.SDK.Config.V1.Model
         public bool Equals(ShowAggregatePolicyAssignmentDetailResponse input)
         {
             if (input == null) return false;
+            if (this.AggregatorName != input.AggregatorName || (this.AggregatorName != null && !this.AggregatorName.Equals(input.AggregatorName))) return false;
             if (this.PolicyAssignmentType != input.PolicyAssignmentType) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
@@ -305,6 +313,7 @@ namespace HuaweiCloud.SDK.Config.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.AggregatorName != null) hashCode = hashCode * 59 + this.AggregatorName.GetHashCode();
                 hashCode = hashCode * 59 + this.PolicyAssignmentType.GetHashCode();
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();

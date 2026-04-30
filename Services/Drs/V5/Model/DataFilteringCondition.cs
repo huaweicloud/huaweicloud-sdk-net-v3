@@ -28,15 +28,15 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             public static readonly FilteringTypeEnum CONTENTCONDITIONALFILTER = new FilteringTypeEnum("contentConditionalFilter");
 
             /// <summary>
-            /// Enum _CONFIGCONDITIONALFILTER for value:  configConditionalFilter
+            /// Enum CONFIGCONDITIONALFILTER for value: configConditionalFilter
             /// </summary>
-            public static readonly FilteringTypeEnum _CONFIGCONDITIONALFILTER = new FilteringTypeEnum(" configConditionalFilter");
+            public static readonly FilteringTypeEnum CONFIGCONDITIONALFILTER = new FilteringTypeEnum("configConditionalFilter");
 
             private static readonly Dictionary<string, FilteringTypeEnum> StaticFields =
             new Dictionary<string, FilteringTypeEnum>()
             {
                 { "contentConditionalFilter", CONTENTCONDITIONALFILTER },
-                { " configConditionalFilter", _CONFIGCONDITIONALFILTER },
+                { "configConditionalFilter", CONFIGCONDITIONALFILTER },
             };
 
             private string _value;
