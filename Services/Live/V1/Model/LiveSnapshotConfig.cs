@@ -16,6 +16,127 @@ namespace HuaweiCloud.SDK.Live.V1.Model
     public class LiveSnapshotConfig 
     {
         /// <summary>
+        /// **参数解释**： 截图模式 **约束限制**： 不涉及 **取值范围**：   - keyframe：I帧截图只选取、保存符合要求的I帧。   - nokeyframe：非I帧截图只选取、保存符合要求的非I帧。   - random：随机截图交替选取、保存符合要求的I帧及非I帧。 **默认取值**： keyframe 
+        /// </summary>
+        /// <value>**参数解释**： 截图模式 **约束限制**： 不涉及 **取值范围**：   - keyframe：I帧截图只选取、保存符合要求的I帧。   - nokeyframe：非I帧截图只选取、保存符合要求的非I帧。   - random：随机截图交替选取、保存符合要求的I帧及非I帧。 **默认取值**： keyframe </value>
+        [JsonConverter(typeof(EnumClassConverter<SnapshotModeEnum>))]
+        public class SnapshotModeEnum
+        {
+            /// <summary>
+            /// Enum KEYFRAME for value: keyframe
+            /// </summary>
+            public static readonly SnapshotModeEnum KEYFRAME = new SnapshotModeEnum("keyframe");
+
+            /// <summary>
+            /// Enum NOKEYFRAME for value: nokeyframe
+            /// </summary>
+            public static readonly SnapshotModeEnum NOKEYFRAME = new SnapshotModeEnum("nokeyframe");
+
+            /// <summary>
+            /// Enum RANDOM for value: random
+            /// </summary>
+            public static readonly SnapshotModeEnum RANDOM = new SnapshotModeEnum("random");
+
+            private static readonly Dictionary<string, SnapshotModeEnum> StaticFields =
+            new Dictionary<string, SnapshotModeEnum>()
+            {
+                { "keyframe", KEYFRAME },
+                { "nokeyframe", NOKEYFRAME },
+                { "random", RANDOM },
+            };
+
+            private string _value;
+
+            public SnapshotModeEnum()
+            {
+
+            }
+
+            public SnapshotModeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static SnapshotModeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as SnapshotModeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(SnapshotModeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(SnapshotModeEnum a, SnapshotModeEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(SnapshotModeEnum a, SnapshotModeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
         /// 是否启用回调通知 - on：启用。 - off：不启用。
         /// </summary>
         /// <value>是否启用回调通知 - on：启用。 - off：不启用。</value>
@@ -277,6 +398,11 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         public int? ObjectWriteMode { get; set; }
 
         /// <summary>
+        /// **参数解释**： 截图模式 **约束限制**： 不涉及 **取值范围**：   - keyframe：I帧截图只选取、保存符合要求的I帧。   - nokeyframe：非I帧截图只选取、保存符合要求的非I帧。   - random：随机截图交替选取、保存符合要求的I帧及非I帧。 **默认取值**： keyframe 
+        /// </summary>
+        [JsonProperty("snapshot_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public SnapshotModeEnum SnapshotMode { get; set; }
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("obs_location", NullValueHandling = NullValueHandling.Ignore)]
@@ -324,6 +450,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             sb.Append("  authKey: ").Append(AuthKey).Append("\n");
             sb.Append("  timeInterval: ").Append(TimeInterval).Append("\n");
             sb.Append("  objectWriteMode: ").Append(ObjectWriteMode).Append("\n");
+            sb.Append("  snapshotMode: ").Append(SnapshotMode).Append("\n");
             sb.Append("  obsLocation: ").Append(ObsLocation).Append("\n");
             sb.Append("  callBackEnable: ").Append(CallBackEnable).Append("\n");
             sb.Append("  callBackUrl: ").Append(CallBackUrl).Append("\n");
@@ -353,6 +480,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             if (this.AuthKey != input.AuthKey || (this.AuthKey != null && !this.AuthKey.Equals(input.AuthKey))) return false;
             if (this.TimeInterval != input.TimeInterval || (this.TimeInterval != null && !this.TimeInterval.Equals(input.TimeInterval))) return false;
             if (this.ObjectWriteMode != input.ObjectWriteMode || (this.ObjectWriteMode != null && !this.ObjectWriteMode.Equals(input.ObjectWriteMode))) return false;
+            if (this.SnapshotMode != input.SnapshotMode) return false;
             if (this.ObsLocation != input.ObsLocation || (this.ObsLocation != null && !this.ObsLocation.Equals(input.ObsLocation))) return false;
             if (this.CallBackEnable != input.CallBackEnable) return false;
             if (this.CallBackUrl != input.CallBackUrl || (this.CallBackUrl != null && !this.CallBackUrl.Equals(input.CallBackUrl))) return false;
@@ -376,6 +504,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
                 if (this.AuthKey != null) hashCode = hashCode * 59 + this.AuthKey.GetHashCode();
                 if (this.TimeInterval != null) hashCode = hashCode * 59 + this.TimeInterval.GetHashCode();
                 if (this.ObjectWriteMode != null) hashCode = hashCode * 59 + this.ObjectWriteMode.GetHashCode();
+                hashCode = hashCode * 59 + this.SnapshotMode.GetHashCode();
                 if (this.ObsLocation != null) hashCode = hashCode * 59 + this.ObsLocation.GetHashCode();
                 hashCode = hashCode * 59 + this.CallBackEnable.GetHashCode();
                 if (this.CallBackUrl != null) hashCode = hashCode * 59 + this.CallBackUrl.GetHashCode();

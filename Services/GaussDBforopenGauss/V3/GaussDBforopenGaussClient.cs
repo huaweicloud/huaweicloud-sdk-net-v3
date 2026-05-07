@@ -3175,6 +3175,30 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 查询引擎的升级路径
+        ///
+        /// 查询引擎的升级路径
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListUpgradePathsResponse ListUpgradePaths(ListUpgradePathsRequest listUpgradePathsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/upgrade-paths", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUpgradePathsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListUpgradePathsResponse>(response);
+        }
+
+        public SyncInvoker<ListUpgradePathsResponse> ListUpgradePathsInvoker(ListUpgradePathsRequest listUpgradePathsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/upgrade-paths", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUpgradePathsRequest);
+            return new SyncInvoker<ListUpgradePathsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListUpgradePathsResponse>);
+        }
+        
+        /// <summary>
         /// 查询等待事件列表
         ///
         /// 查询数据库实例节点的等待事件列表。

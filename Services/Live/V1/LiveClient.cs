@@ -1250,6 +1250,30 @@ namespace HuaweiCloud.SDK.Live.V1
         }
         
         /// <summary>
+        /// 设置域名主备流功能开关
+        ///
+        /// 设置域名主备流功能开关，可支持同一路流推多个，按照先后顺序定优先级，客户可进行流优先级切换
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ModifyDomainStreamBackupResponse ModifyDomainStreamBackup(ModifyDomainStreamBackupRequest modifyDomainStreamBackupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain/stream-backup", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", modifyDomainStreamBackupRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<ModifyDomainStreamBackupResponse>(response);
+        }
+
+        public SyncInvoker<ModifyDomainStreamBackupResponse> ModifyDomainStreamBackupInvoker(ModifyDomainStreamBackupRequest modifyDomainStreamBackupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain/stream-backup", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", modifyDomainStreamBackupRequest);
+            return new SyncInvoker<ModifyDomainStreamBackupResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyDomainStreamBackupResponse>);
+        }
+        
+        /// <summary>
         /// 更新转推输出
         ///
         /// 更新转推输出
@@ -1463,6 +1487,30 @@ namespace HuaweiCloud.SDK.Live.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/guard/key-chain", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainKeyChainRequest);
             return new SyncInvoker<ShowDomainKeyChainResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainKeyChainResponse>);
+        }
+        
+        /// <summary>
+        /// 查询域名主备流功能开关
+        ///
+        /// 查询域名主备流功能开关，可支持同一路流推多个，按照先后顺序定优先级，客户可进行流优先级切换
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowDomainStreamBackupResponse ShowDomainStreamBackup(ShowDomainStreamBackupRequest showDomainStreamBackupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain/stream-backup", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainStreamBackupRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowDomainStreamBackupResponse>(response);
+        }
+
+        public SyncInvoker<ShowDomainStreamBackupResponse> ShowDomainStreamBackupInvoker(ShowDomainStreamBackupRequest showDomainStreamBackupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain/stream-backup", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainStreamBackupRequest);
+            return new SyncInvoker<ShowDomainStreamBackupResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainStreamBackupResponse>);
         }
         
         /// <summary>

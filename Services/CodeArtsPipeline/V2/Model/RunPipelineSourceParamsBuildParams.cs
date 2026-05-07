@@ -103,7 +103,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
         /// <summary>
         /// **参数解释**： 预合并提交ID。 **取值范围**： 不涉及。 
         /// </summary>
-        [JsonProperty("virtual_merge_commitId", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("virtual_merge_commit_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VirtualMergeCommitId { get; set; }
 
 
