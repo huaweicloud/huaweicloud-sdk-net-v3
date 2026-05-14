@@ -1,3 +1,71 @@
+# 3.1.192 2026-05-14
+
+### HuaweiCloud SDK DDM
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`UnbindLogicDb`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ChangeStrategy**
+    - 请求参数变更
+      - `- iam_account`
+  - **DeleteGroup**
+    - 响应参数变更
+      - `+ order_id`
+  - **UploadSchemaMetadata**
+    - 请求参数变更
+      - `- iam_account`
+  - **ShowPublicIp**
+    - 响应参数变更
+      - `+ public_ip_list.group_id`
+  - **CreateGroup**
+    - 响应参数变更
+      - `+ instance_id`
+
+### HuaweiCloud SDK KMS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`ReEncrypt`、`DeriveSharedSecret`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK SWR
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateInstance**
+    - 请求参数变更
+      - `+ enable_intranet_access`
+      - `+ obs_enc_kms_key_id`
+
+### HuaweiCloud SDK VOD
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`ListAssetEditTask`、`CreateAssetEditTask`、`DeleteAssetEditTask`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateAssetProcessTask**
+    - 响应参数变更
+      - `+ thumbnail_task_id`
+  - **ModifySubtitle**
+    - 响应参数变更
+      - `+ thumbnail_task_id`
+
 # 3.1.191 2026-05-07
 
 ### HuaweiCloud SDK CodeArtsPipeline

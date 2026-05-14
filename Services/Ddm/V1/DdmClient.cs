@@ -2609,6 +2609,34 @@ namespace HuaweiCloud.SDK.Ddm.V1
         }
         
         /// <summary>
+        /// 逻辑库解绑
+        ///
+        /// 逻辑库解绑
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UnbindLogicDbResponse UnbindLogicDb(UnbindLogicDbRequest unbindLogicDbRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(unbindLogicDbRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(unbindLogicDbRequest.LogicDbName, out var valueOfLogicDbName)) urlParam.Add("logic_db_name", valueOfLogicDbName);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/{logic_db_name}/unbind", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", unbindLogicDbRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<UnbindLogicDbResponse>(response);
+        }
+
+        public SyncInvoker<UnbindLogicDbResponse> UnbindLogicDbInvoker(UnbindLogicDbRequest unbindLogicDbRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(unbindLogicDbRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(unbindLogicDbRequest.LogicDbName, out var valueOfLogicDbName)) urlParam.Add("logic_db_name", valueOfLogicDbName);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/{logic_db_name}/unbind", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", unbindLogicDbRequest);
+            return new SyncInvoker<UnbindLogicDbResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UnbindLogicDbResponse>);
+        }
+        
+        /// <summary>
         /// 同步DN信息
         ///
         /// 同步当前DDM实例已关联的所有DN实例配置信息。

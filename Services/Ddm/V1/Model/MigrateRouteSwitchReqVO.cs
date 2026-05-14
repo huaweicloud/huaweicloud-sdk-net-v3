@@ -17,12 +17,6 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
     {
 
         /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("iam_account", NullValueHandling = NullValueHandling.Ignore)]
-        public IamAccount IamAccount { get; set; }
-
-        /// <summary>
         /// 项目id。
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -73,7 +67,6 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class MigrateRouteSwitchReqVO {\n");
-            sb.Append("  iamAccount: ").Append(IamAccount).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  taskId: ").Append(TaskId).Append("\n");
@@ -99,7 +92,6 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
         public bool Equals(MigrateRouteSwitchReqVO input)
         {
             if (input == null) return false;
-            if (this.IamAccount != input.IamAccount || (this.IamAccount != null && !this.IamAccount.Equals(input.IamAccount))) return false;
             if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
             if (this.TaskId != input.TaskId || (this.TaskId != null && !this.TaskId.Equals(input.TaskId))) return false;
@@ -119,7 +111,6 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.IamAccount != null) hashCode = hashCode * 59 + this.IamAccount.GetHashCode();
                 if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.TaskId != null) hashCode = hashCode * 59 + this.TaskId.GetHashCode();

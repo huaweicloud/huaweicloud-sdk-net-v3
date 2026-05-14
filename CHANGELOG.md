@@ -1,3 +1,71 @@
+# 3.1.192 2026-05-14
+
+### HuaweiCloud SDK DDM
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the API `UnbindLogicDb`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ChangeStrategy**
+    - changes of request param
+      - `- iam_account`
+  - **DeleteGroup**
+    - changes of response param
+      - `+ order_id`
+  - **UploadSchemaMetadata**
+    - changes of request param
+      - `- iam_account`
+  - **ShowPublicIp**
+    - changes of response param
+      - `+ public_ip_list.group_id`
+  - **CreateGroup**
+    - changes of response param
+      - `+ instance_id`
+
+### HuaweiCloud SDK KMS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the APIs `ReEncrypt`, `DeriveSharedSecret`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK SWR
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateInstance**
+    - changes of request param
+      - `+ enable_intranet_access`
+      - `+ obs_enc_kms_key_id`
+
+### HuaweiCloud SDK VOD
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the APIs `ListAssetEditTask`, `CreateAssetEditTask`, `DeleteAssetEditTask`
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateAssetProcessTask**
+    - changes of response param
+      - `+ thumbnail_task_id`
+  - **ModifySubtitle**
+    - changes of response param
+      - `+ thumbnail_task_id`
+
 # 3.1.191 2026-05-07
 
 ### HuaweiCloud SDK CodeArtsPipeline

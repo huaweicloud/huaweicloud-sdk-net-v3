@@ -618,6 +618,30 @@ namespace HuaweiCloud.SDK.Kms.V2
         }
         
         /// <summary>
+        /// 派生共享密钥
+        ///
+        /// 功能介绍：派生共享密钥
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeriveSharedSecretResponse> DeriveSharedSecretAsync(DeriveSharedSecretRequest deriveSharedSecretRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/derive-shared-secret", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deriveSharedSecretRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<DeriveSharedSecretResponse>(response);
+        }
+
+        public AsyncInvoker<DeriveSharedSecretResponse> DeriveSharedSecretAsyncInvoker(DeriveSharedSecretRequest deriveSharedSecretRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/derive-shared-secret", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deriveSharedSecretRequest);
+            return new AsyncInvoker<DeriveSharedSecretResponse>(this, "POST", request, JsonUtils.DeSerialize<DeriveSharedSecretResponse>);
+        }
+        
+        /// <summary>
         /// 禁用密钥
         ///
         /// - 功能介绍：禁用密钥，密钥禁用后不可以使用。
@@ -1089,6 +1113,32 @@ namespace HuaweiCloud.SDK.Kms.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kms/regions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSupportRegionsRequest);
             return new AsyncInvoker<ListSupportRegionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSupportRegionsResponse>);
+        }
+        
+        /// <summary>
+        /// 重加密
+        ///
+        /// 将密文使用源密钥解密后，再使用指定的新密钥加密。
+        /// 能将CreateDatekey，CreateDatakeyWithoutPlainText,EncryptDatakey加密的数据密钥密文重新加密成新的数据密钥密文。
+        /// 能将EncryptData加密的密文重新加密成新的密文。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ReEncryptResponse> ReEncryptAsync(ReEncryptRequest reEncryptRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/re-encrypt", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", reEncryptRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ReEncryptResponse>(response);
+        }
+
+        public AsyncInvoker<ReEncryptResponse> ReEncryptAsyncInvoker(ReEncryptRequest reEncryptRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/re-encrypt", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", reEncryptRequest);
+            return new AsyncInvoker<ReEncryptResponse>(this, "POST", request, JsonUtils.DeSerialize<ReEncryptResponse>);
         }
         
         /// <summary>

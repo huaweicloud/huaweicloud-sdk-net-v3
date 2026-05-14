@@ -188,6 +188,30 @@ namespace HuaweiCloud.SDK.Vod.V1
         }
         
         /// <summary>
+        /// 创建编辑任务
+        ///
+        /// 创建编辑任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateAssetEditTaskResponse> CreateAssetEditTaskAsync(CreateAssetEditTaskRequest createAssetEditTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/editing/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAssetEditTaskRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateAssetEditTaskResponse>(response);
+        }
+
+        public AsyncInvoker<CreateAssetEditTaskResponse> CreateAssetEditTaskAsyncInvoker(CreateAssetEditTaskRequest createAssetEditTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/editing/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAssetEditTaskRequest);
+            return new AsyncInvoker<CreateAssetEditTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAssetEditTaskResponse>);
+        }
+        
+        /// <summary>
         /// 媒资处理
         ///
         /// 实现视频转码、截图、加密等处理。既可以同时启动多种操作，也可以只启动一种操作。
@@ -584,6 +608,30 @@ namespace HuaweiCloud.SDK.Vod.V1
         }
         
         /// <summary>
+        /// 取消编辑任务
+        ///
+        /// 取消编辑任务，仅支持取消等待中的任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteAssetEditTaskResponse> DeleteAssetEditTaskAsync(DeleteAssetEditTaskRequest deleteAssetEditTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/editing/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAssetEditTaskRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteAssetEditTaskResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteAssetEditTaskResponse> DeleteAssetEditTaskAsyncInvoker(DeleteAssetEditTaskRequest deleteAssetEditTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/editing/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAssetEditTaskRequest);
+            return new AsyncInvoker<DeleteAssetEditTaskResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteAssetEditTaskResponse>);
+        }
+        
+        /// <summary>
         /// 删除媒资
         ///
         /// 删除媒资。
@@ -833,6 +881,30 @@ namespace HuaweiCloud.SDK.Vod.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/daily-summary", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAssetDailySummaryLogRequest);
             return new AsyncInvoker<ListAssetDailySummaryLogResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAssetDailySummaryLogResponse>);
+        }
+        
+        /// <summary>
+        /// 查询编辑任务
+        ///
+        /// 查询编辑任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAssetEditTaskResponse> ListAssetEditTaskAsync(ListAssetEditTaskRequest listAssetEditTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/editing/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAssetEditTaskRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListAssetEditTaskResponse>(response);
+        }
+
+        public AsyncInvoker<ListAssetEditTaskResponse> ListAssetEditTaskAsyncInvoker(ListAssetEditTaskRequest listAssetEditTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/editing/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAssetEditTaskRequest);
+            return new AsyncInvoker<ListAssetEditTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAssetEditTaskResponse>);
         }
         
         /// <summary>

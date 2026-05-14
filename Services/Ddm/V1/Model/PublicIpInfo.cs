@@ -286,6 +286,12 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
         /// </summary>
         [JsonProperty("binding_entity_type", NullValueHandling = NullValueHandling.Ignore)]
         public BindingEntityTypeEnum BindingEntityType { get; set; }
+        /// <summary>
+        /// 绑定弹性公网IP的组ID。
+        /// </summary>
+        [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string GroupId { get; set; }
+
 
 
         /// <summary>
@@ -302,6 +308,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
             sb.Append("  bindingEntityId: ").Append(BindingEntityId).Append("\n");
             sb.Append("  bindingEntityName: ").Append(BindingEntityName).Append("\n");
             sb.Append("  bindingEntityType: ").Append(BindingEntityType).Append("\n");
+            sb.Append("  groupId: ").Append(GroupId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -327,6 +334,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
             if (this.BindingEntityId != input.BindingEntityId || (this.BindingEntityId != null && !this.BindingEntityId.Equals(input.BindingEntityId))) return false;
             if (this.BindingEntityName != input.BindingEntityName || (this.BindingEntityName != null && !this.BindingEntityName.Equals(input.BindingEntityName))) return false;
             if (this.BindingEntityType != input.BindingEntityType) return false;
+            if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
 
             return true;
         }
@@ -346,6 +354,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
                 if (this.BindingEntityId != null) hashCode = hashCode * 59 + this.BindingEntityId.GetHashCode();
                 if (this.BindingEntityName != null) hashCode = hashCode * 59 + this.BindingEntityName.GetHashCode();
                 hashCode = hashCode * 59 + this.BindingEntityType.GetHashCode();
+                if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
                 return hashCode;
             }
         }

@@ -1,0 +1,89 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.Vod.V1.Model
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public class EditInput 
+    {
+
+        /// <summary>
+        /// 媒资ID 
+        /// </summary>
+        [JsonProperty("asset_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string AssetId { get; set; }
+
+        /// <summary>
+        /// 剪切开始时间，单位：秒，最大长度支持32。 
+        /// </summary>
+        [JsonProperty("timeline_start", NullValueHandling = NullValueHandling.Ignore)]
+        public string TimelineStart { get; set; }
+
+        /// <summary>
+        /// 剪切结束时间，单位：秒，最大长度支持32。 
+        /// </summary>
+        [JsonProperty("timeline_end", NullValueHandling = NullValueHandling.Ignore)]
+        public string TimelineEnd { get; set; }
+
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class EditInput {\n");
+            sb.Append("  assetId: ").Append(AssetId).Append("\n");
+            sb.Append("  timelineStart: ").Append(TimelineStart).Append("\n");
+            sb.Append("  timelineEnd: ").Append(TimelineEnd).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as EditInput);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(EditInput input)
+        {
+            if (input == null) return false;
+            if (this.AssetId != input.AssetId || (this.AssetId != null && !this.AssetId.Equals(input.AssetId))) return false;
+            if (this.TimelineStart != input.TimelineStart || (this.TimelineStart != null && !this.TimelineStart.Equals(input.TimelineStart))) return false;
+            if (this.TimelineEnd != input.TimelineEnd || (this.TimelineEnd != null && !this.TimelineEnd.Equals(input.TimelineEnd))) return false;
+
+            return true;
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                var hashCode = 41;
+                if (this.AssetId != null) hashCode = hashCode * 59 + this.AssetId.GetHashCode();
+                if (this.TimelineStart != null) hashCode = hashCode * 59 + this.TimelineStart.GetHashCode();
+                if (this.TimelineEnd != null) hashCode = hashCode * 59 + this.TimelineEnd.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

@@ -17,6 +17,12 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
     {
 
         /// <summary>
+        /// DDM实例ID。
+        /// </summary>
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceId { get; set; }
+
+        /// <summary>
         /// 任务ID，仅创建按需实例时会返回该参数。
         /// </summary>
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -43,6 +49,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CreateGroupResponse {\n");
+            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("  groupId: ").Append(GroupId).Append("\n");
             sb.Append("  orderId: ").Append(OrderId).Append("\n");
@@ -64,6 +71,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
         public bool Equals(CreateGroupResponse input)
         {
             if (input == null) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
             if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
             if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
             if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
@@ -79,6 +87,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
                 if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();

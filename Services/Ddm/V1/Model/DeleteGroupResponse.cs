@@ -17,10 +17,16 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
     {
 
         /// <summary>
-        /// **参数解释**：  工作流ID。  **取值范围**：  不涉及。
+        /// 任务ID，仅创建按需实例时会返回该参数。
         /// </summary>
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }
+
+        /// <summary>
+        /// 订单号，创建包年包月时返回该参数。
+        /// </summary>
+        [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string OrderId { get; set; }
 
 
 
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
             var sb = new StringBuilder();
             sb.Append("class DeleteGroupResponse {\n");
             sb.Append("  jobId: ").Append(JobId).Append("\n");
+            sb.Append("  orderId: ").Append(OrderId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
         {
             if (input == null) return false;
             if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
             {
                 var hashCode = 41;
                 if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 return hashCode;
             }
         }
