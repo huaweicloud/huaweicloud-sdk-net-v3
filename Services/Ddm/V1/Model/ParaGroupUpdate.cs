@@ -17,22 +17,22 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
     {
 
         /// <summary>
-        /// 名称。
+        /// **参数解释**：  参数组名称。  **约束限制**：  不涉及。  **取值范围**：  在1到64个字符之间，区分大小写，可包含字母、数字、中划线、下划线或句点，不能包含其他特殊字符。。  **默认取值**：  不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 描述。
+        /// **参数解释**：  参数组描述。  **约束限制**：  不涉及。  **取值范围**：  不能超过256位，且不能包含回车和特殊字符 ! &lt; \&quot; &#x3D; &#39; &gt; &amp;。  **默认取值**：  不涉及。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 参数值。
+        /// **参数解释**：  修改的值。  **约束限制**：  不涉及  **取值范围**：  长度为1-64的a-z、A-Z、0-9、.、_ 和 -的字符。  **默认取值**：  不涉及。
         /// </summary>
         [JsonProperty("values", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Values { get; set; }
+        public Dictionary<string, string> Values { get; set; }
 
 
 
@@ -66,7 +66,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
             if (input == null) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
-            if (this.Values != input.Values || (this.Values != null && !this.Values.Equals(input.Values))) return false;
+            if (this.Values != input.Values || (this.Values != null && input.Values != null && !this.Values.SequenceEqual(input.Values))) return false;
 
             return true;
         }

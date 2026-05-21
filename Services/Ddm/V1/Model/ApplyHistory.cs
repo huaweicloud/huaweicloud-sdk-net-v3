@@ -41,10 +41,10 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
         public DateTime? AppliedAt { get; set; }
 
         /// <summary>
-        /// **参数解释**：  错误码。  **参数范围**：  不涉及。
+        /// **参数解释**：  实例应用参数组的报错信息，若实例应用参数组成功则返回空。  **取值范围**：  不涉及。
         /// </summary>
-        [JsonProperty("error_code", NullValueHandling = NullValueHandling.Ignore)]
-        public string ErrorCode { get; set; }
+        [JsonProperty("error_message", NullValueHandling = NullValueHandling.Ignore)]
+        public string ErrorMessage { get; set; }
 
 
 
@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
             sb.Append("  targetName: ").Append(TargetName).Append("\n");
             sb.Append("  applyResult: ").Append(ApplyResult).Append("\n");
             sb.Append("  appliedAt: ").Append(AppliedAt).Append("\n");
-            sb.Append("  errorCode: ").Append(ErrorCode).Append("\n");
+            sb.Append("  errorMessage: ").Append(ErrorMessage).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -82,7 +82,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
             if (this.TargetName != input.TargetName || (this.TargetName != null && !this.TargetName.Equals(input.TargetName))) return false;
             if (this.ApplyResult != input.ApplyResult || (this.ApplyResult != null && !this.ApplyResult.Equals(input.ApplyResult))) return false;
             if (this.AppliedAt != input.AppliedAt || (this.AppliedAt != null && !this.AppliedAt.Equals(input.AppliedAt))) return false;
-            if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
+            if (this.ErrorMessage != input.ErrorMessage || (this.ErrorMessage != null && !this.ErrorMessage.Equals(input.ErrorMessage))) return false;
 
             return true;
         }
@@ -99,7 +99,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
                 if (this.TargetName != null) hashCode = hashCode * 59 + this.TargetName.GetHashCode();
                 if (this.ApplyResult != null) hashCode = hashCode * 59 + this.ApplyResult.GetHashCode();
                 if (this.AppliedAt != null) hashCode = hashCode * 59 + this.AppliedAt.GetHashCode();
-                if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
+                if (this.ErrorMessage != null) hashCode = hashCode * 59 + this.ErrorMessage.GetHashCode();
                 return hashCode;
             }
         }

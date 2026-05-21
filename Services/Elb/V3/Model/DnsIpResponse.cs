@@ -11,49 +11,43 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 负载均衡器dns ip信息。
+    /// 负载均衡器IP地址的域名解析配置。
     /// </summary>
     public class DnsIpResponse 
     {
 
         /// <summary>
-        /// dns ip信息的ID。
-        /// </summary>
-        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
-        public string Id { get; set; }
-
-        /// <summary>
-        /// **参数解释**：ip是否加入了域名解析。  **取值范围**： true：已加入域名解析。 false：未加入域名解析。
+        /// **参数解释**：是否已加入到域名解析。  **取值范围**： true：已加入域名解析。 false：未加入域名解析。
         /// </summary>
         [JsonProperty("enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enable { get; set; }
 
         /// <summary>
-        /// **参数解释**：ip地址。可以是ipv4地址也可以是ipv6地址。  **约束限制**：必须是负载均衡器的私网地址或者公网地址。
+        /// **参数解释**：IPv4或IPv6地址。  **约束限制**：必须是当前负载均衡器绑定的私网地址或者公网地址。
         /// </summary>
         [JsonProperty("ip_address", NullValueHandling = NullValueHandling.Ignore)]
         public string IpAddress { get; set; }
 
         /// <summary>
-        /// **参数解释**：地址类型。  **取值范围**： vip：私网ip。 eip：公网ip。
+        /// **参数解释**：IP地址类型。  **取值范围**： vip：私网IP。 eip：公网IP。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// **参数解释**：ip对应的域名。  **约束限制**： - 如果ip为私网类型，则这里为负载均衡实例的私网域名。 - 如果ip为公网类型，则这里为负载均衡实例的公网域名。
+        /// **参数解释**：当前IP地址关联的负载均衡实例域名。  **约束限制**： - 如果IP为私网类型，则这里为负载均衡实例的私网域名。 - 如果IP为公网类型，则这里为负载均衡实例的公网域名。
         /// </summary>
         [JsonProperty("domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainName { get; set; }
 
         /// <summary>
-        /// 创建时间。格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;，UTC时区。
+        /// **参数解释**：创建时间。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedAt { get; set; }
 
         /// <summary>
-        /// 更新时间。格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;，UTC时区。
+        /// **参数解释**：更新时间。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdatedAt { get; set; }
@@ -67,7 +61,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DnsIpResponse {\n");
-            sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  enable: ").Append(Enable).Append("\n");
             sb.Append("  ipAddress: ").Append(IpAddress).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
@@ -92,7 +85,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool Equals(DnsIpResponse input)
         {
             if (input == null) return false;
-            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Enable != input.Enable || (this.Enable != null && !this.Enable.Equals(input.Enable))) return false;
             if (this.IpAddress != input.IpAddress || (this.IpAddress != null && !this.IpAddress.Equals(input.IpAddress))) return false;
             if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
@@ -111,7 +103,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Enable != null) hashCode = hashCode * 59 + this.Enable.GetHashCode();
                 if (this.IpAddress != null) hashCode = hashCode * 59 + this.IpAddress.GetHashCode();
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();

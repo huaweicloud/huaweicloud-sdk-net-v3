@@ -28,18 +28,6 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
         [JsonProperty("dn_instance", NullValueHandling = NullValueHandling.Ignore)]
         public List<DNInstance> DnInstance { get; set; }
 
-        /// <summary>
-        /// 实例id。
-        /// </summary>
-        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string InstanceId { get; set; }
-
-        /// <summary>
-        /// 项目id。
-        /// </summary>
-        [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ProjectId { get; set; }
-
 
 
         /// <summary>
@@ -51,8 +39,6 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
             sb.Append("class LoadSchemaMetadataReq {\n");
             sb.Append("  compressedDatabasesInfo: ").Append(CompressedDatabasesInfo).Append("\n");
             sb.Append("  dnInstance: ").Append(DnInstance).Append("\n");
-            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
-            sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -73,8 +59,6 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
             if (input == null) return false;
             if (this.CompressedDatabasesInfo != input.CompressedDatabasesInfo || (this.CompressedDatabasesInfo != null && !this.CompressedDatabasesInfo.Equals(input.CompressedDatabasesInfo))) return false;
             if (this.DnInstance != input.DnInstance || (this.DnInstance != null && input.DnInstance != null && !this.DnInstance.SequenceEqual(input.DnInstance))) return false;
-            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
-            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
 
             return true;
         }
@@ -89,8 +73,6 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
                 var hashCode = 41;
                 if (this.CompressedDatabasesInfo != null) hashCode = hashCode * 59 + this.CompressedDatabasesInfo.GetHashCode();
                 if (this.DnInstance != null) hashCode = hashCode * 59 + this.DnInstance.GetHashCode();
-                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 return hashCode;
             }
         }

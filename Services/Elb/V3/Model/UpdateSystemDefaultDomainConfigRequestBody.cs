@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// **参数解释**：配置负载均衡器系统默认域名化相关配置参数。
+    /// **参数解释**：配置负载均衡器系统默认域名解析相关配置参数。
     /// </summary>
     public class UpdateSystemDefaultDomainConfigRequestBody 
     {

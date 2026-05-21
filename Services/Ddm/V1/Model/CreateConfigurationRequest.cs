@@ -29,10 +29,10 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 参数值。
+        /// **参数解释**：  参数值对象，用户基于默认参数模板自定义的参数值。  **约束限制**：  不涉及。  **取值范围**：  - key：参数名称，如“contains_shard_key”，“connection_idle_timeout”。为空时不修改参数值。  - value：参数值，如“6”，“20”。key不为空时value也不可为空。  **默认取值**：  不涉及。
         /// </summary>
         [JsonProperty("values", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Values { get; set; }
+        public Dictionary<string, string> Values { get; set; }
 
 
 
@@ -66,7 +66,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
             if (input == null) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
-            if (this.Values != input.Values || (this.Values != null && !this.Values.Equals(input.Values))) return false;
+            if (this.Values != input.Values || (this.Values != null && input.Values != null && !this.Values.SequenceEqual(input.Values))) return false;
 
             return true;
         }

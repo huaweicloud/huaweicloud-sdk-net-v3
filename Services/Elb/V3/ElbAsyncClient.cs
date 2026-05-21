@@ -227,9 +227,9 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
-        /// 批量将IP地址从LB实例域名解析中移除
+        /// 批量将IP地址从ELB实例域名解析中移除
         ///
-        /// 批量将IP地址从LB实例域名解析中移除。
+        /// 批量将IP地址从ELB实例域名解析中移除。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -253,9 +253,9 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
-        /// 批量将IP地址加入LB实例域名解析中
+        /// 批量将IP地址加入ELB实例域名解析中
         ///
-        /// 批量将IP地址加入LB实例域名解析中。
+        /// 批量将IP地址加入ELB实例域名解析中。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -618,7 +618,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         /// <summary>
         /// 创建监听器
         ///
-        /// 创建监听器。支持通过该接口创建独享型及共享型LB实例下的监听器。
+        /// 创建监听器。支持通过该接口创建独享型及共享型ELB实例下的监听器。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1363,10 +1363,10 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
-        /// 查询负载均衡器ip的域名配置信息
+        /// 查询负载均衡器IP地址的域名解析配置
         ///
-        /// 查询负载均衡器ip的域名配置信息，即负载均衡器的ip是否加入了域名解析。
-        /// 注意：当负载均衡器的公网域名和私网域名都没有打开时，该接口返回空列表。
+        /// 查询负载均衡器所有IP的域名解析配置信息，即负载均衡器的IP是否加入了域名解析，以及对应的域名。
+        /// 注意：只返回启用的域名类型对应的配置。若只开启公网域名解析，则只返回该负载均衡器的公网IP的域名解析配置；若负载均衡器的公网域名解析和私网域名解析都没有开启，则该返回空列表。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2766,9 +2766,9 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
-        /// 配置负载均衡器系统默认域名化
+        /// 配置系统默认的负载均衡器域名解析
         ///
-        /// 配置负载均衡器系统默认域名化。
+        /// 配置系统默认的负载均衡器域名解析。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2792,9 +2792,9 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
-        /// 配置负载均衡器用户自定义域名化
+        /// 自定义配置负载均衡器域名解析
         ///
-        /// 配置负载均衡器用户自定义域名化。
+        /// 自定义配置负载均衡器域名解析。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

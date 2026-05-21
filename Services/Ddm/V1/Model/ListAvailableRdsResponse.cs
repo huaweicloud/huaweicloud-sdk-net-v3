@@ -22,6 +22,24 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
         [JsonProperty("data_nodes", NullValueHandling = NullValueHandling.Ignore)]
         public List<AvailableDnInstance> DataNodes { get; set; }
 
+        /// <summary>
+        /// **参数解释**：  分页参数: 起始值。  **参数范围**：   大于等于0。
+        /// </summary>
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Offset { get; set; }
+
+        /// <summary>
+        /// **参数解释**：  分页参数: 每页记录数。  **参数范围**：  大于0且小于等于128。
+        /// </summary>
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Limit { get; set; }
+
+        /// <summary>
+        /// **参数解释**：  总记录数。  **参数范围**：  不涉及。
+        /// </summary>
+        [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Total { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +50,9 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
             var sb = new StringBuilder();
             sb.Append("class ListAvailableRdsResponse {\n");
             sb.Append("  dataNodes: ").Append(DataNodes).Append("\n");
+            sb.Append("  offset: ").Append(Offset).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  total: ").Append(Total).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +72,9 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
         {
             if (input == null) return false;
             if (this.DataNodes != input.DataNodes || (this.DataNodes != null && input.DataNodes != null && !this.DataNodes.SequenceEqual(input.DataNodes))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
 
             return true;
         }
@@ -64,6 +88,9 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
             {
                 var hashCode = 41;
                 if (this.DataNodes != null) hashCode = hashCode * 59 + this.DataNodes.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
                 return hashCode;
             }
         }

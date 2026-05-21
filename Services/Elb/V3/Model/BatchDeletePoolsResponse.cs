@@ -17,6 +17,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
+        /// **参数解释**：请求ID。  **取值范围**：由数字、小写字母和中划线（-）组成的字符串，自动生成。
+        /// </summary>
+        [JsonProperty("request_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string RequestId { get; set; }
+
+        /// <summary>
         /// 后端服务器组批量删除后的响应结果。
         /// </summary>
         [JsonProperty("pools", NullValueHandling = NullValueHandling.Ignore)]
@@ -31,6 +37,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class BatchDeletePoolsResponse {\n");
+            sb.Append("  requestId: ").Append(RequestId).Append("\n");
             sb.Append("  pools: ").Append(Pools).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -50,6 +57,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool Equals(BatchDeletePoolsResponse input)
         {
             if (input == null) return false;
+            if (this.RequestId != input.RequestId || (this.RequestId != null && !this.RequestId.Equals(input.RequestId))) return false;
             if (this.Pools != input.Pools || (this.Pools != null && input.Pools != null && !this.Pools.SequenceEqual(input.Pools))) return false;
 
             return true;
@@ -63,6 +71,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.RequestId != null) hashCode = hashCode * 59 + this.RequestId.GetHashCode();
                 if (this.Pools != null) hashCode = hashCode * 59 + this.Pools.GetHashCode();
                 return hashCode;
             }

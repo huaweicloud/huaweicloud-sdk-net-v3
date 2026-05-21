@@ -64,6 +64,12 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
         [JsonProperty("databases", NullValueHandling = NullValueHandling.Ignore)]
         public List<GetUsersListdatabaseV3> Databases { get; set; }
 
+        /// <summary>
+        /// **参数解释**：  DDM实例账号的创建时间。  格式为yyyy-mm-ddThh:mm:ssZ。其中，T指定某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。  **取值范围**：  不涉及。
+        /// </summary>
+        [JsonProperty("expiration_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string ExpirationTime { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +87,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  created: ").Append(Created).Append("\n");
             sb.Append("  databases: ").Append(Databases).Append("\n");
+            sb.Append("  expirationTime: ").Append(ExpirationTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +114,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.Created != input.Created || (this.Created != null && !this.Created.Equals(input.Created))) return false;
             if (this.Databases != input.Databases || (this.Databases != null && input.Databases != null && !this.Databases.SequenceEqual(input.Databases))) return false;
+            if (this.ExpirationTime != input.ExpirationTime || (this.ExpirationTime != null && !this.ExpirationTime.Equals(input.ExpirationTime))) return false;
 
             return true;
         }
@@ -127,6 +135,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Created != null) hashCode = hashCode * 59 + this.Created.GetHashCode();
                 if (this.Databases != null) hashCode = hashCode * 59 + this.Databases.GetHashCode();
+                if (this.ExpirationTime != null) hashCode = hashCode * 59 + this.ExpirationTime.GetHashCode();
                 return hashCode;
             }
         }

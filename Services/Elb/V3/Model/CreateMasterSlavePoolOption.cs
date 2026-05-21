@@ -118,6 +118,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// **参数解释**：公网边界组。  **约束限制**：不涉及  **取值范围**： - center：表示中心站点的公网边界组 - 边缘站点名称：表示边缘站点的公网边界组  **默认取值**：不涉及
+        /// </summary>
+        [JsonProperty("public_border_group", NullValueHandling = NullValueHandling.Ignore)]
+        public string PublicBorderGroup { get; set; }
+
 
 
         /// <summary>
@@ -144,6 +150,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  connectionDrain: ").Append(ConnectionDrain).Append("\n");
             sb.Append("  quicCidHashStrategy: ").Append(QuicCidHashStrategy).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  publicBorderGroup: ").Append(PublicBorderGroup).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -179,6 +186,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.ConnectionDrain != input.ConnectionDrain || (this.ConnectionDrain != null && !this.ConnectionDrain.Equals(input.ConnectionDrain))) return false;
             if (this.QuicCidHashStrategy != input.QuicCidHashStrategy || (this.QuicCidHashStrategy != null && !this.QuicCidHashStrategy.Equals(input.QuicCidHashStrategy))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.PublicBorderGroup != input.PublicBorderGroup || (this.PublicBorderGroup != null && !this.PublicBorderGroup.Equals(input.PublicBorderGroup))) return false;
 
             return true;
         }
@@ -208,6 +216,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.ConnectionDrain != null) hashCode = hashCode * 59 + this.ConnectionDrain.GetHashCode();
                 if (this.QuicCidHashStrategy != null) hashCode = hashCode * 59 + this.QuicCidHashStrategy.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.PublicBorderGroup != null) hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
                 return hashCode;
             }
         }

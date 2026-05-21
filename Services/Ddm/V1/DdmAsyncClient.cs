@@ -367,7 +367,7 @@ namespace HuaweiCloud.SDK.Ddm.V1
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/jobs/{job_id}/route-switch-strategy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeStrategyRequest);
             var response = await DoHttpRequestAsync("PUT", request);
-            return JsonUtils.DeSerialize<ChangeStrategyResponse>(response);
+            return JsonUtils.DeSerializeNull<ChangeStrategyResponse>(response);
         }
 
         public AsyncInvoker<ChangeStrategyResponse> ChangeStrategyAsyncInvoker(ChangeStrategyRequest changeStrategyRequest)
@@ -378,7 +378,7 @@ namespace HuaweiCloud.SDK.Ddm.V1
             if (StringUtils.TryConvertToNonEmptyString(changeStrategyRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/jobs/{job_id}/route-switch-strategy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeStrategyRequest);
-            return new AsyncInvoker<ChangeStrategyResponse>(this, "PUT", request, JsonUtils.DeSerialize<ChangeStrategyResponse>);
+            return new AsyncInvoker<ChangeStrategyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<ChangeStrategyResponse>);
         }
         
         /// <summary>
@@ -2962,7 +2962,7 @@ namespace HuaweiCloud.SDK.Ddm.V1
         {
             var urlParam = new Dictionary<string, string>();
             if (StringUtils.TryConvertToNonEmptyString(checkDataNodeConnectionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instance/{instance_id}/rds/connection", urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/rds/connection", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", checkDataNodeConnectionRequest);
             var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CheckDataNodeConnectionResponse>(response);
@@ -2972,7 +2972,7 @@ namespace HuaweiCloud.SDK.Ddm.V1
         {
             var urlParam = new Dictionary<string, string>();
             if (StringUtils.TryConvertToNonEmptyString(checkDataNodeConnectionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instance/{instance_id}/rds/connection", urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/rds/connection", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", checkDataNodeConnectionRequest);
             return new AsyncInvoker<CheckDataNodeConnectionResponse>(this, "POST", request, JsonUtils.DeSerialize<CheckDataNodeConnectionResponse>);
         }

@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("loadbalancer", NullValueHandling = NullValueHandling.Ignore)]
         public DnsConfigResponseBody Loadbalancer { get; set; }
 
+        /// <summary>
+        /// **参数解释**：请求ID。  **取值范围**：由数字、小写字母和中划线（-）组成的字符串，自动生成。
+        /// </summary>
+        [JsonProperty("request_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string RequestId { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             var sb = new StringBuilder();
             sb.Append("class UpdateSystemDefaultDomainConfigResponse {\n");
             sb.Append("  loadbalancer: ").Append(Loadbalancer).Append("\n");
+            sb.Append("  requestId: ").Append(RequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             if (input == null) return false;
             if (this.Loadbalancer != input.Loadbalancer || (this.Loadbalancer != null && !this.Loadbalancer.Equals(input.Loadbalancer))) return false;
+            if (this.RequestId != input.RequestId || (this.RequestId != null && !this.RequestId.Equals(input.RequestId))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             {
                 var hashCode = 41;
                 if (this.Loadbalancer != null) hashCode = hashCode * 59 + this.Loadbalancer.GetHashCode();
+                if (this.RequestId != null) hashCode = hashCode * 59 + this.RequestId.GetHashCode();
                 return hashCode;
             }
         }

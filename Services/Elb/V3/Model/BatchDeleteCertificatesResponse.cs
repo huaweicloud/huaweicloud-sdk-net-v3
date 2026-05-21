@@ -17,6 +17,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
+        /// **参数解释**：请求ID。  **取值范围**：由数字、小写字母和中划线（-）组成的字符串，自动生成。
+        /// </summary>
+        [JsonProperty("request_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string RequestId { get; set; }
+
+        /// <summary>
         /// 证书批量删除后的响应结果。
         /// </summary>
         [JsonProperty("certificates", NullValueHandling = NullValueHandling.Ignore)]
@@ -31,6 +37,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class BatchDeleteCertificatesResponse {\n");
+            sb.Append("  requestId: ").Append(RequestId).Append("\n");
             sb.Append("  certificates: ").Append(Certificates).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -50,6 +57,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool Equals(BatchDeleteCertificatesResponse input)
         {
             if (input == null) return false;
+            if (this.RequestId != input.RequestId || (this.RequestId != null && !this.RequestId.Equals(input.RequestId))) return false;
             if (this.Certificates != input.Certificates || (this.Certificates != null && input.Certificates != null && !this.Certificates.SequenceEqual(input.Certificates))) return false;
 
             return true;
@@ -63,6 +71,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.RequestId != null) hashCode = hashCode * 59 + this.RequestId.GetHashCode();
                 if (this.Certificates != null) hashCode = hashCode * 59 + this.Certificates.GetHashCode();
                 return hashCode;
             }

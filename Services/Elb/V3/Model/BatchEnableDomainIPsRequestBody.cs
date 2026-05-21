@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 批量向负载均衡器域名解析中加入IP地址的请求体。
+    /// 批量将IP地址加入ELB实例域名解析中的请求体。
     /// </summary>
     public class BatchEnableDomainIPsRequestBody 
     {

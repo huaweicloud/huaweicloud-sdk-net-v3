@@ -95,10 +95,10 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
         public string AdminUserPassword { get; set; }
 
         /// <summary>
-        /// 付费信息。
+        /// 
         /// </summary>
         [JsonProperty("charge_info", NullValueHandling = NullValueHandling.Ignore)]
-        public Object ChargeInfo { get; set; }
+        public ChargeInfo ChargeInfo { get; set; }
 
 
 

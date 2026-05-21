@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 自定义安全策略的ID。
+        /// **参数解释**：自定义安全策略的ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
         /// </summary>
         [SDKProperty("security_policy_id", IsPath = true)]
         [JsonProperty("security_policy_id", NullValueHandling = NullValueHandling.Ignore)]

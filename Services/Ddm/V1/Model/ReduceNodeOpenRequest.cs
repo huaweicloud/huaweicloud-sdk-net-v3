@@ -17,12 +17,6 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
     {
 
         /// <summary>
-        /// 实例id。
-        /// </summary>
-        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string InstanceId { get; set; }
-
-        /// <summary>
         /// 节点id列表。
         /// </summary>
         [JsonProperty("node_ids", NullValueHandling = NullValueHandling.Ignore)]
@@ -37,7 +31,6 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ReduceNodeOpenRequest {\n");
-            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  nodeIds: ").Append(NodeIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -57,7 +50,6 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
         public bool Equals(ReduceNodeOpenRequest input)
         {
             if (input == null) return false;
-            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
             if (this.NodeIds != input.NodeIds || (this.NodeIds != null && input.NodeIds != null && !this.NodeIds.SequenceEqual(input.NodeIds))) return false;
 
             return true;
@@ -71,7 +63,6 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.NodeIds != null) hashCode = hashCode * 59 + this.NodeIds.GetHashCode();
                 return hashCode;
             }

@@ -17,10 +17,16 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// **参数解释**：返回的负载均衡器的dns ip信息。  **约束限制**：如果负载均衡器的公网域名和私网域名开关都没有打开，则列表为空。  **取值范围**：不涉及  **默认取值**：不涉及
+        /// **参数解释**：负载均衡器域名解析的IP地址列表。  **约束限制**：如果负载均衡器的公网域名和私网域名域名解析开关都没有打开，则为空列表。  **取值范围**：不涉及  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("ips", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ListDnsIpResponseBody> Ips { get; set; }
+        public List<DnsIpResponse> Ips { get; set; }
+
+        /// <summary>
+        /// **参数解释**：请求ID。  **取值范围**：由数字、小写字母和中划线（-）组成的字符串，自动生成。
+        /// </summary>
+        [JsonProperty("request_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string RequestId { get; set; }
 
 
 
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             var sb = new StringBuilder();
             sb.Append("class BatchEnableDomainIPsResponse {\n");
             sb.Append("  ips: ").Append(Ips).Append("\n");
+            sb.Append("  requestId: ").Append(RequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             if (input == null) return false;
             if (this.Ips != input.Ips || (this.Ips != null && input.Ips != null && !this.Ips.SequenceEqual(input.Ips))) return false;
+            if (this.RequestId != input.RequestId || (this.RequestId != null && !this.RequestId.Equals(input.RequestId))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             {
                 var hashCode = 41;
                 if (this.Ips != null) hashCode = hashCode * 59 + this.Ips.GetHashCode();
+                if (this.RequestId != null) hashCode = hashCode * 59 + this.RequestId.GetHashCode();
                 return hashCode;
             }
         }

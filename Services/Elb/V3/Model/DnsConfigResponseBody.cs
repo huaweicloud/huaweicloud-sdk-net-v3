@@ -11,10 +11,16 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 配置负载均衡器响应体相关配置参数。
+    /// 
     /// </summary>
     public class DnsConfigResponseBody 
     {
+
+        /// <summary>
+        /// **参数解释**：自定义域名解析配置ID。
+        /// </summary>
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
 
         /// <summary>
         /// **参数解释**：负载均衡器的IPv4虚拟IP地址。
@@ -53,12 +59,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string PublicDnsZoneName { get; set; }
 
         /// <summary>
-        /// **参数解释**：   公网域名所使用的zone对应的id。   根据传入的公网zone 名称查询得出。
-        /// </summary>
-        [JsonProperty("public_dns_zone_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string PublicDnsZoneId { get; set; }
-
-        /// <summary>
         /// **参数解释**：   负载均衡实例的公网域名。 **约束限制**：   根据负载均衡实例id，局点id和zone信息以如下格式生成：   {lb_id}.elb.{region_id}.{zone_name}
         /// </summary>
         [JsonProperty("public_domain_name", NullValueHandling = NullValueHandling.Ignore)]
@@ -81,12 +81,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         [JsonProperty("private_dns_zone_name", NullValueHandling = NullValueHandling.Ignore)]
         public string PrivateDnsZoneName { get; set; }
-
-        /// <summary>
-        /// **参数解释**：   私网域名所使用的zone对应的id。 **约束限制**：   根据传入的私网zone 名称查询得出。
-        /// </summary>
-        [JsonProperty("private_dns_zone_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string PrivateDnsZoneId { get; set; }
 
         /// <summary>
         /// **参数解释**：负载均衡实例的私网域名。 **约束限制**：   根据负载均衡实例id，局点id和zone信息以如下格式生成：   {lb_id}-internal.elb.{region_id}.{zone_name}
@@ -115,18 +109,17 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DnsConfigResponseBody {\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  vipAddress: ").Append(VipAddress).Append("\n");
             sb.Append("  ipv6VipAddress: ").Append(Ipv6VipAddress).Append("\n");
             sb.Append("  eips: ").Append(Eips).Append("\n");
             sb.Append("  globalEips: ").Append(GlobalEips).Append("\n");
             sb.Append("  publicDomainNameEnable: ").Append(PublicDomainNameEnable).Append("\n");
             sb.Append("  publicDnsZoneName: ").Append(PublicDnsZoneName).Append("\n");
-            sb.Append("  publicDnsZoneId: ").Append(PublicDnsZoneId).Append("\n");
             sb.Append("  publicDomainName: ").Append(PublicDomainName).Append("\n");
             sb.Append("  publicDnsRecordSetTtl: ").Append(PublicDnsRecordSetTtl).Append("\n");
             sb.Append("  privateDomainNameEnable: ").Append(PrivateDomainNameEnable).Append("\n");
             sb.Append("  privateDnsZoneName: ").Append(PrivateDnsZoneName).Append("\n");
-            sb.Append("  privateDnsZoneId: ").Append(PrivateDnsZoneId).Append("\n");
             sb.Append("  privateDomainName: ").Append(PrivateDomainName).Append("\n");
             sb.Append("  privateDnsZoneType: ").Append(PrivateDnsZoneType).Append("\n");
             sb.Append("  privateDnsRecordSetTtl: ").Append(PrivateDnsRecordSetTtl).Append("\n");
@@ -148,18 +141,17 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool Equals(DnsConfigResponseBody input)
         {
             if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.VipAddress != input.VipAddress || (this.VipAddress != null && !this.VipAddress.Equals(input.VipAddress))) return false;
             if (this.Ipv6VipAddress != input.Ipv6VipAddress || (this.Ipv6VipAddress != null && !this.Ipv6VipAddress.Equals(input.Ipv6VipAddress))) return false;
             if (this.Eips != input.Eips || (this.Eips != null && input.Eips != null && !this.Eips.SequenceEqual(input.Eips))) return false;
             if (this.GlobalEips != input.GlobalEips || (this.GlobalEips != null && input.GlobalEips != null && !this.GlobalEips.SequenceEqual(input.GlobalEips))) return false;
             if (this.PublicDomainNameEnable != input.PublicDomainNameEnable || (this.PublicDomainNameEnable != null && !this.PublicDomainNameEnable.Equals(input.PublicDomainNameEnable))) return false;
             if (this.PublicDnsZoneName != input.PublicDnsZoneName || (this.PublicDnsZoneName != null && !this.PublicDnsZoneName.Equals(input.PublicDnsZoneName))) return false;
-            if (this.PublicDnsZoneId != input.PublicDnsZoneId || (this.PublicDnsZoneId != null && !this.PublicDnsZoneId.Equals(input.PublicDnsZoneId))) return false;
             if (this.PublicDomainName != input.PublicDomainName || (this.PublicDomainName != null && !this.PublicDomainName.Equals(input.PublicDomainName))) return false;
             if (this.PublicDnsRecordSetTtl != input.PublicDnsRecordSetTtl || (this.PublicDnsRecordSetTtl != null && !this.PublicDnsRecordSetTtl.Equals(input.PublicDnsRecordSetTtl))) return false;
             if (this.PrivateDomainNameEnable != input.PrivateDomainNameEnable || (this.PrivateDomainNameEnable != null && !this.PrivateDomainNameEnable.Equals(input.PrivateDomainNameEnable))) return false;
             if (this.PrivateDnsZoneName != input.PrivateDnsZoneName || (this.PrivateDnsZoneName != null && !this.PrivateDnsZoneName.Equals(input.PrivateDnsZoneName))) return false;
-            if (this.PrivateDnsZoneId != input.PrivateDnsZoneId || (this.PrivateDnsZoneId != null && !this.PrivateDnsZoneId.Equals(input.PrivateDnsZoneId))) return false;
             if (this.PrivateDomainName != input.PrivateDomainName || (this.PrivateDomainName != null && !this.PrivateDomainName.Equals(input.PrivateDomainName))) return false;
             if (this.PrivateDnsZoneType != input.PrivateDnsZoneType || (this.PrivateDnsZoneType != null && !this.PrivateDnsZoneType.Equals(input.PrivateDnsZoneType))) return false;
             if (this.PrivateDnsRecordSetTtl != input.PrivateDnsRecordSetTtl || (this.PrivateDnsRecordSetTtl != null && !this.PrivateDnsRecordSetTtl.Equals(input.PrivateDnsRecordSetTtl))) return false;
@@ -175,18 +167,17 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.VipAddress != null) hashCode = hashCode * 59 + this.VipAddress.GetHashCode();
                 if (this.Ipv6VipAddress != null) hashCode = hashCode * 59 + this.Ipv6VipAddress.GetHashCode();
                 if (this.Eips != null) hashCode = hashCode * 59 + this.Eips.GetHashCode();
                 if (this.GlobalEips != null) hashCode = hashCode * 59 + this.GlobalEips.GetHashCode();
                 if (this.PublicDomainNameEnable != null) hashCode = hashCode * 59 + this.PublicDomainNameEnable.GetHashCode();
                 if (this.PublicDnsZoneName != null) hashCode = hashCode * 59 + this.PublicDnsZoneName.GetHashCode();
-                if (this.PublicDnsZoneId != null) hashCode = hashCode * 59 + this.PublicDnsZoneId.GetHashCode();
                 if (this.PublicDomainName != null) hashCode = hashCode * 59 + this.PublicDomainName.GetHashCode();
                 if (this.PublicDnsRecordSetTtl != null) hashCode = hashCode * 59 + this.PublicDnsRecordSetTtl.GetHashCode();
                 if (this.PrivateDomainNameEnable != null) hashCode = hashCode * 59 + this.PrivateDomainNameEnable.GetHashCode();
                 if (this.PrivateDnsZoneName != null) hashCode = hashCode * 59 + this.PrivateDnsZoneName.GetHashCode();
-                if (this.PrivateDnsZoneId != null) hashCode = hashCode * 59 + this.PrivateDnsZoneId.GetHashCode();
                 if (this.PrivateDomainName != null) hashCode = hashCode * 59 + this.PrivateDomainName.GetHashCode();
                 if (this.PrivateDnsZoneType != null) hashCode = hashCode * 59 + this.PrivateDnsZoneType.GetHashCode();
                 if (this.PrivateDnsRecordSetTtl != null) hashCode = hashCode * 59 + this.PrivateDnsRecordSetTtl.GetHashCode();

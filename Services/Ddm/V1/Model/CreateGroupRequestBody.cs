@@ -143,10 +143,16 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
         /// <summary>
-        /// 节点规格ID。
+        /// 节点规格ID（规格ID和规格码必须传一个）。
         /// </summary>
         [JsonProperty("flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string FlavorId { get; set; }
+
+        /// <summary>
+        /// 节点规格码（规格ID和规格码必须传一个）。
+        /// </summary>
+        [JsonProperty("flavor_ref", NullValueHandling = NullValueHandling.Ignore)]
+        public string FlavorRef { get; set; }
 
         /// <summary>
         /// 节点信息列表
@@ -166,6 +172,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  flavorId: ").Append(FlavorId).Append("\n");
+            sb.Append("  flavorRef: ").Append(FlavorRef).Append("\n");
             sb.Append("  nodes: ").Append(Nodes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -188,6 +195,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Type != input.Type) return false;
             if (this.FlavorId != input.FlavorId || (this.FlavorId != null && !this.FlavorId.Equals(input.FlavorId))) return false;
+            if (this.FlavorRef != input.FlavorRef || (this.FlavorRef != null && !this.FlavorRef.Equals(input.FlavorRef))) return false;
             if (this.Nodes != input.Nodes || (this.Nodes != null && input.Nodes != null && !this.Nodes.SequenceEqual(input.Nodes))) return false;
 
             return true;
@@ -204,6 +212,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.FlavorId != null) hashCode = hashCode * 59 + this.FlavorId.GetHashCode();
+                if (this.FlavorRef != null) hashCode = hashCode * 59 + this.FlavorRef.GetHashCode();
                 if (this.Nodes != null) hashCode = hashCode * 59 + this.Nodes.GetHashCode();
                 return hashCode;
             }

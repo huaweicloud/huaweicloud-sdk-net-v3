@@ -24,42 +24,42 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string LoadbalancerId { get; set; }
 
         /// <summary>
-        /// 监听器的ID。  支持多值查询，查询条件格式：*listener_id&#x3D;xxx&amp;listener_id&#x3D;xxx*。
+        /// **参数解释**：监听器的ID。  支持多值查询，查询条件格式：*listener_id&#x3D;xxx&amp;listener_id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
         /// </summary>
         [SDKProperty("listener_id", IsQuery = true)]
         [JsonProperty("listener_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ListenerId { get; set; }
 
         /// <summary>
-        /// 后端服务器组的ID。  支持多值查询，查询条件格式：*pool_id&#x3D;xxx&amp;pool_id&#x3D;xxx*。
+        /// **参数解释**：后端服务器组的ID。  支持多值查询，查询条件格式：*pool_id&#x3D;xxx&amp;pool_id&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
         /// </summary>
         [SDKProperty("pool_id", IsQuery = true)]
         [JsonProperty("pool_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PoolId { get; set; }
 
         /// <summary>
-        /// 监听器的名称。  支持多值查询，查询条件格式：*listener_name&#x3D;xxx&amp;listener_name&#x3D;xxx*。
+        /// **参数解释**：监听器的名称。  支持多值查询，查询条件格式：*listener_name&#x3D;xxx&amp;listener_name&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
         /// </summary>
         [SDKProperty("listener_name", IsQuery = true)]
         [JsonProperty("listener_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ListenerName { get; set; }
 
         /// <summary>
-        /// 监听器的协议。  支持多值查询，查询条件格式：*listener_protocol&#x3D;xxx&amp;listener_protocol&#x3D;xxx*。
+        /// **参数解释**：监听器的协议。  支持多值查询，查询条件格式：*listener_protocol&#x3D;xxx&amp;listener_protocol&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
         /// </summary>
         [SDKProperty("listener_protocol", IsQuery = true)]
         [JsonProperty("listener_protocol", NullValueHandling = NullValueHandling.Ignore)]
         public string ListenerProtocol { get; set; }
 
         /// <summary>
-        /// 监听器的监听端口。  支持多值查询，查询条件格式：*listener_protocol_port&#x3D;xxx&amp;listener_protocol_port&#x3D;xxx*。
+        /// **参数解释**：监听器的监听端口。  支持多值查询，查询条件格式：*listener_protocol_port&#x3D;xxx&amp;listener_protocol_port&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
         /// </summary>
         [SDKProperty("listener_protocol_port", IsQuery = true)]
         [JsonProperty("listener_protocol_port", NullValueHandling = NullValueHandling.Ignore)]
         public int? ListenerProtocolPort { get; set; }
 
         /// <summary>
-        /// 后端服务器组的名称。  支持多值查询，查询条件格式：*pool_name&#x3D;xxx&amp;pool_name&#x3D;xxx*。
+        /// **参数解释**：后端服务器组的名称。  支持多值查询，查询条件格式：*pool_name&#x3D;xxx&amp;pool_name&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
         /// </summary>
         [SDKProperty("pool_name", IsQuery = true)]
         [JsonProperty("pool_name", NullValueHandling = NullValueHandling.Ignore)]

@@ -11,34 +11,34 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 配置负载均衡器系统默认域名化相关配置参数。
+    /// 
     /// </summary>
     public class SystemDefaultDnsConfigRequestBody 
     {
 
         /// <summary>
-        /// **参数解释**：公网解析记录集超时时间。解析记录在本地DNS服务器的缓存时间，缓存时间越长更新生效越慢，以秒为单位。如果您的服务地址经常更换，建议TTL值设置相对小些，反之，建议设置相对大些  **约束限制**：不涉及  **取值范围**：1-2147483647  **默认取值**：300
-        /// </summary>
-        [JsonProperty("public_dns_record_set_ttl", NullValueHandling = NullValueHandling.Ignore)]
-        public int? PublicDnsRecordSetTtl { get; set; }
-
-        /// <summary>
-        /// **参数解释**：是否配置私网域名。  **约束限制**：不涉及  **取值范围**： true：开启私网域名 false：关闭私网域名  **默认取值**：false
+        /// **参数解释**：是否启用私网域名解析。  **约束限制**：不涉及  **取值范围**： - true：开启私网域名解析。 - false：关闭私网域名解析。  **默认取值**：false
         /// </summary>
         [JsonProperty("private_domain_name_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PrivateDomainNameEnable { get; set; }
 
         /// <summary>
-        /// **参数解释**：是否配置公网域名。  **约束限制**：不涉及  **取值范围**： true：开启公网域名 false：关闭公网域名  **默认取值**：false
+        /// **参数解释**：私网域名解析记录在本地DNS服务器的缓存超时时间，单位：秒。域名解析信息更新后，需要等待DNS服务器上的缓存超时才会生效。如果您的域名解析信息经常变更，建议TTL值设置相对小些，反之建议设置相对大些。  **约束限制**：不涉及  **取值范围**：1-2147483647  **默认取值**：300
+        /// </summary>
+        [JsonProperty("private_dns_record_set_ttl", NullValueHandling = NullValueHandling.Ignore)]
+        public int? PrivateDnsRecordSetTtl { get; set; }
+
+        /// <summary>
+        /// **参数解释**：是否启用公网域名解析。  **约束限制**：不涉及  **取值范围**： - true：开启公网域名解析。 - false：关闭公网域名解析。  **默认取值**：false
         /// </summary>
         [JsonProperty("public_domain_name_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PublicDomainNameEnable { get; set; }
 
         /// <summary>
-        /// **参数解释**：私网解析记录集超时时间。解析记录在本地DNS服务器的缓存时间，缓存时间越长更新生效越慢，以秒为单位。如果您的服务地址经常更换，建议TTL值设置相对小些，反之，建议设置相对大些。  **约束限制**：不涉及  **取值范围**：1-2147483647  **默认取值**：300
+        /// **参数解释**：公网域名解析记录在本地DNS服务器的缓存超时时间，单位：秒。域名解析信息更新后，需要等待DNS服务器上的缓存超时才会生效。如果您的域名解析信息经常变更，建议TTL值设置相对小些，反之建议设置相对大些。  **约束限制**：不涉及  **取值范围**：1-2147483647  **默认取值**：300
         /// </summary>
-        [JsonProperty("private_dns_record_set_ttl", NullValueHandling = NullValueHandling.Ignore)]
-        public int? PrivateDnsRecordSetTtl { get; set; }
+        [JsonProperty("public_dns_record_set_ttl", NullValueHandling = NullValueHandling.Ignore)]
+        public int? PublicDnsRecordSetTtl { get; set; }
 
 
 
@@ -49,10 +49,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class SystemDefaultDnsConfigRequestBody {\n");
-            sb.Append("  publicDnsRecordSetTtl: ").Append(PublicDnsRecordSetTtl).Append("\n");
             sb.Append("  privateDomainNameEnable: ").Append(PrivateDomainNameEnable).Append("\n");
-            sb.Append("  publicDomainNameEnable: ").Append(PublicDomainNameEnable).Append("\n");
             sb.Append("  privateDnsRecordSetTtl: ").Append(PrivateDnsRecordSetTtl).Append("\n");
+            sb.Append("  publicDomainNameEnable: ").Append(PublicDomainNameEnable).Append("\n");
+            sb.Append("  publicDnsRecordSetTtl: ").Append(PublicDnsRecordSetTtl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -71,10 +71,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool Equals(SystemDefaultDnsConfigRequestBody input)
         {
             if (input == null) return false;
-            if (this.PublicDnsRecordSetTtl != input.PublicDnsRecordSetTtl || (this.PublicDnsRecordSetTtl != null && !this.PublicDnsRecordSetTtl.Equals(input.PublicDnsRecordSetTtl))) return false;
             if (this.PrivateDomainNameEnable != input.PrivateDomainNameEnable || (this.PrivateDomainNameEnable != null && !this.PrivateDomainNameEnable.Equals(input.PrivateDomainNameEnable))) return false;
-            if (this.PublicDomainNameEnable != input.PublicDomainNameEnable || (this.PublicDomainNameEnable != null && !this.PublicDomainNameEnable.Equals(input.PublicDomainNameEnable))) return false;
             if (this.PrivateDnsRecordSetTtl != input.PrivateDnsRecordSetTtl || (this.PrivateDnsRecordSetTtl != null && !this.PrivateDnsRecordSetTtl.Equals(input.PrivateDnsRecordSetTtl))) return false;
+            if (this.PublicDomainNameEnable != input.PublicDomainNameEnable || (this.PublicDomainNameEnable != null && !this.PublicDomainNameEnable.Equals(input.PublicDomainNameEnable))) return false;
+            if (this.PublicDnsRecordSetTtl != input.PublicDnsRecordSetTtl || (this.PublicDnsRecordSetTtl != null && !this.PublicDnsRecordSetTtl.Equals(input.PublicDnsRecordSetTtl))) return false;
 
             return true;
         }
@@ -87,10 +87,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.PublicDnsRecordSetTtl != null) hashCode = hashCode * 59 + this.PublicDnsRecordSetTtl.GetHashCode();
                 if (this.PrivateDomainNameEnable != null) hashCode = hashCode * 59 + this.PrivateDomainNameEnable.GetHashCode();
-                if (this.PublicDomainNameEnable != null) hashCode = hashCode * 59 + this.PublicDomainNameEnable.GetHashCode();
                 if (this.PrivateDnsRecordSetTtl != null) hashCode = hashCode * 59 + this.PrivateDnsRecordSetTtl.GetHashCode();
+                if (this.PublicDomainNameEnable != null) hashCode = hashCode * 59 + this.PublicDomainNameEnable.GetHashCode();
+                if (this.PublicDnsRecordSetTtl != null) hashCode = hashCode * 59 + this.PublicDnsRecordSetTtl.GetHashCode();
                 return hashCode;
             }
         }

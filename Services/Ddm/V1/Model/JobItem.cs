@@ -67,8 +67,8 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
         /// <summary>
         /// 操作。
         /// </summary>
-        [JsonProperty("jobs", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> Jobs { get; set; }
+        [JsonProperty("operations", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Operations { get; set; }
 
         /// <summary>
         /// 逻辑库名称。
@@ -99,7 +99,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
             sb.Append("  process: ").Append(Process).Append("\n");
             sb.Append("  instanceName: ").Append(InstanceName).Append("\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
-            sb.Append("  jobs: ").Append(Jobs).Append("\n");
+            sb.Append("  operations: ").Append(Operations).Append("\n");
             sb.Append("  databaseName: ").Append(DatabaseName).Append("\n");
             sb.Append("  failReason: ").Append(FailReason).Append("\n");
             sb.Append("}\n");
@@ -128,7 +128,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
             if (this.Process != input.Process || (this.Process != null && !this.Process.Equals(input.Process))) return false;
             if (this.InstanceName != input.InstanceName || (this.InstanceName != null && !this.InstanceName.Equals(input.InstanceName))) return false;
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
-            if (this.Jobs != input.Jobs || (this.Jobs != null && input.Jobs != null && !this.Jobs.SequenceEqual(input.Jobs))) return false;
+            if (this.Operations != input.Operations || (this.Operations != null && input.Operations != null && !this.Operations.SequenceEqual(input.Operations))) return false;
             if (this.DatabaseName != input.DatabaseName || (this.DatabaseName != null && !this.DatabaseName.Equals(input.DatabaseName))) return false;
             if (this.FailReason != input.FailReason || (this.FailReason != null && !this.FailReason.Equals(input.FailReason))) return false;
 
@@ -151,7 +151,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
                 if (this.Process != null) hashCode = hashCode * 59 + this.Process.GetHashCode();
                 if (this.InstanceName != null) hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.Jobs != null) hashCode = hashCode * 59 + this.Jobs.GetHashCode();
+                if (this.Operations != null) hashCode = hashCode * 59 + this.Operations.GetHashCode();
                 if (this.DatabaseName != null) hashCode = hashCode * 59 + this.DatabaseName.GetHashCode();
                 if (this.FailReason != null) hashCode = hashCode * 59 + this.FailReason.GetHashCode();
                 return hashCode;

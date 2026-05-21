@@ -17,10 +17,22 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 负载均衡器dns ip信息列表。
+        /// 负载均衡器IP地址的域名解析配置列表。
         /// </summary>
         [JsonProperty("ips", NullValueHandling = NullValueHandling.Ignore)]
         public List<DnsIpResponse> Ips { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("page_info", NullValueHandling = NullValueHandling.Ignore)]
+        public PageInfo PageInfo { get; set; }
+
+        /// <summary>
+        /// **参数解释**：请求ID。  **取值范围**：由数字、小写字母和中划线（-）组成的字符串，自动生成。
+        /// </summary>
+        [JsonProperty("request_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string RequestId { get; set; }
 
 
 
@@ -32,6 +44,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             var sb = new StringBuilder();
             sb.Append("class ListDomainIPsResponse {\n");
             sb.Append("  ips: ").Append(Ips).Append("\n");
+            sb.Append("  pageInfo: ").Append(PageInfo).Append("\n");
+            sb.Append("  requestId: ").Append(RequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +65,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             if (input == null) return false;
             if (this.Ips != input.Ips || (this.Ips != null && input.Ips != null && !this.Ips.SequenceEqual(input.Ips))) return false;
+            if (this.PageInfo != input.PageInfo || (this.PageInfo != null && !this.PageInfo.Equals(input.PageInfo))) return false;
+            if (this.RequestId != input.RequestId || (this.RequestId != null && !this.RequestId.Equals(input.RequestId))) return false;
 
             return true;
         }
@@ -64,6 +80,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             {
                 var hashCode = 41;
                 if (this.Ips != null) hashCode = hashCode * 59 + this.Ips.GetHashCode();
+                if (this.PageInfo != null) hashCode = hashCode * 59 + this.PageInfo.GetHashCode();
+                if (this.RequestId != null) hashCode = hashCode * 59 + this.RequestId.GetHashCode();
                 return hashCode;
             }
         }

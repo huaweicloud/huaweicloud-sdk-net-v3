@@ -17,16 +17,16 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
     {
 
         /// <summary>
-        /// metadata恢复源。
+        /// 
         /// </summary>
         [JsonProperty("source", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Source { get; set; }
+        public RestoreMetaDataSource Source { get; set; }
 
         /// <summary>
-        /// metadata恢复目标。
+        /// 
         /// </summary>
         [JsonProperty("target", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Target { get; set; }
+        public RestoreMetaDataTarget Target { get; set; }
 
 
 

@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 批量从负载均衡器域名解析中移除IP地址的请求体。
+    /// 批量将IP地址从ELB实例域名解析中移除的请求体。
     /// </summary>
     public class BatchDisableDomainIPsRequestBody 
     {

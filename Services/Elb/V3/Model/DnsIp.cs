@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 负载均衡器dns ip地址。
+    /// 负载均衡器域名解析配置中的IP地址。
     /// </summary>
     public class DnsIp 
     {
 
         /// <summary>
-        /// **参数解释**：ip地址。可以是ipv4地址也可以是ipv6地址。  **约束限制**：必须是负载均衡器的私网地址或者公网地址。  **取值范围**：不涉及  **默认取值**：不涉及
+        /// **参数解释**：IPv4或IPv6地址。  **约束限制**：必须是当前负载均衡器绑定的私网地址或者公网地址。  **取值范围**：不涉及  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("ip_address", NullValueHandling = NullValueHandling.Ignore)]
         public string IpAddress { get; set; }

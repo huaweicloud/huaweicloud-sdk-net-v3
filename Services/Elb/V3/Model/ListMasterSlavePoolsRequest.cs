@@ -149,6 +149,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("connection_drain", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ConnectionDrain { get; set; }
 
+        /// <summary>
+        /// **参数解释**：公网边界组。 支持多值查询，查询条件格式：*public_border_group&#x3D;xxx&amp;public_border_group&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**： - center：表示中心站点的公网边界组 - 边缘站点名称：表示边缘站点的公网边界组  **默认取值**：不涉及
+        /// </summary>
+        [SDKProperty("public_border_group", IsQuery = true)]
+        [JsonProperty("public_border_group", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> PublicBorderGroup { get; set; }
+
 
 
         /// <summary>
@@ -177,6 +184,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  vpcId: ").Append(VpcId).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  connectionDrain: ").Append(ConnectionDrain).Append("\n");
+            sb.Append("  publicBorderGroup: ").Append(PublicBorderGroup).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -214,6 +222,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.VpcId != input.VpcId || (this.VpcId != null && input.VpcId != null && !this.VpcId.SequenceEqual(input.VpcId))) return false;
             if (this.Type != input.Type || (this.Type != null && input.Type != null && !this.Type.SequenceEqual(input.Type))) return false;
             if (this.ConnectionDrain != input.ConnectionDrain || (this.ConnectionDrain != null && !this.ConnectionDrain.Equals(input.ConnectionDrain))) return false;
+            if (this.PublicBorderGroup != input.PublicBorderGroup || (this.PublicBorderGroup != null && input.PublicBorderGroup != null && !this.PublicBorderGroup.SequenceEqual(input.PublicBorderGroup))) return false;
 
             return true;
         }
@@ -245,6 +254,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.ConnectionDrain != null) hashCode = hashCode * 59 + this.ConnectionDrain.GetHashCode();
+                if (this.PublicBorderGroup != null) hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
                 return hashCode;
             }
         }

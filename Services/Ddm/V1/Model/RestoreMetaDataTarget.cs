@@ -11,22 +11,22 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ddm.V1.Model
 {
     /// <summary>
-    /// Response Object
+    /// 
     /// </summary>
-    public class BatchDeleteNodesResponse : SdkResponse
+    public class RestoreMetaDataTarget 
     {
 
         /// <summary>
-        /// 任务ID，仅创建按需实例时会返回该参数。
+        /// metadata恢复目标dn。
         /// </summary>
-        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string JobId { get; set; }
+        [JsonProperty("data_nodes", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> DataNodes { get; set; }
 
         /// <summary>
-        /// 订单号，创建包年包月时返回该参数。
+        /// 实例id。
         /// </summary>
-        [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string OrderId { get; set; }
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceId { get; set; }
 
 
 
@@ -36,9 +36,9 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class BatchDeleteNodesResponse {\n");
-            sb.Append("  jobId: ").Append(JobId).Append("\n");
-            sb.Append("  orderId: ").Append(OrderId).Append("\n");
+            sb.Append("class RestoreMetaDataTarget {\n");
+            sb.Append("  dataNodes: ").Append(DataNodes).Append("\n");
+            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -48,17 +48,17 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as BatchDeleteNodesResponse);
+            return this.Equals(input as RestoreMetaDataTarget);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(BatchDeleteNodesResponse input)
+        public bool Equals(RestoreMetaDataTarget input)
         {
             if (input == null) return false;
-            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
-            if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
+            if (this.DataNodes != input.DataNodes || (this.DataNodes != null && input.DataNodes != null && !this.DataNodes.SequenceEqual(input.DataNodes))) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
 
             return true;
         }
@@ -71,8 +71,8 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
+                if (this.DataNodes != null) hashCode = hashCode * 59 + this.DataNodes.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 return hashCode;
             }
         }
