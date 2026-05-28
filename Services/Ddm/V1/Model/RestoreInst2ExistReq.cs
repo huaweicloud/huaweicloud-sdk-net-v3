@@ -17,16 +17,16 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
     {
 
         /// <summary>
-        /// 数据恢复源。
+        /// 
         /// </summary>
         [JsonProperty("source", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Source { get; set; }
+        public RestoreInstSource Source { get; set; }
 
         /// <summary>
-        /// 数据恢复目标。
+        /// 
         /// </summary>
         [JsonProperty("target", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Target { get; set; }
+        public RestoreInstTarget Target { get; set; }
 
         /// <summary>
         /// 关联dn。

@@ -178,6 +178,12 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         [JsonProperty("dual_active_info", NullValueHandling = NullValueHandling.Ignore)]
         public DualActiveInfo DualActiveInfo { get; set; }
 
+        /// <summary>
+        /// 参数解释： SSL安全连接启用情况。 取值范围： - 取值为“0”表示未启用。 - 取值为“1”表示已启用。
+        /// </summary>
+        [JsonProperty("ssl", NullValueHandling = NullValueHandling.Ignore)]
+        public string Ssl { get; set; }
+
 
 
         /// <summary>
@@ -214,6 +220,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             sb.Append("  lbPort: ").Append(LbPort).Append("\n");
             sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
             sb.Append("  dualActiveInfo: ").Append(DualActiveInfo).Append("\n");
+            sb.Append("  ssl: ").Append(Ssl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -259,6 +266,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             if (this.LbPort != input.LbPort || (this.LbPort != null && !this.LbPort.Equals(input.LbPort))) return false;
             if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
             if (this.DualActiveInfo != input.DualActiveInfo || (this.DualActiveInfo != null && !this.DualActiveInfo.Equals(input.DualActiveInfo))) return false;
+            if (this.Ssl != input.Ssl || (this.Ssl != null && !this.Ssl.Equals(input.Ssl))) return false;
 
             return true;
         }
@@ -298,6 +306,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                 if (this.LbPort != null) hashCode = hashCode * 59 + this.LbPort.GetHashCode();
                 if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
                 if (this.DualActiveInfo != null) hashCode = hashCode * 59 + this.DualActiveInfo.GetHashCode();
+                if (this.Ssl != null) hashCode = hashCode * 59 + this.Ssl.GetHashCode();
                 return hashCode;
             }
         }

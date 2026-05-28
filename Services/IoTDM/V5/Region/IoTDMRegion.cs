@@ -27,6 +27,8 @@ namespace HuaweiCloud.SDK.IoTDM.V5
             "https://iotda-mgmt.me-east-1.myhuaweicloud.com");
         public static readonly Region LA_SOUTH_2 = new Region("la-south-2",
             "https://iotda-mgmt.la-south-2.myhuaweicloud.com");
+        public static readonly Region RU_MOSCOW_1 = new Region("ru-moscow-1",
+            "https://iotda-mgmt.ru-moscow-1.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("IOTDM");
 
@@ -42,6 +44,7 @@ namespace HuaweiCloud.SDK.IoTDM.V5
                 { "af-south-1", AF_SOUTH_1 },
                 { "me-east-1", ME_EAST_1 },
                 { "la-south-2", LA_SOUTH_2 },
+                { "ru-moscow-1", RU_MOSCOW_1 },
         };
 
         public static Region ValueOf(string regionId)

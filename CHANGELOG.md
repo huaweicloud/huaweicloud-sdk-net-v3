@@ -1,3 +1,34 @@
+# 3.1.194 2026-05-28
+
+### HuaweiCloud SDK DDM
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **Restore2Exist**
+    - changes of request param
+      - `+ source.restore_time`
+      - `* source: object -> object<RestoreInstSource>`
+      - `+ target.instance_id`
+      - `* target: object -> object<RestoreInstTarget>`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListInstances**
+    - changes of response param
+      - `+ instances.ssl`
+
 # 3.1.193 2026-05-21
 
 ### HuaweiCloud SDK ELB
