@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
     /// <summary>
     /// Request Object
     /// </summary>
-    public class UpdatePostgresqlInstanceAliasRequest 
+    public class UpdateInstanceAliasRequest 
     {
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UpdatePostgresqlInstanceAliasRequest {\n");
+            sb.Append("class UpdateInstanceAliasRequest {\n");
             sb.Append("  xLanguage: ").Append(XLanguage).Append("\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
@@ -58,13 +58,13 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdatePostgresqlInstanceAliasRequest);
+            return this.Equals(input as UpdateInstanceAliasRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(UpdatePostgresqlInstanceAliasRequest input)
+        public bool Equals(UpdateInstanceAliasRequest input)
         {
             if (input == null) return false;
             if (this.XLanguage != input.XLanguage || (this.XLanguage != null && !this.XLanguage.Equals(input.XLanguage))) return false;

@@ -193,6 +193,34 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 绑定公网网关
+        ///
+        /// 为实例下的节点绑定公网网关。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BindPublicGatewayResponse BindPublicGateway(BindPublicGatewayRequest bindPublicGatewayRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(bindPublicGatewayRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(bindPublicGatewayRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/public-gateway", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", bindPublicGatewayRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<BindPublicGatewayResponse>(response);
+        }
+
+        public SyncInvoker<BindPublicGatewayResponse> BindPublicGatewayInvoker(BindPublicGatewayRequest bindPublicGatewayRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(bindPublicGatewayRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(bindPublicGatewayRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/public-gateway", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", bindPublicGatewayRequest);
+            return new SyncInvoker<BindPublicGatewayResponse>(this, "POST", request, JsonUtils.DeSerialize<BindPublicGatewayResponse>);
+        }
+        
+        /// <summary>
         /// 解绑弹性公网IP
         ///
         /// 解绑实例下节点已经绑定的弹性公网IP。
@@ -2870,6 +2898,34 @@ namespace HuaweiCloud.SDK.Dds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/switchover", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchoverReplicaSetRequest);
             return new SyncInvoker<SwitchoverReplicaSetResponse>(this, "POST", request, JsonUtils.DeSerialize<SwitchoverReplicaSetResponse>);
+        }
+        
+        /// <summary>
+        /// 解绑公网网关
+        ///
+        /// 为实例下的节点解绑公网网关。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UnbindPublicGatewayResponse UnbindPublicGateway(UnbindPublicGatewayRequest unbindPublicGatewayRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(unbindPublicGatewayRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(unbindPublicGatewayRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/public-gateway", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", unbindPublicGatewayRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<UnbindPublicGatewayResponse>(response);
+        }
+
+        public SyncInvoker<UnbindPublicGatewayResponse> UnbindPublicGatewayInvoker(UnbindPublicGatewayRequest unbindPublicGatewayRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(unbindPublicGatewayRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(unbindPublicGatewayRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/public-gateway", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", unbindPublicGatewayRequest);
+            return new SyncInvoker<UnbindPublicGatewayResponse>(this, "DELETE", request, JsonUtils.DeSerialize<UnbindPublicGatewayResponse>);
         }
         
         /// <summary>

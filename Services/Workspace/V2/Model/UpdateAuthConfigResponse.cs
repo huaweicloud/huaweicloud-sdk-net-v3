@@ -13,20 +13,20 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     /// <summary>
     /// Response Object
     /// </summary>
-    public class UpdateFullSpeedRecordConfigResponse : SdkResponse
+    public class UpdateAuthConfigResponse : SdkResponse
     {
 
         /// <summary>
-        /// 结果码
+        /// 认证配置ID。
         /// </summary>
-        [JsonProperty("result_code", NullValueHandling = NullValueHandling.Ignore)]
-        public string ResultCode { get; set; }
+        [JsonProperty("auth_config_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string AuthConfigId { get; set; }
 
         /// <summary>
-        /// 结果信息
+        /// 是否开启短信登录。
         /// </summary>
-        [JsonProperty("result_desc", NullValueHandling = NullValueHandling.Ignore)]
-        public string ResultDesc { get; set; }
+        [JsonProperty("sms_login_enabled", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SmsLoginEnabled { get; set; }
 
 
 
@@ -36,9 +36,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UpdateFullSpeedRecordConfigResponse {\n");
-            sb.Append("  resultCode: ").Append(ResultCode).Append("\n");
-            sb.Append("  resultDesc: ").Append(ResultDesc).Append("\n");
+            sb.Append("class UpdateAuthConfigResponse {\n");
+            sb.Append("  authConfigId: ").Append(AuthConfigId).Append("\n");
+            sb.Append("  smsLoginEnabled: ").Append(SmsLoginEnabled).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -48,17 +48,17 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateFullSpeedRecordConfigResponse);
+            return this.Equals(input as UpdateAuthConfigResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(UpdateFullSpeedRecordConfigResponse input)
+        public bool Equals(UpdateAuthConfigResponse input)
         {
             if (input == null) return false;
-            if (this.ResultCode != input.ResultCode || (this.ResultCode != null && !this.ResultCode.Equals(input.ResultCode))) return false;
-            if (this.ResultDesc != input.ResultDesc || (this.ResultDesc != null && !this.ResultDesc.Equals(input.ResultDesc))) return false;
+            if (this.AuthConfigId != input.AuthConfigId || (this.AuthConfigId != null && !this.AuthConfigId.Equals(input.AuthConfigId))) return false;
+            if (this.SmsLoginEnabled != input.SmsLoginEnabled || (this.SmsLoginEnabled != null && !this.SmsLoginEnabled.Equals(input.SmsLoginEnabled))) return false;
 
             return true;
         }
@@ -71,8 +71,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.ResultCode != null) hashCode = hashCode * 59 + this.ResultCode.GetHashCode();
-                if (this.ResultDesc != null) hashCode = hashCode * 59 + this.ResultDesc.GetHashCode();
+                if (this.AuthConfigId != null) hashCode = hashCode * 59 + this.AuthConfigId.GetHashCode();
+                if (this.SmsLoginEnabled != null) hashCode = hashCode * 59 + this.SmsLoginEnabled.GetHashCode();
                 return hashCode;
             }
         }

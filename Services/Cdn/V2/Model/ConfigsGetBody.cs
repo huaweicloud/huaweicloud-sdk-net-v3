@@ -238,6 +238,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         [JsonProperty("client_cert", NullValueHandling = NullValueHandling.Ignore)]
         public ClientCert ClientCert { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("https_tls_version", NullValueHandling = NullValueHandling.Ignore)]
+        public HttpsTlsVersion HttpsTlsVersion { get; set; }
+
 
 
         /// <summary>
@@ -284,6 +290,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  browserCacheRules: ").Append(BrowserCacheRules).Append("\n");
             sb.Append("  accessAreaFilter: ").Append(AccessAreaFilter).Append("\n");
             sb.Append("  clientCert: ").Append(ClientCert).Append("\n");
+            sb.Append("  httpsTlsVersion: ").Append(HttpsTlsVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -339,6 +346,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             if (this.BrowserCacheRules != input.BrowserCacheRules || (this.BrowserCacheRules != null && input.BrowserCacheRules != null && !this.BrowserCacheRules.SequenceEqual(input.BrowserCacheRules))) return false;
             if (this.AccessAreaFilter != input.AccessAreaFilter || (this.AccessAreaFilter != null && input.AccessAreaFilter != null && !this.AccessAreaFilter.SequenceEqual(input.AccessAreaFilter))) return false;
             if (this.ClientCert != input.ClientCert || (this.ClientCert != null && !this.ClientCert.Equals(input.ClientCert))) return false;
+            if (this.HttpsTlsVersion != input.HttpsTlsVersion || (this.HttpsTlsVersion != null && !this.HttpsTlsVersion.Equals(input.HttpsTlsVersion))) return false;
 
             return true;
         }
@@ -388,6 +396,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                 if (this.BrowserCacheRules != null) hashCode = hashCode * 59 + this.BrowserCacheRules.GetHashCode();
                 if (this.AccessAreaFilter != null) hashCode = hashCode * 59 + this.AccessAreaFilter.GetHashCode();
                 if (this.ClientCert != null) hashCode = hashCode * 59 + this.ClientCert.GetHashCode();
+                if (this.HttpsTlsVersion != null) hashCode = hashCode * 59 + this.HttpsTlsVersion.GetHashCode();
                 return hashCode;
             }
         }

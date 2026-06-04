@@ -11,24 +11,22 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// Request Object
+    /// Response Object
     /// </summary>
-    public class UpdateFullSpeedRecordConfigRequest 
+    public class UpdateScreenRecordsResponse : SdkResponse
     {
 
         /// <summary>
-        /// 录屏记录UUID。
+        /// 结果码
         /// </summary>
-        [SDKProperty("record_id", IsPath = true)]
-        [JsonProperty("record_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string RecordId { get; set; }
+        [JsonProperty("result_code", NullValueHandling = NullValueHandling.Ignore)]
+        public string ResultCode { get; set; }
 
         /// <summary>
-        /// 
+        /// 结果信息
         /// </summary>
-        [SDKProperty("body", IsBody = true)]
-        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public UpdateScreenRecordsRequestBody Body { get; set; }
+        [JsonProperty("result_desc", NullValueHandling = NullValueHandling.Ignore)]
+        public string ResultDesc { get; set; }
 
 
 
@@ -38,9 +36,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UpdateFullSpeedRecordConfigRequest {\n");
-            sb.Append("  recordId: ").Append(RecordId).Append("\n");
-            sb.Append("  body: ").Append(Body).Append("\n");
+            sb.Append("class UpdateScreenRecordsResponse {\n");
+            sb.Append("  resultCode: ").Append(ResultCode).Append("\n");
+            sb.Append("  resultDesc: ").Append(ResultDesc).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -50,17 +48,17 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateFullSpeedRecordConfigRequest);
+            return this.Equals(input as UpdateScreenRecordsResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(UpdateFullSpeedRecordConfigRequest input)
+        public bool Equals(UpdateScreenRecordsResponse input)
         {
             if (input == null) return false;
-            if (this.RecordId != input.RecordId || (this.RecordId != null && !this.RecordId.Equals(input.RecordId))) return false;
-            if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
+            if (this.ResultCode != input.ResultCode || (this.ResultCode != null && !this.ResultCode.Equals(input.ResultCode))) return false;
+            if (this.ResultDesc != input.ResultDesc || (this.ResultDesc != null && !this.ResultDesc.Equals(input.ResultDesc))) return false;
 
             return true;
         }
@@ -73,8 +71,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.RecordId != null) hashCode = hashCode * 59 + this.RecordId.GetHashCode();
-                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
+                if (this.ResultCode != null) hashCode = hashCode * 59 + this.ResultCode.GetHashCode();
+                if (this.ResultDesc != null) hashCode = hashCode * 59 + this.ResultDesc.GetHashCode();
                 return hashCode;
             }
         }

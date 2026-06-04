@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("saml2_auth_config", NullValueHandling = NullValueHandling.Ignore)]
         public Saml2AuthConfig Saml2AuthConfig { get; set; }
 
+        /// <summary>
+        /// 短信验证码登录开关。
+        /// </summary>
+        [JsonProperty("sms_login_enabled", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SmsLoginEnabled { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  thirdPartyAuthConfig: ").Append(ThirdPartyAuthConfig).Append("\n");
             sb.Append("  emergencyLoginMode: ").Append(EmergencyLoginMode).Append("\n");
             sb.Append("  saml2AuthConfig: ").Append(Saml2AuthConfig).Append("\n");
+            sb.Append("  smsLoginEnabled: ").Append(SmsLoginEnabled).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,6 +106,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.ThirdPartyAuthConfig != input.ThirdPartyAuthConfig || (this.ThirdPartyAuthConfig != null && !this.ThirdPartyAuthConfig.Equals(input.ThirdPartyAuthConfig))) return false;
             if (this.EmergencyLoginMode != input.EmergencyLoginMode || (this.EmergencyLoginMode != null && !this.EmergencyLoginMode.Equals(input.EmergencyLoginMode))) return false;
             if (this.Saml2AuthConfig != input.Saml2AuthConfig || (this.Saml2AuthConfig != null && !this.Saml2AuthConfig.Equals(input.Saml2AuthConfig))) return false;
+            if (this.SmsLoginEnabled != input.SmsLoginEnabled || (this.SmsLoginEnabled != null && !this.SmsLoginEnabled.Equals(input.SmsLoginEnabled))) return false;
 
             return true;
         }
@@ -118,6 +126,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.ThirdPartyAuthConfig != null) hashCode = hashCode * 59 + this.ThirdPartyAuthConfig.GetHashCode();
                 if (this.EmergencyLoginMode != null) hashCode = hashCode * 59 + this.EmergencyLoginMode.GetHashCode();
                 if (this.Saml2AuthConfig != null) hashCode = hashCode * 59 + this.Saml2AuthConfig.GetHashCode();
+                if (this.SmsLoginEnabled != null) hashCode = hashCode * 59 + this.SmsLoginEnabled.GetHashCode();
                 return hashCode;
             }
         }

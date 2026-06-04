@@ -64,6 +64,18 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string AvailabilityZone { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 公网NAT网关实例的ID。可以调用“查询公网NAT网关列表”接口获取。 **取值范围：** 不涉及。
+        /// </summary>
+        [JsonProperty("nat_gateway_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string NatGatewayId { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 弹性公网IP对外提供服务的端口号。 **取值范围：** 1~65535。
+        /// </summary>
+        [JsonProperty("external_service_port", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ExternalServicePort { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +93,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             sb.Append("  publicIp: ").Append(PublicIp).Append("\n");
             sb.Append("  specCode: ").Append(SpecCode).Append("\n");
             sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
+            sb.Append("  natGatewayId: ").Append(NatGatewayId).Append("\n");
+            sb.Append("  externalServicePort: ").Append(ExternalServicePort).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +121,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             if (this.PublicIp != input.PublicIp || (this.PublicIp != null && !this.PublicIp.Equals(input.PublicIp))) return false;
             if (this.SpecCode != input.SpecCode || (this.SpecCode != null && !this.SpecCode.Equals(input.SpecCode))) return false;
             if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
+            if (this.NatGatewayId != input.NatGatewayId || (this.NatGatewayId != null && !this.NatGatewayId.Equals(input.NatGatewayId))) return false;
+            if (this.ExternalServicePort != input.ExternalServicePort || (this.ExternalServicePort != null && !this.ExternalServicePort.Equals(input.ExternalServicePort))) return false;
 
             return true;
         }
@@ -127,6 +143,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                 if (this.PublicIp != null) hashCode = hashCode * 59 + this.PublicIp.GetHashCode();
                 if (this.SpecCode != null) hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
                 if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
+                if (this.NatGatewayId != null) hashCode = hashCode * 59 + this.NatGatewayId.GetHashCode();
+                if (this.ExternalServicePort != null) hashCode = hashCode * 59 + this.ExternalServicePort.GetHashCode();
                 return hashCode;
             }
         }

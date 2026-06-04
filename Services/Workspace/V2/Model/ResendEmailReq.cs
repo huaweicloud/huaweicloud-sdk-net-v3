@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("template_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TemplateId { get; set; }
 
+        /// <summary>
+        /// 短信模板ID。
+        /// </summary>
+        [JsonProperty("phone_template_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string PhoneTemplateId { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ResendEmailReq {\n");
             sb.Append("  templateId: ").Append(TemplateId).Append("\n");
+            sb.Append("  phoneTemplateId: ").Append(PhoneTemplateId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             if (input == null) return false;
             if (this.TemplateId != input.TemplateId || (this.TemplateId != null && !this.TemplateId.Equals(input.TemplateId))) return false;
+            if (this.PhoneTemplateId != input.PhoneTemplateId || (this.PhoneTemplateId != null && !this.PhoneTemplateId.Equals(input.PhoneTemplateId))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             {
                 var hashCode = 41;
                 if (this.TemplateId != null) hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
+                if (this.PhoneTemplateId != null) hashCode = hashCode * 59 + this.PhoneTemplateId.GetHashCode();
                 return hashCode;
             }
         }

@@ -1,3 +1,90 @@
+# 3.1.195 2026-06-04
+
+### HuaweiCloud SDK CDN
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowDomainFullConfig**
+    - 响应参数变更
+      - `+ configs.https_tls_version`
+      - `+ configs.error_code_redirect_rules.execution_mode`
+  - **UpdateDomainFullConfig**
+    - 请求参数变更
+      - `+ configs.https_tls_version`
+      - `+ configs.error_code_redirect_rules.execution_mode`
+
+### HuaweiCloud SDK DDM
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowAvalibleRds**
+    - 响应参数变更
+      - `+ total`
+      - `+ offset`
+      - `+ limit`
+  - **ShowAvalibleDdms**
+    - 响应参数变更
+      - `+ total`
+      - `+ offset`
+      - `+ limit`
+
+### HuaweiCloud SDK DDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`BindPublicGateway`、`UnbindPublicGateway`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListInstances**
+    - 响应参数变更
+      - `+ instances.groups.nodes.nat_gateway_id`
+      - `+ instances.groups.nodes.external_service_port`
+
+### HuaweiCloud SDK Workspace
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`UpdateAuthConfig`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **SendEmail**
+    - 请求参数变更
+      - `+ phone_template_id`
+  - **CreateDesktop**
+    - 请求参数变更
+      - `+ ou_name`
+  - **CreateDesktopOrder**
+    - 请求参数变更
+      - `+ hour_package_resources.create_desktops.ou_name`
+  - **ShowAuthConfig**
+    - 响应参数变更
+      - `+ sms_login_enabled`
+  - **UpdateAuthMethodConfig**
+    - 请求参数变更
+      - `+ sms_login_enabled`
+  - **ValidateConfig**
+    - 请求参数变更
+      - `+ sms_login_enabled`
+  - **CreateOrder**
+    - 请求参数变更
+      - `+ resources.create_desktops.ou_name`
+      - `- resources.subscribe_user_sharer.users.user_phone`
+      - `- resources.subscribe_user_sharer.users.ai_func`
+
 # 3.1.194 2026-05-28
 
 ### HuaweiCloud SDK DDM

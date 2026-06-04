@@ -4487,6 +4487,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 修改实例备注信息
+        ///
+        /// 修改指定数据库实例的备注信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateInstanceAliasResponse> UpdateInstanceAliasAsync(UpdateInstanceAliasRequest updateInstanceAliasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceAliasRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/alias", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceAliasRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateInstanceAliasResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateInstanceAliasResponse> UpdateInstanceAliasAsyncInvoker(UpdateInstanceAliasRequest updateInstanceAliasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceAliasRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/alias", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceAliasRequest);
+            return new AsyncInvoker<UpdateInstanceAliasResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateInstanceAliasResponse>);
+        }
+        
+        /// <summary>
         /// 修改指定实例的参数
         ///
         /// 修改指定实例的参数。
@@ -4588,32 +4614,6 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/port", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePortRequest);
             return new AsyncInvoker<UpdatePortResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePortResponse>);
-        }
-        
-        /// <summary>
-        /// 修改实例备注信息
-        ///
-        /// 修改指定数据库实例的备注信息。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<UpdatePostgresqlInstanceAliasResponse> UpdatePostgresqlInstanceAliasAsync(UpdatePostgresqlInstanceAliasRequest updatePostgresqlInstanceAliasRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(updatePostgresqlInstanceAliasRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/alias", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePostgresqlInstanceAliasRequest);
-            var response = await DoHttpRequestAsync("PUT", request);
-            return JsonUtils.DeSerialize<UpdatePostgresqlInstanceAliasResponse>(response);
-        }
-
-        public AsyncInvoker<UpdatePostgresqlInstanceAliasResponse> UpdatePostgresqlInstanceAliasAsyncInvoker(UpdatePostgresqlInstanceAliasRequest updatePostgresqlInstanceAliasRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(updatePostgresqlInstanceAliasRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/alias", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePostgresqlInstanceAliasRequest);
-            return new AsyncInvoker<UpdatePostgresqlInstanceAliasResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePostgresqlInstanceAliasResponse>);
         }
         
         /// <summary>

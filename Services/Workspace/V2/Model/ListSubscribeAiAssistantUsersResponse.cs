@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// 订阅用户列表。
         /// </summary>
         [JsonProperty("users", NullValueHandling = NullValueHandling.Ignore)]
-        public List<SubscribeUserInfo> Users { get; set; }
+        public List<SubscribeUserBasicInfo> Users { get; set; }
 
         /// <summary>
         /// 订阅用户组列表。

@@ -227,6 +227,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
+        /// OU名称，在对接AD时使用，需提前在AD中创建OU。
+        /// </summary>
+        [JsonProperty("ou_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string OuName { get; set; }
+
+        /// <summary>
         /// 标签列表。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
@@ -299,6 +305,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  size: ").Append(Size).Append("\n");
             sb.Append("  emailNotification: ").Append(EmailNotification).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  ouName: ").Append(OuName).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  applySharedVpcDedicatedParam: ").Append(ApplySharedVpcDedicatedParam).Append("\n");
             sb.Append("  eip: ").Append(Eip).Append("\n");
@@ -341,6 +348,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
             if (this.EmailNotification != input.EmailNotification || (this.EmailNotification != null && !this.EmailNotification.Equals(input.EmailNotification))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.OuName != input.OuName || (this.OuName != null && !this.OuName.Equals(input.OuName))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
             if (this.ApplySharedVpcDedicatedParam != input.ApplySharedVpcDedicatedParam || (this.ApplySharedVpcDedicatedParam != null && !this.ApplySharedVpcDedicatedParam.Equals(input.ApplySharedVpcDedicatedParam))) return false;
             if (this.Eip != input.Eip || (this.Eip != null && !this.Eip.Equals(input.Eip))) return false;
@@ -377,6 +385,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
                 if (this.EmailNotification != null) hashCode = hashCode * 59 + this.EmailNotification.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.OuName != null) hashCode = hashCode * 59 + this.OuName.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.ApplySharedVpcDedicatedParam != null) hashCode = hashCode * 59 + this.ApplySharedVpcDedicatedParam.GetHashCode();
                 if (this.Eip != null) hashCode = hashCode * 59 + this.Eip.GetHashCode();

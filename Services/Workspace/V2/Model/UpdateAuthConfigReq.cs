@@ -8,19 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Rds.V3.Model
+namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// Response Object
+    /// 增量更新认证配置请求。
     /// </summary>
-    public class UpdatePostgresqlInstanceAliasResponse : SdkResponse
+    public class UpdateAuthConfigReq 
     {
 
         /// <summary>
-        /// 操作结果。
+        /// 是否开启短信登录。
         /// </summary>
-        [JsonProperty("resp", NullValueHandling = NullValueHandling.Ignore)]
-        public string Resp { get; set; }
+        [JsonProperty("sms_login_enabled", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SmsLoginEnabled { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UpdatePostgresqlInstanceAliasResponse {\n");
-            sb.Append("  resp: ").Append(Resp).Append("\n");
+            sb.Append("class UpdateAuthConfigReq {\n");
+            sb.Append("  smsLoginEnabled: ").Append(SmsLoginEnabled).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,16 +41,16 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdatePostgresqlInstanceAliasResponse);
+            return this.Equals(input as UpdateAuthConfigReq);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(UpdatePostgresqlInstanceAliasResponse input)
+        public bool Equals(UpdateAuthConfigReq input)
         {
             if (input == null) return false;
-            if (this.Resp != input.Resp || (this.Resp != null && !this.Resp.Equals(input.Resp))) return false;
+            if (this.SmsLoginEnabled != input.SmsLoginEnabled || (this.SmsLoginEnabled != null && !this.SmsLoginEnabled.Equals(input.SmsLoginEnabled))) return false;
 
             return true;
         }
@@ -63,7 +63,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Resp != null) hashCode = hashCode * 59 + this.Resp.GetHashCode();
+                if (this.SmsLoginEnabled != null) hashCode = hashCode * 59 + this.SmsLoginEnabled.GetHashCode();
                 return hashCode;
             }
         }

@@ -1331,6 +1331,32 @@ namespace HuaweiCloud.SDK.Workspace.V2
         }
         
         /// <summary>
+        /// 增量更新认证配置
+        ///
+        /// 增量更新指定认证配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateAuthConfigResponse UpdateAuthConfig(UpdateAuthConfigRequest updateAuthConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateAuthConfigRequest.AuthConfigId, out var valueOfAuthConfigId)) urlParam.Add("auth_config_id", valueOfAuthConfigId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/auth-configs/{auth_config_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAuthConfigRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateAuthConfigResponse>(response);
+        }
+
+        public SyncInvoker<UpdateAuthConfigResponse> UpdateAuthConfigInvoker(UpdateAuthConfigRequest updateAuthConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateAuthConfigRequest.AuthConfigId, out var valueOfAuthConfigId)) urlParam.Add("auth_config_id", valueOfAuthConfigId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/auth-configs/{auth_config_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAuthConfigRequest);
+            return new SyncInvoker<UpdateAuthConfigResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAuthConfigResponse>);
+        }
+        
+        /// <summary>
         /// 更新认证策略配置
         ///
         /// 更新认证策略配置信息。
@@ -6184,23 +6210,23 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
-        public UpdateFullSpeedRecordConfigResponse UpdateFullSpeedRecordConfig(UpdateFullSpeedRecordConfigRequest updateFullSpeedRecordConfigRequest)
+        public UpdateScreenRecordsResponse UpdateScreenRecords(UpdateScreenRecordsRequest updateScreenRecordsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(updateFullSpeedRecordConfigRequest.RecordId, out var valueOfRecordId)) urlParam.Add("record_id", valueOfRecordId);
+            if (StringUtils.TryConvertToNonEmptyString(updateScreenRecordsRequest.RecordId, out var valueOfRecordId)) urlParam.Add("record_id", valueOfRecordId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/screen-records/{record_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFullSpeedRecordConfigRequest);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateScreenRecordsRequest);
             var response = DoHttpRequestSync("PUT", request);
-            return JsonUtils.DeSerialize<UpdateFullSpeedRecordConfigResponse>(response);
+            return JsonUtils.DeSerialize<UpdateScreenRecordsResponse>(response);
         }
 
-        public SyncInvoker<UpdateFullSpeedRecordConfigResponse> UpdateFullSpeedRecordConfigInvoker(UpdateFullSpeedRecordConfigRequest updateFullSpeedRecordConfigRequest)
+        public SyncInvoker<UpdateScreenRecordsResponse> UpdateScreenRecordsInvoker(UpdateScreenRecordsRequest updateScreenRecordsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(updateFullSpeedRecordConfigRequest.RecordId, out var valueOfRecordId)) urlParam.Add("record_id", valueOfRecordId);
+            if (StringUtils.TryConvertToNonEmptyString(updateScreenRecordsRequest.RecordId, out var valueOfRecordId)) urlParam.Add("record_id", valueOfRecordId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/screen-records/{record_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFullSpeedRecordConfigRequest);
-            return new SyncInvoker<UpdateFullSpeedRecordConfigResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateFullSpeedRecordConfigResponse>);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateScreenRecordsRequest);
+            return new SyncInvoker<UpdateScreenRecordsResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateScreenRecordsResponse>);
         }
         
         /// <summary>
