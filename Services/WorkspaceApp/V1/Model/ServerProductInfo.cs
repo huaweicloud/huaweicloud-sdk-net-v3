@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
     /// <summary>
     /// 
     /// </summary>
-    public class ProductInfo 
+    public class ServerProductInfo 
     {
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string FlavorId { get; set; }
 
         /// <summary>
-        /// 产品类型。 - BASE：表示产品基础套餐，套餐镜像中不包括除操作系统之外的其他商业软件，私有镜像场景只能使用此类套餐。 - ADVANCED：表示产品高级套餐，套餐镜像中包括了一些商业软件。
+        /// 产品类型： - BASE：表示产品基础套餐，套餐镜像中不包括除操作系统之外的其他商业软件，私有镜像场景只能使用此类套餐。 - ADVANCED：表示产品高级套餐，套餐镜像中包括了一些商业软件。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
@@ -53,7 +53,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string CpuDesc { get; set; }
 
         /// <summary>
-        /// 内存大小，单位兆：MB。
+        /// 内存大小，单位兆：M。
         /// </summary>
         [JsonProperty("memory", NullValueHandling = NullValueHandling.Ignore)]
         public string Memory { get; set; }
@@ -65,7 +65,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public bool? IsGpu { get; set; }
 
         /// <summary>
-        /// 系统盘类型。
+        /// 系统盘类型： - SSD：超高IO磁盘 - SAS：高IO磁盘
         /// </summary>
         [JsonProperty("system_disk_type", NullValueHandling = NullValueHandling.Ignore)]
         public string SystemDiskType { get; set; }
@@ -101,13 +101,13 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public bool? ContainDataDisk { get; set; }
 
         /// <summary>
-        /// 资源类型。
+        /// 资源类型: -hws.resource.type.workspace.volume： 云办公桌面磁盘 -hws.resource.type.workspace.desktop： 云办公桌面 -hws.resource.type.workspace.appstream： 云应用 -hws.resource.type.workspace.appstreamsession： 云应用多会话
         /// </summary>
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceType { get; set; }
 
         /// <summary>
-        /// 云服务类型。
+        /// 云服务类型： - hws.service.type.vdi - hws.service.type.marketplace
         /// </summary>
         [JsonProperty("cloud_service_type", NullValueHandling = NullValueHandling.Ignore)]
         public string CloudServiceType { get; set; }
@@ -131,7 +131,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// 产品套餐在可用区的状态，配套status使用。 &gt; - 此参数是AZ级配置，优选取此参数的值，某个AZ没有在此参数中配置时默认使用status参数的取值。 &gt; - 配置格式“az(xx)”。()内为某个AZ的flavor状态，()内必须要填有状态，不填为无效配置。 &gt; - 例如：套餐在某个region的az0正常商用，az1售罄，az2公测，az3正常商用，其他az显示下线，可配置为： &gt;   - “status”设置为：“abandon” 。 &gt;   - “cond_operation_az”设置为：“az0(normal), az1(sellout), az2(obt), az3(normal)”。  &gt; -  说明：如果flavor在某个AZ下的状态与status配置状态不同，必须配置该参数。
+        /// 产品套餐在可用区的状态，配套status使用。 &gt; - 此参数是AZ级配置，优选取此参数的值，某个AZ没有在此参数中配置时默认使用status参数的取值。 &gt; - 配置格式“az(xx)”。()内为某个AZ的flavor状态，()内必须要填有状态，不填为无效配置。 &gt; - 例如：套餐在某个region的az0正常商用，az1售罄，az2公测，az3正常商用，其他az显示下线，可配置为： &gt;   - “status”设置为：“abandon” 。 &gt;   - “cond_operation_az”设置为：“az0(normal), az1(sellout), az2(obt), az3(normal)”。 &gt; -  说明：如果flavor在某个AZ下的状态与status配置状态不同，必须配置该参数。
         /// </summary>
         [JsonProperty("cond_operation_az", NullValueHandling = NullValueHandling.Ignore)]
         public string CondOperationAz { get; set; }
@@ -155,19 +155,13 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string PackageType { get; set; }
 
         /// <summary>
-        /// 系列类型： - d7 - c7
-        /// </summary>
-        [JsonProperty("series_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string SeriesType { get; set; }
-
-        /// <summary>
-        /// 产品套餐过期时间,产品将在该时间点后逐步下架。
+        /// 产品套餐过期时间，产品将在该时间点后逐步下架。
         /// </summary>
         [JsonProperty("expire_time", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? ExpireTime { get; set; }
 
         /// <summary>
-        /// 产品套餐支持的GPU类型。
+        /// 产品套餐支持的GPU类型： - A30 - A40 - A100 - RTX5000
         /// </summary>
         [JsonProperty("support_gpu_type", NullValueHandling = NullValueHandling.Ignore)]
         public string SupportGpuType { get; set; }
@@ -180,7 +174,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ProductInfo {\n");
+            sb.Append("class ServerProductInfo {\n");
             sb.Append("  productId: ").Append(ProductId).Append("\n");
             sb.Append("  flavorId: ").Append(FlavorId).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
@@ -204,7 +198,6 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             sb.Append("  subProductList: ").Append(SubProductList).Append("\n");
             sb.Append("  domainIds: ").Append(DomainIds).Append("\n");
             sb.Append("  packageType: ").Append(PackageType).Append("\n");
-            sb.Append("  seriesType: ").Append(SeriesType).Append("\n");
             sb.Append("  expireTime: ").Append(ExpireTime).Append("\n");
             sb.Append("  supportGpuType: ").Append(SupportGpuType).Append("\n");
             sb.Append("}\n");
@@ -216,13 +209,13 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ProductInfo);
+            return this.Equals(input as ServerProductInfo);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ProductInfo input)
+        public bool Equals(ServerProductInfo input)
         {
             if (input == null) return false;
             if (this.ProductId != input.ProductId || (this.ProductId != null && !this.ProductId.Equals(input.ProductId))) return false;
@@ -248,7 +241,6 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.SubProductList != input.SubProductList || (this.SubProductList != null && input.SubProductList != null && !this.SubProductList.SequenceEqual(input.SubProductList))) return false;
             if (this.DomainIds != input.DomainIds || (this.DomainIds != null && input.DomainIds != null && !this.DomainIds.SequenceEqual(input.DomainIds))) return false;
             if (this.PackageType != input.PackageType || (this.PackageType != null && !this.PackageType.Equals(input.PackageType))) return false;
-            if (this.SeriesType != input.SeriesType || (this.SeriesType != null && !this.SeriesType.Equals(input.SeriesType))) return false;
             if (this.ExpireTime != input.ExpireTime || (this.ExpireTime != null && !this.ExpireTime.Equals(input.ExpireTime))) return false;
             if (this.SupportGpuType != input.SupportGpuType || (this.SupportGpuType != null && !this.SupportGpuType.Equals(input.SupportGpuType))) return false;
 
@@ -286,7 +278,6 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.SubProductList != null) hashCode = hashCode * 59 + this.SubProductList.GetHashCode();
                 if (this.DomainIds != null) hashCode = hashCode * 59 + this.DomainIds.GetHashCode();
                 if (this.PackageType != null) hashCode = hashCode * 59 + this.PackageType.GetHashCode();
-                if (this.SeriesType != null) hashCode = hashCode * 59 + this.SeriesType.GetHashCode();
                 if (this.ExpireTime != null) hashCode = hashCode * 59 + this.ExpireTime.GetHashCode();
                 if (this.SupportGpuType != null) hashCode = hashCode * 59 + this.SupportGpuType.GetHashCode();
                 return hashCode;

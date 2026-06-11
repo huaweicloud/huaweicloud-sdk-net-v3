@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
     {
 
         /// <summary>
-        /// 容灾切换的故障节点比例列表。
+        /// **参数解释：** 容灾切换的故障节点比例列表。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("disaster_recovery_settings", NullValueHandling = NullValueHandling.Ignore)]
-        public List<SwitchoverRatioInfo> DisasterRecoverySettings { get; set; }
+        public List<SetSwitchoverRatioInfo> DisasterRecoverySettings { get; set; }
 
 
 

@@ -143,6 +143,32 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 删除分片
+        ///
+        /// 删除分片
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchDeleteShardsResponse BatchDeleteShards(BatchDeleteShardsRequest batchDeleteShardsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteShardsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/shards/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteShardsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<BatchDeleteShardsResponse>(response);
+        }
+
+        public SyncInvoker<BatchDeleteShardsResponse> BatchDeleteShardsInvoker(BatchDeleteShardsRequest batchDeleteShardsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteShardsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/shards/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteShardsRequest);
+            return new SyncInvoker<BatchDeleteShardsResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchDeleteShardsResponse>);
+        }
+        
+        /// <summary>
         /// 批量添加或删除资源标签
         ///
         /// 批量添加或删除指定实例的标签。

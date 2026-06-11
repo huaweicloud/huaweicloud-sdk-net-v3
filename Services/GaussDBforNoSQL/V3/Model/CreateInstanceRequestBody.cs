@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
 {
     /// <summary>
-    /// 实例信息。
+    /// **参数解释：** &#39;实例信息。&#39; **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
     /// </summary>
     public class CreateInstanceRequestBody 
     {
 
         /// <summary>
-        /// 实例名称，允许和已有名称重复。 取值范围：长度为4~64位，必须以字母开头（A~Z或a~z），区分大小写，可以包含字母、数字（0~9）、中划线（-）或者下划线（_），不能包含其他特殊字符。
+        /// **参数解释：** 实例名称，允许和已有名称重复。 **约束限制：** 区分大小写，可以包含字母、数字（0~9）、中划线（-）或者下划线（_），不能包含其他特殊字符。 **取值范围：** 长度为4~64位，必须以字母开头（A~Z或a~z）。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
@@ -29,61 +29,67 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public DatastoreOption Datastore { get; set; }
 
         /// <summary>
-        /// - 区域ID - 取值：非空。
+        /// **参数解释：** 区域ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 非空。
         /// </summary>
         [JsonProperty("region", NullValueHandling = NullValueHandling.Ignore)]
         public string Region { get; set; }
 
         /// <summary>
-        /// 可用区ID。 取值：请参见查询所有实例规格信息中返回的“az_status” ，支持创建3可用区实例，中间以逗号隔开。
+        /// **参数解释：** 可用区ID。 **约束限制：** 不涉及。 **取值范围：** 取值：请参见查询所有实例规格信息中返回的“az_status” ，支持创建3可用区实例，中间以逗号隔开。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string AvailabilityZone { get; set; }
 
         /// <summary>
-        /// 虚拟私有云ID，获取方法如下：   - 方法1：登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。   - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考查询VPC列表。
+        /// **参数解释：** 虚拟私有云ID。 **约束限制：**  获取方法如下：   - 方法1：登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。   - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考查询VPC列表。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VpcId { get; set; }
 
         /// <summary>
-        /// 子网的网络ID，获取方法如下：   - 方法1：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。   - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考查询子网列表。
+        /// **参数解释：** 子网的网络ID。 **约束限制：** 不涉及。 **取值范围：**  获取方法如下：   - 方法1：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。   - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考查询子网列表。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("subnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetId { get; set; }
 
         /// <summary>
-        /// 安全组ID，获取方法如下：   - 方法1：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。   - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考查询安全组列表。
+        /// **参数解释：** 安全组ID。 **约束限制：** 不涉及。 **取值范围：**  获取方法如下：   - 方法1：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。   - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考查询安全组列表。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("security_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SecurityGroupId { get; set; }
 
         /// <summary>
-        /// 数据库密码。 取值范围：长度为8~32位，必须是大写字母（A~Z）、小写字母（a~z）、数字（0~9）、特殊字符~!@#%^*-_&#x3D;+?的组合。 建议您输入高强度密码，以提高安全性，防止出现密码被暴力破解等安全风险。
+        /// **参数解释：** 数据库密码。 **约束限制：** 不涉及。 **取值范围：** 长度为8~32位，必须是大写字母（A~Z）、小写字母（a~z）、数字（0~9）、特殊字符~!@#%^*-_&#x3D;+?的组合。建议您输入高强度密码，以提高安全性，防止出现密码被暴力破解等安全风险。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("password", NullValueHandling = NullValueHandling.Ignore)]
         public string Password { get; set; }
 
         /// <summary>
-        /// 实例类型。   -  GeminiDB Cassandra支持经典部署模式集群类型，取值为“Cluster”。   -  GeminiDB Cassandra支持云原生部署模式集群类型，取值“CloudNativeCluster”。   -  GeminiDB Mongo4.0版本支持副本集类型，取值为“ReplicaSet”。   -  GeminiDB Influx支持经典部署模式集群类型，取值为“Cluster”。   -  GeminiDB Influx支持云原生部署模式集群类型，取值为“CloudNativeCluster”。   -  GeminiDB Influx支持经典部署模式单节点类型，取值为“InfluxdbSingle”。   -  GeminiDB Redis支持经典部署模式Proxy集群类型，取值为“Cluster”。   -  GeminiDB redis支持云原生部署模式集群类型，取值为“CloudNativeCluster”。   -  GeminiDB Redis支持经典部署模式Cluster集群类型，取值为“RedisCluster”   -  GeminiDB Redis支持经典部署模式主备类型，取值为“Replication”。
+        /// **参数解释：** 实例类型。 **约束限制：** 不涉及。 **取值范围：**   -  GeminiDB Cassandra支持经典部署模式集群类型，取值为“Cluster”。   -  GeminiDB Cassandra支持云原生部署模式集群类型，取值“CloudNativeCluster”。   -  GeminiDB Mongo4.0版本支持副本集类型，取值为“ReplicaSet”。   -  GeminiDB Influx支持经典部署模式集群类型，取值为“Cluster”。   -  GeminiDB Influx支持云原生部署模式集群增强类型，取值为“CloudNativeCluster”。   -  GeminiDB Influx支持经典部署模式单节点类型，取值为“InfluxdbSingle”。   -  GeminiDB Influx支持经典部署模式集群增强类型，取值为“EnhancedCluster”。   -  GeminiDB Redis支持经典部署模式Proxy集群类型，取值为“Cluster”。   -  GeminiDB redis支持云原生部署模式集群类型，取值为“CloudNativeCluster”。   -  GeminiDB Redis支持经典部署模式Cluster集群类型，取值为“RedisCluster”   -  GeminiDB Redis支持经典部署模式主备类型，取值为“Replication”。   -  GeminiDB兼容DynamoDB支持经典部署模式集群类型，取值为“Cluster”。   -  GeminiDB兼容DynamoDB支持云原生部署模式集群类型，取值“CloudNativeCluster”。   -  GeminiDB HBase支持经典部署模式集群类型，取值为“Cluster”。   -  GeminiDB HBase支持云原生部署模式集群类型，取值“CloudNativeCluster”。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
         public string Mode { get; set; }
 
         /// <summary>
-        /// 产品类型   -  Capacity 容量型   -  Standard 标准型 当创建GeminiDB Redis云原生部署模式集群类型必传此参数。
+        /// **参数解释：** 产品类型。 **约束限制：** 当创建GeminiDB Redis云原生部署模式集群类型必传此参数。 **取值范围：** - Capacity 容量型 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("product_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductType { get; set; }
 
         /// <summary>
-        /// 实例规格详情。获取方法请参见查询所有实例规格信息中响应“flavors”字段下参数的值。
+        /// **参数解释：** 实例规格详情。 **约束限制：** 获取方法请参见查询所有实例规格信息中响应“flavors”字段下参数的值。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("flavor", NullValueHandling = NullValueHandling.Ignore)]
         public List<CreateInstanceFlavorOption> Flavor { get; set; }
 
         /// <summary>
-        /// 参数模板ID。
+        /// **参数解释：** 磁盘加密时的密钥ID，创建实例时不传该参数，表示不进行磁盘加密。 **约束限制：** 备份恢复新实例时不支持指定该参数，如果原实例使用了磁盘加密，新实例复用原实例加密的密钥ID。 该参数仅GeminiDB influx 云原生部署模式集群增强版实例类型、GeminiDB Cassandra经典部署模式实例类型、GeminiDB兼容DynamoDB实例类型支持。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+        /// </summary>
+        [JsonProperty("disk_encryption_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DiskEncryptionId { get; set; }
+
+        /// <summary>
+        /// **参数解释：** &#39;参数模板ID。&#39; **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("configuration_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ConfigurationId { get; set; }
@@ -95,19 +101,19 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public BackupStrategyOption BackupStrategy { get; set; }
 
         /// <summary>
-        /// 企业项目ID。
+        /// **参数解释：** &#39;企业项目ID。&#39; **约束限制：**   -对于未开通企业多项目服务的用户，不传该参数。   -对于已开通企业多项目服务的用户，不传该参数时，表示为default企业项目。获取方式请参见《企业管理API参考》的“查询企业项目列表”响应消息表“enterprise_project字段数据结构说明”的“id”。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 专属资源ID，只有开通专属资源池后才可以下发此参数。
+        /// **参数解释：** &#39;专属资源ID。&#39; **约束限制：** 只有开通专属资源池后才可以下发此参数。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("dedicated_resource_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DedicatedResourceId { get; set; }
 
         /// <summary>
-        /// SSL开关选项。 取值： - 取“0”，表示DDS实例默认不启用SSL连接。 - 取“1”，表示DDS实例默认启用SSL连接。 - 不传该参数时，默认不启用SSL连接。
+        /// **参数解释：** SSL开关选项。 **约束限制：** 不涉及。 **取值范围：** - 取“0”，表示DDS实例默认不启用SSL连接。 - 取“1”，表示DDS实例默认启用SSL连接。 - 不传该参数时，默认不启用SSL连接。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("ssl_option", NullValueHandling = NullValueHandling.Ignore)]
         public string SslOption { get; set; }
@@ -125,7 +131,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public RestoreInfo RestoreInfo { get; set; }
 
         /// <summary>
-        /// 数据库访问端口号。 目前仅支持GeminiDB Redis实例支持自定义端口，取值范围为：1024~65535，禁用端口号为：2180、2887、3887、6377、6378、6380、8018、8079、8091、8479、8484、8999、12017、12333、50069。 不指定端口时，创建GeminiDB Redis实例的访问端口默认为6379。 如果该实例计划用于搭建双活容灾场景，请配置为8635端口。
+        /// **参数解释：** 数据库访问端口号。 **约束限制：** 目前仅支持GeminiDB Redis实例支持自定义端口，取值范围为：1024~65535，禁用端口号为：2180、2887、3887、6377、6378、6380、8018、8079、8091、8479、8484、8999、12017、12333、50069。  不指定端口时，创建GeminiDB Redis实例的访问端口默认为6379。  如果该实例计划用于搭建双活容灾场景，请配置为8635端口。 **取值范围：** 取值范围为：1024~65535，禁用端口号为：2180、2887、3887、6377、6378、6380、8018、8079、8091、8479、8484、8999、12017、12333、50069。 **默认取值：** 6379。
         /// </summary>
         [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
         public string Port { get; set; }
@@ -135,6 +141,12 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         [JsonProperty("availability_zone_detail", NullValueHandling = NullValueHandling.Ignore)]
         public AvailabilityZoneDetail AvailabilityZoneDetail { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("lb_access_control_settings", NullValueHandling = NullValueHandling.Ignore)]
+        public LbAccessControlSettings LbAccessControlSettings { get; set; }
 
 
 
@@ -156,6 +168,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             sb.Append("  mode: ").Append(Mode).Append("\n");
             sb.Append("  productType: ").Append(ProductType).Append("\n");
             sb.Append("  flavor: ").Append(Flavor).Append("\n");
+            sb.Append("  diskEncryptionId: ").Append(DiskEncryptionId).Append("\n");
             sb.Append("  configurationId: ").Append(ConfigurationId).Append("\n");
             sb.Append("  backupStrategy: ").Append(BackupStrategy).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
@@ -165,6 +178,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             sb.Append("  restoreInfo: ").Append(RestoreInfo).Append("\n");
             sb.Append("  port: ").Append(Port).Append("\n");
             sb.Append("  availabilityZoneDetail: ").Append(AvailabilityZoneDetail).Append("\n");
+            sb.Append("  lbAccessControlSettings: ").Append(LbAccessControlSettings).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -194,6 +208,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             if (this.Mode != input.Mode || (this.Mode != null && !this.Mode.Equals(input.Mode))) return false;
             if (this.ProductType != input.ProductType || (this.ProductType != null && !this.ProductType.Equals(input.ProductType))) return false;
             if (this.Flavor != input.Flavor || (this.Flavor != null && input.Flavor != null && !this.Flavor.SequenceEqual(input.Flavor))) return false;
+            if (this.DiskEncryptionId != input.DiskEncryptionId || (this.DiskEncryptionId != null && !this.DiskEncryptionId.Equals(input.DiskEncryptionId))) return false;
             if (this.ConfigurationId != input.ConfigurationId || (this.ConfigurationId != null && !this.ConfigurationId.Equals(input.ConfigurationId))) return false;
             if (this.BackupStrategy != input.BackupStrategy || (this.BackupStrategy != null && !this.BackupStrategy.Equals(input.BackupStrategy))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
@@ -203,6 +218,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             if (this.RestoreInfo != input.RestoreInfo || (this.RestoreInfo != null && !this.RestoreInfo.Equals(input.RestoreInfo))) return false;
             if (this.Port != input.Port || (this.Port != null && !this.Port.Equals(input.Port))) return false;
             if (this.AvailabilityZoneDetail != input.AvailabilityZoneDetail || (this.AvailabilityZoneDetail != null && !this.AvailabilityZoneDetail.Equals(input.AvailabilityZoneDetail))) return false;
+            if (this.LbAccessControlSettings != input.LbAccessControlSettings || (this.LbAccessControlSettings != null && !this.LbAccessControlSettings.Equals(input.LbAccessControlSettings))) return false;
 
             return true;
         }
@@ -226,6 +242,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                 if (this.Mode != null) hashCode = hashCode * 59 + this.Mode.GetHashCode();
                 if (this.ProductType != null) hashCode = hashCode * 59 + this.ProductType.GetHashCode();
                 if (this.Flavor != null) hashCode = hashCode * 59 + this.Flavor.GetHashCode();
+                if (this.DiskEncryptionId != null) hashCode = hashCode * 59 + this.DiskEncryptionId.GetHashCode();
                 if (this.ConfigurationId != null) hashCode = hashCode * 59 + this.ConfigurationId.GetHashCode();
                 if (this.BackupStrategy != null) hashCode = hashCode * 59 + this.BackupStrategy.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
@@ -235,6 +252,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                 if (this.RestoreInfo != null) hashCode = hashCode * 59 + this.RestoreInfo.GetHashCode();
                 if (this.Port != null) hashCode = hashCode * 59 + this.Port.GetHashCode();
                 if (this.AvailabilityZoneDetail != null) hashCode = hashCode * 59 + this.AvailabilityZoneDetail.GetHashCode();
+                if (this.LbAccessControlSettings != null) hashCode = hashCode * 59 + this.LbAccessControlSettings.GetHashCode();
                 return hashCode;
             }
         }

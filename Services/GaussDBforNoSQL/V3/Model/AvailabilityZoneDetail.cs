@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
     {
 
         /// <summary>
-        /// 主可用区，应为单可用区且和备可用区不同
+        /// **参数解释：** 主可用区，应为单可用区且和备可用区不同。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("primary_availability_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string PrimaryAvailabilityZone { get; set; }
 
         /// <summary>
-        /// 备可用区，应为单可用区且和主可用区不同
+        /// **参数解释：** 备可用区，应为单可用区且和主可用区不同。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("secondary_availability_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string SecondaryAvailabilityZone { get; set; }

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
     {
 
         /// <summary>
-        /// 单台服务器最大的链接会话数。
+        /// 单台服务器最大的连接会话数。
         /// </summary>
         [JsonProperty("max_session", NullValueHandling = NullValueHandling.Ignore)]
         public int? MaxSession { get; set; }

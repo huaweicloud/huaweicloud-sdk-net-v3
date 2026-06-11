@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("statement", NullValueHandling = NullValueHandling.Ignore)]
-        public PolicyStatement Statement { get; set; }
+        public AuthorizeObsPolicyStatement Statement { get; set; }
 
 
 

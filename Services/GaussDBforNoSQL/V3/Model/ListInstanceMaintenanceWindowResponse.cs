@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
     {
 
         /// <summary>
-        /// 参数解释： 实例的可维护时间窗。
+        /// **参数解释：** 实例的可维护时间窗。
         /// </summary>
         [JsonProperty("maintenance_window", NullValueHandling = NullValueHandling.Ignore)]
         public string MaintenanceWindow { get; set; }

@@ -23,13 +23,13 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public int? CpuUsageThreshold { get; set; }
 
         /// <summary>
-        /// 分组的总mem使用率(达到改阈值后扩容)。
+        /// 分组的总mem使用率(达到该阈值后扩容)。
         /// </summary>
         [JsonProperty("mem_usage_threshold", NullValueHandling = NullValueHandling.Ignore)]
         public int? MemUsageThreshold { get; set; }
 
         /// <summary>
-        /// 分组的总显存使用率(达到改阈值后扩容)。
+        /// 分组的总显存使用率(达到该阈值后扩容)。
         /// </summary>
         [JsonProperty("gpu_usage_threshold", NullValueHandling = NullValueHandling.Ignore)]
         public int? GpuUsageThreshold { get; set; }

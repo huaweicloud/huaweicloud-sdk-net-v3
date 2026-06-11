@@ -54,7 +54,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("route_policy", NullValueHandling = NullValueHandling.Ignore)]
-        public RoutePolicy RoutePolicy { get; set; }
+        public RoutePolicyDetail RoutePolicy { get; set; }
 
         /// <summary>
         /// 产品ID。 &gt; - 获取方式详见产品套餐管理ListProduct：\&quot;GET  /v1/{project_id}/product\&quot;。
@@ -104,7 +104,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string ClusterId { get; set; }
 
         /// <summary>
-        /// 可用分区。 &gt; - 将服务创建到指定的可用分区，如果不指定则使用系统随机的可用分区。 &gt; - 获取方式详见可用区管理ListAvailabilityZone：\&quot;GET  /v1/{project_id}/availability-zone\&quot;。
+        /// 可用分区。 &gt; - 将服务创建到指定的可用分区，如果不指定则使用系统随机的可用分区，如果不存在中心站点，则必须指定availability_zone。 &gt; - 获取方式详见可用区管理ListAvailabilityZone：\&quot;GET  /v1/{project_id}/availability-zone\&quot;。
         /// </summary>
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string AvailabilityZone { get; set; }

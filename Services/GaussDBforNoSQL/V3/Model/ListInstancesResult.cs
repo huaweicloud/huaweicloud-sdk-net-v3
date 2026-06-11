@@ -11,37 +11,37 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
 {
     /// <summary>
-    /// 实例信息。
+    /// **参数解释：** 实例信息。 **取值范围：** 不涉及。
     /// </summary>
     public class ListInstancesResult 
     {
 
         /// <summary>
-        /// 实例ID。
+        /// **参数解释：** 实例ID。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 实例名称。
+        /// **参数解释：** 实例名称。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 实例状态。 取值： - normal，表示实例正常。 - abnormal，表示实例异常。 - creating，表示实例创建中。 - frozen，表示实例被冻结。 - data_disk_full，表示实例磁盘已满。 - createfail，表示实例创建失败。 - enlargefail，表示实例扩容节点个数失败。
+        /// **参数解释：** 实例状态。 **取值范围：** - normal，表示实例正常。 - abnormal，表示实例异常。 - creating，表示实例创建中。 - frozen，表示实例被冻结。 - data_disk_full，表示实例磁盘已满。 - createfail，表示实例创建失败。 - enlargefail，表示实例扩容节点个数失败。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 数据库端口。
+        /// **参数解释：** 数据库端口。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
         public string Port { get; set; }
 
         /// <summary>
-        /// 实例所在区域。
+        /// **参数解释：** 实例所在区域。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("region", NullValueHandling = NullValueHandling.Ignore)]
         public string Region { get; set; }
@@ -53,55 +53,55 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public ListInstancesDatastoreResult Datastore { get; set; }
 
         /// <summary>
-        /// 实例类型。与请求参数相同。
+        /// **参数解释：** 实例类型。 **取值范围：** 与请求参数相同。
         /// </summary>
         [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
         public string Mode { get; set; }
 
         /// <summary>
-        /// 产品类型。 GeminiDB Redis云原生部署模式集群涉及此字段，取值：   -  Standard 标准型   -  Capacity 容量型
+        /// **参数解释：** 产品类型。 **取值范围：** GeminiDB Redis云原生部署模式集群涉及此字段，取值：   -  Standard 标准型   -  Capacity 容量型
         /// </summary>
         [JsonProperty("product_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductType { get; set; }
 
         /// <summary>
-        /// 存储引擎。取值为“rocksDB”。
+        /// **参数解释：** 存储引擎。 **取值范围：** 取值为“rocksDB”。
         /// </summary>
         [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]
         public string Engine { get; set; }
 
         /// <summary>
-        /// 实例创建时间。
+        /// **参数解释：** 实例创建时间。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("created", NullValueHandling = NullValueHandling.Ignore)]
         public string Created { get; set; }
 
         /// <summary>
-        /// 实例操作最新变更的时间。
+        /// **参数解释：** 实例操作最新变更的时间。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("updated", NullValueHandling = NullValueHandling.Ignore)]
         public string Updated { get; set; }
 
         /// <summary>
-        /// 默认用户名。取值为“rwuser”。
+        /// **参数解释：** 默认用户名。 **取值范围：** 取值为“rwuser”。
         /// </summary>
         [JsonProperty("db_user_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DbUserName { get; set; }
 
         /// <summary>
-        /// 虚拟私有云ID。
+        /// **参数解释：** 虚拟私有云ID。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VpcId { get; set; }
 
         /// <summary>
-        /// 子网ID。
+        /// **参数解释：** 子网ID。 **取值范围：** GeminiDB Cassandra 实例使用多个子网的场景，请参见表 ListInstancesNodeResult字段数据结构说明中的“subnet_id”。
         /// </summary>
         [JsonProperty("subnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetId { get; set; }
 
         /// <summary>
-        /// 安全组ID。
+        /// **参数解释：** 安全组ID。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("security_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SecurityGroupId { get; set; }
@@ -113,64 +113,76 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public ListInstancesBackupStrategyResult BackupStrategy { get; set; }
 
         /// <summary>
-        /// 计费方式。 - 取值为“0”，表示按需计费。 - 取值为“1”，表示包年/包月计费。
+        /// **参数解释：** 计费方式。 **取值范围：** - 取值为“0”，表示按需计费。 - 取值为“1”，表示包年/包月计费。
         /// </summary>
         [JsonProperty("pay_mode", NullValueHandling = NullValueHandling.Ignore)]
         public string PayMode { get; set; }
 
         /// <summary>
-        /// 系统可维护时间窗。
+        /// **参数解释：** 系统可维护时间窗。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("maintenance_window", NullValueHandling = NullValueHandling.Ignore)]
         public string MaintenanceWindow { get; set; }
 
         /// <summary>
-        /// 组信息。
+        /// **参数解释：** 组信息。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("groups", NullValueHandling = NullValueHandling.Ignore)]
         public List<ListInstancesGroupResult> Groups { get; set; }
 
         /// <summary>
-        /// 企业项目ID。取值为“0”，表示为default企业项目。
+        /// **参数解释：** 企业项目ID。 **取值范围：** 取值为“0”，表示为default企业项目。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 专属资源ID，只有数据库实例属于专属资源池才会返回该参数。
+        /// **参数解释：** 专属资源ID。只有数据库实例属于专属资源池才会返回该参数。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("dedicated_resource_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DedicatedResourceId { get; set; }
 
         /// <summary>
-        /// 时区。
+        /// **参数解释：** 时区。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("time_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string TimeZone { get; set; }
 
         /// <summary>
-        /// 实例正在执行的动作。
+        /// **参数解释：** 实例正在执行的动作。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("actions", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Actions { get; set; }
 
         /// <summary>
-        /// 负载均衡ip，只有存在负载均衡ip，才会返回该参数。
+        /// **参数解释：** 磁盘加密时的密钥ID。 **取值范围：** 不涉及。
+        /// </summary>
+        [JsonProperty("disk_encryption_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DiskEncryptionId { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 负载均衡ip。 **取值范围：** 只有存在负载均衡ip，才会返回该参数。
         /// </summary>
         [JsonProperty("lb_ip_address", NullValueHandling = NullValueHandling.Ignore)]
         public string LbIpAddress { get; set; }
 
         /// <summary>
-        /// 负载均衡端口，只有存在负载均衡ip，才会返回该参数。
+        /// **参数解释：** 负载均衡端口。 **取值范围：** 只有存在负载均衡ip，才会返回该参数。
         /// </summary>
         [JsonProperty("lb_port", NullValueHandling = NullValueHandling.Ignore)]
         public string LbPort { get; set; }
 
         /// <summary>
-        /// 实例可用区。
+        /// **参数解释：** 实例可用区。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string AvailabilityZone { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 容灾实例ID。 **取值范围：** 不涉及。
+        /// </summary>
+        [JsonProperty("dr_instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DrInstanceId { get; set; }
 
         /// <summary>
         /// 
@@ -179,10 +191,22 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public DualActiveInfo DualActiveInfo { get; set; }
 
         /// <summary>
-        /// 参数解释： SSL安全连接启用情况。 取值范围： - 取值为“0”表示未启用。 - 取值为“1”表示已启用。
+        /// 
+        /// </summary>
+        [JsonProperty("ccm_cert_info", NullValueHandling = NullValueHandling.Ignore)]
+        public CertInfoOption CcmCertInfo { get; set; }
+
+        /// <summary>
+        /// **参数解释：** SSL安全连接启用情况。 **取值范围：** - 取值为“0”表示未启用。 - 取值为“1”表示已启用。
         /// </summary>
         [JsonProperty("ssl", NullValueHandling = NullValueHandling.Ignore)]
         public string Ssl { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("backup_space_usage", NullValueHandling = NullValueHandling.Ignore)]
+        public BackupSpaceUsage BackupSpaceUsage { get; set; }
 
 
 
@@ -216,11 +240,15 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             sb.Append("  dedicatedResourceId: ").Append(DedicatedResourceId).Append("\n");
             sb.Append("  timeZone: ").Append(TimeZone).Append("\n");
             sb.Append("  actions: ").Append(Actions).Append("\n");
+            sb.Append("  diskEncryptionId: ").Append(DiskEncryptionId).Append("\n");
             sb.Append("  lbIpAddress: ").Append(LbIpAddress).Append("\n");
             sb.Append("  lbPort: ").Append(LbPort).Append("\n");
             sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
+            sb.Append("  drInstanceId: ").Append(DrInstanceId).Append("\n");
             sb.Append("  dualActiveInfo: ").Append(DualActiveInfo).Append("\n");
+            sb.Append("  ccmCertInfo: ").Append(CcmCertInfo).Append("\n");
             sb.Append("  ssl: ").Append(Ssl).Append("\n");
+            sb.Append("  backupSpaceUsage: ").Append(BackupSpaceUsage).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -262,11 +290,15 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             if (this.DedicatedResourceId != input.DedicatedResourceId || (this.DedicatedResourceId != null && !this.DedicatedResourceId.Equals(input.DedicatedResourceId))) return false;
             if (this.TimeZone != input.TimeZone || (this.TimeZone != null && !this.TimeZone.Equals(input.TimeZone))) return false;
             if (this.Actions != input.Actions || (this.Actions != null && input.Actions != null && !this.Actions.SequenceEqual(input.Actions))) return false;
+            if (this.DiskEncryptionId != input.DiskEncryptionId || (this.DiskEncryptionId != null && !this.DiskEncryptionId.Equals(input.DiskEncryptionId))) return false;
             if (this.LbIpAddress != input.LbIpAddress || (this.LbIpAddress != null && !this.LbIpAddress.Equals(input.LbIpAddress))) return false;
             if (this.LbPort != input.LbPort || (this.LbPort != null && !this.LbPort.Equals(input.LbPort))) return false;
             if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
+            if (this.DrInstanceId != input.DrInstanceId || (this.DrInstanceId != null && !this.DrInstanceId.Equals(input.DrInstanceId))) return false;
             if (this.DualActiveInfo != input.DualActiveInfo || (this.DualActiveInfo != null && !this.DualActiveInfo.Equals(input.DualActiveInfo))) return false;
+            if (this.CcmCertInfo != input.CcmCertInfo || (this.CcmCertInfo != null && !this.CcmCertInfo.Equals(input.CcmCertInfo))) return false;
             if (this.Ssl != input.Ssl || (this.Ssl != null && !this.Ssl.Equals(input.Ssl))) return false;
+            if (this.BackupSpaceUsage != input.BackupSpaceUsage || (this.BackupSpaceUsage != null && !this.BackupSpaceUsage.Equals(input.BackupSpaceUsage))) return false;
 
             return true;
         }
@@ -302,11 +334,15 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                 if (this.DedicatedResourceId != null) hashCode = hashCode * 59 + this.DedicatedResourceId.GetHashCode();
                 if (this.TimeZone != null) hashCode = hashCode * 59 + this.TimeZone.GetHashCode();
                 if (this.Actions != null) hashCode = hashCode * 59 + this.Actions.GetHashCode();
+                if (this.DiskEncryptionId != null) hashCode = hashCode * 59 + this.DiskEncryptionId.GetHashCode();
                 if (this.LbIpAddress != null) hashCode = hashCode * 59 + this.LbIpAddress.GetHashCode();
                 if (this.LbPort != null) hashCode = hashCode * 59 + this.LbPort.GetHashCode();
                 if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
+                if (this.DrInstanceId != null) hashCode = hashCode * 59 + this.DrInstanceId.GetHashCode();
                 if (this.DualActiveInfo != null) hashCode = hashCode * 59 + this.DualActiveInfo.GetHashCode();
+                if (this.CcmCertInfo != null) hashCode = hashCode * 59 + this.CcmCertInfo.GetHashCode();
                 if (this.Ssl != null) hashCode = hashCode * 59 + this.Ssl.GetHashCode();
+                if (this.BackupSpaceUsage != null) hashCode = hashCode * 59 + this.BackupSpaceUsage.GetHashCode();
                 return hashCode;
             }
         }

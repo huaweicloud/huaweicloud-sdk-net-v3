@@ -143,7 +143,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         [JsonProperty("account_type", NullValueHandling = NullValueHandling.Ignore)]
         public AccountTypeEnum AccountType { get; set; }
         /// <summary>
-        /// 域名城。
+        /// 域名称。
         /// </summary>
         [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
         public string Domain { get; set; }

@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
     {
 
         /// <summary>
-        /// 总记录数。
+        /// **参数解释：** 总记录数。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("total_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? TotalCount { get; set; }
 
         /// <summary>
-        /// 实例信息。
+        /// **参数解释：** 实例信息。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("instances", NullValueHandling = NullValueHandling.Ignore)]
         public List<RecycleInstance> Instances { get; set; }

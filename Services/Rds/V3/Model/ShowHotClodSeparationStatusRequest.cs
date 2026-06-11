@@ -8,25 +8,27 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
+namespace HuaweiCloud.SDK.Rds.V3.Model
 {
     /// <summary>
-    /// 
+    /// Request Object
     /// </summary>
-    public class SwitchoverRatioInfo 
+    public class ShowHotClodSeparationStatusRequest 
     {
 
         /// <summary>
-        /// 实例ID。
+        /// 实例ID
         /// </summary>
+        [SDKProperty("instance_id", IsPath = true)]
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 容灾切换的故障节点比例，下限是50，步长是10，最大是100，默认为100。
+        /// 语言。默认en-us。
         /// </summary>
-        [JsonProperty("switchover_ratio", NullValueHandling = NullValueHandling.Ignore)]
-        public int? SwitchoverRatio { get; set; }
+        [SDKProperty("X-Language", IsHeader = true)]
+        [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
+        public string XLanguage { get; set; }
 
 
 
@@ -36,9 +38,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class SwitchoverRatioInfo {\n");
+            sb.Append("class ShowHotClodSeparationStatusRequest {\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
-            sb.Append("  switchoverRatio: ").Append(SwitchoverRatio).Append("\n");
+            sb.Append("  xLanguage: ").Append(XLanguage).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -48,17 +50,17 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as SwitchoverRatioInfo);
+            return this.Equals(input as ShowHotClodSeparationStatusRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(SwitchoverRatioInfo input)
+        public bool Equals(ShowHotClodSeparationStatusRequest input)
         {
             if (input == null) return false;
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
-            if (this.SwitchoverRatio != input.SwitchoverRatio || (this.SwitchoverRatio != null && !this.SwitchoverRatio.Equals(input.SwitchoverRatio))) return false;
+            if (this.XLanguage != input.XLanguage || (this.XLanguage != null && !this.XLanguage.Equals(input.XLanguage))) return false;
 
             return true;
         }
@@ -72,7 +74,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             {
                 var hashCode = 41;
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.SwitchoverRatio != null) hashCode = hashCode * 59 + this.SwitchoverRatio.GetHashCode();
+                if (this.XLanguage != null) hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
                 return hashCode;
             }
         }

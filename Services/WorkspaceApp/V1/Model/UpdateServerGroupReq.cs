@@ -32,7 +32,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("route_policy", NullValueHandling = NullValueHandling.Ignore)]
-        public RoutePolicy RoutePolicy { get; set; }
+        public RoutePolicyDetail RoutePolicy { get; set; }
 
         /// <summary>
         /// 

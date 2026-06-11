@@ -176,7 +176,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("product_info", NullValueHandling = NullValueHandling.Ignore)]
-        public ProductInfo ProductInfo { get; set; }
+        public ServerProductInfo ProductInfo { get; set; }
 
         /// <summary>
         /// 子网名称。

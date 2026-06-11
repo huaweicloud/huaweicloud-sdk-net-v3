@@ -32,7 +32,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 产品列表。
         /// </summary>
         [JsonProperty("products", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ProductInfo> Products { get; set; }
+        public List<ProductDetailInfo> Products { get; set; }
 
 
 

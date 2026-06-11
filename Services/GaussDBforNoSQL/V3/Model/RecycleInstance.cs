@@ -17,25 +17,25 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
     {
 
         /// <summary>
-        /// 实例ID。
+        /// **参数解释：** 实例ID。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 实例名称。
+        /// **参数解释：** 实例名称。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 实例类型。   - 取值为“Cluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis Proxy经典部署模式集群实例类型。   - 取值为“CloudNativeCluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis云原生部署模式集群实例类型。   - 取值为“RedisCluster”，表示GeminiDB Redis Cluster经典部署模式集群实例类型。   - 取值为“Replication”，表示GeminiDB Redis经典部署模式主备实例类型。   - 取值为“InfluxdbSingle”，表示GeminiDB Influx经典部署模式单节点实例类型。   - 取值为“ReplicaSet”，表示GeminiDB Mongo副本集实例类型。
+        /// **参数解释：** 实例类型。 **取值范围：** - 取值为“Cluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis Proxy经典部署模式集群实例类型。 - 取值为“CloudNativeCluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis云原生部署模式集群实例类型。 - 取值为“RedisCluster”，表示GeminiDB Redis Cluster经典部署模式集群实例类型。 - 取值为“Replication”，表示GeminiDB Redis经典部署模式主备实例类型。 - 取值为“InfluxdbSingle”，表示GeminiDB Influx经典部署模式单节点实例类型。 - 取值为“ReplicaSet”，表示GeminiDB Mongo副本集实例类型。
         /// </summary>
         [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
         public string Mode { get; set; }
 
         /// <summary>
-        /// 产品类型。 GeminiDB Redis云原生部署模式集群涉及此字段，取值：   -  Standard 标准型   -  Capacity 容量型
+        /// **参数解释：** 产品类型。 **取值范围：** GeminiDB Redis云原生部署模式集群涉及此字段，取值：   -  Standard 标准型   -  Capacity 容量型
         /// </summary>
         [JsonProperty("product_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductType { get; set; }
@@ -43,41 +43,41 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("datastore", NullValueHandling = NullValueHandling.Ignore)]
-        public RecycleDatastore Datastore { get; set; }
+        [JsonProperty("data_store", NullValueHandling = NullValueHandling.Ignore)]
+        public RecycleDatastore DataStore { get; set; }
 
         /// <summary>
-        /// 计费方式。 计费方式。   - prePaid：预付费，即包年/包月。   - postPaid：后付费，即按需付费。
+        /// **参数解释：** 计费方式。 **取值范围：** - prePaid：预付费，即包年/包月。 - postPaid：后付费，即按需付费。
         /// </summary>
-        [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
-        public string ChargeMode { get; set; }
+        [JsonProperty("charge_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string ChargeType { get; set; }
 
         /// <summary>
-        /// 企业项目ID，取值为“0”，表示为default企业项目
+        /// **参数解释：** 企业项目ID，取值为“0”，表示为default企业项目 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 备份ID。
+        /// **参数解释：** 备份ID。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("backup_id", NullValueHandling = NullValueHandling.Ignore)]
         public string BackupId { get; set; }
 
         /// <summary>
-        /// 实例创建时间。
+        /// **参数解释：** 实例创建时间。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedAt { get; set; }
 
         /// <summary>
-        /// 实例删除时间。
+        /// **参数解释：** 实例删除时间。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("deleted_at", NullValueHandling = NullValueHandling.Ignore)]
         public string DeletedAt { get; set; }
 
         /// <summary>
-        /// 回收备份保留截止时间。
+        /// **参数解释：** 回收备份保留截止时间。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("retained_until", NullValueHandling = NullValueHandling.Ignore)]
         public string RetainedUntil { get; set; }
@@ -95,8 +95,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  mode: ").Append(Mode).Append("\n");
             sb.Append("  productType: ").Append(ProductType).Append("\n");
-            sb.Append("  datastore: ").Append(Datastore).Append("\n");
-            sb.Append("  chargeMode: ").Append(ChargeMode).Append("\n");
+            sb.Append("  dataStore: ").Append(DataStore).Append("\n");
+            sb.Append("  chargeType: ").Append(ChargeType).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  backupId: ").Append(BackupId).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
@@ -124,8 +124,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Mode != input.Mode || (this.Mode != null && !this.Mode.Equals(input.Mode))) return false;
             if (this.ProductType != input.ProductType || (this.ProductType != null && !this.ProductType.Equals(input.ProductType))) return false;
-            if (this.Datastore != input.Datastore || (this.Datastore != null && !this.Datastore.Equals(input.Datastore))) return false;
-            if (this.ChargeMode != input.ChargeMode || (this.ChargeMode != null && !this.ChargeMode.Equals(input.ChargeMode))) return false;
+            if (this.DataStore != input.DataStore || (this.DataStore != null && !this.DataStore.Equals(input.DataStore))) return false;
+            if (this.ChargeType != input.ChargeType || (this.ChargeType != null && !this.ChargeType.Equals(input.ChargeType))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.BackupId != input.BackupId || (this.BackupId != null && !this.BackupId.Equals(input.BackupId))) return false;
             if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
@@ -147,8 +147,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Mode != null) hashCode = hashCode * 59 + this.Mode.GetHashCode();
                 if (this.ProductType != null) hashCode = hashCode * 59 + this.ProductType.GetHashCode();
-                if (this.Datastore != null) hashCode = hashCode * 59 + this.Datastore.GetHashCode();
-                if (this.ChargeMode != null) hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
+                if (this.DataStore != null) hashCode = hashCode * 59 + this.DataStore.GetHashCode();
+                if (this.ChargeType != null) hashCode = hashCode * 59 + this.ChargeType.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.BackupId != null) hashCode = hashCode * 59 + this.BackupId.GetHashCode();
                 if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();

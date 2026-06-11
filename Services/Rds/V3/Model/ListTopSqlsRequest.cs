@@ -145,6 +145,13 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
         public XLanguageEnum XLanguage { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("offset", IsQuery = true)]
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Offset { get; set; }
+
+        /// <summary>
         /// 排序字段: avg_cpu_time:平均CPU耗时 total_cpu_time：总CPU耗时 total_duration_time：总执行时间 avg_duration_time：平均执行时间 total_rows：总行数 avg_rows：平均行数 total_logical_reads：总逻辑读 avg_logical_reads：平均逻辑读
         /// </summary>
         [SDKProperty("sort_key", IsQuery = true)]
@@ -183,6 +190,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("class ListTopSqlsRequest {\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  xLanguage: ").Append(XLanguage).Append("\n");
+            sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  sortKey: ").Append(SortKey).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  statement: ").Append(Statement).Append("\n");
@@ -207,6 +215,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             if (input == null) return false;
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
             if (this.XLanguage != input.XLanguage) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.SortKey != input.SortKey || (this.SortKey != null && !this.SortKey.Equals(input.SortKey))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Statement != input.Statement || (this.Statement != null && !this.Statement.Equals(input.Statement))) return false;
@@ -225,6 +234,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                 var hashCode = 41;
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.SortKey != null) hashCode = hashCode * 59 + this.SortKey.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Statement != null) hashCode = hashCode * 59 + this.Statement.GetHashCode();

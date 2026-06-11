@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 任务明细信息列表，返回列表条目数量上限为分页的最大上限值。
         /// </summary>
         [JsonProperty("items", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ImageJobDetailInfo> Items { get; set; }
+        public List<SubJobDetailInfo> Items { get; set; }
 
 
 

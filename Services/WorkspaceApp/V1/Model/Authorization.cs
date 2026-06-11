@@ -77,7 +77,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public PlatformTypeEnum? PlatformType { get; set; }
 
         /// <summary>
-        /// 域名城。
+        /// 域名称。
         /// </summary>
         [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
         public string Domain { get; set; }

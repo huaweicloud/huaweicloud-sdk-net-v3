@@ -35,7 +35,31 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// Enum DELETE_SERVER for value: DELETE_SERVER
         /// </summary>
         [EnumMember(Value = "DELETE_SERVER")]
-        DELETE_SERVER = 3
+        DELETE_SERVER = 3,
+
+        /// <summary>
+        /// Enum BUILD_IMAGE for value: BUILD_IMAGE
+        /// </summary>
+        [EnumMember(Value = "BUILD_IMAGE")]
+        BUILD_IMAGE = 4,
+
+        /// <summary>
+        /// Enum GENERATE_IMAGE for value: GENERATE_IMAGE
+        /// </summary>
+        [EnumMember(Value = "GENERATE_IMAGE")]
+        GENERATE_IMAGE = 5,
+
+        /// <summary>
+        /// Enum DELETE_IMAGE_BUILD_SERVER for value: DELETE_IMAGE_BUILD_SERVER
+        /// </summary>
+        [EnumMember(Value = "DELETE_IMAGE_BUILD_SERVER")]
+        DELETE_IMAGE_BUILD_SERVER = 6,
+
+        /// <summary>
+        /// Enum DELETE_IMAGE for value: DELETE_IMAGE
+        /// </summary>
+        [EnumMember(Value = "DELETE_IMAGE")]
+        DELETE_IMAGE = 7
 
     }
 

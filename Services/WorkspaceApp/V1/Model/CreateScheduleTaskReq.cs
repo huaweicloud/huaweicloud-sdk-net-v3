@@ -15,13 +15,139 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
     /// </summary>
     public class CreateScheduleTaskReq 
     {
+        /// <summary>
+        /// 执行周期类型，可选值为： - FIXED_TIME：指定时间。 - DAY：按天。 - WEEK：按周。 - MONTH：按月。
+        /// </summary>
+        /// <value>执行周期类型，可选值为： - FIXED_TIME：指定时间。 - DAY：按天。 - WEEK：按周。 - MONTH：按月。</value>
+        [JsonConverter(typeof(EnumClassConverter<ScheduledTypeEnum>))]
+        public class ScheduledTypeEnum
+        {
+            /// <summary>
+            /// Enum FIXED_TIME for value: FIXED_TIME
+            /// </summary>
+            public static readonly ScheduledTypeEnum FIXED_TIME = new ScheduledTypeEnum("FIXED_TIME");
+
+            /// <summary>
+            /// Enum DAY for value: DAY
+            /// </summary>
+            public static readonly ScheduledTypeEnum DAY = new ScheduledTypeEnum("DAY");
+
+            /// <summary>
+            /// Enum WEEK for value: WEEK
+            /// </summary>
+            public static readonly ScheduledTypeEnum WEEK = new ScheduledTypeEnum("WEEK");
+
+            /// <summary>
+            /// Enum MONTH for value: MONTH
+            /// </summary>
+            public static readonly ScheduledTypeEnum MONTH = new ScheduledTypeEnum("MONTH");
+
+            private static readonly Dictionary<string, ScheduledTypeEnum> StaticFields =
+            new Dictionary<string, ScheduledTypeEnum>()
+            {
+                { "FIXED_TIME", FIXED_TIME },
+                { "DAY", DAY },
+                { "WEEK", WEEK },
+                { "MONTH", MONTH },
+            };
+
+            private string _value;
+
+            public ScheduledTypeEnum()
+            {
+
+            }
+
+            public ScheduledTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static ScheduledTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ScheduledTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ScheduledTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(ScheduledTypeEnum a, ScheduledTypeEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ScheduledTypeEnum a, ScheduledTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
-        /// 
+        /// 执行周期类型，可选值为： - FIXED_TIME：指定时间。 - DAY：按天。 - WEEK：按周。 - MONTH：按月。
         /// </summary>
         [JsonProperty("scheduled_type", NullValueHandling = NullValueHandling.Ignore)]
-        public ScheduledTypeEnum? ScheduledType { get; set; }
-
+        public ScheduledTypeEnum ScheduledType { get; set; }
         /// <summary>
         /// 周期按天时：按x天间隔执行。
         /// </summary>
@@ -70,36 +196,6 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         [JsonProperty("expire_time", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? ExpireTime { get; set; }
 
-        /// <summary>
-        /// 任务名称，名称需满足如下规则: 1. 由中文，英文大小写，数字，_-组成，不能有空格。 2. 长度范围1~64个字符。
-        /// </summary>
-        [JsonProperty("task_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string TaskName { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("task_type", NullValueHandling = NullValueHandling.Ignore)]
-        public ScheduleTaskTypeEnum? TaskType { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("schedule_task_policy", NullValueHandling = NullValueHandling.Ignore)]
-        public ScheduleTaskPolicy ScheduleTaskPolicy { get; set; }
-
-        /// <summary>
-        /// 任务描述。
-        /// </summary>
-        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
-        public string Description { get; set; }
-
-        /// <summary>
-        /// 定时任务对象列表。
-        /// </summary>
-        [JsonProperty("target_infos", NullValueHandling = NullValueHandling.Ignore)]
-        public List<TargetInfo> TargetInfos { get; set; }
-
 
 
         /// <summary>
@@ -118,11 +214,6 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             sb.Append("  scheduledDate: ").Append(ScheduledDate).Append("\n");
             sb.Append("  scheduledTime: ").Append(ScheduledTime).Append("\n");
             sb.Append("  expireTime: ").Append(ExpireTime).Append("\n");
-            sb.Append("  taskName: ").Append(TaskName).Append("\n");
-            sb.Append("  taskType: ").Append(TaskType).Append("\n");
-            sb.Append("  scheduleTaskPolicy: ").Append(ScheduleTaskPolicy).Append("\n");
-            sb.Append("  description: ").Append(Description).Append("\n");
-            sb.Append("  targetInfos: ").Append(TargetInfos).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -141,7 +232,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public bool Equals(CreateScheduleTaskReq input)
         {
             if (input == null) return false;
-            if (this.ScheduledType != input.ScheduledType || (this.ScheduledType != null && !this.ScheduledType.Equals(input.ScheduledType))) return false;
+            if (this.ScheduledType != input.ScheduledType) return false;
             if (this.DayInterval != input.DayInterval || (this.DayInterval != null && !this.DayInterval.Equals(input.DayInterval))) return false;
             if (this.WeekList != input.WeekList || (this.WeekList != null && !this.WeekList.Equals(input.WeekList))) return false;
             if (this.MonthList != input.MonthList || (this.MonthList != null && !this.MonthList.Equals(input.MonthList))) return false;
@@ -150,11 +241,6 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.ScheduledDate != input.ScheduledDate || (this.ScheduledDate != null && !this.ScheduledDate.Equals(input.ScheduledDate))) return false;
             if (this.ScheduledTime != input.ScheduledTime || (this.ScheduledTime != null && !this.ScheduledTime.Equals(input.ScheduledTime))) return false;
             if (this.ExpireTime != input.ExpireTime || (this.ExpireTime != null && !this.ExpireTime.Equals(input.ExpireTime))) return false;
-            if (this.TaskName != input.TaskName || (this.TaskName != null && !this.TaskName.Equals(input.TaskName))) return false;
-            if (this.TaskType != input.TaskType || (this.TaskType != null && !this.TaskType.Equals(input.TaskType))) return false;
-            if (this.ScheduleTaskPolicy != input.ScheduleTaskPolicy || (this.ScheduleTaskPolicy != null && !this.ScheduleTaskPolicy.Equals(input.ScheduleTaskPolicy))) return false;
-            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
-            if (this.TargetInfos != input.TargetInfos || (this.TargetInfos != null && input.TargetInfos != null && !this.TargetInfos.SequenceEqual(input.TargetInfos))) return false;
 
             return true;
         }
@@ -167,7 +253,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.ScheduledType != null) hashCode = hashCode * 59 + this.ScheduledType.GetHashCode();
+                hashCode = hashCode * 59 + this.ScheduledType.GetHashCode();
                 if (this.DayInterval != null) hashCode = hashCode * 59 + this.DayInterval.GetHashCode();
                 if (this.WeekList != null) hashCode = hashCode * 59 + this.WeekList.GetHashCode();
                 if (this.MonthList != null) hashCode = hashCode * 59 + this.MonthList.GetHashCode();
@@ -176,11 +262,6 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.ScheduledDate != null) hashCode = hashCode * 59 + this.ScheduledDate.GetHashCode();
                 if (this.ScheduledTime != null) hashCode = hashCode * 59 + this.ScheduledTime.GetHashCode();
                 if (this.ExpireTime != null) hashCode = hashCode * 59 + this.ExpireTime.GetHashCode();
-                if (this.TaskName != null) hashCode = hashCode * 59 + this.TaskName.GetHashCode();
-                if (this.TaskType != null) hashCode = hashCode * 59 + this.TaskType.GetHashCode();
-                if (this.ScheduleTaskPolicy != null) hashCode = hashCode * 59 + this.ScheduleTaskPolicy.GetHashCode();
-                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.TargetInfos != null) hashCode = hashCode * 59 + this.TargetInfos.GetHashCode();
                 return hashCode;
             }
         }

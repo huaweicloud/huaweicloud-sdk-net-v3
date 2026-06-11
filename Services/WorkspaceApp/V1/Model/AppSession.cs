@@ -101,7 +101,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string MachineName { get; set; }
 
         /// <summary>
-        /// 会话状态： - Active：运行中  - Disconnecte：断开连接 - AppcInit：初始化 - SignedOut：已注销 - InitFail：初始化失败
+        /// 会话状态： - Active：运行中  - Disconnected：断开连接 - AppcInit：初始化 - SignedOut：已注销 - InitFail：初始化失败
         /// </summary>
         [JsonProperty("session_state", NullValueHandling = NullValueHandling.Ignore)]
         public string SessionState { get; set; }

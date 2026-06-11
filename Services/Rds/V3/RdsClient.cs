@@ -543,6 +543,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 创建drs同步任务
+        ///
+        /// 创建drs同步任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateDrsJobTaskResponse CreateDrsJobTask(CreateDrsJobTaskRequest createDrsJobTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createDrsJobTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/drs-job/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDrsJobTaskRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateDrsJobTaskResponse>(response);
+        }
+
+        public SyncInvoker<CreateDrsJobTaskResponse> CreateDrsJobTaskInvoker(CreateDrsJobTaskRequest createDrsJobTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createDrsJobTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/drs-job/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDrsJobTaskRequest);
+            return new SyncInvoker<CreateDrsJobTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDrsJobTaskResponse>);
+        }
+        
+        /// <summary>
         /// 创建数据库实例
         ///
         /// 创建数据库实例。
@@ -1507,6 +1533,84 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/{engine}/instances/history/databases", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHistoryDatabaseRequest);
             return new SyncInvoker<ListHistoryDatabaseResponse>(this, "POST", request, JsonUtils.DeSerialize<ListHistoryDatabaseResponse>);
+        }
+        
+        /// <summary>
+        /// 查询历史会话
+        ///
+        /// 查询历史会话
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListHistorySessionsResponse ListHistorySessions(ListHistorySessionsRequest listHistorySessionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listHistorySessionsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/history-session", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHistorySessionsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListHistorySessionsResponse>(response);
+        }
+
+        public SyncInvoker<ListHistorySessionsResponse> ListHistorySessionsInvoker(ListHistorySessionsRequest listHistorySessionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listHistorySessionsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/history-session", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHistorySessionsRequest);
+            return new SyncInvoker<ListHistorySessionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListHistorySessionsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询历史TOP SQL（瞬时）
+        ///
+        /// 查询历史TOP SQL（瞬时）
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListHistoryTopSqlsResponse ListHistoryTopSqls(ListHistoryTopSqlsRequest listHistoryTopSqlsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listHistoryTopSqlsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/history-top-sql", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHistoryTopSqlsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListHistoryTopSqlsResponse>(response);
+        }
+
+        public SyncInvoker<ListHistoryTopSqlsResponse> ListHistoryTopSqlsInvoker(ListHistoryTopSqlsRequest listHistoryTopSqlsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listHistoryTopSqlsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/history-top-sql", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHistoryTopSqlsRequest);
+            return new SyncInvoker<ListHistoryTopSqlsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListHistoryTopSqlsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询历史等待事件
+        ///
+        /// 查询历史等待事件
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListHistoryWaitEventsResponse ListHistoryWaitEvents(ListHistoryWaitEventsRequest listHistoryWaitEventsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listHistoryWaitEventsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/history-wait-event", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHistoryWaitEventsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListHistoryWaitEventsResponse>(response);
+        }
+
+        public SyncInvoker<ListHistoryWaitEventsResponse> ListHistoryWaitEventsInvoker(ListHistoryWaitEventsRequest listHistoryWaitEventsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listHistoryWaitEventsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/history-wait-event", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHistoryWaitEventsRequest);
+            return new SyncInvoker<ListHistoryWaitEventsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListHistoryWaitEventsResponse>);
         }
         
         /// <summary>
@@ -3376,6 +3480,30 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 查询可用于搭建容灾的主实例或灾备实例
+        ///
+        /// 查询可用于搭建容灾的主实例或灾备实例。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowAvailableBuildDrInstanceResponse ShowAvailableBuildDrInstance(ShowAvailableBuildDrInstanceRequest showAvailableBuildDrInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/disaster-recovery-instance", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAvailableBuildDrInstanceRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowAvailableBuildDrInstanceResponse>(response);
+        }
+
+        public SyncInvoker<ShowAvailableBuildDrInstanceResponse> ShowAvailableBuildDrInstanceInvoker(ShowAvailableBuildDrInstanceRequest showAvailableBuildDrInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/disaster-recovery-instance", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAvailableBuildDrInstanceRequest);
+            return new SyncInvoker<ShowAvailableBuildDrInstanceResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAvailableBuildDrInstanceResponse>);
+        }
+        
+        /// <summary>
         /// 查询实例可升级的目标版本
         ///
         /// 查询实例可升级的目标版本
@@ -3631,6 +3759,84 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDrReplicaStatusRequest);
             return new SyncInvoker<ShowDrReplicaStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDrReplicaStatusResponse>);
+        }
+        
+        /// <summary>
+        /// 查询实例的drs任务名称
+        ///
+        /// 查询实例的drs任务名称
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowDrsJobNameResponse ShowDrsJobName(ShowDrsJobNameRequest showDrsJobNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showDrsJobNameRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/drs-job/name", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDrsJobNameRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowDrsJobNameResponse>(response);
+        }
+
+        public SyncInvoker<ShowDrsJobNameResponse> ShowDrsJobNameInvoker(ShowDrsJobNameRequest showDrsJobNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showDrsJobNameRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/drs-job/name", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDrsJobNameRequest);
+            return new SyncInvoker<ShowDrsJobNameResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDrsJobNameResponse>);
+        }
+        
+        /// <summary>
+        /// 查询历史会话分析的下载信息
+        ///
+        /// 查询历史会话分析的下载信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowHistorySessionAnalyseDownloadInfoResponse ShowHistorySessionAnalyseDownloadInfo(ShowHistorySessionAnalyseDownloadInfoRequest showHistorySessionAnalyseDownloadInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showHistorySessionAnalyseDownloadInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/history-session-analyse-upload", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHistorySessionAnalyseDownloadInfoRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowHistorySessionAnalyseDownloadInfoResponse>(response);
+        }
+
+        public SyncInvoker<ShowHistorySessionAnalyseDownloadInfoResponse> ShowHistorySessionAnalyseDownloadInfoInvoker(ShowHistorySessionAnalyseDownloadInfoRequest showHistorySessionAnalyseDownloadInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showHistorySessionAnalyseDownloadInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/history-session-analyse-upload", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHistorySessionAnalyseDownloadInfoRequest);
+            return new SyncInvoker<ShowHistorySessionAnalyseDownloadInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowHistorySessionAnalyseDownloadInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 查询冷热分离是否开启
+        ///
+        /// 查询冷热分离是否开启
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowHotClodSeparationStatusResponse ShowHotClodSeparationStatus(ShowHotClodSeparationStatusRequest showHotClodSeparationStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showHotClodSeparationStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/hot-cold-separation/status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHotClodSeparationStatusRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowHotClodSeparationStatusResponse>(response);
+        }
+
+        public SyncInvoker<ShowHotClodSeparationStatusResponse> ShowHotClodSeparationStatusInvoker(ShowHotClodSeparationStatusRequest showHotClodSeparationStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showHotClodSeparationStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/hot-cold-separation/status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHotClodSeparationStatusRequest);
+            return new SyncInvoker<ShowHotClodSeparationStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowHotClodSeparationStatusResponse>);
         }
         
         /// <summary>
@@ -3965,6 +4171,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tde-status", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTdeStatusRequest);
             return new SyncInvoker<ShowTdeStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTdeStatusResponse>);
+        }
+        
+        /// <summary>
+        /// 查询top对象
+        ///
+        /// 查询top对象
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowTopObjectsResponse ShowTopObjects(ShowTopObjectsRequest showTopObjectsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTopObjectsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ops/top/objects", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTopObjectsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowTopObjectsResponse>(response);
+        }
+
+        public SyncInvoker<ShowTopObjectsResponse> ShowTopObjectsInvoker(ShowTopObjectsRequest showTopObjectsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTopObjectsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ops/top/objects", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTopObjectsRequest);
+            return new SyncInvoker<ShowTopObjectsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTopObjectsResponse>);
         }
         
         /// <summary>
@@ -4850,6 +5082,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 上传历史会话分析
+        ///
+        /// 上传历史会话分析
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UploadHistorySessionAnalyaseResponse UploadHistorySessionAnalyase(UploadHistorySessionAnalyaseRequest uploadHistorySessionAnalyaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(uploadHistorySessionAnalyaseRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/history-session-analyse-upload", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", uploadHistorySessionAnalyaseRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<UploadHistorySessionAnalyaseResponse>(response);
+        }
+
+        public SyncInvoker<UploadHistorySessionAnalyaseResponse> UploadHistorySessionAnalyaseInvoker(UploadHistorySessionAnalyaseRequest uploadHistorySessionAnalyaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(uploadHistorySessionAnalyaseRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/history-session-analyse-upload", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", uploadHistorySessionAnalyaseRequest);
+            return new SyncInvoker<UploadHistorySessionAnalyaseResponse>(this, "POST", request, JsonUtils.DeSerialize<UploadHistorySessionAnalyaseResponse>);
+        }
+        
+        /// <summary>
         /// 查询API版本列表
         ///
         /// 查询API版本列表。
@@ -4921,6 +5179,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/rds/{version}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApiVersionRequest);
             return new SyncInvoker<ShowApiVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowApiVersionResponse>);
+        }
+        
+        /// <summary>
+        /// 获取msdtc本机信息
+        ///
+        /// 获取msdtc本机信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowMsdtcLocalHostResponse ShowMsdtcLocalHost(ShowMsdtcLocalHostRequest showMsdtcLocalHostRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showMsdtcLocalHostRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/msdtc/local-host", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMsdtcLocalHostRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowMsdtcLocalHostResponse>(response);
+        }
+
+        public SyncInvoker<ShowMsdtcLocalHostResponse> ShowMsdtcLocalHostInvoker(ShowMsdtcLocalHostRequest showMsdtcLocalHostRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showMsdtcLocalHostRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/msdtc/local-host", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMsdtcLocalHostRequest);
+            return new SyncInvoker<ShowMsdtcLocalHostResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowMsdtcLocalHostResponse>);
         }
         
         /// <summary>
@@ -6347,6 +6631,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/no-index-tables", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getInstancesNoIndexTablesRequest);
             return new SyncInvoker<GetInstancesNoIndexTablesResponse>(this, "GET", request, JsonUtils.DeSerialize<GetInstancesNoIndexTablesResponse>);
+        }
+        
+        /// <summary>
+        /// 触发审计日志轮转
+        ///
+        /// 触发审计日志轮转
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RotateAuditLogResponse RotateAuditLog(RotateAuditLogRequest rotateAuditLogRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(rotateAuditLogRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auditlog-rotate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rotateAuditLogRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<RotateAuditLogResponse>(response);
+        }
+
+        public SyncInvoker<RotateAuditLogResponse> RotateAuditLogInvoker(RotateAuditLogRequest rotateAuditLogRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(rotateAuditLogRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auditlog-rotate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rotateAuditLogRequest);
+            return new SyncInvoker<RotateAuditLogResponse>(this, "POST", request, JsonUtils.DeSerialize<RotateAuditLogResponse>);
         }
         
         /// <summary>

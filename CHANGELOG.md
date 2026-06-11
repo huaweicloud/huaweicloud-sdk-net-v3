@@ -1,3 +1,188 @@
+# 3.1.196 2026-06-11
+
+### HuaweiCloud SDK DDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `BatchDeleteShards`
+- _Bug Fix_
+  - None
+- _Change_
+  - **AddReadonlyNode**
+    - changes of request param
+      - `+ group_id`
+      - `+ availability_zone`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDisasterRecoverySettings**
+    - changes of response param
+      - `+ disaster_recovery_settings.sync_delay`
+      - `* disaster_recovery_settings: list<SwitchoverRatioInfo> -> list<QuerySwitchoverRatioInfo>`
+  - **SetDisasterRecoverySettings**
+    - changes of request param
+      - `+ disaster_recovery_settings.sync_delay`
+      - `* disaster_recovery_settings: list<SwitchoverRatioInfo> -> list<SetSwitchoverRatioInfo>`
+  - **ListRecycleInstances**
+    - changes of response param
+      - `+ instances.data_store`
+      - `+ instances.charge_type`
+      - `- instances.datastore`
+      - `- instances.charge_mode`
+  - **CreateInstance**
+    - changes of request param
+      - `+ disk_encryption_id`
+      - `+ lb_access_control_settings`
+  - **ListInstances**
+    - changes of response param
+      - `+ instances.disk_encryption_id`
+      - `+ instances.dr_instance_id`
+      - `+ instances.ccm_cert_info`
+      - `+ instances.backup_space_usage`
+      - `+ instances.dual_active_info.destination_instance_name`
+      - `+ instances.dual_active_info.destination_instance_node_num`
+      - `+ instances.dual_active_info.destination_instance_spec_code`
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `ShowMsdtcLocalHost`
+    - `ShowTopObjects`
+    - `CreateDrsJobTask`
+    - `ShowDrsJobName`
+    - `ShowHotClodSeparationStatus`
+    - `ShowAvailableBuildDrInstance`
+    - `ListHistorySessions`
+    - `ListHistoryTopSqls`
+    - `ListHistoryWaitEvents`
+    - `ShowHistorySessionAnalyseDownloadInfo`
+    - `UploadHistorySessionAnalyase`
+    - `RotateAuditLog`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListTopSqls**
+    - changes of request param
+      - `+ offset`
+
+### HuaweiCloud SDK WorkspaceApp
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the API `UploadAppIconRaw`
+- _Bug Fix_
+  - None
+- _Change_
+  - **AuthorizeObs**
+    - changes of response param
+      - `- roam_actions`
+      - `- actions`
+      - `- policy_statement_id`
+      - `+ policy.statement.effect`
+      - `+ policy.statement.action`
+      - `+ policy.statement.resource`
+      - `- policy.statement.policy_statement_id`
+      - `- policy.statement.actions`
+      - `- policy.statement.roam_actions`
+  - **ListSubJobs**
+    - changes of response param
+      - `+ items.error_code`
+      - `+ items.error_message`
+      - `- items.job_execute_info`
+      - `+ items.job_type: enum value [UPDATE_FREEZE_STATUS,REINSTALL_OS,CHANGE_SERVER_IMAGE,REJOIN_DOMAIN,MIGRATE_SERVER,UPGRADE_ACCESS_AGENT,UPDATE_SERVER_TSVI,SCHEDULED_TASK,COLLECT_HDA_LOG,COLLECT_APS_LOG,CREATE_SERVER_SNAPSHOT,DELETE_SERVER_SNAPSHOT,RESTORE_SERVER_SNAPSHOT,BATCH_INSTALL_APP,INSTALL_CES_AGENT,UNINSTALL_CES_AGENT]`
+      - `+ items.job_resource_info.cloud_service_type`
+      - `+ items.job_resource_info.resource_type`
+      - `+ items.job_resource_info.resource_spec_code`
+      - `+ items.job_resource_info.spec_type`
+      - `+ items.job_resource_info.spec_size`
+      - `+ items.job_resource_info.measure`
+      - `+ items.job_resource_info.processed_time`
+      - `+ items.job_resource_info.is_main_resource`
+      - `+ items.job_resource_info.main_resources`
+      - `+ items.job_resource_info.extend_params`
+      - `+ items.job_resource_info.old_resource_id`
+      - `+ items.job_resource_info.old_cloud_service_type`
+      - `+ items.job_resource_info.old_resource_type`
+      - `* items.job_resource_info: object<ImageJobResourceInfo> -> object<JobResourceInfo>`
+      - `* items: list<ImageJobDetailInfo> -> list<SubJobDetailInfo>`
+  - **ShowServer**
+    - changes of response param
+      - `- product_info.series_type`
+      - `* product_info: object<ProductInfo> -> object<ServerProductInfo>`
+  - **UpdateServerGroup**
+    - changes of request param
+      - `+ route_policy.gpu_threshold`
+      - `* route_policy: object<RoutePolicy> -> object<RoutePolicyDetail>`
+  - **ShowServerGroup**
+    - changes of response param
+      - `- product_info.series_type`
+      - `* product_info: object<ProductInfo> -> object<ServerProductInfo>`
+      - `+ route_policy.gpu_threshold`
+      - `* route_policy: object<RoutePolicy> -> object<RoutePolicyDetail>`
+  - **ListImageJobs**
+    - changes of response param
+      - `+ items.job_type: enum value [BUILD_IMAGE,GENERATE_IMAGE,DELETE_IMAGE_BUILD_SERVER,DELETE_IMAGE]`
+  - **ShowImageJob**
+    - changes of response param
+      - `+ job_type: enum value [BUILD_IMAGE,GENERATE_IMAGE,DELETE_IMAGE_BUILD_SERVER,DELETE_IMAGE]`
+  - **ListImageSubJobs**
+    - changes of response param
+      - `+ items.job_type: enum value [BUILD_IMAGE,GENERATE_IMAGE,DELETE_IMAGE_BUILD_SERVER,DELETE_IMAGE]`
+  - **ListServers**
+    - changes of response param
+      - `- items.product_info.series_type`
+      - `* items.product_info: object<ProductInfo> -> object<ServerProductInfo>`
+  - **CreateServerGroup**
+    - changes of request param
+      - `+ route_policy.gpu_threshold`
+      - `* route_policy: object<RoutePolicy> -> object<RoutePolicyDetail>`
+    - changes of response param
+      - `- product_info.series_type`
+      - `* product_info: object<ProductInfo> -> object<ServerProductInfo>`
+  - **ListServerGroups**
+    - changes of response param
+      - `- items.product_info.series_type`
+      - `* items.product_info: object<ProductInfo> -> object<ServerProductInfo>`
+  - **ShowOriginalPolicyInfo**
+    - changes of response param
+      - `+ policies.folder_redirection_v2`
+  - **ListPolicyOfPolicyGroup**
+    - changes of response param
+      - `+ policies.folder_redirection_v2`
+  - **ListPolicyGroup**
+    - changes of response param
+      - `+ items.policies.folder_redirection_v2`
+  - **CreatePolicyGroup**
+    - changes of request param
+      - `+ policy_group.policies.folder_redirection_v2`
+  - **ShowPolicyGroup**
+    - changes of response param
+      - `+ policy_group.policies.folder_redirection_v2`
+  - **UpdatePolicyGroup**
+    - changes of request param
+      - `+ policy_group.policies.folder_redirection_v2`
+  - **ListPolicyGroupDetailInfo**
+    - changes of response param
+      - `+ items.policies.folder_redirection_v2`
+  - **CreatePolicyTemplate**
+    - changes of request param
+      - `+ policy_group.policies.folder_redirection_v2`
+  - **UpdatePolicyTemplate**
+    - changes of request param
+      - `+ policy_group.policies.folder_redirection_v2`
+
 # 3.1.195 2026-06-04
 
 ### HuaweiCloud SDK CDN
