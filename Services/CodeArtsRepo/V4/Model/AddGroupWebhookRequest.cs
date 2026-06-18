@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
     {
 
         /// <summary>
-        /// **参数解释：** 代码组id，代码组首页，Group ID后的数字Id
+        /// **参数解释：** 代码组id，代码组首页，Group ID后的数字Id **默认取值：** 不涉及。
         /// </summary>
         [SDKProperty("group_id", IsPath = true)]
         [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public WebhookParamsDto Body { get; set; }
+        public WebhookParamsRequestDto Body { get; set; }
 
 
 

@@ -166,6 +166,30 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 批量变更实例规格
+        ///
+        /// 批量变更实例规格
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchResizeFlavorResponse> BatchResizeFlavorAsync(BatchResizeFlavorRequest batchResizeFlavorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/batch/resize", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchResizeFlavorRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<BatchResizeFlavorResponse>(response);
+        }
+
+        public AsyncInvoker<BatchResizeFlavorResponse> BatchResizeFlavorAsyncInvoker(BatchResizeFlavorRequest batchResizeFlavorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/batch/resize", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchResizeFlavorRequest);
+            return new AsyncInvoker<BatchResizeFlavorResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchResizeFlavorResponse>);
+        }
+        
+        /// <summary>
         /// 库级时间点恢复
         ///
         /// 库级时间点恢复

@@ -404,12 +404,6 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         public string Body { get; set; }
 
         /// <summary>
-        /// **参数解释：** 附件(弃用)。
-        /// </summary>
-        [JsonProperty("attachment", NullValueHandling = NullValueHandling.Ignore)]
-        public string Attachment { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("author", NullValueHandling = NullValueHandling.Ignore)]
@@ -445,7 +439,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         [JsonProperty("noteable_type", NullValueHandling = NullValueHandling.Ignore)]
         public NoteableTypeEnum NoteableType { get; set; }
         /// <summary>
-        /// **参数解释：** 提交记录id。
+        /// **参数解释：** 提交记录id(源自合并请求下的评论commit_id为null，源自commit的评论才有值)。 **约束限制：** 不涉及。 **取值范围：** 长度为40的sha1字符串。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("commit_id", NullValueHandling = NullValueHandling.Ignore)]
         public string CommitId { get; set; }
@@ -587,6 +581,12 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         public bool? IsOutdated { get; set; }
 
         /// <summary>
+        /// **参数解释：** 是否为AI工具提供的。
+        /// </summary>
+        [JsonProperty("from_robot", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? FromRobot { get; set; }
+
+        /// <summary>
         /// **参数解释：** 内容审核结果。
         /// </summary>
         [JsonProperty("moderation_result", NullValueHandling = NullValueHandling.Ignore)]
@@ -616,7 +616,6 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
-            sb.Append("  attachment: ").Append(Attachment).Append("\n");
             sb.Append("  author: ").Append(Author).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
@@ -647,6 +646,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             sb.Append("  position: ").Append(Position).Append("\n");
             sb.Append("  resolved: ").Append(Resolved).Append("\n");
             sb.Append("  isOutdated: ").Append(IsOutdated).Append("\n");
+            sb.Append("  fromRobot: ").Append(FromRobot).Append("\n");
             sb.Append("  moderationResult: ").Append(ModerationResult).Append("\n");
             sb.Append("  moderationTime: ").Append(ModerationTime).Append("\n");
             sb.Append("  moderationStatus: ").Append(ModerationStatus).Append("\n");
@@ -671,7 +671,6 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
             if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
-            if (this.Attachment != input.Attachment || (this.Attachment != null && !this.Attachment.Equals(input.Attachment))) return false;
             if (this.Author != input.Author || (this.Author != null && !this.Author.Equals(input.Author))) return false;
             if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
             if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
@@ -702,6 +701,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             if (this.Position != input.Position || (this.Position != null && !this.Position.Equals(input.Position))) return false;
             if (this.Resolved != input.Resolved || (this.Resolved != null && !this.Resolved.Equals(input.Resolved))) return false;
             if (this.IsOutdated != input.IsOutdated || (this.IsOutdated != null && !this.IsOutdated.Equals(input.IsOutdated))) return false;
+            if (this.FromRobot != input.FromRobot || (this.FromRobot != null && !this.FromRobot.Equals(input.FromRobot))) return false;
             if (this.ModerationResult != input.ModerationResult || (this.ModerationResult != null && !this.ModerationResult.Equals(input.ModerationResult))) return false;
             if (this.ModerationTime != input.ModerationTime || (this.ModerationTime != null && !this.ModerationTime.Equals(input.ModerationTime))) return false;
             if (this.ModerationStatus != input.ModerationStatus || (this.ModerationStatus != null && !this.ModerationStatus.Equals(input.ModerationStatus))) return false;
@@ -720,7 +720,6 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
-                if (this.Attachment != null) hashCode = hashCode * 59 + this.Attachment.GetHashCode();
                 if (this.Author != null) hashCode = hashCode * 59 + this.Author.GetHashCode();
                 if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
@@ -751,6 +750,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
                 if (this.Position != null) hashCode = hashCode * 59 + this.Position.GetHashCode();
                 if (this.Resolved != null) hashCode = hashCode * 59 + this.Resolved.GetHashCode();
                 if (this.IsOutdated != null) hashCode = hashCode * 59 + this.IsOutdated.GetHashCode();
+                if (this.FromRobot != null) hashCode = hashCode * 59 + this.FromRobot.GetHashCode();
                 if (this.ModerationResult != null) hashCode = hashCode * 59 + this.ModerationResult.GetHashCode();
                 if (this.ModerationTime != null) hashCode = hashCode * 59 + this.ModerationTime.GetHashCode();
                 if (this.ModerationStatus != null) hashCode = hashCode * 59 + this.ModerationStatus.GetHashCode();

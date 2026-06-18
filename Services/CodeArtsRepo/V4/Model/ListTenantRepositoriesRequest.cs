@@ -457,6 +457,13 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         [JsonProperty("sort_field", NullValueHandling = NullValueHandling.Ignore)]
         public SortFieldEnum SortField { get; set; }
         /// <summary>
+        /// **参数解释：** 是否锁定。 **约束限制：** 不传是查询全部数据 **取值范围：** - true，锁定的仓库。 - false，未锁定的仓库。
+        /// </summary>
+        [SDKProperty("locked", IsQuery = true)]
+        [JsonProperty("locked", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Locked { get; set; }
+
+        /// <summary>
         /// **参数解释：** 偏移量，从0开始。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
@@ -487,6 +494,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             sb.Append("  createdBefore: ").Append(CreatedBefore).Append("\n");
             sb.Append("  sort: ").Append(Sort).Append("\n");
             sb.Append("  sortField: ").Append(SortField).Append("\n");
+            sb.Append("  locked: ").Append(Locked).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("}\n");
@@ -515,6 +523,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             if (this.CreatedBefore != input.CreatedBefore || (this.CreatedBefore != null && !this.CreatedBefore.Equals(input.CreatedBefore))) return false;
             if (this.Sort != input.Sort) return false;
             if (this.SortField != input.SortField) return false;
+            if (this.Locked != input.Locked || (this.Locked != null && !this.Locked.Equals(input.Locked))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
 
@@ -537,6 +546,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
                 if (this.CreatedBefore != null) hashCode = hashCode * 59 + this.CreatedBefore.GetHashCode();
                 hashCode = hashCode * 59 + this.Sort.GetHashCode();
                 hashCode = hashCode * 59 + this.SortField.GetHashCode();
+                if (this.Locked != null) hashCode = hashCode * 59 + this.Locked.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 return hashCode;

@@ -35,6 +35,12 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V3.Model
         public string ProjectUuid { get; set; }
 
         /// <summary>
+        /// 代码组id，代码组首页，Group ID后的数字Id
+        /// </summary>
+        [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public int? GroupId { get; set; }
+
+        /// <summary>
         /// 复制模板的ID
         /// </summary>
         [JsonProperty("template_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -94,6 +100,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V3.Model
             sb.Append("  importMembers: ").Append(ImportMembers).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  projectUuid: ").Append(ProjectUuid).Append("\n");
+            sb.Append("  groupId: ").Append(GroupId).Append("\n");
             sb.Append("  templateId: ").Append(TemplateId).Append("\n");
             sb.Append("  visibilityLevel: ").Append(VisibilityLevel).Append("\n");
             sb.Append("  importUrl: ").Append(ImportUrl).Append("\n");
@@ -123,6 +130,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V3.Model
             if (this.ImportMembers != input.ImportMembers || (this.ImportMembers != null && !this.ImportMembers.Equals(input.ImportMembers))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.ProjectUuid != input.ProjectUuid || (this.ProjectUuid != null && !this.ProjectUuid.Equals(input.ProjectUuid))) return false;
+            if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
             if (this.TemplateId != input.TemplateId || (this.TemplateId != null && !this.TemplateId.Equals(input.TemplateId))) return false;
             if (this.VisibilityLevel != input.VisibilityLevel || (this.VisibilityLevel != null && !this.VisibilityLevel.Equals(input.VisibilityLevel))) return false;
             if (this.ImportUrl != input.ImportUrl || (this.ImportUrl != null && !this.ImportUrl.Equals(input.ImportUrl))) return false;
@@ -146,6 +154,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V3.Model
                 if (this.ImportMembers != null) hashCode = hashCode * 59 + this.ImportMembers.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.ProjectUuid != null) hashCode = hashCode * 59 + this.ProjectUuid.GetHashCode();
+                if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
                 if (this.TemplateId != null) hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
                 if (this.VisibilityLevel != null) hashCode = hashCode * 59 + this.VisibilityLevel.GetHashCode();
                 if (this.ImportUrl != null) hashCode = hashCode * 59 + this.ImportUrl.GetHashCode();

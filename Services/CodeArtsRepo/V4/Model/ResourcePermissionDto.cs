@@ -41,13 +41,13 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         public string DisplayNameCn { get; set; }
 
         /// <summary>
-        /// **参数解释：** 是否开启。
+        /// **参数解释：** 角色是否有该权限点的权限。 **取值范围：** true, false。
         /// </summary>
         [JsonProperty("enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enabled { get; set; }
 
         /// <summary>
-        /// **参数解释：** 是否编辑。
+        /// **参数解释：** 角色在该权限点的权限是否可编辑。 **取值范围：** true, false。
         /// </summary>
         [JsonProperty("editable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Editable { get; set; }

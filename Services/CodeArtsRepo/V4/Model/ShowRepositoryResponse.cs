@@ -130,6 +130,133 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             }
         }
 
+        /// <summary>
+        /// **参数解释：** 仓库加密状态 **取值范围：** - encrypting，加密中。 - encrypted，已加密。 - decrypting，解密中。 - decrypted，已解密。 **默认取值：** 不涉及。
+        /// </summary>
+        /// <value>**参数解释：** 仓库加密状态 **取值范围：** - encrypting，加密中。 - encrypted，已加密。 - decrypting，解密中。 - decrypted，已解密。 **默认取值：** 不涉及。</value>
+        [JsonConverter(typeof(EnumClassConverter<EncryptionStatusEnum>))]
+        public class EncryptionStatusEnum
+        {
+            /// <summary>
+            /// Enum ENCRYPTING for value: encrypting
+            /// </summary>
+            public static readonly EncryptionStatusEnum ENCRYPTING = new EncryptionStatusEnum("encrypting");
+
+            /// <summary>
+            /// Enum ENCRYPTED for value: encrypted
+            /// </summary>
+            public static readonly EncryptionStatusEnum ENCRYPTED = new EncryptionStatusEnum("encrypted");
+
+            /// <summary>
+            /// Enum DECRYPTING for value: decrypting
+            /// </summary>
+            public static readonly EncryptionStatusEnum DECRYPTING = new EncryptionStatusEnum("decrypting");
+
+            /// <summary>
+            /// Enum DECRYPTED for value: decrypted
+            /// </summary>
+            public static readonly EncryptionStatusEnum DECRYPTED = new EncryptionStatusEnum("decrypted");
+
+            private static readonly Dictionary<string, EncryptionStatusEnum> StaticFields =
+            new Dictionary<string, EncryptionStatusEnum>()
+            {
+                { "encrypting", ENCRYPTING },
+                { "encrypted", ENCRYPTED },
+                { "decrypting", DECRYPTING },
+                { "decrypted", DECRYPTED },
+            };
+
+            private string _value;
+
+            public EncryptionStatusEnum()
+            {
+
+            }
+
+            public EncryptionStatusEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static EncryptionStatusEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as EncryptionStatusEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(EncryptionStatusEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(EncryptionStatusEnum a, EncryptionStatusEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(EncryptionStatusEnum a, EncryptionStatusEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// **参数解释：** 仓库ID。
@@ -329,6 +456,17 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         public RepositorySimpleDto ForkedFromRepository { get; set; }
 
         /// <summary>
+        /// **参数解释：** 仓库加密状态 **取值范围：** - encrypting，加密中。 - encrypted，已加密。 - decrypting，解密中。 - decrypted，已解密。 **默认取值：** 不涉及。
+        /// </summary>
+        [JsonProperty("encryption_status", NullValueHandling = NullValueHandling.Ignore)]
+        public EncryptionStatusEnum EncryptionStatus { get; set; }
+        /// <summary>
+        /// **参数解释：** 是否开启仓库加密 **取值范围：** - true，已开启加密。 - false，未开启加密。
+        /// </summary>
+        [JsonProperty("repo_encryption_enabled", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? RepoEncryptionEnabled { get; set; }
+
+        /// <summary>
         /// **参数解释：** 仓库唯一标识符。 **约束限制：** 不涉及。
         /// </summary>
         [JsonProperty("uuid", NullValueHandling = NullValueHandling.Ignore)]
@@ -484,6 +622,8 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             sb.Append("  creator: ").Append(Creator).Append("\n");
             sb.Append("  creatorId: ").Append(CreatorId).Append("\n");
             sb.Append("  forkedFromRepository: ").Append(ForkedFromRepository).Append("\n");
+            sb.Append("  encryptionStatus: ").Append(EncryptionStatus).Append("\n");
+            sb.Append("  repoEncryptionEnabled: ").Append(RepoEncryptionEnabled).Append("\n");
             sb.Append("  uuid: ").Append(Uuid).Append("\n");
             sb.Append("  ancestorIds: ").Append(AncestorIds).Append("\n");
             sb.Append("  ancestorNames: ").Append(AncestorNames).Append("\n");
@@ -554,6 +694,8 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             if (this.Creator != input.Creator || (this.Creator != null && !this.Creator.Equals(input.Creator))) return false;
             if (this.CreatorId != input.CreatorId || (this.CreatorId != null && !this.CreatorId.Equals(input.CreatorId))) return false;
             if (this.ForkedFromRepository != input.ForkedFromRepository || (this.ForkedFromRepository != null && !this.ForkedFromRepository.Equals(input.ForkedFromRepository))) return false;
+            if (this.EncryptionStatus != input.EncryptionStatus) return false;
+            if (this.RepoEncryptionEnabled != input.RepoEncryptionEnabled || (this.RepoEncryptionEnabled != null && !this.RepoEncryptionEnabled.Equals(input.RepoEncryptionEnabled))) return false;
             if (this.Uuid != input.Uuid || (this.Uuid != null && !this.Uuid.Equals(input.Uuid))) return false;
             if (this.AncestorIds != input.AncestorIds || (this.AncestorIds != null && input.AncestorIds != null && !this.AncestorIds.SequenceEqual(input.AncestorIds))) return false;
             if (this.AncestorNames != input.AncestorNames || (this.AncestorNames != null && input.AncestorNames != null && !this.AncestorNames.SequenceEqual(input.AncestorNames))) return false;
@@ -618,6 +760,8 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
                 if (this.Creator != null) hashCode = hashCode * 59 + this.Creator.GetHashCode();
                 if (this.CreatorId != null) hashCode = hashCode * 59 + this.CreatorId.GetHashCode();
                 if (this.ForkedFromRepository != null) hashCode = hashCode * 59 + this.ForkedFromRepository.GetHashCode();
+                hashCode = hashCode * 59 + this.EncryptionStatus.GetHashCode();
+                if (this.RepoEncryptionEnabled != null) hashCode = hashCode * 59 + this.RepoEncryptionEnabled.GetHashCode();
                 if (this.Uuid != null) hashCode = hashCode * 59 + this.Uuid.GetHashCode();
                 if (this.AncestorIds != null) hashCode = hashCode * 59 + this.AncestorIds.GetHashCode();
                 if (this.AncestorNames != null) hashCode = hashCode * 59 + this.AncestorNames.GetHashCode();

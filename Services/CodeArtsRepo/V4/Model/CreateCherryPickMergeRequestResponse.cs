@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         public string Title { get; set; }
 
         /// <summary>
-        /// CherryPick临时分支名名称
+        /// CherryPick临时分支名称
         /// </summary>
         [JsonProperty("cherry_pick_branch_name", NullValueHandling = NullValueHandling.Ignore)]
         public string CherryPickBranchName { get; set; }

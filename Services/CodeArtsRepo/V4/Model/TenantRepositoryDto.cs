@@ -208,6 +208,12 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 是否锁定。 **取值范围：** - true，是。 - false，否。
+        /// </summary>
+        [JsonProperty("locked", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Locked { get; set; }
+
 
 
         /// <summary>
@@ -227,6 +233,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             sb.Append("  repositoryName: ").Append(RepositoryName).Append("\n");
             sb.Append("  projectName: ").Append(ProjectName).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
+            sb.Append("  locked: ").Append(Locked).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -255,6 +262,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             if (this.RepositoryName != input.RepositoryName || (this.RepositoryName != null && !this.RepositoryName.Equals(input.RepositoryName))) return false;
             if (this.ProjectName != input.ProjectName || (this.ProjectName != null && !this.ProjectName.Equals(input.ProjectName))) return false;
             if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.Locked != input.Locked || (this.Locked != null && !this.Locked.Equals(input.Locked))) return false;
 
             return true;
         }
@@ -277,6 +285,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
                 if (this.RepositoryName != null) hashCode = hashCode * 59 + this.RepositoryName.GetHashCode();
                 if (this.ProjectName != null) hashCode = hashCode * 59 + this.ProjectName.GetHashCode();
                 if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.Locked != null) hashCode = hashCode * 59 + this.Locked.GetHashCode();
                 return hashCode;
             }
         }

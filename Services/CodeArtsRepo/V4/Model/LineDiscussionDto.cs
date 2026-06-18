@@ -147,7 +147,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         /// **参数解释：** 位于某一侧某行的检视意见集合。
         /// </summary>
         [JsonProperty("discussions", NullValueHandling = NullValueHandling.Ignore)]
-        public List<MergeRequestBasicDiscussionDto> Discussions { get; set; }
+        public List<MergeRequestDiscussionDto> Discussions { get; set; }
 
         /// <summary>
         /// **参数解释：** 所在的行号。

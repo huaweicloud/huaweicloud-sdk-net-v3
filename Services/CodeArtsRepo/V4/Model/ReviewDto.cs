@@ -413,25 +413,25 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         public int? ModerationStatus { get; set; }
 
         /// <summary>
-        /// **参数解释：** 合并请求id(noteable_type&#x3D;MergRequest时返回)。
+        /// **参数解释：** 合并请求id(noteable_type&#x3D;MergeRequest时返回)。
         /// </summary>
         [JsonProperty("merge_request_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? MergeRequestId { get; set; }
 
         /// <summary>
-        /// **参数解释：** 合并请求iid(noteable_type&#x3D;MergRequest时返回)。
+        /// **参数解释：** 合并请求iid(noteable_type&#x3D;MergeRequest时返回)。
         /// </summary>
         [JsonProperty("merge_request_iid", NullValueHandling = NullValueHandling.Ignore)]
         public int? MergeRequestIid { get; set; }
 
         /// <summary>
-        /// **参数解释：** 合并请求标题(noteable_type&#x3D;MergRequest时返回)。
+        /// **参数解释：** 合并请求标题(noteable_type&#x3D;MergeRequest时返回)。
         /// </summary>
         [JsonProperty("merge_request_title", NullValueHandling = NullValueHandling.Ignore)]
         public string MergeRequestTitle { get; set; }
 
         /// <summary>
-        /// **参数解释：** 合并请求状态(noteable_type&#x3D;MergRequest时返回)。
+        /// **参数解释：** 合并请求状态(noteable_type&#x3D;MergeRequest时返回)。
         /// </summary>
         [JsonProperty("merge_request_state", NullValueHandling = NullValueHandling.Ignore)]
         public string MergeRequestState { get; set; }

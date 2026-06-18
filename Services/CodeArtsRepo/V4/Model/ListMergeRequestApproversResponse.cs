@@ -20,13 +20,13 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         /// **参数解释：** 必选审核人列表。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("required_approvers_list", NullValueHandling = NullValueHandling.Ignore)]
-        public List<UserBasicDto> RequiredApproversList { get; set; }
+        public List<MergeRequestApprovalUserDto> RequiredApproversList { get; set; }
 
         /// <summary>
         /// **参数解释：** 可选审核人列表。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("optional_approvers_list", NullValueHandling = NullValueHandling.Ignore)]
-        public List<UserBasicDto> OptionalApproversList { get; set; }
+        public List<MergeRequestApprovalUserDto> OptionalApproversList { get; set; }
 
         /// <summary>
         /// 

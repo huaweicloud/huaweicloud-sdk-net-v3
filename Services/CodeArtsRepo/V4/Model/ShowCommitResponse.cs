@@ -312,6 +312,12 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         public string UserName { get; set; }
 
         /// <summary>
+        /// 作者id
+        /// </summary>
+        [JsonProperty("author_id", NullValueHandling = NullValueHandling.Ignore)]
+        public int? AuthorId { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("stats", NullValueHandling = NullValueHandling.Ignore)]
@@ -380,6 +386,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             sb.Append("  nickName: ").Append(NickName).Append("\n");
             sb.Append("  tenantName: ").Append(TenantName).Append("\n");
             sb.Append("  userName: ").Append(UserName).Append("\n");
+            sb.Append("  authorId: ").Append(AuthorId).Append("\n");
             sb.Append("  stats: ").Append(Stats).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  lastPipeline: ").Append(LastPipeline).Append("\n");
@@ -429,6 +436,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             if (this.NickName != input.NickName || (this.NickName != null && !this.NickName.Equals(input.NickName))) return false;
             if (this.TenantName != input.TenantName || (this.TenantName != null && !this.TenantName.Equals(input.TenantName))) return false;
             if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
+            if (this.AuthorId != input.AuthorId || (this.AuthorId != null && !this.AuthorId.Equals(input.AuthorId))) return false;
             if (this.Stats != input.Stats || (this.Stats != null && !this.Stats.Equals(input.Stats))) return false;
             if (this.Status != input.Status) return false;
             if (this.LastPipeline != input.LastPipeline || (this.LastPipeline != null && !this.LastPipeline.Equals(input.LastPipeline))) return false;
@@ -472,6 +480,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
                 if (this.NickName != null) hashCode = hashCode * 59 + this.NickName.GetHashCode();
                 if (this.TenantName != null) hashCode = hashCode * 59 + this.TenantName.GetHashCode();
                 if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.AuthorId != null) hashCode = hashCode * 59 + this.AuthorId.GetHashCode();
                 if (this.Stats != null) hashCode = hashCode * 59 + this.Stats.GetHashCode();
                 hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.LastPipeline != null) hashCode = hashCode * 59 + this.LastPipeline.GetHashCode();

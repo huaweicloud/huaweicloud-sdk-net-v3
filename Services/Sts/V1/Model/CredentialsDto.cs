@@ -11,31 +11,31 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Sts.V1.Model
 {
     /// <summary>
-    /// 临时安全凭证。
+    /// **参数解释**： 临时安全凭证。  **取值范围**： 不涉及。 
     /// </summary>
     public class CredentialsDto 
     {
 
         /// <summary>
-        /// 临时安全凭证的AK。
+        /// **参数解释**： 临时安全凭证的AK。  **取值范围**： 不涉及。 
         /// </summary>
         [JsonProperty("access_key_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AccessKeyId { get; set; }
 
         /// <summary>
-        /// 临时安全凭证的失效时间。
+        /// **参数解释**： 临时安全凭证的失效时间。  **取值范围**： 不涉及。 
         /// </summary>
         [JsonProperty("expiration", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? Expiration { get; set; }
 
         /// <summary>
-        /// 临时安全凭证的SK。
+        /// **参数解释**： 临时安全凭证的SK。  **取值范围**： 不涉及。 
         /// </summary>
         [JsonProperty("secret_access_key", NullValueHandling = NullValueHandling.Ignore)]
         public string SecretAccessKey { get; set; }
 
         /// <summary>
-        /// 临时安全凭证的security_token。
+        /// **参数解释**： 临时安全凭证的security_token。  **取值范围**： 不涉及。 
         /// </summary>
         [JsonProperty("security_token", NullValueHandling = NullValueHandling.Ignore)]
         public string SecurityToken { get; set; }

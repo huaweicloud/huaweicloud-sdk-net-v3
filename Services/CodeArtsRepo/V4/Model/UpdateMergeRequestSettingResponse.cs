@@ -664,6 +664,12 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         [JsonProperty("repository_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? RepositoryId { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 调用者是否有星级评价权限。
+        /// </summary>
+        [JsonProperty("has_evaluation_permission", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? HasEvaluationPermission { get; set; }
+
 
 
         /// <summary>
@@ -702,6 +708,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             sb.Append("  onlyAllowMergeIfVoteBiggerThan: ").Append(OnlyAllowMergeIfVoteBiggerThan).Append("\n");
             sb.Append("  onlyAssigneeCanMerge: ").Append(OnlyAssigneeCanMerge).Append("\n");
             sb.Append("  repositoryId: ").Append(RepositoryId).Append("\n");
+            sb.Append("  hasEvaluationPermission: ").Append(HasEvaluationPermission).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -749,6 +756,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             if (this.OnlyAllowMergeIfVoteBiggerThan != input.OnlyAllowMergeIfVoteBiggerThan || (this.OnlyAllowMergeIfVoteBiggerThan != null && !this.OnlyAllowMergeIfVoteBiggerThan.Equals(input.OnlyAllowMergeIfVoteBiggerThan))) return false;
             if (this.OnlyAssigneeCanMerge != input.OnlyAssigneeCanMerge || (this.OnlyAssigneeCanMerge != null && !this.OnlyAssigneeCanMerge.Equals(input.OnlyAssigneeCanMerge))) return false;
             if (this.RepositoryId != input.RepositoryId || (this.RepositoryId != null && !this.RepositoryId.Equals(input.RepositoryId))) return false;
+            if (this.HasEvaluationPermission != input.HasEvaluationPermission || (this.HasEvaluationPermission != null && !this.HasEvaluationPermission.Equals(input.HasEvaluationPermission))) return false;
 
             return true;
         }
@@ -790,6 +798,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
                 if (this.OnlyAllowMergeIfVoteBiggerThan != null) hashCode = hashCode * 59 + this.OnlyAllowMergeIfVoteBiggerThan.GetHashCode();
                 if (this.OnlyAssigneeCanMerge != null) hashCode = hashCode * 59 + this.OnlyAssigneeCanMerge.GetHashCode();
                 if (this.RepositoryId != null) hashCode = hashCode * 59 + this.RepositoryId.GetHashCode();
+                if (this.HasEvaluationPermission != null) hashCode = hashCode * 59 + this.HasEvaluationPermission.GetHashCode();
                 return hashCode;
             }
         }

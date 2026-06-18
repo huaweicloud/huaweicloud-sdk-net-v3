@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// **参数解释：** 指定已生成的备份文件可以保存的天数。 **约束限制：** 不涉及。 **取值范围：** 0~35。 - 取0值，表示不设置自动备份策略。 - 不传该参数，默认开启自动备份策略，备份文件默认保存7天。 **默认取值：** 7。
         /// </summary>
         [JsonProperty("keep_days", NullValueHandling = NullValueHandling.Ignore)]
-        public string KeepDays { get; set; }
+        public int? KeepDays { get; set; }
 
 
 

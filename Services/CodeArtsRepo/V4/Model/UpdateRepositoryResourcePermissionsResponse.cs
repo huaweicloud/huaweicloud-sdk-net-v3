@@ -15,127 +15,19 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
     /// </summary>
     public class UpdateRepositoryResourcePermissionsResponse : SdkResponse
     {
-        /// <summary>
-        /// **参数解释：** 状态码。 - success，表示接口请求成功。 - fail，表示接口请求失败。
-        /// </summary>
-        /// <value>**参数解释：** 状态码。 - success，表示接口请求成功。 - fail，表示接口请求失败。</value>
-        [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
-        public class StatusEnum
-        {
-            /// <summary>
-            /// Enum SUCCESS for value: success
-            /// </summary>
-            public static readonly StatusEnum SUCCESS = new StatusEnum("success");
-
-            /// <summary>
-            /// Enum FAIL for value: fail
-            /// </summary>
-            public static readonly StatusEnum FAIL = new StatusEnum("fail");
-
-            private static readonly Dictionary<string, StatusEnum> StaticFields =
-            new Dictionary<string, StatusEnum>()
-            {
-                { "success", SUCCESS },
-                { "fail", FAIL },
-            };
-
-            private string _value;
-
-            public StatusEnum()
-            {
-
-            }
-
-            public StatusEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static StatusEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as StatusEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(StatusEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(StatusEnum a, StatusEnum b)
-            {
-                if (ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(StatusEnum a, StatusEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
-        /// **参数解释：** 状态码。 - success，表示接口请求成功。 - fail，表示接口请求失败。
+        /// 返回状态码
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public StatusEnum Status { get; set; }
+        public int? Status { get; set; }
+
+        /// <summary>
+        /// 返回信息
+        /// </summary>
+        [JsonProperty("message", NullValueHandling = NullValueHandling.Ignore)]
+        public string Message { get; set; }
+
 
 
         /// <summary>
@@ -146,6 +38,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             var sb = new StringBuilder();
             sb.Append("class UpdateRepositoryResourcePermissionsResponse {\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  message: ").Append(Message).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -164,7 +57,8 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         public bool Equals(UpdateRepositoryResourcePermissionsResponse input)
         {
             if (input == null) return false;
-            if (this.Status != input.Status) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Message != input.Message || (this.Message != null && !this.Message.Equals(input.Message))) return false;
 
             return true;
         }
@@ -177,7 +71,8 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();
                 return hashCode;
             }
         }

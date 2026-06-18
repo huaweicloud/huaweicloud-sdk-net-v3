@@ -64,6 +64,12 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         [JsonProperty("tenant_name", NullValueHandling = NullValueHandling.Ignore)]
         public string TenantName { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 是否有相关权限。 **取值范围：** true：有权限。 false：没权限。
+        /// </summary>
+        [JsonProperty("has_permission", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? HasPermission { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +87,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             sb.Append("  webUrl: ").Append(WebUrl).Append("\n");
             sb.Append("  nickName: ").Append(NickName).Append("\n");
             sb.Append("  tenantName: ").Append(TenantName).Append("\n");
+            sb.Append("  hasPermission: ").Append(HasPermission).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +114,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             if (this.WebUrl != input.WebUrl || (this.WebUrl != null && !this.WebUrl.Equals(input.WebUrl))) return false;
             if (this.NickName != input.NickName || (this.NickName != null && !this.NickName.Equals(input.NickName))) return false;
             if (this.TenantName != input.TenantName || (this.TenantName != null && !this.TenantName.Equals(input.TenantName))) return false;
+            if (this.HasPermission != input.HasPermission || (this.HasPermission != null && !this.HasPermission.Equals(input.HasPermission))) return false;
 
             return true;
         }
@@ -127,6 +135,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
                 if (this.WebUrl != null) hashCode = hashCode * 59 + this.WebUrl.GetHashCode();
                 if (this.NickName != null) hashCode = hashCode * 59 + this.NickName.GetHashCode();
                 if (this.TenantName != null) hashCode = hashCode * 59 + this.TenantName.GetHashCode();
+                if (this.HasPermission != null) hashCode = hashCode * 59 + this.HasPermission.GetHashCode();
                 return hashCode;
             }
         }

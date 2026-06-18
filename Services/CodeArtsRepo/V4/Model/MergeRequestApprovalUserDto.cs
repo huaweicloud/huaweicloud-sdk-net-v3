@@ -11,9 +11,9 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
 {
     /// <summary>
-    /// 合并请求打分模式评审人
+    /// 
     /// </summary>
-    public class MergeRequestVoteReviewerDto 
+    public class MergeRequestApprovalUserDto 
     {
         /// <summary>
         /// **参数解释：** 用户状态。 **取值范围：** - active: 可用账户。 - blocked: 被锁定用户。 - error: 未查询到该用户。
@@ -215,10 +215,10 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         public string ErrorMessage { get; set; }
 
         /// <summary>
-        /// **参数解释：** 是否为committer。
+        /// **参数解释：** 是否有相关权限。 **取值范围：** true：有权限。 false：没权限。           
         /// </summary>
-        [JsonProperty("is_committer", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? IsCommitter { get; set; }
+        [JsonProperty("has_permission", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? HasPermission { get; set; }
 
 
 
@@ -228,7 +228,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class MergeRequestVoteReviewerDto {\n");
+            sb.Append("class MergeRequestApprovalUserDto {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  username: ").Append(Username).Append("\n");
@@ -242,7 +242,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             sb.Append("  nickName: ").Append(NickName).Append("\n");
             sb.Append("  tenantName: ").Append(TenantName).Append("\n");
             sb.Append("  errorMessage: ").Append(ErrorMessage).Append("\n");
-            sb.Append("  isCommitter: ").Append(IsCommitter).Append("\n");
+            sb.Append("  hasPermission: ").Append(HasPermission).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -252,13 +252,13 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as MergeRequestVoteReviewerDto);
+            return this.Equals(input as MergeRequestApprovalUserDto);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(MergeRequestVoteReviewerDto input)
+        public bool Equals(MergeRequestApprovalUserDto input)
         {
             if (input == null) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
@@ -274,7 +274,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             if (this.NickName != input.NickName || (this.NickName != null && !this.NickName.Equals(input.NickName))) return false;
             if (this.TenantName != input.TenantName || (this.TenantName != null && !this.TenantName.Equals(input.TenantName))) return false;
             if (this.ErrorMessage != input.ErrorMessage || (this.ErrorMessage != null && !this.ErrorMessage.Equals(input.ErrorMessage))) return false;
-            if (this.IsCommitter != input.IsCommitter || (this.IsCommitter != null && !this.IsCommitter.Equals(input.IsCommitter))) return false;
+            if (this.HasPermission != input.HasPermission || (this.HasPermission != null && !this.HasPermission.Equals(input.HasPermission))) return false;
 
             return true;
         }
@@ -300,7 +300,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
                 if (this.NickName != null) hashCode = hashCode * 59 + this.NickName.GetHashCode();
                 if (this.TenantName != null) hashCode = hashCode * 59 + this.TenantName.GetHashCode();
                 if (this.ErrorMessage != null) hashCode = hashCode * 59 + this.ErrorMessage.GetHashCode();
-                if (this.IsCommitter != null) hashCode = hashCode * 59 + this.IsCommitter.GetHashCode();
+                if (this.HasPermission != null) hashCode = hashCode * 59 + this.HasPermission.GetHashCode();
                 return hashCode;
             }
         }

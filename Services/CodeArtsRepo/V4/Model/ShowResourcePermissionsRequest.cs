@@ -17,14 +17,14 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
     {
 
         /// <summary>
-        /// **参数解释：** 代码组id，代码组首页，Group ID后的数字Id
+        /// **参数解释：** 代码组id，代码组首页，Group ID后的数字Id **默认取值：** 不涉及。
         /// </summary>
         [SDKProperty("group_id", IsPath = true)]
         [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? GroupId { get; set; }
 
         /// <summary>
-        /// **参数解释：** 资源Id，通过获取代码组权限资源点列表获取的数据中的Id
+        /// **参数解释：** 资源Id，通过获取代码组权限资源点列表获取的数据中的Id **默认取值：** 不涉及。
         /// </summary>
         [SDKProperty("resource_id", IsPath = true)]
         [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]

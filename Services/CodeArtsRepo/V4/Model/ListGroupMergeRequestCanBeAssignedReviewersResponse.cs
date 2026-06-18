@@ -215,10 +215,11 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         public string ErrorMessage { get; set; }
 
         /// <summary>
-        /// **参数解释：** 是否为committer。
+        /// 
         /// </summary>
-        [JsonProperty("is_committer", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? IsCommitter { get; set; }
+        [SDKProperty("X-Total", IsHeader = true)]
+        [JsonProperty("X-Total", NullValueHandling = NullValueHandling.Ignore)]
+        public string XTotal { get; set; }
 
 
 
@@ -242,7 +243,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             sb.Append("  nickName: ").Append(NickName).Append("\n");
             sb.Append("  tenantName: ").Append(TenantName).Append("\n");
             sb.Append("  errorMessage: ").Append(ErrorMessage).Append("\n");
-            sb.Append("  isCommitter: ").Append(IsCommitter).Append("\n");
+            sb.Append("  xTotal: ").Append(XTotal).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -274,7 +275,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             if (this.NickName != input.NickName || (this.NickName != null && !this.NickName.Equals(input.NickName))) return false;
             if (this.TenantName != input.TenantName || (this.TenantName != null && !this.TenantName.Equals(input.TenantName))) return false;
             if (this.ErrorMessage != input.ErrorMessage || (this.ErrorMessage != null && !this.ErrorMessage.Equals(input.ErrorMessage))) return false;
-            if (this.IsCommitter != input.IsCommitter || (this.IsCommitter != null && !this.IsCommitter.Equals(input.IsCommitter))) return false;
+            if (this.XTotal != input.XTotal || (this.XTotal != null && !this.XTotal.Equals(input.XTotal))) return false;
 
             return true;
         }
@@ -300,7 +301,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
                 if (this.NickName != null) hashCode = hashCode * 59 + this.NickName.GetHashCode();
                 if (this.TenantName != null) hashCode = hashCode * 59 + this.TenantName.GetHashCode();
                 if (this.ErrorMessage != null) hashCode = hashCode * 59 + this.ErrorMessage.GetHashCode();
-                if (this.IsCommitter != null) hashCode = hashCode * 59 + this.IsCommitter.GetHashCode();
+                if (this.XTotal != null) hashCode = hashCode * 59 + this.XTotal.GetHashCode();
                 return hashCode;
             }
         }

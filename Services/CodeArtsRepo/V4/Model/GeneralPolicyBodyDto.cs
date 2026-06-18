@@ -52,6 +52,12 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         [JsonProperty("create_branch_whitelist_user_ids", NullValueHandling = NullValueHandling.Ignore)]
         public string CreateBranchWhitelistUserIds { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 是否开启仓库加密。 **约束限制：** 不涉及。 **取值范围：** - true，开启仓库加密。 - false，关闭仓库加密。
+        /// </summary>
+        [JsonProperty("repo_encryption_enabled", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? RepoEncryptionEnabled { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +73,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             sb.Append("  tagNameRegex: ").Append(TagNameRegex).Append("\n");
             sb.Append("  forbiddenDeveloperCreateBranch: ").Append(ForbiddenDeveloperCreateBranch).Append("\n");
             sb.Append("  createBranchWhitelistUserIds: ").Append(CreateBranchWhitelistUserIds).Append("\n");
+            sb.Append("  repoEncryptionEnabled: ").Append(RepoEncryptionEnabled).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +98,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             if (this.TagNameRegex != input.TagNameRegex || (this.TagNameRegex != null && !this.TagNameRegex.Equals(input.TagNameRegex))) return false;
             if (this.ForbiddenDeveloperCreateBranch != input.ForbiddenDeveloperCreateBranch || (this.ForbiddenDeveloperCreateBranch != null && !this.ForbiddenDeveloperCreateBranch.Equals(input.ForbiddenDeveloperCreateBranch))) return false;
             if (this.CreateBranchWhitelistUserIds != input.CreateBranchWhitelistUserIds || (this.CreateBranchWhitelistUserIds != null && !this.CreateBranchWhitelistUserIds.Equals(input.CreateBranchWhitelistUserIds))) return false;
+            if (this.RepoEncryptionEnabled != input.RepoEncryptionEnabled || (this.RepoEncryptionEnabled != null && !this.RepoEncryptionEnabled.Equals(input.RepoEncryptionEnabled))) return false;
 
             return true;
         }
@@ -109,6 +117,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
                 if (this.TagNameRegex != null) hashCode = hashCode * 59 + this.TagNameRegex.GetHashCode();
                 if (this.ForbiddenDeveloperCreateBranch != null) hashCode = hashCode * 59 + this.ForbiddenDeveloperCreateBranch.GetHashCode();
                 if (this.CreateBranchWhitelistUserIds != null) hashCode = hashCode * 59 + this.CreateBranchWhitelistUserIds.GetHashCode();
+                if (this.RepoEncryptionEnabled != null) hashCode = hashCode * 59 + this.RepoEncryptionEnabled.GetHashCode();
                 return hashCode;
             }
         }

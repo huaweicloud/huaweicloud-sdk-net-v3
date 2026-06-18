@@ -547,12 +547,6 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         public string Diff { get; set; }
 
         /// <summary>
-        /// **参数解释：** 附件(弃用)。
-        /// </summary>
-        [JsonProperty("attachment", NullValueHandling = NullValueHandling.Ignore)]
-        public string Attachment { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("author", NullValueHandling = NullValueHandling.Ignore)]
@@ -689,6 +683,12 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         public bool? IsReply { get; set; }
 
         /// <summary>
+        /// **参数解释：** 是否为AI工具提供的。
+        /// </summary>
+        [JsonProperty("from_robot", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? FromRobot { get; set; }
+
+        /// <summary>
         /// **参数解释：** 内容审核结果。
         /// </summary>
         [JsonProperty("moderation_result", NullValueHandling = NullValueHandling.Ignore)]
@@ -723,7 +723,6 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("  diffFile: ").Append(DiffFile).Append("\n");
             sb.Append("  diff: ").Append(Diff).Append("\n");
-            sb.Append("  attachment: ").Append(Attachment).Append("\n");
             sb.Append("  author: ").Append(Author).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
@@ -747,6 +746,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             sb.Append("  assignee: ").Append(Assignee).Append("\n");
             sb.Append("  proposer: ").Append(Proposer).Append("\n");
             sb.Append("  isReply: ").Append(IsReply).Append("\n");
+            sb.Append("  fromRobot: ").Append(FromRobot).Append("\n");
             sb.Append("  moderationResult: ").Append(ModerationResult).Append("\n");
             sb.Append("  moderationTime: ").Append(ModerationTime).Append("\n");
             sb.Append("  moderationStatus: ").Append(ModerationStatus).Append("\n");
@@ -776,7 +776,6 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
             if (this.DiffFile != input.DiffFile || (this.DiffFile != null && !this.DiffFile.Equals(input.DiffFile))) return false;
             if (this.Diff != input.Diff || (this.Diff != null && !this.Diff.Equals(input.Diff))) return false;
-            if (this.Attachment != input.Attachment || (this.Attachment != null && !this.Attachment.Equals(input.Attachment))) return false;
             if (this.Author != input.Author || (this.Author != null && !this.Author.Equals(input.Author))) return false;
             if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
             if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
@@ -800,6 +799,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             if (this.Assignee != input.Assignee || (this.Assignee != null && !this.Assignee.Equals(input.Assignee))) return false;
             if (this.Proposer != input.Proposer || (this.Proposer != null && !this.Proposer.Equals(input.Proposer))) return false;
             if (this.IsReply != input.IsReply || (this.IsReply != null && !this.IsReply.Equals(input.IsReply))) return false;
+            if (this.FromRobot != input.FromRobot || (this.FromRobot != null && !this.FromRobot.Equals(input.FromRobot))) return false;
             if (this.ModerationResult != input.ModerationResult || (this.ModerationResult != null && !this.ModerationResult.Equals(input.ModerationResult))) return false;
             if (this.ModerationTime != input.ModerationTime || (this.ModerationTime != null && !this.ModerationTime.Equals(input.ModerationTime))) return false;
             if (this.ModerationStatus != input.ModerationStatus || (this.ModerationStatus != null && !this.ModerationStatus.Equals(input.ModerationStatus))) return false;
@@ -823,7 +823,6 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
                 if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 if (this.DiffFile != null) hashCode = hashCode * 59 + this.DiffFile.GetHashCode();
                 if (this.Diff != null) hashCode = hashCode * 59 + this.Diff.GetHashCode();
-                if (this.Attachment != null) hashCode = hashCode * 59 + this.Attachment.GetHashCode();
                 if (this.Author != null) hashCode = hashCode * 59 + this.Author.GetHashCode();
                 if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
@@ -847,6 +846,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
                 if (this.Assignee != null) hashCode = hashCode * 59 + this.Assignee.GetHashCode();
                 if (this.Proposer != null) hashCode = hashCode * 59 + this.Proposer.GetHashCode();
                 if (this.IsReply != null) hashCode = hashCode * 59 + this.IsReply.GetHashCode();
+                if (this.FromRobot != null) hashCode = hashCode * 59 + this.FromRobot.GetHashCode();
                 if (this.ModerationResult != null) hashCode = hashCode * 59 + this.ModerationResult.GetHashCode();
                 if (this.ModerationTime != null) hashCode = hashCode * 59 + this.ModerationTime.GetHashCode();
                 if (this.ModerationStatus != null) hashCode = hashCode * 59 + this.ModerationStatus.GetHashCode();

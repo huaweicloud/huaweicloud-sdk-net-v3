@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         [JsonProperty("too_large", NullValueHandling = NullValueHandling.Ignore)]
         public bool? TooLarge { get; set; }
 
+        /// <summary>
+        /// **参数解释：** blob文件ID。 **约束限制：** 不涉及。    
+        /// </summary>
+        [JsonProperty("blob_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string BlobId { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             sb.Append("  changeFileCount: ").Append(ChangeFileCount).Append("\n");
             sb.Append("  changeLineCount: ").Append(ChangeLineCount).Append("\n");
             sb.Append("  tooLarge: ").Append(TooLarge).Append("\n");
+            sb.Append("  blobId: ").Append(BlobId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,6 +106,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             if (this.ChangeFileCount != input.ChangeFileCount || (this.ChangeFileCount != null && !this.ChangeFileCount.Equals(input.ChangeFileCount))) return false;
             if (this.ChangeLineCount != input.ChangeLineCount || (this.ChangeLineCount != null && !this.ChangeLineCount.Equals(input.ChangeLineCount))) return false;
             if (this.TooLarge != input.TooLarge || (this.TooLarge != null && !this.TooLarge.Equals(input.TooLarge))) return false;
+            if (this.BlobId != input.BlobId || (this.BlobId != null && !this.BlobId.Equals(input.BlobId))) return false;
 
             return true;
         }
@@ -118,6 +126,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
                 if (this.ChangeFileCount != null) hashCode = hashCode * 59 + this.ChangeFileCount.GetHashCode();
                 if (this.ChangeLineCount != null) hashCode = hashCode * 59 + this.ChangeLineCount.GetHashCode();
                 if (this.TooLarge != null) hashCode = hashCode * 59 + this.TooLarge.GetHashCode();
+                if (this.BlobId != null) hashCode = hashCode * 59 + this.BlobId.GetHashCode();
                 return hashCode;
             }
         }

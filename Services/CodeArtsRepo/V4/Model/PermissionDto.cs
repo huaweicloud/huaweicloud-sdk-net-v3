@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         public string RoleNameCn { get; set; }
 
         /// <summary>
-        /// **参数解释：** 资源权限对象。
+        /// **参数解释：** 资源权限对象。记录权限点的ID、名称、以及角色是否有该权限点权限等。
         /// </summary>
         [JsonProperty("resource_permissions", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, ResourcePermissionDto> ResourcePermissions { get; set; }

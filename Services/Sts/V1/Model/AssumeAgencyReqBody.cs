@@ -11,73 +11,73 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Sts.V1.Model
 {
     /// <summary>
-    /// 接口/v5/agencies/assume的Http请求体。
+    /// **参数解释**： 接口/v5/agencies/assume的Http请求体。  **约束限制**： 不涉及。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
     /// </summary>
     public class AssumeAgencyReqBody 
     {
 
         /// <summary>
-        /// 获得的临时安全凭证的有效时间（单位秒）。请注意，该时间需要小于委托本身设置的最大会话持续时间，同时在携带X-Security-Token的Header头时该时间不能超过3600秒。
+        /// **参数解释**： 获得的临时安全凭证的有效时间（单位：秒）。  **约束限制**： 请注意，该时间需要小于委托本身设置的最大会话持续时间，同时在携带X-Security-Token的Header头时该时间不能超过3600秒。  **取值范围**： 取值范围为[900,43200]。  **默认取值**： 默认值为3600。 
         /// </summary>
         [JsonProperty("duration_seconds", NullValueHandling = NullValueHandling.Ignore)]
         public int? DurationSeconds { get; set; }
 
         /// <summary>
-        /// 外部ID，防止混淆代理人问题。
+        /// **参数解释**： 外部ID，防止混淆代理人问题。  **约束限制**： 长度范围为[2,1224]。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("external_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ExternalId { get; set; }
 
         /// <summary>
-        /// 自定义策略，限制本次会话获得的临时安全凭证的权限范围不会超过该自定义策略指定的权限。
+        /// **参数解释**： 自定义策略，限制本次会话获得的临时安全凭证的权限范围不会超过该自定义策略指定的权限。  **约束限制**： 本次会话获得的临时安全凭证的权限范围不会超过该自定义策略指定的权限。 长度范围为[2,2048]。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("policy", NullValueHandling = NullValueHandling.Ignore)]
         public string Policy { get; set; }
 
         /// <summary>
-        /// 预置策略列表，限制本次会话获得的临时安全凭证的权限范围不会超过该预置策略指定的权限。
+        /// **参数解释**： 预置策略列表，限制本次会话获得的临时安全凭证的权限范围不会超过该预置策略指定的权限。  **约束限制**： 不涉及。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("policy_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> PolicyIds { get; set; }
 
         /// <summary>
-        /// 目标委托的URN。
+        /// **参数解释**： 目标委托的URN。  **约束限制**： 长度范围为[0,1500]。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("agency_urn", NullValueHandling = NullValueHandling.Ignore)]
         public string AgencyUrn { get; set; }
 
         /// <summary>
-        /// 委托会话的会话名。
+        /// **参数解释**： 委托会话的会话名。  **约束限制**： 长度范围为[2,128]。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("agency_session_name", NullValueHandling = NullValueHandling.Ignore)]
         public string AgencySessionName { get; set; }
 
         /// <summary>
-        /// 调用者绑定的MFA设备的序列号。
+        /// **参数解释**： 调用者绑定的MFA设备的序列号。  **约束限制**： 长度范围为[9,256]。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("serial_number", NullValueHandling = NullValueHandling.Ignore)]
         public string SerialNumber { get; set; }
 
         /// <summary>
-        /// 调用者绑定的MFA设备上的6位数字码。
+        /// **参数解释**： 调用者绑定的MFA设备上的6位数字码。  **约束限制**： 长度范围为[6,6]。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("token_code", NullValueHandling = NullValueHandling.Ignore)]
         public string TokenCode { get; set; }
 
         /// <summary>
-        /// 调用链里最初调用者所声明的身份。
+        /// **参数解释**： 调用链里最初调用者所声明的身份。  **约束限制**： 长度范围为[2,64]。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("source_identity", NullValueHandling = NullValueHandling.Ignore)]
         public string SourceIdentity { get; set; }
 
         /// <summary>
-        /// 自定义标签列表。
+        /// **参数解释**： 自定义标签列表。  **约束限制**： 不涉及。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<TagDto> Tags { get; set; }
 
         /// <summary>
-        /// 随着临时安全凭证调用链持续透传的标签键列表。
+        /// **参数解释**： 随着临时安全凭证调用链持续透传的标签键列表。  **约束限制**： 不涉及。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("transitive_tag_keys", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> TransitiveTagKeys { get; set; }

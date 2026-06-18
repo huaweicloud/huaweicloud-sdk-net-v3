@@ -62,13 +62,13 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         /// **参数解释：** 更新时间戳。 **取值范围：** 字符串长度不少于1，不超过1000。
         /// </summary>
         [JsonProperty("updated_at_timestamp", NullValueHandling = NullValueHandling.Ignore)]
-        public string UpdatedAtTimestamp { get; set; }
+        public long? UpdatedAtTimestamp { get; set; }
 
         /// <summary>
         /// **参数解释：** 开始时间戳。 **取值范围：** 字符串长度不少于1，不超过1000。
         /// </summary>
         [JsonProperty("star_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string StarTime { get; set; }
+        public long? StarTime { get; set; }
 
         /// <summary>
         /// **参数解释：** 是否收藏。

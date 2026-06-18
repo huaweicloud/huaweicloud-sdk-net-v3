@@ -1553,6 +1553,39 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         }
         
         /// <summary>
+        /// 获取代码组下保护分支列表
+        ///
+        /// 获取代码组下保护分支列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListGroupProtectedBranchesResponse> ListGroupProtectedBranchesAsync(ListGroupProtectedBranchesRequest listGroupProtectedBranchesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listGroupProtectedBranchesRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/groups/{group_id}/protected-branches", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGroupProtectedBranchesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            var listGroupProtectedBranchesResponse = JsonUtils.DeSerializeNull<ListGroupProtectedBranchesResponse>(response);
+            listGroupProtectedBranchesResponse.Body = JsonUtils.DeSerializeList<GroupProtectedBranchApiDto>(response);
+            return listGroupProtectedBranchesResponse;
+        }
+
+        public AsyncInvoker<ListGroupProtectedBranchesResponse> ListGroupProtectedBranchesAsyncInvoker(ListGroupProtectedBranchesRequest listGroupProtectedBranchesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listGroupProtectedBranchesRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/groups/{group_id}/protected-branches", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGroupProtectedBranchesRequest);
+            return new AsyncInvoker<ListGroupProtectedBranchesResponse>(this, "GET", request, response =>
+            {
+                var listGroupProtectedBranchesResponse = JsonUtils.DeSerializeNull<ListGroupProtectedBranchesResponse>(response);
+                listGroupProtectedBranchesResponse.Body = JsonUtils.DeSerializeList<GroupProtectedBranchApiDto>(response);
+                return listGroupProtectedBranchesResponse;
+            });
+        }
+        
+        /// <summary>
         /// 获取代码组下的子代码组和仓库列表
         ///
         /// 获取代码组下的子代码组和仓库列表
@@ -2040,6 +2073,39 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
                 var listGroupProtectedRefsUserGroupsResponse = JsonUtils.DeSerializeNull<ListGroupProtectedRefsUserGroupsResponse>(response);
                 listGroupProtectedRefsUserGroupsResponse.Body = JsonUtils.DeSerializeList<ProtectedRefsUserGroupBasicDto>(response);
                 return listGroupProtectedRefsUserGroupsResponse;
+            });
+        }
+        
+        /// <summary>
+        /// 获取仓库下有审批权限成员
+        ///
+        /// 获取仓库下有审批权限成员（审批用户是否可以进入该仓库）
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListManagementUsersResponse> ListManagementUsersAsync(ListManagementUsersRequest listManagementUsersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listManagementUsersRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/management-members", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listManagementUsersRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            var listManagementUsersResponse = JsonUtils.DeSerializeNull<ListManagementUsersResponse>(response);
+            listManagementUsersResponse.Body = JsonUtils.DeSerializeList<ManagementUserDto>(response);
+            return listManagementUsersResponse;
+        }
+
+        public AsyncInvoker<ListManagementUsersResponse> ListManagementUsersAsyncInvoker(ListManagementUsersRequest listManagementUsersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listManagementUsersRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/management-members", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listManagementUsersRequest);
+            return new AsyncInvoker<ListManagementUsersResponse>(this, "GET", request, response =>
+            {
+                var listManagementUsersResponse = JsonUtils.DeSerializeNull<ListManagementUsersResponse>(response);
+                listManagementUsersResponse.Body = JsonUtils.DeSerializeList<ManagementUserDto>(response);
+                return listManagementUsersResponse;
             });
         }
         
@@ -2850,7 +2916,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGroupMergeRequestValidAssignedCandidatesRequest);
             var response = await DoHttpRequestAsync("GET", request);
             var listGroupMergeRequestValidAssignedCandidatesResponse = JsonUtils.DeSerializeNull<ListGroupMergeRequestValidAssignedCandidatesResponse>(response);
-            listGroupMergeRequestValidAssignedCandidatesResponse.Body = JsonUtils.DeSerializeList<MergeRequestVoteReviewerDto>(response);
+            listGroupMergeRequestValidAssignedCandidatesResponse.Body = JsonUtils.DeSerializeList<UserBasicDto>(response);
             return listGroupMergeRequestValidAssignedCandidatesResponse;
         }
 
@@ -2863,7 +2929,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
             return new AsyncInvoker<ListGroupMergeRequestValidAssignedCandidatesResponse>(this, "GET", request, response =>
             {
                 var listGroupMergeRequestValidAssignedCandidatesResponse = JsonUtils.DeSerializeNull<ListGroupMergeRequestValidAssignedCandidatesResponse>(response);
-                listGroupMergeRequestValidAssignedCandidatesResponse.Body = JsonUtils.DeSerializeList<MergeRequestVoteReviewerDto>(response);
+                listGroupMergeRequestValidAssignedCandidatesResponse.Body = JsonUtils.DeSerializeList<UserBasicDto>(response);
                 return listGroupMergeRequestValidAssignedCandidatesResponse;
             });
         }
@@ -3190,9 +3256,9 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         }
         
         /// <summary>
-        /// 获取可选的合并请求检视人
+        /// 获取仓库审核人或合并人
         ///
-        /// 获取可选的合并请求检视人
+        /// 获取仓库审核人或合并人
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -3317,7 +3383,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         /// <summary>
         /// 获取项目检视人
         ///
-        /// 获取代码组检视人
+        /// 获取项目检视人
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -3329,7 +3395,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectMergeRequestCanBeAssignedReviewersRequest);
             var response = await DoHttpRequestAsync("GET", request);
             var listProjectMergeRequestCanBeAssignedReviewersResponse = JsonUtils.DeSerializeNull<ListProjectMergeRequestCanBeAssignedReviewersResponse>(response);
-            listProjectMergeRequestCanBeAssignedReviewersResponse.Body = JsonUtils.DeSerializeList<MergeRequestVoteReviewerDto>(response);
+            listProjectMergeRequestCanBeAssignedReviewersResponse.Body = JsonUtils.DeSerializeList<UserBasicDto>(response);
             return listProjectMergeRequestCanBeAssignedReviewersResponse;
         }
 
@@ -3342,7 +3408,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
             return new AsyncInvoker<ListProjectMergeRequestCanBeAssignedReviewersResponse>(this, "GET", request, response =>
             {
                 var listProjectMergeRequestCanBeAssignedReviewersResponse = JsonUtils.DeSerializeNull<ListProjectMergeRequestCanBeAssignedReviewersResponse>(response);
-                listProjectMergeRequestCanBeAssignedReviewersResponse.Body = JsonUtils.DeSerializeList<MergeRequestVoteReviewerDto>(response);
+                listProjectMergeRequestCanBeAssignedReviewersResponse.Body = JsonUtils.DeSerializeList<UserBasicDto>(response);
                 return listProjectMergeRequestCanBeAssignedReviewersResponse;
             });
         }
@@ -3350,7 +3416,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         /// <summary>
         /// 获取项目审核人或合并人
         ///
-        /// 获取代码组审核人或合并人
+        /// 获取项目审核人或合并人
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -3362,7 +3428,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectMergeRequestCanBeAssignedUsersRequest);
             var response = await DoHttpRequestAsync("GET", request);
             var listProjectMergeRequestCanBeAssignedUsersResponse = JsonUtils.DeSerializeNull<ListProjectMergeRequestCanBeAssignedUsersResponse>(response);
-            listProjectMergeRequestCanBeAssignedUsersResponse.Body = JsonUtils.DeSerializeList<MergeRequestVoteReviewerDto>(response);
+            listProjectMergeRequestCanBeAssignedUsersResponse.Body = JsonUtils.DeSerializeList<UserBasicDto>(response);
             return listProjectMergeRequestCanBeAssignedUsersResponse;
         }
 
@@ -3375,7 +3441,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
             return new AsyncInvoker<ListProjectMergeRequestCanBeAssignedUsersResponse>(this, "GET", request, response =>
             {
                 var listProjectMergeRequestCanBeAssignedUsersResponse = JsonUtils.DeSerializeNull<ListProjectMergeRequestCanBeAssignedUsersResponse>(response);
-                listProjectMergeRequestCanBeAssignedUsersResponse.Body = JsonUtils.DeSerializeList<MergeRequestVoteReviewerDto>(response);
+                listProjectMergeRequestCanBeAssignedUsersResponse.Body = JsonUtils.DeSerializeList<UserBasicDto>(response);
                 return listProjectMergeRequestCanBeAssignedUsersResponse;
             });
         }
@@ -3410,6 +3476,39 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
                 var listProjectMergeRequestTemplatesResponse = JsonUtils.DeSerializeNull<ListProjectMergeRequestTemplatesResponse>(response);
                 listProjectMergeRequestTemplatesResponse.Body = JsonUtils.DeSerializeList<ProjectMergeRequestTemplateDto>(response);
                 return listProjectMergeRequestTemplatesResponse;
+            });
+        }
+        
+        /// <summary>
+        /// 获取项目MR列表
+        ///
+        /// 获取项目MR列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListProjectMergeRequestsResponse> ListProjectMergeRequestsAsync(ListProjectMergeRequestsRequest listProjectMergeRequestsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listProjectMergeRequestsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/merge-requests", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectMergeRequestsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            var listProjectMergeRequestsResponse = JsonUtils.DeSerializeNull<ListProjectMergeRequestsResponse>(response);
+            listProjectMergeRequestsResponse.Body = JsonUtils.DeSerializeList<MergeRequestListBasicDto>(response);
+            return listProjectMergeRequestsResponse;
+        }
+
+        public AsyncInvoker<ListProjectMergeRequestsResponse> ListProjectMergeRequestsAsyncInvoker(ListProjectMergeRequestsRequest listProjectMergeRequestsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listProjectMergeRequestsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/merge-requests", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectMergeRequestsRequest);
+            return new AsyncInvoker<ListProjectMergeRequestsResponse>(this, "GET", request, response =>
+            {
+                var listProjectMergeRequestsResponse = JsonUtils.DeSerializeNull<ListProjectMergeRequestsResponse>(response);
+                listProjectMergeRequestsResponse.Body = JsonUtils.DeSerializeList<MergeRequestListBasicDto>(response);
+                return listProjectMergeRequestsResponse;
             });
         }
         
@@ -4440,6 +4539,34 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         }
         
         /// <summary>
+        /// 更新代码组权限矩阵配置
+        ///
+        /// 更新代码组权限矩阵配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateGroupResourcePermissionsResponse> UpdateGroupResourcePermissionsAsync(UpdateGroupResourcePermissionsRequest updateGroupResourcePermissionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateGroupResourcePermissionsRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(updateGroupResourcePermissionsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/groups/{group_id}/permissions/{resource_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateGroupResourcePermissionsRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateGroupResourcePermissionsResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateGroupResourcePermissionsResponse> UpdateGroupResourcePermissionsAsyncInvoker(UpdateGroupResourcePermissionsRequest updateGroupResourcePermissionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateGroupResourcePermissionsRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(updateGroupResourcePermissionsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/groups/{group_id}/permissions/{resource_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateGroupResourcePermissionsRequest);
+            return new AsyncInvoker<UpdateGroupResourcePermissionsResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateGroupResourcePermissionsResponse>);
+        }
+        
+        /// <summary>
         /// 更新仓库权限继承配置
         ///
         /// 更新仓库权限继承配置。
@@ -4762,9 +4889,12 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         }
         
         /// <summary>
-        /// 获取资源点对应的角色和权限
+        /// 获取代码组中指定权限资源下的权限矩阵
         ///
-        /// 获取资源点对应的角色和权限
+        /// 获取代码组中指定权限资源下的权限矩阵。
+        /// 说明：
+        /// (a) 权限资源：CodeArtsRepo中需要鉴权的对象。代码组层级的权限资源有：代码组、仓库、代码、成员、Tag、合并请求&amp;变更请求、标签。&lt;动作 + 权限资源&gt; 就构成权限点，如：新建仓库、下载代码、添加成员等。权限点是CodeArtsRepo鉴权的基本单位。
+        /// (b) 权限矩阵：记录了角色和权限点之间的关联关系，即记录了角色有哪些权限，没有哪些权限。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -5406,39 +5536,6 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         }
         
         /// <summary>
-        /// 查看分支/tag列表
-        ///
-        /// 查看分支/tag列表
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ListRefsListResponse> ListRefsListAsync(ListRefsListRequest listRefsListRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listRefsListRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/refs", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRefsListRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            var listRefsListResponse = JsonUtils.DeSerializeNull<ListRefsListResponse>(response);
-            listRefsListResponse.Body = JsonUtils.DeSerializeList<string>(response);
-            return listRefsListResponse;
-        }
-
-        public AsyncInvoker<ListRefsListResponse> ListRefsListAsyncInvoker(ListRefsListRequest listRefsListRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listRefsListRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
-            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/refs", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRefsListRequest);
-            return new AsyncInvoker<ListRefsListResponse>(this, "GET", request, response =>
-            {
-                var listRefsListResponse = JsonUtils.DeSerializeNull<ListRefsListResponse>(response);
-                listRefsListResponse.Body = JsonUtils.DeSerializeList<string>(response);
-                return listRefsListResponse;
-            });
-        }
-        
-        /// <summary>
         /// 批量删除分支
         ///
         /// 批量删除分支
@@ -5598,6 +5695,39 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
                 var listBranchesResponse = JsonUtils.DeSerializeNull<ListBranchesResponse>(response);
                 listBranchesResponse.Body = JsonUtils.DeSerializeList<BranchSimpleDto>(response);
                 return listBranchesResponse;
+            });
+        }
+        
+        /// <summary>
+        /// 查看分支/tag列表
+        ///
+        /// 查看分支/tag列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListRefsListResponse> ListRefsListAsync(ListRefsListRequest listRefsListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listRefsListRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/refs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRefsListRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            var listRefsListResponse = JsonUtils.DeSerializeNull<ListRefsListResponse>(response);
+            listRefsListResponse.Body = JsonUtils.DeSerializeList<string>(response);
+            return listRefsListResponse;
+        }
+
+        public AsyncInvoker<ListRefsListResponse> ListRefsListAsyncInvoker(ListRefsListRequest listRefsListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listRefsListRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/refs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRefsListRequest);
+            return new AsyncInvoker<ListRefsListResponse>(this, "GET", request, response =>
+            {
+                var listRefsListResponse = JsonUtils.DeSerializeNull<ListRefsListResponse>(response);
+                listRefsListResponse.Body = JsonUtils.DeSerializeList<string>(response);
+                return listRefsListResponse;
             });
         }
         
@@ -6419,6 +6549,32 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         }
         
         /// <summary>
+        /// 获取代码导航引用关系
+        ///
+        /// 获取代码导航引用关系
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListRepositoryNavigationReferencesResponse> ListRepositoryNavigationReferencesAsync(ListRepositoryNavigationReferencesRequest listRepositoryNavigationReferencesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listRepositoryNavigationReferencesRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/nav/references", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRepositoryNavigationReferencesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListRepositoryNavigationReferencesResponse>(response);
+        }
+
+        public AsyncInvoker<ListRepositoryNavigationReferencesResponse> ListRepositoryNavigationReferencesAsyncInvoker(ListRepositoryNavigationReferencesRequest listRepositoryNavigationReferencesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listRepositoryNavigationReferencesRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/nav/references", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRepositoryNavigationReferencesRequest);
+            return new AsyncInvoker<ListRepositoryNavigationReferencesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRepositoryNavigationReferencesResponse>);
+        }
+        
+        /// <summary>
         /// 模板仓列表
         ///
         /// 模板仓列表
@@ -6544,6 +6700,32 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         }
         
         /// <summary>
+        /// 触发代码导航任务
+        ///
+        /// 触发代码导航任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<RebuildRepositoryNavigationResponse> RebuildRepositoryNavigationAsync(RebuildRepositoryNavigationRequest rebuildRepositoryNavigationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(rebuildRepositoryNavigationRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/nav/build", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rebuildRepositoryNavigationRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<RebuildRepositoryNavigationResponse>(response);
+        }
+
+        public AsyncInvoker<RebuildRepositoryNavigationResponse> RebuildRepositoryNavigationAsyncInvoker(RebuildRepositoryNavigationRequest rebuildRepositoryNavigationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(rebuildRepositoryNavigationRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/nav/build", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rebuildRepositoryNavigationRequest);
+            return new AsyncInvoker<RebuildRepositoryNavigationResponse>(this, "POST", request, JsonUtils.DeSerialize<RebuildRepositoryNavigationResponse>);
+        }
+        
+        /// <summary>
         /// 删除仓库部署密钥
         ///
         /// 删除仓库部署密钥
@@ -6574,7 +6756,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         /// <summary>
         /// 删除子仓库部署密钥
         ///
-        /// 将该该仓库的部署密钥从子模组中删除
+        /// 将该仓库的部署密钥从子模组中删除
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -6808,6 +6990,58 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         }
         
         /// <summary>
+        /// 获取仓库最近的提交统计信息
+        ///
+        /// 获取仓库最近的提交统计信息，其中按人员统计记录最多统计按创建时间降序的前100条数据。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowRepoLastStatisticsResponse> ShowRepoLastStatisticsAsync(ShowRepoLastStatisticsRequest showRepoLastStatisticsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showRepoLastStatisticsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/stats/last-statistics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRepoLastStatisticsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowRepoLastStatisticsResponse>(response);
+        }
+
+        public AsyncInvoker<ShowRepoLastStatisticsResponse> ShowRepoLastStatisticsAsyncInvoker(ShowRepoLastStatisticsRequest showRepoLastStatisticsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showRepoLastStatisticsRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/stats/last-statistics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRepoLastStatisticsRequest);
+            return new AsyncInvoker<ShowRepoLastStatisticsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRepoLastStatisticsResponse>);
+        }
+        
+        /// <summary>
+        /// 获取仓库统计信息概览
+        ///
+        /// 获取仓库统计信息概览，包括仓库大小，分支数量，提交数量等。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowRepoStatisticsSummaryResponse> ShowRepoStatisticsSummaryAsync(ShowRepoStatisticsSummaryRequest showRepoStatisticsSummaryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showRepoStatisticsSummaryRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/stats/summary", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRepoStatisticsSummaryRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowRepoStatisticsSummaryResponse>(response);
+        }
+
+        public AsyncInvoker<ShowRepoStatisticsSummaryResponse> ShowRepoStatisticsSummaryAsyncInvoker(ShowRepoStatisticsSummaryRequest showRepoStatisticsSummaryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showRepoStatisticsSummaryRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/stats/summary", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRepoStatisticsSummaryRequest);
+            return new AsyncInvoker<ShowRepoStatisticsSummaryResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRepoStatisticsSummaryResponse>);
+        }
+        
+        /// <summary>
         /// 获取仓库详情
         ///
         /// 获取仓库详情
@@ -6942,6 +7176,84 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
             var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/inherit-setting-source", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRepositoryInheritSettingSourceRequest);
             return new AsyncInvoker<ShowRepositoryInheritSettingSourceResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRepositoryInheritSettingSourceResponse>);
+        }
+        
+        /// <summary>
+        /// 获取代码导航功能的语言信息
+        ///
+        /// 获取代码导航功能的语言信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowRepositoryNavigationLanguageResponse> ShowRepositoryNavigationLanguageAsync(ShowRepositoryNavigationLanguageRequest showRepositoryNavigationLanguageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showRepositoryNavigationLanguageRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/nav/language", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRepositoryNavigationLanguageRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowRepositoryNavigationLanguageResponse>(response);
+        }
+
+        public AsyncInvoker<ShowRepositoryNavigationLanguageResponse> ShowRepositoryNavigationLanguageAsyncInvoker(ShowRepositoryNavigationLanguageRequest showRepositoryNavigationLanguageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showRepositoryNavigationLanguageRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/nav/language", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRepositoryNavigationLanguageRequest);
+            return new AsyncInvoker<ShowRepositoryNavigationLanguageResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRepositoryNavigationLanguageResponse>);
+        }
+        
+        /// <summary>
+        /// 获取代码导航大纲
+        ///
+        /// 获取代码导航大纲
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowRepositoryNavigationOutlineResponse> ShowRepositoryNavigationOutlineAsync(ShowRepositoryNavigationOutlineRequest showRepositoryNavigationOutlineRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showRepositoryNavigationOutlineRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/nav/outline", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRepositoryNavigationOutlineRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowRepositoryNavigationOutlineResponse>(response);
+        }
+
+        public AsyncInvoker<ShowRepositoryNavigationOutlineResponse> ShowRepositoryNavigationOutlineAsyncInvoker(ShowRepositoryNavigationOutlineRequest showRepositoryNavigationOutlineRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showRepositoryNavigationOutlineRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/nav/outline", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRepositoryNavigationOutlineRequest);
+            return new AsyncInvoker<ShowRepositoryNavigationOutlineResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRepositoryNavigationOutlineResponse>);
+        }
+        
+        /// <summary>
+        /// 获取代码导航功能的模式信息
+        ///
+        /// 获取代码导航功能的模式信息，包括最近索引创建时间，做大统计的文件数量信息等
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowRepositoryNavigationSchemaResponse> ShowRepositoryNavigationSchemaAsync(ShowRepositoryNavigationSchemaRequest showRepositoryNavigationSchemaRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showRepositoryNavigationSchemaRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/nav/schema", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRepositoryNavigationSchemaRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowRepositoryNavigationSchemaResponse>(response);
+        }
+
+        public AsyncInvoker<ShowRepositoryNavigationSchemaResponse> ShowRepositoryNavigationSchemaAsyncInvoker(ShowRepositoryNavigationSchemaRequest showRepositoryNavigationSchemaRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showRepositoryNavigationSchemaRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/repository/nav/schema", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRepositoryNavigationSchemaRequest);
+            return new AsyncInvoker<ShowRepositoryNavigationSchemaResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRepositoryNavigationSchemaResponse>);
         }
         
         /// <summary>
@@ -7126,6 +7438,32 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
             var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/deploy-keys/{key_id}/submodules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", syncDeployKeyToSubmodulesRequest);
             return new AsyncInvoker<SyncDeployKeyToSubmodulesResponse>(this, "POST", request, JsonUtils.DeSerializeNull<SyncDeployKeyToSubmodulesResponse>);
+        }
+        
+        /// <summary>
+        /// 转移仓库
+        ///
+        /// 将仓库转移到其他代码组
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<TransferRepositoryResponse> TransferRepositoryAsync(TransferRepositoryRequest transferRepositoryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(transferRepositoryRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/transfer", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", transferRepositoryRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<TransferRepositoryResponse>(response);
+        }
+
+        public AsyncInvoker<TransferRepositoryResponse> TransferRepositoryAsyncInvoker(TransferRepositoryRequest transferRepositoryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(transferRepositoryRequest.RepositoryId, out var valueOfRepositoryId)) urlParam.Add("repository_id", valueOfRepositoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/repositories/{repository_id}/transfer", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", transferRepositoryRequest);
+            return new AsyncInvoker<TransferRepositoryResponse>(this, "POST", request, JsonUtils.DeSerialize<TransferRepositoryResponse>);
         }
         
         /// <summary>
@@ -7426,6 +7764,32 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         }
         
         /// <summary>
+        /// 创建当前租户委托给Repo的KMS授权
+        ///
+        /// 创建当前租户委托给Repo的KMS授权
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateTenantKmsGrantResponse> CreateTenantKmsGrantAsync(CreateTenantKmsGrantRequest createTenantKmsGrantRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createTenantKmsGrantRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/tenants/{tenant_id}/repo-encryption/kms-grant", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTenantKmsGrantRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateTenantKmsGrantResponse>(response);
+        }
+
+        public AsyncInvoker<CreateTenantKmsGrantResponse> CreateTenantKmsGrantAsyncInvoker(CreateTenantKmsGrantRequest createTenantKmsGrantRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createTenantKmsGrantRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/tenants/{tenant_id}/repo-encryption/kms-grant", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTenantKmsGrantRequest);
+            return new AsyncInvoker<CreateTenantKmsGrantResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateTenantKmsGrantResponse>);
+        }
+        
+        /// <summary>
         /// 删除租户ip白名单
         ///
         /// 删除租户ip白名单
@@ -7454,7 +7818,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         /// <summary>
         /// 租户仓库列表
         ///
-        /// 租户下所有占用资源的仓库列表
+        /// 租户下所有占用资源的仓库列表，最多只能导出2万条记录。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -7473,6 +7837,72 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
             var urlPath = HttpUtils.AddUrlPath("/v4/tenant/repositories/export", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", exportTenantRepositoriesRequest);
             return new AsyncInvoker<ExportTenantRepositoriesResponse>(this, "POST", request, JsonUtils.DeSerialize<ExportTenantRepositoriesResponse>);
+        }
+        
+        /// <summary>
+        /// 获取当前租户的在KMS托管的主密钥CMK列表
+        ///
+        /// 获取当前租户的在KMS托管的主密钥CMK列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListTenantCmksResponse> ListTenantCmksAsync(ListTenantCmksRequest listTenantCmksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listTenantCmksRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/tenants/{tenant_id}/repo-encryption/cmks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTenantCmksRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            var listTenantCmksResponse = JsonUtils.DeSerializeNull<ListTenantCmksResponse>(response);
+            listTenantCmksResponse.Body = JsonUtils.DeSerializeList<TenantCMKDto>(response);
+            return listTenantCmksResponse;
+        }
+
+        public AsyncInvoker<ListTenantCmksResponse> ListTenantCmksAsyncInvoker(ListTenantCmksRequest listTenantCmksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listTenantCmksRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/tenants/{tenant_id}/repo-encryption/cmks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTenantCmksRequest);
+            return new AsyncInvoker<ListTenantCmksResponse>(this, "GET", request, response =>
+            {
+                var listTenantCmksResponse = JsonUtils.DeSerializeNull<ListTenantCmksResponse>(response);
+                listTenantCmksResponse.Body = JsonUtils.DeSerializeList<TenantCMKDto>(response);
+                return listTenantCmksResponse;
+            });
+        }
+        
+        /// <summary>
+        /// 获取当前租户已加密的仓库列表
+        ///
+        /// 获取当前租户已加密的仓库列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListTenantEncryptedRepositoriesResponse> ListTenantEncryptedRepositoriesAsync(ListTenantEncryptedRepositoriesRequest listTenantEncryptedRepositoriesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listTenantEncryptedRepositoriesRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/tenants/{tenant_id}/repo-encryption/repositories", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTenantEncryptedRepositoriesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            var listTenantEncryptedRepositoriesResponse = JsonUtils.DeSerializeNull<ListTenantEncryptedRepositoriesResponse>(response);
+            listTenantEncryptedRepositoriesResponse.Body = JsonUtils.DeSerializeList<RepoEncryptionDto>(response);
+            return listTenantEncryptedRepositoriesResponse;
+        }
+
+        public AsyncInvoker<ListTenantEncryptedRepositoriesResponse> ListTenantEncryptedRepositoriesAsyncInvoker(ListTenantEncryptedRepositoriesRequest listTenantEncryptedRepositoriesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listTenantEncryptedRepositoriesRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/tenants/{tenant_id}/repo-encryption/repositories", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTenantEncryptedRepositoriesRequest);
+            return new AsyncInvoker<ListTenantEncryptedRepositoriesResponse>(this, "GET", request, response =>
+            {
+                var listTenantEncryptedRepositoriesResponse = JsonUtils.DeSerializeNull<ListTenantEncryptedRepositoriesResponse>(response);
+                listTenantEncryptedRepositoriesResponse.Body = JsonUtils.DeSerializeList<RepoEncryptionDto>(response);
+                return listTenantEncryptedRepositoriesResponse;
+            });
         }
         
         /// <summary>
@@ -7535,6 +7965,132 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
                 listTenantTrustedIpAddressesResponse.Body = JsonUtils.DeSerializeList<TenantTrustedIpAddressDto>(response);
                 return listTenantTrustedIpAddressesResponse;
             });
+        }
+        
+        /// <summary>
+        /// 获取租户设置
+        ///
+        /// 获取租户设置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowProjectTenantSettingsResponse> ShowProjectTenantSettingsAsync(ShowProjectTenantSettingsRequest showProjectTenantSettingsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v4/tenant/setting", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectTenantSettingsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowProjectTenantSettingsResponse>(response);
+        }
+
+        public AsyncInvoker<ShowProjectTenantSettingsResponse> ShowProjectTenantSettingsAsyncInvoker(ShowProjectTenantSettingsRequest showProjectTenantSettingsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v4/tenant/setting", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectTenantSettingsRequest);
+            return new AsyncInvoker<ShowProjectTenantSettingsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowProjectTenantSettingsResponse>);
+        }
+        
+        /// <summary>
+        /// 查看当前租户的开发模式
+        ///
+        /// 查看当前租户的开发模式
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowTenantDevelopModeResponse> ShowTenantDevelopModeAsync(ShowTenantDevelopModeRequest showTenantDevelopModeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v4/tenant/develop-mode", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTenantDevelopModeRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowTenantDevelopModeResponse>(response);
+        }
+
+        public AsyncInvoker<ShowTenantDevelopModeResponse> ShowTenantDevelopModeAsyncInvoker(ShowTenantDevelopModeRequest showTenantDevelopModeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v4/tenant/develop-mode", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTenantDevelopModeRequest);
+            return new AsyncInvoker<ShowTenantDevelopModeResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTenantDevelopModeResponse>);
+        }
+        
+        /// <summary>
+        /// 获取当前租户委托授权KMS状态
+        ///
+        /// 获取当前租户委托授权KMS状态
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowTenantKmsGrantResponse> ShowTenantKmsGrantAsync(ShowTenantKmsGrantRequest showTenantKmsGrantRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTenantKmsGrantRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/tenants/{tenant_id}/repo-encryption/kms-grant", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTenantKmsGrantRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowTenantKmsGrantResponse>(response);
+        }
+
+        public AsyncInvoker<ShowTenantKmsGrantResponse> ShowTenantKmsGrantAsyncInvoker(ShowTenantKmsGrantRequest showTenantKmsGrantRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTenantKmsGrantRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/tenants/{tenant_id}/repo-encryption/kms-grant", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTenantKmsGrantRequest);
+            return new AsyncInvoker<ShowTenantKmsGrantResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTenantKmsGrantResponse>);
+        }
+        
+        /// <summary>
+        /// 获取当前租户的仓库加密配置
+        ///
+        /// 获取当前租户的仓库加密配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowTenantRepoEncryptionSettingResponse> ShowTenantRepoEncryptionSettingAsync(ShowTenantRepoEncryptionSettingRequest showTenantRepoEncryptionSettingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTenantRepoEncryptionSettingRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/tenants/{tenant_id}/repo-encryption/setting", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTenantRepoEncryptionSettingRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowTenantRepoEncryptionSettingResponse>(response);
+        }
+
+        public AsyncInvoker<ShowTenantRepoEncryptionSettingResponse> ShowTenantRepoEncryptionSettingAsyncInvoker(ShowTenantRepoEncryptionSettingRequest showTenantRepoEncryptionSettingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTenantRepoEncryptionSettingRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/tenants/{tenant_id}/repo-encryption/setting", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTenantRepoEncryptionSettingRequest);
+            return new AsyncInvoker<ShowTenantRepoEncryptionSettingResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTenantRepoEncryptionSettingResponse>);
+        }
+        
+        /// <summary>
+        /// 修改当前租户的仓库加密配置
+        ///
+        /// 修改当前租户的仓库加密配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateTenantRepoEncryptionSettingResponse> UpdateTenantRepoEncryptionSettingAsync(UpdateTenantRepoEncryptionSettingRequest updateTenantRepoEncryptionSettingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateTenantRepoEncryptionSettingRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/tenants/{tenant_id}/repo-encryption/setting", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTenantRepoEncryptionSettingRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateTenantRepoEncryptionSettingResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateTenantRepoEncryptionSettingResponse> UpdateTenantRepoEncryptionSettingAsyncInvoker(UpdateTenantRepoEncryptionSettingRequest updateTenantRepoEncryptionSettingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateTenantRepoEncryptionSettingRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/tenants/{tenant_id}/repo-encryption/setting", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTenantRepoEncryptionSettingRequest);
+            return new AsyncInvoker<UpdateTenantRepoEncryptionSettingResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateTenantRepoEncryptionSettingResponse>);
         }
         
         /// <summary>
@@ -7949,7 +8505,6 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         public async Task<ListImpersonationTokensResponse> ListImpersonationTokensAsync(ListImpersonationTokensRequest listImpersonationTokensRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listImpersonationTokensRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v4/users/impersonation-tokens", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listImpersonationTokensRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -7961,7 +8516,6 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4
         public AsyncInvoker<ListImpersonationTokensResponse> ListImpersonationTokensAsyncInvoker(ListImpersonationTokensRequest listImpersonationTokensRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listImpersonationTokensRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v4/users/impersonation-tokens", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listImpersonationTokensRequest);
             return new AsyncInvoker<ListImpersonationTokensResponse>(this, "GET", request, response =>

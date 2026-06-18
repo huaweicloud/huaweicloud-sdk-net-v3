@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Iam.V5.Model
     public class DeleteResourceTagsV5Request 
     {
         /// <summary>
-        /// 资源类型，可以为“信任委托”（trust agency）或“IAM用户”（user）。
+        /// 资源类型，可以为“信任委托”（trust agency）或“IAM用户”（user）或“身份提供商”（provider）。
         /// </summary>
-        /// <value>资源类型，可以为“信任委托”（trust agency）或“IAM用户”（user）。</value>
+        /// <value>资源类型，可以为“信任委托”（trust agency）或“IAM用户”（user）或“身份提供商”（provider）。</value>
         [JsonConverter(typeof(EnumClassConverter<ResourceTypeEnum>))]
         public class ResourceTypeEnum
         {
@@ -32,11 +32,23 @@ namespace HuaweiCloud.SDK.Iam.V5.Model
             /// </summary>
             public static readonly ResourceTypeEnum USER = new ResourceTypeEnum("user");
 
+            /// <summary>
+            /// Enum OIDC_PROVIDER for value: oidc_provider
+            /// </summary>
+            public static readonly ResourceTypeEnum OIDC_PROVIDER = new ResourceTypeEnum("oidc_provider");
+
+            /// <summary>
+            /// Enum SAML_PROVIDER for value: saml_provider
+            /// </summary>
+            public static readonly ResourceTypeEnum SAML_PROVIDER = new ResourceTypeEnum("saml_provider");
+
             private static readonly Dictionary<string, ResourceTypeEnum> StaticFields =
             new Dictionary<string, ResourceTypeEnum>()
             {
                 { "agency", AGENCY },
                 { "user", USER },
+                { "oidc_provider", OIDC_PROVIDER },
+                { "saml_provider", SAML_PROVIDER },
             };
 
             private string _value;
@@ -139,7 +151,7 @@ namespace HuaweiCloud.SDK.Iam.V5.Model
         public string ResourceId { get; set; }
 
         /// <summary>
-        /// 资源类型，可以为“信任委托”（trust agency）或“IAM用户”（user）。
+        /// 资源类型，可以为“信任委托”（trust agency）或“IAM用户”（user）或“身份提供商”（provider）。
         /// </summary>
         [SDKProperty("resource_type", IsPath = true)]
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]

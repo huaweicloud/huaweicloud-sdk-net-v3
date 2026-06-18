@@ -17,31 +17,31 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
     {
 
         /// <summary>
-        /// **参数解释：** 统计ID。
+        /// **参数解释：** 统计ID。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public int? Id { get; set; }
 
         /// <summary>
-        /// **参数解释：** 用户ID。
+        /// **参数解释：** 用户ID。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("user_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? UserId { get; set; }
 
         /// <summary>
-        /// **参数解释：** 仓库ID。
+        /// **参数解释：** 仓库ID。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? ProjectId { get; set; }
 
         /// <summary>
-        /// **参数解释：** 分支名。 **取值范围：** 最小1个字节，最大200字节
+        /// **参数解释：** 分支名。 **取值范围：** 最小1个字节，最大200字节 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("branch", NullValueHandling = NullValueHandling.Ignore)]
         public string Branch { get; set; }
 
         /// <summary>
-        /// **参数解释：** 统计状态。
+        /// **参数解释：** 统计状态。 **默认取值：** 0
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }

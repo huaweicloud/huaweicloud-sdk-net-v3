@@ -17,16 +17,22 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
     {
 
         /// <summary>
-        /// 磁盘大小。单位：GB。
+        /// 参数解释： 磁盘大小。单位：GB。 取值范围： 不涉及。
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
         public string Size { get; set; }
 
         /// <summary>
-        /// 磁盘使用量。单位：GB。
+        /// 参数解释： 磁盘使用量。单位：GB。 取值范围： 不涉及。
         /// </summary>
         [JsonProperty("used", NullValueHandling = NullValueHandling.Ignore)]
         public string Used { get; set; }
+
+        /// <summary>
+        /// 参数解释： 赠送的磁盘大小。单位：GB。 取值范围： 不涉及。
+        /// </summary>
+        [JsonProperty("gift_size", NullValueHandling = NullValueHandling.Ignore)]
+        public string GiftSize { get; set; }
 
 
 
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             sb.Append("class Volume {\n");
             sb.Append("  size: ").Append(Size).Append("\n");
             sb.Append("  used: ").Append(Used).Append("\n");
+            sb.Append("  giftSize: ").Append(GiftSize).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             if (input == null) return false;
             if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
             if (this.Used != input.Used || (this.Used != null && !this.Used.Equals(input.Used))) return false;
+            if (this.GiftSize != input.GiftSize || (this.GiftSize != null && !this.GiftSize.Equals(input.GiftSize))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                 var hashCode = 41;
                 if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
                 if (this.Used != null) hashCode = hashCode * 59 + this.Used.GetHashCode();
+                if (this.GiftSize != null) hashCode = hashCode * 59 + this.GiftSize.GetHashCode();
                 return hashCode;
             }
         }

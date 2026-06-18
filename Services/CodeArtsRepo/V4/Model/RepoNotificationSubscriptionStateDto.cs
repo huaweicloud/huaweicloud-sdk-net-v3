@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
     public class RepoNotificationSubscriptionStateDto 
     {
         /// <summary>
-        /// **参数解释：** 配资源。
+        /// **参数解释：** 配置源。
         /// </summary>
-        /// <value>**参数解释：** 配资源。</value>
+        /// <value>**参数解释：** 配置源。</value>
         [JsonConverter(typeof(EnumClassConverter<ConfigSourceEnum>))]
         public class ConfigSourceEnum
         {
@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
 
 
         /// <summary>
-        /// **参数解释：** 配资源。
+        /// **参数解释：** 配置源。
         /// </summary>
         [JsonProperty("config_source", NullValueHandling = NullValueHandling.Ignore)]
         public ConfigSourceEnum ConfigSource { get; set; }

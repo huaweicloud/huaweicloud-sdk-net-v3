@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Sts.V1.Model
     {
 
         /// <summary>
-        /// 账号ID。
+        /// **参数解释**： 账号ID。  **取值范围**： 不涉及。 
         /// </summary>
         [JsonProperty("account_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AccountId { get; set; }
 
         /// <summary>
-        /// 主体URN。
+        /// **参数解释**： 主体URN。  **取值范围**： 不涉及。 
         /// </summary>
         [JsonProperty("principal_urn", NullValueHandling = NullValueHandling.Ignore)]
         public string PrincipalUrn { get; set; }
 
         /// <summary>
-        /// 主体ID。
+        /// **参数解释**： 主体ID。  **取值范围**： 不涉及。 
         /// </summary>
         [JsonProperty("principal_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PrincipalId { get; set; }

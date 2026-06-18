@@ -178,6 +178,12 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         [JsonProperty("commit_email", NullValueHandling = NullValueHandling.Ignore)]
         public string CommitEmail { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 是否为默认邮箱。
+        /// </summary>
+        [JsonProperty("is_default", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsDefault { get; set; }
+
 
 
         /// <summary>
@@ -195,6 +201,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  lastActivityOn: ").Append(LastActivityOn).Append("\n");
             sb.Append("  commitEmail: ").Append(CommitEmail).Append("\n");
+            sb.Append("  isDefault: ").Append(IsDefault).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -221,6 +228,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
             if (this.LastActivityOn != input.LastActivityOn || (this.LastActivityOn != null && !this.LastActivityOn.Equals(input.LastActivityOn))) return false;
             if (this.CommitEmail != input.CommitEmail || (this.CommitEmail != null && !this.CommitEmail.Equals(input.CommitEmail))) return false;
+            if (this.IsDefault != input.IsDefault || (this.IsDefault != null && !this.IsDefault.Equals(input.IsDefault))) return false;
 
             return true;
         }
@@ -241,6 +249,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
                 if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 if (this.LastActivityOn != null) hashCode = hashCode * 59 + this.LastActivityOn.GetHashCode();
                 if (this.CommitEmail != null) hashCode = hashCode * 59 + this.CommitEmail.GetHashCode();
+                if (this.IsDefault != null) hashCode = hashCode * 59 + this.IsDefault.GetHashCode();
                 return hashCode;
             }
         }

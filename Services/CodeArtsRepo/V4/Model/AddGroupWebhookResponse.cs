@@ -35,6 +35,12 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         public string PushEventsBranchRegexFilter { get; set; }
 
         /// <summary>
+        /// **参数解释：** 评论事件文本过滤规则。 **取值范围：** 字符串长度不少于0，不超过50，不能超过10个。  
+        /// </summary>
+        [JsonProperty("note_plain_text_filter", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> NotePlainTextFilter { get; set; }
+
+        /// <summary>
         /// **参数解释：** 是否启用Tag推送事件。
         /// </summary>
         [JsonProperty("tag_push_events", NullValueHandling = NullValueHandling.Ignore)]
@@ -77,6 +83,24 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         public string Description { get; set; }
 
         /// <summary>
+        /// **参数解释：** 预留字段，事件触发设置，可为空。
+        /// </summary>
+        [JsonProperty("event_cfgs", NullValueHandling = NullValueHandling.Ignore)]
+        public List<WebHookEventCfgDto> EventCfgs { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 预留字段，仓库分支规则设置，可为空。
+        /// </summary>
+        [JsonProperty("project_cfgs", NullValueHandling = NullValueHandling.Ignore)]
+        public List<WebHookBranchCfgDto> ProjectCfgs { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("branch_cfgs", NullValueHandling = NullValueHandling.Ignore)]
+        public List<WebHookBranchCfgDto> BranchCfgs { get; set; }
+
+        /// <summary>
         /// **参数解释：** Webhook id。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
@@ -94,6 +118,12 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdatedAt { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 内部服务名称。
+        /// </summary>
+        [JsonProperty("service", NullValueHandling = NullValueHandling.Ignore)]
+        public string Service { get; set; }
+
 
 
         /// <summary>
@@ -106,6 +136,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             sb.Append("  url: ").Append(Url).Append("\n");
             sb.Append("  pushEvents: ").Append(PushEvents).Append("\n");
             sb.Append("  pushEventsBranchRegexFilter: ").Append(PushEventsBranchRegexFilter).Append("\n");
+            sb.Append("  notePlainTextFilter: ").Append(NotePlainTextFilter).Append("\n");
             sb.Append("  tagPushEvents: ").Append(TagPushEvents).Append("\n");
             sb.Append("  mergeRequestsEvents: ").Append(MergeRequestsEvents).Append("\n");
             sb.Append("  noteEvents: ").Append(NoteEvents).Append("\n");
@@ -113,9 +144,13 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             sb.Append("  tokenType: ").Append(TokenType).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  eventCfgs: ").Append(EventCfgs).Append("\n");
+            sb.Append("  projectCfgs: ").Append(ProjectCfgs).Append("\n");
+            sb.Append("  branchCfgs: ").Append(BranchCfgs).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
+            sb.Append("  service: ").Append(Service).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -137,6 +172,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
             if (this.PushEvents != input.PushEvents || (this.PushEvents != null && !this.PushEvents.Equals(input.PushEvents))) return false;
             if (this.PushEventsBranchRegexFilter != input.PushEventsBranchRegexFilter || (this.PushEventsBranchRegexFilter != null && !this.PushEventsBranchRegexFilter.Equals(input.PushEventsBranchRegexFilter))) return false;
+            if (this.NotePlainTextFilter != input.NotePlainTextFilter || (this.NotePlainTextFilter != null && input.NotePlainTextFilter != null && !this.NotePlainTextFilter.SequenceEqual(input.NotePlainTextFilter))) return false;
             if (this.TagPushEvents != input.TagPushEvents || (this.TagPushEvents != null && !this.TagPushEvents.Equals(input.TagPushEvents))) return false;
             if (this.MergeRequestsEvents != input.MergeRequestsEvents || (this.MergeRequestsEvents != null && !this.MergeRequestsEvents.Equals(input.MergeRequestsEvents))) return false;
             if (this.NoteEvents != input.NoteEvents || (this.NoteEvents != null && !this.NoteEvents.Equals(input.NoteEvents))) return false;
@@ -144,9 +180,13 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             if (this.TokenType != input.TokenType || (this.TokenType != null && !this.TokenType.Equals(input.TokenType))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.EventCfgs != input.EventCfgs || (this.EventCfgs != null && input.EventCfgs != null && !this.EventCfgs.SequenceEqual(input.EventCfgs))) return false;
+            if (this.ProjectCfgs != input.ProjectCfgs || (this.ProjectCfgs != null && input.ProjectCfgs != null && !this.ProjectCfgs.SequenceEqual(input.ProjectCfgs))) return false;
+            if (this.BranchCfgs != input.BranchCfgs || (this.BranchCfgs != null && input.BranchCfgs != null && !this.BranchCfgs.SequenceEqual(input.BranchCfgs))) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
             if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.Service != input.Service || (this.Service != null && !this.Service.Equals(input.Service))) return false;
 
             return true;
         }
@@ -162,6 +202,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
                 if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
                 if (this.PushEvents != null) hashCode = hashCode * 59 + this.PushEvents.GetHashCode();
                 if (this.PushEventsBranchRegexFilter != null) hashCode = hashCode * 59 + this.PushEventsBranchRegexFilter.GetHashCode();
+                if (this.NotePlainTextFilter != null) hashCode = hashCode * 59 + this.NotePlainTextFilter.GetHashCode();
                 if (this.TagPushEvents != null) hashCode = hashCode * 59 + this.TagPushEvents.GetHashCode();
                 if (this.MergeRequestsEvents != null) hashCode = hashCode * 59 + this.MergeRequestsEvents.GetHashCode();
                 if (this.NoteEvents != null) hashCode = hashCode * 59 + this.NoteEvents.GetHashCode();
@@ -169,9 +210,13 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
                 if (this.TokenType != null) hashCode = hashCode * 59 + this.TokenType.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.EventCfgs != null) hashCode = hashCode * 59 + this.EventCfgs.GetHashCode();
+                if (this.ProjectCfgs != null) hashCode = hashCode * 59 + this.ProjectCfgs.GetHashCode();
+                if (this.BranchCfgs != null) hashCode = hashCode * 59 + this.BranchCfgs.GetHashCode();
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.Service != null) hashCode = hashCode * 59 + this.Service.GetHashCode();
                 return hashCode;
             }
         }

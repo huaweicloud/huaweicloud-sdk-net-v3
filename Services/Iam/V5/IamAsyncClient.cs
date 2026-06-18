@@ -740,6 +740,224 @@ namespace HuaweiCloud.SDK.Iam.V5
         }
         
         /// <summary>
+        /// 向指定OIDC提供商添加客户端 ID
+        ///
+        /// 该接口可以用于向指定 IAM OIDC 提供商已注册的客户端 ID 列表中添加一个新的客户端 ID。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<AddClientIDToOIDCProviderV5Response> AddClientIDToOIDCProviderV5Async(AddClientIDToOIDCProviderV5Request addClientIDToOIDCProviderV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(addClientIDToOIDCProviderV5Request.ProviderId, out var valueOfProviderId)) urlParam.Add("provider_id", valueOfProviderId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/oidc-providers/{provider_id}/add-client-id", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addClientIDToOIDCProviderV5Request);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<AddClientIDToOIDCProviderV5Response>(response);
+        }
+
+        public AsyncInvoker<AddClientIDToOIDCProviderV5Response> AddClientIDToOIDCProviderV5AsyncInvoker(AddClientIDToOIDCProviderV5Request addClientIDToOIDCProviderV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(addClientIDToOIDCProviderV5Request.ProviderId, out var valueOfProviderId)) urlParam.Add("provider_id", valueOfProviderId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/oidc-providers/{provider_id}/add-client-id", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addClientIDToOIDCProviderV5Request);
+            return new AsyncInvoker<AddClientIDToOIDCProviderV5Response>(this, "POST", request, JsonUtils.DeSerializeNull<AddClientIDToOIDCProviderV5Response>);
+        }
+        
+        /// <summary>
+        /// 创建OIDC提供商
+        ///
+        /// 该接口可以用于创建一个支持 OpenID Connect (OIDC) 的身份提供商 (IdP)。
+        /// 您通过此操作创建的 OIDC 提供商可用作信任委托的信任策略中的主体 (Principal)，用于在华为云和 OIDC 提供商之间建立信任关系。
+        /// 您可以直接使用您的身份提供商去创建新的信任委托，要了解更多信息，请参阅 IAM 用户指南中的**身份提供商**章节。
+        /// 
+        /// 当您创建 IAM OIDC 提供商时，您需要指定以下内容：
+        /// - 要信任的 OIDC 身份提供商的 URL。
+        /// - 客户端 ID 列表（也称为受众 Audiences），用于识别允许使用该 OIDC 提供商进行身份验证的应用程序。
+        /// - 附加到指定 IAM OIDC 提供商的标签列表。
+        /// - OIDC 身份提供商使用的一个或多个服务器证书的指纹列表。
+        /// 
+        /// **注意：**
+        /// IAM 使用我们的信任根证书颁发机构 (CAs) 库来验证 JSON Web Key Set (JWKS) 端点的 TLS 证书，从而确保与 OIDC 身份提供商 (IdPs) 的通信安全。如果您的 OIDC IdP 依赖于不是由这些受信任 CA 之一签名的证书，那么我们才会使用 IdP 配置中设置的指纹来确保通信安全。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateOIDCProviderV5Response> CreateOIDCProviderV5Async(CreateOIDCProviderV5Request createOIDCProviderV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/oidc-providers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createOIDCProviderV5Request);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateOIDCProviderV5Response>(response);
+        }
+
+        public AsyncInvoker<CreateOIDCProviderV5Response> CreateOIDCProviderV5AsyncInvoker(CreateOIDCProviderV5Request createOIDCProviderV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/oidc-providers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createOIDCProviderV5Request);
+            return new AsyncInvoker<CreateOIDCProviderV5Response>(this, "POST", request, JsonUtils.DeSerialize<CreateOIDCProviderV5Response>);
+        }
+        
+        /// <summary>
+        /// 删除指定OIDC提供商
+        ///
+        /// 该接口可以用于删除 IAM 中的一个 OpenID Connect (OIDC) 的身份提供商 (IdP)。IAM 在删除 OIDC 提供商时不会更新在信任策略中引用该提供商作为主体的任何信任委托，删除之后任何尝试切换代入引用已删除提供商的信任委托的操作都将失败。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteOIDCProviderV5Response> DeleteOIDCProviderV5Async(DeleteOIDCProviderV5Request deleteOIDCProviderV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteOIDCProviderV5Request.ProviderId, out var valueOfProviderId)) urlParam.Add("provider_id", valueOfProviderId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/oidc-providers/{provider_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteOIDCProviderV5Request);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteOIDCProviderV5Response>(response);
+        }
+
+        public AsyncInvoker<DeleteOIDCProviderV5Response> DeleteOIDCProviderV5AsyncInvoker(DeleteOIDCProviderV5Request deleteOIDCProviderV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteOIDCProviderV5Request.ProviderId, out var valueOfProviderId)) urlParam.Add("provider_id", valueOfProviderId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/oidc-providers/{provider_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteOIDCProviderV5Request);
+            return new AsyncInvoker<DeleteOIDCProviderV5Response>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteOIDCProviderV5Response>);
+        }
+        
+        /// <summary>
+        /// 查询所有OIDC提供商
+        ///
+        /// 该接口可以用于查询所有 OpenID Connect (OIDC) 的身份提供商 (IdP) 列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListOIDCProvidersV5Response> ListOIDCProvidersV5Async(ListOIDCProvidersV5Request listOIDCProvidersV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/oidc-providers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listOIDCProvidersV5Request);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListOIDCProvidersV5Response>(response);
+        }
+
+        public AsyncInvoker<ListOIDCProvidersV5Response> ListOIDCProvidersV5AsyncInvoker(ListOIDCProvidersV5Request listOIDCProvidersV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/oidc-providers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listOIDCProvidersV5Request);
+            return new AsyncInvoker<ListOIDCProvidersV5Response>(this, "GET", request, JsonUtils.DeSerialize<ListOIDCProvidersV5Response>);
+        }
+        
+        /// <summary>
+        /// 移除指定OIDC提供商中指定的客户端ID
+        ///
+        /// 该接口可以用于移除指定 IAM OIDC 提供商客户端 ID 列表中指定的客户端 ID。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<RemoveClientIDFromOIDCProviderV5Response> RemoveClientIDFromOIDCProviderV5Async(RemoveClientIDFromOIDCProviderV5Request removeClientIDFromOIDCProviderV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(removeClientIDFromOIDCProviderV5Request.ProviderId, out var valueOfProviderId)) urlParam.Add("provider_id", valueOfProviderId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/oidc-providers/{provider_id}/remove-client-id", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeClientIDFromOIDCProviderV5Request);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<RemoveClientIDFromOIDCProviderV5Response>(response);
+        }
+
+        public AsyncInvoker<RemoveClientIDFromOIDCProviderV5Response> RemoveClientIDFromOIDCProviderV5AsyncInvoker(RemoveClientIDFromOIDCProviderV5Request removeClientIDFromOIDCProviderV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(removeClientIDFromOIDCProviderV5Request.ProviderId, out var valueOfProviderId)) urlParam.Add("provider_id", valueOfProviderId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/oidc-providers/{provider_id}/remove-client-id", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeClientIDFromOIDCProviderV5Request);
+            return new AsyncInvoker<RemoveClientIDFromOIDCProviderV5Response>(this, "POST", request, JsonUtils.DeSerializeNull<RemoveClientIDFromOIDCProviderV5Response>);
+        }
+        
+        /// <summary>
+        /// 查询指定OIDC提供商
+        ///
+        /// 该接口可以用于查询 OpenID Connect (OIDC) 的身份提供商 (IdP) 详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowOIDCProviderV5Response> ShowOIDCProviderV5Async(ShowOIDCProviderV5Request showOIDCProviderV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showOIDCProviderV5Request.ProviderId, out var valueOfProviderId)) urlParam.Add("provider_id", valueOfProviderId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/oidc-providers/{provider_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOIDCProviderV5Request);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowOIDCProviderV5Response>(response);
+        }
+
+        public AsyncInvoker<ShowOIDCProviderV5Response> ShowOIDCProviderV5AsyncInvoker(ShowOIDCProviderV5Request showOIDCProviderV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showOIDCProviderV5Request.ProviderId, out var valueOfProviderId)) urlParam.Add("provider_id", valueOfProviderId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/oidc-providers/{provider_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOIDCProviderV5Request);
+            return new AsyncInvoker<ShowOIDCProviderV5Response>(this, "GET", request, JsonUtils.DeSerialize<ShowOIDCProviderV5Response>);
+        }
+        
+        /// <summary>
+        /// 替换OIDC提供商指纹列表
+        ///
+        /// 该接口可以用一个新的指纹列表替换与 OIDC 提供商关联的现有指纹列表。通常，您仅在身份提供商证书更改时才需要更新指纹，这种情况一般很少发生。但是，如果提供商的证书发生了变化，而您又没有更新指纹，那么任何尝试切换代入与该 OIDC 提供商相关的 信任委托都将失败。
+        /// 
+        /// **注意：**
+        /// IAM 使用自己的信任根证书颁发机构 (CAs) 库来验证 JSON Web Key Set (JWKS) 端点的 TLS 证书，从而确保与 OIDC 身份提供商 (IdPs) 的通信安全。如果您的 OIDC IdP 依赖于不是由这些受信任 CA 之一签名的证书，那么我们才会使用 IdP 配置中设置的指纹来确保通信安全。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateOIDCProviderThumbprintV5Response> UpdateOIDCProviderThumbprintV5Async(UpdateOIDCProviderThumbprintV5Request updateOIDCProviderThumbprintV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateOIDCProviderThumbprintV5Request.ProviderId, out var valueOfProviderId)) urlParam.Add("provider_id", valueOfProviderId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/oidc-providers/{provider_id}/thumbprint", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateOIDCProviderThumbprintV5Request);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateOIDCProviderThumbprintV5Response>(response);
+        }
+
+        public AsyncInvoker<UpdateOIDCProviderThumbprintV5Response> UpdateOIDCProviderThumbprintV5AsyncInvoker(UpdateOIDCProviderThumbprintV5Request updateOIDCProviderThumbprintV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateOIDCProviderThumbprintV5Request.ProviderId, out var valueOfProviderId)) urlParam.Add("provider_id", valueOfProviderId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/oidc-providers/{provider_id}/thumbprint", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateOIDCProviderThumbprintV5Request);
+            return new AsyncInvoker<UpdateOIDCProviderThumbprintV5Response>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateOIDCProviderThumbprintV5Response>);
+        }
+        
+        /// <summary>
+        /// 修改指定OIDC提供商描述
+        ///
+        /// 该接口可以用于修改 IAM 中的一个 OpenID Connect (OIDC) 的身份提供商 (IdP)的描述字段。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateOIDCProviderV5Response> UpdateOIDCProviderV5Async(UpdateOIDCProviderV5Request updateOIDCProviderV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateOIDCProviderV5Request.ProviderId, out var valueOfProviderId)) urlParam.Add("provider_id", valueOfProviderId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/oidc-providers/{provider_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateOIDCProviderV5Request);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateOIDCProviderV5Response>(response);
+        }
+
+        public AsyncInvoker<UpdateOIDCProviderV5Response> UpdateOIDCProviderV5AsyncInvoker(UpdateOIDCProviderV5Request updateOIDCProviderV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateOIDCProviderV5Request.ProviderId, out var valueOfProviderId)) urlParam.Add("provider_id", valueOfProviderId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/oidc-providers/{provider_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateOIDCProviderV5Request);
+            return new AsyncInvoker<UpdateOIDCProviderV5Response>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateOIDCProviderV5Response>);
+        }
+        
+        /// <summary>
         /// 创建自定义身份策略
         ///
         /// 该接口可以用于创建一个默认版本为v1的新自定义身份策略。
@@ -1317,6 +1535,136 @@ namespace HuaweiCloud.SDK.Iam.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/{resource_type}/{resource_id}/tags/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", tagResourceV5Request);
             return new AsyncInvoker<TagResourceV5Response>(this, "POST", request, JsonUtils.DeSerialize<TagResourceV5Response>);
+        }
+        
+        /// <summary>
+        /// 创建SAML提供商
+        ///
+        /// 该接口可以用于创建一个支持 SAML 2.0 的身份提供商 (IdP)。
+        /// 
+        /// 您通过此操作创建的 SAML 提供商可用作信任委托的信任策略中的主体 (Principal)，用于在华为云和 SAML 提供商之间建立信任关系。 该信任策略可以允许使用 SAML IdP 登录的联邦用户切换至该信任委托，您可以创建使用 Web 单点登录 (SSO) 到 华为云控制台的 IAM 信任委托，或者支持对华为云进行 API 访问的 IAM 信任委托。
+        /// 
+        /// 当您创建 SAML 提供商时，您需要上传从 IdP 获得的 SAML 元数据文档。该文档包含颁发者的名称、过期信息以及可用于验证 IdP 发送的 SAML 身份验证响应（断言）的密钥。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateSAMLProviderV5Response> CreateSAMLProviderV5Async(CreateSAMLProviderV5Request createSAMLProviderV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/saml-providers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSAMLProviderV5Request);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateSAMLProviderV5Response>(response);
+        }
+
+        public AsyncInvoker<CreateSAMLProviderV5Response> CreateSAMLProviderV5AsyncInvoker(CreateSAMLProviderV5Request createSAMLProviderV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/saml-providers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSAMLProviderV5Request);
+            return new AsyncInvoker<CreateSAMLProviderV5Response>(this, "POST", request, JsonUtils.DeSerialize<CreateSAMLProviderV5Response>);
+        }
+        
+        /// <summary>
+        /// 删除指定SAML提供商
+        ///
+        /// 该接口可以用于删除 IAM 中的一个 SAML 2.0 的身份提供商 (IdP)。IAM 在删除 SAML 提供商时不会更新在信任策略中引用该提供商作为主体的任何信任委托，删除之后任何尝试切换代入引用已删除提供商的信任委托的操作都将失败。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteSAMLProviderV5Response> DeleteSAMLProviderV5Async(DeleteSAMLProviderV5Request deleteSAMLProviderV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteSAMLProviderV5Request.ProviderId, out var valueOfProviderId)) urlParam.Add("provider_id", valueOfProviderId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/saml-providers/{provider_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSAMLProviderV5Request);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteSAMLProviderV5Response>(response);
+        }
+
+        public AsyncInvoker<DeleteSAMLProviderV5Response> DeleteSAMLProviderV5AsyncInvoker(DeleteSAMLProviderV5Request deleteSAMLProviderV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteSAMLProviderV5Request.ProviderId, out var valueOfProviderId)) urlParam.Add("provider_id", valueOfProviderId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/saml-providers/{provider_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSAMLProviderV5Request);
+            return new AsyncInvoker<DeleteSAMLProviderV5Response>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSAMLProviderV5Response>);
+        }
+        
+        /// <summary>
+        /// 查询所有SAML提供商
+        ///
+        /// 该接口可以用于查询所有 SAML 2.0 的身份提供商 (IdP) 列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListSAMLProvidersV5Response> ListSAMLProvidersV5Async(ListSAMLProvidersV5Request listSAMLProvidersV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/saml-providers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSAMLProvidersV5Request);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListSAMLProvidersV5Response>(response);
+        }
+
+        public AsyncInvoker<ListSAMLProvidersV5Response> ListSAMLProvidersV5AsyncInvoker(ListSAMLProvidersV5Request listSAMLProvidersV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/saml-providers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSAMLProvidersV5Request);
+            return new AsyncInvoker<ListSAMLProvidersV5Response>(this, "GET", request, JsonUtils.DeSerialize<ListSAMLProvidersV5Response>);
+        }
+        
+        /// <summary>
+        /// 查询指定SAML提供商
+        ///
+        /// 该接口可以用于查询 SAML 2.0 的身份提供商 (IdP) 详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowSAMLProviderV5Response> ShowSAMLProviderV5Async(ShowSAMLProviderV5Request showSAMLProviderV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showSAMLProviderV5Request.ProviderId, out var valueOfProviderId)) urlParam.Add("provider_id", valueOfProviderId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/saml-providers/{provider_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSAMLProviderV5Request);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowSAMLProviderV5Response>(response);
+        }
+
+        public AsyncInvoker<ShowSAMLProviderV5Response> ShowSAMLProviderV5AsyncInvoker(ShowSAMLProviderV5Request showSAMLProviderV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showSAMLProviderV5Request.ProviderId, out var valueOfProviderId)) urlParam.Add("provider_id", valueOfProviderId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/saml-providers/{provider_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSAMLProviderV5Request);
+            return new AsyncInvoker<ShowSAMLProviderV5Response>(this, "GET", request, JsonUtils.DeSerialize<ShowSAMLProviderV5Response>);
+        }
+        
+        /// <summary>
+        /// 更新指定SAML提供商
+        ///
+        /// 该接口可以用于更新现有 SAML 提供商的元数据文档、SAML 加密设置以及私钥。要轮换私钥，请在单独的请求中先添加新的私钥，然后移除旧的私钥。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateSAMLProviderV5Response> UpdateSAMLProviderV5Async(UpdateSAMLProviderV5Request updateSAMLProviderV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateSAMLProviderV5Request.ProviderId, out var valueOfProviderId)) urlParam.Add("provider_id", valueOfProviderId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/saml-providers/{provider_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSAMLProviderV5Request);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateSAMLProviderV5Response>(response);
+        }
+
+        public AsyncInvoker<UpdateSAMLProviderV5Response> UpdateSAMLProviderV5AsyncInvoker(UpdateSAMLProviderV5Request updateSAMLProviderV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateSAMLProviderV5Request.ProviderId, out var valueOfProviderId)) urlParam.Add("provider_id", valueOfProviderId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/saml-providers/{provider_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSAMLProviderV5Request);
+            return new AsyncInvoker<UpdateSAMLProviderV5Response>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSAMLProviderV5Response>);
         }
         
         /// <summary>

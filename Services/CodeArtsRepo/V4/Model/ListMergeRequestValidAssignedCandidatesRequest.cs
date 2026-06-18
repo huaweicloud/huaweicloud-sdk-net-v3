@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
     public class ListMergeRequestValidAssignedCandidatesRequest 
     {
         /// <summary>
-        /// **参数解释：** The type of assignee, merge user or approver
+        /// **参数解释：** approver: 获取审核人 assingee: 获取合并人
         /// </summary>
-        /// <value>**参数解释：** The type of assignee, merge user or approver</value>
+        /// <value>**参数解释：** approver: 获取审核人 assingee: 获取合并人</value>
         [JsonConverter(typeof(EnumClassConverter<ViewEnum>))]
         public class ViewEnum
         {
@@ -130,124 +130,9 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             }
         }
 
-        /// <summary>
-        /// **参数解释：** The type of assignee, merge user or approver
-        /// </summary>
-        /// <value>**参数解释：** The type of assignee, merge user or approver</value>
-        [JsonConverter(typeof(EnumClassConverter<ModeEnum>))]
-        public class ModeEnum
-        {
-            /// <summary>
-            /// Enum APPROVER for value: approver
-            /// </summary>
-            public static readonly ModeEnum APPROVER = new ModeEnum("approver");
-
-            /// <summary>
-            /// Enum ASSIGNEE for value: assignee
-            /// </summary>
-            public static readonly ModeEnum ASSIGNEE = new ModeEnum("assignee");
-
-            private static readonly Dictionary<string, ModeEnum> StaticFields =
-            new Dictionary<string, ModeEnum>()
-            {
-                { "approver", APPROVER },
-                { "assignee", ASSIGNEE },
-            };
-
-            private string _value;
-
-            public ModeEnum()
-            {
-
-            }
-
-            public ModeEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static ModeEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as ModeEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(ModeEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(ModeEnum a, ModeEnum b)
-            {
-                if (ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(ModeEnum a, ModeEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
-        /// **参数解释：** 仓库的ID，通过[[查询用户所有仓库](https://support.huaweicloud.com/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws)[[查询用户所有仓库](https://support.huaweicloud.com/intl/en-us/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk)[[查询用户所有仓库](https://support.huaweicloud.com/eu/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_eu)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **约束限制：** 不涉及。
+        /// **参数解释：** 仓库的ID，通过[[查询用户所有仓库](https://support.huaweicloud.com/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws)[[查询用户所有仓库](https://support.huaweicloud.com/intl/en-us/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk)[[查询用户所有仓库](https://support.huaweicloud.com/intl/zh-cn/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk_ch)[[查询用户所有仓库](https://support.huaweicloud.com/eu/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_eu)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **约束限制：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
         [SDKProperty("repository_id", IsPath = true)]
         [JsonProperty("repository_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -289,33 +174,27 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         public string Search { get; set; }
 
         /// <summary>
-        /// **参数解释：** Search user list by name list。
+        /// **参数解释：** 批量匹配用户，一次可传多个用户的用户名和昵称，用\&quot;, \&quot;分隔，最多50个。示例：\&quot;zhangsan, lisi, wangwu\&quot;
         /// </summary>
         [SDKProperty("search_by_name_list", IsQuery = true)]
         [JsonProperty("search_by_name_list", NullValueHandling = NullValueHandling.Ignore)]
         public string SearchByNameList { get; set; }
 
         /// <summary>
-        /// **参数解释：** 项目的32位uuid，项目唯一标识，通过[[查询项目列表](https://support.huaweicloud.com/api-projectman/ListProjectsV4.html)](tag:hws)[[查询项目列表](https://support.huaweicloud.com/intl/en-us/api-projectman/ListProjectsV4.html)](tag:hws_hk)[[查询项目列表](https://support.huaweicloud.com/eu/api-projectman/ListProjectsV4.html)](tag:hws_eu)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **取值范围：** 字符串长度32。
+        /// **参数解释：** 目标仓库id。创建MR时，代码将要合入的仓库。
         /// </summary>
-        [SDKProperty("target_project_id", IsQuery = true)]
-        [JsonProperty("target_project_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string TargetProjectId { get; set; }
+        [SDKProperty("target_repository_id", IsQuery = true)]
+        [JsonProperty("target_repository_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string TargetRepositoryId { get; set; }
 
         /// <summary>
-        /// **参数解释：** The type of assignee, merge user or approver
+        /// **参数解释：** approver: 获取审核人 assingee: 获取合并人
         /// </summary>
         [SDKProperty("view", IsQuery = true)]
         [JsonProperty("view", NullValueHandling = NullValueHandling.Ignore)]
         public ViewEnum View { get; set; }
         /// <summary>
-        /// **参数解释：** The type of assignee, merge user or approver
-        /// </summary>
-        [SDKProperty("mode", IsQuery = true)]
-        [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
-        public ModeEnum Mode { get; set; }
-        /// <summary>
-        /// **参数解释：** The type of memeber, developer
+        /// **参数解释：** true: 仅返回开发者。
         /// </summary>
         [SDKProperty("only_developers", IsQuery = true)]
         [JsonProperty("only_developers", NullValueHandling = NullValueHandling.Ignore)]
@@ -337,9 +216,8 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  search: ").Append(Search).Append("\n");
             sb.Append("  searchByNameList: ").Append(SearchByNameList).Append("\n");
-            sb.Append("  targetProjectId: ").Append(TargetProjectId).Append("\n");
+            sb.Append("  targetRepositoryId: ").Append(TargetRepositoryId).Append("\n");
             sb.Append("  view: ").Append(View).Append("\n");
-            sb.Append("  mode: ").Append(Mode).Append("\n");
             sb.Append("  onlyDevelopers: ").Append(OnlyDevelopers).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -366,9 +244,8 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Search != input.Search || (this.Search != null && !this.Search.Equals(input.Search))) return false;
             if (this.SearchByNameList != input.SearchByNameList || (this.SearchByNameList != null && !this.SearchByNameList.Equals(input.SearchByNameList))) return false;
-            if (this.TargetProjectId != input.TargetProjectId || (this.TargetProjectId != null && !this.TargetProjectId.Equals(input.TargetProjectId))) return false;
+            if (this.TargetRepositoryId != input.TargetRepositoryId || (this.TargetRepositoryId != null && !this.TargetRepositoryId.Equals(input.TargetRepositoryId))) return false;
             if (this.View != input.View) return false;
-            if (this.Mode != input.Mode) return false;
             if (this.OnlyDevelopers != input.OnlyDevelopers || (this.OnlyDevelopers != null && !this.OnlyDevelopers.Equals(input.OnlyDevelopers))) return false;
 
             return true;
@@ -389,9 +266,8 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Search != null) hashCode = hashCode * 59 + this.Search.GetHashCode();
                 if (this.SearchByNameList != null) hashCode = hashCode * 59 + this.SearchByNameList.GetHashCode();
-                if (this.TargetProjectId != null) hashCode = hashCode * 59 + this.TargetProjectId.GetHashCode();
+                if (this.TargetRepositoryId != null) hashCode = hashCode * 59 + this.TargetRepositoryId.GetHashCode();
                 hashCode = hashCode * 59 + this.View.GetHashCode();
-                hashCode = hashCode * 59 + this.Mode.GetHashCode();
                 if (this.OnlyDevelopers != null) hashCode = hashCode * 59 + this.OnlyDevelopers.GetHashCode();
                 return hashCode;
             }

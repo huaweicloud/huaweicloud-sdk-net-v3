@@ -23,12 +23,6 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         public int? Id { get; set; }
 
         /// <summary>
-        /// **参数解释：** 仓库id
-        /// </summary>
-        [JsonProperty("repository_id", NullValueHandling = NullValueHandling.Ignore)]
-        public int? RepositoryId { get; set; }
-
-        /// <summary>
         /// **参数解释：** 描述
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
@@ -98,7 +92,6 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             var sb = new StringBuilder();
             sb.Append("class ProjectMergeRequestTemplateDto {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
-            sb.Append("  repositoryId: ").Append(RepositoryId).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
@@ -128,7 +121,6 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         {
             if (input == null) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
-            if (this.RepositoryId != input.RepositoryId || (this.RepositoryId != null && !this.RepositoryId.Equals(input.RepositoryId))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
             if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
@@ -152,7 +144,6 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             {
                 var hashCode = 41;
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.RepositoryId != null) hashCode = hashCode * 59 + this.RepositoryId.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();

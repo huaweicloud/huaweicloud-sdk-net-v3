@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
     public class RepositoryInheritSettingDto 
     {
         /// <summary>
-        /// **参数解释：** 设置源类型。 **取值范围：** - protected_branches，保护分支设置。 - protected_tags，保护Tag设置。 - repository_settings，仓库设置。 - push_rules，提交规则设置。 - merge_requests，合并请求设置。 - e2e_settings，E2E设置。 - watermark，水印设置。
+        /// **参数解释：** 设置源类型。 **取值范围：** - protected_branches，保护分支设置。 - protected_tags，保护Tag设置。 - repository_settings，仓库设置。 - push_rules，提交规则设置。 - merge_requests，合并请求设置。 - mr_branch_policies，分支策略设置。 - reviews，检视意见设置。 - e2e_settings，E2E设置。 - watermark，水印设置。
         /// </summary>
-        /// <value>**参数解释：** 设置源类型。 **取值范围：** - protected_branches，保护分支设置。 - protected_tags，保护Tag设置。 - repository_settings，仓库设置。 - push_rules，提交规则设置。 - merge_requests，合并请求设置。 - e2e_settings，E2E设置。 - watermark，水印设置。</value>
+        /// <value>**参数解释：** 设置源类型。 **取值范围：** - protected_branches，保护分支设置。 - protected_tags，保护Tag设置。 - repository_settings，仓库设置。 - push_rules，提交规则设置。 - merge_requests，合并请求设置。 - mr_branch_policies，分支策略设置。 - reviews，检视意见设置。 - e2e_settings，E2E设置。 - watermark，水印设置。</value>
         [JsonConverter(typeof(EnumClassConverter<NameEnum>))]
         public class NameEnum
         {
@@ -48,6 +48,16 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             public static readonly NameEnum MERGE_REQUESTS = new NameEnum("merge_requests");
 
             /// <summary>
+            /// Enum MR_BRANCH_POLICIES for value: mr_branch_policies
+            /// </summary>
+            public static readonly NameEnum MR_BRANCH_POLICIES = new NameEnum("mr_branch_policies");
+
+            /// <summary>
+            /// Enum REVIEWS for value: reviews
+            /// </summary>
+            public static readonly NameEnum REVIEWS = new NameEnum("reviews");
+
+            /// <summary>
             /// Enum E2E_SETTINGS for value: e2e_settings
             /// </summary>
             public static readonly NameEnum E2E_SETTINGS = new NameEnum("e2e_settings");
@@ -65,6 +75,8 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
                 { "repository_settings", REPOSITORY_SETTINGS },
                 { "push_rules", PUSH_RULES },
                 { "merge_requests", MERGE_REQUESTS },
+                { "mr_branch_policies", MR_BRANCH_POLICIES },
+                { "reviews", REVIEWS },
                 { "e2e_settings", E2E_SETTINGS },
                 { "watermark", WATERMARK },
             };
@@ -283,7 +295,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
 
 
         /// <summary>
-        /// **参数解释：** 设置源类型。 **取值范围：** - protected_branches，保护分支设置。 - protected_tags，保护Tag设置。 - repository_settings，仓库设置。 - push_rules，提交规则设置。 - merge_requests，合并请求设置。 - e2e_settings，E2E设置。 - watermark，水印设置。
+        /// **参数解释：** 设置源类型。 **取值范围：** - protected_branches，保护分支设置。 - protected_tags，保护Tag设置。 - repository_settings，仓库设置。 - push_rules，提交规则设置。 - merge_requests，合并请求设置。 - mr_branch_policies，分支策略设置。 - reviews，检视意见设置。 - e2e_settings，E2E设置。 - watermark，水印设置。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public NameEnum Name { get; set; }

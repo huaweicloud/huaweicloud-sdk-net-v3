@@ -30,6 +30,13 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }
 
+        /// <summary>
+        /// 纳管账号ID。
+        /// </summary>
+        [SDKProperty("account_id", IsQuery = true)]
+        [JsonProperty("account_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string AccountId { get; set; }
+
 
 
         /// <summary>
@@ -41,6 +48,7 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
             sb.Append("class ShowTemplateDeployParamsRequest {\n");
             sb.Append("  templateName: ").Append(TemplateName).Append("\n");
             sb.Append("  version: ").Append(Version).Append("\n");
+            sb.Append("  accountId: ").Append(AccountId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -61,6 +69,7 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
             if (input == null) return false;
             if (this.TemplateName != input.TemplateName || (this.TemplateName != null && !this.TemplateName.Equals(input.TemplateName))) return false;
             if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
+            if (this.AccountId != input.AccountId || (this.AccountId != null && !this.AccountId.Equals(input.AccountId))) return false;
 
             return true;
         }
@@ -75,6 +84,7 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
                 var hashCode = 41;
                 if (this.TemplateName != null) hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
                 if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.AccountId != null) hashCode = hashCode * 59 + this.AccountId.GetHashCode();
                 return hashCode;
             }
         }

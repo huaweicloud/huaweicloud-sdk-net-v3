@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Sts.V1.Model
     {
 
         /// <summary>
-        /// 鉴权失败原因的明文。
+        /// **参数解释**： 鉴权失败原因的明文。  **取值范围**： 不涉及。 
         /// </summary>
         [JsonProperty("decoded_message", NullValueHandling = NullValueHandling.Ignore)]
         public string DecodedMessage { get; set; }

@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Sts.V1.Model
 {
     /// <summary>
-    /// 接口/v5/decode-authorization-message的Http请求体。
+    /// **参数解释**： 接口/v5/decode-authorization-message的Http请求体。  **约束限制**： 不涉及。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
     /// </summary>
     public class DecodeAuthorizationMessageReq 
     {
 
         /// <summary>
-        /// 加密的鉴权失败原因，字符串长度范围[1,10240]。
+        /// **参数解释**： 加密的鉴权失败原因。  **约束限制**： 长度范围为[1,10240]。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("encoded_message", NullValueHandling = NullValueHandling.Ignore)]
         public string EncodedMessage { get; set; }

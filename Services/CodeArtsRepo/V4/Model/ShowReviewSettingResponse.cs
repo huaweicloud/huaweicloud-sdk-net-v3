@@ -53,25 +53,31 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         public List<string> ReviewModules { get; set; }
 
         /// <summary>
-        /// **参数解释：** 仓库id。
+        /// **参数解释：** 系统预置检视意见分类类型(启用系统预置检视意见分类时返回，默认&#39;HiCode&#39;)。
         /// </summary>
-        [JsonProperty("repository_id", NullValueHandling = NullValueHandling.Ignore)]
-        public int? RepositoryId { get; set; }
+        [JsonProperty("secondary_category_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string SecondaryCategoryType { get; set; }
 
         /// <summary>
-        /// **参数解释：** 检视意见必填项。
+        /// **参数解释：** 系统预置检视意见分类详情(启用系统预置检视意见分类时返回)。
+        /// </summary>
+        [JsonProperty("secondary_categories", NullValueHandling = NullValueHandling.Ignore)]
+        public List<CategoryDto> SecondaryCategories { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 检视意见必填项(post接口不更新必填项时不返回)。
         /// </summary>
         [JsonProperty("note_required_attributes", NullValueHandling = NullValueHandling.Ignore)]
         public List<RequiredAttributeDto> NoteRequiredAttributes { get; set; }
 
         /// <summary>
-        /// **参数解释：** 检视意见分类(所有可勾选的，需传参with_default_review_categories: true才返回)。
+        /// **参数解释：** 检视意见分类(可勾选的，需get接口传参with_default_review_categories: true才返回)。
         /// </summary>
         [JsonProperty("codehub_default_categories", NullValueHandling = NullValueHandling.Ignore)]
         public List<CategoryDto> CodehubDefaultCategories { get; set; }
 
         /// <summary>
-        /// **参数解释：** 系统预置检视意见分类(需传参with_default_review_categories: true才返回)。
+        /// **参数解释：** 系统预置检视意见分类(需get接口传参with_default_review_categories: true才返回)。
         /// </summary>
         [JsonProperty("hicode_default_categories", NullValueHandling = NullValueHandling.Ignore)]
         public List<CategoryDto> HicodeDefaultCategories { get; set; }
@@ -91,7 +97,8 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             sb.Append("  reviewDefaultCategories: ").Append(ReviewDefaultCategories).Append("\n");
             sb.Append("  reviewCustomizedCategories: ").Append(ReviewCustomizedCategories).Append("\n");
             sb.Append("  reviewModules: ").Append(ReviewModules).Append("\n");
-            sb.Append("  repositoryId: ").Append(RepositoryId).Append("\n");
+            sb.Append("  secondaryCategoryType: ").Append(SecondaryCategoryType).Append("\n");
+            sb.Append("  secondaryCategories: ").Append(SecondaryCategories).Append("\n");
             sb.Append("  noteRequiredAttributes: ").Append(NoteRequiredAttributes).Append("\n");
             sb.Append("  codehubDefaultCategories: ").Append(CodehubDefaultCategories).Append("\n");
             sb.Append("  hicodeDefaultCategories: ").Append(HicodeDefaultCategories).Append("\n");
@@ -119,7 +126,8 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             if (this.ReviewDefaultCategories != input.ReviewDefaultCategories || (this.ReviewDefaultCategories != null && input.ReviewDefaultCategories != null && !this.ReviewDefaultCategories.SequenceEqual(input.ReviewDefaultCategories))) return false;
             if (this.ReviewCustomizedCategories != input.ReviewCustomizedCategories || (this.ReviewCustomizedCategories != null && input.ReviewCustomizedCategories != null && !this.ReviewCustomizedCategories.SequenceEqual(input.ReviewCustomizedCategories))) return false;
             if (this.ReviewModules != input.ReviewModules || (this.ReviewModules != null && input.ReviewModules != null && !this.ReviewModules.SequenceEqual(input.ReviewModules))) return false;
-            if (this.RepositoryId != input.RepositoryId || (this.RepositoryId != null && !this.RepositoryId.Equals(input.RepositoryId))) return false;
+            if (this.SecondaryCategoryType != input.SecondaryCategoryType || (this.SecondaryCategoryType != null && !this.SecondaryCategoryType.Equals(input.SecondaryCategoryType))) return false;
+            if (this.SecondaryCategories != input.SecondaryCategories || (this.SecondaryCategories != null && input.SecondaryCategories != null && !this.SecondaryCategories.SequenceEqual(input.SecondaryCategories))) return false;
             if (this.NoteRequiredAttributes != input.NoteRequiredAttributes || (this.NoteRequiredAttributes != null && input.NoteRequiredAttributes != null && !this.NoteRequiredAttributes.SequenceEqual(input.NoteRequiredAttributes))) return false;
             if (this.CodehubDefaultCategories != input.CodehubDefaultCategories || (this.CodehubDefaultCategories != null && input.CodehubDefaultCategories != null && !this.CodehubDefaultCategories.SequenceEqual(input.CodehubDefaultCategories))) return false;
             if (this.HicodeDefaultCategories != input.HicodeDefaultCategories || (this.HicodeDefaultCategories != null && input.HicodeDefaultCategories != null && !this.HicodeDefaultCategories.SequenceEqual(input.HicodeDefaultCategories))) return false;
@@ -141,7 +149,8 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
                 if (this.ReviewDefaultCategories != null) hashCode = hashCode * 59 + this.ReviewDefaultCategories.GetHashCode();
                 if (this.ReviewCustomizedCategories != null) hashCode = hashCode * 59 + this.ReviewCustomizedCategories.GetHashCode();
                 if (this.ReviewModules != null) hashCode = hashCode * 59 + this.ReviewModules.GetHashCode();
-                if (this.RepositoryId != null) hashCode = hashCode * 59 + this.RepositoryId.GetHashCode();
+                if (this.SecondaryCategoryType != null) hashCode = hashCode * 59 + this.SecondaryCategoryType.GetHashCode();
+                if (this.SecondaryCategories != null) hashCode = hashCode * 59 + this.SecondaryCategories.GetHashCode();
                 if (this.NoteRequiredAttributes != null) hashCode = hashCode * 59 + this.NoteRequiredAttributes.GetHashCode();
                 if (this.CodehubDefaultCategories != null) hashCode = hashCode * 59 + this.CodehubDefaultCategories.GetHashCode();
                 if (this.HicodeDefaultCategories != null) hashCode = hashCode * 59 + this.HicodeDefaultCategories.GetHashCode();

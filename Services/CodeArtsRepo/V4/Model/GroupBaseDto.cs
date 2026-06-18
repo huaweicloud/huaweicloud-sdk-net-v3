@@ -208,6 +208,12 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         [JsonProperty("starred", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Starred { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 角色列表。
+        /// </summary>
+        [JsonProperty("roles", NullValueHandling = NullValueHandling.Ignore)]
+        public List<MultipleRoleDto> Roles { get; set; }
+
 
 
         /// <summary>
@@ -249,6 +255,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             sb.Append("  subGroupCount: ").Append(SubGroupCount).Append("\n");
             sb.Append("  lastOwner: ").Append(LastOwner).Append("\n");
             sb.Append("  starred: ").Append(Starred).Append("\n");
+            sb.Append("  roles: ").Append(Roles).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -299,6 +306,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             if (this.SubGroupCount != input.SubGroupCount || (this.SubGroupCount != null && !this.SubGroupCount.Equals(input.SubGroupCount))) return false;
             if (this.LastOwner != input.LastOwner || (this.LastOwner != null && !this.LastOwner.Equals(input.LastOwner))) return false;
             if (this.Starred != input.Starred || (this.Starred != null && !this.Starred.Equals(input.Starred))) return false;
+            if (this.Roles != input.Roles || (this.Roles != null && input.Roles != null && !this.Roles.SequenceEqual(input.Roles))) return false;
 
             return true;
         }
@@ -343,6 +351,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
                 if (this.SubGroupCount != null) hashCode = hashCode * 59 + this.SubGroupCount.GetHashCode();
                 if (this.LastOwner != null) hashCode = hashCode * 59 + this.LastOwner.GetHashCode();
                 if (this.Starred != null) hashCode = hashCode * 59 + this.Starred.GetHashCode();
+                if (this.Roles != null) hashCode = hashCode * 59 + this.Roles.GetHashCode();
                 return hashCode;
             }
         }

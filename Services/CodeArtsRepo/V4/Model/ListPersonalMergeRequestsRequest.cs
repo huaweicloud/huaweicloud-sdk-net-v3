@@ -401,11 +401,17 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             /// </summary>
             public static readonly ViewEnum BASIC = new ViewEnum("basic");
 
+            /// <summary>
+            /// Enum VIEW_FOR_LIST for value: view_for_list
+            /// </summary>
+            public static readonly ViewEnum VIEW_FOR_LIST = new ViewEnum("view_for_list");
+
             private static readonly Dictionary<string, ViewEnum> StaticFields =
             new Dictionary<string, ViewEnum>()
             {
                 { "simple", SIMPLE },
                 { "basic", BASIC },
+                { "view_for_list", VIEW_FOR_LIST },
             };
 
             private string _value;
@@ -640,20 +646,20 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         public class WipEnum
         {
             /// <summary>
-            /// Enum TRUE for value: true
+            /// Enum YES for value: yes
             /// </summary>
-            public static readonly WipEnum TRUE = new WipEnum("true");
+            public static readonly WipEnum YES = new WipEnum("yes");
 
             /// <summary>
-            /// Enum FALSE for value: false
+            /// Enum NO for value: no
             /// </summary>
-            public static readonly WipEnum FALSE = new WipEnum("false");
+            public static readonly WipEnum NO = new WipEnum("no");
 
             private static readonly Dictionary<string, WipEnum> StaticFields =
             new Dictionary<string, WipEnum>()
             {
-                { "true", TRUE },
-                { "false", FALSE },
+                { "yes", YES },
+                { "no", NO },
             };
 
             private string _value;

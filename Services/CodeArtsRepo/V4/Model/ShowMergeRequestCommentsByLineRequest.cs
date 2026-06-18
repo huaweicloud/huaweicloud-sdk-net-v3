@@ -16,8 +16,9 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
     public class ShowMergeRequestCommentsByLineRequest 
     {
         /// <summary>
-        /// Defines view
+        /// **参数解释：** 是否只返回基础信息。 **取值范围：** - basic，返回基础信息(建议)。 - sample，额外返回代码片段等信息。
         /// </summary>
+        /// <value>**参数解释：** 是否只返回基础信息。 **取值范围：** - basic，返回基础信息(建议)。 - sample，额外返回代码片段等信息。</value>
         [JsonConverter(typeof(EnumClassConverter<ViewEnum>))]
         public class ViewEnum
         {
@@ -125,7 +126,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
 
 
         /// <summary>
-        /// **参数解释：** 仓库的ID，通过[[查询用户所有仓库](https://support.huaweicloud.com/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws)[[查询用户所有仓库](https://support.huaweicloud.com/intl/en-us/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk)[[查询用户所有仓库](https://support.huaweicloud.com/eu/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_eu)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **约束限制：** 不涉及。
+        /// **参数解释：** 仓库的ID，通过[[查询用户所有仓库](https://support.huaweicloud.com/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws)[[查询用户所有仓库](https://support.huaweicloud.com/intl/en-us/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk)[[查询用户所有仓库](https://support.huaweicloud.com/intl/zh-cn/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk_ch)[[查询用户所有仓库](https://support.huaweicloud.com/eu/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_eu)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **约束限制：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
         [SDKProperty("repository_id", IsPath = true)]
         [JsonProperty("repository_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -139,14 +140,14 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         public int? MergeRequestIid { get; set; }
 
         /// <summary>
-        /// 
+        /// **参数解释：** 获取特定行的检视意见列表(新增、不变行使用右侧行号；删除行使用左侧行号)。
         /// </summary>
         [SDKProperty("line", IsQuery = true)]
         [JsonProperty("line", NullValueHandling = NullValueHandling.Ignore)]
         public int? Line { get; set; }
 
         /// <summary>
-        /// 
+        /// **参数解释：** 是否返回在代码页签下加的评论。 **取值范围：** - true，补充代码页签下的评论并返回。 - false，不处理。
         /// </summary>
         [SDKProperty("with_commit_comments", IsQuery = true)]
         [JsonProperty("with_commit_comments", NullValueHandling = NullValueHandling.Ignore)]
@@ -160,27 +161,27 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         public string Path { get; set; }
 
         /// <summary>
-        /// 
+        /// **参数解释：** 是否只返回基础信息。 **取值范围：** - basic，返回基础信息(建议)。 - sample，额外返回代码片段等信息。
         /// </summary>
         [SDKProperty("view", IsQuery = true)]
         [JsonProperty("view", NullValueHandling = NullValueHandling.Ignore)]
         public ViewEnum View { get; set; }
         /// <summary>
-        /// 合并请求中原分支与目标分支的共同基准点
+        /// **参数解释：** 合并请求中原分支与目标分支的共同基准点。 **取值范围：** 长度为40的sha1字符串。
         /// </summary>
         [SDKProperty("base_sha", IsQuery = true)]
         [JsonProperty("base_sha", NullValueHandling = NullValueHandling.Ignore)]
         public string BaseSha { get; set; }
 
         /// <summary>
-        /// 合并请求中，从共同基准点开始到原分支方向的第一个提交点
+        /// **参数解释：** 合并请求中，从共同基准点开始到原分支方向的第一个提交点。 **取值范围：** 长度为40的sha1字符串。
         /// </summary>
         [SDKProperty("start_sha", IsQuery = true)]
         [JsonProperty("start_sha", NullValueHandling = NullValueHandling.Ignore)]
         public string StartSha { get; set; }
 
         /// <summary>
-        /// 合并请求中原分支指向的提交点
+        /// **参数解释：** 合并请求中原分支指向的提交点。 **取值范围：** 长度为40的sha1字符串。
         /// </summary>
         [SDKProperty("head_sha", IsQuery = true)]
         [JsonProperty("head_sha", NullValueHandling = NullValueHandling.Ignore)]

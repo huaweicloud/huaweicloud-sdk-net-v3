@@ -35,6 +35,12 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         public string PushEventsBranchRegexFilter { get; set; }
 
         /// <summary>
+        /// **参数解释：** 评论事件文本过滤规则。 **取值范围：** 字符串长度不少于0，不超过50，不能超过10个。  
+        /// </summary>
+        [JsonProperty("note_plain_text_filter", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> NotePlainTextFilter { get; set; }
+
+        /// <summary>
         /// **参数解释：** 是否启用Tag推送事件。
         /// </summary>
         [JsonProperty("tag_push_events", NullValueHandling = NullValueHandling.Ignore)]
@@ -88,6 +94,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             sb.Append("  url: ").Append(Url).Append("\n");
             sb.Append("  pushEvents: ").Append(PushEvents).Append("\n");
             sb.Append("  pushEventsBranchRegexFilter: ").Append(PushEventsBranchRegexFilter).Append("\n");
+            sb.Append("  notePlainTextFilter: ").Append(NotePlainTextFilter).Append("\n");
             sb.Append("  tagPushEvents: ").Append(TagPushEvents).Append("\n");
             sb.Append("  mergeRequestsEvents: ").Append(MergeRequestsEvents).Append("\n");
             sb.Append("  noteEvents: ").Append(NoteEvents).Append("\n");
@@ -116,6 +123,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
             if (this.PushEvents != input.PushEvents || (this.PushEvents != null && !this.PushEvents.Equals(input.PushEvents))) return false;
             if (this.PushEventsBranchRegexFilter != input.PushEventsBranchRegexFilter || (this.PushEventsBranchRegexFilter != null && !this.PushEventsBranchRegexFilter.Equals(input.PushEventsBranchRegexFilter))) return false;
+            if (this.NotePlainTextFilter != input.NotePlainTextFilter || (this.NotePlainTextFilter != null && input.NotePlainTextFilter != null && !this.NotePlainTextFilter.SequenceEqual(input.NotePlainTextFilter))) return false;
             if (this.TagPushEvents != input.TagPushEvents || (this.TagPushEvents != null && !this.TagPushEvents.Equals(input.TagPushEvents))) return false;
             if (this.MergeRequestsEvents != input.MergeRequestsEvents || (this.MergeRequestsEvents != null && !this.MergeRequestsEvents.Equals(input.MergeRequestsEvents))) return false;
             if (this.NoteEvents != input.NoteEvents || (this.NoteEvents != null && !this.NoteEvents.Equals(input.NoteEvents))) return false;
@@ -138,6 +146,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
                 if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
                 if (this.PushEvents != null) hashCode = hashCode * 59 + this.PushEvents.GetHashCode();
                 if (this.PushEventsBranchRegexFilter != null) hashCode = hashCode * 59 + this.PushEventsBranchRegexFilter.GetHashCode();
+                if (this.NotePlainTextFilter != null) hashCode = hashCode * 59 + this.NotePlainTextFilter.GetHashCode();
                 if (this.TagPushEvents != null) hashCode = hashCode * 59 + this.TagPushEvents.GetHashCode();
                 if (this.MergeRequestsEvents != null) hashCode = hashCode * 59 + this.MergeRequestsEvents.GetHashCode();
                 if (this.NoteEvents != null) hashCode = hashCode * 59 + this.NoteEvents.GetHashCode();

@@ -83,16 +83,40 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         public bool? IsSourceBranchProtected { get; set; }
 
         /// <summary>
+        /// 源分支是否为默认分支
+        /// </summary>
+        [JsonProperty("is_source_branch_default", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsSourceBranchDefault { get; set; }
+
+        /// <summary>
         /// 源分支
         /// </summary>
         [JsonProperty("devcloud_source_branch", NullValueHandling = NullValueHandling.Ignore)]
         public string DevcloudSourceBranch { get; set; }
 
         /// <summary>
+        /// MR点赞数
+        /// </summary>
+        [JsonProperty("upvotes", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Upvotes { get; set; }
+
+        /// <summary>
+        /// MR倒赞数
+        /// </summary>
+        [JsonProperty("downvotes", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Downvotes { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("author", NullValueHandling = NullValueHandling.Ignore)]
         public UserBasicExternalDto Author { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("assignee", NullValueHandling = NullValueHandling.Ignore)]
+        public UserBasicExternalDto Assignee { get; set; }
 
         /// <summary>
         /// 源仓库id
@@ -197,6 +221,12 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         public int? UserNotesCount { get; set; }
 
         /// <summary>
+        /// 是否需要删除源分支
+        /// </summary>
+        [JsonProperty("should_remove_source_branch", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ShouldRemoveSourceBranch { get; set; }
+
+        /// <summary>
         /// 合入后删除源分支
         /// </summary>
         [JsonProperty("force_remove_source_branch", NullValueHandling = NullValueHandling.Ignore)]
@@ -292,6 +322,12 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         [JsonProperty("is_use_temp_branch", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsUseTempBranch { get; set; }
 
+        /// <summary>
+        /// 只有合并人允许合入
+        /// </summary>
+        [JsonProperty("only_assignee_can_merge", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? OnlyAssigneeCanMerge { get; set; }
+
 
 
         /// <summary>
@@ -312,8 +348,12 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             sb.Append("  sourceBranch: ").Append(SourceBranch).Append("\n");
             sb.Append("  targetBranch: ").Append(TargetBranch).Append("\n");
             sb.Append("  isSourceBranchProtected: ").Append(IsSourceBranchProtected).Append("\n");
+            sb.Append("  isSourceBranchDefault: ").Append(IsSourceBranchDefault).Append("\n");
             sb.Append("  devcloudSourceBranch: ").Append(DevcloudSourceBranch).Append("\n");
+            sb.Append("  upvotes: ").Append(Upvotes).Append("\n");
+            sb.Append("  downvotes: ").Append(Downvotes).Append("\n");
             sb.Append("  author: ").Append(Author).Append("\n");
+            sb.Append("  assignee: ").Append(Assignee).Append("\n");
             sb.Append("  sourceRepositoryId: ").Append(SourceRepositoryId).Append("\n");
             sb.Append("  targetRepositoryId: ").Append(TargetRepositoryId).Append("\n");
             sb.Append("  sourceProjectId: ").Append(SourceProjectId).Append("\n");
@@ -331,6 +371,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             sb.Append("  closedBy: ").Append(ClosedBy).Append("\n");
             sb.Append("  closedAt: ").Append(ClosedAt).Append("\n");
             sb.Append("  userNotesCount: ").Append(UserNotesCount).Append("\n");
+            sb.Append("  shouldRemoveSourceBranch: ").Append(ShouldRemoveSourceBranch).Append("\n");
             sb.Append("  forceRemoveSourceBranch: ").Append(ForceRemoveSourceBranch).Append("\n");
             sb.Append("  webUrl: ").Append(WebUrl).Append("\n");
             sb.Append("  mergeRequestDiff: ").Append(MergeRequestDiff).Append("\n");
@@ -347,6 +388,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             sb.Append("  moderationTime: ").Append(ModerationTime).Append("\n");
             sb.Append("  moderationStatus: ").Append(ModerationStatus).Append("\n");
             sb.Append("  isUseTempBranch: ").Append(IsUseTempBranch).Append("\n");
+            sb.Append("  onlyAssigneeCanMerge: ").Append(OnlyAssigneeCanMerge).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -376,8 +418,12 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             if (this.SourceBranch != input.SourceBranch || (this.SourceBranch != null && !this.SourceBranch.Equals(input.SourceBranch))) return false;
             if (this.TargetBranch != input.TargetBranch || (this.TargetBranch != null && !this.TargetBranch.Equals(input.TargetBranch))) return false;
             if (this.IsSourceBranchProtected != input.IsSourceBranchProtected || (this.IsSourceBranchProtected != null && !this.IsSourceBranchProtected.Equals(input.IsSourceBranchProtected))) return false;
+            if (this.IsSourceBranchDefault != input.IsSourceBranchDefault || (this.IsSourceBranchDefault != null && !this.IsSourceBranchDefault.Equals(input.IsSourceBranchDefault))) return false;
             if (this.DevcloudSourceBranch != input.DevcloudSourceBranch || (this.DevcloudSourceBranch != null && !this.DevcloudSourceBranch.Equals(input.DevcloudSourceBranch))) return false;
+            if (this.Upvotes != input.Upvotes || (this.Upvotes != null && !this.Upvotes.Equals(input.Upvotes))) return false;
+            if (this.Downvotes != input.Downvotes || (this.Downvotes != null && !this.Downvotes.Equals(input.Downvotes))) return false;
             if (this.Author != input.Author || (this.Author != null && !this.Author.Equals(input.Author))) return false;
+            if (this.Assignee != input.Assignee || (this.Assignee != null && !this.Assignee.Equals(input.Assignee))) return false;
             if (this.SourceRepositoryId != input.SourceRepositoryId || (this.SourceRepositoryId != null && !this.SourceRepositoryId.Equals(input.SourceRepositoryId))) return false;
             if (this.TargetRepositoryId != input.TargetRepositoryId || (this.TargetRepositoryId != null && !this.TargetRepositoryId.Equals(input.TargetRepositoryId))) return false;
             if (this.SourceProjectId != input.SourceProjectId || (this.SourceProjectId != null && !this.SourceProjectId.Equals(input.SourceProjectId))) return false;
@@ -395,6 +441,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             if (this.ClosedBy != input.ClosedBy || (this.ClosedBy != null && !this.ClosedBy.Equals(input.ClosedBy))) return false;
             if (this.ClosedAt != input.ClosedAt || (this.ClosedAt != null && !this.ClosedAt.Equals(input.ClosedAt))) return false;
             if (this.UserNotesCount != input.UserNotesCount || (this.UserNotesCount != null && !this.UserNotesCount.Equals(input.UserNotesCount))) return false;
+            if (this.ShouldRemoveSourceBranch != input.ShouldRemoveSourceBranch || (this.ShouldRemoveSourceBranch != null && !this.ShouldRemoveSourceBranch.Equals(input.ShouldRemoveSourceBranch))) return false;
             if (this.ForceRemoveSourceBranch != input.ForceRemoveSourceBranch || (this.ForceRemoveSourceBranch != null && !this.ForceRemoveSourceBranch.Equals(input.ForceRemoveSourceBranch))) return false;
             if (this.WebUrl != input.WebUrl || (this.WebUrl != null && !this.WebUrl.Equals(input.WebUrl))) return false;
             if (this.MergeRequestDiff != input.MergeRequestDiff || (this.MergeRequestDiff != null && !this.MergeRequestDiff.Equals(input.MergeRequestDiff))) return false;
@@ -411,6 +458,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             if (this.ModerationTime != input.ModerationTime || (this.ModerationTime != null && !this.ModerationTime.Equals(input.ModerationTime))) return false;
             if (this.ModerationStatus != input.ModerationStatus || (this.ModerationStatus != null && !this.ModerationStatus.Equals(input.ModerationStatus))) return false;
             if (this.IsUseTempBranch != input.IsUseTempBranch || (this.IsUseTempBranch != null && !this.IsUseTempBranch.Equals(input.IsUseTempBranch))) return false;
+            if (this.OnlyAssigneeCanMerge != input.OnlyAssigneeCanMerge || (this.OnlyAssigneeCanMerge != null && !this.OnlyAssigneeCanMerge.Equals(input.OnlyAssigneeCanMerge))) return false;
 
             return true;
         }
@@ -434,8 +482,12 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
                 if (this.SourceBranch != null) hashCode = hashCode * 59 + this.SourceBranch.GetHashCode();
                 if (this.TargetBranch != null) hashCode = hashCode * 59 + this.TargetBranch.GetHashCode();
                 if (this.IsSourceBranchProtected != null) hashCode = hashCode * 59 + this.IsSourceBranchProtected.GetHashCode();
+                if (this.IsSourceBranchDefault != null) hashCode = hashCode * 59 + this.IsSourceBranchDefault.GetHashCode();
                 if (this.DevcloudSourceBranch != null) hashCode = hashCode * 59 + this.DevcloudSourceBranch.GetHashCode();
+                if (this.Upvotes != null) hashCode = hashCode * 59 + this.Upvotes.GetHashCode();
+                if (this.Downvotes != null) hashCode = hashCode * 59 + this.Downvotes.GetHashCode();
                 if (this.Author != null) hashCode = hashCode * 59 + this.Author.GetHashCode();
+                if (this.Assignee != null) hashCode = hashCode * 59 + this.Assignee.GetHashCode();
                 if (this.SourceRepositoryId != null) hashCode = hashCode * 59 + this.SourceRepositoryId.GetHashCode();
                 if (this.TargetRepositoryId != null) hashCode = hashCode * 59 + this.TargetRepositoryId.GetHashCode();
                 if (this.SourceProjectId != null) hashCode = hashCode * 59 + this.SourceProjectId.GetHashCode();
@@ -453,6 +505,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
                 if (this.ClosedBy != null) hashCode = hashCode * 59 + this.ClosedBy.GetHashCode();
                 if (this.ClosedAt != null) hashCode = hashCode * 59 + this.ClosedAt.GetHashCode();
                 if (this.UserNotesCount != null) hashCode = hashCode * 59 + this.UserNotesCount.GetHashCode();
+                if (this.ShouldRemoveSourceBranch != null) hashCode = hashCode * 59 + this.ShouldRemoveSourceBranch.GetHashCode();
                 if (this.ForceRemoveSourceBranch != null) hashCode = hashCode * 59 + this.ForceRemoveSourceBranch.GetHashCode();
                 if (this.WebUrl != null) hashCode = hashCode * 59 + this.WebUrl.GetHashCode();
                 if (this.MergeRequestDiff != null) hashCode = hashCode * 59 + this.MergeRequestDiff.GetHashCode();
@@ -469,6 +522,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
                 if (this.ModerationTime != null) hashCode = hashCode * 59 + this.ModerationTime.GetHashCode();
                 if (this.ModerationStatus != null) hashCode = hashCode * 59 + this.ModerationStatus.GetHashCode();
                 if (this.IsUseTempBranch != null) hashCode = hashCode * 59 + this.IsUseTempBranch.GetHashCode();
+                if (this.OnlyAssigneeCanMerge != null) hashCode = hashCode * 59 + this.OnlyAssigneeCanMerge.GetHashCode();
                 return hashCode;
             }
         }

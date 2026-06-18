@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
     {
 
         /// <summary>
-        /// **参数解释：** prompt property name already exists    
+        /// **参数解释：** 解决冲突结果信息    
         /// </summary>
         [JsonProperty("message", NullValueHandling = NullValueHandling.Ignore)]
         public string Message { get; set; }

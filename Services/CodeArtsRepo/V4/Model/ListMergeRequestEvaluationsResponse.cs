@@ -64,6 +64,13 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         [JsonProperty("custom_evaluations", NullValueHandling = NullValueHandling.Ignore)]
         public List<CustomEvaluationDto> CustomEvaluations { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("X-Total", IsHeader = true)]
+        [JsonProperty("X-Total", NullValueHandling = NullValueHandling.Ignore)]
+        public string XTotal { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +88,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             sb.Append("  content: ").Append(Content).Append("\n");
             sb.Append("  user: ").Append(User).Append("\n");
             sb.Append("  customEvaluations: ").Append(CustomEvaluations).Append("\n");
+            sb.Append("  xTotal: ").Append(XTotal).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +115,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             if (this.Content != input.Content || (this.Content != null && !this.Content.Equals(input.Content))) return false;
             if (this.User != input.User || (this.User != null && !this.User.Equals(input.User))) return false;
             if (this.CustomEvaluations != input.CustomEvaluations || (this.CustomEvaluations != null && input.CustomEvaluations != null && !this.CustomEvaluations.SequenceEqual(input.CustomEvaluations))) return false;
+            if (this.XTotal != input.XTotal || (this.XTotal != null && !this.XTotal.Equals(input.XTotal))) return false;
 
             return true;
         }
@@ -127,6 +136,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
                 if (this.Content != null) hashCode = hashCode * 59 + this.Content.GetHashCode();
                 if (this.User != null) hashCode = hashCode * 59 + this.User.GetHashCode();
                 if (this.CustomEvaluations != null) hashCode = hashCode * 59 + this.CustomEvaluations.GetHashCode();
+                if (this.XTotal != null) hashCode = hashCode * 59 + this.XTotal.GetHashCode();
                 return hashCode;
             }
         }

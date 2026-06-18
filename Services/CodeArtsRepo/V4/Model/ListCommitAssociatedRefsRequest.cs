@@ -15,9 +15,124 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
     /// </summary>
     public class ListCommitAssociatedRefsRequest 
     {
+        /// <summary>
+        /// **参数解释：** 分支或者tag。 **取值范围：** 只能为branch或者tag。 **约束限制：** 只能为branch或者tag。
+        /// </summary>
+        /// <value>**参数解释：** 分支或者tag。 **取值范围：** 只能为branch或者tag。 **约束限制：** 只能为branch或者tag。</value>
+        [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
+        public class TypeEnum
+        {
+            /// <summary>
+            /// Enum BRANCH for value: branch
+            /// </summary>
+            public static readonly TypeEnum BRANCH = new TypeEnum("branch");
+
+            /// <summary>
+            /// Enum TAG for value: tag
+            /// </summary>
+            public static readonly TypeEnum TAG = new TypeEnum("tag");
+
+            private static readonly Dictionary<string, TypeEnum> StaticFields =
+            new Dictionary<string, TypeEnum>()
+            {
+                { "branch", BRANCH },
+                { "tag", TAG },
+            };
+
+            private string _value;
+
+            public TypeEnum()
+            {
+
+            }
+
+            public TypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static TypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as TypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(TypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(TypeEnum a, TypeEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(TypeEnum a, TypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
-        /// **参数解释：** 仓库的ID，通过[[查询用户所有仓库](https://support.huaweicloud.com/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws)[[查询用户所有仓库](https://support.huaweicloud.com/intl/en-us/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk)[[查询用户所有仓库](https://support.huaweicloud.com/eu/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_eu)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **约束限制：** 不涉及。
+        /// **参数解释：** 仓库的ID，通过[[查询用户所有仓库](https://support.huaweicloud.com/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws)[[查询用户所有仓库](https://support.huaweicloud.com/intl/en-us/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk)[[查询用户所有仓库](https://support.huaweicloud.com/intl/zh-cn/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk_ch)[[查询用户所有仓库](https://support.huaweicloud.com/eu/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_eu)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **约束限制：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
         [SDKProperty("repository_id", IsPath = true)]
         [JsonProperty("repository_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -44,6 +159,12 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 分支或者tag。 **取值范围：** 只能为branch或者tag。 **约束限制：** 只能为branch或者tag。
+        /// </summary>
+        [SDKProperty("type", IsQuery = true)]
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public TypeEnum Type { get; set; }
 
 
         /// <summary>
@@ -57,6 +178,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             sb.Append("  sha: ").Append(Sha).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -79,6 +201,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             if (this.Sha != input.Sha || (this.Sha != null && !this.Sha.Equals(input.Sha))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Type != input.Type) return false;
 
             return true;
         }
@@ -95,6 +218,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
                 if (this.Sha != null) hashCode = hashCode * 59 + this.Sha.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;
             }
         }

@@ -82,6 +82,12 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         [JsonProperty("approver_comment", NullValueHandling = NullValueHandling.Ignore)]
         public string ApproverComment { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 是否有相关权限。
+        /// </summary>
+        [JsonProperty("has_permission", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? HasPermission { get; set; }
+
 
 
         /// <summary>
@@ -102,6 +108,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             sb.Append("  nickName: ").Append(NickName).Append("\n");
             sb.Append("  tenantName: ").Append(TenantName).Append("\n");
             sb.Append("  approverComment: ").Append(ApproverComment).Append("\n");
+            sb.Append("  hasPermission: ").Append(HasPermission).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -131,6 +138,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             if (this.NickName != input.NickName || (this.NickName != null && !this.NickName.Equals(input.NickName))) return false;
             if (this.TenantName != input.TenantName || (this.TenantName != null && !this.TenantName.Equals(input.TenantName))) return false;
             if (this.ApproverComment != input.ApproverComment || (this.ApproverComment != null && !this.ApproverComment.Equals(input.ApproverComment))) return false;
+            if (this.HasPermission != input.HasPermission || (this.HasPermission != null && !this.HasPermission.Equals(input.HasPermission))) return false;
 
             return true;
         }
@@ -154,6 +162,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
                 if (this.NickName != null) hashCode = hashCode * 59 + this.NickName.GetHashCode();
                 if (this.TenantName != null) hashCode = hashCode * 59 + this.TenantName.GetHashCode();
                 if (this.ApproverComment != null) hashCode = hashCode * 59 + this.ApproverComment.GetHashCode();
+                if (this.HasPermission != null) hashCode = hashCode * 59 + this.HasPermission.GetHashCode();
                 return hashCode;
             }
         }

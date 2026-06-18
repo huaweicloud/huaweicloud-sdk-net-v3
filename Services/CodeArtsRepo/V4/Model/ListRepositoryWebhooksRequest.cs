@@ -17,11 +17,18 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
     {
 
         /// <summary>
-        /// **参数解释：** 仓库的ID，通过[[查询用户所有仓库](https://support.huaweicloud.com/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws)[[查询用户所有仓库](https://support.huaweicloud.com/intl/en-us/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk)[[查询用户所有仓库](https://support.huaweicloud.com/eu/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_eu)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **约束限制：** 不涉及。
+        /// **参数解释：** 仓库的ID，通过[[查询用户所有仓库](https://support.huaweicloud.com/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws)[[查询用户所有仓库](https://support.huaweicloud.com/intl/en-us/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk)[[查询用户所有仓库](https://support.huaweicloud.com/intl/zh-cn/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk_ch)[[查询用户所有仓库](https://support.huaweicloud.com/eu/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_eu)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **约束限制：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
         [SDKProperty("repository_id", IsPath = true)]
         [JsonProperty("repository_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? RepositoryId { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 是否包含系统webhook **取值范围：** - true，包含。 - false，不包含。
+        /// </summary>
+        [SDKProperty("include_system", IsQuery = true)]
+        [JsonProperty("include_system", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IncludeSystem { get; set; }
 
         /// <summary>
         /// **参数解释：** 偏移量，从0开始。
@@ -47,6 +54,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             var sb = new StringBuilder();
             sb.Append("class ListRepositoryWebhooksRequest {\n");
             sb.Append("  repositoryId: ").Append(RepositoryId).Append("\n");
+            sb.Append("  includeSystem: ").Append(IncludeSystem).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("}\n");
@@ -68,6 +76,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         {
             if (input == null) return false;
             if (this.RepositoryId != input.RepositoryId || (this.RepositoryId != null && !this.RepositoryId.Equals(input.RepositoryId))) return false;
+            if (this.IncludeSystem != input.IncludeSystem || (this.IncludeSystem != null && !this.IncludeSystem.Equals(input.IncludeSystem))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
 
@@ -83,6 +92,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             {
                 var hashCode = 41;
                 if (this.RepositoryId != null) hashCode = hashCode * 59 + this.RepositoryId.GetHashCode();
+                if (this.IncludeSystem != null) hashCode = hashCode * 59 + this.IncludeSystem.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 return hashCode;

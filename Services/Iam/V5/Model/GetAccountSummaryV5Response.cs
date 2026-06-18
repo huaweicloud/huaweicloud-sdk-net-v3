@@ -100,6 +100,30 @@ namespace HuaweiCloud.SDK.Iam.V5.Model
         [JsonProperty("root_user_mfa_enabled", NullValueHandling = NullValueHandling.Ignore)]
         public int? RootUserMfaEnabled { get; set; }
 
+        /// <summary>
+        /// 此账号当前创建的OIDC身份提供商数量。
+        /// </summary>
+        [JsonProperty("oidc_provider", NullValueHandling = NullValueHandling.Ignore)]
+        public int? OidcProvider { get; set; }
+
+        /// <summary>
+        /// 此账号当前创建的OIDC身份提供商数量上限。
+        /// </summary>
+        [JsonProperty("oidc_provider_quota", NullValueHandling = NullValueHandling.Ignore)]
+        public int? OidcProviderQuota { get; set; }
+
+        /// <summary>
+        /// 此账号当前创建的SAML身份提供商数量。
+        /// </summary>
+        [JsonProperty("saml_provider", NullValueHandling = NullValueHandling.Ignore)]
+        public int? SamlProvider { get; set; }
+
+        /// <summary>
+        /// 此账号当前创建的SAML身份提供商数量上限。
+        /// </summary>
+        [JsonProperty("saml_provider_quota", NullValueHandling = NullValueHandling.Ignore)]
+        public int? SamlProviderQuota { get; set; }
+
 
 
         /// <summary>
@@ -123,6 +147,10 @@ namespace HuaweiCloud.SDK.Iam.V5.Model
             sb.Append("  groups: ").Append(Groups).Append("\n");
             sb.Append("  groupsQuota: ").Append(GroupsQuota).Append("\n");
             sb.Append("  rootUserMfaEnabled: ").Append(RootUserMfaEnabled).Append("\n");
+            sb.Append("  oidcProvider: ").Append(OidcProvider).Append("\n");
+            sb.Append("  oidcProviderQuota: ").Append(OidcProviderQuota).Append("\n");
+            sb.Append("  samlProvider: ").Append(SamlProvider).Append("\n");
+            sb.Append("  samlProviderQuota: ").Append(SamlProviderQuota).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -155,6 +183,10 @@ namespace HuaweiCloud.SDK.Iam.V5.Model
             if (this.Groups != input.Groups || (this.Groups != null && !this.Groups.Equals(input.Groups))) return false;
             if (this.GroupsQuota != input.GroupsQuota || (this.GroupsQuota != null && !this.GroupsQuota.Equals(input.GroupsQuota))) return false;
             if (this.RootUserMfaEnabled != input.RootUserMfaEnabled || (this.RootUserMfaEnabled != null && !this.RootUserMfaEnabled.Equals(input.RootUserMfaEnabled))) return false;
+            if (this.OidcProvider != input.OidcProvider || (this.OidcProvider != null && !this.OidcProvider.Equals(input.OidcProvider))) return false;
+            if (this.OidcProviderQuota != input.OidcProviderQuota || (this.OidcProviderQuota != null && !this.OidcProviderQuota.Equals(input.OidcProviderQuota))) return false;
+            if (this.SamlProvider != input.SamlProvider || (this.SamlProvider != null && !this.SamlProvider.Equals(input.SamlProvider))) return false;
+            if (this.SamlProviderQuota != input.SamlProviderQuota || (this.SamlProviderQuota != null && !this.SamlProviderQuota.Equals(input.SamlProviderQuota))) return false;
 
             return true;
         }
@@ -181,6 +213,10 @@ namespace HuaweiCloud.SDK.Iam.V5.Model
                 if (this.Groups != null) hashCode = hashCode * 59 + this.Groups.GetHashCode();
                 if (this.GroupsQuota != null) hashCode = hashCode * 59 + this.GroupsQuota.GetHashCode();
                 if (this.RootUserMfaEnabled != null) hashCode = hashCode * 59 + this.RootUserMfaEnabled.GetHashCode();
+                if (this.OidcProvider != null) hashCode = hashCode * 59 + this.OidcProvider.GetHashCode();
+                if (this.OidcProviderQuota != null) hashCode = hashCode * 59 + this.OidcProviderQuota.GetHashCode();
+                if (this.SamlProvider != null) hashCode = hashCode * 59 + this.SamlProvider.GetHashCode();
+                if (this.SamlProviderQuota != null) hashCode = hashCode * 59 + this.SamlProviderQuota.GetHashCode();
                 return hashCode;
             }
         }

@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         public string BaseCommitSha { get; set; }
 
         /// <summary>
-        /// **参数解释：** tart commit节点。
+        /// **参数解释：** start commit节点。
         /// </summary>
         [JsonProperty("start_commit_sha", NullValueHandling = NullValueHandling.Ignore)]
         public string StartCommitSha { get; set; }
@@ -64,6 +64,13 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
         [JsonProperty("real_size", NullValueHandling = NullValueHandling.Ignore)]
         public string RealSize { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("X-Total", IsHeader = true)]
+        [JsonProperty("X-Total", NullValueHandling = NullValueHandling.Ignore)]
+        public string XTotal { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +88,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             sb.Append("  mergeRequestId: ").Append(MergeRequestId).Append("\n");
             sb.Append("  state: ").Append(State).Append("\n");
             sb.Append("  realSize: ").Append(RealSize).Append("\n");
+            sb.Append("  xTotal: ").Append(XTotal).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +115,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
             if (this.MergeRequestId != input.MergeRequestId || (this.MergeRequestId != null && !this.MergeRequestId.Equals(input.MergeRequestId))) return false;
             if (this.State != input.State || (this.State != null && !this.State.Equals(input.State))) return false;
             if (this.RealSize != input.RealSize || (this.RealSize != null && !this.RealSize.Equals(input.RealSize))) return false;
+            if (this.XTotal != input.XTotal || (this.XTotal != null && !this.XTotal.Equals(input.XTotal))) return false;
 
             return true;
         }
@@ -127,6 +136,7 @@ namespace HuaweiCloud.SDK.CodeArtsRepo.V4.Model
                 if (this.MergeRequestId != null) hashCode = hashCode * 59 + this.MergeRequestId.GetHashCode();
                 if (this.State != null) hashCode = hashCode * 59 + this.State.GetHashCode();
                 if (this.RealSize != null) hashCode = hashCode * 59 + this.RealSize.GetHashCode();
+                if (this.XTotal != null) hashCode = hashCode * 59 + this.XTotal.GetHashCode();
                 return hashCode;
             }
         }
