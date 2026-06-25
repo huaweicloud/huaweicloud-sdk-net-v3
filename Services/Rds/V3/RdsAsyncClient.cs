@@ -1665,6 +1665,30 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 获取实例备份概览列表
+        ///
+        /// 获取实例备份概览列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListInstanceBackupSummaryResponse> ListInstanceBackupSummaryAsync(ListInstanceBackupSummaryRequest listInstanceBackupSummaryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/backups/summary", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceBackupSummaryRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceBackupSummaryResponse>(response);
+        }
+
+        public AsyncInvoker<ListInstanceBackupSummaryResponse> ListInstanceBackupSummaryAsyncInvoker(ListInstanceBackupSummaryRequest listInstanceBackupSummaryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/backups/summary", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceBackupSummaryRequest);
+            return new AsyncInvoker<ListInstanceBackupSummaryResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceBackupSummaryResponse>);
+        }
+        
+        /// <summary>
         /// 获取诊断后的实例数量
         ///
         /// 获取诊断后的实例数量
@@ -2587,6 +2611,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/datastores/{database_name}/small-version", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSmallVersionRequest);
             return new AsyncInvoker<ListSmallVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSmallVersionResponse>);
+        }
+        
+        /// <summary>
+        /// 查询稀疏备份策略
+        ///
+        /// 查询稀疏备份策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListSparseBackupPolicyResponse> ListSparseBackupPolicyAsync(ListSparseBackupPolicyRequest listSparseBackupPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listSparseBackupPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/sparse-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSparseBackupPolicyRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListSparseBackupPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<ListSparseBackupPolicyResponse> ListSparseBackupPolicyAsyncInvoker(ListSparseBackupPolicyRequest listSparseBackupPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listSparseBackupPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/sparse-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSparseBackupPolicyRequest);
+            return new AsyncInvoker<ListSparseBackupPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSparseBackupPolicyResponse>);
         }
         
         /// <summary>
@@ -3628,6 +3678,30 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupPolicyRequest);
             return new AsyncInvoker<ShowBackupPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBackupPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 查询备份用量总览
+        ///
+        /// 查询备份用量总览
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowBackupUsageResponse> ShowBackupUsageAsync(ShowBackupUsageRequest showBackupUsageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/backup-usage", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupUsageRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowBackupUsageResponse>(response);
+        }
+
+        public AsyncInvoker<ShowBackupUsageResponse> ShowBackupUsageAsyncInvoker(ShowBackupUsageRequest showBackupUsageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/backup-usage", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupUsageRequest);
+            return new AsyncInvoker<ShowBackupUsageResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBackupUsageResponse>);
         }
         
         /// <summary>
@@ -4870,6 +4944,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/port", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePortRequest);
             return new AsyncInvoker<UpdatePortResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePortResponse>);
+        }
+        
+        /// <summary>
+        /// 修改实例稀疏备份策略
+        ///
+        /// 修改实例稀疏备份策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateSparseBackupPolicyResponse> UpdateSparseBackupPolicyAsync(UpdateSparseBackupPolicyRequest updateSparseBackupPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateSparseBackupPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/sparse-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSparseBackupPolicyRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<UpdateSparseBackupPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateSparseBackupPolicyResponse> UpdateSparseBackupPolicyAsyncInvoker(UpdateSparseBackupPolicyRequest updateSparseBackupPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateSparseBackupPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/sparse-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSparseBackupPolicyRequest);
+            return new AsyncInvoker<UpdateSparseBackupPolicyResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateSparseBackupPolicyResponse>);
         }
         
         /// <summary>

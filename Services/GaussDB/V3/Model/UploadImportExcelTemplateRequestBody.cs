@@ -271,6 +271,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public string SelectedDbs { get; set; }
 
         /// <summary>
+        /// **参数解释**：  数据库同步范围。  **约束限制**：  必须选择实例级同步。  **取值范围**：  - true：所有库。 - false：部分库。  **默认取值**：  部分库。
+        /// </summary>
+        [JsonProperty("database_scope", NullValueHandling = NullValueHandling.Ignore)]
+        public string DatabaseScope { get; set; }
+
+        /// <summary>
         /// **参数解释**：  是否支持标配符。  **约束限制**：  不涉及。  **取值范围**：  - true: 支持标配符。 - false: 不支持标配符。  **默认取值**：  不涉及。
         /// </summary>
         [JsonProperty("is_support_regexp", NullValueHandling = NullValueHandling.Ignore)]
@@ -300,6 +306,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 formData.Add("is_instance_level", new FormDataPart<string>(IsInstanceLevel.GetValue()));
             }
             formData.Add("selected_dbs", new FormDataPart<string>(SelectedDbs));
+            if (DatabaseScope != null) {
+                formData.Add("database_scope", new FormDataPart<string>(DatabaseScope));
+            }
             if (IsSupportRegexp != null) {
                 formData.Add("is_support_regexp", new FormDataPart<string>(IsSupportRegexp.GetValue()));
             }
@@ -318,6 +327,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  file: ").Append(File).Append("\n");
             sb.Append("  isInstanceLevel: ").Append(IsInstanceLevel).Append("\n");
             sb.Append("  selectedDbs: ").Append(SelectedDbs).Append("\n");
+            sb.Append("  databaseScope: ").Append(DatabaseScope).Append("\n");
             sb.Append("  isSupportRegexp: ").Append(IsSupportRegexp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -341,6 +351,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (this.File != input.File || (this.File != null && !this.File.Equals(input.File))) return false;
             if (this.IsInstanceLevel != input.IsInstanceLevel) return false;
             if (this.SelectedDbs != input.SelectedDbs || (this.SelectedDbs != null && !this.SelectedDbs.Equals(input.SelectedDbs))) return false;
+            if (this.DatabaseScope != input.DatabaseScope || (this.DatabaseScope != null && !this.DatabaseScope.Equals(input.DatabaseScope))) return false;
             if (this.IsSupportRegexp != input.IsSupportRegexp) return false;
 
             return true;
@@ -358,6 +369,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 if (this.File != null) hashCode = hashCode * 59 + this.File.GetHashCode();
                 hashCode = hashCode * 59 + this.IsInstanceLevel.GetHashCode();
                 if (this.SelectedDbs != null) hashCode = hashCode * 59 + this.SelectedDbs.GetHashCode();
+                if (this.DatabaseScope != null) hashCode = hashCode * 59 + this.DatabaseScope.GetHashCode();
                 hashCode = hashCode * 59 + this.IsSupportRegexp.GetHashCode();
                 return hashCode;
             }

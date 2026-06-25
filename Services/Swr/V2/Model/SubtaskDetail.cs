@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// 内部任务ID
         /// </summary>
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
-        public int? JobId { get; set; }
+        public string JobId { get; set; }
 
         /// <summary>
         /// 命名空间名

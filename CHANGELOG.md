@@ -1,3 +1,102 @@
+# 3.1.198 2026-06-25
+
+### HuaweiCloud SDK BSS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the API `UpdatePeriodToOnDemandInstantly`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK ECS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **BatchAddServerNics**
+    - changes of request param
+      - `+ nics.efi_enable`
+  - **CreatePostPaidServers**
+    - changes of request param
+      - `+ server.nics.efi_enable`
+
+### HuaweiCloud SDK GaussDB
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateGaussMySqlReadonlyNode**
+    - changes of request param
+      - `+ charge_mode`
+  - **ListStarrocksInstanceInfo**
+    - changes of response param
+      - `+ instances.users_sync_switch_on`
+  - **ListImmediateJobs**
+    - changes of response param
+      - `+ action_names`
+      - `- jobs.action_names`
+  - **ShowAutoScalingPolicy**
+    - changes of response param
+      - `+ reduce_threshold`
+  - **UpdateAutoScalingPolicy**
+    - changes of request param
+      - `+ reduce_threshold`
+  - **UploadImportExcelTemplate**
+    - changes of request param
+      - `+ database_scope`
+  - **ShowGaussMySqlBackupList**
+    - changes of response param
+      - `* backups.size: int64 -> double`
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `ShowBackupUsage`, `ListInstanceBackupSummary`, `ListSparseBackupPolicy`, `UpdateSparseBackupPolicy`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK SWR
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListGlobalFeatureGates**
+    - changes of response param
+      - `+ enableIntranetAccessSwitch`
+  - **ListInstanceReplicationPolicyExecSubTasks**
+    - changes of response param
+      - `* sub_tasks.job_id: int32 -> string`
+
+### HuaweiCloud SDK VOD
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the APIs `ShowHttpsConfig`, `UpdateHttpsConfig`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.197 2026-06-18
 
 ### HuaweiCloud SDK CodeArtsRepo

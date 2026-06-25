@@ -183,7 +183,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// 备份大小（单位：MB）。
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
-        public long? Size { get; set; }
+        public double? Size { get; set; }
 
         /// <summary>
         /// 

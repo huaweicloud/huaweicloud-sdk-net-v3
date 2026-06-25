@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
         public List<string> OrderLineItemIds { get; set; }
 
         /// <summary>
-        /// 订单可用折扣的模式 。 0：折扣1：一口价2：满减
+        /// 订单可用折扣的模式。 0：折扣 1：一口价 2：满减
         /// </summary>
         [JsonProperty("discount_mode", NullValueHandling = NullValueHandling.Ignore)]
         public int? DiscountMode { get; set; }

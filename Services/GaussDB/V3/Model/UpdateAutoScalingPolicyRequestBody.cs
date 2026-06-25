@@ -53,6 +53,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public bool? ReduceEnabled { get; set; }
 
         /// <summary>
+        /// **参数解释**：  自动回缩的CPU平均使用率阈值（百分比数值）。  **约束限制**：  不涉及。  **取值范围**：  10-30。  **默认取值**：  不涉及。
+        /// </summary>
+        [JsonProperty("reduce_threshold", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ReduceThreshold { get; set; }
+
+        /// <summary>
         /// 只读节点数量上限。开启增删只读节点时必填。
         /// </summary>
         [JsonProperty("max_read_only_count", NullValueHandling = NullValueHandling.Ignore)]
@@ -85,6 +91,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  enlargeThreshold: ").Append(EnlargeThreshold).Append("\n");
             sb.Append("  maxFlavor: ").Append(MaxFlavor).Append("\n");
             sb.Append("  reduceEnabled: ").Append(ReduceEnabled).Append("\n");
+            sb.Append("  reduceThreshold: ").Append(ReduceThreshold).Append("\n");
             sb.Append("  maxReadOnlyCount: ").Append(MaxReadOnlyCount).Append("\n");
             sb.Append("  readOnlyWeight: ").Append(ReadOnlyWeight).Append("\n");
             sb.Append("  scalingStrategy: ").Append(ScalingStrategy).Append("\n");
@@ -112,6 +119,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (this.EnlargeThreshold != input.EnlargeThreshold || (this.EnlargeThreshold != null && !this.EnlargeThreshold.Equals(input.EnlargeThreshold))) return false;
             if (this.MaxFlavor != input.MaxFlavor || (this.MaxFlavor != null && !this.MaxFlavor.Equals(input.MaxFlavor))) return false;
             if (this.ReduceEnabled != input.ReduceEnabled || (this.ReduceEnabled != null && !this.ReduceEnabled.Equals(input.ReduceEnabled))) return false;
+            if (this.ReduceThreshold != input.ReduceThreshold || (this.ReduceThreshold != null && !this.ReduceThreshold.Equals(input.ReduceThreshold))) return false;
             if (this.MaxReadOnlyCount != input.MaxReadOnlyCount || (this.MaxReadOnlyCount != null && !this.MaxReadOnlyCount.Equals(input.MaxReadOnlyCount))) return false;
             if (this.ReadOnlyWeight != input.ReadOnlyWeight || (this.ReadOnlyWeight != null && !this.ReadOnlyWeight.Equals(input.ReadOnlyWeight))) return false;
             if (this.ScalingStrategy != input.ScalingStrategy || (this.ScalingStrategy != null && !this.ScalingStrategy.Equals(input.ScalingStrategy))) return false;
@@ -133,6 +141,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 if (this.EnlargeThreshold != null) hashCode = hashCode * 59 + this.EnlargeThreshold.GetHashCode();
                 if (this.MaxFlavor != null) hashCode = hashCode * 59 + this.MaxFlavor.GetHashCode();
                 if (this.ReduceEnabled != null) hashCode = hashCode * 59 + this.ReduceEnabled.GetHashCode();
+                if (this.ReduceThreshold != null) hashCode = hashCode * 59 + this.ReduceThreshold.GetHashCode();
                 if (this.MaxReadOnlyCount != null) hashCode = hashCode * 59 + this.MaxReadOnlyCount.GetHashCode();
                 if (this.ReadOnlyWeight != null) hashCode = hashCode * 59 + this.ReadOnlyWeight.GetHashCode();
                 if (this.ScalingStrategy != null) hashCode = hashCode * 59 + this.ScalingStrategy.GetHashCode();

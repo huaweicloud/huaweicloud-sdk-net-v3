@@ -52,6 +52,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("allowed_address_pairs", NullValueHandling = NullValueHandling.Ignore)]
         public List<CreateServerNicAllowedAddressPairs> AllowedAddressPairs { get; set; }
 
+        /// <summary>
+        /// 使能网卡的vRoCE能力，只支持从网卡，主网卡不支持。
+        /// </summary>
+        [JsonProperty("efi_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EfiEnable { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +73,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  ipv6Enable: ").Append(Ipv6Enable).Append("\n");
             sb.Append("  ipv6Bandwidth: ").Append(Ipv6Bandwidth).Append("\n");
             sb.Append("  allowedAddressPairs: ").Append(AllowedAddressPairs).Append("\n");
+            sb.Append("  efiEnable: ").Append(EfiEnable).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +98,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             if (this.Ipv6Enable != input.Ipv6Enable || (this.Ipv6Enable != null && !this.Ipv6Enable.Equals(input.Ipv6Enable))) return false;
             if (this.Ipv6Bandwidth != input.Ipv6Bandwidth || (this.Ipv6Bandwidth != null && !this.Ipv6Bandwidth.Equals(input.Ipv6Bandwidth))) return false;
             if (this.AllowedAddressPairs != input.AllowedAddressPairs || (this.AllowedAddressPairs != null && input.AllowedAddressPairs != null && !this.AllowedAddressPairs.SequenceEqual(input.AllowedAddressPairs))) return false;
+            if (this.EfiEnable != input.EfiEnable || (this.EfiEnable != null && !this.EfiEnable.Equals(input.EfiEnable))) return false;
 
             return true;
         }
@@ -109,6 +117,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                 if (this.Ipv6Enable != null) hashCode = hashCode * 59 + this.Ipv6Enable.GetHashCode();
                 if (this.Ipv6Bandwidth != null) hashCode = hashCode * 59 + this.Ipv6Bandwidth.GetHashCode();
                 if (this.AllowedAddressPairs != null) hashCode = hashCode * 59 + this.AllowedAddressPairs.GetHashCode();
+                if (this.EfiEnable != null) hashCode = hashCode * 59 + this.EfiEnable.GetHashCode();
                 return hashCode;
             }
         }

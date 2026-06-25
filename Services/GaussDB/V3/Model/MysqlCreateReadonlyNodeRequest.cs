@@ -15,6 +15,121 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
     /// </summary>
     public class MysqlCreateReadonlyNodeRequest 
     {
+        /// <summary>
+        /// **参数解释**：     计费模式。  **约束限制**：  仅当实例为包年/包月实例时生效。  **取值范围**：  - prePaid：预付费，即包年/包月。 - postPaid：后付费，即按需付费。  **默认取值**：  prePaid。
+        /// </summary>
+        /// <value>**参数解释**：     计费模式。  **约束限制**：  仅当实例为包年/包月实例时生效。  **取值范围**：  - prePaid：预付费，即包年/包月。 - postPaid：后付费，即按需付费。  **默认取值**：  prePaid。</value>
+        [JsonConverter(typeof(EnumClassConverter<ChargeModeEnum>))]
+        public class ChargeModeEnum
+        {
+            /// <summary>
+            /// Enum PREPAID for value: prePaid
+            /// </summary>
+            public static readonly ChargeModeEnum PREPAID = new ChargeModeEnum("prePaid");
+
+            /// <summary>
+            /// Enum POSTPAID for value: postPaid
+            /// </summary>
+            public static readonly ChargeModeEnum POSTPAID = new ChargeModeEnum("postPaid");
+
+            private static readonly Dictionary<string, ChargeModeEnum> StaticFields =
+            new Dictionary<string, ChargeModeEnum>()
+            {
+                { "prePaid", PREPAID },
+                { "postPaid", POSTPAID },
+            };
+
+            private string _value;
+
+            public ChargeModeEnum()
+            {
+
+            }
+
+            public ChargeModeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static ChargeModeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ChargeModeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ChargeModeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(ChargeModeEnum a, ChargeModeEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ChargeModeEnum a, ChargeModeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 指定创建的只读节点故障倒换优先级。  故障倒换优先级的取值范围为1~16，数字越小，优先级越大，即故障倒换时，主节点会优先倒换到优先级高的只读节点上，优先级相同的只读节点选为主节点的概率相同。最多支持9个只读节点设置故障倒换优先级，超过9个的只读节点优先级默认为-1，表示不会参与倒换。可通过修改节点的故障倒换优先级来进行调整。
@@ -28,6 +143,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("is_auto_pay", NullValueHandling = NullValueHandling.Ignore)]
         public string IsAutoPay { get; set; }
 
+        /// <summary>
+        /// **参数解释**：     计费模式。  **约束限制**：  仅当实例为包年/包月实例时生效。  **取值范围**：  - prePaid：预付费，即包年/包月。 - postPaid：后付费，即按需付费。  **默认取值**：  prePaid。
+        /// </summary>
+        [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public ChargeModeEnum ChargeMode { get; set; }
         /// <summary>
         /// 可用区。可指定可用区创建只读节点，不传该参数时默认为自动选择可用区。  调用[查询数据库规格](https://support.huaweicloud.com/api-taurusdb/ShowGaussMySqlFlavors.html)获取，其中az_status中的key为availability_zone。  注：指定可用区创建只读节点，可能由于资源不足创建失败。
         /// </summary>
@@ -45,6 +165,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("class MysqlCreateReadonlyNodeRequest {\n");
             sb.Append("  priorities: ").Append(Priorities).Append("\n");
             sb.Append("  isAutoPay: ").Append(IsAutoPay).Append("\n");
+            sb.Append("  chargeMode: ").Append(ChargeMode).Append("\n");
             sb.Append("  availabilityZones: ").Append(AvailabilityZones).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -66,6 +187,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (input == null) return false;
             if (this.Priorities != input.Priorities || (this.Priorities != null && input.Priorities != null && !this.Priorities.SequenceEqual(input.Priorities))) return false;
             if (this.IsAutoPay != input.IsAutoPay || (this.IsAutoPay != null && !this.IsAutoPay.Equals(input.IsAutoPay))) return false;
+            if (this.ChargeMode != input.ChargeMode) return false;
             if (this.AvailabilityZones != input.AvailabilityZones || (this.AvailabilityZones != null && input.AvailabilityZones != null && !this.AvailabilityZones.SequenceEqual(input.AvailabilityZones))) return false;
 
             return true;
@@ -81,6 +203,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 var hashCode = 41;
                 if (this.Priorities != null) hashCode = hashCode * 59 + this.Priorities.GetHashCode();
                 if (this.IsAutoPay != null) hashCode = hashCode * 59 + this.IsAutoPay.GetHashCode();
+                hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
                 if (this.AvailabilityZones != null) hashCode = hashCode * 59 + this.AvailabilityZones.GetHashCode();
                 return hashCode;
             }

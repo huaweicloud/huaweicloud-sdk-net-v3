@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
         public string DiscountValue { get; set; }
 
         /// <summary>
-        /// 折扣类型，取值为 0：促销折扣1：合同折扣2：商务优惠3：合作伙伴授予折扣609：订单调价折扣
+        /// 折扣类型，取值为 0：促销折扣；1：合同折扣；2：商务优惠；3：合作伙伴授予折扣；609：订单调价折扣
         /// </summary>
         [JsonProperty("discount_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? DiscountType { get; set; }

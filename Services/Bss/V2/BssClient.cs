@@ -2303,6 +2303,30 @@ namespace HuaweiCloud.SDK.Bss.V2
         }
         
         /// <summary>
+        /// 设置包年/包月资源即时转按需
+        ///
+        /// 功能描述：客户在自建平台完成包年/包月资源即时转为按需资源计费
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdatePeriodToOnDemandInstantlyResponse UpdatePeriodToOnDemandInstantly(UpdatePeriodToOnDemandInstantlyRequest updatePeriodToOnDemandInstantlyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/orders/subscriptions/resources/to-on-demand/instantly", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePeriodToOnDemandInstantlyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<UpdatePeriodToOnDemandInstantlyResponse>(response);
+        }
+
+        public SyncInvoker<UpdatePeriodToOnDemandInstantlyResponse> UpdatePeriodToOnDemandInstantlyInvoker(UpdatePeriodToOnDemandInstantlyRequest updatePeriodToOnDemandInstantlyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/orders/subscriptions/resources/to-on-demand/instantly", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePeriodToOnDemandInstantlyRequest);
+            return new SyncInvoker<UpdatePeriodToOnDemandInstantlyResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdatePeriodToOnDemandInstantlyResponse>);
+        }
+        
+        /// <summary>
         /// 企业主账号向企业子账号拨款
         ///
         /// 企业主账号在自建平台向企业子账号拨款。

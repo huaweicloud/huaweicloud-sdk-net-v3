@@ -167,6 +167,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public string CreateFailErrorCode { get; set; }
 
         /// <summary>
+        /// **参数解释**：  账号同步开关状态。  **取值范围**：  - true：开启。 - false：关闭。
+        /// </summary>
+        [JsonProperty("users_sync_switch_on", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? UsersSyncSwitchOn { get; set; }
+
+        /// <summary>
         /// 实例分组。
         /// </summary>
         [JsonProperty("groups", NullValueHandling = NullValueHandling.Ignore)]
@@ -302,6 +308,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  paramGroup: ").Append(ParamGroup).Append("\n");
             sb.Append("  actions: ").Append(Actions).Append("\n");
             sb.Append("  createFailErrorCode: ").Append(CreateFailErrorCode).Append("\n");
+            sb.Append("  usersSyncSwitchOn: ").Append(UsersSyncSwitchOn).Append("\n");
             sb.Append("  groups: ").Append(Groups).Append("\n");
             sb.Append("  opsWindow: ").Append(OpsWindow).Append("\n");
             sb.Append("  tagsInfo: ").Append(TagsInfo).Append("\n");
@@ -362,6 +369,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (this.ParamGroup != input.ParamGroup || (this.ParamGroup != null && !this.ParamGroup.Equals(input.ParamGroup))) return false;
             if (this.Actions != input.Actions || (this.Actions != null && input.Actions != null && !this.Actions.SequenceEqual(input.Actions))) return false;
             if (this.CreateFailErrorCode != input.CreateFailErrorCode || (this.CreateFailErrorCode != null && !this.CreateFailErrorCode.Equals(input.CreateFailErrorCode))) return false;
+            if (this.UsersSyncSwitchOn != input.UsersSyncSwitchOn || (this.UsersSyncSwitchOn != null && !this.UsersSyncSwitchOn.Equals(input.UsersSyncSwitchOn))) return false;
             if (this.Groups != input.Groups || (this.Groups != null && input.Groups != null && !this.Groups.SequenceEqual(input.Groups))) return false;
             if (this.OpsWindow != input.OpsWindow || (this.OpsWindow != null && !this.OpsWindow.Equals(input.OpsWindow))) return false;
             if (this.TagsInfo != input.TagsInfo || (this.TagsInfo != null && !this.TagsInfo.Equals(input.TagsInfo))) return false;
@@ -416,6 +424,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 if (this.ParamGroup != null) hashCode = hashCode * 59 + this.ParamGroup.GetHashCode();
                 if (this.Actions != null) hashCode = hashCode * 59 + this.Actions.GetHashCode();
                 if (this.CreateFailErrorCode != null) hashCode = hashCode * 59 + this.CreateFailErrorCode.GetHashCode();
+                if (this.UsersSyncSwitchOn != null) hashCode = hashCode * 59 + this.UsersSyncSwitchOn.GetHashCode();
                 if (this.Groups != null) hashCode = hashCode * 59 + this.Groups.GetHashCode();
                 if (this.OpsWindow != null) hashCode = hashCode * 59 + this.OpsWindow.GetHashCode();
                 if (this.TagsInfo != null) hashCode = hashCode * 59 + this.TagsInfo.GetHashCode();

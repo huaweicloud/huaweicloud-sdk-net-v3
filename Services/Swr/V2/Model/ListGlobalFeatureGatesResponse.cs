@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         [JsonProperty("cerAvailable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? CerAvailable { get; set; }
 
+        /// <summary>
+        /// 是否展示创建内网访问的开关按钮
+        /// </summary>
+        [JsonProperty("enableIntranetAccessSwitch", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableIntranetAccessSwitch { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("  enableUserDefObs: ").Append(EnableUserDefObs).Append("\n");
             sb.Append("  enableEnterprise: ").Append(EnableEnterprise).Append("\n");
             sb.Append("  cerAvailable: ").Append(CerAvailable).Append("\n");
+            sb.Append("  enableIntranetAccessSwitch: ").Append(EnableIntranetAccessSwitch).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +74,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             if (this.EnableUserDefObs != input.EnableUserDefObs || (this.EnableUserDefObs != null && !this.EnableUserDefObs.Equals(input.EnableUserDefObs))) return false;
             if (this.EnableEnterprise != input.EnableEnterprise || (this.EnableEnterprise != null && !this.EnableEnterprise.Equals(input.EnableEnterprise))) return false;
             if (this.CerAvailable != input.CerAvailable || (this.CerAvailable != null && !this.CerAvailable.Equals(input.CerAvailable))) return false;
+            if (this.EnableIntranetAccessSwitch != input.EnableIntranetAccessSwitch || (this.EnableIntranetAccessSwitch != null && !this.EnableIntranetAccessSwitch.Equals(input.EnableIntranetAccessSwitch))) return false;
 
             return true;
         }
@@ -82,6 +90,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 if (this.EnableUserDefObs != null) hashCode = hashCode * 59 + this.EnableUserDefObs.GetHashCode();
                 if (this.EnableEnterprise != null) hashCode = hashCode * 59 + this.EnableEnterprise.GetHashCode();
                 if (this.CerAvailable != null) hashCode = hashCode * 59 + this.CerAvailable.GetHashCode();
+                if (this.EnableIntranetAccessSwitch != null) hashCode = hashCode * 59 + this.EnableIntranetAccessSwitch.GetHashCode();
                 return hashCode;
             }
         }

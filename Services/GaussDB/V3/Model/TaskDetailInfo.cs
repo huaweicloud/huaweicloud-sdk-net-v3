@@ -88,12 +88,6 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("show_detail", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ShowDetail { get; set; }
 
-        /// <summary>
-        /// **参数解释**：  支持筛选的任务名称。  **取值范围**：  不涉及。
-        /// </summary>
-        [JsonProperty("action_names", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> ActionNames { get; set; }
-
 
 
         /// <summary>
@@ -115,7 +109,6 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  endedTime: ").Append(EndedTime).Append("\n");
             sb.Append("  failReason: ").Append(FailReason).Append("\n");
             sb.Append("  showDetail: ").Append(ShowDetail).Append("\n");
-            sb.Append("  actionNames: ").Append(ActionNames).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -146,7 +139,6 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (this.EndedTime != input.EndedTime || (this.EndedTime != null && !this.EndedTime.Equals(input.EndedTime))) return false;
             if (this.FailReason != input.FailReason || (this.FailReason != null && !this.FailReason.Equals(input.FailReason))) return false;
             if (this.ShowDetail != input.ShowDetail || (this.ShowDetail != null && !this.ShowDetail.Equals(input.ShowDetail))) return false;
-            if (this.ActionNames != input.ActionNames || (this.ActionNames != null && input.ActionNames != null && !this.ActionNames.SequenceEqual(input.ActionNames))) return false;
 
             return true;
         }
@@ -171,7 +163,6 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 if (this.EndedTime != null) hashCode = hashCode * 59 + this.EndedTime.GetHashCode();
                 if (this.FailReason != null) hashCode = hashCode * 59 + this.FailReason.GetHashCode();
                 if (this.ShowDetail != null) hashCode = hashCode * 59 + this.ShowDetail.GetHashCode();
-                if (this.ActionNames != null) hashCode = hashCode * 59 + this.ActionNames.GetHashCode();
                 return hashCode;
             }
         }

@@ -1920,6 +1920,54 @@ namespace HuaweiCloud.SDK.Vod.V1
         }
         
         /// <summary>
+        /// 查询https配置
+        ///
+        /// 查询证书配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowHttpsConfigResponse ShowHttpsConfig(ShowHttpsConfigRequest showHttpsConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/domain/https", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHttpsConfigRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowHttpsConfigResponse>(response);
+        }
+
+        public SyncInvoker<ShowHttpsConfigResponse> ShowHttpsConfigInvoker(ShowHttpsConfigRequest showHttpsConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/domain/https", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHttpsConfigRequest);
+            return new SyncInvoker<ShowHttpsConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowHttpsConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 配置https
+        ///
+        /// 点播提供给域名配置https证书的接口。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateHttpsConfigResponse UpdateHttpsConfig(UpdateHttpsConfigRequest updateHttpsConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/domain/https", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateHttpsConfigRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateHttpsConfigResponse>(response);
+        }
+
+        public SyncInvoker<UpdateHttpsConfigResponse> UpdateHttpsConfigInvoker(UpdateHttpsConfigRequest updateHttpsConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/domain/https", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateHttpsConfigRequest);
+            return new SyncInvoker<UpdateHttpsConfigResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateHttpsConfigResponse>);
+        }
+        
+        /// <summary>
         /// 查询托管任务
         ///
         /// 查询OBS存量托管任务列表。

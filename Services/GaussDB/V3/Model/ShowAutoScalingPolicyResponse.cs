@@ -71,6 +71,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public bool? ReduceEnabled { get; set; }
 
         /// <summary>
+        /// **参数解释**：  自动回缩的CPU平均使用率阈值（百分比数值）。  **取值范围**：  10-30。 
+        /// </summary>
+        [JsonProperty("reduce_threshold", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ReduceThreshold { get; set; }
+
+        /// <summary>
         /// 缩容规格下限。
         /// </summary>
         [JsonProperty("min_flavor", NullValueHandling = NullValueHandling.Ignore)]
@@ -124,6 +130,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  enlargeThreshold: ").Append(EnlargeThreshold).Append("\n");
             sb.Append("  maxFlavor: ").Append(MaxFlavor).Append("\n");
             sb.Append("  reduceEnabled: ").Append(ReduceEnabled).Append("\n");
+            sb.Append("  reduceThreshold: ").Append(ReduceThreshold).Append("\n");
             sb.Append("  minFlavor: ").Append(MinFlavor).Append("\n");
             sb.Append("  silenceStartAt: ").Append(SilenceStartAt).Append("\n");
             sb.Append("  scalingStrategy: ").Append(ScalingStrategy).Append("\n");
@@ -157,6 +164,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (this.EnlargeThreshold != input.EnlargeThreshold || (this.EnlargeThreshold != null && !this.EnlargeThreshold.Equals(input.EnlargeThreshold))) return false;
             if (this.MaxFlavor != input.MaxFlavor || (this.MaxFlavor != null && !this.MaxFlavor.Equals(input.MaxFlavor))) return false;
             if (this.ReduceEnabled != input.ReduceEnabled || (this.ReduceEnabled != null && !this.ReduceEnabled.Equals(input.ReduceEnabled))) return false;
+            if (this.ReduceThreshold != input.ReduceThreshold || (this.ReduceThreshold != null && !this.ReduceThreshold.Equals(input.ReduceThreshold))) return false;
             if (this.MinFlavor != input.MinFlavor || (this.MinFlavor != null && !this.MinFlavor.Equals(input.MinFlavor))) return false;
             if (this.SilenceStartAt != input.SilenceStartAt || (this.SilenceStartAt != null && !this.SilenceStartAt.Equals(input.SilenceStartAt))) return false;
             if (this.ScalingStrategy != input.ScalingStrategy || (this.ScalingStrategy != null && !this.ScalingStrategy.Equals(input.ScalingStrategy))) return false;
@@ -184,6 +192,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 if (this.EnlargeThreshold != null) hashCode = hashCode * 59 + this.EnlargeThreshold.GetHashCode();
                 if (this.MaxFlavor != null) hashCode = hashCode * 59 + this.MaxFlavor.GetHashCode();
                 if (this.ReduceEnabled != null) hashCode = hashCode * 59 + this.ReduceEnabled.GetHashCode();
+                if (this.ReduceThreshold != null) hashCode = hashCode * 59 + this.ReduceThreshold.GetHashCode();
                 if (this.MinFlavor != null) hashCode = hashCode * 59 + this.MinFlavor.GetHashCode();
                 if (this.SilenceStartAt != null) hashCode = hashCode * 59 + this.SilenceStartAt.GetHashCode();
                 if (this.ScalingStrategy != null) hashCode = hashCode * 59 + this.ScalingStrategy.GetHashCode();

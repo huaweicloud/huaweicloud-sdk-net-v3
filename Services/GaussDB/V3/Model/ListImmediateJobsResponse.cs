@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("total_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? TotalCount { get; set; }
 
+        /// <summary>
+        /// **参数解释**：  支持筛选的任务名称。  **取值范围**：  不涉及。
+        /// </summary>
+        [JsonProperty("action_names", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> ActionNames { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("class ListImmediateJobsResponse {\n");
             sb.Append("  jobs: ").Append(Jobs).Append("\n");
             sb.Append("  totalCount: ").Append(TotalCount).Append("\n");
+            sb.Append("  actionNames: ").Append(ActionNames).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (input == null) return false;
             if (this.Jobs != input.Jobs || (this.Jobs != null && input.Jobs != null && !this.Jobs.SequenceEqual(input.Jobs))) return false;
             if (this.TotalCount != input.TotalCount || (this.TotalCount != null && !this.TotalCount.Equals(input.TotalCount))) return false;
+            if (this.ActionNames != input.ActionNames || (this.ActionNames != null && input.ActionNames != null && !this.ActionNames.SequenceEqual(input.ActionNames))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 var hashCode = 41;
                 if (this.Jobs != null) hashCode = hashCode * 59 + this.Jobs.GetHashCode();
                 if (this.TotalCount != null) hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
+                if (this.ActionNames != null) hashCode = hashCode * 59 + this.ActionNames.GetHashCode();
                 return hashCode;
             }
         }

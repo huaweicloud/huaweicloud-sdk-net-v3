@@ -1664,6 +1664,30 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 获取实例备份概览列表
+        ///
+        /// 获取实例备份概览列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceBackupSummaryResponse ListInstanceBackupSummary(ListInstanceBackupSummaryRequest listInstanceBackupSummaryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/backups/summary", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceBackupSummaryRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceBackupSummaryResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceBackupSummaryResponse> ListInstanceBackupSummaryInvoker(ListInstanceBackupSummaryRequest listInstanceBackupSummaryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/backups/summary", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceBackupSummaryRequest);
+            return new SyncInvoker<ListInstanceBackupSummaryResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceBackupSummaryResponse>);
+        }
+        
+        /// <summary>
         /// 获取诊断后的实例数量
         ///
         /// 获取诊断后的实例数量
@@ -2586,6 +2610,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/datastores/{database_name}/small-version", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSmallVersionRequest);
             return new SyncInvoker<ListSmallVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSmallVersionResponse>);
+        }
+        
+        /// <summary>
+        /// 查询稀疏备份策略
+        ///
+        /// 查询稀疏备份策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListSparseBackupPolicyResponse ListSparseBackupPolicy(ListSparseBackupPolicyRequest listSparseBackupPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listSparseBackupPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/sparse-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSparseBackupPolicyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListSparseBackupPolicyResponse>(response);
+        }
+
+        public SyncInvoker<ListSparseBackupPolicyResponse> ListSparseBackupPolicyInvoker(ListSparseBackupPolicyRequest listSparseBackupPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listSparseBackupPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/sparse-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSparseBackupPolicyRequest);
+            return new SyncInvoker<ListSparseBackupPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSparseBackupPolicyResponse>);
         }
         
         /// <summary>
@@ -3627,6 +3677,30 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupPolicyRequest);
             return new SyncInvoker<ShowBackupPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBackupPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 查询备份用量总览
+        ///
+        /// 查询备份用量总览
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowBackupUsageResponse ShowBackupUsage(ShowBackupUsageRequest showBackupUsageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/backup-usage", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupUsageRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowBackupUsageResponse>(response);
+        }
+
+        public SyncInvoker<ShowBackupUsageResponse> ShowBackupUsageInvoker(ShowBackupUsageRequest showBackupUsageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/backup-usage", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupUsageRequest);
+            return new SyncInvoker<ShowBackupUsageResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBackupUsageResponse>);
         }
         
         /// <summary>
@@ -4869,6 +4943,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/port", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePortRequest);
             return new SyncInvoker<UpdatePortResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePortResponse>);
+        }
+        
+        /// <summary>
+        /// 修改实例稀疏备份策略
+        ///
+        /// 修改实例稀疏备份策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateSparseBackupPolicyResponse UpdateSparseBackupPolicy(UpdateSparseBackupPolicyRequest updateSparseBackupPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateSparseBackupPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/sparse-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSparseBackupPolicyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<UpdateSparseBackupPolicyResponse>(response);
+        }
+
+        public SyncInvoker<UpdateSparseBackupPolicyResponse> UpdateSparseBackupPolicyInvoker(UpdateSparseBackupPolicyRequest updateSparseBackupPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateSparseBackupPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/sparse-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSparseBackupPolicyRequest);
+            return new SyncInvoker<UpdateSparseBackupPolicyResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateSparseBackupPolicyResponse>);
         }
         
         /// <summary>
