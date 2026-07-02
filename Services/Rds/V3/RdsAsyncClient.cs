@@ -3330,7 +3330,7 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/offsite-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setOffSiteBackupPolicyRequest);
             var response = await DoHttpRequestAsync("PUT", request);
-            return JsonUtils.DeSerializeNull<SetOffSiteBackupPolicyResponse>(response);
+            return JsonUtils.DeSerialize<SetOffSiteBackupPolicyResponse>(response);
         }
 
         public AsyncInvoker<SetOffSiteBackupPolicyResponse> SetOffSiteBackupPolicyAsyncInvoker(SetOffSiteBackupPolicyRequest setOffSiteBackupPolicyRequest)
@@ -3339,7 +3339,7 @@ namespace HuaweiCloud.SDK.Rds.V3
             if (StringUtils.TryConvertToNonEmptyString(setOffSiteBackupPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/offsite-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setOffSiteBackupPolicyRequest);
-            return new AsyncInvoker<SetOffSiteBackupPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SetOffSiteBackupPolicyResponse>);
+            return new AsyncInvoker<SetOffSiteBackupPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<SetOffSiteBackupPolicyResponse>);
         }
         
         /// <summary>
@@ -7931,7 +7931,7 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replication/publications/{publication_id}/reinitialize", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", refreshPublicationSnapshotRequest);
             var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerializeNull<RefreshPublicationSnapshotResponse>(response);
+            return JsonUtils.DeSerialize<RefreshPublicationSnapshotResponse>(response);
         }
 
         public AsyncInvoker<RefreshPublicationSnapshotResponse> RefreshPublicationSnapshotAsyncInvoker(RefreshPublicationSnapshotRequest refreshPublicationSnapshotRequest)
@@ -7941,7 +7941,7 @@ namespace HuaweiCloud.SDK.Rds.V3
             if (StringUtils.TryConvertToNonEmptyString(refreshPublicationSnapshotRequest.PublicationId, out var valueOfPublicationId)) urlParam.Add("publication_id", valueOfPublicationId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replication/publications/{publication_id}/reinitialize", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", refreshPublicationSnapshotRequest);
-            return new AsyncInvoker<RefreshPublicationSnapshotResponse>(this, "POST", request, JsonUtils.DeSerializeNull<RefreshPublicationSnapshotResponse>);
+            return new AsyncInvoker<RefreshPublicationSnapshotResponse>(this, "POST", request, JsonUtils.DeSerialize<RefreshPublicationSnapshotResponse>);
         }
         
         /// <summary>
@@ -7959,7 +7959,7 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replication/subscriptions/{subscription_id}/reinitialize", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", refreshSubscriptionRequest);
             var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerializeNull<RefreshSubscriptionResponse>(response);
+            return JsonUtils.DeSerialize<RefreshSubscriptionResponse>(response);
         }
 
         public AsyncInvoker<RefreshSubscriptionResponse> RefreshSubscriptionAsyncInvoker(RefreshSubscriptionRequest refreshSubscriptionRequest)
@@ -7969,7 +7969,7 @@ namespace HuaweiCloud.SDK.Rds.V3
             if (StringUtils.TryConvertToNonEmptyString(refreshSubscriptionRequest.SubscriptionId, out var valueOfSubscriptionId)) urlParam.Add("subscription_id", valueOfSubscriptionId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replication/subscriptions/{subscription_id}/reinitialize", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", refreshSubscriptionRequest);
-            return new AsyncInvoker<RefreshSubscriptionResponse>(this, "POST", request, JsonUtils.DeSerializeNull<RefreshSubscriptionResponse>);
+            return new AsyncInvoker<RefreshSubscriptionResponse>(this, "POST", request, JsonUtils.DeSerialize<RefreshSubscriptionResponse>);
         }
         
         /// <summary>

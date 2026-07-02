@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         [JsonProperty("groups", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Groups { get; set; }
 
+        /// <summary>
+        /// **参数解释**： Topic总数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+        /// </summary>
+        [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Total { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ListConsumerGroupOfTopicResponse {\n");
             sb.Append("  groups: ").Append(Groups).Append("\n");
+            sb.Append("  total: ").Append(Total).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             if (input == null) return false;
             if (this.Groups != input.Groups || (this.Groups != null && input.Groups != null && !this.Groups.SequenceEqual(input.Groups))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             {
                 var hashCode = 41;
                 if (this.Groups != null) hashCode = hashCode * 59 + this.Groups.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
                 return hashCode;
             }
         }

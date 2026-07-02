@@ -1,0 +1,179 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.GaussDB.V3.Model
+{
+    /// <summary>
+    /// Response Object
+    /// </summary>
+    public class ModifyBackupVaultLockResponse : SdkResponse
+    {
+        /// <summary>
+        /// **参数解释**：  备份合规锁开启或延期状态。  **取值范围**： - success：成功。
+        /// </summary>
+        /// <value>**参数解释**：  备份合规锁开启或延期状态。  **取值范围**： - success：成功。</value>
+        [JsonConverter(typeof(EnumClassConverter<ResultEnum>))]
+        public class ResultEnum
+        {
+            /// <summary>
+            /// Enum SUCCESS for value: success
+            /// </summary>
+            public static readonly ResultEnum SUCCESS = new ResultEnum("success");
+
+            private static readonly Dictionary<string, ResultEnum> StaticFields =
+            new Dictionary<string, ResultEnum>()
+            {
+                { "success", SUCCESS },
+            };
+
+            private string _value;
+
+            public ResultEnum()
+            {
+
+            }
+
+            public ResultEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static ResultEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ResultEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ResultEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(ResultEnum a, ResultEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ResultEnum a, ResultEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+
+        /// <summary>
+        /// **参数解释**：  备份合规锁开启或延期状态。  **取值范围**： - success：成功。
+        /// </summary>
+        [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
+        public ResultEnum Result { get; set; }
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class ModifyBackupVaultLockResponse {\n");
+            sb.Append("  result: ").Append(Result).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as ModifyBackupVaultLockResponse);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(ModifyBackupVaultLockResponse input)
+        {
+            if (input == null) return false;
+            if (this.Result != input.Result) return false;
+
+            return true;
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Result.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

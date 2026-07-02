@@ -76,6 +76,12 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         [JsonProperty("group_online", NullValueHandling = NullValueHandling.Ignore)]
         public bool? GroupOnline { get; set; }
 
+        /// <summary>
+        /// **参数解释**： Topic订阅数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+        /// </summary>
+        [JsonProperty("topic_subscription_count", NullValueHandling = NullValueHandling.Ignore)]
+        public long? TopicSubscriptionCount { get; set; }
+
 
 
         /// <summary>
@@ -95,6 +101,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             sb.Append("  permissions: ").Append(Permissions).Append("\n");
             sb.Append("  consumeOrderly: ").Append(ConsumeOrderly).Append("\n");
             sb.Append("  groupOnline: ").Append(GroupOnline).Append("\n");
+            sb.Append("  topicSubscriptionCount: ").Append(TopicSubscriptionCount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -123,6 +130,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             if (this.Permissions != input.Permissions || (this.Permissions != null && input.Permissions != null && !this.Permissions.SequenceEqual(input.Permissions))) return false;
             if (this.ConsumeOrderly != input.ConsumeOrderly || (this.ConsumeOrderly != null && !this.ConsumeOrderly.Equals(input.ConsumeOrderly))) return false;
             if (this.GroupOnline != input.GroupOnline || (this.GroupOnline != null && !this.GroupOnline.Equals(input.GroupOnline))) return false;
+            if (this.TopicSubscriptionCount != input.TopicSubscriptionCount || (this.TopicSubscriptionCount != null && !this.TopicSubscriptionCount.Equals(input.TopicSubscriptionCount))) return false;
 
             return true;
         }
@@ -145,6 +153,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 if (this.Permissions != null) hashCode = hashCode * 59 + this.Permissions.GetHashCode();
                 if (this.ConsumeOrderly != null) hashCode = hashCode * 59 + this.ConsumeOrderly.GetHashCode();
                 if (this.GroupOnline != null) hashCode = hashCode * 59 + this.GroupOnline.GetHashCode();
+                if (this.TopicSubscriptionCount != null) hashCode = hashCode * 59 + this.TopicSubscriptionCount.GetHashCode();
                 return hashCode;
             }
         }

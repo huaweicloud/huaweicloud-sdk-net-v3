@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string DashboardId { get; set; }
 
         /// <summary>
-        /// **参数解释**： 监控视图展示模式 **约束限制** 不涉及 **取值范围** - 0:表示自定义坐标 - 1:代表每行1个监控视图 - 2:代表每行2个监控视图 - 3:代表每行3个监控视图 **默认取值** 3 
+        /// **参数解释**： 监控视图展示模式 **约束限制** 不涉及 **取值范围** 枚举值： - 0:表示自定义坐标 - 1:代表每行1个监控视图 - 2:代表每行2个监控视图 - 3:代表每行3个监控视图 - 4:代表每行4个监控视图 **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("row_widget_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? RowWidgetNum { get; set; }

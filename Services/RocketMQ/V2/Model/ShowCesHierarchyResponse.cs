@@ -32,7 +32,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// **参数解释**： 节点信息。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("nodes", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ShowCesHierarchyRespNodes> Nodes { get; set; }
+        public List<ShowCeshierarchyRespNodes> Nodes { get; set; }
 
         /// <summary>
         /// **参数解释**： 队列信息。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。

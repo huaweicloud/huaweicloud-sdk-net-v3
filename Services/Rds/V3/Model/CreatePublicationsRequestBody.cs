@@ -32,7 +32,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// 是否立即创建快照。
         /// </summary>
         [JsonProperty("is_create_snapshot_immediately", NullValueHandling = NullValueHandling.Ignore)]
-        public string IsCreateSnapshotImmediately { get; set; }
+        public bool? IsCreateSnapshotImmediately { get; set; }
 
         /// <summary>
         /// 
@@ -44,7 +44,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// 
         /// </summary>
         [JsonProperty("job_schedule", NullValueHandling = NullValueHandling.Ignore)]
-        public OperateUsedJobSchedule JobSchedule { get; set; }
+        public OperateUsedJobScheduleCreate JobSchedule { get; set; }
 
         /// <summary>
         /// 是否选择所有数据表。

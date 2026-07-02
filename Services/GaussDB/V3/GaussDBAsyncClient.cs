@@ -42,6 +42,30 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 批量变更实例规格
+        ///
+        /// 批量变更数据库实例的规格。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchChangeInstanceSpecificationResponse> BatchChangeInstanceSpecificationAsync(BatchChangeInstanceSpecificationRequest batchChangeInstanceSpecificationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/batch/flavor", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchChangeInstanceSpecificationRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<BatchChangeInstanceSpecificationResponse>(response);
+        }
+
+        public AsyncInvoker<BatchChangeInstanceSpecificationResponse> BatchChangeInstanceSpecificationAsyncInvoker(BatchChangeInstanceSpecificationRequest batchChangeInstanceSpecificationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/batch/flavor", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchChangeInstanceSpecificationRequest);
+            return new AsyncInvoker<BatchChangeInstanceSpecificationResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchChangeInstanceSpecificationResponse>);
+        }
+        
+        /// <summary>
         /// 批量删除手动备份
         ///
         /// 批量删除手动备份。
@@ -244,6 +268,60 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 查询实例是否存在相同定时任务类型
+        ///
+        /// 查询目标实例在任务中心是否有相同的类型的定时任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CheckScheduleTaskExistResponse> CheckScheduleTaskExistAsync(CheckScheduleTaskExistRequest checkScheduleTaskExistRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(checkScheduleTaskExistRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/schedule-tasks/exist", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", checkScheduleTaskExistRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CheckScheduleTaskExistResponse>(response);
+        }
+
+        public AsyncInvoker<CheckScheduleTaskExistResponse> CheckScheduleTaskExistAsyncInvoker(CheckScheduleTaskExistRequest checkScheduleTaskExistRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(checkScheduleTaskExistRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/schedule-tasks/exist", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", checkScheduleTaskExistRequest);
+            return new AsyncInvoker<CheckScheduleTaskExistResponse>(this, "POST", request, JsonUtils.DeSerialize<CheckScheduleTaskExistResponse>);
+        }
+        
+        /// <summary>
+        /// 收集全部实时会话信息
+        ///
+        /// 收集目标实例截止当前时间点的实时会话信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CollectRealtimeSessionResponse> CollectRealtimeSessionAsync(CollectRealtimeSessionRequest collectRealtimeSessionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(collectRealtimeSessionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(collectRealtimeSessionRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/realtime-session", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", collectRealtimeSessionRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CollectRealtimeSessionResponse>(response);
+        }
+
+        public AsyncInvoker<CollectRealtimeSessionResponse> CollectRealtimeSessionAsyncInvoker(CollectRealtimeSessionRequest collectRealtimeSessionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(collectRealtimeSessionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(collectRealtimeSessionRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/realtime-session", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", collectRealtimeSessionRequest);
+            return new AsyncInvoker<CollectRealtimeSessionResponse>(this, "POST", request, JsonUtils.DeSerialize<CollectRealtimeSessionResponse>);
+        }
+        
+        /// <summary>
         /// 复制参数组
         ///
         /// 复制参数组。
@@ -323,6 +401,30 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/access-control", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createAccessControlRequest);
             return new AsyncInvoker<CreateAccessControlResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAccessControlResponse>);
+        }
+        
+        /// <summary>
+        /// 创建备份资源包
+        ///
+        /// 购买新的包年/包月备份资源包。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateBackupResourcePackageResponse> CreateBackupResourcePackageAsync(CreateBackupResourcePackageRequest createBackupResourcePackageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/resource-package", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createBackupResourcePackageRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateBackupResourcePackageResponse>(response);
+        }
+
+        public AsyncInvoker<CreateBackupResourcePackageResponse> CreateBackupResourcePackageAsyncInvoker(CreateBackupResourcePackageRequest createBackupResourcePackageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/resource-package", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createBackupResourcePackageRequest);
+            return new AsyncInvoker<CreateBackupResourcePackageResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateBackupResourcePackageResponse>);
         }
         
         /// <summary>
@@ -657,6 +759,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-users/privilege", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteDatabasePermissionRequest);
             return new AsyncInvoker<DeleteDatabasePermissionResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteDatabasePermissionResponse>);
+        }
+        
+        /// <summary>
+        /// 删除动态Serverless算力策略
+        ///
+        /// 删除实例的动态Serverless算力策略，关闭动态Serverless功能。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteDynamicServerlessPolicyResponse> DeleteDynamicServerlessPolicyAsync(DeleteDynamicServerlessPolicyRequest deleteDynamicServerlessPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteDynamicServerlessPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/serverless/dynamic-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDynamicServerlessPolicyRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteDynamicServerlessPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteDynamicServerlessPolicyResponse> DeleteDynamicServerlessPolicyAsyncInvoker(DeleteDynamicServerlessPolicyRequest deleteDynamicServerlessPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteDynamicServerlessPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/serverless/dynamic-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDynamicServerlessPolicyRequest);
+            return new AsyncInvoker<DeleteDynamicServerlessPolicyResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteDynamicServerlessPolicyResponse>);
         }
         
         /// <summary>
@@ -1028,6 +1156,60 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 获取DDL日志下载链接
+        ///
+        /// 获取指定实例的DDL日志文件下载链接。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DownloadDdlLogsResponse> DownloadDdlLogsAsync(DownloadDdlLogsRequest downloadDdlLogsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(downloadDdlLogsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ddl-log/download", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", downloadDdlLogsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<DownloadDdlLogsResponse>(response);
+        }
+
+        public AsyncInvoker<DownloadDdlLogsResponse> DownloadDdlLogsAsyncInvoker(DownloadDdlLogsRequest downloadDdlLogsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(downloadDdlLogsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ddl-log/download", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", downloadDdlLogsRequest);
+            return new AsyncInvoker<DownloadDdlLogsResponse>(this, "POST", request, JsonUtils.DeSerialize<DownloadDdlLogsResponse>);
+        }
+        
+        /// <summary>
+        /// 下载全部实时会话信息
+        ///
+        /// 下载目标实例截止当前时间点的全部实时会话信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DownloadRealtimeSessionResponse> DownloadRealtimeSessionAsync(DownloadRealtimeSessionRequest downloadRealtimeSessionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(downloadRealtimeSessionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(downloadRealtimeSessionRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/realtime-session-result", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadRealtimeSessionRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<DownloadRealtimeSessionResponse>(response);
+        }
+
+        public AsyncInvoker<DownloadRealtimeSessionResponse> DownloadRealtimeSessionAsyncInvoker(DownloadRealtimeSessionRequest downloadRealtimeSessionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(downloadRealtimeSessionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(downloadRealtimeSessionRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/realtime-session-result", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadRealtimeSessionRequest);
+            return new AsyncInvoker<DownloadRealtimeSessionResponse>(this, "GET", request, JsonUtils.DeSerialize<DownloadRealtimeSessionResponse>);
+        }
+        
+        /// <summary>
         /// 获取慢日志下载链接
         ///
         /// 获取慢日志下载链接
@@ -1053,6 +1235,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/{node_id}/slowlog-download", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadSlowLogFileRequest);
             return new AsyncInvoker<DownloadSlowLogFileResponse>(this, "POST", request, JsonUtils.DeSerialize<DownloadSlowLogFileResponse>);
+        }
+        
+        /// <summary>
+        /// 执行智能Kill会话动作
+        ///
+        /// 执行智能Kill会话动作。数据库根据会话最长执行时间、会话数量和会话平均执行时长排名，自动选择排名前三的组内会话进行智能Kill.
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ExecuteIntelligentKillSessionResponse> ExecuteIntelligentKillSessionAsync(ExecuteIntelligentKillSessionRequest executeIntelligentKillSessionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(executeIntelligentKillSessionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/intelligent-kill-session", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", executeIntelligentKillSessionRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ExecuteIntelligentKillSessionResponse>(response);
+        }
+
+        public AsyncInvoker<ExecuteIntelligentKillSessionResponse> ExecuteIntelligentKillSessionAsyncInvoker(ExecuteIntelligentKillSessionRequest executeIntelligentKillSessionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(executeIntelligentKillSessionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/intelligent-kill-session", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", executeIntelligentKillSessionRequest);
+            return new AsyncInvoker<ExecuteIntelligentKillSessionResponse>(this, "POST", request, JsonUtils.DeSerialize<ExecuteIntelligentKillSessionResponse>);
         }
         
         /// <summary>
@@ -1234,6 +1442,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{configuration_id}/applicable-instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConfigurationsInstancesRequest);
             return new AsyncInvoker<ListConfigurationsInstancesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListConfigurationsInstancesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询DDL下载日志列表
+        ///
+        /// 查询指定实例的DDL下载日志列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListDdlLogsResponse> ListDdlLogsAsync(ListDdlLogsRequest listDdlLogsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listDdlLogsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ddl-log", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDdlLogsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListDdlLogsResponse>(response);
+        }
+
+        public AsyncInvoker<ListDdlLogsResponse> ListDdlLogsAsyncInvoker(ListDdlLogsRequest listDdlLogsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listDdlLogsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ddl-log", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDdlLogsRequest);
+            return new AsyncInvoker<ListDdlLogsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDdlLogsResponse>);
         }
         
         /// <summary>
@@ -1559,6 +1793,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 查询智能Kill会话历史记录
+        ///
+        /// 查询智能Kill会话历史记录。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListIntelligentKillSessionHistoryResponse> ListIntelligentKillSessionHistoryAsync(ListIntelligentKillSessionHistoryRequest listIntelligentKillSessionHistoryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listIntelligentKillSessionHistoryRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/intelligent-kill-session/history", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIntelligentKillSessionHistoryRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListIntelligentKillSessionHistoryResponse>(response);
+        }
+
+        public AsyncInvoker<ListIntelligentKillSessionHistoryResponse> ListIntelligentKillSessionHistoryAsyncInvoker(ListIntelligentKillSessionHistoryRequest listIntelligentKillSessionHistoryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listIntelligentKillSessionHistoryRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/intelligent-kill-session/history", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIntelligentKillSessionHistoryRequest);
+            return new AsyncInvoker<ListIntelligentKillSessionHistoryResponse>(this, "GET", request, JsonUtils.DeSerialize<ListIntelligentKillSessionHistoryResponse>);
+        }
+        
+        /// <summary>
         /// 获取错误日志详情列表
         ///
         /// 获取指定实例的错误日志详情列表。
@@ -1812,6 +2072,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/encryption", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyBackupEncryptStatusRequest);
             return new AsyncInvoker<ModifyBackupEncryptStatusResponse>(this, "POST", request, JsonUtils.DeSerialize<ModifyBackupEncryptStatusResponse>);
+        }
+        
+        /// <summary>
+        /// 打开或延期备份合规锁配置
+        ///
+        /// 打开或延期备份合规锁配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ModifyBackupVaultLockResponse> ModifyBackupVaultLockAsync(ModifyBackupVaultLockRequest modifyBackupVaultLockRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(modifyBackupVaultLockRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/vault-lock", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyBackupVaultLockRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<ModifyBackupVaultLockResponse>(response);
+        }
+
+        public AsyncInvoker<ModifyBackupVaultLockResponse> ModifyBackupVaultLockAsyncInvoker(ModifyBackupVaultLockRequest modifyBackupVaultLockRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(modifyBackupVaultLockRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/vault-lock", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyBackupVaultLockRequest);
+            return new AsyncInvoker<ModifyBackupVaultLockResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyBackupVaultLockResponse>);
         }
         
         /// <summary>
@@ -2133,6 +2419,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 设置DDL下载功能的策略
+        ///
+        /// 设置指定实例的DDL下载功能的策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SetDdlLogPolicyResponse> SetDdlLogPolicyAsync(SetDdlLogPolicyRequest setDdlLogPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(setDdlLogPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ddl-log", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", setDdlLogPolicyRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<SetDdlLogPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<SetDdlLogPolicyResponse> SetDdlLogPolicyAsyncInvoker(SetDdlLogPolicyRequest setDdlLogPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(setDdlLogPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ddl-log", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", setDdlLogPolicyRequest);
+            return new AsyncInvoker<SetDdlLogPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<SetDdlLogPolicyResponse>);
+        }
+        
+        /// <summary>
         /// 设置读写分离权重
         ///
         /// 设置读写分离权重。
@@ -2419,6 +2731,30 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 查询备份资源包规格
+        ///
+        /// 查询包年/包月备份资源包的可用规格。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowBackupResourcePackageFlavorsResponse> ShowBackupResourcePackageFlavorsAsync(ShowBackupResourcePackageFlavorsRequest showBackupResourcePackageFlavorsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/resource-package/flavors", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupResourcePackageFlavorsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowBackupResourcePackageFlavorsResponse>(response);
+        }
+
+        public AsyncInvoker<ShowBackupResourcePackageFlavorsResponse> ShowBackupResourcePackageFlavorsAsyncInvoker(ShowBackupResourcePackageFlavorsRequest showBackupResourcePackageFlavorsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/resource-package/flavors", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupResourcePackageFlavorsRequest);
+            return new AsyncInvoker<ShowBackupResourcePackageFlavorsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBackupResourcePackageFlavorsResponse>);
+        }
+        
+        /// <summary>
         /// 查询可恢复时间段
         ///
         /// 查询实例的可恢复时间段。
@@ -2445,6 +2781,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 查询备份合规锁配置
+        ///
+        /// 查询备份合规锁配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowBackupVaultLockResponse> ShowBackupVaultLockAsync(ShowBackupVaultLockRequest showBackupVaultLockRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showBackupVaultLockRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/vault-lock", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupVaultLockRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowBackupVaultLockResponse>(response);
+        }
+
+        public AsyncInvoker<ShowBackupVaultLockResponse> ShowBackupVaultLockAsyncInvoker(ShowBackupVaultLockRequest showBackupVaultLockRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showBackupVaultLockRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/vault-lock", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupVaultLockRequest);
+            return new AsyncInvoker<ShowBackupVaultLockResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBackupVaultLockResponse>);
+        }
+        
+        /// <summary>
         /// 查询专属资源信息详情
         ///
         /// 查询专属资源信息详情。
@@ -2468,6 +2830,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/dedicated-resource/{dedicated_resource_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDedicatedResourceInfoRequest);
             return new AsyncInvoker<ShowDedicatedResourceInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDedicatedResourceInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 查询动态Serverless算力策略
+        ///
+        /// 查询实例的动态Serverless算力策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowDynamicServerlessPolicyResponse> ShowDynamicServerlessPolicyAsync(ShowDynamicServerlessPolicyRequest showDynamicServerlessPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showDynamicServerlessPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/serverless/dynamic-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDynamicServerlessPolicyRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowDynamicServerlessPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<ShowDynamicServerlessPolicyResponse> ShowDynamicServerlessPolicyAsyncInvoker(ShowDynamicServerlessPolicyRequest showDynamicServerlessPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showDynamicServerlessPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/serverless/dynamic-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDynamicServerlessPolicyRequest);
+            return new AsyncInvoker<ShowDynamicServerlessPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDynamicServerlessPolicyResponse>);
         }
         
         /// <summary>
@@ -3007,6 +3395,60 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 预览智能Kill会话结果
+        ///
+        /// 预览智能Kill会话结果。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowIntelligentKillSessionStatisticResponse> ShowIntelligentKillSessionStatisticAsync(ShowIntelligentKillSessionStatisticRequest showIntelligentKillSessionStatisticRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showIntelligentKillSessionStatisticRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/intelligent-kill-session/statistic", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIntelligentKillSessionStatisticRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowIntelligentKillSessionStatisticResponse>(response);
+        }
+
+        public AsyncInvoker<ShowIntelligentKillSessionStatisticResponse> ShowIntelligentKillSessionStatisticAsyncInvoker(ShowIntelligentKillSessionStatisticRequest showIntelligentKillSessionStatisticRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showIntelligentKillSessionStatisticRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/intelligent-kill-session/statistic", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIntelligentKillSessionStatisticRequest);
+            return new AsyncInvoker<ShowIntelligentKillSessionStatisticResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowIntelligentKillSessionStatisticResponse>);
+        }
+        
+        /// <summary>
+        /// 查询锁等待会话信息
+        ///
+        /// 根据节点ID和会话ID查询锁等待会话信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowLockWaitSessionResponse> ShowLockWaitSessionAsync(ShowLockWaitSessionRequest showLockWaitSessionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showLockWaitSessionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showLockWaitSessionRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/process/lock-wait", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLockWaitSessionRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowLockWaitSessionResponse>(response);
+        }
+
+        public AsyncInvoker<ShowLockWaitSessionResponse> ShowLockWaitSessionAsyncInvoker(ShowLockWaitSessionRequest showLockWaitSessionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showLockWaitSessionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showLockWaitSessionRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/process/lock-wait", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLockWaitSessionRequest);
+            return new AsyncInvoker<ShowLockWaitSessionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLockWaitSessionResponse>);
+        }
+        
+        /// <summary>
         /// 查询实例LTS日志配置列表
         ///
         /// 查询实例LTS日志配置列表
@@ -3164,6 +3606,34 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/{engine_name}/proxy-version", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProxyVersionRequest);
             return new AsyncInvoker<ShowProxyVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowProxyVersionResponse>);
+        }
+        
+        /// <summary>
+        /// 查看收集全部实时会话信息任务状态
+        ///
+        /// 查看收集目标实例截止当前时间点的全部实时会话信息任务状态。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowRealtimeSessionTaskStatusResponse> ShowRealtimeSessionTaskStatusAsync(ShowRealtimeSessionTaskStatusRequest showRealtimeSessionTaskStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showRealtimeSessionTaskStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showRealtimeSessionTaskStatusRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/realtime-session-task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRealtimeSessionTaskStatusRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowRealtimeSessionTaskStatusResponse>(response);
+        }
+
+        public AsyncInvoker<ShowRealtimeSessionTaskStatusResponse> ShowRealtimeSessionTaskStatusAsyncInvoker(ShowRealtimeSessionTaskStatusRequest showRealtimeSessionTaskStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showRealtimeSessionTaskStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showRealtimeSessionTaskStatusRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/realtime-session-task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRealtimeSessionTaskStatusRequest);
+            return new AsyncInvoker<ShowRealtimeSessionTaskStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRealtimeSessionTaskStatusResponse>);
         }
         
         /// <summary>
@@ -3638,6 +4108,34 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 更改数据库代理ALT开关
+        ///
+        /// 更改数据库代理ALT开关。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SwitchGaussMySqlProxyAltResponse> SwitchGaussMySqlProxyAltAsync(SwitchGaussMySqlProxyAltRequest switchGaussMySqlProxyAltRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(switchGaussMySqlProxyAltRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(switchGaussMySqlProxyAltRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/alt", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", switchGaussMySqlProxyAltRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<SwitchGaussMySqlProxyAltResponse>(response);
+        }
+
+        public AsyncInvoker<SwitchGaussMySqlProxyAltResponse> SwitchGaussMySqlProxyAltAsyncInvoker(SwitchGaussMySqlProxyAltRequest switchGaussMySqlProxyAltRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(switchGaussMySqlProxyAltRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(switchGaussMySqlProxyAltRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/alt", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", switchGaussMySqlProxyAltRequest);
+            return new AsyncInvoker<SwitchGaussMySqlProxyAltResponse>(this, "PUT", request, JsonUtils.DeSerialize<SwitchGaussMySqlProxyAltResponse>);
+        }
+        
+        /// <summary>
         /// Proxy绑定解绑弹性公网IP
         ///
         /// Proxy绑定解绑弹性公网IP。
@@ -3769,6 +4267,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/offsite-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateBackupOffsitePolicyRequest);
             return new AsyncInvoker<UpdateBackupOffsitePolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateBackupOffsitePolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 设置动态Serverless算力策略
+        ///
+        /// 通过设置实例的动态Serverless算力策略，配置动态Serverless功能。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateDynamicServerlessPolicyResponse> UpdateDynamicServerlessPolicyAsync(UpdateDynamicServerlessPolicyRequest updateDynamicServerlessPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateDynamicServerlessPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/serverless/dynamic-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateDynamicServerlessPolicyRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<UpdateDynamicServerlessPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateDynamicServerlessPolicyResponse> UpdateDynamicServerlessPolicyAsyncInvoker(UpdateDynamicServerlessPolicyRequest updateDynamicServerlessPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateDynamicServerlessPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/serverless/dynamic-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateDynamicServerlessPolicyRequest);
+            return new AsyncInvoker<UpdateDynamicServerlessPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateDynamicServerlessPolicyResponse>);
         }
         
         /// <summary>

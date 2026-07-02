@@ -16,6 +16,121 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class WidgetMetric 
     {
         /// <summary>
+        /// **参数解释** 阈值线所在的Y轴位置 **约束限制** 不涉及                **取值范围** 枚举值： - left 左Y轴 - right 右Y轴 **默认取值** 不涉及 
+        /// </summary>
+        /// <value>**参数解释** 阈值线所在的Y轴位置 **约束限制** 不涉及                **取值范围** 枚举值： - left 左Y轴 - right 右Y轴 **默认取值** 不涉及 </value>
+        [JsonConverter(typeof(EnumClassConverter<YAxisPositionEnum>))]
+        public class YAxisPositionEnum
+        {
+            /// <summary>
+            /// Enum LEFT for value: left
+            /// </summary>
+            public static readonly YAxisPositionEnum LEFT = new YAxisPositionEnum("left");
+
+            /// <summary>
+            /// Enum RIGHT for value: right
+            /// </summary>
+            public static readonly YAxisPositionEnum RIGHT = new YAxisPositionEnum("right");
+
+            private static readonly Dictionary<string, YAxisPositionEnum> StaticFields =
+            new Dictionary<string, YAxisPositionEnum>()
+            {
+                { "left", LEFT },
+                { "right", RIGHT },
+            };
+
+            private string _value;
+
+            public YAxisPositionEnum()
+            {
+
+            }
+
+            public YAxisPositionEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static YAxisPositionEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as YAxisPositionEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(YAxisPositionEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(YAxisPositionEnum a, YAxisPositionEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(YAxisPositionEnum a, YAxisPositionEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
         /// **参数解释** 排序字段 **约束限制** 不涉及                **取值范围** - asc:正序 - desc:倒序 **默认取值** 不涉及 
         /// </summary>
         /// <value>**参数解释** 排序字段 **约束限制** 不涉及                **取值范围** - asc:正序 - desc:倒序 **默认取值** 不涉及 </value>
@@ -132,7 +247,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
 
         /// <summary>
-        /// **参数解释** 查询服务的命名空间，各服务命名空间请参阅[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/en-us/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg) **约束限制** 不涉及 **取值范围** 格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_。字符串的长度必须在 3 到 32个字符之间。 **默认取值** 不涉及 
+        /// **参数解释** 查询服务的命名空间，各服务命名空间请参阅[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/zh-cn/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg) **约束限制** 不涉及 **取值范围** 格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_。字符串的长度必须在 3 到 32个字符之间。 **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
         public string Namespace { get; set; }
@@ -161,6 +276,11 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("extra_info", NullValueHandling = NullValueHandling.Ignore)]
         public ExtraInfo ExtraInfo { get; set; }
 
+        /// <summary>
+        /// **参数解释** 阈值线所在的Y轴位置 **约束限制** 不涉及                **取值范围** 枚举值： - left 左Y轴 - right 右Y轴 **默认取值** 不涉及 
+        /// </summary>
+        [JsonProperty("y_axis_position", NullValueHandling = NullValueHandling.Ignore)]
+        public YAxisPositionEnum YAxisPosition { get; set; }
         /// <summary>
         /// **参数解释** 是否开启聚合 **约束限制** 当rollup_enable开启时，rollup_filter和rollup_dimension必填 **取值范围** - true：表示开启聚合 - false：表示不开启聚合 **默认取值** false 
         /// </summary>
@@ -192,7 +312,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public bool? YesterdayCompareEnable { get; set; }
 
         /// <summary>
-        /// **参数解释** 维度名称，多维度用逗号分隔，各服务资源的维度名称，请参阅具体云服务的文档。您可以直接从[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/en-us/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)页面导航至相应文档。，必须以字母开头，只能包含0-9/a-z/A-Z/_/-，多维度用\&quot;,\&quot;分隔，每个维度的最大长度为32。总长度为[1,131]个字符。目前最大支持4个维度。举例：单维度场景：instance_id；多维度场景：instance_id,disk **约束限制** 不涉及           **取值范围** 长度为[1,131]个字符 **默认取值** 不涉及 
+        /// **参数解释** 维度名称，多维度用逗号分隔，各服务资源的维度名称，请参阅具体云服务的文档。您可以直接从[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/zh-cn/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)页面导航至相应文档。必须以字母开头，只能包含0-9/a-z/A-Z/_/-，多维度用\&quot;,\&quot;分隔，每个维度的最大长度为32。总长度为[1,131]个字符。目前最大支持4个维度。举例：单维度场景：instance_id；多维度场景：instance_id,disk。 **约束限制** 不涉及           **取值范围** 长度为[1,131]个字符 **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("metric_dimension", NullValueHandling = NullValueHandling.Ignore)]
         public string MetricDimension { get; set; }
@@ -215,7 +335,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("order", NullValueHandling = NullValueHandling.Ignore)]
         public OrderEnum Order { get; set; }
         /// <summary>
-        /// **参数解释** 资源的监控指标名称，必须以字母开头，只能包含0-9/a-z/A-Z/_，字符长度最短为1，最大为64；如：弹性云服务器中的监控指标cpu_util，表示弹性服务器的CPU使用率；文档数据库中的指标mongo001_command_ps，表示command执行频率；各服务资源的指标名称，请参阅具体云服务的文档。您可以直接从[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/en-us/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)页面导航至相应文档。 **约束限制** 不涉及 **取值范围** 长度为[1,96]个字符 **默认取值** 不涉及 
+        /// **参数解释** 资源的监控指标名称，必须以字母开头，只能包含0-9/a-z/A-Z/_，字符长度最短为1，最大为64；如：弹性云服务器中的监控指标cpu_util，表示弹性服务器的CPU使用率；文档数据库中的指标mongo001_command_ps，表示command执行频率；各服务资源的指标名称，请参阅具体云服务的文档。您可以直接从[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/zh-cn/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)页面导航至相应文档。 **约束限制** 不涉及 **取值范围** 长度为[1,96]个字符 **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("topn_metric_name", NullValueHandling = NullValueHandling.Ignore)]
         public string TopnMetricName { get; set; }
@@ -234,6 +354,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  metricName: ").Append(MetricName).Append("\n");
             sb.Append("  alias: ").Append(Alias).Append("\n");
             sb.Append("  extraInfo: ").Append(ExtraInfo).Append("\n");
+            sb.Append("  yAxisPosition: ").Append(YAxisPosition).Append("\n");
             sb.Append("  rollupEnable: ").Append(RollupEnable).Append("\n");
             sb.Append("  rollupFilter: ").Append(RollupFilter).Append("\n");
             sb.Append("  rollupDimension: ").Append(RollupDimension).Append("\n");
@@ -267,6 +388,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.MetricName != input.MetricName || (this.MetricName != null && !this.MetricName.Equals(input.MetricName))) return false;
             if (this.Alias != input.Alias || (this.Alias != null && input.Alias != null && !this.Alias.SequenceEqual(input.Alias))) return false;
             if (this.ExtraInfo != input.ExtraInfo || (this.ExtraInfo != null && !this.ExtraInfo.Equals(input.ExtraInfo))) return false;
+            if (this.YAxisPosition != input.YAxisPosition) return false;
             if (this.RollupEnable != input.RollupEnable || (this.RollupEnable != null && !this.RollupEnable.Equals(input.RollupEnable))) return false;
             if (this.RollupFilter != input.RollupFilter || (this.RollupFilter != null && !this.RollupFilter.Equals(input.RollupFilter))) return false;
             if (this.RollupDimension != input.RollupDimension || (this.RollupDimension != null && !this.RollupDimension.Equals(input.RollupDimension))) return false;
@@ -294,6 +416,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 if (this.MetricName != null) hashCode = hashCode * 59 + this.MetricName.GetHashCode();
                 if (this.Alias != null) hashCode = hashCode * 59 + this.Alias.GetHashCode();
                 if (this.ExtraInfo != null) hashCode = hashCode * 59 + this.ExtraInfo.GetHashCode();
+                hashCode = hashCode * 59 + this.YAxisPosition.GetHashCode();
                 if (this.RollupEnable != null) hashCode = hashCode * 59 + this.RollupEnable.GetHashCode();
                 if (this.RollupFilter != null) hashCode = hashCode * 59 + this.RollupFilter.GetHashCode();
                 if (this.RollupDimension != null) hashCode = hashCode * 59 + this.RollupDimension.GetHashCode();

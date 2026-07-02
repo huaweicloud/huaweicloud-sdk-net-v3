@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class UpdateNotificationMasksRequestBody 
     {
         /// <summary>
-        /// **参数解释** 资源层级。 **约束限制**： 不涉及。 **取值范围**： 枚举值，取值为dimension、product - dimension: 子维度 - product: 云产品 **默认取值**： 不涉及。 
+        /// **参数解释** [天翼云、移动云不支持该字段。](tag:ctc,cmcc)资源层级。 **约束限制**： 不涉及。 **取值范围**： 枚举值，取值为dimension、product - dimension: 子维度 - product: 云产品 **默认取值**： 不涉及。 
         /// </summary>
-        /// <value>**参数解释** 资源层级。 **约束限制**： 不涉及。 **取值范围**： 枚举值，取值为dimension、product - dimension: 子维度 - product: 云产品 **默认取值**： 不涉及。 </value>
+        /// <value>**参数解释** [天翼云、移动云不支持该字段。](tag:ctc,cmcc)资源层级。 **约束限制**： 不涉及。 **取值范围**： 枚举值，取值为dimension、product - dimension: 子维度 - product: 云产品 **默认取值**： 不涉及。 </value>
         [JsonConverter(typeof(EnumClassConverter<ResourceLevelEnum>))]
         public class ResourceLevelEnum
         {
@@ -156,18 +156,18 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public List<string> MetricNames { get; set; }
 
         /// <summary>
-        /// **参数解释** 按云产品维度屏蔽时的指标信息。 **约束限制**：| 包含的指标信息最多为50个，最少为0个。 
+        /// **参数解释** [天翼云、移动云不支持该字段。](tag:ctc,cmcc)按云产品维度屏蔽时的指标信息。 **约束限制**：| 包含的指标信息最多为50个，最少为0个。 
         /// </summary>
         [JsonProperty("product_metrics", NullValueHandling = NullValueHandling.Ignore)]
         public List<ProductMetric> ProductMetrics { get; set; }
 
         /// <summary>
-        /// **参数解释** 资源层级。 **约束限制**： 不涉及。 **取值范围**： 枚举值，取值为dimension、product - dimension: 子维度 - product: 云产品 **默认取值**： 不涉及。 
+        /// **参数解释** [天翼云、移动云不支持该字段。](tag:ctc,cmcc)资源层级。 **约束限制**： 不涉及。 **取值范围**： 枚举值，取值为dimension、product - dimension: 子维度 - product: 云产品 **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("resource_level", NullValueHandling = NullValueHandling.Ignore)]
         public ResourceLevelEnum ResourceLevel { get; set; }
         /// <summary>
-        /// **参数解释** 资源为云产品时的云产品名称。 **约束限制**： 不涉及。 **取值范围**： 长度为[0,128]个字符。 **默认取值**： 不涉及。 
+        /// **参数解释** [天翼云、移动云不支持该字段。](tag:ctc,cmcc)资源为云产品时的云产品名称。 **约束限制**： 不涉及。 **取值范围**： 长度为[0,128]个字符。 **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("product_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductName { get; set; }

@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V1.Model
 {
     /// <summary>
-    /// 查询结果元数据信息，包括分页信息等。
+    /// **参数解释**： 查询结果元数据信息，包括分页信息等 
     /// </summary>
     public class MetaData 
     {

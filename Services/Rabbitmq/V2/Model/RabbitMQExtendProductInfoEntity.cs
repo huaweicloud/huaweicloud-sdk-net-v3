@@ -29,6 +29,12 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string ProductId { get; set; }
 
         /// <summary>
+        /// 账单计费类型。
+        /// </summary>
+        [JsonProperty("billing_code", NullValueHandling = NullValueHandling.Ignore)]
+        public string BillingCode { get; set; }
+
+        /// <summary>
         /// 该产品使用的ECS规格。
         /// </summary>
         [JsonProperty("ecs_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -76,6 +82,12 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         [JsonProperty("support_features", NullValueHandling = NullValueHandling.Ignore)]
         public List<RabbitMQProductSupportFeaturesEntity> SupportFeatures { get; set; }
 
+        /// <summary>
+        /// 是否兼容擎天。
+        /// </summary>
+        [JsonProperty("qingtian_incompatible", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? QingtianIncompatible { get; set; }
+
 
 
         /// <summary>
@@ -87,6 +99,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             sb.Append("class RabbitMQExtendProductInfoEntity {\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  productId: ").Append(ProductId).Append("\n");
+            sb.Append("  billingCode: ").Append(BillingCode).Append("\n");
             sb.Append("  ecsFlavorId: ").Append(EcsFlavorId).Append("\n");
             sb.Append("  archTypes: ").Append(ArchTypes).Append("\n");
             sb.Append("  chargingMode: ").Append(ChargingMode).Append("\n");
@@ -95,6 +108,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             sb.Append("  availableZones: ").Append(AvailableZones).Append("\n");
             sb.Append("  unavailableZones: ").Append(UnavailableZones).Append("\n");
             sb.Append("  supportFeatures: ").Append(SupportFeatures).Append("\n");
+            sb.Append("  qingtianIncompatible: ").Append(QingtianIncompatible).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,6 +129,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             if (input == null) return false;
             if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
             if (this.ProductId != input.ProductId || (this.ProductId != null && !this.ProductId.Equals(input.ProductId))) return false;
+            if (this.BillingCode != input.BillingCode || (this.BillingCode != null && !this.BillingCode.Equals(input.BillingCode))) return false;
             if (this.EcsFlavorId != input.EcsFlavorId || (this.EcsFlavorId != null && !this.EcsFlavorId.Equals(input.EcsFlavorId))) return false;
             if (this.ArchTypes != input.ArchTypes || (this.ArchTypes != null && input.ArchTypes != null && !this.ArchTypes.SequenceEqual(input.ArchTypes))) return false;
             if (this.ChargingMode != input.ChargingMode || (this.ChargingMode != null && input.ChargingMode != null && !this.ChargingMode.SequenceEqual(input.ChargingMode))) return false;
@@ -123,6 +138,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             if (this.AvailableZones != input.AvailableZones || (this.AvailableZones != null && input.AvailableZones != null && !this.AvailableZones.SequenceEqual(input.AvailableZones))) return false;
             if (this.UnavailableZones != input.UnavailableZones || (this.UnavailableZones != null && input.UnavailableZones != null && !this.UnavailableZones.SequenceEqual(input.UnavailableZones))) return false;
             if (this.SupportFeatures != input.SupportFeatures || (this.SupportFeatures != null && input.SupportFeatures != null && !this.SupportFeatures.SequenceEqual(input.SupportFeatures))) return false;
+            if (this.QingtianIncompatible != input.QingtianIncompatible || (this.QingtianIncompatible != null && !this.QingtianIncompatible.Equals(input.QingtianIncompatible))) return false;
 
             return true;
         }
@@ -137,6 +153,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                 var hashCode = 41;
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.ProductId != null) hashCode = hashCode * 59 + this.ProductId.GetHashCode();
+                if (this.BillingCode != null) hashCode = hashCode * 59 + this.BillingCode.GetHashCode();
                 if (this.EcsFlavorId != null) hashCode = hashCode * 59 + this.EcsFlavorId.GetHashCode();
                 if (this.ArchTypes != null) hashCode = hashCode * 59 + this.ArchTypes.GetHashCode();
                 if (this.ChargingMode != null) hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
@@ -145,6 +162,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                 if (this.AvailableZones != null) hashCode = hashCode * 59 + this.AvailableZones.GetHashCode();
                 if (this.UnavailableZones != null) hashCode = hashCode * 59 + this.UnavailableZones.GetHashCode();
                 if (this.SupportFeatures != null) hashCode = hashCode * 59 + this.SupportFeatures.GetHashCode();
+                if (this.QingtianIncompatible != null) hashCode = hashCode * 59 + this.QingtianIncompatible.GetHashCode();
                 return hashCode;
             }
         }

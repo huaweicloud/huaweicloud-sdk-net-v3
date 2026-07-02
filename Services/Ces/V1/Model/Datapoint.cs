@@ -17,43 +17,43 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     {
 
         /// <summary>
-        /// 聚合周期内指标数据的最大值。
+        /// **参数解释** 聚合周期内指标数据的最大值 **取值范围** 不涉及 
         /// </summary>
         [JsonProperty("max", NullValueHandling = NullValueHandling.Ignore)]
         public double? Max { get; set; }
 
         /// <summary>
-        /// 聚合周期内指标数据的最小值。
+        /// **参数解释** 聚合周期内指标数据的最小值 **取值范围** 不涉及 
         /// </summary>
         [JsonProperty("min", NullValueHandling = NullValueHandling.Ignore)]
         public double? Min { get; set; }
 
         /// <summary>
-        /// 聚合周期内指标数据的平均值。
+        /// **参数解释** 聚合周期内指标数据的平均值 **取值范围** 不涉及 
         /// </summary>
         [JsonProperty("average", NullValueHandling = NullValueHandling.Ignore)]
         public double? Average { get; set; }
 
         /// <summary>
-        /// 聚合周期内指标数据的求和值。
+        /// **参数解释** 聚合周期内指标数据的求和值 **取值范围** 不涉及 
         /// </summary>
         [JsonProperty("sum", NullValueHandling = NullValueHandling.Ignore)]
         public double? Sum { get; set; }
 
         /// <summary>
-        /// 聚合周期内指标数据的方差。
+        /// **参数解释** 聚合周期内指标数据的方差 **取值范围** 不涉及 
         /// </summary>
         [JsonProperty("variance", NullValueHandling = NullValueHandling.Ignore)]
         public double? Variance { get; set; }
 
         /// <summary>
-        /// 指标采集时间，UNIX时间戳，单位毫秒。
+        /// **参数解释** 指标采集时间，UNIX时间戳，单位毫秒 **取值范围** 不涉及 
         /// </summary>
         [JsonProperty("timestamp", NullValueHandling = NullValueHandling.Ignore)]
         public long? Timestamp { get; set; }
 
         /// <summary>
-        /// 指标单位。
+        /// **参数解释** 指标单位 **取值范围** 不涉及 
         /// </summary>
         [JsonProperty("unit", NullValueHandling = NullValueHandling.Ignore)]
         public string Unit { get; set; }

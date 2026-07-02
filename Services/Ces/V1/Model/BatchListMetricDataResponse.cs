@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     {
 
         /// <summary>
-        /// 监控指标。
+        /// **参数解释** 监控指标响应体 
         /// </summary>
         [JsonProperty("metrics", NullValueHandling = NullValueHandling.Ignore)]
         public List<BatchMetricData> Metrics { get; set; }

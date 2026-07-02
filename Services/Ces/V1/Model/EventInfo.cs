@@ -11,14 +11,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V1.Model
 {
     /// <summary>
-    /// 一条事件监控信息
+    /// **参数解释** 事件监控信息 
     /// </summary>
     public class EventInfo 
     {
         /// <summary>
-        /// 枚举类型 EVENT.SYS或EVENT.CUSTOM，EVENT.SYS为系统事件，EVENT.CUSTOM为自定义事件
+        /// **参数解释** 事件类型 **取值范围** 枚举值： - EVENT.SYS 系统事件 - EVENT.CUSTOM 自定义事件 
         /// </summary>
-        /// <value>枚举类型 EVENT.SYS或EVENT.CUSTOM，EVENT.SYS为系统事件，EVENT.CUSTOM为自定义事件</value>
+        /// <value>**参数解释** 事件类型 **取值范围** 枚举值： - EVENT.SYS 系统事件 - EVENT.CUSTOM 自定义事件 </value>
         [JsonConverter(typeof(EnumClassConverter<EventTypeEnum>))]
         public class EventTypeEnum
         {
@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         }
 
         /// <summary>
-        /// 事件子类。 枚举类型：SUB_EVENT.OPS为运维事件，SUB_EVENT.PLAN为计划事件，SUB_EVENT.CUSTOM为自定义事件。 
+        /// **参数解释** 事件子类型 **取值范围** 枚举值： - SUB_EVENT.OPS 运维事件 - SUB_EVENT.PLAN 计划事件 - SUB_EVENT.CUSTOM 自定义事件 
         /// </summary>
-        /// <value>事件子类。 枚举类型：SUB_EVENT.OPS为运维事件，SUB_EVENT.PLAN为计划事件，SUB_EVENT.CUSTOM为自定义事件。 </value>
+        /// <value>**参数解释** 事件子类型 **取值范围** 枚举值： - SUB_EVENT.OPS 运维事件 - SUB_EVENT.PLAN 计划事件 - SUB_EVENT.CUSTOM 自定义事件 </value>
         [JsonConverter(typeof(EnumClassConverter<SubEventTypeEnum>))]
         public class SubEventTypeEnum
         {
@@ -253,35 +253,35 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
 
 
         /// <summary>
-        /// 事件名称。
+        /// **参数解释** 事件名称 **取值范围** 不涉及 
         /// </summary>
         [JsonProperty("event_name", NullValueHandling = NullValueHandling.Ignore)]
         public string EventName { get; set; }
 
         /// <summary>
-        /// 枚举类型 EVENT.SYS或EVENT.CUSTOM，EVENT.SYS为系统事件，EVENT.CUSTOM为自定义事件
+        /// **参数解释** 事件类型 **取值范围** 枚举值： - EVENT.SYS 系统事件 - EVENT.CUSTOM 自定义事件 
         /// </summary>
         [JsonProperty("event_type", NullValueHandling = NullValueHandling.Ignore)]
         public EventTypeEnum EventType { get; set; }
         /// <summary>
-        /// 事件子类。 枚举类型：SUB_EVENT.OPS为运维事件，SUB_EVENT.PLAN为计划事件，SUB_EVENT.CUSTOM为自定义事件。 
+        /// **参数解释** 事件子类型 **取值范围** 枚举值： - SUB_EVENT.OPS 运维事件 - SUB_EVENT.PLAN 计划事件 - SUB_EVENT.CUSTOM 自定义事件 
         /// </summary>
         [JsonProperty("sub_event_type", NullValueHandling = NullValueHandling.Ignore)]
         public SubEventTypeEnum SubEventType { get; set; }
         /// <summary>
-        /// 选择查询的时间范围内，此事件发生的数量。
+        /// **参数解释** 选择查询的时间范围内，此事件发生的数量 **取值范围** 不涉及 
         /// </summary>
         [JsonProperty("event_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? EventCount { get; set; }
 
         /// <summary>
-        /// 此事件最近一次发生的时间。
+        /// **参数解释** 此事件最近一次发生的时间 **取值范围** 不涉及 
         /// </summary>
         [JsonProperty("latest_occur_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? LatestOccurTime { get; set; }
 
         /// <summary>
-        /// 事件来源，如果是系统事件则值为各服务的命名空间，各服务命名空间请参阅[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/en-us/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)。；如果是自定义事件，则为用户自定义上报定义。
+        /// **参数解释** 事件来源，如果是系统事件则值为各服务的命名空间。 各服务命名空间请参阅[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/zh-cn/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)。如果是自定义事件，则为用户自定义上报定义。 **取值范围** 不涉及 
         /// </summary>
         [JsonProperty("latest_event_source", NullValueHandling = NullValueHandling.Ignore)]
         public string LatestEventSource { get; set; }

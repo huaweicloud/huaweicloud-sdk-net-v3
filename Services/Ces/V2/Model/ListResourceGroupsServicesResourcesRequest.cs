@@ -287,7 +287,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string Service { get; set; }
 
         /// <summary>
-        /// **参数解释**： 资源维度。 **约束限制**： 不涉及。 **取值范围**： 多维度用\&quot;,\&quot;分隔，只能包含0-9、a-z、A-Z、_、-、#、/、(、），每个维度的最大长度为32。字符串总长度最小为1，最大为131。 **默认取值**： 不涉及。 
+        /// **参数解释**： 资源维度。 **约束限制**： 不涉及。 **取值范围**： 多维度用\&quot;,\&quot;分隔，只能包含0-9、a-z、A-Z、_、-、#、/、(、)，每个维度的最大长度为32。字符串总长度最小为1，最大为131。 **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("dim_name", IsQuery = true)]
         [JsonProperty("dim_name", NullValueHandling = NullValueHandling.Ignore)]

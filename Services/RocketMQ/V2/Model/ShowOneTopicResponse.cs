@@ -288,6 +288,12 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         [JsonProperty("permission", NullValueHandling = NullValueHandling.Ignore)]
         public PermissionEnum Permission { get; set; }
         /// <summary>
+        /// **参数解释**： 创建时间。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+        /// </summary>
+        [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
+        public long? CreatedAt { get; set; }
+
+        /// <summary>
         /// **参数解释**： 关联的代理。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("brokers", NullValueHandling = NullValueHandling.Ignore)]
@@ -311,6 +317,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             sb.Append("  totalReadQueueNum: ").Append(TotalReadQueueNum).Append("\n");
             sb.Append("  totalWriteQueueNum: ").Append(TotalWriteQueueNum).Append("\n");
             sb.Append("  permission: ").Append(Permission).Append("\n");
+            sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  brokers: ").Append(Brokers).Append("\n");
             sb.Append("  messageType: ").Append(MessageType).Append("\n");
             sb.Append("}\n");
@@ -335,6 +342,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             if (this.TotalReadQueueNum != input.TotalReadQueueNum || (this.TotalReadQueueNum != null && !this.TotalReadQueueNum.Equals(input.TotalReadQueueNum))) return false;
             if (this.TotalWriteQueueNum != input.TotalWriteQueueNum || (this.TotalWriteQueueNum != null && !this.TotalWriteQueueNum.Equals(input.TotalWriteQueueNum))) return false;
             if (this.Permission != input.Permission) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
             if (this.Brokers != input.Brokers || (this.Brokers != null && input.Brokers != null && !this.Brokers.SequenceEqual(input.Brokers))) return false;
             if (this.MessageType != input.MessageType) return false;
 
@@ -353,6 +361,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 if (this.TotalReadQueueNum != null) hashCode = hashCode * 59 + this.TotalReadQueueNum.GetHashCode();
                 if (this.TotalWriteQueueNum != null) hashCode = hashCode * 59 + this.TotalWriteQueueNum.GetHashCode();
                 hashCode = hashCode * 59 + this.Permission.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.Brokers != null) hashCode = hashCode * 59 + this.Brokers.GetHashCode();
                 hashCode = hashCode * 59 + this.MessageType.GetHashCode();
                 return hashCode;

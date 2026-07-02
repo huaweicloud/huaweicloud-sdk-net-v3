@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class WidgetInfo 
     {
         /// <summary>
-        /// **参数解释** 监控视图图表类型 **取值范围** - bar:条形图 - line:折线图 - bar_chart:柱状图 - table:表格 - circular_bar:环形柱状图 - area_chart:面积图 
+        /// **参数解释** 监控视图图表类型 **取值范围** - bar:条形图 - line:折线图 - bar_chart:柱状图 - table:表格 - circular_bar:环形柱状图 - area_chart:面积图 - gauge:仪表盘 - stat:数字 
         /// </summary>
-        /// <value>**参数解释** 监控视图图表类型 **取值范围** - bar:条形图 - line:折线图 - bar_chart:柱状图 - table:表格 - circular_bar:环形柱状图 - area_chart:面积图 </value>
+        /// <value>**参数解释** 监控视图图表类型 **取值范围** - bar:条形图 - line:折线图 - bar_chart:柱状图 - table:表格 - circular_bar:环形柱状图 - area_chart:面积图 - gauge:仪表盘 - stat:数字 </value>
         [JsonConverter(typeof(EnumClassConverter<ViewEnum>))]
         public class ViewEnum
         {
@@ -52,6 +52,16 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             /// </summary>
             public static readonly ViewEnum AREA_CHART = new ViewEnum("area_chart");
 
+            /// <summary>
+            /// Enum GAUGE for value: gauge
+            /// </summary>
+            public static readonly ViewEnum GAUGE = new ViewEnum("gauge");
+
+            /// <summary>
+            /// Enum STAT for value: stat
+            /// </summary>
+            public static readonly ViewEnum STAT = new ViewEnum("stat");
+
             private static readonly Dictionary<string, ViewEnum> StaticFields =
             new Dictionary<string, ViewEnum>()
             {
@@ -61,6 +71,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 { "table", TABLE },
                 { "circular_bar", CIRCULAR_BAR },
                 { "area_chart", AREA_CHART },
+                { "gauge", GAUGE },
+                { "stat", STAT },
             };
 
             private string _value;
@@ -301,7 +313,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public bool? ThresholdEnabled { get; set; }
 
         /// <summary>
-        /// **参数解释** 监控视图图表类型 **取值范围** - bar:条形图 - line:折线图 - bar_chart:柱状图 - table:表格 - circular_bar:环形柱状图 - area_chart:面积图 
+        /// **参数解释** 监控视图图表类型 **取值范围** - bar:条形图 - line:折线图 - bar_chart:柱状图 - table:表格 - circular_bar:环形柱状图 - area_chart:面积图 - gauge:仪表盘 - stat:数字 
         /// </summary>
         [JsonProperty("view", NullValueHandling = NullValueHandling.Ignore)]
         public ViewEnum View { get; set; }

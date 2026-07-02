@@ -574,6 +574,18 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         [JsonProperty("storage_type", NullValueHandling = NullValueHandling.Ignore)]
         public string StorageType { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 是否开启磁盘加密。 **取值范围**： - true：开启 - false：不开启
+        /// </summary>
+        [JsonProperty("disk_encrypted", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DiskEncrypted { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 磁盘加密key，未开启磁盘加密时为空。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("disk_encrypted_key", NullValueHandling = NullValueHandling.Ignore)]
+        public string DiskEncryptedKey { get; set; }
+
 
 
         /// <summary>
@@ -636,6 +648,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  serviceType: ").Append(ServiceType).Append("\n");
             sb.Append("  storageType: ").Append(StorageType).Append("\n");
+            sb.Append("  diskEncrypted: ").Append(DiskEncrypted).Append("\n");
+            sb.Append("  diskEncryptedKey: ").Append(DiskEncryptedKey).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -707,6 +721,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
             if (this.ServiceType != input.ServiceType || (this.ServiceType != null && !this.ServiceType.Equals(input.ServiceType))) return false;
             if (this.StorageType != input.StorageType || (this.StorageType != null && !this.StorageType.Equals(input.StorageType))) return false;
+            if (this.DiskEncrypted != input.DiskEncrypted || (this.DiskEncrypted != null && !this.DiskEncrypted.Equals(input.DiskEncrypted))) return false;
+            if (this.DiskEncryptedKey != input.DiskEncryptedKey || (this.DiskEncryptedKey != null && !this.DiskEncryptedKey.Equals(input.DiskEncryptedKey))) return false;
 
             return true;
         }
@@ -772,6 +788,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.ServiceType != null) hashCode = hashCode * 59 + this.ServiceType.GetHashCode();
                 if (this.StorageType != null) hashCode = hashCode * 59 + this.StorageType.GetHashCode();
+                if (this.DiskEncrypted != null) hashCode = hashCode * 59 + this.DiskEncrypted.GetHashCode();
+                if (this.DiskEncryptedKey != null) hashCode = hashCode * 59 + this.DiskEncryptedKey.GetHashCode();
                 return hashCode;
             }
         }

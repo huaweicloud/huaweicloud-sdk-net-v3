@@ -52,12 +52,6 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         [JsonProperty("replicated_transactions", NullValueHandling = NullValueHandling.Ignore)]
         public int? ReplicatedTransactions { get; set; }
 
-        /// <summary>
-        /// 平均每秒传送到分发数据库的事务数。
-        /// </summary>
-        [JsonProperty("replication_rate_trans", NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? ReplicationRateTrans { get; set; }
-
 
 
         /// <summary>
@@ -73,7 +67,6 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("  averageLatency: ").Append(AverageLatency).Append("\n");
             sb.Append("  lastDistSync: ").Append(LastDistSync).Append("\n");
             sb.Append("  replicatedTransactions: ").Append(ReplicatedTransactions).Append("\n");
-            sb.Append("  replicationRateTrans: ").Append(ReplicationRateTrans).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -98,7 +91,6 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             if (this.AverageLatency != input.AverageLatency || (this.AverageLatency != null && !this.AverageLatency.Equals(input.AverageLatency))) return false;
             if (this.LastDistSync != input.LastDistSync || (this.LastDistSync != null && !this.LastDistSync.Equals(input.LastDistSync))) return false;
             if (this.ReplicatedTransactions != input.ReplicatedTransactions || (this.ReplicatedTransactions != null && !this.ReplicatedTransactions.Equals(input.ReplicatedTransactions))) return false;
-            if (this.ReplicationRateTrans != input.ReplicationRateTrans || (this.ReplicationRateTrans != null && !this.ReplicationRateTrans.Equals(input.ReplicationRateTrans))) return false;
 
             return true;
         }
@@ -117,7 +109,6 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                 if (this.AverageLatency != null) hashCode = hashCode * 59 + this.AverageLatency.GetHashCode();
                 if (this.LastDistSync != null) hashCode = hashCode * 59 + this.LastDistSync.GetHashCode();
                 if (this.ReplicatedTransactions != null) hashCode = hashCode * 59 + this.ReplicatedTransactions.GetHashCode();
-                if (this.ReplicationRateTrans != null) hashCode = hashCode * 59 + this.ReplicationRateTrans.GetHashCode();
                 return hashCode;
             }
         }

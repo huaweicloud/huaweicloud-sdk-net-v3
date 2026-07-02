@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// **参数解释**： 待删除的消费组列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+        /// **参数解释**： 需要删除的消费组名称列表。 **约束限制**： 当批量删除消费组时必填。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
-        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string JobId { get; set; }
+        [JsonProperty("groups", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Groups { get; set; }
 
 
 
@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class BatchDeleteConsumerGroupReq {\n");
-            sb.Append("  jobId: ").Append(JobId).Append("\n");
+            sb.Append("  groups: ").Append(Groups).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public bool Equals(BatchDeleteConsumerGroupReq input)
         {
             if (input == null) return false;
-            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.Groups != input.Groups || (this.Groups != null && input.Groups != null && !this.Groups.SequenceEqual(input.Groups))) return false;
 
             return true;
         }
@@ -63,7 +63,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.Groups != null) hashCode = hashCode * 59 + this.Groups.GetHashCode();
                 return hashCode;
             }
         }

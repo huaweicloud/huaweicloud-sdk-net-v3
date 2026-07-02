@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         }
 
         /// <summary>
-        /// **参数解释**: 任务类型 **取值范围**: - INSTALL：安装 - UPDATE：升级 - ROLLBACK：回滚 - RETRY：重试 
+        /// **参数解释**: 任务类型 **取值范围**: - INSTALL：安装 - UPDATE：升级 - ROLLBACK：回滚 - RETRY：重试 - SET_REMOTE_INSTALLER：设置远程安装主机 - REMOTE_INSTALL：执行远程安装 
         /// </summary>
-        /// <value>**参数解释**: 任务类型 **取值范围**: - INSTALL：安装 - UPDATE：升级 - ROLLBACK：回滚 - RETRY：重试 </value>
+        /// <value>**参数解释**: 任务类型 **取值范围**: - INSTALL：安装 - UPDATE：升级 - ROLLBACK：回滚 - RETRY：重试 - SET_REMOTE_INSTALLER：设置远程安装主机 - REMOTE_INSTALL：执行远程安装 </value>
         [JsonConverter(typeof(EnumClassConverter<InvocationTypeEnum>))]
         public class InvocationTypeEnum
         {
@@ -157,6 +157,16 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
             /// </summary>
             public static readonly InvocationTypeEnum RETRY = new InvocationTypeEnum("RETRY");
 
+            /// <summary>
+            /// Enum SET_REMOTE_INSTALLER for value: SET_REMOTE_INSTALLER
+            /// </summary>
+            public static readonly InvocationTypeEnum SET_REMOTE_INSTALLER = new InvocationTypeEnum("SET_REMOTE_INSTALLER");
+
+            /// <summary>
+            /// Enum REMOTE_INSTALL for value: REMOTE_INSTALL
+            /// </summary>
+            public static readonly InvocationTypeEnum REMOTE_INSTALL = new InvocationTypeEnum("REMOTE_INSTALL");
+
             private static readonly Dictionary<string, InvocationTypeEnum> StaticFields =
             new Dictionary<string, InvocationTypeEnum>()
             {
@@ -164,6 +174,8 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
                 { "UPDATE", UPDATE },
                 { "ROLLBACK", ROLLBACK },
                 { "RETRY", RETRY },
+                { "SET_REMOTE_INSTALLER", SET_REMOTE_INSTALLER },
+                { "REMOTE_INSTALL", REMOTE_INSTALL },
             };
 
             private string _value;
@@ -548,7 +560,7 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         public List<string> ElasticIps { get; set; }
 
         /// <summary>
-        /// **参数解释**: 任务类型 **取值范围**: - INSTALL：安装 - UPDATE：升级 - ROLLBACK：回滚 - RETRY：重试 
+        /// **参数解释**: 任务类型 **取值范围**: - INSTALL：安装 - UPDATE：升级 - ROLLBACK：回滚 - RETRY：重试 - SET_REMOTE_INSTALLER：设置远程安装主机 - REMOTE_INSTALL：执行远程安装 
         /// </summary>
         [JsonProperty("invocation_type", NullValueHandling = NullValueHandling.Ignore)]
         public InvocationTypeEnum InvocationType { get; set; }

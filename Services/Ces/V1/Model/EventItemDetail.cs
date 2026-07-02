@@ -513,7 +513,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public string GroupId { get; set; }
 
         /// <summary>
-        /// **参数解释**： 资源ID。 资源ID的查询方法： 1.登录管理控制台。 2.单击“计算 &gt; 弹性云服务器”。 在资源概览页可获取具体资源ID。 **约束限制**： 不涉及。 **取值范围**： 支持字母、数字支持字母、数字、下划线（_）、中划线（-）和冒号（:），最大长度128个字符。例如，6a69bf28-ee62-49f3-9785-845dacd799ec。 **默认取值**： 不涉及。 
+        /// **参数解释**： 资源ID。 资源ID的查询方法： 1.登录管理控制台。 2.单击“计算 &gt; 弹性云服务器”。 在资源概览页可获取具体资源ID。 **约束限制**： 不涉及。 **取值范围**： 支持字母、数字、下划线（_）、中划线（-）和冒号（:），最大长度128个字符。例如，6a69bf28-ee62-49f3-9785-845dacd799ec。 **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceId { get; set; }

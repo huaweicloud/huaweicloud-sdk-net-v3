@@ -77,6 +77,12 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string MaxTpsPerBroker { get; set; }
 
         /// <summary>
+        /// **参数解释**： 消息引擎版本。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("engine_versions", NullValueHandling = NullValueHandling.Ignore)]
+        public string EngineVersions { get; set; }
+
+        /// <summary>
         /// **参数解释**： product_id的别名。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("product_alias", NullValueHandling = NullValueHandling.Ignore)]
@@ -101,6 +107,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             sb.Append("  maxBandwidthPerBroker: ").Append(MaxBandwidthPerBroker).Append("\n");
             sb.Append("  minStoragePerNode: ").Append(MinStoragePerNode).Append("\n");
             sb.Append("  maxTpsPerBroker: ").Append(MaxTpsPerBroker).Append("\n");
+            sb.Append("  engineVersions: ").Append(EngineVersions).Append("\n");
             sb.Append("  productAlias: ").Append(ProductAlias).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -130,6 +137,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             if (this.MaxBandwidthPerBroker != input.MaxBandwidthPerBroker || (this.MaxBandwidthPerBroker != null && !this.MaxBandwidthPerBroker.Equals(input.MaxBandwidthPerBroker))) return false;
             if (this.MinStoragePerNode != input.MinStoragePerNode || (this.MinStoragePerNode != null && !this.MinStoragePerNode.Equals(input.MinStoragePerNode))) return false;
             if (this.MaxTpsPerBroker != input.MaxTpsPerBroker || (this.MaxTpsPerBroker != null && !this.MaxTpsPerBroker.Equals(input.MaxTpsPerBroker))) return false;
+            if (this.EngineVersions != input.EngineVersions || (this.EngineVersions != null && !this.EngineVersions.Equals(input.EngineVersions))) return false;
             if (this.ProductAlias != input.ProductAlias || (this.ProductAlias != null && !this.ProductAlias.Equals(input.ProductAlias))) return false;
 
             return true;
@@ -153,6 +161,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                 if (this.MaxBandwidthPerBroker != null) hashCode = hashCode * 59 + this.MaxBandwidthPerBroker.GetHashCode();
                 if (this.MinStoragePerNode != null) hashCode = hashCode * 59 + this.MinStoragePerNode.GetHashCode();
                 if (this.MaxTpsPerBroker != null) hashCode = hashCode * 59 + this.MaxTpsPerBroker.GetHashCode();
+                if (this.EngineVersions != null) hashCode = hashCode * 59 + this.EngineVersions.GetHashCode();
                 if (this.ProductAlias != null) hashCode = hashCode * 59 + this.ProductAlias.GetHashCode();
                 return hashCode;
             }

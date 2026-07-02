@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     {
 
         /// <summary>
-        /// 配置信息列表。如果不存在对应的配置信息，则datapoints为空数组[]。
+        /// **参数解释**： 配置信息列表 **取值范围**： 不涉及 
         /// </summary>
         [JsonProperty("datapoints", NullValueHandling = NullValueHandling.Ignore)]
         public List<EventDataInfo> Datapoints { get; set; }

@@ -56,7 +56,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// 是否可以执行sql限流
         /// </summary>
         [JsonProperty("canUse", NullValueHandling = NullValueHandling.Ignore)]
-        public double? CanUse { get; set; }
+        public bool? CanUse { get; set; }
 
 
 

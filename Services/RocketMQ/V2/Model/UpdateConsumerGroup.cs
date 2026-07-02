@@ -46,6 +46,18 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         [JsonProperty("retry_max_time", NullValueHandling = NullValueHandling.Ignore)]
         public int? RetryMaxTime { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 是否按顺序消费。 **约束限制**： 仅RocketMQ实例5.x版本需要填写此参数。[华为云Stack不支持此参数。](tag:hcs,hcs_oemout) **取值范围**： - true：顺序消费。 - false：不按顺序消费。 **默认取值**： 不涉及。
+        /// </summary>
+        [JsonProperty("consume_orderly", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ConsumeOrderly { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 消费组描述。 **约束限制**： 不涉及。 **取值范围**： 0~200。 **默认取值**： 不涉及。
+        /// </summary>
+        [JsonProperty("group_desc", NullValueHandling = NullValueHandling.Ignore)]
+        public string GroupDesc { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +72,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             sb.Append("  brokers: ").Append(Brokers).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  retryMaxTime: ").Append(RetryMaxTime).Append("\n");
+            sb.Append("  consumeOrderly: ").Append(ConsumeOrderly).Append("\n");
+            sb.Append("  groupDesc: ").Append(GroupDesc).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,6 +97,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             if (this.Brokers != input.Brokers || (this.Brokers != null && input.Brokers != null && !this.Brokers.SequenceEqual(input.Brokers))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.RetryMaxTime != input.RetryMaxTime || (this.RetryMaxTime != null && !this.RetryMaxTime.Equals(input.RetryMaxTime))) return false;
+            if (this.ConsumeOrderly != input.ConsumeOrderly || (this.ConsumeOrderly != null && !this.ConsumeOrderly.Equals(input.ConsumeOrderly))) return false;
+            if (this.GroupDesc != input.GroupDesc || (this.GroupDesc != null && !this.GroupDesc.Equals(input.GroupDesc))) return false;
 
             return true;
         }
@@ -100,6 +116,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 if (this.Brokers != null) hashCode = hashCode * 59 + this.Brokers.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.RetryMaxTime != null) hashCode = hashCode * 59 + this.RetryMaxTime.GetHashCode();
+                if (this.ConsumeOrderly != null) hashCode = hashCode * 59 + this.ConsumeOrderly.GetHashCode();
+                if (this.GroupDesc != null) hashCode = hashCode * 59 + this.GroupDesc.GetHashCode();
                 return hashCode;
             }
         }

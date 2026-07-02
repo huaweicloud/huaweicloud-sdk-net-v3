@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class CreateResourceGroupRequestBody 
     {
         /// <summary>
-        /// **参数解释** 资源层级，资源生效范围。选择云产品，则云产品及其子层级均可进入该资源分组，选择子维度，则只生效具体的子维度。不传表示子维度。 **约束限制** 不涉及。 **取值范围** - product: 云产品 - dimension: 子维度 **默认取值** 不涉及。 
+        /// **参数解释** [天翼云、移动云不支持该字段。](tag:ctc,cmcc)资源层级，资源生效范围。选择云产品，则云产品及其子层级均可进入该资源分组，选择子维度，则只生效具体的子维度。不传表示子维度。 **约束限制** 不涉及。 **取值范围** - product: 云产品 - dimension: 子维度 **默认取值** 不涉及。 
         /// </summary>
-        /// <value>**参数解释** 资源层级，资源生效范围。选择云产品，则云产品及其子层级均可进入该资源分组，选择子维度，则只生效具体的子维度。不传表示子维度。 **约束限制** 不涉及。 **取值范围** - product: 云产品 - dimension: 子维度 **默认取值** 不涉及。 </value>
+        /// <value>**参数解释** [天翼云、移动云不支持该字段。](tag:ctc,cmcc)资源层级，资源生效范围。选择云产品，则云产品及其子层级均可进入该资源分组，选择子维度，则只生效具体的子维度。不传表示子维度。 **约束限制** 不涉及。 **取值范围** - product: 云产品 - dimension: 子维度 **默认取值** 不涉及。 </value>
         [JsonConverter(typeof(EnumClassConverter<ResourceLevelEnum>))]
         public class ResourceLevelEnum
         {
@@ -144,7 +144,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// **参数解释** 资源分组添加资源方式 **约束限制** 不涉及 **取值范围** 取值只能为EPS（同步企业项目），TAG（标签动态匹配），NAME（实例名称），COMB（组合匹配），不传为手动添加。 **默认取值** 不涉及 
+        /// **参数解释** 资源分组添加资源方式 **约束限制** 不涉及 **取值范围** 取值只能为EPS（同步企业项目），TAG（标签动态匹配），NAME（实例名称）[天翼云、移动云不支持该枚举值。](tag:ctc,cmcc)，COMB（组合匹配），不传为手动添加。 **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
@@ -180,25 +180,25 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public List<Resource> Resources { get; set; }
 
         /// <summary>
-        /// **参数解释** 手动创建，选择资源层级为云产品时的资源详情。 **约束限制** 不超过50个资源。 
+        /// **参数解释** [天翼云、移动云不支持该字段。](tag:ctc,cmcc)手动创建，选择资源层级为云产品时的资源详情。 **约束限制** 不超过50个资源。 
         /// </summary>
         [JsonProperty("product_resources", NullValueHandling = NullValueHandling.Ignore)]
         public List<ProductResource> ProductResources { get; set; }
 
         /// <summary>
-        /// **参数解释** 实例名称匹配参数。 **约束限制** type为NAME时必传，不超过50个实例。 
+        /// **参数解释** [天翼云、移动云不支持该字段。](tag:ctc,cmcc)实例名称匹配参数。 **约束限制** type为NAME时必传，不超过50个实例。 
         /// </summary>
         [JsonProperty("instances", NullValueHandling = NullValueHandling.Ignore)]
         public List<Instance> Instances { get; set; }
 
         /// <summary>
-        /// **参数解释** 创建资源层级为云产品时的云产品名称，一般由\&quot;服务命名空间,服务首层维度名称\&quot;组成，如\&quot;SYS.ECS,instance_id\&quot;。多个云产品则用“;”隔开，如\&quot;SERVICE.BMS,instance_id;SYS.ECS,instance_id\&quot;。 **约束限制** 不涉及。 **取值范围** 长度[0,10240]个字符 **默认取值** 不涉及。
+        /// **参数解释** [天翼云、移动云不支持该字段。](tag:ctc,cmcc)创建资源层级为云产品时的云产品名称，一般由\&quot;服务命名空间,服务首层维度名称\&quot;组成，如\&quot;SYS.ECS,instance_id\&quot;。多个云产品则用“;”隔开，如\&quot;SERVICE.BMS,instance_id;SYS.ECS,instance_id\&quot;。 **约束限制** 不涉及。 **取值范围** 长度[0,10240]个字符 **默认取值** 不涉及。
         /// </summary>
         [JsonProperty("product_names", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductNames { get; set; }
 
         /// <summary>
-        /// **参数解释** 资源层级，资源生效范围。选择云产品，则云产品及其子层级均可进入该资源分组，选择子维度，则只生效具体的子维度。不传表示子维度。 **约束限制** 不涉及。 **取值范围** - product: 云产品 - dimension: 子维度 **默认取值** 不涉及。 
+        /// **参数解释** [天翼云、移动云不支持该字段。](tag:ctc,cmcc)资源层级，资源生效范围。选择云产品，则云产品及其子层级均可进入该资源分组，选择子维度，则只生效具体的子维度。不传表示子维度。 **约束限制** 不涉及。 **取值范围** - product: 云产品 - dimension: 子维度 **默认取值** 不涉及。 
         /// </summary>
         [JsonProperty("resource_level", NullValueHandling = NullValueHandling.Ignore)]
         public ResourceLevelEnum ResourceLevel { get; set; }

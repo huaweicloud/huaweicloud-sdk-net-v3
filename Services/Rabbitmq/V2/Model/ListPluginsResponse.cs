@@ -17,6 +17,12 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     {
 
         /// <summary>
+        /// 插件是否在变更中。
+        /// </summary>
+        [JsonProperty("plugins_modifying", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? PluginsModifying { get; set; }
+
+        /// <summary>
         /// 插件信息列表。
         /// </summary>
         [JsonProperty("plugins", NullValueHandling = NullValueHandling.Ignore)]
@@ -31,6 +37,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListPluginsResponse {\n");
+            sb.Append("  pluginsModifying: ").Append(PluginsModifying).Append("\n");
             sb.Append("  plugins: ").Append(Plugins).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -50,6 +57,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public bool Equals(ListPluginsResponse input)
         {
             if (input == null) return false;
+            if (this.PluginsModifying != input.PluginsModifying || (this.PluginsModifying != null && !this.PluginsModifying.Equals(input.PluginsModifying))) return false;
             if (this.Plugins != input.Plugins || (this.Plugins != null && input.Plugins != null && !this.Plugins.SequenceEqual(input.Plugins))) return false;
 
             return true;
@@ -63,6 +71,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.PluginsModifying != null) hashCode = hashCode * 59 + this.PluginsModifying.GetHashCode();
                 if (this.Plugins != null) hashCode = hashCode * 59 + this.Plugins.GetHashCode();
                 return hashCode;
             }

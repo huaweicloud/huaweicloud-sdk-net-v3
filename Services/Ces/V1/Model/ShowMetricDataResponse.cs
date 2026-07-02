@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     {
 
         /// <summary>
-        /// 指标数据列表。由于查询数据时，云监控会根据所选择的聚合粒度向前取整from参数，所以datapoints中包含的数据点有可能会多于预期。
+        /// **参数解释**： 指标数据列表。由于查询数据时，云监控会根据所选择的聚合粒度向前取整from参数，所以datapoints中包含的数据点有可能会多于预期 
         /// </summary>
         [JsonProperty("datapoints", NullValueHandling = NullValueHandling.Ignore)]
         public List<Datapoint> Datapoints { get; set; }
 
         /// <summary>
-        /// 指标名称，例如弹性云服务器监控指标中的cpu_util。
+        /// **参数解释**： 指标名称，例如弹性云服务器监控指标中的cpu_util。 **取值范围**： 不涉及 
         /// </summary>
         [JsonProperty("metric_name", NullValueHandling = NullValueHandling.Ignore)]
         public string MetricName { get; set; }

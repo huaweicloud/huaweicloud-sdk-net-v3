@@ -71,6 +71,18 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string MaxTpsPerRcu { get; set; }
 
         /// <summary>
+        /// **参数解释**： 单个broker最大TPS。 **约束限制**： 不涉及。
+        /// </summary>
+        [JsonProperty("max_tps_per_broker", NullValueHandling = NullValueHandling.Ignore)]
+        public string MaxTpsPerBroker { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 每次增加或减少的代理数量。 **约束限制**： 不涉及。
+        /// </summary>
+        [JsonProperty("step_length", NullValueHandling = NullValueHandling.Ignore)]
+        public string StepLength { get; set; }
+
+        /// <summary>
         /// **参数解释**： 消息引擎版本。  **约束限制**： 不涉及。  **取值范围**： [- 4.8.0](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,cmcc,ax,srg) [- 5.x](tag:hws,hws_eu,hws_hk,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt,srg) **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("engine_versions", NullValueHandling = NullValueHandling.Ignore)]
@@ -130,6 +142,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             sb.Append("  maxStoragePerNode: ").Append(MaxStoragePerNode).Append("\n");
             sb.Append("  productAlias: ").Append(ProductAlias).Append("\n");
             sb.Append("  maxTpsPerRcu: ").Append(MaxTpsPerRcu).Append("\n");
+            sb.Append("  maxTpsPerBroker: ").Append(MaxTpsPerBroker).Append("\n");
+            sb.Append("  stepLength: ").Append(StepLength).Append("\n");
             sb.Append("  engineVersions: ").Append(EngineVersions).Append("\n");
             sb.Append("  minStorage: ").Append(MinStorage).Append("\n");
             sb.Append("  minStoragePerNode: ").Append(MinStoragePerNode).Append("\n");
@@ -164,6 +178,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             if (this.MaxStoragePerNode != input.MaxStoragePerNode || (this.MaxStoragePerNode != null && !this.MaxStoragePerNode.Equals(input.MaxStoragePerNode))) return false;
             if (this.ProductAlias != input.ProductAlias || (this.ProductAlias != null && !this.ProductAlias.Equals(input.ProductAlias))) return false;
             if (this.MaxTpsPerRcu != input.MaxTpsPerRcu || (this.MaxTpsPerRcu != null && !this.MaxTpsPerRcu.Equals(input.MaxTpsPerRcu))) return false;
+            if (this.MaxTpsPerBroker != input.MaxTpsPerBroker || (this.MaxTpsPerBroker != null && !this.MaxTpsPerBroker.Equals(input.MaxTpsPerBroker))) return false;
+            if (this.StepLength != input.StepLength || (this.StepLength != null && !this.StepLength.Equals(input.StepLength))) return false;
             if (this.EngineVersions != input.EngineVersions || (this.EngineVersions != null && !this.EngineVersions.Equals(input.EngineVersions))) return false;
             if (this.MinStorage != input.MinStorage || (this.MinStorage != null && !this.MinStorage.Equals(input.MinStorage))) return false;
             if (this.MinStoragePerNode != input.MinStoragePerNode || (this.MinStoragePerNode != null && !this.MinStoragePerNode.Equals(input.MinStoragePerNode))) return false;
@@ -192,6 +208,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 if (this.MaxStoragePerNode != null) hashCode = hashCode * 59 + this.MaxStoragePerNode.GetHashCode();
                 if (this.ProductAlias != null) hashCode = hashCode * 59 + this.ProductAlias.GetHashCode();
                 if (this.MaxTpsPerRcu != null) hashCode = hashCode * 59 + this.MaxTpsPerRcu.GetHashCode();
+                if (this.MaxTpsPerBroker != null) hashCode = hashCode * 59 + this.MaxTpsPerBroker.GetHashCode();
+                if (this.StepLength != null) hashCode = hashCode * 59 + this.StepLength.GetHashCode();
                 if (this.EngineVersions != null) hashCode = hashCode * 59 + this.EngineVersions.GetHashCode();
                 if (this.MinStorage != null) hashCode = hashCode * 59 + this.MinStorage.GetHashCode();
                 if (this.MinStoragePerNode != null) hashCode = hashCode * 59 + this.MinStoragePerNode.GetHashCode();

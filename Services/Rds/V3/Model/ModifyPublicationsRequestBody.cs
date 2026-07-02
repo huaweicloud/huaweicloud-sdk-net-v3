@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// 
         /// </summary>
         [JsonProperty("job_schedule", NullValueHandling = NullValueHandling.Ignore)]
-        public OperateUsedJobSchedule JobSchedule { get; set; }
+        public OperateUsedJobScheduleModifyPub JobSchedule { get; set; }
 
         /// <summary>
         /// 是否选择所有数据表。

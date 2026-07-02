@@ -8,12 +8,12 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Ces.V1.Model
+namespace HuaweiCloud.SDK.GaussDB.V3.Model
 {
     /// <summary>
-    /// 
+    /// Response Object
     /// </summary>
-    public class TimeStampSchema 
+    public class DownloadRealtimeSessionResponse : SdkStreamResponse
     {
 
 

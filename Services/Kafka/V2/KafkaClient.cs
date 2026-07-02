@@ -1413,6 +1413,34 @@ namespace HuaweiCloud.SDK.Kafka.V2
         /// <summary>
         /// 实例扩容
         ///
+        /// 实例规格变更。[当前通过调用API，只支持按需实例进行实例扩容。](tag:hws,hws_hk,ctc,cmcc,hws_eu)
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ResizeEngineInstanceResponse ResizeEngineInstance(ResizeEngineInstanceRequest resizeEngineInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(resizeEngineInstanceRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(resizeEngineInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/extend", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeEngineInstanceRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ResizeEngineInstanceResponse>(response);
+        }
+
+        public SyncInvoker<ResizeEngineInstanceResponse> ResizeEngineInstanceInvoker(ResizeEngineInstanceRequest resizeEngineInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(resizeEngineInstanceRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(resizeEngineInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/extend", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeEngineInstanceRequest);
+            return new SyncInvoker<ResizeEngineInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<ResizeEngineInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 实例扩容
+        ///
         /// 实例规格变更。[当前通过调用API，只支持按需实例进行实例扩容。](tag:hws,hws_hk,ctc,cmcc,hws_eu,ax)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
@@ -1921,6 +1949,34 @@ namespace HuaweiCloud.SDK.Kafka.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaInstanceExtendProductInfoRequest);
             return new SyncInvoker<ShowKafkaInstanceExtendProductInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowKafkaInstanceExtendProductInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 查询日志任务
+        ///
+        /// 查询日志任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowKafkaLogTaskResponse ShowKafkaLogTask(ShowKafkaLogTaskRequest showKafkaLogTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showKafkaLogTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showKafkaLogTaskRequest.LogType, out var valueOfLogType)) urlParam.Add("log_type", valueOfLogType);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/logs/{log_type}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaLogTaskRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowKafkaLogTaskResponse>(response);
+        }
+
+        public SyncInvoker<ShowKafkaLogTaskResponse> ShowKafkaLogTaskInvoker(ShowKafkaLogTaskRequest showKafkaLogTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showKafkaLogTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showKafkaLogTaskRequest.LogType, out var valueOfLogType)) urlParam.Add("log_type", valueOfLogType);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/logs/{log_type}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaLogTaskRequest);
+            return new SyncInvoker<ShowKafkaLogTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowKafkaLogTaskResponse>);
         }
         
         /// <summary>
@@ -2460,6 +2516,62 @@ namespace HuaweiCloud.SDK.Kafka.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/auto-volume-expand", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVolumeExpandConfigRequest);
             return new SyncInvoker<ShowVolumeExpandConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVolumeExpandConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 开启日志任务
+        ///
+        /// 开启日志任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public StartKafkaLogTaskResponse StartKafkaLogTask(StartKafkaLogTaskRequest startKafkaLogTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(startKafkaLogTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(startKafkaLogTaskRequest.LogType, out var valueOfLogType)) urlParam.Add("log_type", valueOfLogType);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/logs/{log_type}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startKafkaLogTaskRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<StartKafkaLogTaskResponse>(response);
+        }
+
+        public SyncInvoker<StartKafkaLogTaskResponse> StartKafkaLogTaskInvoker(StartKafkaLogTaskRequest startKafkaLogTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(startKafkaLogTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(startKafkaLogTaskRequest.LogType, out var valueOfLogType)) urlParam.Add("log_type", valueOfLogType);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/logs/{log_type}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startKafkaLogTaskRequest);
+            return new SyncInvoker<StartKafkaLogTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<StartKafkaLogTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 停止日志任务
+        ///
+        /// 停止日志任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public StopKafkaLogTaskResponse StopKafkaLogTask(StopKafkaLogTaskRequest stopKafkaLogTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(stopKafkaLogTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(stopKafkaLogTaskRequest.LogType, out var valueOfLogType)) urlParam.Add("log_type", valueOfLogType);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/logs/{log_type}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopKafkaLogTaskRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<StopKafkaLogTaskResponse>(response);
+        }
+
+        public SyncInvoker<StopKafkaLogTaskResponse> StopKafkaLogTaskInvoker(StopKafkaLogTaskRequest stopKafkaLogTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(stopKafkaLogTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(stopKafkaLogTaskRequest.LogType, out var valueOfLogType)) urlParam.Add("log_type", valueOfLogType);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/logs/{log_type}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopKafkaLogTaskRequest);
+            return new SyncInvoker<StopKafkaLogTaskResponse>(this, "DELETE", request, JsonUtils.DeSerialize<StopKafkaLogTaskResponse>);
         }
         
         /// <summary>

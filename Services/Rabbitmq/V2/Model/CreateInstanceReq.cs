@@ -503,6 +503,24 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
+        /// **参数解释**： 是否开启磁盘加密。 **约束限制**： 不涉及。 **取值范围**： - true：开启。 - false：不开启。 **默认取值**： false。
+        /// </summary>
+        [JsonProperty("disk_encrypted_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DiskEncryptedEnable { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 磁盘加密key，未开启磁盘加密时为空。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+        /// </summary>
+        [JsonProperty("disk_encrypted_key", NullValueHandling = NullValueHandling.Ignore)]
+        public string DiskEncryptedKey { get; set; }
+
+        /// <summary>
+        /// **参数解释**： CPU架构。 **约束限制**： 不涉及。 **取值范围**： - X86：X86架构。 [- ARM：鲲鹏架构。](tag:hws_test,cmcc,ctc) **默认取值**： 不涉及。
+        /// </summary>
+        [JsonProperty("arch_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string ArchType { get; set; }
+
+        /// <summary>
         /// **参数解释**： 标签列表。 **约束限制**： 一个RabbitMQ实例最多添加20个标签。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
@@ -544,6 +562,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             sb.Append("  sslEnable: ").Append(SslEnable).Append("\n");
             sb.Append("  storageSpecCode: ").Append(StorageSpecCode).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  diskEncryptedEnable: ").Append(DiskEncryptedEnable).Append("\n");
+            sb.Append("  diskEncryptedKey: ").Append(DiskEncryptedKey).Append("\n");
+            sb.Append("  archType: ").Append(ArchType).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  bssParam: ").Append(BssParam).Append("\n");
             sb.Append("}\n");
@@ -585,6 +606,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             if (this.SslEnable != input.SslEnable || (this.SslEnable != null && !this.SslEnable.Equals(input.SslEnable))) return false;
             if (this.StorageSpecCode != input.StorageSpecCode) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.DiskEncryptedEnable != input.DiskEncryptedEnable || (this.DiskEncryptedEnable != null && !this.DiskEncryptedEnable.Equals(input.DiskEncryptedEnable))) return false;
+            if (this.DiskEncryptedKey != input.DiskEncryptedKey || (this.DiskEncryptedKey != null && !this.DiskEncryptedKey.Equals(input.DiskEncryptedKey))) return false;
+            if (this.ArchType != input.ArchType || (this.ArchType != null && !this.ArchType.Equals(input.ArchType))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
             if (this.BssParam != input.BssParam || (this.BssParam != null && !this.BssParam.Equals(input.BssParam))) return false;
 
@@ -620,6 +644,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                 if (this.SslEnable != null) hashCode = hashCode * 59 + this.SslEnable.GetHashCode();
                 hashCode = hashCode * 59 + this.StorageSpecCode.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.DiskEncryptedEnable != null) hashCode = hashCode * 59 + this.DiskEncryptedEnable.GetHashCode();
+                if (this.DiskEncryptedKey != null) hashCode = hashCode * 59 + this.DiskEncryptedKey.GetHashCode();
+                if (this.ArchType != null) hashCode = hashCode * 59 + this.ArchType.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.BssParam != null) hashCode = hashCode * 59 + this.BssParam.GetHashCode();
                 return hashCode;

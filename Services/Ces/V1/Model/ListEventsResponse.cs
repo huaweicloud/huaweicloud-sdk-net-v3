@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     {
 
         /// <summary>
-        /// 一条或者多条事件数据。
+        /// **参数解释** 一条或者多条事件数据 
         /// </summary>
         [JsonProperty("events", NullValueHandling = NullValueHandling.Ignore)]
         public List<EventInfo> Events { get; set; }

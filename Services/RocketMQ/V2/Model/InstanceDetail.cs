@@ -257,6 +257,12 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public bool? DiskEncrypted { get; set; }
 
         /// <summary>
+        /// **参数解释**： 磁盘加密key，未开启磁盘加密时为空。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("disk_encrypted_key", NullValueHandling = NullValueHandling.Ignore)]
+        public string DiskEncryptedKey { get; set; }
+
+        /// <summary>
         /// **参数解释**： 云监控版本。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("ces_version", NullValueHandling = NullValueHandling.Ignore)]
@@ -311,10 +317,22 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string BrokerAddress { get; set; }
 
         /// <summary>
+        /// **参数解释**： 业务数据IPv6的地址。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+        /// </summary>
+        [JsonProperty("ipv6_broker_address", NullValueHandling = NullValueHandling.Ignore)]
+        public string Ipv6BrokerAddress { get; set; }
+
+        /// <summary>
         /// **参数解释**： 公网元数据地址。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("public_namesrv_address", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicNamesrvAddress { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 元数据IPv6的地址。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+        /// </summary>
+        [JsonProperty("ipv6_namesrv_address", NullValueHandling = NullValueHandling.Ignore)]
+        public string Ipv6NamesrvAddress { get; set; }
 
         /// <summary>
         /// **参数解释**： 公网元数据域名。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
@@ -473,6 +491,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             sb.Append("  ipv6Enable: ").Append(Ipv6Enable).Append("\n");
             sb.Append("  supportFeatures: ").Append(SupportFeatures).Append("\n");
             sb.Append("  diskEncrypted: ").Append(DiskEncrypted).Append("\n");
+            sb.Append("  diskEncryptedKey: ").Append(DiskEncryptedKey).Append("\n");
             sb.Append("  cesVersion: ").Append(CesVersion).Append("\n");
             sb.Append("  nodeNum: ").Append(NodeNum).Append("\n");
             sb.Append("  newSpecBillingEnable: ").Append(NewSpecBillingEnable).Append("\n");
@@ -482,7 +501,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             sb.Append("  namesrvAddress: ").Append(NamesrvAddress).Append("\n");
             sb.Append("  namesrvDomainName: ").Append(NamesrvDomainName).Append("\n");
             sb.Append("  brokerAddress: ").Append(BrokerAddress).Append("\n");
+            sb.Append("  ipv6BrokerAddress: ").Append(Ipv6BrokerAddress).Append("\n");
             sb.Append("  publicNamesrvAddress: ").Append(PublicNamesrvAddress).Append("\n");
+            sb.Append("  ipv6NamesrvAddress: ").Append(Ipv6NamesrvAddress).Append("\n");
             sb.Append("  publicNamesrvDomainName: ").Append(PublicNamesrvDomainName).Append("\n");
             sb.Append("  publicBrokerAddress: ").Append(PublicBrokerAddress).Append("\n");
             sb.Append("  grpcAddress: ").Append(GrpcAddress).Append("\n");
@@ -559,6 +580,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             if (this.Ipv6Enable != input.Ipv6Enable || (this.Ipv6Enable != null && !this.Ipv6Enable.Equals(input.Ipv6Enable))) return false;
             if (this.SupportFeatures != input.SupportFeatures || (this.SupportFeatures != null && !this.SupportFeatures.Equals(input.SupportFeatures))) return false;
             if (this.DiskEncrypted != input.DiskEncrypted || (this.DiskEncrypted != null && !this.DiskEncrypted.Equals(input.DiskEncrypted))) return false;
+            if (this.DiskEncryptedKey != input.DiskEncryptedKey || (this.DiskEncryptedKey != null && !this.DiskEncryptedKey.Equals(input.DiskEncryptedKey))) return false;
             if (this.CesVersion != input.CesVersion || (this.CesVersion != null && !this.CesVersion.Equals(input.CesVersion))) return false;
             if (this.NodeNum != input.NodeNum || (this.NodeNum != null && !this.NodeNum.Equals(input.NodeNum))) return false;
             if (this.NewSpecBillingEnable != input.NewSpecBillingEnable || (this.NewSpecBillingEnable != null && !this.NewSpecBillingEnable.Equals(input.NewSpecBillingEnable))) return false;
@@ -568,7 +590,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             if (this.NamesrvAddress != input.NamesrvAddress || (this.NamesrvAddress != null && !this.NamesrvAddress.Equals(input.NamesrvAddress))) return false;
             if (this.NamesrvDomainName != input.NamesrvDomainName || (this.NamesrvDomainName != null && !this.NamesrvDomainName.Equals(input.NamesrvDomainName))) return false;
             if (this.BrokerAddress != input.BrokerAddress || (this.BrokerAddress != null && !this.BrokerAddress.Equals(input.BrokerAddress))) return false;
+            if (this.Ipv6BrokerAddress != input.Ipv6BrokerAddress || (this.Ipv6BrokerAddress != null && !this.Ipv6BrokerAddress.Equals(input.Ipv6BrokerAddress))) return false;
             if (this.PublicNamesrvAddress != input.PublicNamesrvAddress || (this.PublicNamesrvAddress != null && !this.PublicNamesrvAddress.Equals(input.PublicNamesrvAddress))) return false;
+            if (this.Ipv6NamesrvAddress != input.Ipv6NamesrvAddress || (this.Ipv6NamesrvAddress != null && !this.Ipv6NamesrvAddress.Equals(input.Ipv6NamesrvAddress))) return false;
             if (this.PublicNamesrvDomainName != input.PublicNamesrvDomainName || (this.PublicNamesrvDomainName != null && !this.PublicNamesrvDomainName.Equals(input.PublicNamesrvDomainName))) return false;
             if (this.PublicBrokerAddress != input.PublicBrokerAddress || (this.PublicBrokerAddress != null && !this.PublicBrokerAddress.Equals(input.PublicBrokerAddress))) return false;
             if (this.GrpcAddress != input.GrpcAddress || (this.GrpcAddress != null && !this.GrpcAddress.Equals(input.GrpcAddress))) return false;
@@ -639,6 +663,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 if (this.Ipv6Enable != null) hashCode = hashCode * 59 + this.Ipv6Enable.GetHashCode();
                 if (this.SupportFeatures != null) hashCode = hashCode * 59 + this.SupportFeatures.GetHashCode();
                 if (this.DiskEncrypted != null) hashCode = hashCode * 59 + this.DiskEncrypted.GetHashCode();
+                if (this.DiskEncryptedKey != null) hashCode = hashCode * 59 + this.DiskEncryptedKey.GetHashCode();
                 if (this.CesVersion != null) hashCode = hashCode * 59 + this.CesVersion.GetHashCode();
                 if (this.NodeNum != null) hashCode = hashCode * 59 + this.NodeNum.GetHashCode();
                 if (this.NewSpecBillingEnable != null) hashCode = hashCode * 59 + this.NewSpecBillingEnable.GetHashCode();
@@ -648,7 +673,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 if (this.NamesrvAddress != null) hashCode = hashCode * 59 + this.NamesrvAddress.GetHashCode();
                 if (this.NamesrvDomainName != null) hashCode = hashCode * 59 + this.NamesrvDomainName.GetHashCode();
                 if (this.BrokerAddress != null) hashCode = hashCode * 59 + this.BrokerAddress.GetHashCode();
+                if (this.Ipv6BrokerAddress != null) hashCode = hashCode * 59 + this.Ipv6BrokerAddress.GetHashCode();
                 if (this.PublicNamesrvAddress != null) hashCode = hashCode * 59 + this.PublicNamesrvAddress.GetHashCode();
+                if (this.Ipv6NamesrvAddress != null) hashCode = hashCode * 59 + this.Ipv6NamesrvAddress.GetHashCode();
                 if (this.PublicNamesrvDomainName != null) hashCode = hashCode * 59 + this.PublicNamesrvDomainName.GetHashCode();
                 if (this.PublicBrokerAddress != null) hashCode = hashCode * 59 + this.PublicBrokerAddress.GetHashCode();
                 if (this.GrpcAddress != null) hashCode = hashCode * 59 + this.GrpcAddress.GetHashCode();

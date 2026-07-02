@@ -252,19 +252,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("relation_type", NullValueHandling = NullValueHandling.Ignore)]
         public ListRelationType RelationType { get; set; }
         /// <summary>
-        /// **参数解释**： 告警规则ID列表，用于查询对应的告警通知屏蔽。 **约束限制**： 当relation_type为ALARM_RULE、RESOURCE_POLICY_NOTIFICATION时，应通过alarm_ids查询。当relation_type为RESOURCE、EVENT.SYS时，不支持使用alarm_ids查询，此时alarm_ids为空或不选，表示查询所有的RESOURCE、EVENT.SYS类型的告警屏蔽。 **取值范围**： 包含的告警规则ID数量最多不超过100个，最少为0个。 **默认取值**： 不涉及 
-        /// </summary>
-        [JsonProperty("alarm_ids", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> AlarmIds { get; set; }
-
-        /// <summary>
-        /// （已废弃，不推荐使用）关联编号（目前是告警规则ID）
+        /// **参数解释**： 关联编号（目前是告警规则ID）。 **约束限制**： 包含的关联编号数量最多不超过100个，最少为0个。 
         /// </summary>
         [JsonProperty("relation_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> RelationIds { get; set; }
 
         /// <summary>
-        /// **参数解释**： 资源的监控指标名称，各服务资源的指标名称，请参阅具体云服务的文档。您可以直接从[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/en-us/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)页面导航至相应文档。 **约束限制**： 不涉及。 **取值范围**： 必须以字母开头，只能包含0-9/a-z/A-Z/_/-。字符长度最短为1，最大为96。如：弹性云服务器中的监控指标cpu_util，表示弹性服务器的CPU使用率；文档数据库中的指标mongo001_command_ps，表示command执行频率。         **默认取值**： 不涉及。 
+        /// **参数解释**： 资源的监控指标名称，各服务资源的指标名称，请参阅具体云服务的文档。您可以直接从[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/zh-cn/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)页面导航至相应文档。 **约束限制**： 不涉及。 **取值范围**： 必须以字母开头，只能包含0-9/a-z/A-Z/_/-。字符长度最短为1，最大为96。如：弹性云服务器中的监控指标cpu_util，表示弹性服务器的CPU使用率；文档数据库中的指标mongo001_command_ps，表示command执行频率。         **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("metric_name", NullValueHandling = NullValueHandling.Ignore)]
         public string MetricName { get; set; }
@@ -298,7 +292,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string ResourceId { get; set; }
 
         /// <summary>
-        /// **参数解释**： 查询服务的命名空间，各服务命名空间请参阅[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/en-us/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)。 **约束限制**： 不涉及。 **取值范围**： 格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_。字符串的长度必须在 3 到 32个字符之间。 **默认取值**： 不涉及。 
+        /// **参数解释**： 查询服务的命名空间，各服务命名空间请参阅[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/zh-cn/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)。 **约束限制**： 不涉及。 **取值范围**： 格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_。字符串的长度必须在 3 到 32个字符之间。 **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
         public string Namespace { get; set; }
@@ -319,7 +313,6 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ListNotificationMaskRequestBody {\n");
             sb.Append("  relationType: ").Append(RelationType).Append("\n");
-            sb.Append("  alarmIds: ").Append(AlarmIds).Append("\n");
             sb.Append("  relationIds: ").Append(RelationIds).Append("\n");
             sb.Append("  metricName: ").Append(MetricName).Append("\n");
             sb.Append("  resourceLevel: ").Append(ResourceLevel).Append("\n");
@@ -348,7 +341,6 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             if (input == null) return false;
             if (this.RelationType != input.RelationType) return false;
-            if (this.AlarmIds != input.AlarmIds || (this.AlarmIds != null && input.AlarmIds != null && !this.AlarmIds.SequenceEqual(input.AlarmIds))) return false;
             if (this.RelationIds != input.RelationIds || (this.RelationIds != null && input.RelationIds != null && !this.RelationIds.SequenceEqual(input.RelationIds))) return false;
             if (this.MetricName != input.MetricName || (this.MetricName != null && !this.MetricName.Equals(input.MetricName))) return false;
             if (this.ResourceLevel != input.ResourceLevel) return false;
@@ -371,7 +363,6 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             {
                 var hashCode = 41;
                 hashCode = hashCode * 59 + this.RelationType.GetHashCode();
-                if (this.AlarmIds != null) hashCode = hashCode * 59 + this.AlarmIds.GetHashCode();
                 if (this.RelationIds != null) hashCode = hashCode * 59 + this.RelationIds.GetHashCode();
                 if (this.MetricName != null) hashCode = hashCode * 59 + this.MetricName.GetHashCode();
                 hashCode = hashCode * 59 + this.ResourceLevel.GetHashCode();

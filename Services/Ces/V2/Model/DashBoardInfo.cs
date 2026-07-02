@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string EnterpriseId { get; set; }
 
         /// <summary>
-        /// **参数解释** 每行展示视图数量 **取值范围** - 0:表示自定义坐标 - 1:代表每行1个视图 - 2:代表每行2个视图 - 3:代表每行3个视图 
+        /// **参数解释** 每行展示视图数量 **取值范围** - 0:表示自定义坐标 - 1:代表每行1个视图 - 2:代表每行2个视图 - 3:代表每行3个视图 - 4:代表每行4个视图 
         /// </summary>
         [JsonProperty("row_widget_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? RowWidgetNum { get; set; }
@@ -61,11 +61,17 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// <summary>
         /// **参数解释** 看板下的视图总数 **取值范围** 最小值为0，最大值为50 
         /// </summary>
-        [JsonProperty("widgets_num", NullValueHandling = NullValueHandling.Ignore)]
-        public int? WidgetsNum { get; set; }
+        [JsonProperty("widget_num", NullValueHandling = NullValueHandling.Ignore)]
+        public int? WidgetNum { get; set; }
 
         /// <summary>
-        /// **参数解释** 查询服务的命名空间，各服务命名空间请参阅[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/en-us/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg) **取值范围** 格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_。字符串的长度必须在 3 到 32个字符之间。 
+        /// 
+        /// </summary>
+        [JsonProperty("extend_info", NullValueHandling = NullValueHandling.Ignore)]
+        public ExtendInfoResp ExtendInfo { get; set; }
+
+        /// <summary>
+        /// **参数解释** 查询服务的命名空间，各服务命名空间请参阅[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/zh-cn/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg) **取值范围** 格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_。字符串的长度必须在 3 到 32个字符之间。 
         /// </summary>
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
         public string Namespace { get; set; }
@@ -98,7 +104,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  isFavorite: ").Append(IsFavorite).Append("\n");
             sb.Append("  creatorName: ").Append(CreatorName).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
-            sb.Append("  widgetsNum: ").Append(WidgetsNum).Append("\n");
+            sb.Append("  widgetNum: ").Append(WidgetNum).Append("\n");
+            sb.Append("  extendInfo: ").Append(ExtendInfo).Append("\n");
             sb.Append("  Namespace: ").Append(Namespace).Append("\n");
             sb.Append("  subProduct: ").Append(SubProduct).Append("\n");
             sb.Append("  dashboardTemplateId: ").Append(DashboardTemplateId).Append("\n");
@@ -127,7 +134,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.IsFavorite != input.IsFavorite || (this.IsFavorite != null && !this.IsFavorite.Equals(input.IsFavorite))) return false;
             if (this.CreatorName != input.CreatorName || (this.CreatorName != null && !this.CreatorName.Equals(input.CreatorName))) return false;
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
-            if (this.WidgetsNum != input.WidgetsNum || (this.WidgetsNum != null && !this.WidgetsNum.Equals(input.WidgetsNum))) return false;
+            if (this.WidgetNum != input.WidgetNum || (this.WidgetNum != null && !this.WidgetNum.Equals(input.WidgetNum))) return false;
+            if (this.ExtendInfo != input.ExtendInfo || (this.ExtendInfo != null && !this.ExtendInfo.Equals(input.ExtendInfo))) return false;
             if (this.Namespace != input.Namespace || (this.Namespace != null && !this.Namespace.Equals(input.Namespace))) return false;
             if (this.SubProduct != input.SubProduct || (this.SubProduct != null && !this.SubProduct.Equals(input.SubProduct))) return false;
             if (this.DashboardTemplateId != input.DashboardTemplateId || (this.DashboardTemplateId != null && !this.DashboardTemplateId.Equals(input.DashboardTemplateId))) return false;
@@ -150,7 +158,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 if (this.IsFavorite != null) hashCode = hashCode * 59 + this.IsFavorite.GetHashCode();
                 if (this.CreatorName != null) hashCode = hashCode * 59 + this.CreatorName.GetHashCode();
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.WidgetsNum != null) hashCode = hashCode * 59 + this.WidgetsNum.GetHashCode();
+                if (this.WidgetNum != null) hashCode = hashCode * 59 + this.WidgetNum.GetHashCode();
+                if (this.ExtendInfo != null) hashCode = hashCode * 59 + this.ExtendInfo.GetHashCode();
                 if (this.Namespace != null) hashCode = hashCode * 59 + this.Namespace.GetHashCode();
                 if (this.SubProduct != null) hashCode = hashCode * 59 + this.SubProduct.GetHashCode();
                 if (this.DashboardTemplateId != null) hashCode = hashCode * 59 + this.DashboardTemplateId.GetHashCode();

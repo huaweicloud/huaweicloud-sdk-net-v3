@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     {
 
         /// <summary>
-        /// 指标数据。数组长度最大500
+        /// **参数解释** 指标数据 **约束限制** 包含的指标数据对象个数为[1,500] 
         /// </summary>
         [JsonProperty("metrics", NullValueHandling = NullValueHandling.Ignore)]
         public List<MetricInfo> Metrics { get; set; }
@@ -33,13 +33,13 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         [JsonProperty("filter", NullValueHandling = NullValueHandling.Ignore)]
         public Filter Filter { get; set; }
         /// <summary>
-        /// 
+        /// **参数解释** 查询数据起始时间，UNIX时间戳，单位毫秒 **约束限制** 当period为1时，若(to- from) &gt;4*3600*1000，则from调整为 to - 4*3600*1000 当period为300时，若(to - from) &gt;24*3600*1000，则from调整为 to - 24*3600*1000 当period为1200时，若(to - from) &gt;3*24*3600*1000，则from调整为 to - 3*24*3600*1000 当period为3600时，若(to -from) &gt; 10*24*3600*1000，则from调整为 to -10*24*3600*1000 当period为14400时，若(to - from) &gt;30*24*3600*1000，则from调整为 to - 30*24*3600*1000 当period为86400时，若(to -from) &gt; 180*24*3600*1000，则from调整为 to - 180*24*3600*1000 **取值范围** 毫秒级时间戳范围为[1111111111111,9999999999999] **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("from", NullValueHandling = NullValueHandling.Ignore)]
         public long? From { get; set; }
 
         /// <summary>
-        /// 
+        /// **参数解释** 查询数据截止时间，UNIX时间戳，单位毫秒 **约束限制** from 必须小于to **取值范围** 毫秒级时间戳范围为[1111111111111,9999999999999] **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("to", NullValueHandling = NullValueHandling.Ignore)]
         public long? To { get; set; }

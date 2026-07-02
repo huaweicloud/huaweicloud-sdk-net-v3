@@ -600,7 +600,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public long? To { get; set; }
 
         /// <summary>
-        /// **参数解释** 监控大屏背景颜色 **约束限制** 不涉及 **取值范围** 背景颜色长度为[1,100]个字符 **默认取值** 不涉及 
+        /// **参数解释** 监控大屏背景颜色 **约束限制** 不涉及 **取值范围** 背景颜色长度最长为100个字符 **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("screen_color", NullValueHandling = NullValueHandling.Ignore)]
         public string ScreenColor { get; set; }

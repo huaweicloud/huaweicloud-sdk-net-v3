@@ -107,6 +107,18 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public bool? Ipv6Enable { get; set; }
 
         /// <summary>
+        /// **参数解释**： 业务数据IPv6的地址。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+        /// </summary>
+        [JsonProperty("ipv6_broker_address", NullValueHandling = NullValueHandling.Ignore)]
+        public string Ipv6BrokerAddress { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 元数据IPv6的地址。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+        /// </summary>
+        [JsonProperty("ipv6_namesrv_address", NullValueHandling = NullValueHandling.Ignore)]
+        public string Ipv6NamesrvAddress { get; set; }
+
+        /// <summary>
         /// **参数解释**： 是否开启Proxy功能。 **约束限制**： 不涉及。 **取值范围**： - true：支持 - false：不支持 **默认取值**： false。
         /// </summary>
         [JsonProperty("proxy_enable", NullValueHandling = NullValueHandling.Ignore)]
@@ -184,6 +196,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  enableAcl: ").Append(EnableAcl).Append("\n");
             sb.Append("  ipv6Enable: ").Append(Ipv6Enable).Append("\n");
+            sb.Append("  ipv6BrokerAddress: ").Append(Ipv6BrokerAddress).Append("\n");
+            sb.Append("  ipv6NamesrvAddress: ").Append(Ipv6NamesrvAddress).Append("\n");
             sb.Append("  proxyEnable: ").Append(ProxyEnable).Append("\n");
             sb.Append("  enablePublicip: ").Append(EnablePublicip).Append("\n");
             sb.Append("  diskEncryptedEnable: ").Append(DiskEncryptedEnable).Append("\n");
@@ -226,6 +240,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.EnableAcl != input.EnableAcl || (this.EnableAcl != null && !this.EnableAcl.Equals(input.EnableAcl))) return false;
             if (this.Ipv6Enable != input.Ipv6Enable || (this.Ipv6Enable != null && !this.Ipv6Enable.Equals(input.Ipv6Enable))) return false;
+            if (this.Ipv6BrokerAddress != input.Ipv6BrokerAddress || (this.Ipv6BrokerAddress != null && !this.Ipv6BrokerAddress.Equals(input.Ipv6BrokerAddress))) return false;
+            if (this.Ipv6NamesrvAddress != input.Ipv6NamesrvAddress || (this.Ipv6NamesrvAddress != null && !this.Ipv6NamesrvAddress.Equals(input.Ipv6NamesrvAddress))) return false;
             if (this.ProxyEnable != input.ProxyEnable || (this.ProxyEnable != null && !this.ProxyEnable.Equals(input.ProxyEnable))) return false;
             if (this.EnablePublicip != input.EnablePublicip || (this.EnablePublicip != null && !this.EnablePublicip.Equals(input.EnablePublicip))) return false;
             if (this.DiskEncryptedEnable != input.DiskEncryptedEnable || (this.DiskEncryptedEnable != null && !this.DiskEncryptedEnable.Equals(input.DiskEncryptedEnable))) return false;
@@ -262,6 +278,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.EnableAcl != null) hashCode = hashCode * 59 + this.EnableAcl.GetHashCode();
                 if (this.Ipv6Enable != null) hashCode = hashCode * 59 + this.Ipv6Enable.GetHashCode();
+                if (this.Ipv6BrokerAddress != null) hashCode = hashCode * 59 + this.Ipv6BrokerAddress.GetHashCode();
+                if (this.Ipv6NamesrvAddress != null) hashCode = hashCode * 59 + this.Ipv6NamesrvAddress.GetHashCode();
                 if (this.ProxyEnable != null) hashCode = hashCode * 59 + this.ProxyEnable.GetHashCode();
                 if (this.EnablePublicip != null) hashCode = hashCode * 59 + this.EnablePublicip.GetHashCode();
                 if (this.DiskEncryptedEnable != null) hashCode = hashCode * 59 + this.DiskEncryptedEnable.GetHashCode();

@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// **参数解释**： 待删除的消费组列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+        /// **参数解释**： 需要删除的消费组名称列表。 **约束限制**： 当批量删除消费组时必填。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
-        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string JobId { get; set; }
+        [JsonProperty("groups", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Groups { get; set; }
 
         /// <summary>
         /// **参数解释**： 消费组名称。 **约束限制**： 只能由英文字母、数字、百分号、竖线、中划线、下划线组成，长度3~64个字符。 当创建消费组时必填。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
@@ -73,7 +73,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {\n");
-            sb.Append("  jobId: ").Append(JobId).Append("\n");
+            sb.Append("  groups: ").Append(Groups).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  brokers: ").Append(Brokers).Append("\n");
             sb.Append("  broadcast: ").Append(Broadcast).Append("\n");
@@ -99,7 +99,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public bool Equals(CreateConsumerGroupOrBatchDeleteConsumerGroupReq input)
         {
             if (input == null) return false;
-            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.Groups != input.Groups || (this.Groups != null && input.Groups != null && !this.Groups.SequenceEqual(input.Groups))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Brokers != input.Brokers || (this.Brokers != null && input.Brokers != null && !this.Brokers.SequenceEqual(input.Brokers))) return false;
             if (this.Broadcast != input.Broadcast || (this.Broadcast != null && !this.Broadcast.Equals(input.Broadcast))) return false;
@@ -119,7 +119,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.Groups != null) hashCode = hashCode * 59 + this.Groups.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Brokers != null) hashCode = hashCode * 59 + this.Brokers.GetHashCode();
                 if (this.Broadcast != null) hashCode = hashCode * 59 + this.Broadcast.GetHashCode();

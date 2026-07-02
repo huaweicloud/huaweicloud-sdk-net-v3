@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// **参数解释**： 告警规则id。如 al123232232341232132 **取值范围**： 以al开头，后跟22个数字或字母。长度为24个字符。 
+        /// **参数解释**： 告警规则id。如 al16558829757444BVVxr999 **取值范围**： 以al开头，后跟22个数字或字母。长度为24个字符。 
         /// </summary>
         [JsonProperty("alarm_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmId { get; set; }
