@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// **参数解释**：  任务创建时间。  **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? CreateTime { get; set; }
+        public long? CreateTime { get; set; }
 
         /// <summary>
         /// **参数解释**：  数据库类型。  **取值范围**： 目前只支持gaussdb-mysql。
@@ -32,7 +32,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// **参数解释**：  任务结束时间。  **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? EndTime { get; set; }
+        public long? EndTime { get; set; }
 
         /// <summary>
         /// **参数解释**：  任务绑定的实例ID。  **取值范围**： 不涉及。
@@ -74,7 +74,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// **参数解释**：  任务开始时间。  **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? StartTime { get; set; }
+        public long? StartTime { get; set; }
 
         /// <summary>
         /// **参数解释**：  任务的目标端配置信息，以键值对形式存储。  **取值范围**： 不涉及。

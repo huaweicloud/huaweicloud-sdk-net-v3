@@ -144,6 +144,13 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
+        public Object Body { get; set; }
+
 
 
         /// <summary>
@@ -155,6 +162,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("class ListKeyViewExecuteNodeRequest {\n");
             sb.Append("  xLanguage: ").Append(XLanguage).Append("\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
+            sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -175,6 +183,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             if (input == null) return false;
             if (this.XLanguage != input.XLanguage) return false;
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
             return true;
         }
@@ -189,6 +198,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                 var hashCode = 41;
                 hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

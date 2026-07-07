@@ -43,6 +43,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             "https://gaussdb-mysql.cn-east-5.myhuaweicloud.com");
         public static readonly Region LA_NORTH_2 = new Region("la-north-2",
             "https://gaussdb-mysql.la-north-2.myhuaweicloud.com");
+        public static readonly Region CN_SOUTHWEST_3 = new Region("cn-southwest-3",
+            "https://gaussdb-mysql.cn-southwest-3.myhuaweicloud.com");
         public static readonly Region ME_EAST_1 = new Region("me-east-1",
             "https://gaussdbformysql.me-east-1.myhuaweicloud.com");
         
@@ -68,6 +70,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
                 { "cn-north-11", CN_NORTH_11 },
                 { "cn-east-5", CN_EAST_5 },
                 { "la-north-2", LA_NORTH_2 },
+                { "cn-southwest-3", CN_SOUTHWEST_3 },
                 { "me-east-1", ME_EAST_1 },
         };
 

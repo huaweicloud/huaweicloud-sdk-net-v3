@@ -17,28 +17,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
     {
 
         /// <summary>
-        /// **参数解释**：  DDL下载日志列表。  **取值范围**：  不涉及。 
+        /// **参数解释**：  任务流ID。  **取值范围**：  不涉及。 
         /// </summary>
-        [JsonProperty("ddl_logs", NullValueHandling = NullValueHandling.Ignore)]
-        public List<DdlLogInfo> DdlLogs { get; set; }
-
-        /// <summary>
-        /// **参数解释**：  总条数。  **取值范围**：  不涉及。 
-        /// </summary>
-        [JsonProperty("total_count", NullValueHandling = NullValueHandling.Ignore)]
-        public int? TotalCount { get; set; }
-
-        /// <summary>
-        /// **参数解释**：  日志保留天数。  **取值范围**：  不涉及。 
-        /// </summary>
-        [JsonProperty("keey_days", NullValueHandling = NullValueHandling.Ignore)]
-        public int? KeeyDays { get; set; }
-
-        /// <summary>
-        /// **参数解释**：  DDL日志下载开关状态。  **取值范围**：  - ON，开启。 - OFF，关闭。 
-        /// </summary>
-        [JsonProperty("switch_status", NullValueHandling = NullValueHandling.Ignore)]
-        public string SwitchStatus { get; set; }
+        [JsonProperty("workflow_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string WorkflowId { get; set; }
 
 
 
@@ -49,10 +31,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class SetDdlLogPolicyResponse {\n");
-            sb.Append("  ddlLogs: ").Append(DdlLogs).Append("\n");
-            sb.Append("  totalCount: ").Append(TotalCount).Append("\n");
-            sb.Append("  keeyDays: ").Append(KeeyDays).Append("\n");
-            sb.Append("  switchStatus: ").Append(SwitchStatus).Append("\n");
+            sb.Append("  workflowId: ").Append(WorkflowId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -71,10 +50,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public bool Equals(SetDdlLogPolicyResponse input)
         {
             if (input == null) return false;
-            if (this.DdlLogs != input.DdlLogs || (this.DdlLogs != null && input.DdlLogs != null && !this.DdlLogs.SequenceEqual(input.DdlLogs))) return false;
-            if (this.TotalCount != input.TotalCount || (this.TotalCount != null && !this.TotalCount.Equals(input.TotalCount))) return false;
-            if (this.KeeyDays != input.KeeyDays || (this.KeeyDays != null && !this.KeeyDays.Equals(input.KeeyDays))) return false;
-            if (this.SwitchStatus != input.SwitchStatus || (this.SwitchStatus != null && !this.SwitchStatus.Equals(input.SwitchStatus))) return false;
+            if (this.WorkflowId != input.WorkflowId || (this.WorkflowId != null && !this.WorkflowId.Equals(input.WorkflowId))) return false;
 
             return true;
         }
@@ -87,10 +63,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.DdlLogs != null) hashCode = hashCode * 59 + this.DdlLogs.GetHashCode();
-                if (this.TotalCount != null) hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
-                if (this.KeeyDays != null) hashCode = hashCode * 59 + this.KeeyDays.GetHashCode();
-                if (this.SwitchStatus != null) hashCode = hashCode * 59 + this.SwitchStatus.GetHashCode();
+                if (this.WorkflowId != null) hashCode = hashCode * 59 + this.WorkflowId.GetHashCode();
                 return hashCode;
             }
         }

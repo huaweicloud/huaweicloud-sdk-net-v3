@@ -31,8 +31,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// <summary>
         /// **参数解释**：  日志保留天数。  **取值范围**：  不涉及。 
         /// </summary>
-        [JsonProperty("keey_days", NullValueHandling = NullValueHandling.Ignore)]
-        public int? KeeyDays { get; set; }
+        [JsonProperty("keep_days", NullValueHandling = NullValueHandling.Ignore)]
+        public int? KeepDays { get; set; }
 
         /// <summary>
         /// **参数解释**：  DDL日志下载开关状态。  **取值范围**：  - ON，开启。 - OFF，关闭。 
@@ -51,7 +51,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("class ListDdlLogsResponse {\n");
             sb.Append("  ddlLogs: ").Append(DdlLogs).Append("\n");
             sb.Append("  totalCount: ").Append(TotalCount).Append("\n");
-            sb.Append("  keeyDays: ").Append(KeeyDays).Append("\n");
+            sb.Append("  keepDays: ").Append(KeepDays).Append("\n");
             sb.Append("  switchStatus: ").Append(SwitchStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -73,7 +73,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (input == null) return false;
             if (this.DdlLogs != input.DdlLogs || (this.DdlLogs != null && input.DdlLogs != null && !this.DdlLogs.SequenceEqual(input.DdlLogs))) return false;
             if (this.TotalCount != input.TotalCount || (this.TotalCount != null && !this.TotalCount.Equals(input.TotalCount))) return false;
-            if (this.KeeyDays != input.KeeyDays || (this.KeeyDays != null && !this.KeeyDays.Equals(input.KeeyDays))) return false;
+            if (this.KeepDays != input.KeepDays || (this.KeepDays != null && !this.KeepDays.Equals(input.KeepDays))) return false;
             if (this.SwitchStatus != input.SwitchStatus || (this.SwitchStatus != null && !this.SwitchStatus.Equals(input.SwitchStatus))) return false;
 
             return true;
@@ -89,7 +89,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 var hashCode = 41;
                 if (this.DdlLogs != null) hashCode = hashCode * 59 + this.DdlLogs.GetHashCode();
                 if (this.TotalCount != null) hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
-                if (this.KeeyDays != null) hashCode = hashCode * 59 + this.KeeyDays.GetHashCode();
+                if (this.KeepDays != null) hashCode = hashCode * 59 + this.KeepDays.GetHashCode();
                 if (this.SwitchStatus != null) hashCode = hashCode * 59 + this.SwitchStatus.GetHashCode();
                 return hashCode;
             }

@@ -200,6 +200,30 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 操作EG事件中心通知事件
+        ///
+        /// 操作EG事件中心通知事件
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchExecuteEventsResponse> BatchExecuteEventsAsync(BatchExecuteEventsRequest batchExecuteEventsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/schedule-events", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchExecuteEventsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<BatchExecuteEventsResponse>(response);
+        }
+
+        public AsyncInvoker<BatchExecuteEventsResponse> BatchExecuteEventsAsyncInvoker(BatchExecuteEventsRequest batchExecuteEventsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/schedule-events", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchExecuteEventsRequest);
+            return new AsyncInvoker<BatchExecuteEventsResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchExecuteEventsResponse>);
+        }
+        
+        /// <summary>
         /// 批量设置自动备份策略
         ///
         /// 批量设置自动备份策略。
@@ -2024,6 +2048,30 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 查询事件列表
+        ///
+        /// 查询事件列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListEventsResponse> ListEventsAsync(ListEventsRequest listEventsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/schedule-events", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEventsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListEventsResponse>(response);
+        }
+
+        public AsyncInvoker<ListEventsResponse> ListEventsAsyncInvoker(ListEventsRequest listEventsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/schedule-events", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEventsRequest);
+            return new AsyncInvoker<ListEventsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListEventsResponse>);
+        }
+        
+        /// <summary>
         /// 查询实例特性列表
         ///
         /// 查询当前实例高级特性列表。
@@ -2392,7 +2440,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
             var urlParam = new Dictionary<string, string>();
             if (StringUtils.TryConvertToNonEmptyString(listKeyViewExecuteNodeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/key-view-execute-node", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listKeyViewExecuteNodeRequest);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listKeyViewExecuteNodeRequest);
             var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<ListKeyViewExecuteNodeResponse>(response);
         }
@@ -2402,7 +2450,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
             var urlParam = new Dictionary<string, string>();
             if (StringUtils.TryConvertToNonEmptyString(listKeyViewExecuteNodeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/key-view-execute-node", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listKeyViewExecuteNodeRequest);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listKeyViewExecuteNodeRequest);
             return new AsyncInvoker<ListKeyViewExecuteNodeResponse>(this, "POST", request, JsonUtils.DeSerialize<ListKeyViewExecuteNodeResponse>);
         }
         

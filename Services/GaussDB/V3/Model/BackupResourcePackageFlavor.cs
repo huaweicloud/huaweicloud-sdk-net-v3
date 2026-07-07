@@ -19,8 +19,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// <summary>
         /// **参数解释**：  备份资源包规格码。  **取值范围**：  不涉及。 
         /// </summary>
-        [JsonProperty("spce_code", NullValueHandling = NullValueHandling.Ignore)]
-        public string SpceCode { get; set; }
+        [JsonProperty("spec_code", NullValueHandling = NullValueHandling.Ignore)]
+        public string SpecCode { get; set; }
 
         /// <summary>
         /// **参数解释**：  备份资源包规格。  **取值范围**：  不涉及。 
@@ -37,7 +37,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class BackupResourcePackageFlavor {\n");
-            sb.Append("  spceCode: ").Append(SpceCode).Append("\n");
+            sb.Append("  specCode: ").Append(SpecCode).Append("\n");
             sb.Append("  volume: ").Append(Volume).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -57,7 +57,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public bool Equals(BackupResourcePackageFlavor input)
         {
             if (input == null) return false;
-            if (this.SpceCode != input.SpceCode || (this.SpceCode != null && !this.SpceCode.Equals(input.SpceCode))) return false;
+            if (this.SpecCode != input.SpecCode || (this.SpecCode != null && !this.SpecCode.Equals(input.SpecCode))) return false;
             if (this.Volume != input.Volume || (this.Volume != null && !this.Volume.Equals(input.Volume))) return false;
 
             return true;
@@ -71,7 +71,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.SpceCode != null) hashCode = hashCode * 59 + this.SpceCode.GetHashCode();
+                if (this.SpecCode != null) hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
                 if (this.Volume != null) hashCode = hashCode * 59 + this.Volume.GetHashCode();
                 return hashCode;
             }
