@@ -1,3 +1,58 @@
+# 3.1.201 2026-07-09
+
+### HuaweiCloud SDK BSS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the APIs `ListResourceSpecs`, `ShowRealNameAuthQrCode`, `ShowRealNameAuthStatus`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK BSSINTL
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the API `ListResourceSpecs`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK DBSS
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `ListDomainAllResource`
+    - `ShowDomainAllResourceCount`
+    - `ListAuditInstancesLast`
+    - `AddDatabaseSslKey`
+    - `ShowLogRetentionCommonSettings`
+    - `UpdateLogRetentionCommonSettings`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListAuditInstancesNew**
+    - changes of response param
+      - `+ instances`
+      - `- servers`
+
+### HuaweiCloud SDK GaussDB
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Deprecate the APIs `ListGaussMySqlInstances`, `ShowGaussMySqlInstanceInfo`, `ListGaussMySqlInstanceDetailInfo`
+
 # 3.1.200 2026-07-07
 
 ### HuaweiCloud SDK GaussDB

@@ -1626,6 +1626,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ListGaussMySqlInstanceDetailInfoResponse ListGaussMySqlInstanceDetailInfo(ListGaussMySqlInstanceDetailInfoRequest listGaussMySqlInstanceDetailInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1635,6 +1636,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             return JsonUtils.DeSerialize<ListGaussMySqlInstanceDetailInfoResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ListGaussMySqlInstanceDetailInfoResponse> ListGaussMySqlInstanceDetailInfoInvoker(ListGaussMySqlInstanceDetailInfoRequest listGaussMySqlInstanceDetailInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1674,6 +1676,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ListGaussMySqlInstancesResponse ListGaussMySqlInstances(ListGaussMySqlInstancesRequest listGaussMySqlInstancesRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1683,6 +1686,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             return JsonUtils.DeSerialize<ListGaussMySqlInstancesResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ListGaussMySqlInstancesResponse> ListGaussMySqlInstancesInvoker(ListGaussMySqlInstancesRequest listGaussMySqlInstancesRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -3046,6 +3050,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ShowGaussMySqlInstanceInfoResponse ShowGaussMySqlInstanceInfo(ShowGaussMySqlInstanceInfoRequest showGaussMySqlInstanceInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -3056,6 +3061,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             return JsonUtils.DeSerialize<ShowGaussMySqlInstanceInfoResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ShowGaussMySqlInstanceInfoResponse> ShowGaussMySqlInstanceInfoInvoker(ShowGaussMySqlInstanceInfoRequest showGaussMySqlInstanceInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();

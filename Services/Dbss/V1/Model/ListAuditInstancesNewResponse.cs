@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     {
 
         /// <summary>
-        /// 实例信息列表
+        /// 实例列表
         /// </summary>
-        [JsonProperty("servers", NullValueHandling = NullValueHandling.Ignore)]
-        public List<AuditInstanceListBean> Servers { get; set; }
+        [JsonProperty("instances", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ResponseAuditV2> Instances { get; set; }
 
         /// <summary>
-        /// 总数
+        /// 总记录数
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }
@@ -37,7 +37,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListAuditInstancesNewResponse {\n");
-            sb.Append("  servers: ").Append(Servers).Append("\n");
+            sb.Append("  instances: ").Append(Instances).Append("\n");
             sb.Append("  total: ").Append(Total).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -57,7 +57,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public bool Equals(ListAuditInstancesNewResponse input)
         {
             if (input == null) return false;
-            if (this.Servers != input.Servers || (this.Servers != null && input.Servers != null && !this.Servers.SequenceEqual(input.Servers))) return false;
+            if (this.Instances != input.Instances || (this.Instances != null && input.Instances != null && !this.Instances.SequenceEqual(input.Instances))) return false;
             if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
 
             return true;
@@ -71,7 +71,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Servers != null) hashCode = hashCode * 59 + this.Servers.GetHashCode();
+                if (this.Instances != null) hashCode = hashCode * 59 + this.Instances.GetHashCode();
                 if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
                 return hashCode;
             }

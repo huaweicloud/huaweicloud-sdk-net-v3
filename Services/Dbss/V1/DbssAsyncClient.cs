@@ -98,6 +98,34 @@ namespace HuaweiCloud.SDK.Dbss.V1
         }
         
         /// <summary>
+        /// 上传/更新数据库私钥
+        ///
+        /// 上传/更新数据库私钥
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<AddDatabaseSslKeyResponse> AddDatabaseSslKeyAsync(AddDatabaseSslKeyRequest addDatabaseSslKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(addDatabaseSslKeyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(addDatabaseSslKeyRequest.DbId, out var valueOfDbId)) urlParam.Add("db_id", valueOfDbId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/audit/{instance_id}/databases/{db_id}/sslkey", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", addDatabaseSslKeyRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<AddDatabaseSslKeyResponse>(response);
+        }
+
+        public AsyncInvoker<AddDatabaseSslKeyResponse> AddDatabaseSslKeyAsyncInvoker(AddDatabaseSslKeyRequest addDatabaseSslKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(addDatabaseSslKeyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(addDatabaseSslKeyRequest.DbId, out var valueOfDbId)) urlParam.Add("db_id", valueOfDbId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/audit/{instance_id}/databases/{db_id}/sslkey", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", addDatabaseSslKeyRequest);
+            return new AsyncInvoker<AddDatabaseSslKeyResponse>(this, "POST", request, JsonUtils.DeSerialize<AddDatabaseSslKeyResponse>);
+        }
+        
+        /// <summary>
         /// 添加RDS数据库[待下线]
         ///
         /// 添加RDS数据库
@@ -1530,6 +1558,30 @@ namespace HuaweiCloud.SDK.Dbss.V1
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        public async Task<ListAuditInstancesLastResponse> ListAuditInstancesLastAsync(ListAuditInstancesLastRequest listAuditInstancesLastRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/audit/instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuditInstancesLastRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListAuditInstancesLastResponse>(response);
+        }
+
+        public AsyncInvoker<ListAuditInstancesLastResponse> ListAuditInstancesLastAsyncInvoker(ListAuditInstancesLastRequest listAuditInstancesLastRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/audit/instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuditInstancesLastRequest);
+            return new AsyncInvoker<ListAuditInstancesLastResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAuditInstancesLastResponse>);
+        }
+        
+        /// <summary>
+        /// 查询审计实例列表[待下线]
+        ///
+        /// 查询审计实例列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
         public async Task<ListAuditInstancesNewResponse> ListAuditInstancesNewAsync(ListAuditInstancesNewRequest listAuditInstancesNewRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -2022,6 +2074,36 @@ namespace HuaweiCloud.SDK.Dbss.V1
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/db-encrypt/instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDbEncryptInstancesRequest);
             return new AsyncInvoker<ListDbEncryptInstancesResponse>(this, "POST", request, JsonUtils.DeSerialize<ListDbEncryptInstancesResponse>);
+        }
+        
+        /// <summary>
+        /// 云脑链接器获取资源列表
+        ///
+        /// 云脑链接器获取资源列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListDomainAllResourceResponse> ListDomainAllResourceAsync(ListDomainAllResourceRequest listDomainAllResourceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listDomainAllResourceRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(listDomainAllResourceRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(listDomainAllResourceRequest.RegionId, out var valueOfRegionId)) urlParam.Add("region_id", valueOfRegionId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/resource-manager/domains/{domain_id}/all-resources/{region_id}/{resource_type}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainAllResourceRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListDomainAllResourceResponse>(response);
+        }
+
+        public AsyncInvoker<ListDomainAllResourceResponse> ListDomainAllResourceAsyncInvoker(ListDomainAllResourceRequest listDomainAllResourceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listDomainAllResourceRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(listDomainAllResourceRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(listDomainAllResourceRequest.RegionId, out var valueOfRegionId)) urlParam.Add("region_id", valueOfRegionId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/resource-manager/domains/{domain_id}/all-resources/{region_id}/{resource_type}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainAllResourceRequest);
+            return new AsyncInvoker<ListDomainAllResourceResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDomainAllResourceResponse>);
         }
         
         /// <summary>
@@ -2999,6 +3081,36 @@ namespace HuaweiCloud.SDK.Dbss.V1
         }
         
         /// <summary>
+        /// 云脑链接器获取资源总量
+        ///
+        /// 云脑链接器获取资源总量
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowDomainAllResourceCountResponse> ShowDomainAllResourceCountAsync(ShowDomainAllResourceCountRequest showDomainAllResourceCountRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showDomainAllResourceCountRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(showDomainAllResourceCountRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(showDomainAllResourceCountRequest.RegionId, out var valueOfRegionId)) urlParam.Add("region_id", valueOfRegionId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/resource-manager/domains/{domain_id}/all-resources/{region_id}/{resource_type}/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainAllResourceCountRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowDomainAllResourceCountResponse>(response);
+        }
+
+        public AsyncInvoker<ShowDomainAllResourceCountResponse> ShowDomainAllResourceCountAsyncInvoker(ShowDomainAllResourceCountRequest showDomainAllResourceCountRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showDomainAllResourceCountRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(showDomainAllResourceCountRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(showDomainAllResourceCountRequest.RegionId, out var valueOfRegionId)) urlParam.Add("region_id", valueOfRegionId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/resource-manager/domains/{domain_id}/all-resources/{region_id}/{resource_type}/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainAllResourceCountRequest);
+            return new AsyncInvoker<ShowDomainAllResourceCountResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainAllResourceCountResponse>);
+        }
+        
+        /// <summary>
         /// 获取实例监控数据
         ///
         /// 获取实例监控数据
@@ -3046,6 +3158,32 @@ namespace HuaweiCloud.SDK.Dbss.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/instance/quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceQuotaRequest);
             return new AsyncInvoker<ShowInstanceQuotaResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceQuotaResponse>);
+        }
+        
+        /// <summary>
+        /// 获取审计实例日志保存时间配置
+        ///
+        /// 获取审计实例日志保存时间配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowLogRetentionCommonSettingsResponse> ShowLogRetentionCommonSettingsAsync(ShowLogRetentionCommonSettingsRequest showLogRetentionCommonSettingsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showLogRetentionCommonSettingsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/audit/{instance_id}/settings/common-settings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLogRetentionCommonSettingsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowLogRetentionCommonSettingsResponse>(response);
+        }
+
+        public AsyncInvoker<ShowLogRetentionCommonSettingsResponse> ShowLogRetentionCommonSettingsAsyncInvoker(ShowLogRetentionCommonSettingsRequest showLogRetentionCommonSettingsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showLogRetentionCommonSettingsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/audit/{instance_id}/settings/common-settings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLogRetentionCommonSettingsRequest);
+            return new AsyncInvoker<ShowLogRetentionCommonSettingsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLogRetentionCommonSettingsResponse>);
         }
         
         /// <summary>
@@ -3806,6 +3944,32 @@ namespace HuaweiCloud.SDK.Dbss.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/db-om/{instance_id}/name", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDbOmInstanceNameRequest);
             return new AsyncInvoker<UpdateDbOmInstanceNameResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDbOmInstanceNameResponse>);
+        }
+        
+        /// <summary>
+        /// 设置审计实例日志保存时间配置
+        ///
+        /// 设置审计实例日志保存时间配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateLogRetentionCommonSettingsResponse> UpdateLogRetentionCommonSettingsAsync(UpdateLogRetentionCommonSettingsRequest updateLogRetentionCommonSettingsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateLogRetentionCommonSettingsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/audit/{instance_id}/settings/common-settings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateLogRetentionCommonSettingsRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateLogRetentionCommonSettingsResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateLogRetentionCommonSettingsResponse> UpdateLogRetentionCommonSettingsAsyncInvoker(UpdateLogRetentionCommonSettingsRequest updateLogRetentionCommonSettingsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateLogRetentionCommonSettingsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/audit/{instance_id}/settings/common-settings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateLogRetentionCommonSettingsRequest);
+            return new AsyncInvoker<UpdateLogRetentionCommonSettingsResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateLogRetentionCommonSettingsResponse>);
         }
         
         /// <summary>

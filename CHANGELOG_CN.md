@@ -1,3 +1,58 @@
+# 3.1.201 2026-07-09
+
+### HuaweiCloud SDK BSS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`ListResourceSpecs`、`ShowRealNameAuthQrCode`、`ShowRealNameAuthStatus`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK BSSINTL
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`ListResourceSpecs`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK DBSS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持以下接口：
+    - `ListDomainAllResource`
+    - `ShowDomainAllResourceCount`
+    - `ListAuditInstancesLast`
+    - `AddDatabaseSslKey`
+    - `ShowLogRetentionCommonSettings`
+    - `UpdateLogRetentionCommonSettings`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListAuditInstancesNew**
+    - 响应参数变更
+      - `+ instances`
+      - `- servers`
+
+### HuaweiCloud SDK GaussDB
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 废弃接口`ListGaussMySqlInstances`、`ShowGaussMySqlInstanceInfo`、`ListGaussMySqlInstanceDetailInfo`
+
 # 3.1.200 2026-07-07
 
 ### HuaweiCloud SDK GaussDB

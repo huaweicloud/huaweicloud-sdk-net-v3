@@ -1425,6 +1425,30 @@ namespace HuaweiCloud.SDK.Bss.V2
         }
         
         /// <summary>
+        /// 查询云服务类型资源规格
+        ///
+        /// 功能描述：根据云服务类型、资源类型、区域等条件查询资源规格列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListResourceSpecsResponse ListResourceSpecs(ListResourceSpecsRequest listResourceSpecsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/products/resource-specs-query", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listResourceSpecsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ListResourceSpecsResponse>(response);
+        }
+
+        public SyncInvoker<ListResourceSpecsResponse> ListResourceSpecsInvoker(ListResourceSpecsRequest listResourceSpecsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/products/resource-specs-query", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listResourceSpecsRequest);
+            return new SyncInvoker<ListResourceSpecsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListResourceSpecsResponse>);
+        }
+        
+        /// <summary>
         /// 查询资源类型列表
         ///
         /// 伙伴在伙伴销售平台查询资源类型的列表。
@@ -2141,6 +2165,54 @@ namespace HuaweiCloud.SDK.Bss.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/enterprises/multi-accounts/transfer-amount", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMultiAccountTransferAmountRequest);
             return new SyncInvoker<ShowMultiAccountTransferAmountResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowMultiAccountTransferAmountResponse>);
+        }
+        
+        /// <summary>
+        /// 获取人脸实名认证二维码
+        ///
+        /// 功能描述：客户在agent使用时获取人脸实名认证二维码地址，扫码完成实名认证
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowRealNameAuthQrCodeResponse ShowRealNameAuthQrCode(ShowRealNameAuthQrCodeRequest showRealNameAuthQrCodeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/customers/real-name-auth-qrcode", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRealNameAuthQrCodeRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowRealNameAuthQrCodeResponse>(response);
+        }
+
+        public SyncInvoker<ShowRealNameAuthQrCodeResponse> ShowRealNameAuthQrCodeInvoker(ShowRealNameAuthQrCodeRequest showRealNameAuthQrCodeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/customers/real-name-auth-qrcode", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRealNameAuthQrCodeRequest);
+            return new SyncInvoker<ShowRealNameAuthQrCodeResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRealNameAuthQrCodeResponse>);
+        }
+        
+        /// <summary>
+        /// 查询实名认证状态
+        ///
+        /// 功能描述：客户在agent使用时查询自己的实名认证状态和类型
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowRealNameAuthStatusResponse ShowRealNameAuthStatus(ShowRealNameAuthStatusRequest showRealNameAuthStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/customers/real-name-auth-status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRealNameAuthStatusRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowRealNameAuthStatusResponse>(response);
+        }
+
+        public SyncInvoker<ShowRealNameAuthStatusResponse> ShowRealNameAuthStatusInvoker(ShowRealNameAuthStatusRequest showRealNameAuthStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/customers/real-name-auth-status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRealNameAuthStatusRequest);
+            return new SyncInvoker<ShowRealNameAuthStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRealNameAuthStatusResponse>);
         }
         
         /// <summary>
