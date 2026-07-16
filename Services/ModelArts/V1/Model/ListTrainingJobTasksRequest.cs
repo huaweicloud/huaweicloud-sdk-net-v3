@@ -1,0 +1,82 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.ModelArts.V1.Model
+{
+    /// <summary>
+    /// Request Object
+    /// </summary>
+    public class ListTrainingJobTasksRequest 
+    {
+
+        /// <summary>
+        /// **参数解释**：训练作业ID。获取方法请参见[查询训练作业列表](ListTrainingJobs.xml)。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
+        /// </summary>
+        [SDKProperty("training_job_id", IsPath = true)]
+        [JsonProperty("training_job_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string TrainingJobId { get; set; }
+
+        /// <summary>
+        /// 归属于训练作业的第几次调度
+        /// </summary>
+        [SDKProperty("schedule_count", IsQuery = true)]
+        [JsonProperty("schedule_count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ScheduleCount { get; set; }
+
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class ListTrainingJobTasksRequest {\n");
+            sb.Append("  trainingJobId: ").Append(TrainingJobId).Append("\n");
+            sb.Append("  scheduleCount: ").Append(ScheduleCount).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as ListTrainingJobTasksRequest);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(ListTrainingJobTasksRequest input)
+        {
+            if (input == null) return false;
+            if (this.TrainingJobId != input.TrainingJobId || (this.TrainingJobId != null && !this.TrainingJobId.Equals(input.TrainingJobId))) return false;
+            if (this.ScheduleCount != input.ScheduleCount || (this.ScheduleCount != null && !this.ScheduleCount.Equals(input.ScheduleCount))) return false;
+
+            return true;
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                var hashCode = 41;
+                if (this.TrainingJobId != null) hashCode = hashCode * 59 + this.TrainingJobId.GetHashCode();
+                if (this.ScheduleCount != null) hashCode = hashCode * 59 + this.ScheduleCount.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

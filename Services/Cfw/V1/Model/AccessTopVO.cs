@@ -17,6 +17,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
+        /// **参数解释**： 所有命中规则列表 **取值范围**： 不涉及
+        /// </summary>
+        [JsonProperty("all_hit_rule_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<AccessTopMemberVO> AllHitRuleList { get; set; }
+
+        /// <summary>
         /// **参数解释**： 阻断次数 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("deny_count", NullValueHandling = NullValueHandling.Ignore)]
@@ -133,6 +139,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class AccessTopVO {\n");
+            sb.Append("  allHitRuleList: ").Append(AllHitRuleList).Append("\n");
             sb.Append("  denyCount: ").Append(DenyCount).Append("\n");
             sb.Append("  denyTopOneAclId: ").Append(DenyTopOneAclId).Append("\n");
             sb.Append("  denyTopOneAclName: ").Append(DenyTopOneAclName).Append("\n");
@@ -169,6 +176,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public bool Equals(AccessTopVO input)
         {
             if (input == null) return false;
+            if (this.AllHitRuleList != input.AllHitRuleList || (this.AllHitRuleList != null && input.AllHitRuleList != null && !this.AllHitRuleList.SequenceEqual(input.AllHitRuleList))) return false;
             if (this.DenyCount != input.DenyCount || (this.DenyCount != null && !this.DenyCount.Equals(input.DenyCount))) return false;
             if (this.DenyTopOneAclId != input.DenyTopOneAclId || (this.DenyTopOneAclId != null && !this.DenyTopOneAclId.Equals(input.DenyTopOneAclId))) return false;
             if (this.DenyTopOneAclName != input.DenyTopOneAclName || (this.DenyTopOneAclName != null && !this.DenyTopOneAclName.Equals(input.DenyTopOneAclName))) return false;
@@ -199,6 +207,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.AllHitRuleList != null) hashCode = hashCode * 59 + this.AllHitRuleList.GetHashCode();
                 if (this.DenyCount != null) hashCode = hashCode * 59 + this.DenyCount.GetHashCode();
                 if (this.DenyTopOneAclId != null) hashCode = hashCode * 59 + this.DenyTopOneAclId.GetHashCode();
                 if (this.DenyTopOneAclName != null) hashCode = hashCode * 59 + this.DenyTopOneAclName.GetHashCode();

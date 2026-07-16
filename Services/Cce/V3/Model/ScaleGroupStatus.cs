@@ -191,6 +191,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public int? UnpaidScaleNodeCount { get; set; }
 
         /// <summary>
+        /// **参数解释**： 伸缩组就绪节点个数 **取值范围**： 不涉及
+        /// </summary>
+        [JsonProperty("activeNodeCount", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ActiveNodeCount { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("existingNodeCount", NullValueHandling = NullValueHandling.Ignore)]
@@ -230,6 +236,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  phase: ").Append(Phase).Append("\n");
             sb.Append("  desiredNodeCount: ").Append(DesiredNodeCount).Append("\n");
             sb.Append("  unpaidScaleNodeCount: ").Append(UnpaidScaleNodeCount).Append("\n");
+            sb.Append("  activeNodeCount: ").Append(ActiveNodeCount).Append("\n");
             sb.Append("  existingNodeCount: ").Append(ExistingNodeCount).Append("\n");
             sb.Append("  upcomingNodeCount: ").Append(UpcomingNodeCount).Append("\n");
             sb.Append("  scaleDownDisabledNodeCount: ").Append(ScaleDownDisabledNodeCount).Append("\n");
@@ -259,6 +266,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.Phase != input.Phase) return false;
             if (this.DesiredNodeCount != input.DesiredNodeCount || (this.DesiredNodeCount != null && !this.DesiredNodeCount.Equals(input.DesiredNodeCount))) return false;
             if (this.UnpaidScaleNodeCount != input.UnpaidScaleNodeCount || (this.UnpaidScaleNodeCount != null && !this.UnpaidScaleNodeCount.Equals(input.UnpaidScaleNodeCount))) return false;
+            if (this.ActiveNodeCount != input.ActiveNodeCount || (this.ActiveNodeCount != null && !this.ActiveNodeCount.Equals(input.ActiveNodeCount))) return false;
             if (this.ExistingNodeCount != input.ExistingNodeCount || (this.ExistingNodeCount != null && !this.ExistingNodeCount.Equals(input.ExistingNodeCount))) return false;
             if (this.UpcomingNodeCount != input.UpcomingNodeCount || (this.UpcomingNodeCount != null && !this.UpcomingNodeCount.Equals(input.UpcomingNodeCount))) return false;
             if (this.ScaleDownDisabledNodeCount != input.ScaleDownDisabledNodeCount || (this.ScaleDownDisabledNodeCount != null && !this.ScaleDownDisabledNodeCount.Equals(input.ScaleDownDisabledNodeCount))) return false;
@@ -282,6 +290,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 hashCode = hashCode * 59 + this.Phase.GetHashCode();
                 if (this.DesiredNodeCount != null) hashCode = hashCode * 59 + this.DesiredNodeCount.GetHashCode();
                 if (this.UnpaidScaleNodeCount != null) hashCode = hashCode * 59 + this.UnpaidScaleNodeCount.GetHashCode();
+                if (this.ActiveNodeCount != null) hashCode = hashCode * 59 + this.ActiveNodeCount.GetHashCode();
                 if (this.ExistingNodeCount != null) hashCode = hashCode * 59 + this.ExistingNodeCount.GetHashCode();
                 if (this.UpcomingNodeCount != null) hashCode = hashCode * 59 + this.UpcomingNodeCount.GetHashCode();
                 if (this.ScaleDownDisabledNodeCount != null) hashCode = hashCode * 59 + this.ScaleDownDisabledNodeCount.GetHashCode();

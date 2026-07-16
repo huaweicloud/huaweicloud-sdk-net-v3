@@ -17,16 +17,16 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 告警配置列表
-        /// </summary>
-        [JsonProperty("alarm_configs", NullValueHandling = NullValueHandling.Ignore)]
-        public List<AlarmConfig> AlarmConfigs { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
         public Object Data { get; set; }
+
+        /// <summary>
+        /// 告警配置列表
+        /// </summary>
+        [JsonProperty("alarm_configs", NullValueHandling = NullValueHandling.Ignore)]
+        public List<AlarmConfig> AlarmConfigs { get; set; }
 
 
 
@@ -37,8 +37,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShowAlarmConfigResponse {\n");
-            sb.Append("  alarmConfigs: ").Append(AlarmConfigs).Append("\n");
             sb.Append("  data: ").Append(Data).Append("\n");
+            sb.Append("  alarmConfigs: ").Append(AlarmConfigs).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -57,8 +57,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public bool Equals(ShowAlarmConfigResponse input)
         {
             if (input == null) return false;
-            if (this.AlarmConfigs != input.AlarmConfigs || (this.AlarmConfigs != null && input.AlarmConfigs != null && !this.AlarmConfigs.SequenceEqual(input.AlarmConfigs))) return false;
             if (this.Data != input.Data || (this.Data != null && !this.Data.Equals(input.Data))) return false;
+            if (this.AlarmConfigs != input.AlarmConfigs || (this.AlarmConfigs != null && input.AlarmConfigs != null && !this.AlarmConfigs.SequenceEqual(input.AlarmConfigs))) return false;
 
             return true;
         }
@@ -71,8 +71,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.AlarmConfigs != null) hashCode = hashCode * 59 + this.AlarmConfigs.GetHashCode();
                 if (this.Data != null) hashCode = hashCode * 59 + this.Data.GetHashCode();
+                if (this.AlarmConfigs != null) hashCode = hashCode * 59 + this.AlarmConfigs.GetHashCode();
                 return hashCode;
             }
         }

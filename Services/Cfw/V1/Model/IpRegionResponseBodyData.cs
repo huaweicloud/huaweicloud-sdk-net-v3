@@ -38,13 +38,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// **参数解释**： 区域类型 **取值范围**： - 0：国家 - 1：省份 - 2：大洲 
         /// </summary>
         [JsonProperty("region_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string RegionType { get; set; }
+        public int? RegionType { get; set; }
 
         /// <summary>
         /// **参数解释**： 上级区域ID **取值范围**： 不涉及 
         /// </summary>
         [JsonProperty("superior_region_id", NullValueHandling = NullValueHandling.Ignore)]
-        public int? SuperiorRegionId { get; set; }
+        public string SuperiorRegionId { get; set; }
 
 
 

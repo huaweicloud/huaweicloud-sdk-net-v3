@@ -47,6 +47,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public NodeManagement NodeManagementUpdate { get; set; }
 
         /// <summary>
+        /// 节点池自定义安全组相关配置。支持节点池新扩容节点绑定指定的安全组。  - 未指定安全组ID，新建节点将添加Node节点默认安全组。  - 指定有效安全组ID，新建节点将使用指定安全组。  - 指定安全组，应避免对CCE运行依赖的端口规则进行修改。[详细设置请参考[集群安全组规则配置](https://support.huaweicloud.com/cce_faq/cce_faq_00265.html)。](tag:hws)[详细设置请参考[集群安全组规则配置](https://support.huaweicloud.com/intl/zh-cn/cce_faq/cce_faq_00265.html)。](tag:hws_hk) 
+        /// </summary>
+        [JsonProperty("customSecurityGroups", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> CustomSecurityGroups { get; set; }
+
+        /// <summary>
         /// **参数解释：** 是否同步K8S污点。 **约束限制**： 不涉及 **取值范围：** - 填写为refresh，K8S污点的改动将会被同步更新到存量节点上。 - 填写为ignore，节点池K8S污点将不会同步更新到存量节点上。  **默认取值：** 无
         /// </summary>
         [JsonProperty("taintPolicyOnExistingNodes", NullValueHandling = NullValueHandling.Ignore)]
@@ -84,6 +90,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  ignoreInitialNodeCount: ").Append(IgnoreInitialNodeCount).Append("\n");
             sb.Append("  autoscaling: ").Append(Autoscaling).Append("\n");
             sb.Append("  nodeManagementUpdate: ").Append(NodeManagementUpdate).Append("\n");
+            sb.Append("  customSecurityGroups: ").Append(CustomSecurityGroups).Append("\n");
             sb.Append("  taintPolicyOnExistingNodes: ").Append(TaintPolicyOnExistingNodes).Append("\n");
             sb.Append("  labelPolicyOnExistingNodes: ").Append(LabelPolicyOnExistingNodes).Append("\n");
             sb.Append("  userTagsPolicyOnExistingNodes: ").Append(UserTagsPolicyOnExistingNodes).Append("\n");
@@ -111,6 +118,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.IgnoreInitialNodeCount != input.IgnoreInitialNodeCount || (this.IgnoreInitialNodeCount != null && !this.IgnoreInitialNodeCount.Equals(input.IgnoreInitialNodeCount))) return false;
             if (this.Autoscaling != input.Autoscaling || (this.Autoscaling != null && !this.Autoscaling.Equals(input.Autoscaling))) return false;
             if (this.NodeManagementUpdate != input.NodeManagementUpdate || (this.NodeManagementUpdate != null && !this.NodeManagementUpdate.Equals(input.NodeManagementUpdate))) return false;
+            if (this.CustomSecurityGroups != input.CustomSecurityGroups || (this.CustomSecurityGroups != null && input.CustomSecurityGroups != null && !this.CustomSecurityGroups.SequenceEqual(input.CustomSecurityGroups))) return false;
             if (this.TaintPolicyOnExistingNodes != input.TaintPolicyOnExistingNodes || (this.TaintPolicyOnExistingNodes != null && !this.TaintPolicyOnExistingNodes.Equals(input.TaintPolicyOnExistingNodes))) return false;
             if (this.LabelPolicyOnExistingNodes != input.LabelPolicyOnExistingNodes || (this.LabelPolicyOnExistingNodes != null && !this.LabelPolicyOnExistingNodes.Equals(input.LabelPolicyOnExistingNodes))) return false;
             if (this.UserTagsPolicyOnExistingNodes != input.UserTagsPolicyOnExistingNodes || (this.UserTagsPolicyOnExistingNodes != null && !this.UserTagsPolicyOnExistingNodes.Equals(input.UserTagsPolicyOnExistingNodes))) return false;
@@ -132,6 +140,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.IgnoreInitialNodeCount != null) hashCode = hashCode * 59 + this.IgnoreInitialNodeCount.GetHashCode();
                 if (this.Autoscaling != null) hashCode = hashCode * 59 + this.Autoscaling.GetHashCode();
                 if (this.NodeManagementUpdate != null) hashCode = hashCode * 59 + this.NodeManagementUpdate.GetHashCode();
+                if (this.CustomSecurityGroups != null) hashCode = hashCode * 59 + this.CustomSecurityGroups.GetHashCode();
                 if (this.TaintPolicyOnExistingNodes != null) hashCode = hashCode * 59 + this.TaintPolicyOnExistingNodes.GetHashCode();
                 if (this.LabelPolicyOnExistingNodes != null) hashCode = hashCode * 59 + this.LabelPolicyOnExistingNodes.GetHashCode();
                 if (this.UserTagsPolicyOnExistingNodes != null) hashCode = hashCode * 59 + this.UserTagsPolicyOnExistingNodes.GetHashCode();

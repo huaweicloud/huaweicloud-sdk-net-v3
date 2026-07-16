@@ -82,6 +82,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("deleteStatus", NullValueHandling = NullValueHandling.Ignore)]
         public Object DeleteStatus { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 集群当前详细状态列表，详情参见Condition类型定义。 **约束限制**： 不涉及
+        /// </summary>
+        [JsonProperty("conditions", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ClusterCondition> Conditions { get; set; }
+
 
 
         /// <summary>
@@ -102,6 +108,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  lockSourceId: ").Append(LockSourceId).Append("\n");
             sb.Append("  deleteOption: ").Append(DeleteOption).Append("\n");
             sb.Append("  deleteStatus: ").Append(DeleteStatus).Append("\n");
+            sb.Append("  conditions: ").Append(Conditions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -131,6 +138,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.LockSourceId != input.LockSourceId || (this.LockSourceId != null && !this.LockSourceId.Equals(input.LockSourceId))) return false;
             if (this.DeleteOption != input.DeleteOption || (this.DeleteOption != null && !this.DeleteOption.Equals(input.DeleteOption))) return false;
             if (this.DeleteStatus != input.DeleteStatus || (this.DeleteStatus != null && !this.DeleteStatus.Equals(input.DeleteStatus))) return false;
+            if (this.Conditions != input.Conditions || (this.Conditions != null && input.Conditions != null && !this.Conditions.SequenceEqual(input.Conditions))) return false;
 
             return true;
         }
@@ -154,6 +162,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.LockSourceId != null) hashCode = hashCode * 59 + this.LockSourceId.GetHashCode();
                 if (this.DeleteOption != null) hashCode = hashCode * 59 + this.DeleteOption.GetHashCode();
                 if (this.DeleteStatus != null) hashCode = hashCode * 59 + this.DeleteStatus.GetHashCode();
+                if (this.Conditions != null) hashCode = hashCode * 59 + this.Conditions.GetHashCode();
                 return hashCode;
             }
         }

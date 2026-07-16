@@ -246,12 +246,17 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         }
 
         /// <summary>
-        /// 服务转发模式，支持以下两种实现：  - iptables：社区传统的kube-proxy模式，完全以iptables规则的方式来实现service负载均衡。该方式最主要的问题是在服务多的时候产生太多的iptables规则，非增量式更新会引入一定的时延，大规模情况下有明显的性能问题。 - ipvs：主导开发并在社区获得广泛支持的kube-proxy模式，采用增量式更新，吞吐更高，速度更快，并可以保证service更新期间连接保持不断开，适用于大规模场景。  &gt; 默认使用iptables转发模式。 
+        /// 服务转发模式，支持以下三种实现：  - nftables：仅1.35集群及以上版本支持。替代iptables的新一代转发模式，规则管理高效、性能更优，原生支持IPv6，适配各类Service规模与集群场景，兼顾高并发短链接与大规模集群需求。 - iptables：社区传统的kube-proxy模式，完全以iptables规则的方式来实现service负载均衡。该方式最主要的问题是在服务多的时候产生太多的iptables规则，非增量式更新会引入一定的时延，大规模情况下有明显的性能问题。 - ipvs：主导开发并在社区获得广泛支持的kube-proxy模式，采用增量式更新，吞吐更高，速度更快，并可以保证service更新期间连接保持不断开，适用于大规模场景。  &gt; 1.35及以上版本默认使用nftables转发模式，1.35以下版本默认使用iptables转发模式。 
         /// </summary>
-        /// <value>服务转发模式，支持以下两种实现：  - iptables：社区传统的kube-proxy模式，完全以iptables规则的方式来实现service负载均衡。该方式最主要的问题是在服务多的时候产生太多的iptables规则，非增量式更新会引入一定的时延，大规模情况下有明显的性能问题。 - ipvs：主导开发并在社区获得广泛支持的kube-proxy模式，采用增量式更新，吞吐更高，速度更快，并可以保证service更新期间连接保持不断开，适用于大规模场景。  &gt; 默认使用iptables转发模式。 </value>
+        /// <value>服务转发模式，支持以下三种实现：  - nftables：仅1.35集群及以上版本支持。替代iptables的新一代转发模式，规则管理高效、性能更优，原生支持IPv6，适配各类Service规模与集群场景，兼顾高并发短链接与大规模集群需求。 - iptables：社区传统的kube-proxy模式，完全以iptables规则的方式来实现service负载均衡。该方式最主要的问题是在服务多的时候产生太多的iptables规则，非增量式更新会引入一定的时延，大规模情况下有明显的性能问题。 - ipvs：主导开发并在社区获得广泛支持的kube-proxy模式，采用增量式更新，吞吐更高，速度更快，并可以保证service更新期间连接保持不断开，适用于大规模场景。  &gt; 1.35及以上版本默认使用nftables转发模式，1.35以下版本默认使用iptables转发模式。 </value>
         [JsonConverter(typeof(EnumClassConverter<KubeProxyModeEnum>))]
         public class KubeProxyModeEnum
         {
+            /// <summary>
+            /// Enum NFTABLES for value: nftables
+            /// </summary>
+            public static readonly KubeProxyModeEnum NFTABLES = new KubeProxyModeEnum("nftables");
+
             /// <summary>
             /// Enum IPTABLES for value: iptables
             /// </summary>
@@ -265,6 +270,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             private static readonly Dictionary<string, KubeProxyModeEnum> StaticFields =
             new Dictionary<string, KubeProxyModeEnum>()
             {
+                { "nftables", NFTABLES },
                 { "iptables", IPTABLES },
                 { "ipvs", IPVS },
             };
@@ -378,7 +384,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
         /// <summary>
-        /// **参数解释：** 集群规格，当集群为v1.15及以上版本时支持创建后变更，详情请参见[变更集群规格](ResizeCluster.xml)。请按实际业务需求进行选择 **约束限制：** 不涉及 **取值范围：** - cce.s1.small: 小规模单控制节点CCE集群（最大50节点） - cce.s1.medium: 中等规模单控制节点CCE集群（最大200节点） - cce.s1.large: 大规模单控制节点CCE集群（最大1000节点） - cce.s2.small: 小规模三控制节点CCE集群（最大50节点） - cce.s2.medium: 中等规模三控制节点CCE集群（最大200节点） - cce.s2.large: 大规模三控制节点CCE集群（最大1000节点） - cce.s2.xlarge: 超大规模三控制节点CCE集群（最大2000节点） [- cce.s3.small: 小规模五控制节点CCE集群（最大50节点）](tag:hcs,hcs_sm) [- cce.s3.medium: 中等规模五控制节点CCE集群（最大200节点）](tag:hcs,hcs_sm) [- cce.s3.large: 大规模五控制节点CCE集群（最大1000节点）](tag:hcs,hcs_sm) [- cce.s3.xlarge: 超大规模五控制节点CCE集群（最大2000节点）](tag:hcs,hcs_sm)  [专属云特殊规格如下：](tag:hws,hws_hk,hcs,hcs_sm) [- cce.dec.s1.small: 小规模单控制节点的专属云CCE集群（最大50节点）](tag:hws,hws_hk) [- cce.dec.s1.medium: 中等规模单控制节点的专属云CCE集群（最大200节点）](tag:hws,hws_hk) [- cce.dec.s1.large: 大规模单控制节点的专属云CCE集群（最大1000节点）](tag:hws,hws_hk) [- cce.dec.s1.xlarge: 超大规模单控制节点的专属云CCE集群（最大2000节点）](tag:hws,hws_hk) [- cce.dec.s2.small: 小规模三控制节点的专属云CCE集群（最大50节点）](tag:hws,hws_hk) [- cce.dec.s2.medium: 中等规模三控制节点的专属云CCE集群（最大200节点）](tag:hws,hws_hk) [- cce.dec.s2.large: 大规模三控制节点的专属云CCE集群（最大1000节点）](tag:hws,hws_hk) [- cce.dec.s2.xlarge: 超大规模三控制节点的专属云CCE集群（最大2000节点）](tag:hws,hws_hk) [- cce.dec.s3.small: 小规模五控制节点的专属云CCE集群（最大50节点）](tag:hcs,hcs_sm) [- cce.dec.s3.medium: 中等规模五控制节点的专属云CCE集群（最大200节点）](tag:hcs,hcs_sm) [- cce.dec.s3.large: 大规模五控制节点的专属云CCE集群（最大1000节点）](tag:hcs,hcs_sm) [- cce.dec.s3.xlarge: 超大规模五控制节点的专属云CCE集群（最大2000节点）](tag:hcs,hcs_sm)  **默认取值：** 不涉及  &gt;    关于规格参数中的字段说明如下： &gt;    - s1：单控制节点的集群，控制节点数为1。单控制节点故障后，集群将不可用，但已运行工作负载不受影响。 &gt;    - s2：三控制节点的集群，即高可用集群，控制节点数为3。当某个控制节点故障时，集群仍然可用。 [&gt;   - s3：五控制节点的集群，即超高可用集群，控制节点数为5。当某2个控制节点故障时，集群仍然可用。](tag:hcs,hcs_sm) [&gt;   - dec：表示专属云的CCE集群规格。例如cce.dec.s1.small表示小规模单控制节点的专属云CCE集群（最大50节点）。](tag:hws,hws_hk) &gt;    - small：表示集群支持管理的最大节点规模为50节点。 &gt;    - medium：表示集群支持管理的最大节点规模为200节点。 &gt;    - large：表示集群支持管理的最大节点规模为1000节点。 &gt;    - xlarge：表示集群支持管理的最大节点规模为2000节点。 
+        /// **参数解释：** 集群规格，当集群为v1.15及以上版本时支持创建后变更，详情请参见[变更集群规格](ResizeCluster.xml)。请按实际业务需求进行选择 **约束限制：** 不涉及 **取值范围：** - cce.s1.small: 小规模单控制节点CCE集群（最大50节点） - cce.s1.medium: 中等规模单控制节点CCE集群（最大200节点） - cce.s1.large: 大规模单控制节点CCE集群（最大1000节点） - cce.s2.small: 小规模三控制节点CCE集群（最大50节点） - cce.s2.medium: 中等规模三控制节点CCE集群（最大200节点） - cce.s2.large: 大规模三控制节点CCE集群（最大1000节点） - cce.s2.xlarge: 超大规模三控制节点CCE集群（最大2000节点） [- cce.s3.small: 小规模五控制节点CCE集群（最大50节点）](tag:hcs,hcs_sm) [- cce.s3.medium: 中等规模五控制节点CCE集群（最大200节点）](tag:hcs,hcs_sm) [- cce.s3.large: 大规模五控制节点CCE集群（最大1000节点）](tag:hcs,hcs_sm) [- cce.s3.xlarge: 超大规模五控制节点CCE集群（最大2000节点）](tag:hcs,hcs_sm)  [专属云特殊规格如下：](tag:hws,hws_hk,hcs,hcs_sm) [- cce.dec.s1.small: 小规模单控制节点的专属云CCE集群（最大50节点）](tag:hws,hws_hk) [- cce.dec.s1.medium: 中等规模单控制节点的专属云CCE集群（最大200节点）](tag:hws,hws_hk) [- cce.dec.s1.large: 大规模单控制节点的专属云CCE集群（最大1000节点）](tag:hws,hws_hk) [- cce.dec.s1.xlarge: 超大规模单控制节点的专属云CCE集群（最大2000节点）](tag:hws,hws_hk) [- cce.dec.s2.small: 小规模三控制节点的专属云CCE集群（最大50节点）](tag:hws,hws_hk) [- cce.dec.s2.medium: 中等规模三控制节点的专属云CCE集群（最大200节点）](tag:hws,hws_hk) [- cce.dec.s2.large: 大规模三控制节点的专属云CCE集群（最大1000节点）](tag:hws,hws_hk) [- cce.dec.s2.xlarge: 超大规模三控制节点的专属云CCE集群（最大2000节点）](tag:hws,hws_hk) [- cce.dec.s3.small: 小规模五控制节点的专属云CCE集群（最大50节点）](tag:hcs,hcs_sm) [- cce.dec.s3.medium: 中等规模五控制节点的专属云CCE集群（最大200节点）](tag:hcs,hcs_sm) [- cce.dec.s3.large: 大规模五控制节点的专属云CCE集群（最大1000节点）](tag:hcs,hcs_sm) [- cce.dec.s3.xlarge: 超大规模五控制节点的专属云CCE集群（最大2000节点）](tag:hcs,hcs_sm)  **默认取值：** cce.s1.small [专属云场景默认为cce.dec.s1.small](tag:hws,hws_hk,hcs,hcs_sm)  &gt;    关于规格参数中的字段说明如下： &gt;    - s1：单控制节点的集群，控制节点数为1。单控制节点故障后，集群将不可用，但已运行工作负载不受影响。 &gt;    - s2：三控制节点的集群，即高可用集群，控制节点数为3。当某个控制节点故障时，集群仍然可用。 [&gt;   - s3：五控制节点的集群，即超高可用集群，控制节点数为5。当某2个控制节点故障时，集群仍然可用。](tag:hcs,hcs_sm) [&gt;   - dec：表示专属云的CCE集群规格。例如cce.dec.s1.small表示小规模单控制节点的专属云CCE集群（最大50节点）。](tag:hws,hws_hk) &gt;    - small：表示集群支持管理的最大节点规模为50节点。 &gt;    - medium：表示集群支持管理的最大节点规模为200节点。 &gt;    - large：表示集群支持管理的最大节点规模为1000节点。 &gt;    - xlarge：表示集群支持管理的最大节点规模为2000节点。 
         /// </summary>
         [JsonProperty("flavor", NullValueHandling = NullValueHandling.Ignore)]
         public string Flavor { get; set; }
@@ -480,7 +486,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public List<ResourceTag> ClusterTags { get; set; }
 
         /// <summary>
-        /// 服务转发模式，支持以下两种实现：  - iptables：社区传统的kube-proxy模式，完全以iptables规则的方式来实现service负载均衡。该方式最主要的问题是在服务多的时候产生太多的iptables规则，非增量式更新会引入一定的时延，大规模情况下有明显的性能问题。 - ipvs：主导开发并在社区获得广泛支持的kube-proxy模式，采用增量式更新，吞吐更高，速度更快，并可以保证service更新期间连接保持不断开，适用于大规模场景。  &gt; 默认使用iptables转发模式。 
+        /// 服务转发模式，支持以下三种实现：  - nftables：仅1.35集群及以上版本支持。替代iptables的新一代转发模式，规则管理高效、性能更优，原生支持IPv6，适配各类Service规模与集群场景，兼顾高并发短链接与大规模集群需求。 - iptables：社区传统的kube-proxy模式，完全以iptables规则的方式来实现service负载均衡。该方式最主要的问题是在服务多的时候产生太多的iptables规则，非增量式更新会引入一定的时延，大规模情况下有明显的性能问题。 - ipvs：主导开发并在社区获得广泛支持的kube-proxy模式，采用增量式更新，吞吐更高，速度更快，并可以保证service更新期间连接保持不断开，适用于大规模场景。  &gt; 1.35及以上版本默认使用nftables转发模式，1.35以下版本默认使用iptables转发模式。 
         /// </summary>
         [JsonProperty("kubeProxyMode", NullValueHandling = NullValueHandling.Ignore)]
         public KubeProxyModeEnum KubeProxyMode { get; set; }
@@ -538,6 +544,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("encryptionConfig", NullValueHandling = NullValueHandling.Ignore)]
         public EncryptionConfig EncryptionConfig { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("certificateAuthority", NullValueHandling = NullValueHandling.Ignore)]
+        public CertificateAuthority CertificateAuthority { get; set; }
+
 
 
         /// <summary>
@@ -577,6 +589,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  configurationsOverride: ").Append(ConfigurationsOverride).Append("\n");
             sb.Append("  clusterOps: ").Append(ClusterOps).Append("\n");
             sb.Append("  encryptionConfig: ").Append(EncryptionConfig).Append("\n");
+            sb.Append("  certificateAuthority: ").Append(CertificateAuthority).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -625,6 +638,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.ConfigurationsOverride != input.ConfigurationsOverride || (this.ConfigurationsOverride != null && input.ConfigurationsOverride != null && !this.ConfigurationsOverride.SequenceEqual(input.ConfigurationsOverride))) return false;
             if (this.ClusterOps != input.ClusterOps || (this.ClusterOps != null && !this.ClusterOps.Equals(input.ClusterOps))) return false;
             if (this.EncryptionConfig != input.EncryptionConfig || (this.EncryptionConfig != null && !this.EncryptionConfig.Equals(input.EncryptionConfig))) return false;
+            if (this.CertificateAuthority != input.CertificateAuthority || (this.CertificateAuthority != null && !this.CertificateAuthority.Equals(input.CertificateAuthority))) return false;
 
             return true;
         }
@@ -667,6 +681,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.ConfigurationsOverride != null) hashCode = hashCode * 59 + this.ConfigurationsOverride.GetHashCode();
                 if (this.ClusterOps != null) hashCode = hashCode * 59 + this.ClusterOps.GetHashCode();
                 if (this.EncryptionConfig != null) hashCode = hashCode * 59 + this.EncryptionConfig.GetHashCode();
+                if (this.CertificateAuthority != null) hashCode = hashCode * 59 + this.CertificateAuthority.GetHashCode();
                 return hashCode;
             }
         }

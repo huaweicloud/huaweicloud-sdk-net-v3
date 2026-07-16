@@ -619,7 +619,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("action_type", NullValueHandling = NullValueHandling.Ignore)]
         public ActionTypeEnum ActionType { get; set; }
         /// <summary>
-        /// **参数解释**： 规则启用状态，用于区分规则是否启用 **约束限制**： 仅能使用数字0和1 **取值范围**： 0表示启用，1表示禁用 **默认取值**： 不涉及
+        /// **参数解释**： 规则启用状态，用于区分规则是否启用 **约束限制**： 仅能使用数字0和1 **取值范围**： 0表示禁用，1表示启用 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public int? Status { get; set; }

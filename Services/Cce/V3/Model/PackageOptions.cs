@@ -161,7 +161,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string Schema { get; set; }
 
         /// <summary>
-        /// **参数解释**： 参数类型 **取值范围**： 不涉及
+        /// **参数解释**： 参数类型 **取值范围**： - str: 数据类型为字符串 - int: 数据类型为整型 - float: 数据类型为浮点型 - bool: 数据类型为布尔型
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

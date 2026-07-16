@@ -1,0 +1,80 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.ModelArts.V1.Model
+{
+    /// <summary>
+    /// 多标签相同key合并value的数据结构。
+    /// </summary>
+    public class CombineTmsTags 
+    {
+
+        /// <summary>
+        /// **参数解释**：标签的key。 **取值范围**：长度限制为128个字符，支持任意语种字母、数字、空格，以及_ . : &#x3D; + - @特殊字符，但首尾不能含有空格，不能以_sys_开头。
+        /// </summary>
+        [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
+        public string Key { get; set; }
+
+        /// <summary>
+        /// **参数解释**：相同key的标签value合并后的列表。
+        /// </summary>
+        [JsonProperty("values", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Values { get; set; }
+
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class CombineTmsTags {\n");
+            sb.Append("  key: ").Append(Key).Append("\n");
+            sb.Append("  values: ").Append(Values).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as CombineTmsTags);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(CombineTmsTags input)
+        {
+            if (input == null) return false;
+            if (this.Key != input.Key || (this.Key != null && !this.Key.Equals(input.Key))) return false;
+            if (this.Values != input.Values || (this.Values != null && input.Values != null && !this.Values.SequenceEqual(input.Values))) return false;
+
+            return true;
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                var hashCode = 41;
+                if (this.Key != null) hashCode = hashCode * 59 + this.Key.GetHashCode();
+                if (this.Values != null) hashCode = hashCode * 59 + this.Values.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

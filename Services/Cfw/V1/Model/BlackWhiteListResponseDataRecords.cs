@@ -62,13 +62,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// |- **参数解释**： 黑白名单创建时间。 **取值范围**： 不涉及 
         /// </summary>
         [JsonProperty("created_date", NullValueHandling = NullValueHandling.Ignore)]
-        public string CreatedDate { get; set; }
+        public int? CreatedDate { get; set; }
 
         /// <summary>
         /// |- **参数解释**： 黑白名单修改时间。 **取值范围**： 不涉及 
         /// </summary>
         [JsonProperty("modified_date", NullValueHandling = NullValueHandling.Ignore)]
-        public string ModifiedDate { get; set; }
+        public int? ModifiedDate { get; set; }
 
 
 

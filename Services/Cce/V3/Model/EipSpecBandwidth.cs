@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     public class EipSpecBandwidth 
     {
         /// <summary>
-        /// **参数解释**： 带宽大小 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
+        /// **参数解释**： 带宽类型 **约束限制**： 不涉及 **取值范围**： - PER：独享带宽，支持对单个EIP进行限速，且该EIP仅能被一个云资源（弹性云服务器、NAT网关、弹性负载均衡等）使用 - WHOLE：共享带宽，支持对多个EIP集中限速，支持添加多个按需计费的EIP  **默认取值**： 不涉及 
         /// </summary>
-        /// <value>**参数解释**： 带宽大小 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 </value>
+        /// <value>**参数解释**： 带宽类型 **约束限制**： 不涉及 **取值范围**： - PER：独享带宽，支持对单个EIP进行限速，且该EIP仅能被一个云资源（弹性云服务器、NAT网关、弹性负载均衡等）使用 - WHOLE：共享带宽，支持对多个EIP集中限速，支持添加多个按需计费的EIP  **默认取值**： 不涉及 </value>
         [JsonConverter(typeof(EnumClassConverter<SharetypeEnum>))]
         public class SharetypeEnum
         {
@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public int? Size { get; set; }
 
         /// <summary>
-        /// **参数解释**： 带宽大小 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
+        /// **参数解释**： 带宽类型 **约束限制**： 不涉及 **取值范围**： - PER：独享带宽，支持对单个EIP进行限速，且该EIP仅能被一个云资源（弹性云服务器、NAT网关、弹性负载均衡等）使用 - WHOLE：共享带宽，支持对多个EIP集中限速，支持添加多个按需计费的EIP  **默认取值**： 不涉及 
         /// </summary>
         [JsonProperty("sharetype", NullValueHandling = NullValueHandling.Ignore)]
         public SharetypeEnum Sharetype { get; set; }

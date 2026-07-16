@@ -58,13 +58,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainName { get; set; }
 
-        /// <summary>
-        /// **参数解释**： 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获得，通过返回值中的data.records.protect_objects.object_id（.表示各对象之间层级的区分）获得 **约束限制**： type为0时，object_id为互联网边界防护对象ID，type为1时，object_id为VPC边界防护对象ID。此处仅取type为1的防护对象id，可通过data.records.protect_objects.type（.表示各对象之间层级的区分）获得。 **取值范围**： 不涉及 **默认取值**： 不涉及
-        /// </summary>
-        [SDKProperty("object_Id", IsQuery = true)]
-        [JsonProperty("object_Id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ObjectId { get; set; }
-
 
 
         /// <summary>
@@ -80,7 +73,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  domainName: ").Append(DomainName).Append("\n");
-            sb.Append("  objectId: ").Append(ObjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -105,7 +97,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.DomainName != input.DomainName || (this.DomainName != null && !this.DomainName.Equals(input.DomainName))) return false;
-            if (this.ObjectId != input.ObjectId || (this.ObjectId != null && !this.ObjectId.Equals(input.ObjectId))) return false;
 
             return true;
         }
@@ -124,7 +115,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.DomainName != null) hashCode = hashCode * 59 + this.DomainName.GetHashCode();
-                if (this.ObjectId != null) hashCode = hashCode * 59 + this.ObjectId.GetHashCode();
                 return hashCode;
             }
         }

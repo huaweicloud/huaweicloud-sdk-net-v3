@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// **参数解释**： 添加EIP告警白名单响应data **取值范围**： 不涉及
+        /// 
         /// </summary>
         [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Data { get; set; }
+        public AddEipAlarmWhitelistRespData Data { get; set; }
 
 
 

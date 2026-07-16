@@ -1,0 +1,116 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.ModelArts.V1.Model
+{
+    /// <summary>
+    /// Response Object
+    /// </summary>
+    public class ListImageGroupResponse : SdkResponse
+    {
+
+        /// <summary>
+        /// **参数解释**：当前页数。 **取值范围**：正整数。
+        /// </summary>
+        [JsonProperty("current", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Current { get; set; }
+
+        /// <summary>
+        /// **参数解释**：镜像信息概览数据。
+        /// </summary>
+        [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ImageGroup> Data { get; set; }
+
+        /// <summary>
+        /// **参数解释**：总的页数。 **取值范围**：正整数。
+        /// </summary>
+        [JsonProperty("pages", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Pages { get; set; }
+
+        /// <summary>
+        /// **参数解释**：每一页的数量。 **取值范围**：正整数。
+        /// </summary>
+        [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Size { get; set; }
+
+        /// <summary>
+        /// **参数解释**：总的记录数量。 **取值范围**：非负整数。
+        /// </summary>
+        [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
+        public long? Total { get; set; }
+
+        /// <summary>
+        /// **参数解释**：当前账号是否存在swr企业版镜像。 **约束限制**：true或false。 **取值范围**：布尔类型 **默认取值**：false。
+        /// </summary>
+        [JsonProperty("is_swr_enterprise", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsSwrEnterprise { get; set; }
+
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class ListImageGroupResponse {\n");
+            sb.Append("  current: ").Append(Current).Append("\n");
+            sb.Append("  data: ").Append(Data).Append("\n");
+            sb.Append("  pages: ").Append(Pages).Append("\n");
+            sb.Append("  size: ").Append(Size).Append("\n");
+            sb.Append("  total: ").Append(Total).Append("\n");
+            sb.Append("  isSwrEnterprise: ").Append(IsSwrEnterprise).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as ListImageGroupResponse);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(ListImageGroupResponse input)
+        {
+            if (input == null) return false;
+            if (this.Current != input.Current || (this.Current != null && !this.Current.Equals(input.Current))) return false;
+            if (this.Data != input.Data || (this.Data != null && input.Data != null && !this.Data.SequenceEqual(input.Data))) return false;
+            if (this.Pages != input.Pages || (this.Pages != null && !this.Pages.Equals(input.Pages))) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.IsSwrEnterprise != input.IsSwrEnterprise || (this.IsSwrEnterprise != null && !this.IsSwrEnterprise.Equals(input.IsSwrEnterprise))) return false;
+
+            return true;
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                var hashCode = 41;
+                if (this.Current != null) hashCode = hashCode * 59 + this.Current.GetHashCode();
+                if (this.Data != null) hashCode = hashCode * 59 + this.Data.GetHashCode();
+                if (this.Pages != null) hashCode = hashCode * 59 + this.Pages.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.IsSwrEnterprise != null) hashCode = hashCode * 59 + this.IsSwrEnterprise.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

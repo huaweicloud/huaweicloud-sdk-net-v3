@@ -233,6 +233,18 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string City { get; set; }
 
         /// <summary>
+        /// 总页码。 
+        /// </summary>
+        [JsonProperty("total_pages", NullValueHandling = NullValueHandling.Ignore)]
+        public string TotalPages { get; set; }
+
+        /// <summary>
+        /// 当前页码。 
+        /// </summary>
+        [JsonProperty("current_page", NullValueHandling = NullValueHandling.Ignore)]
+        public string CurrentPage { get; set; }
+
+        /// <summary>
         /// 各个字段的置信度。 当“advanced_mode”设置为“true”时才返回。 
         /// </summary>
         [JsonProperty("confidence", NullValueHandling = NullValueHandling.Ignore)]
@@ -391,6 +403,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  itemList: ").Append(ItemList).Append("\n");
             sb.Append("  province: ").Append(Province).Append("\n");
             sb.Append("  city: ").Append(City).Append("\n");
+            sb.Append("  totalPages: ").Append(TotalPages).Append("\n");
+            sb.Append("  currentPage: ").Append(CurrentPage).Append("\n");
             sb.Append("  confidence: ").Append(Confidence).Append("\n");
             sb.Append("  textLocation: ").Append(TextLocation).Append("\n");
             sb.Append("  belongBuyerName: ").Append(BelongBuyerName).Append("\n");
@@ -464,6 +478,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             if (this.ItemList != input.ItemList || (this.ItemList != null && input.ItemList != null && !this.ItemList.SequenceEqual(input.ItemList))) return false;
             if (this.Province != input.Province || (this.Province != null && !this.Province.Equals(input.Province))) return false;
             if (this.City != input.City || (this.City != null && !this.City.Equals(input.City))) return false;
+            if (this.TotalPages != input.TotalPages || (this.TotalPages != null && !this.TotalPages.Equals(input.TotalPages))) return false;
+            if (this.CurrentPage != input.CurrentPage || (this.CurrentPage != null && !this.CurrentPage.Equals(input.CurrentPage))) return false;
             if (this.Confidence != input.Confidence || (this.Confidence != null && !this.Confidence.Equals(input.Confidence))) return false;
             if (this.TextLocation != input.TextLocation || (this.TextLocation != null && !this.TextLocation.Equals(input.TextLocation))) return false;
             if (this.BelongBuyerName != input.BelongBuyerName || (this.BelongBuyerName != null && !this.BelongBuyerName.Equals(input.BelongBuyerName))) return false;
@@ -531,6 +547,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                 if (this.ItemList != null) hashCode = hashCode * 59 + this.ItemList.GetHashCode();
                 if (this.Province != null) hashCode = hashCode * 59 + this.Province.GetHashCode();
                 if (this.City != null) hashCode = hashCode * 59 + this.City.GetHashCode();
+                if (this.TotalPages != null) hashCode = hashCode * 59 + this.TotalPages.GetHashCode();
+                if (this.CurrentPage != null) hashCode = hashCode * 59 + this.CurrentPage.GetHashCode();
                 if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
                 if (this.TextLocation != null) hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
                 if (this.BelongBuyerName != null) hashCode = hashCode * 59 + this.BelongBuyerName.GetHashCode();

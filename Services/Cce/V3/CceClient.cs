@@ -71,6 +71,32 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
+        /// 获取pod-identity关联相关委托凭据
+        ///
+        /// 该API用于通过ServiceAccount token来assume获取ServiceAccount所关联的pod-identity关联中绑定的IAM委托凭据。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public AssumeAgencyForPodIdentityResponse AssumeAgencyForPodIdentity(AssumeAgencyForPodIdentityRequest assumeAgencyForPodIdentityRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(assumeAgencyForPodIdentityRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/assume-agency-for-pod-identity", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", assumeAgencyForPodIdentityRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<AssumeAgencyForPodIdentityResponse>(response);
+        }
+
+        public SyncInvoker<AssumeAgencyForPodIdentityResponse> AssumeAgencyForPodIdentityInvoker(AssumeAgencyForPodIdentityRequest assumeAgencyForPodIdentityRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(assumeAgencyForPodIdentityRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/assume-agency-for-pod-identity", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", assumeAgencyForPodIdentityRequest);
+            return new SyncInvoker<AssumeAgencyForPodIdentityResponse>(this, "POST", request, JsonUtils.DeSerialize<AssumeAgencyForPodIdentityResponse>);
+        }
+        
+        /// <summary>
         /// 集群唤醒
         ///
         /// 集群唤醒用于唤醒已休眠的集群，唤醒后，将继续收取控制节点资源费用。
@@ -94,6 +120,36 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/awake", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", awakeClusterRequest);
             return new SyncInvoker<AwakeClusterResponse>(this, "POST", request, JsonUtils.DeSerializeNull<AwakeClusterResponse>);
+        }
+        
+        /// <summary>
+        /// 按需节点转包年/包月
+        ///
+        /// 该API用于将节点从按需计费模式转成包周期计费模式。
+        /// &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+        /// &gt;按需节点池中的节点转成包年/包月时，需要将集群升级到v1.19.16-r40、v1.21.11-r0、v1.23.9-r0、v1.25.4-r0以及其他更高版本的集群。
+        /// &gt;当按需节点池中的节点转成包年/包月后，该节点不支持弹性缩容。
+        /// &gt;按需计费节点绑定的资源（弹性公网IP）可能不支持同步变更计费模式，详情请参见[弹性云服务器ECS按需转包年/包月说明](https://support.huaweicloud.com/price-ecs/ecs_billing_5002.html)。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchChangeNodeToPeriodResponse BatchChangeNodeToPeriod(BatchChangeNodeToPeriodRequest batchChangeNodeToPeriodRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchChangeNodeToPeriodRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/toperiod", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchChangeNodeToPeriodRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<BatchChangeNodeToPeriodResponse>(response);
+        }
+
+        public SyncInvoker<BatchChangeNodeToPeriodResponse> BatchChangeNodeToPeriodInvoker(BatchChangeNodeToPeriodRequest batchChangeNodeToPeriodRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchChangeNodeToPeriodRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/toperiod", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchChangeNodeToPeriodRequest);
+            return new SyncInvoker<BatchChangeNodeToPeriodResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchChangeNodeToPeriodResponse>);
         }
         
         /// <summary>
@@ -476,6 +532,32 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
+        /// 创建pod-identity关联
+        ///
+        /// 该API用于创建pod-identity关联，将容器集群serviceaccount与IAM委托绑定。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreatePodIdentityAssociationResponse CreatePodIdentityAssociation(CreatePodIdentityAssociationRequest createPodIdentityAssociationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createPodIdentityAssociationRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/pod-identity-associations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPodIdentityAssociationRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreatePodIdentityAssociationResponse>(response);
+        }
+
+        public SyncInvoker<CreatePodIdentityAssociationResponse> CreatePodIdentityAssociationInvoker(CreatePodIdentityAssociationRequest createPodIdentityAssociationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createPodIdentityAssociationRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/pod-identity-associations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPodIdentityAssociationRequest);
+            return new SyncInvoker<CreatePodIdentityAssociationResponse>(this, "POST", request, JsonUtils.DeSerialize<CreatePodIdentityAssociationResponse>);
+        }
+        
+        /// <summary>
         /// 集群升级后确认
         ///
         /// 集群升级后确认，该接口建议配合Console使用，主要用于升级步骤完成后，客户确认集群状态和业务正常后做反馈。
@@ -770,6 +852,34 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNodePoolRequest);
             return new SyncInvoker<DeleteNodePoolResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteNodePoolResponse>);
+        }
+        
+        /// <summary>
+        /// 删除pod-identity关联
+        ///
+        /// 该API用于删除指定的pod-identity关联。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeletePodIdentityAssociationResponse DeletePodIdentityAssociation(DeletePodIdentityAssociationRequest deletePodIdentityAssociationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deletePodIdentityAssociationRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            if (StringUtils.TryConvertToNonEmptyString(deletePodIdentityAssociationRequest.AssociationId, out var valueOfAssociationId)) urlParam.Add("association_id", valueOfAssociationId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/pod-identity-associations/{association_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePodIdentityAssociationRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeletePodIdentityAssociationResponse>(response);
+        }
+
+        public SyncInvoker<DeletePodIdentityAssociationResponse> DeletePodIdentityAssociationInvoker(DeletePodIdentityAssociationRequest deletePodIdentityAssociationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deletePodIdentityAssociationRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            if (StringUtils.TryConvertToNonEmptyString(deletePodIdentityAssociationRequest.AssociationId, out var valueOfAssociationId)) urlParam.Add("association_id", valueOfAssociationId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/pod-identity-associations/{association_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePodIdentityAssociationRequest);
+            return new SyncInvoker<DeletePodIdentityAssociationResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePodIdentityAssociationResponse>);
         }
         
         /// <summary>
@@ -1432,6 +1542,39 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
+        /// 查询指定集群的pod-identity关联
+        ///
+        /// 该API用于获取集群下所有pod-identity关联。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListPodIdentityAssociationsResponse ListPodIdentityAssociations(ListPodIdentityAssociationsRequest listPodIdentityAssociationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listPodIdentityAssociationsRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/pod-identity-associations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPodIdentityAssociationsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var listPodIdentityAssociationsResponse = JsonUtils.DeSerializeNull<ListPodIdentityAssociationsResponse>(response);
+            listPodIdentityAssociationsResponse.Body = JsonUtils.DeSerializeList<PodIdentityAssociationResp>(response);
+            return listPodIdentityAssociationsResponse;
+        }
+
+        public SyncInvoker<ListPodIdentityAssociationsResponse> ListPodIdentityAssociationsInvoker(ListPodIdentityAssociationsRequest listPodIdentityAssociationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listPodIdentityAssociationsRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/pod-identity-associations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPodIdentityAssociationsRequest);
+            return new SyncInvoker<ListPodIdentityAssociationsResponse>(this, "GET", request, response =>
+            {
+                var listPodIdentityAssociationsResponse = JsonUtils.DeSerializeNull<ListPodIdentityAssociationsResponse>(response);
+                listPodIdentityAssociationsResponse.Body = JsonUtils.DeSerializeList<PodIdentityAssociationResp>(response);
+                return listPodIdentityAssociationsResponse;
+            });
+        }
+        
+        /// <summary>
         /// 获取集群升级前检查任务详情列表
         ///
         /// 获取集群升级前检查任务详情列表
@@ -1819,6 +1962,62 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/api/v3/addons/{id}/operation/rollback", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rollbackAddonInstanceRequest);
             return new SyncInvoker<RollbackAddonInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<RollbackAddonInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 轮转用户的集群证书
+        ///
+        /// 该API用于轮转指定集群的证书
+        /// 
+        /// &gt; 只支持1.19及以上集群版本
+        /// &gt; 操作完成后，用户集群组件的证书有效期会续期5年。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RotateClusterCredentialsResponse RotateClusterCredentials(RotateClusterCredentialsRequest rotateClusterCredentialsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(rotateClusterCredentialsRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/rotatecredentials", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rotateClusterCredentialsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<RotateClusterCredentialsResponse>(response);
+        }
+
+        public SyncInvoker<RotateClusterCredentialsResponse> RotateClusterCredentialsInvoker(RotateClusterCredentialsRequest rotateClusterCredentialsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(rotateClusterCredentialsRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/rotatecredentials", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rotateClusterCredentialsRequest);
+            return new SyncInvoker<RotateClusterCredentialsResponse>(this, "POST", request, JsonUtils.DeSerialize<RotateClusterCredentialsResponse>);
+        }
+        
+        /// <summary>
+        /// 轮转节点证书
+        ///
+        /// 该API用于在指定集群下轮转节点证书。作为集群证书轮转操作的补偿机制：当通过配套的集群证书轮转接口执行轮转时，若部分节点证书轮转失败，可通过调用本接口进行重试。
+        /// &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RotateNodeCertResponse RotateNodeCert(RotateNodeCertRequest rotateNodeCertRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(rotateNodeCertRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/rotate-cert", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rotateNodeCertRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<RotateNodeCertResponse>(response);
+        }
+
+        public SyncInvoker<RotateNodeCertResponse> RotateNodeCertInvoker(RotateNodeCertRequest rotateNodeCertRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(rotateNodeCertRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/rotate-cert", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rotateNodeCertRequest);
+            return new SyncInvoker<RotateNodeCertResponse>(this, "POST", request, JsonUtils.DeSerializeNull<RotateNodeCertResponse>);
         }
         
         /// <summary>
@@ -2300,6 +2499,34 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/partitions/{partition_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPartitionRequest);
             return new SyncInvoker<ShowPartitionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPartitionResponse>);
+        }
+        
+        /// <summary>
+        /// 查询指定pod-identity关联
+        ///
+        /// 该API用于查询指定pod-identity关联详情信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowPodIdentityAssociationResponse ShowPodIdentityAssociation(ShowPodIdentityAssociationRequest showPodIdentityAssociationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showPodIdentityAssociationRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            if (StringUtils.TryConvertToNonEmptyString(showPodIdentityAssociationRequest.AssociationId, out var valueOfAssociationId)) urlParam.Add("association_id", valueOfAssociationId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/pod-identity-associations/{association_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPodIdentityAssociationRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowPodIdentityAssociationResponse>(response);
+        }
+
+        public SyncInvoker<ShowPodIdentityAssociationResponse> ShowPodIdentityAssociationInvoker(ShowPodIdentityAssociationRequest showPodIdentityAssociationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showPodIdentityAssociationRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            if (StringUtils.TryConvertToNonEmptyString(showPodIdentityAssociationRequest.AssociationId, out var valueOfAssociationId)) urlParam.Add("association_id", valueOfAssociationId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/pod-identity-associations/{association_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPodIdentityAssociationRequest);
+            return new SyncInvoker<ShowPodIdentityAssociationResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPodIdentityAssociationResponse>);
         }
         
         /// <summary>
@@ -2882,6 +3109,34 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/partitions/{partition_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePartitionRequest);
             return new SyncInvoker<UpdatePartitionResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePartitionResponse>);
+        }
+        
+        /// <summary>
+        /// 更新pod-identity关联
+        ///
+        /// 该API用于更新指定pod-identity关联所绑定的IAM委托信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdatePodIdentityAssociationResponse UpdatePodIdentityAssociation(UpdatePodIdentityAssociationRequest updatePodIdentityAssociationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updatePodIdentityAssociationRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            if (StringUtils.TryConvertToNonEmptyString(updatePodIdentityAssociationRequest.AssociationId, out var valueOfAssociationId)) urlParam.Add("association_id", valueOfAssociationId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/pod-identity-associations/{association_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePodIdentityAssociationRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdatePodIdentityAssociationResponse>(response);
+        }
+
+        public SyncInvoker<UpdatePodIdentityAssociationResponse> UpdatePodIdentityAssociationInvoker(UpdatePodIdentityAssociationRequest updatePodIdentityAssociationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updatePodIdentityAssociationRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            if (StringUtils.TryConvertToNonEmptyString(updatePodIdentityAssociationRequest.AssociationId, out var valueOfAssociationId)) urlParam.Add("association_id", valueOfAssociationId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/pod-identity-associations/{association_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePodIdentityAssociationRequest);
+            return new SyncInvoker<UpdatePodIdentityAssociationResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePodIdentityAssociationResponse>);
         }
         
         /// <summary>

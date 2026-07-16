@@ -35,19 +35,19 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public bool? NoHooks { get; set; }
 
         /// <summary>
-        /// 是否替换同名实例
+        /// 模板实例更新时是否保留values，该字段仅在更新指定模板实例时生效
         /// </summary>
         [JsonProperty("replace", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Replace { get; set; }
 
         /// <summary>
-        /// 是否重建实例
+        /// 模板实例更新时是否重建实例，该字段仅在更新指定模板实例时生效
         /// </summary>
         [JsonProperty("recreate", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Recreate { get; set; }
 
         /// <summary>
-        /// 更新时是否重置values
+        /// 模板实例更新时是否重置values，该字段仅在更新指定模板实例时生效
         /// </summary>
         [JsonProperty("reset_values", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ResetValues { get; set; }

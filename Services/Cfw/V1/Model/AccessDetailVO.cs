@@ -17,6 +17,18 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
+        /// **参数解释**： 所有会话数 **取值范围**： 不涉及
+        /// </summary>
+        [JsonProperty("all_session_count", NullValueHandling = NullValueHandling.Ignore)]
+        public long? AllSessionCount { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 会话数 **取值范围**： 不涉及
+        /// </summary>
+        [JsonProperty("session_count", NullValueHandling = NullValueHandling.Ignore)]
+        public long? SessionCount { get; set; }
+
+        /// <summary>
         /// **参数解释**： 目的IP数量 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("dst_ip_count", NullValueHandling = NullValueHandling.Ignore)]
@@ -85,6 +97,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class AccessDetailVO {\n");
+            sb.Append("  allSessionCount: ").Append(AllSessionCount).Append("\n");
+            sb.Append("  sessionCount: ").Append(SessionCount).Append("\n");
             sb.Append("  dstIpCount: ").Append(DstIpCount).Append("\n");
             sb.Append("  dstPortCount: ").Append(DstPortCount).Append("\n");
             sb.Append("  hitCount: ").Append(HitCount).Append("\n");
@@ -113,6 +127,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public bool Equals(AccessDetailVO input)
         {
             if (input == null) return false;
+            if (this.AllSessionCount != input.AllSessionCount || (this.AllSessionCount != null && !this.AllSessionCount.Equals(input.AllSessionCount))) return false;
+            if (this.SessionCount != input.SessionCount || (this.SessionCount != null && !this.SessionCount.Equals(input.SessionCount))) return false;
             if (this.DstIpCount != input.DstIpCount || (this.DstIpCount != null && !this.DstIpCount.Equals(input.DstIpCount))) return false;
             if (this.DstPortCount != input.DstPortCount || (this.DstPortCount != null && !this.DstPortCount.Equals(input.DstPortCount))) return false;
             if (this.HitCount != input.HitCount || (this.HitCount != null && !this.HitCount.Equals(input.HitCount))) return false;
@@ -135,6 +151,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.AllSessionCount != null) hashCode = hashCode * 59 + this.AllSessionCount.GetHashCode();
+                if (this.SessionCount != null) hashCode = hashCode * 59 + this.SessionCount.GetHashCode();
                 if (this.DstIpCount != null) hashCode = hashCode * 59 + this.DstIpCount.GetHashCode();
                 if (this.DstPortCount != null) hashCode = hashCode * 59 + this.DstPortCount.GetHashCode();
                 if (this.HitCount != null) hashCode = hashCode * 59 + this.HitCount.GetHashCode();

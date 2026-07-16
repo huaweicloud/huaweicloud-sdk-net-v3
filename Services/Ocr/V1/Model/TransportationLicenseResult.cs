@@ -119,6 +119,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string AdjustedImage { get; set; }
 
         /// <summary>
+        /// 是否是待理证，取值范围包括： - true：是待理证 - false：非待理证 
+        /// </summary>
+        [JsonProperty("is_temporary_certificate", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsTemporaryCertificate { get; set; }
+
+        /// <summary>
         /// 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。 
         /// </summary>
         [JsonProperty("confidence", NullValueHandling = NullValueHandling.Ignore)]
@@ -150,6 +156,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  assessedTechnicalLevel: ").Append(AssessedTechnicalLevel).Append("\n");
             sb.Append("  imageLocation: ").Append(ImageLocation).Append("\n");
             sb.Append("  adjustedImage: ").Append(AdjustedImage).Append("\n");
+            sb.Append("  isTemporaryCertificate: ").Append(IsTemporaryCertificate).Append("\n");
             sb.Append("  confidence: ").Append(Confidence).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -186,6 +193,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             if (this.AssessedTechnicalLevel != input.AssessedTechnicalLevel || (this.AssessedTechnicalLevel != null && !this.AssessedTechnicalLevel.Equals(input.AssessedTechnicalLevel))) return false;
             if (this.ImageLocation != input.ImageLocation || (this.ImageLocation != null && input.ImageLocation != null && !this.ImageLocation.SequenceEqual(input.ImageLocation))) return false;
             if (this.AdjustedImage != input.AdjustedImage || (this.AdjustedImage != null && !this.AdjustedImage.Equals(input.AdjustedImage))) return false;
+            if (this.IsTemporaryCertificate != input.IsTemporaryCertificate || (this.IsTemporaryCertificate != null && !this.IsTemporaryCertificate.Equals(input.IsTemporaryCertificate))) return false;
             if (this.Confidence != input.Confidence || (this.Confidence != null && !this.Confidence.Equals(input.Confidence))) return false;
 
             return true;
@@ -216,6 +224,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                 if (this.AssessedTechnicalLevel != null) hashCode = hashCode * 59 + this.AssessedTechnicalLevel.GetHashCode();
                 if (this.ImageLocation != null) hashCode = hashCode * 59 + this.ImageLocation.GetHashCode();
                 if (this.AdjustedImage != null) hashCode = hashCode * 59 + this.AdjustedImage.GetHashCode();
+                if (this.IsTemporaryCertificate != null) hashCode = hashCode * 59 + this.IsTemporaryCertificate.GetHashCode();
                 if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
                 return hashCode;
             }

@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("items", NullValueHandling = NullValueHandling.Ignore)]
         public List<Node> Items { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("pageInfo", NullValueHandling = NullValueHandling.Ignore)]
+        public NodePageInfo PageInfo { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  kind: ").Append(Kind).Append("\n");
             sb.Append("  apiVersion: ").Append(ApiVersion).Append("\n");
             sb.Append("  items: ").Append(Items).Append("\n");
+            sb.Append("  pageInfo: ").Append(PageInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +74,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.Kind != input.Kind || (this.Kind != null && !this.Kind.Equals(input.Kind))) return false;
             if (this.ApiVersion != input.ApiVersion || (this.ApiVersion != null && !this.ApiVersion.Equals(input.ApiVersion))) return false;
             if (this.Items != input.Items || (this.Items != null && input.Items != null && !this.Items.SequenceEqual(input.Items))) return false;
+            if (this.PageInfo != input.PageInfo || (this.PageInfo != null && !this.PageInfo.Equals(input.PageInfo))) return false;
 
             return true;
         }
@@ -82,6 +90,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.Kind != null) hashCode = hashCode * 59 + this.Kind.GetHashCode();
                 if (this.ApiVersion != null) hashCode = hashCode * 59 + this.ApiVersion.GetHashCode();
                 if (this.Items != null) hashCode = hashCode * 59 + this.Items.GetHashCode();
+                if (this.PageInfo != null) hashCode = hashCode * 59 + this.PageInfo.GetHashCode();
                 return hashCode;
             }
         }

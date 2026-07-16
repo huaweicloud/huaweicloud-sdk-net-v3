@@ -185,7 +185,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
         /// <summary>
-        /// Condition当前状态，取值如下 - \&quot;True\&quot; - \&quot;False\&quot; 
+        /// **参数解释**： Condition当前状态。 **约束限制**： 不涉及 **取值范围**： - \&quot;True\&quot;：满足当前状态 - \&quot;False\&quot;：不满足当前状态  **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }

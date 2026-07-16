@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// 成员id
         /// </summary>
         [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Data { get; set; }
+        public string Data { get; set; }
 
 
 
