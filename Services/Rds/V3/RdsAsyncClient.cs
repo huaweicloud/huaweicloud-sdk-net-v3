@@ -7073,6 +7073,30 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 创建数据库定时任务策略
+        ///
+        /// 创建数据库定时任务策略。每个类型最多只能创建100个自定义策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateJobScheduleResponse> CreateJobScheduleAsync(CreateJobScheduleRequest createJobScheduleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/db-job/schedules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createJobScheduleRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateJobScheduleResponse>(response);
+        }
+
+        public AsyncInvoker<CreateJobScheduleResponse> CreateJobScheduleAsyncInvoker(CreateJobScheduleRequest createJobScheduleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/db-job/schedules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createJobScheduleRequest);
+            return new AsyncInvoker<CreateJobScheduleResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateJobScheduleResponse>);
+        }
+        
+        /// <summary>
         /// 创建发布
         ///
         /// 创建发布
@@ -7200,6 +7224,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replication/distribution", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDistributionRequest);
             return new AsyncInvoker<DeleteDistributionResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteDistributionResponse>);
+        }
+        
+        /// <summary>
+        /// 删除数据库定时任务策略
+        ///
+        /// 删除数据库定时任务策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteJobScheduleResponse> DeleteJobScheduleAsync(DeleteJobScheduleRequest deleteJobScheduleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteJobScheduleRequest.ScheduleId, out var valueOfScheduleId)) urlParam.Add("schedule_id", valueOfScheduleId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/db-job/schedules/{schedule_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteJobScheduleRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteJobScheduleResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteJobScheduleResponse> DeleteJobScheduleAsyncInvoker(DeleteJobScheduleRequest deleteJobScheduleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteJobScheduleRequest.ScheduleId, out var valueOfScheduleId)) urlParam.Add("schedule_id", valueOfScheduleId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/db-job/schedules/{schedule_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteJobScheduleRequest);
+            return new AsyncInvoker<DeleteJobScheduleResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteJobScheduleResponse>);
         }
         
         /// <summary>
@@ -7549,6 +7599,30 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 查询数据库定时任务策略
+        ///
+        /// 查询数据库定时任务策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListJobSchedulesResponse> ListJobSchedulesAsync(ListJobSchedulesRequest listJobSchedulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/db-job/schedules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listJobSchedulesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListJobSchedulesResponse>(response);
+        }
+
+        public AsyncInvoker<ListJobSchedulesResponse> ListJobSchedulesAsyncInvoker(ListJobSchedulesRequest listJobSchedulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/db-job/schedules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listJobSchedulesRequest);
+            return new AsyncInvoker<ListJobSchedulesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListJobSchedulesResponse>);
+        }
+        
+        /// <summary>
         /// 查询云市场引擎商品列表
         ///
         /// 查询云市场引擎商品列表。
@@ -7889,6 +7963,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 修改数据库定时任务策略
+        ///
+        /// 修改数据库定时任务策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ModifyJobScheduleResponse> ModifyJobScheduleAsync(ModifyJobScheduleRequest modifyJobScheduleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(modifyJobScheduleRequest.ScheduleId, out var valueOfScheduleId)) urlParam.Add("schedule_id", valueOfScheduleId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/db-job/schedules/{schedule_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyJobScheduleRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<ModifyJobScheduleResponse>(response);
+        }
+
+        public AsyncInvoker<ModifyJobScheduleResponse> ModifyJobScheduleAsyncInvoker(ModifyJobScheduleRequest modifyJobScheduleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(modifyJobScheduleRequest.ScheduleId, out var valueOfScheduleId)) urlParam.Add("schedule_id", valueOfScheduleId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/db-job/schedules/{schedule_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyJobScheduleRequest);
+            return new AsyncInvoker<ModifyJobScheduleResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyJobScheduleResponse>);
+        }
+        
+        /// <summary>
         /// 修改发布
         ///
         /// 修改发布
@@ -7987,7 +8087,7 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-jobs/{job_id}/restart", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartDbAgentJobRequest);
             var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerializeNull<RestartDbAgentJobResponse>(response);
+            return JsonUtils.DeSerialize<RestartDbAgentJobResponse>(response);
         }
 
         public AsyncInvoker<RestartDbAgentJobResponse> RestartDbAgentJobAsyncInvoker(RestartDbAgentJobRequest restartDbAgentJobRequest)
@@ -7997,7 +8097,7 @@ namespace HuaweiCloud.SDK.Rds.V3
             if (StringUtils.TryConvertToNonEmptyString(restartDbAgentJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-jobs/{job_id}/restart", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartDbAgentJobRequest);
-            return new AsyncInvoker<RestartDbAgentJobResponse>(this, "POST", request, JsonUtils.DeSerializeNull<RestartDbAgentJobResponse>);
+            return new AsyncInvoker<RestartDbAgentJobResponse>(this, "POST", request, JsonUtils.DeSerialize<RestartDbAgentJobResponse>);
         }
         
         /// <summary>
@@ -8093,7 +8193,7 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-jobs/{job_id}/switch", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchDbAgentJobRequest);
             var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerializeNull<SwitchDbAgentJobResponse>(response);
+            return JsonUtils.DeSerialize<SwitchDbAgentJobResponse>(response);
         }
 
         public AsyncInvoker<SwitchDbAgentJobResponse> SwitchDbAgentJobAsyncInvoker(SwitchDbAgentJobRequest switchDbAgentJobRequest)
@@ -8103,7 +8203,7 @@ namespace HuaweiCloud.SDK.Rds.V3
             if (StringUtils.TryConvertToNonEmptyString(switchDbAgentJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-jobs/{job_id}/switch", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchDbAgentJobRequest);
-            return new AsyncInvoker<SwitchDbAgentJobResponse>(this, "POST", request, JsonUtils.DeSerializeNull<SwitchDbAgentJobResponse>);
+            return new AsyncInvoker<SwitchDbAgentJobResponse>(this, "POST", request, JsonUtils.DeSerialize<SwitchDbAgentJobResponse>);
         }
         
         /// <summary>
@@ -8172,7 +8272,7 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replication/login-test", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", validateInstanceConnectionRequest);
             var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerializeNull<ValidateInstanceConnectionResponse>(response);
+            return JsonUtils.DeSerialize<ValidateInstanceConnectionResponse>(response);
         }
 
         public AsyncInvoker<ValidateInstanceConnectionResponse> ValidateInstanceConnectionAsyncInvoker(ValidateInstanceConnectionRequest validateInstanceConnectionRequest)
@@ -8181,7 +8281,7 @@ namespace HuaweiCloud.SDK.Rds.V3
             if (StringUtils.TryConvertToNonEmptyString(validateInstanceConnectionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replication/login-test", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", validateInstanceConnectionRequest);
-            return new AsyncInvoker<ValidateInstanceConnectionResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ValidateInstanceConnectionResponse>);
+            return new AsyncInvoker<ValidateInstanceConnectionResponse>(this, "POST", request, JsonUtils.DeSerialize<ValidateInstanceConnectionResponse>);
         }
         
         /// <summary>

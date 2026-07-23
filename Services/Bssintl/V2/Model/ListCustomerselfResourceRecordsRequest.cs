@@ -129,7 +129,7 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
         public string BillDateEnd { get; set; }
 
         /// <summary>
-        /// |参数名称：统计类型。| |参数的约束及描述：统计类型。非必填，默认值为3。1：按账期 3：按明细|
+        /// 统计类型。1：按账期 2：按天 3：按明细。该参数不携带或携带值为空时，取默认值3。
         /// </summary>
         [SDKProperty("statistic_type", IsQuery = true)]
         [JsonProperty("statistic_type", NullValueHandling = NullValueHandling.Ignore)]

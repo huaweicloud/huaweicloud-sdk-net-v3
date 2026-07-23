@@ -322,6 +322,24 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
         [JsonProperty("period_num", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? PeriodNum { get; set; }
 
+        /// <summary>
+        /// 是否竞价实例。该参数非必填，Y：是；N：否；- -：不涉及（例如：包周期和预留实例不涉及此特性展示为\&quot;- -\&quot;）。 说明：statistic_type&#x3D;3有效，statistic_type&#x3D;1或者2该字段保留。
+        /// </summary>
+        [JsonProperty("is_spot", NullValueHandling = NullValueHandling.Ignore)]
+        public string IsSpot { get; set; }
+
+        /// <summary>
+        /// 优惠类型。该参数非必填，优惠类型。不含折扣返回null或空串，多种折扣，逗号拼接，举例：300,500。 说明：statistic_type&#x3D;3有效，statistic_type&#x3D;1或者2该字段保留。
+        /// </summary>
+        [JsonProperty("promotion_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string PromotionType { get; set; }
+
+        /// <summary>
+        /// 付款方式。该参数非必填，付款方式，节省计划和预留实例有值；枚举值：ALL_UPFRONT：全预付；PARTIAL_UPFRONT：部分预付；NO_UPFRONT：零预付。 说明：statistic_type&#x3D;3有效，statistic_type&#x3D;1或者2该字段保留。
+        /// </summary>
+        [JsonProperty("payment_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string PaymentType { get; set; }
+
 
 
         /// <summary>
@@ -382,6 +400,9 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
             sb.Append("  extendParams: ").Append(ExtendParams).Append("\n");
             sb.Append("  accountName: ").Append(AccountName).Append("\n");
             sb.Append("  periodNum: ").Append(PeriodNum).Append("\n");
+            sb.Append("  isSpot: ").Append(IsSpot).Append("\n");
+            sb.Append("  promotionType: ").Append(PromotionType).Append("\n");
+            sb.Append("  paymentType: ").Append(PaymentType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -451,6 +472,9 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
             if (this.ExtendParams != input.ExtendParams || (this.ExtendParams != null && !this.ExtendParams.Equals(input.ExtendParams))) return false;
             if (this.AccountName != input.AccountName || (this.AccountName != null && !this.AccountName.Equals(input.AccountName))) return false;
             if (this.PeriodNum != input.PeriodNum || (this.PeriodNum != null && !this.PeriodNum.Equals(input.PeriodNum))) return false;
+            if (this.IsSpot != input.IsSpot || (this.IsSpot != null && !this.IsSpot.Equals(input.IsSpot))) return false;
+            if (this.PromotionType != input.PromotionType || (this.PromotionType != null && !this.PromotionType.Equals(input.PromotionType))) return false;
+            if (this.PaymentType != input.PaymentType || (this.PaymentType != null && !this.PaymentType.Equals(input.PaymentType))) return false;
 
             return true;
         }
@@ -514,6 +538,9 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
                 if (this.ExtendParams != null) hashCode = hashCode * 59 + this.ExtendParams.GetHashCode();
                 if (this.AccountName != null) hashCode = hashCode * 59 + this.AccountName.GetHashCode();
                 if (this.PeriodNum != null) hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
+                if (this.IsSpot != null) hashCode = hashCode * 59 + this.IsSpot.GetHashCode();
+                if (this.PromotionType != null) hashCode = hashCode * 59 + this.PromotionType.GetHashCode();
+                if (this.PaymentType != null) hashCode = hashCode * 59 + this.PaymentType.GetHashCode();
                 return hashCode;
             }
         }
