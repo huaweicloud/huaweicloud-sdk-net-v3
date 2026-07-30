@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// **参数解释：** 域名模板名称 **约束限制：** 不涉及 **取值范围：** - 1-100个字符 - 仅支持字母、数字、中文、下划线（_）、中横线（-） **默认取值：** 不涉及
+        /// **参数解释：** 域名模板名称 **约束限制：** 不涉及 **取值范围：** - 1-100个字符 - 仅支持字母、数字、中文、下划线（_）、中横线（-）  **默认取值：** 不涉及
         /// </summary>
         [SDKProperty("tml_name", IsQuery = true)]
         [JsonProperty("tml_name", NullValueHandling = NullValueHandling.Ignore)]
@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string TmlId { get; set; }
 
         /// <summary>
-        /// **参数解释：** 域名模板类型 **约束限制：** 不涉及 **取值范围：** - 1: 系统预置模板 - 2: 租户自定义模板 **默认取值：** 不涉及
+        /// **参数解释：** 域名模板类型 **约束限制：** 不涉及 **取值范围：** - 1: 系统预置模板 - 2: 租户自定义模板  **默认取值：** 不涉及
         /// </summary>
         [SDKProperty("tml_type", IsQuery = true)]
         [JsonProperty("tml_type", NullValueHandling = NullValueHandling.Ignore)]

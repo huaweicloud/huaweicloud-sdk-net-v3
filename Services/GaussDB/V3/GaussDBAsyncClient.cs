@@ -2040,7 +2040,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/storage/auto-expand-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyAutoExpandPolicyRequest);
             var response = await DoHttpRequestAsync("PUT", request);
-            return JsonUtils.DeSerialize<ModifyAutoExpandPolicyResponse>(response);
+            return JsonUtils.DeSerializeNull<ModifyAutoExpandPolicyResponse>(response);
         }
 
         public AsyncInvoker<ModifyAutoExpandPolicyResponse> ModifyAutoExpandPolicyAsyncInvoker(ModifyAutoExpandPolicyRequest modifyAutoExpandPolicyRequest)
@@ -2049,7 +2049,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             if (StringUtils.TryConvertToNonEmptyString(modifyAutoExpandPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/storage/auto-expand-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyAutoExpandPolicyRequest);
-            return new AsyncInvoker<ModifyAutoExpandPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyAutoExpandPolicyResponse>);
+            return new AsyncInvoker<ModifyAutoExpandPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<ModifyAutoExpandPolicyResponse>);
         }
         
         /// <summary>
@@ -4951,7 +4951,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/serverless/scaling-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateServerlessScalingPolicyRequest);
             var response = await DoHttpRequestAsync("PUT", request);
-            return JsonUtils.DeSerialize<UpdateServerlessScalingPolicyResponse>(response);
+            return JsonUtils.DeSerializeNull<UpdateServerlessScalingPolicyResponse>(response);
         }
 
         public AsyncInvoker<UpdateServerlessScalingPolicyResponse> UpdateServerlessScalingPolicyAsyncInvoker(UpdateServerlessScalingPolicyRequest updateServerlessScalingPolicyRequest)
@@ -4960,7 +4960,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             if (StringUtils.TryConvertToNonEmptyString(updateServerlessScalingPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/serverless/scaling-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateServerlessScalingPolicyRequest);
-            return new AsyncInvoker<UpdateServerlessScalingPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateServerlessScalingPolicyResponse>);
+            return new AsyncInvoker<UpdateServerlessScalingPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateServerlessScalingPolicyResponse>);
         }
         
         /// <summary>

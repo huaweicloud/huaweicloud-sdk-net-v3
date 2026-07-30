@@ -50,13 +50,13 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// 备份开始时间。
         /// </summary>
         [JsonProperty("begin_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string BeginTime { get; set; }
+        public long? BeginTime { get; set; }
 
         /// <summary>
         /// 备份结束时间。
         /// </summary>
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string EndTime { get; set; }
+        public long? EndTime { get; set; }
 
 
 

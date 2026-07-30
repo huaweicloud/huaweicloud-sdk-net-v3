@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         [JsonProperty("notBefore", NullValueHandling = NullValueHandling.Ignore)]
         public string NotBefore { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("redeployConfig", NullValueHandling = NullValueHandling.Ignore)]
+        public RedeployConfig RedeployConfig { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             var sb = new StringBuilder();
             sb.Append("class EventUpdate {\n");
             sb.Append("  notBefore: ").Append(NotBefore).Append("\n");
+            sb.Append("  redeployConfig: ").Append(RedeployConfig).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         {
             if (input == null) return false;
             if (this.NotBefore != input.NotBefore || (this.NotBefore != null && !this.NotBefore.Equals(input.NotBefore))) return false;
+            if (this.RedeployConfig != input.RedeployConfig || (this.RedeployConfig != null && !this.RedeployConfig.Equals(input.RedeployConfig))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             {
                 var hashCode = 41;
                 if (this.NotBefore != null) hashCode = hashCode * 59 + this.NotBefore.GetHashCode();
+                if (this.RedeployConfig != null) hashCode = hashCode * 59 + this.RedeployConfig.GetHashCode();
                 return hashCode;
             }
         }

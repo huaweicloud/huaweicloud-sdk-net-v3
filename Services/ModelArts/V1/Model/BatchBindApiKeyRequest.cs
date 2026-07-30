@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Text;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -14,7 +13,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
     /// <summary>
     /// 
     /// </summary>
-    public class BatchBindApiKeyRequest : IFormDataBody
+    public class BatchBindApiKeyRequest 
     {
 
         /// <summary>
@@ -24,16 +23,6 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public List<BatchBindApiKeyRequestKeyIds> KeyIds { get; set; }
 
 
-        
-
-        public Dictionary<string, object> BuildFormData()
-        {
-            var formData = new Dictionary<string, object>();
-
-            formData.Add("key_ids", new FormDataPart<List<BatchBindApiKeyRequestKeyIds>>(KeyIds));
-
-            return formData;
-        }
 
         /// <summary>
         /// Get the string

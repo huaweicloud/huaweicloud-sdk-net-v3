@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// **参数解释：** 源站类型 **约束限制：** 不涉及 **取值范围：** - ipaddr: 源站IP - domain: 源站域名 - obs_bucket: OBS桶域名 - third_bucket: 第三方桶域名 **默认取值：** 不涉及
+        /// **参数解释：** 源站类型 **约束限制：** 不涉及 **取值范围：** - ipaddr: 源站IP - domain: 源站域名 - obs_bucket: OBS桶域名 - third_bucket: 第三方桶域名  **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("sources_type", NullValueHandling = NullValueHandling.Ignore)]
         public string SourcesType { get; set; }
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string IpOrDomain { get; set; }
 
         /// <summary>
-        /// **参数解释：** OBS桶类型 **约束限制：** 源站类型是“OBS桶域名”时需要传该参数 **取值范围：** - private: 私有桶 - public: 公有桶 **默认取值：** public: 公有桶
+        /// **参数解释：** OBS桶类型 **约束限制：** 源站类型是“OBS桶域名”时需要传该参数 **取值范围：** - private: 私有桶 - public: 公有桶  **默认取值：** public: 公有桶
         /// </summary>
         [JsonProperty("obs_bucket_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ObsBucketType { get; set; }
@@ -65,7 +65,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string HostName { get; set; }
 
         /// <summary>
-        /// **参数解释：** 指定CDN回源时的请求协议 **约束限制：** 不涉及 **取值范围：** - follow: 协议跟随 - http: http协议 - https: https协议 **默认取值：** http: http协议
+        /// **参数解释：** 指定CDN回源时的请求协议 **约束限制：** 不涉及 **取值范围：** - follow: 协议跟随 - http: http协议 - https: https协议  **默认取值：** http: http协议
         /// </summary>
         [JsonProperty("origin_protocol", NullValueHandling = NullValueHandling.Ignore)]
         public string OriginProtocol { get; set; }

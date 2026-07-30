@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// 开启行列分流是否成功。
         /// </summary>
         [JsonProperty("success", NullValueHandling = NullValueHandling.Ignore)]
-        public string Success { get; set; }
+        public bool? Success { get; set; }
 
 
 

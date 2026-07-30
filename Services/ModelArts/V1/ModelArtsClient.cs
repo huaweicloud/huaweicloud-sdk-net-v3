@@ -83,7 +83,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1
             var urlParam = new Dictionary<string, string>();
             if (StringUtils.TryConvertToNonEmptyString(batchBindInferApiKeysRequest.ServiceId, out var valueOfServiceId)) urlParam.Add("service_id", valueOfServiceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/services/{service_id}/api-keys/batch-bind", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/x-www-form-urlencoded", batchBindInferApiKeysRequest);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchBindInferApiKeysRequest);
             var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<BatchBindInferApiKeysResponse>(response);
         }
@@ -93,7 +93,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1
             var urlParam = new Dictionary<string, string>();
             if (StringUtils.TryConvertToNonEmptyString(batchBindInferApiKeysRequest.ServiceId, out var valueOfServiceId)) urlParam.Add("service_id", valueOfServiceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/services/{service_id}/api-keys/batch-bind", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/x-www-form-urlencoded", batchBindInferApiKeysRequest);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchBindInferApiKeysRequest);
             return new SyncInvoker<BatchBindInferApiKeysResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchBindInferApiKeysResponse>);
         }
         
@@ -391,7 +391,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1
             var urlParam = new Dictionary<string, string>();
             if (StringUtils.TryConvertToNonEmptyString(batchUnbindInferApiKeysRequest.ServiceId, out var valueOfServiceId)) urlParam.Add("service_id", valueOfServiceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/services/{service_id}/api-keys/batch-unbind", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/x-www-form-urlencoded", batchUnbindInferApiKeysRequest);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUnbindInferApiKeysRequest);
             var response = DoHttpRequestSync("POST", request);
             return JsonUtils.DeSerialize<BatchUnbindInferApiKeysResponse>(response);
         }
@@ -401,7 +401,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1
             var urlParam = new Dictionary<string, string>();
             if (StringUtils.TryConvertToNonEmptyString(batchUnbindInferApiKeysRequest.ServiceId, out var valueOfServiceId)) urlParam.Add("service_id", valueOfServiceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/services/{service_id}/api-keys/batch-unbind", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/x-www-form-urlencoded", batchUnbindInferApiKeysRequest);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUnbindInferApiKeysRequest);
             return new SyncInvoker<BatchUnbindInferApiKeysResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchUnbindInferApiKeysResponse>);
         }
         

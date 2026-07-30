@@ -86,7 +86,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// 带宽大小。
         /// </summary>
         [JsonProperty("bandwidth_size", NullValueHandling = NullValueHandling.Ignore)]
-        public string BandwidthSize { get; set; }
+        public int? BandwidthSize { get; set; }
 
         /// <summary>
         /// 带宽类型。枚举值：PER 和WHOLE。

@@ -16,6 +16,54 @@ namespace HuaweiCloud.SDK.Tms.V1
 
         
         /// <summary>
+        /// 开通或关闭关联资源标签继承能力
+        ///
+        /// 开通或关闭关联资源标签继承能力
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ChangeAssociatedResourceOpenStatusResponse> ChangeAssociatedResourceOpenStatusAsync(ChangeAssociatedResourceOpenStatusRequest changeAssociatedResourceOpenStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/tms/associated-resources/status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeAssociatedResourceOpenStatusRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<ChangeAssociatedResourceOpenStatusResponse>(response);
+        }
+
+        public AsyncInvoker<ChangeAssociatedResourceOpenStatusResponse> ChangeAssociatedResourceOpenStatusAsyncInvoker(ChangeAssociatedResourceOpenStatusRequest changeAssociatedResourceOpenStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/tms/associated-resources/status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeAssociatedResourceOpenStatusRequest);
+            return new AsyncInvoker<ChangeAssociatedResourceOpenStatusResponse>(this, "PUT", request, JsonUtils.DeSerialize<ChangeAssociatedResourceOpenStatusResponse>);
+        }
+        
+        /// <summary>
+        /// 批量启用规则
+        ///
+        /// 按照规则和region来批量启用规则
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateAssociatedResourceRulesResponse> CreateAssociatedResourceRulesAsync(CreateAssociatedResourceRulesRequest createAssociatedResourceRulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/tms/associated-resources/rules/batch-create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createAssociatedResourceRulesRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateAssociatedResourceRulesResponse>(response);
+        }
+
+        public AsyncInvoker<CreateAssociatedResourceRulesResponse> CreateAssociatedResourceRulesAsyncInvoker(CreateAssociatedResourceRulesRequest createAssociatedResourceRulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/tms/associated-resources/rules/batch-create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createAssociatedResourceRulesRequest);
+            return new AsyncInvoker<CreateAssociatedResourceRulesResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAssociatedResourceRulesResponse>);
+        }
+        
+        /// <summary>
         /// 创建预定义标签
         ///
         /// 用于创建预定标签。用户创建预定义标签后，可以使用预定义标签来给资源创建标签。该接口支持幂等特性和处理批量数据。
@@ -61,6 +109,32 @@ namespace HuaweiCloud.SDK.Tms.V1
             var urlPath = HttpUtils.AddUrlPath("/v1.0/resource-tags/batch-create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createResourceTagRequest);
             return new AsyncInvoker<CreateResourceTagResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateResourceTagResponse>);
+        }
+        
+        /// <summary>
+        /// 关闭规则
+        ///
+        /// 通过指定setting_name和region_id来关闭指定的规则
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteAssociatedResourceRuleResponse> DeleteAssociatedResourceRuleAsync(DeleteAssociatedResourceRuleRequest deleteAssociatedResourceRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteAssociatedResourceRuleRequest.SettingName, out var valueOfSettingName)) urlParam.Add("setting_name", valueOfSettingName);
+            var urlPath = HttpUtils.AddUrlPath("/v2/tms/associated-resources/rules/{setting_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAssociatedResourceRuleRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteAssociatedResourceRuleResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteAssociatedResourceRuleResponse> DeleteAssociatedResourceRuleAsyncInvoker(DeleteAssociatedResourceRuleRequest deleteAssociatedResourceRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteAssociatedResourceRuleRequest.SettingName, out var valueOfSettingName)) urlParam.Add("setting_name", valueOfSettingName);
+            var urlPath = HttpUtils.AddUrlPath("/v2/tms/associated-resources/rules/{setting_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAssociatedResourceRuleRequest);
+            return new AsyncInvoker<DeleteAssociatedResourceRuleResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteAssociatedResourceRuleResponse>);
         }
         
         /// <summary>
@@ -133,6 +207,54 @@ namespace HuaweiCloud.SDK.Tms.V1
             var urlPath = HttpUtils.AddUrlPath("/", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionsRequest);
             return new AsyncInvoker<ListApiVersionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListApiVersionsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询当前规则列表
+        ///
+        /// 查询当前规则列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAssociatedResourceRulesResponse> ListAssociatedResourceRulesAsync(ListAssociatedResourceRulesRequest listAssociatedResourceRulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/tms/associated-resources/rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAssociatedResourceRulesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListAssociatedResourceRulesResponse>(response);
+        }
+
+        public AsyncInvoker<ListAssociatedResourceRulesResponse> ListAssociatedResourceRulesAsyncInvoker(ListAssociatedResourceRulesRequest listAssociatedResourceRulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/tms/associated-resources/rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAssociatedResourceRulesRequest);
+            return new AsyncInvoker<ListAssociatedResourceRulesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAssociatedResourceRulesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询当前规则的配置列表
+        ///
+        /// 查询当前规则的配置列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAssociatedResourceSettingsResponse> ListAssociatedResourceSettingsAsync(ListAssociatedResourceSettingsRequest listAssociatedResourceSettingsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/tms/associated-resources/settings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAssociatedResourceSettingsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListAssociatedResourceSettingsResponse>(response);
+        }
+
+        public AsyncInvoker<ListAssociatedResourceSettingsResponse> ListAssociatedResourceSettingsAsyncInvoker(ListAssociatedResourceSettingsRequest listAssociatedResourceSettingsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/tms/associated-resources/settings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAssociatedResourceSettingsRequest);
+            return new AsyncInvoker<ListAssociatedResourceSettingsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAssociatedResourceSettingsResponse>);
         }
         
         /// <summary>
@@ -306,6 +428,30 @@ namespace HuaweiCloud.SDK.Tms.V1
         }
         
         /// <summary>
+        /// 查询当前用户的关联资源标签继承能力的开通状态
+        ///
+        /// 查询当前用户的关联资源标签继承能力的开通状态
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAssociatedResourceOpenStatusResponse> ShowAssociatedResourceOpenStatusAsync(ShowAssociatedResourceOpenStatusRequest showAssociatedResourceOpenStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/tms/associated-resources/status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAssociatedResourceOpenStatusRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowAssociatedResourceOpenStatusResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAssociatedResourceOpenStatusResponse> ShowAssociatedResourceOpenStatusAsyncInvoker(ShowAssociatedResourceOpenStatusRequest showAssociatedResourceOpenStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/tms/associated-resources/status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAssociatedResourceOpenStatusRequest);
+            return new AsyncInvoker<ShowAssociatedResourceOpenStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAssociatedResourceOpenStatusResponse>);
+        }
+        
+        /// <summary>
         /// 查询资源标签
         ///
         /// 查询单个资源上的标签。
@@ -353,6 +499,30 @@ namespace HuaweiCloud.SDK.Tms.V1
             var urlPath = HttpUtils.AddUrlPath("/v1.0/tms/quotas", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTagQuotaRequest);
             return new AsyncInvoker<ShowTagQuotaResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTagQuotaResponse>);
+        }
+        
+        /// <summary>
+        /// 更新规则
+        ///
+        /// 更新规则。规则更新的信息会覆盖原有内容
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateAssociatedResourceRulesResponse> UpdateAssociatedResourceRulesAsync(UpdateAssociatedResourceRulesRequest updateAssociatedResourceRulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/tms/associated-resources/rules/batch-update", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateAssociatedResourceRulesRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateAssociatedResourceRulesResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateAssociatedResourceRulesResponse> UpdateAssociatedResourceRulesAsyncInvoker(UpdateAssociatedResourceRulesRequest updateAssociatedResourceRulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/tms/associated-resources/rules/batch-update", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateAssociatedResourceRulesRequest);
+            return new AsyncInvoker<UpdateAssociatedResourceRulesResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAssociatedResourceRulesResponse>);
         }
         
         /// <summary>

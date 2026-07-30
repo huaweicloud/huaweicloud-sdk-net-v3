@@ -59,6 +59,12 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public string OsModelartsNodeBatchCount { get; set; }
 
         /// <summary>
+        /// **参数解释**：HPS超节点ID。该值相同的节点，A5代表在同一框内，A3代表在同一个超节点内。 **取值范围**：不涉及。
+        /// </summary>
+        [JsonProperty("os.modelarts.node/spod.id", NullValueHandling = NullValueHandling.Ignore)]
+        public string OsModelartsNodeSpodId { get; set; }
+
+        /// <summary>
         /// **参数解释**：节点的资源id。 **取值范围**：不涉及。
         /// </summary>
         [JsonProperty("os.modelarts/resource.id", NullValueHandling = NullValueHandling.Ignore)]
@@ -128,6 +134,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  osModelartsNodeBatchName: ").Append(OsModelartsNodeBatchName).Append("\n");
             sb.Append("  osModelartsNodeBatchType: ").Append(OsModelartsNodeBatchType).Append("\n");
             sb.Append("  osModelartsNodeBatchCount: ").Append(OsModelartsNodeBatchCount).Append("\n");
+            sb.Append("  osModelartsNodeSpodId: ").Append(OsModelartsNodeSpodId).Append("\n");
             sb.Append("  osModelartsResourceId: ").Append(OsModelartsResourceId).Append("\n");
             sb.Append("  osModelartsTenantDomainId: ").Append(OsModelartsTenantDomainId).Append("\n");
             sb.Append("  osModelartsTenantProjectId: ").Append(OsModelartsTenantProjectId).Append("\n");
@@ -162,6 +169,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.OsModelartsNodeBatchName != input.OsModelartsNodeBatchName || (this.OsModelartsNodeBatchName != null && !this.OsModelartsNodeBatchName.Equals(input.OsModelartsNodeBatchName))) return false;
             if (this.OsModelartsNodeBatchType != input.OsModelartsNodeBatchType || (this.OsModelartsNodeBatchType != null && !this.OsModelartsNodeBatchType.Equals(input.OsModelartsNodeBatchType))) return false;
             if (this.OsModelartsNodeBatchCount != input.OsModelartsNodeBatchCount || (this.OsModelartsNodeBatchCount != null && !this.OsModelartsNodeBatchCount.Equals(input.OsModelartsNodeBatchCount))) return false;
+            if (this.OsModelartsNodeSpodId != input.OsModelartsNodeSpodId || (this.OsModelartsNodeSpodId != null && !this.OsModelartsNodeSpodId.Equals(input.OsModelartsNodeSpodId))) return false;
             if (this.OsModelartsResourceId != input.OsModelartsResourceId || (this.OsModelartsResourceId != null && !this.OsModelartsResourceId.Equals(input.OsModelartsResourceId))) return false;
             if (this.OsModelartsTenantDomainId != input.OsModelartsTenantDomainId || (this.OsModelartsTenantDomainId != null && !this.OsModelartsTenantDomainId.Equals(input.OsModelartsTenantDomainId))) return false;
             if (this.OsModelartsTenantProjectId != input.OsModelartsTenantProjectId || (this.OsModelartsTenantProjectId != null && !this.OsModelartsTenantProjectId.Equals(input.OsModelartsTenantProjectId))) return false;
@@ -190,6 +198,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 if (this.OsModelartsNodeBatchName != null) hashCode = hashCode * 59 + this.OsModelartsNodeBatchName.GetHashCode();
                 if (this.OsModelartsNodeBatchType != null) hashCode = hashCode * 59 + this.OsModelartsNodeBatchType.GetHashCode();
                 if (this.OsModelartsNodeBatchCount != null) hashCode = hashCode * 59 + this.OsModelartsNodeBatchCount.GetHashCode();
+                if (this.OsModelartsNodeSpodId != null) hashCode = hashCode * 59 + this.OsModelartsNodeSpodId.GetHashCode();
                 if (this.OsModelartsResourceId != null) hashCode = hashCode * 59 + this.OsModelartsResourceId.GetHashCode();
                 if (this.OsModelartsTenantDomainId != null) hashCode = hashCode * 59 + this.OsModelartsTenantDomainId.GetHashCode();
                 if (this.OsModelartsTenantProjectId != null) hashCode = hashCode * 59 + this.OsModelartsTenantProjectId.GetHashCode();

@@ -29,6 +29,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public string DatastoreName { get; set; }
 
         /// <summary>
+        /// **参数解释**：  参数组ID。  **取值范围**：  只能由英文字母、数字组成，前面为UUID，后缀为pr07，长度为36个字符。
+        /// </summary>
+        [JsonProperty("configuration_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ConfigurationId { get; set; }
+
+        /// <summary>
         /// 创建时间，格式为\&quot;yyyy-mm-ddThh:mm:ssZ\&quot;。  其中，T指某个时间的开始；Z指时区偏移量，例如偏移1个小时显示为+0100。
         /// </summary>
         [JsonProperty("created", NullValueHandling = NullValueHandling.Ignore)]
@@ -51,6 +57,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("class ParameterConfigurationInfo {\n");
             sb.Append("  datastoreVersionName: ").Append(DatastoreVersionName).Append("\n");
             sb.Append("  datastoreName: ").Append(DatastoreName).Append("\n");
+            sb.Append("  configurationId: ").Append(ConfigurationId).Append("\n");
             sb.Append("  created: ").Append(Created).Append("\n");
             sb.Append("  updated: ").Append(Updated).Append("\n");
             sb.Append("}\n");
@@ -73,6 +80,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (input == null) return false;
             if (this.DatastoreVersionName != input.DatastoreVersionName || (this.DatastoreVersionName != null && !this.DatastoreVersionName.Equals(input.DatastoreVersionName))) return false;
             if (this.DatastoreName != input.DatastoreName || (this.DatastoreName != null && !this.DatastoreName.Equals(input.DatastoreName))) return false;
+            if (this.ConfigurationId != input.ConfigurationId || (this.ConfigurationId != null && !this.ConfigurationId.Equals(input.ConfigurationId))) return false;
             if (this.Created != input.Created || (this.Created != null && !this.Created.Equals(input.Created))) return false;
             if (this.Updated != input.Updated || (this.Updated != null && !this.Updated.Equals(input.Updated))) return false;
 
@@ -89,6 +97,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 var hashCode = 41;
                 if (this.DatastoreVersionName != null) hashCode = hashCode * 59 + this.DatastoreVersionName.GetHashCode();
                 if (this.DatastoreName != null) hashCode = hashCode * 59 + this.DatastoreName.GetHashCode();
+                if (this.ConfigurationId != null) hashCode = hashCode * 59 + this.ConfigurationId.GetHashCode();
                 if (this.Created != null) hashCode = hashCode * 59 + this.Created.GetHashCode();
                 if (this.Updated != null) hashCode = hashCode * 59 + this.Updated.GetHashCode();
                 return hashCode;

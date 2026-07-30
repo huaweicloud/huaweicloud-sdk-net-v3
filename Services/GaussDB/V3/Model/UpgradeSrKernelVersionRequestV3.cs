@@ -20,13 +20,13 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// **参数解释**： 是否延时升级。  **约束限制**： 不涉及  **取值范围**： - true - false  **默认取值**： false。
         /// </summary>
         [JsonProperty("delay", NullValueHandling = NullValueHandling.Ignore)]
-        public string Delay { get; set; }
+        public bool? Delay { get; set; }
 
         /// <summary>
         /// **参数解释**： 是否跳过升级校验。  **约束限制**： 不涉及  **取值范围**： - true - false  **默认取值**： false。
         /// </summary>
         [JsonProperty("is_skip_validate", NullValueHandling = NullValueHandling.Ignore)]
-        public string IsSkipValidate { get; set; }
+        public bool? IsSkipValidate { get; set; }
 
 
 

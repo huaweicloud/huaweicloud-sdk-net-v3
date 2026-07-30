@@ -623,10 +623,22 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public string ProbeMsg { get; set; }
 
         /// <summary>
+        /// **参数解释**：计划事件执行的实时进度信息，系统自动生成。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
+        /// </summary>
+        [JsonProperty("jobProgress", NullValueHandling = NullValueHandling.Ignore)]
+        public string JobProgress { get; set; }
+
+        /// <summary>
         /// **参数解释**：节点的重部署类型。 **约束限制**：不涉及。 **取值范围**：可选值如下：- HARD：表示支持强制重部署, - SOFT：表示支持重部署 **默认取值**：不涉及。
         /// </summary>
         [JsonProperty("redeployType", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> RedeployType { get; set; }
+
+        /// <summary>
+        /// **参数解释**：snt9b23 场景对应ECS服务器ID。计算服务系统自动生成的实例ID，长度小于63。  **取值范围**：snt9b23 涉及, snt9b 不涉及。
+        /// </summary>
+        [JsonProperty("underLyingInstanceId", NullValueHandling = NullValueHandling.Ignore)]
+        public string UnderLyingInstanceId { get; set; }
 
 
 
@@ -652,7 +664,9 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  finishTime: ").Append(FinishTime).Append("\n");
             sb.Append("  notBefore: ").Append(NotBefore).Append("\n");
             sb.Append("  probeMsg: ").Append(ProbeMsg).Append("\n");
+            sb.Append("  jobProgress: ").Append(JobProgress).Append("\n");
             sb.Append("  redeployType: ").Append(RedeployType).Append("\n");
+            sb.Append("  underLyingInstanceId: ").Append(UnderLyingInstanceId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -686,7 +700,9 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.FinishTime != input.FinishTime || (this.FinishTime != null && !this.FinishTime.Equals(input.FinishTime))) return false;
             if (this.NotBefore != input.NotBefore || (this.NotBefore != null && !this.NotBefore.Equals(input.NotBefore))) return false;
             if (this.ProbeMsg != input.ProbeMsg || (this.ProbeMsg != null && !this.ProbeMsg.Equals(input.ProbeMsg))) return false;
+            if (this.JobProgress != input.JobProgress || (this.JobProgress != null && !this.JobProgress.Equals(input.JobProgress))) return false;
             if (this.RedeployType != input.RedeployType || (this.RedeployType != null && input.RedeployType != null && !this.RedeployType.SequenceEqual(input.RedeployType))) return false;
+            if (this.UnderLyingInstanceId != input.UnderLyingInstanceId || (this.UnderLyingInstanceId != null && !this.UnderLyingInstanceId.Equals(input.UnderLyingInstanceId))) return false;
 
             return true;
         }
@@ -714,7 +730,9 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 if (this.FinishTime != null) hashCode = hashCode * 59 + this.FinishTime.GetHashCode();
                 if (this.NotBefore != null) hashCode = hashCode * 59 + this.NotBefore.GetHashCode();
                 if (this.ProbeMsg != null) hashCode = hashCode * 59 + this.ProbeMsg.GetHashCode();
+                if (this.JobProgress != null) hashCode = hashCode * 59 + this.JobProgress.GetHashCode();
                 if (this.RedeployType != null) hashCode = hashCode * 59 + this.RedeployType.GetHashCode();
+                if (this.UnderLyingInstanceId != null) hashCode = hashCode * 59 + this.UnderLyingInstanceId.GetHashCode();
                 return hashCode;
             }
         }

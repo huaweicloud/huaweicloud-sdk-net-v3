@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// 是否延迟升级。
         /// </summary>
         [JsonProperty("delay", NullValueHandling = NullValueHandling.Ignore)]
-        public string Delay { get; set; }
+        public bool? Delay { get; set; }
 
 
 

@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// **参数解释**： LTS配置开关状态。  **取值范围**：  不涉及。
         /// </summary>
         [JsonProperty("enabled", NullValueHandling = NullValueHandling.Ignore)]
-        public string Enabled { get; set; }
+        public bool? Enabled { get; set; }
 
 
 

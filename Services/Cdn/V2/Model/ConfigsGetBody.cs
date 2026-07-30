@@ -244,6 +244,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         [JsonProperty("https_tls_version", NullValueHandling = NullValueHandling.Ignore)]
         public HttpsTlsVersion HttpsTlsVersion { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 设置用量封顶阈值，当实际用量大于阈值时停用域名，有效预防流量盗刷或恶意攻击带来的高额账单。  &gt; 由于监控数据存在时延，域名将在用量达到阈值后的10分钟左右被停用  **约束限制：** 不涉及
+        /// </summary>
+        [JsonProperty("flow_limit_strategy", NullValueHandling = NullValueHandling.Ignore)]
+        public List<FlowLimitStrategy> FlowLimitStrategy { get; set; }
+
 
 
         /// <summary>
@@ -291,6 +297,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  accessAreaFilter: ").Append(AccessAreaFilter).Append("\n");
             sb.Append("  clientCert: ").Append(ClientCert).Append("\n");
             sb.Append("  httpsTlsVersion: ").Append(HttpsTlsVersion).Append("\n");
+            sb.Append("  flowLimitStrategy: ").Append(FlowLimitStrategy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -347,6 +354,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             if (this.AccessAreaFilter != input.AccessAreaFilter || (this.AccessAreaFilter != null && input.AccessAreaFilter != null && !this.AccessAreaFilter.SequenceEqual(input.AccessAreaFilter))) return false;
             if (this.ClientCert != input.ClientCert || (this.ClientCert != null && !this.ClientCert.Equals(input.ClientCert))) return false;
             if (this.HttpsTlsVersion != input.HttpsTlsVersion || (this.HttpsTlsVersion != null && !this.HttpsTlsVersion.Equals(input.HttpsTlsVersion))) return false;
+            if (this.FlowLimitStrategy != input.FlowLimitStrategy || (this.FlowLimitStrategy != null && input.FlowLimitStrategy != null && !this.FlowLimitStrategy.SequenceEqual(input.FlowLimitStrategy))) return false;
 
             return true;
         }
@@ -397,6 +405,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                 if (this.AccessAreaFilter != null) hashCode = hashCode * 59 + this.AccessAreaFilter.GetHashCode();
                 if (this.ClientCert != null) hashCode = hashCode * 59 + this.ClientCert.GetHashCode();
                 if (this.HttpsTlsVersion != null) hashCode = hashCode * 59 + this.HttpsTlsVersion.GetHashCode();
+                if (this.FlowLimitStrategy != null) hashCode = hashCode * 59 + this.FlowLimitStrategy.GetHashCode();
                 return hashCode;
             }
         }

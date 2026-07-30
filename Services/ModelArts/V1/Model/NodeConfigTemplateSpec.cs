@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         [JsonProperty("dockerLvmConfig", NullValueHandling = NullValueHandling.Ignore)]
         public DockerLvmConfig DockerLvmConfig { get; set; }
 
+        /// <summary>
+        /// **参数解释**：该规格支持的Modelarts内置操作系统列表。
+        /// </summary>
+        [JsonProperty("osList", NullValueHandling = NullValueHandling.Ignore)]
+        public List<AffinityOS> OsList { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("class NodeConfigTemplateSpec {\n");
             sb.Append("  dockerBaseSize: ").Append(DockerBaseSize).Append("\n");
             sb.Append("  dockerLvmConfig: ").Append(DockerLvmConfig).Append("\n");
+            sb.Append("  osList: ").Append(OsList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (input == null) return false;
             if (this.DockerBaseSize != input.DockerBaseSize || (this.DockerBaseSize != null && !this.DockerBaseSize.Equals(input.DockerBaseSize))) return false;
             if (this.DockerLvmConfig != input.DockerLvmConfig || (this.DockerLvmConfig != null && !this.DockerLvmConfig.Equals(input.DockerLvmConfig))) return false;
+            if (this.OsList != input.OsList || (this.OsList != null && input.OsList != null && !this.OsList.SequenceEqual(input.OsList))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 var hashCode = 41;
                 if (this.DockerBaseSize != null) hashCode = hashCode * 59 + this.DockerBaseSize.GetHashCode();
                 if (this.DockerLvmConfig != null) hashCode = hashCode * 59 + this.DockerLvmConfig.GetHashCode();
+                if (this.OsList != null) hashCode = hashCode * 59 + this.OsList.GetHashCode();
                 return hashCode;
             }
         }

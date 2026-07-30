@@ -19,8 +19,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// <summary>
         /// **参数解释**：  每个日志文件的下载链接详情。  **取值范围**：  不涉及。 
         /// </summary>
-        [JsonProperty("list", NullValueHandling = NullValueHandling.Ignore)]
-        public List<DownLoadFileInfoItem> List { get; set; }
+        [JsonProperty("download_files", NullValueHandling = NullValueHandling.Ignore)]
+        public List<DownLoadFileInfoItem> DownloadFiles { get; set; }
 
 
 
@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DownloadDdlLogsResponse {\n");
-            sb.Append("  list: ").Append(List).Append("\n");
+            sb.Append("  downloadFiles: ").Append(DownloadFiles).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public bool Equals(DownloadDdlLogsResponse input)
         {
             if (input == null) return false;
-            if (this.List != input.List || (this.List != null && input.List != null && !this.List.SequenceEqual(input.List))) return false;
+            if (this.DownloadFiles != input.DownloadFiles || (this.DownloadFiles != null && input.DownloadFiles != null && !this.DownloadFiles.SequenceEqual(input.DownloadFiles))) return false;
 
             return true;
         }
@@ -63,7 +63,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.List != null) hashCode = hashCode * 59 + this.List.GetHashCode();
+                if (this.DownloadFiles != null) hashCode = hashCode * 59 + this.DownloadFiles.GetHashCode();
                 return hashCode;
             }
         }

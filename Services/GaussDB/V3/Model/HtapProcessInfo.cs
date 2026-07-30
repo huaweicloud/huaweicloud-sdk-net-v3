@@ -56,7 +56,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// **参数解释**：  会话持续时间，单位是秒。  **取值范围**：  不涉及。
         /// </summary>
         [JsonProperty("duration", NullValueHandling = NullValueHandling.Ignore)]
-        public string Duration { get; set; }
+        public double? Duration { get; set; }
 
         /// <summary>
         /// **参数解释**：  会话命令类型。    **取值范围**：  不涉及。

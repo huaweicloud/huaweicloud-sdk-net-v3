@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// **参数解释：** 重定向状态码 **约束限制：** 不涉及 **取值范围：** - 301 - 302 - 303 - 307 **默认取值：** 不涉及
+        /// **参数解释：** 重定向状态码 **约束限制：** 不涉及 **取值范围：** - 301 - 302 - 303 - 307  **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("redirect_status_code", NullValueHandling = NullValueHandling.Ignore)]
         public int? RedirectStatusCode { get; set; }
@@ -29,13 +29,13 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string RedirectUrl { get; set; }
 
         /// <summary>
-        /// **参数解释：** 支持将客户端请求重定向到其他域名 **约束限制：** 不涉及 **取值范围：** - 1-255个字符 - 必须以http://或https://开头 **默认取值：** 不填时默认为当前域名
+        /// **参数解释：** 支持将客户端请求重定向到其他域名 **约束限制：** 不涉及 **取值范围：** - 1-255个字符 - 必须以http://或https://开头  **默认取值：** 不填时默认为当前域名
         /// </summary>
         [JsonProperty("redirect_host", NullValueHandling = NullValueHandling.Ignore)]
         public string RedirectHost { get; set; }
 
         /// <summary>
-        /// **参数解释：** 执行规则 **约束限制：** 不涉及 **取值范围：** - redirect: 如果请求的URL匹配了当前规则，该请求将被重定向到目标Path。执行完当前规则后，当存在其他配置规则时，会继续匹配剩余规则 - break: 如果请求的URL匹配了当前规则，请求将被改写为目标Path。执行完当前规则后，当存在其他配置规则时，将不再匹配剩余规则，此时不支持配置重定向Host和重定向状态码，返回状态码200 **默认取值：** 不涉及
+        /// **参数解释：** 执行规则 **约束限制：** 不涉及 **取值范围：** - redirect: 如果请求的URL匹配了当前规则，该请求将被重定向到目标Path。执行完当前规则后，当存在其他配置规则时，会继续匹配剩余规则 - break: 如果请求的URL匹配了当前规则，请求将被改写为目标Path。执行完当前规则后，当存在其他配置规则时，将不再匹配剩余规则，此时不支持配置重定向Host和重定向状态码，返回状态码200  **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("execution_mode", NullValueHandling = NullValueHandling.Ignore)]
         public string ExecutionMode { get; set; }

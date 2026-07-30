@@ -46,6 +46,12 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         [JsonProperty("install_sys_packages", NullValueHandling = NullValueHandling.Ignore)]
         public bool? InstallSysPackages { get; set; }
 
+        /// <summary>
+        /// **参数解释**：SWR企业仓实例ID，使用企业仓镜像时需传入。 **取值范围**：不涉及。
+        /// </summary>
+        [JsonProperty("image_repo_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ImageRepoId { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +66,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  engineVersion: ").Append(EngineVersion).Append("\n");
             sb.Append("  imageUrl: ").Append(ImageUrl).Append("\n");
             sb.Append("  installSysPackages: ").Append(InstallSysPackages).Append("\n");
+            sb.Append("  imageRepoId: ").Append(ImageRepoId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,6 +90,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.EngineVersion != input.EngineVersion || (this.EngineVersion != null && !this.EngineVersion.Equals(input.EngineVersion))) return false;
             if (this.ImageUrl != input.ImageUrl || (this.ImageUrl != null && !this.ImageUrl.Equals(input.ImageUrl))) return false;
             if (this.InstallSysPackages != input.InstallSysPackages || (this.InstallSysPackages != null && !this.InstallSysPackages.Equals(input.InstallSysPackages))) return false;
+            if (this.ImageRepoId != input.ImageRepoId || (this.ImageRepoId != null && !this.ImageRepoId.Equals(input.ImageRepoId))) return false;
 
             return true;
         }
@@ -100,6 +108,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 if (this.EngineVersion != null) hashCode = hashCode * 59 + this.EngineVersion.GetHashCode();
                 if (this.ImageUrl != null) hashCode = hashCode * 59 + this.ImageUrl.GetHashCode();
                 if (this.InstallSysPackages != null) hashCode = hashCode * 59 + this.InstallSysPackages.GetHashCode();
+                if (this.ImageRepoId != null) hashCode = hashCode * 59 + this.ImageRepoId.GetHashCode();
                 return hashCode;
             }
         }

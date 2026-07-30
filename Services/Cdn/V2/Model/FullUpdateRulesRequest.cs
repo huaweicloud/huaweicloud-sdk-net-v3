@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// **参数解释：** 规则配置内容，可以配置多个规则 **约束限制：** 不涉及
         /// </summary>
         [JsonProperty("rules", NullValueHandling = NullValueHandling.Ignore)]
-        public List<CreateRuleRequest> Rules { get; set; }
+        public List<FullUpdateRuleRequest> Rules { get; set; }
 
 
 
