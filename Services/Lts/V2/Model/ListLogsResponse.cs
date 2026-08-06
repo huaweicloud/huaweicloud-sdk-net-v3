@@ -35,6 +35,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         public bool? IsQueryComplete { get; set; }
 
         /// <summary>
+        /// **参数解释：** 分页查询时，若返回结果中包含该字段，下一次请求体需要增加scroll_Id参数参与分页查询。 **取值范围：** 不涉及。
+        /// </summary>
+        [JsonProperty("scrollId", NullValueHandling = NullValueHandling.Ignore)]
+        public string ScrollId { get; set; }
+
+        /// <summary>
         /// 分析日志返回响应体
         /// </summary>
         [JsonProperty("analysisLogs", NullValueHandling = NullValueHandling.Ignore)]
@@ -52,6 +58,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  count: ").Append(Count).Append("\n");
             sb.Append("  logs: ").Append(Logs).Append("\n");
             sb.Append("  isQueryComplete: ").Append(IsQueryComplete).Append("\n");
+            sb.Append("  scrollId: ").Append(ScrollId).Append("\n");
             sb.Append("  analysisLogs: ").Append(AnalysisLogs).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -74,6 +81,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
             if (this.Logs != input.Logs || (this.Logs != null && input.Logs != null && !this.Logs.SequenceEqual(input.Logs))) return false;
             if (this.IsQueryComplete != input.IsQueryComplete || (this.IsQueryComplete != null && !this.IsQueryComplete.Equals(input.IsQueryComplete))) return false;
+            if (this.ScrollId != input.ScrollId || (this.ScrollId != null && !this.ScrollId.Equals(input.ScrollId))) return false;
             if (this.AnalysisLogs != input.AnalysisLogs || (this.AnalysisLogs != null && input.AnalysisLogs != null && !this.AnalysisLogs.SequenceEqual(input.AnalysisLogs))) return false;
 
             return true;
@@ -90,6 +98,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
                 if (this.Logs != null) hashCode = hashCode * 59 + this.Logs.GetHashCode();
                 if (this.IsQueryComplete != null) hashCode = hashCode * 59 + this.IsQueryComplete.GetHashCode();
+                if (this.ScrollId != null) hashCode = hashCode * 59 + this.ScrollId.GetHashCode();
                 if (this.AnalysisLogs != null) hashCode = hashCode * 59 + this.AnalysisLogs.GetHashCode();
                 return hashCode;
             }

@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         [JsonProperty("number_of_rotations", NullValueHandling = NullValueHandling.Ignore)]
         public int? NumberOfRotations { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 密钥下的密钥材料信息 **取值范围：** 不涉及
+        /// </summary>
+        [JsonProperty("key_materials", NullValueHandling = NullValueHandling.Ignore)]
+        public List<GetkeyRotationStatusResponseBodyKeyMaterials> KeyMaterials { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
             sb.Append("  rotationInterval: ").Append(RotationInterval).Append("\n");
             sb.Append("  lastRotationTime: ").Append(LastRotationTime).Append("\n");
             sb.Append("  numberOfRotations: ").Append(NumberOfRotations).Append("\n");
+            sb.Append("  keyMaterials: ").Append(KeyMaterials).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,6 +82,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
             if (this.RotationInterval != input.RotationInterval || (this.RotationInterval != null && !this.RotationInterval.Equals(input.RotationInterval))) return false;
             if (this.LastRotationTime != input.LastRotationTime || (this.LastRotationTime != null && !this.LastRotationTime.Equals(input.LastRotationTime))) return false;
             if (this.NumberOfRotations != input.NumberOfRotations || (this.NumberOfRotations != null && !this.NumberOfRotations.Equals(input.NumberOfRotations))) return false;
+            if (this.KeyMaterials != input.KeyMaterials || (this.KeyMaterials != null && input.KeyMaterials != null && !this.KeyMaterials.SequenceEqual(input.KeyMaterials))) return false;
 
             return true;
         }
@@ -91,6 +99,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
                 if (this.RotationInterval != null) hashCode = hashCode * 59 + this.RotationInterval.GetHashCode();
                 if (this.LastRotationTime != null) hashCode = hashCode * 59 + this.LastRotationTime.GetHashCode();
                 if (this.NumberOfRotations != null) hashCode = hashCode * 59 + this.NumberOfRotations.GetHashCode();
+                if (this.KeyMaterials != null) hashCode = hashCode * 59 + this.KeyMaterials.GetHashCode();
                 return hashCode;
             }
         }

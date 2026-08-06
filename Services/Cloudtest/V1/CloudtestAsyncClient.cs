@@ -1641,6 +1641,58 @@ namespace HuaweiCloud.SDK.Cloudtest.V1
         }
         
         /// <summary>
+        /// 根据条件查询子任务集合
+        ///
+        /// 根据条件查询子任务集合
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListSubTasksByPostUsingResponse> ListSubTasksByPostUsingAsync(ListSubTasksByPostUsingRequest listSubTasksByPostUsingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listSubTasksByPostUsingRequest.ServiceId, out var valueOfServiceId)) urlParam.Add("service_id", valueOfServiceId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/projects/{service_id}/testsuite/results", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSubTasksByPostUsingRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ListSubTasksByPostUsingResponse>(response);
+        }
+
+        public AsyncInvoker<ListSubTasksByPostUsingResponse> ListSubTasksByPostUsingAsyncInvoker(ListSubTasksByPostUsingRequest listSubTasksByPostUsingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listSubTasksByPostUsingRequest.ServiceId, out var valueOfServiceId)) urlParam.Add("service_id", valueOfServiceId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/projects/{service_id}/testsuite/results", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSubTasksByPostUsingRequest);
+            return new AsyncInvoker<ListSubTasksByPostUsingResponse>(this, "POST", request, JsonUtils.DeSerialize<ListSubTasksByPostUsingResponse>);
+        }
+        
+        /// <summary>
+        /// 批量查询子任务用例
+        ///
+        /// 批量查询子任务用例
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListSubTestCaseByConditionsUsingResponse> ListSubTestCaseByConditionsUsingAsync(ListSubTestCaseByConditionsUsingRequest listSubTestCaseByConditionsUsingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listSubTestCaseByConditionsUsingRequest.ServiceId, out var valueOfServiceId)) urlParam.Add("service_id", valueOfServiceId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/projects/{service_id}/testsuite/results/cases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSubTestCaseByConditionsUsingRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ListSubTestCaseByConditionsUsingResponse>(response);
+        }
+
+        public AsyncInvoker<ListSubTestCaseByConditionsUsingResponse> ListSubTestCaseByConditionsUsingAsyncInvoker(ListSubTestCaseByConditionsUsingRequest listSubTestCaseByConditionsUsingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listSubTestCaseByConditionsUsingRequest.ServiceId, out var valueOfServiceId)) urlParam.Add("service_id", valueOfServiceId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/projects/{service_id}/testsuite/results/cases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSubTestCaseByConditionsUsingRequest);
+            return new AsyncInvoker<ListSubTestCaseByConditionsUsingResponse>(this, "POST", request, JsonUtils.DeSerialize<ListSubTestCaseByConditionsUsingResponse>);
+        }
+        
+        /// <summary>
         /// 获取测试套关联用例详情
         ///
         /// 获取测试套关联用例详情

@@ -148,6 +148,30 @@ namespace HuaweiCloud.SDK.Kms.V2
         }
         
         /// <summary>
+        /// 创建接入点
+        ///
+        /// 用于创建接入点
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateAccessPointResponse CreateAccessPoint(CreateAccessPointRequest createAccessPointRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/access-points", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createAccessPointRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateAccessPointResponse>(response);
+        }
+
+        public SyncInvoker<CreateAccessPointResponse> CreateAccessPointInvoker(CreateAccessPointRequest createAccessPointRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/access-points", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createAccessPointRequest);
+            return new SyncInvoker<CreateAccessPointResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAccessPointResponse>);
+        }
+        
+        /// <summary>
         /// 
         ///
         /// 
@@ -192,6 +216,30 @@ namespace HuaweiCloud.SDK.Kms.V2
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/create-datakey", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createDatakeyRequest);
             return new SyncInvoker<CreateDatakeyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDatakeyResponse>);
+        }
+        
+        /// <summary>
+        /// 创建密钥胶囊
+        ///
+        /// 创建密钥胶囊
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateDatakeyCapsuleResponse CreateDatakeyCapsule(CreateDatakeyCapsuleRequest createDatakeyCapsuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/datakey-capsule/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createDatakeyCapsuleRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateDatakeyCapsuleResponse>(response);
+        }
+
+        public SyncInvoker<CreateDatakeyCapsuleResponse> CreateDatakeyCapsuleInvoker(CreateDatakeyCapsuleRequest createDatakeyCapsuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/datakey-capsule/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createDatakeyCapsuleRequest);
+            return new SyncInvoker<CreateDatakeyCapsuleResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDatakeyCapsuleResponse>);
         }
         
         /// <summary>
@@ -292,6 +340,30 @@ namespace HuaweiCloud.SDK.Kms.V2
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/create-key", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createKeyRequest);
             return new SyncInvoker<CreateKeyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateKeyResponse>);
+        }
+        
+        /// <summary>
+        /// 创建密钥策略
+        ///
+        /// 创建密钥策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateKeyPolicyResponse CreateKeyPolicy(CreateKeyPolicyRequest createKeyPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/key-policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createKeyPolicyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateKeyPolicyResponse>(response);
+        }
+
+        public SyncInvoker<CreateKeyPolicyResponse> CreateKeyPolicyInvoker(CreateKeyPolicyRequest createKeyPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/key-policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createKeyPolicyRequest);
+            return new SyncInvoker<CreateKeyPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateKeyPolicyResponse>);
         }
         
         /// <summary>
@@ -491,6 +563,56 @@ namespace HuaweiCloud.SDK.Kms.V2
         }
         
         /// <summary>
+        /// 解密密钥胶囊
+        ///
+        /// 解密密钥胶囊
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DecryptDatakeyCapsuleResponse DecryptDatakeyCapsule(DecryptDatakeyCapsuleRequest decryptDatakeyCapsuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/datakey-capsule/decrypt", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", decryptDatakeyCapsuleRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<DecryptDatakeyCapsuleResponse>(response);
+        }
+
+        public SyncInvoker<DecryptDatakeyCapsuleResponse> DecryptDatakeyCapsuleInvoker(DecryptDatakeyCapsuleRequest decryptDatakeyCapsuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/datakey-capsule/decrypt", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", decryptDatakeyCapsuleRequest);
+            return new SyncInvoker<DecryptDatakeyCapsuleResponse>(this, "POST", request, JsonUtils.DeSerialize<DecryptDatakeyCapsuleResponse>);
+        }
+        
+        /// <summary>
+        /// 删除接入点
+        ///
+        /// 删除接入点
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteAccessPointResponse DeleteAccessPoint(DeleteAccessPointRequest deleteAccessPointRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteAccessPointRequest.AccessPointId, out var valueOfAccessPointId)) urlParam.Add("access_point_id", valueOfAccessPointId);
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/access-points/{access_point_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAccessPointRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteAccessPointResponse>(response);
+        }
+
+        public SyncInvoker<DeleteAccessPointResponse> DeleteAccessPointInvoker(DeleteAccessPointRequest deleteAccessPointRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteAccessPointRequest.AccessPointId, out var valueOfAccessPointId)) urlParam.Add("access_point_id", valueOfAccessPointId);
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/access-points/{access_point_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAccessPointRequest);
+            return new SyncInvoker<DeleteAccessPointResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteAccessPointResponse>);
+        }
+        
+        /// <summary>
         /// 
         ///
         /// 删除别名
@@ -560,6 +682,32 @@ namespace HuaweiCloud.SDK.Kms.V2
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/schedule-key-deletion", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteKeyRequest);
             return new SyncInvoker<DeleteKeyResponse>(this, "POST", request, JsonUtils.DeSerialize<DeleteKeyResponse>);
+        }
+        
+        /// <summary>
+        /// 删除密钥策略
+        ///
+        /// 删除密钥策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteKeyPolicyResponse DeleteKeyPolicy(DeleteKeyPolicyRequest deleteKeyPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteKeyPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/key-policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKeyPolicyRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteKeyPolicyResponse>(response);
+        }
+
+        public SyncInvoker<DeleteKeyPolicyResponse> DeleteKeyPolicyInvoker(DeleteKeyPolicyRequest deleteKeyPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteKeyPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/key-policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKeyPolicyRequest);
+            return new SyncInvoker<DeleteKeyPolicyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteKeyPolicyResponse>);
         }
         
         /// <summary>
@@ -641,6 +789,32 @@ namespace HuaweiCloud.SDK.Kms.V2
         }
         
         /// <summary>
+        /// 禁用接入点
+        ///
+        /// 禁用接入点
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DisableAccessPointResponse DisableAccessPoint(DisableAccessPointRequest disableAccessPointRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(disableAccessPointRequest.AccessPointId, out var valueOfAccessPointId)) urlParam.Add("access_point_id", valueOfAccessPointId);
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/access-points/{access_point_id}/disable", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableAccessPointRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<DisableAccessPointResponse>(response);
+        }
+
+        public SyncInvoker<DisableAccessPointResponse> DisableAccessPointInvoker(DisableAccessPointRequest disableAccessPointRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(disableAccessPointRequest.AccessPointId, out var valueOfAccessPointId)) urlParam.Add("access_point_id", valueOfAccessPointId);
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/access-points/{access_point_id}/disable", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableAccessPointRequest);
+            return new SyncInvoker<DisableAccessPointResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DisableAccessPointResponse>);
+        }
+        
+        /// <summary>
         /// 禁用密钥
         ///
         /// - 功能介绍：禁用密钥，密钥禁用后不可以使用。
@@ -713,6 +887,58 @@ namespace HuaweiCloud.SDK.Kms.V2
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/keystores/{keystore_id}/disable", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableKeyStoreRequest);
             return new SyncInvoker<DisableKeyStoreResponse>(this, "POST", request, JsonUtils.DeSerialize<DisableKeyStoreResponse>);
+        }
+        
+        /// <summary>
+        /// 下载通用接入点私钥
+        ///
+        /// 用于下载通用接入点私钥
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DownloadAccessPointPrivateKeyResponse DownloadAccessPointPrivateKey(DownloadAccessPointPrivateKeyRequest downloadAccessPointPrivateKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(downloadAccessPointPrivateKeyRequest.AccessPointId, out var valueOfAccessPointId)) urlParam.Add("access_point_id", valueOfAccessPointId);
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/access-points/{access_point_id}/get-privatekey", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadAccessPointPrivateKeyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<DownloadAccessPointPrivateKeyResponse>(response);
+        }
+
+        public SyncInvoker<DownloadAccessPointPrivateKeyResponse> DownloadAccessPointPrivateKeyInvoker(DownloadAccessPointPrivateKeyRequest downloadAccessPointPrivateKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(downloadAccessPointPrivateKeyRequest.AccessPointId, out var valueOfAccessPointId)) urlParam.Add("access_point_id", valueOfAccessPointId);
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/access-points/{access_point_id}/get-privatekey", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadAccessPointPrivateKeyRequest);
+            return new SyncInvoker<DownloadAccessPointPrivateKeyResponse>(this, "POST", request, JsonUtils.DeSerialize<DownloadAccessPointPrivateKeyResponse>);
+        }
+        
+        /// <summary>
+        /// 启用接入点
+        ///
+        /// 启用接入点
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public EnableAccessPointResponse EnableAccessPoint(EnableAccessPointRequest enableAccessPointRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(enableAccessPointRequest.AccessPointId, out var valueOfAccessPointId)) urlParam.Add("access_point_id", valueOfAccessPointId);
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/access-points/{access_point_id}/enable", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableAccessPointRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<EnableAccessPointResponse>(response);
+        }
+
+        public SyncInvoker<EnableAccessPointResponse> EnableAccessPointInvoker(EnableAccessPointRequest enableAccessPointRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(enableAccessPointRequest.AccessPointId, out var valueOfAccessPointId)) urlParam.Add("access_point_id", valueOfAccessPointId);
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/access-points/{access_point_id}/enable", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableAccessPointRequest);
+            return new SyncInvoker<EnableAccessPointResponse>(this, "POST", request, JsonUtils.DeSerializeNull<EnableAccessPointResponse>);
         }
         
         /// <summary>
@@ -890,6 +1116,30 @@ namespace HuaweiCloud.SDK.Kms.V2
         }
         
         /// <summary>
+        /// 查询接入点列表
+        ///
+        /// 用于查询接入点
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListAccessPointResponse ListAccessPoint(ListAccessPointRequest listAccessPointRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/access-points", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAccessPointRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListAccessPointResponse>(response);
+        }
+
+        public SyncInvoker<ListAccessPointResponse> ListAccessPointInvoker(ListAccessPointRequest listAccessPointRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/access-points", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAccessPointRequest);
+            return new SyncInvoker<ListAccessPointResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAccessPointResponse>);
+        }
+        
+        /// <summary>
         /// 
         ///
         /// 查询一个密钥关联的所有别名
@@ -966,6 +1216,30 @@ namespace HuaweiCloud.SDK.Kms.V2
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/describe-key", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listKeyDetailRequest);
             return new SyncInvoker<ListKeyDetailResponse>(this, "POST", request, JsonUtils.DeSerialize<ListKeyDetailResponse>);
+        }
+        
+        /// <summary>
+        /// 查询密钥策略列表
+        ///
+        /// 查询密钥策略列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListKeyPolicyResponse ListKeyPolicy(ListKeyPolicyRequest listKeyPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/key-policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listKeyPolicyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListKeyPolicyResponse>(response);
+        }
+
+        public SyncInvoker<ListKeyPolicyResponse> ListKeyPolicyInvoker(ListKeyPolicyRequest listKeyPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/key-policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listKeyPolicyRequest);
+            return new SyncInvoker<ListKeyPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ListKeyPolicyResponse>);
         }
         
         /// <summary>
@@ -1164,6 +1438,56 @@ namespace HuaweiCloud.SDK.Kms.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kms/keys/{key_id}/replicate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", replicateKeyRequest);
             return new SyncInvoker<ReplicateKeyResponse>(this, "POST", request, JsonUtils.DeSerialize<ReplicateKeyResponse>);
+        }
+        
+        /// <summary>
+        /// 按需轮转密钥
+        ///
+        /// 用于外部密钥的密钥材料，需要用户提前导入密钥材料后才能执行轮转
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RotateOnDemandResponse RotateOnDemand(RotateOnDemandRequest rotateOnDemandRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/rotate-on-demand", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", rotateOnDemandRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<RotateOnDemandResponse>(response);
+        }
+
+        public SyncInvoker<RotateOnDemandResponse> RotateOnDemandInvoker(RotateOnDemandRequest rotateOnDemandRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/rotate-on-demand", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", rotateOnDemandRequest);
+            return new SyncInvoker<RotateOnDemandResponse>(this, "POST", request, JsonUtils.DeSerialize<RotateOnDemandResponse>);
+        }
+        
+        /// <summary>
+        /// 查询密钥策略
+        ///
+        /// 查询密钥策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowKeyPolicyResponse ShowKeyPolicy(ShowKeyPolicyRequest showKeyPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showKeyPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/key-policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKeyPolicyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowKeyPolicyResponse>(response);
+        }
+
+        public SyncInvoker<ShowKeyPolicyResponse> ShowKeyPolicyInvoker(ShowKeyPolicyRequest showKeyPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showKeyPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/key-policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKeyPolicyRequest);
+            return new SyncInvoker<ShowKeyPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowKeyPolicyResponse>);
         }
         
         /// <summary>
@@ -1390,6 +1714,32 @@ namespace HuaweiCloud.SDK.Kms.V2
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/update-key-description", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateKeyDescriptionRequest);
             return new SyncInvoker<UpdateKeyDescriptionResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateKeyDescriptionResponse>);
+        }
+        
+        /// <summary>
+        /// 更新密钥策略
+        ///
+        /// 更新密钥策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateKeyPolicyResponse UpdateKeyPolicy(UpdateKeyPolicyRequest updateKeyPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateKeyPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/key-policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateKeyPolicyRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateKeyPolicyResponse>(response);
+        }
+
+        public SyncInvoker<UpdateKeyPolicyResponse> UpdateKeyPolicyInvoker(UpdateKeyPolicyRequest updateKeyPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateKeyPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/key-policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateKeyPolicyRequest);
+            return new SyncInvoker<UpdateKeyPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateKeyPolicyResponse>);
         }
         
         /// <summary>

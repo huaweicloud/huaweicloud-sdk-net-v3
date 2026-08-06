@@ -154,6 +154,18 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("host_group_tag", NullValueHandling = NullValueHandling.Ignore)]
         public List<HostGroupTag> HostGroupTag { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 主机组类型。支持两种主机组类型，分别为IP类型和LABEL类型。 **约束限制：** 不涉及 **取值范围：** - IP - LABEL **默认取值：** IP。
+        /// </summary>
+        [JsonProperty("agent_access_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string AgentAccessType { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 自定义标识。主机组类型为LABEL类型，该字段必填。 **约束限制：** 不涉及。 **默认取值：** 不涉及。
+        /// </summary>
+        [JsonProperty("labels", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Labels { get; set; }
+
 
 
         /// <summary>
@@ -167,6 +179,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  hostGroupType: ").Append(HostGroupType).Append("\n");
             sb.Append("  hostIdList: ").Append(HostIdList).Append("\n");
             sb.Append("  hostGroupTag: ").Append(HostGroupTag).Append("\n");
+            sb.Append("  agentAccessType: ").Append(AgentAccessType).Append("\n");
+            sb.Append("  labels: ").Append(Labels).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -189,6 +203,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.HostGroupType != input.HostGroupType) return false;
             if (this.HostIdList != input.HostIdList || (this.HostIdList != null && input.HostIdList != null && !this.HostIdList.SequenceEqual(input.HostIdList))) return false;
             if (this.HostGroupTag != input.HostGroupTag || (this.HostGroupTag != null && input.HostGroupTag != null && !this.HostGroupTag.SequenceEqual(input.HostGroupTag))) return false;
+            if (this.AgentAccessType != input.AgentAccessType || (this.AgentAccessType != null && !this.AgentAccessType.Equals(input.AgentAccessType))) return false;
+            if (this.Labels != input.Labels || (this.Labels != null && input.Labels != null && !this.Labels.SequenceEqual(input.Labels))) return false;
 
             return true;
         }
@@ -205,6 +221,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 hashCode = hashCode * 59 + this.HostGroupType.GetHashCode();
                 if (this.HostIdList != null) hashCode = hashCode * 59 + this.HostIdList.GetHashCode();
                 if (this.HostGroupTag != null) hashCode = hashCode * 59 + this.HostGroupTag.GetHashCode();
+                if (this.AgentAccessType != null) hashCode = hashCode * 59 + this.AgentAccessType.GetHashCode();
+                if (this.Labels != null) hashCode = hashCode * 59 + this.Labels.GetHashCode();
                 return hashCode;
             }
         }

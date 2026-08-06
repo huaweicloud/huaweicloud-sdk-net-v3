@@ -44,6 +44,20 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 查询开始时间，Unix时间戳（毫秒）。 **约束限制：** 需要与end_time同时传入或同时为空。不能早于end_time。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+        /// </summary>
+        [SDKProperty("start_time", IsQuery = true)]
+        [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string StartTime { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 查询结束时间，Unix时间戳（毫秒）。 **约束限制：** 需要与start_time同时传入或同时为空。不能早于start_time。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+        /// </summary>
+        [SDKProperty("end_time", IsQuery = true)]
+        [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string EndTime { get; set; }
+
 
 
         /// <summary>
@@ -57,6 +71,8 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  deploymentName: ").Append(DeploymentName).Append("\n");
             sb.Append("  instanceName: ").Append(InstanceName).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  startTime: ").Append(StartTime).Append("\n");
+            sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -79,6 +95,8 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.DeploymentName != input.DeploymentName || (this.DeploymentName != null && !this.DeploymentName.Equals(input.DeploymentName))) return false;
             if (this.InstanceName != input.InstanceName || (this.InstanceName != null && !this.InstanceName.Equals(input.InstanceName))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
 
             return true;
         }
@@ -95,6 +113,8 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 if (this.DeploymentName != null) hashCode = hashCode * 59 + this.DeploymentName.GetHashCode();
                 if (this.InstanceName != null) hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 return hashCode;
             }
         }

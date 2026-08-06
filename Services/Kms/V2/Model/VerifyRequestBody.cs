@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
     public class VerifyRequestBody 
     {
         /// <summary>
-        /// 签名算法，枚举如下：  - RSASSA_PSS_SHA_256  - RSASSA_PSS_SHA_384  - RSASSA_PSS_SHA_512  - RSASSA_PKCS1_V1_5_SHA_256  - RSASSA_PKCS1_V1_5_SHA_384  - RSASSA_PKCS1_V1_5_SHA_512  - ECDSA_SHA_256  - ECDSA_SHA_384  - ECDSA_SHA_512  - SM2DSA_SM3
+        /// 签名算法，枚举如下：  - RSASSA_PSS_SHA_256  - RSASSA_PSS_SHA_384  - RSASSA_PSS_SHA_512  - RSASSA_PKCS1_V1_5_SHA_256  - RSASSA_PKCS1_V1_5_SHA_384  - RSASSA_PKCS1_V1_5_SHA_512  - ECDSA_SHA_256  - ECDSA_SHA_384  - ECDSA_SHA_512  - SM2DSA_SM3  - ED25519_SHA_512  - ED25519_PH_SHA_512
         /// </summary>
-        /// <value>签名算法，枚举如下：  - RSASSA_PSS_SHA_256  - RSASSA_PSS_SHA_384  - RSASSA_PSS_SHA_512  - RSASSA_PKCS1_V1_5_SHA_256  - RSASSA_PKCS1_V1_5_SHA_384  - RSASSA_PKCS1_V1_5_SHA_512  - ECDSA_SHA_256  - ECDSA_SHA_384  - ECDSA_SHA_512  - SM2DSA_SM3</value>
+        /// <value>签名算法，枚举如下：  - RSASSA_PSS_SHA_256  - RSASSA_PSS_SHA_384  - RSASSA_PSS_SHA_512  - RSASSA_PKCS1_V1_5_SHA_256  - RSASSA_PKCS1_V1_5_SHA_384  - RSASSA_PKCS1_V1_5_SHA_512  - ECDSA_SHA_256  - ECDSA_SHA_384  - ECDSA_SHA_512  - SM2DSA_SM3  - ED25519_SHA_512  - ED25519_PH_SHA_512</value>
         [JsonConverter(typeof(EnumClassConverter<SigningAlgorithmEnum>))]
         public class SigningAlgorithmEnum
         {
@@ -72,6 +72,16 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
             /// </summary>
             public static readonly SigningAlgorithmEnum SM2DSA_SM3 = new SigningAlgorithmEnum("SM2DSA_SM3");
 
+            /// <summary>
+            /// Enum ED25519_SHA_512 for value: ED25519_SHA_512
+            /// </summary>
+            public static readonly SigningAlgorithmEnum ED25519_SHA_512 = new SigningAlgorithmEnum("ED25519_SHA_512");
+
+            /// <summary>
+            /// Enum ED25519_PH_SHA_512 for value: ED25519_PH_SHA_512
+            /// </summary>
+            public static readonly SigningAlgorithmEnum ED25519_PH_SHA_512 = new SigningAlgorithmEnum("ED25519_PH_SHA_512");
+
             private static readonly Dictionary<string, SigningAlgorithmEnum> StaticFields =
             new Dictionary<string, SigningAlgorithmEnum>()
             {
@@ -85,6 +95,8 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
                 { "ECDSA_SHA_384", ECDSA_SHA_384 },
                 { "ECDSA_SHA_512", ECDSA_SHA_512 },
                 { "SM2DSA_SM3", SM2DSA_SM3 },
+                { "ED25519_SHA_512", ED25519_SHA_512 },
+                { "ED25519_PH_SHA_512", ED25519_PH_SHA_512 },
             };
 
             private string _value;
@@ -313,7 +325,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         public string Signature { get; set; }
 
         /// <summary>
-        /// 签名算法，枚举如下：  - RSASSA_PSS_SHA_256  - RSASSA_PSS_SHA_384  - RSASSA_PSS_SHA_512  - RSASSA_PKCS1_V1_5_SHA_256  - RSASSA_PKCS1_V1_5_SHA_384  - RSASSA_PKCS1_V1_5_SHA_512  - ECDSA_SHA_256  - ECDSA_SHA_384  - ECDSA_SHA_512  - SM2DSA_SM3
+        /// 签名算法，枚举如下：  - RSASSA_PSS_SHA_256  - RSASSA_PSS_SHA_384  - RSASSA_PSS_SHA_512  - RSASSA_PKCS1_V1_5_SHA_256  - RSASSA_PKCS1_V1_5_SHA_384  - RSASSA_PKCS1_V1_5_SHA_512  - ECDSA_SHA_256  - ECDSA_SHA_384  - ECDSA_SHA_512  - SM2DSA_SM3  - ED25519_SHA_512  - ED25519_PH_SHA_512
         /// </summary>
         [JsonProperty("signing_algorithm", NullValueHandling = NullValueHandling.Ignore)]
         public SigningAlgorithmEnum SigningAlgorithm { get; set; }

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
     public class CreateKeyRequestBody 
     {
         /// <summary>
-        /// 密钥生成算法，默认为“AES_256”，枚举如下： - AES_256 - SM4 - RSA_2048 - RSA_3072 - RSA_4096 - EC_P256 - EC_P384 - SECP256K1 - SM2
+        /// 密钥生成算法，默认为“AES_256”，枚举如下： - AES_256 - SM4 - RSA_2048 - RSA_3072 - RSA_4096 - EC_P256 - EC_P384 - SECP256K1 - SM2 - ED25519 - HMAC_256 - HMAC_384 - HMAC_512 - HMAC_SM3
         /// </summary>
-        /// <value>密钥生成算法，默认为“AES_256”，枚举如下： - AES_256 - SM4 - RSA_2048 - RSA_3072 - RSA_4096 - EC_P256 - EC_P384 - SECP256K1 - SM2</value>
+        /// <value>密钥生成算法，默认为“AES_256”，枚举如下： - AES_256 - SM4 - RSA_2048 - RSA_3072 - RSA_4096 - EC_P256 - EC_P384 - SECP256K1 - SM2 - ED25519 - HMAC_256 - HMAC_384 - HMAC_512 - HMAC_SM3</value>
         [JsonConverter(typeof(EnumClassConverter<KeySpecEnum>))]
         public class KeySpecEnum
         {
@@ -67,6 +67,31 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
             /// </summary>
             public static readonly KeySpecEnum SM2 = new KeySpecEnum("SM2");
 
+            /// <summary>
+            /// Enum ED25519 for value: ED25519
+            /// </summary>
+            public static readonly KeySpecEnum ED25519 = new KeySpecEnum("ED25519");
+
+            /// <summary>
+            /// Enum HMAC_256 for value: HMAC_256
+            /// </summary>
+            public static readonly KeySpecEnum HMAC_256 = new KeySpecEnum("HMAC_256");
+
+            /// <summary>
+            /// Enum HMAC_384 for value: HMAC_384
+            /// </summary>
+            public static readonly KeySpecEnum HMAC_384 = new KeySpecEnum("HMAC_384");
+
+            /// <summary>
+            /// Enum HMAC_512 for value: HMAC_512
+            /// </summary>
+            public static readonly KeySpecEnum HMAC_512 = new KeySpecEnum("HMAC_512");
+
+            /// <summary>
+            /// Enum HMAC_SM3 for value: HMAC_SM3
+            /// </summary>
+            public static readonly KeySpecEnum HMAC_SM3 = new KeySpecEnum("HMAC_SM3");
+
             private static readonly Dictionary<string, KeySpecEnum> StaticFields =
             new Dictionary<string, KeySpecEnum>()
             {
@@ -79,6 +104,11 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
                 { "EC_P384", EC_P384 },
                 { "SECP256K1", SECP256K1 },
                 { "SM2", SM2 },
+                { "ED25519", ED25519 },
+                { "HMAC_256", HMAC_256 },
+                { "HMAC_384", HMAC_384 },
+                { "HMAC_512", HMAC_512 },
+                { "HMAC_SM3", HMAC_SM3 },
             };
 
             private string _value;
@@ -410,7 +440,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         public string KeyAlias { get; set; }
 
         /// <summary>
-        /// 密钥生成算法，默认为“AES_256”，枚举如下： - AES_256 - SM4 - RSA_2048 - RSA_3072 - RSA_4096 - EC_P256 - EC_P384 - SECP256K1 - SM2
+        /// 密钥生成算法，默认为“AES_256”，枚举如下： - AES_256 - SM4 - RSA_2048 - RSA_3072 - RSA_4096 - EC_P256 - EC_P384 - SECP256K1 - SM2 - ED25519 - HMAC_256 - HMAC_384 - HMAC_512 - HMAC_SM3
         /// </summary>
         [JsonProperty("key_spec", NullValueHandling = NullValueHandling.Ignore)]
         public KeySpecEnum KeySpec { get; set; }
