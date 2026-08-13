@@ -32,7 +32,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// **参数解释**：转发策略优先级。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("priority", NullValueHandling = NullValueHandling.Ignore)]
-        public string Priority { get; set; }
+        public int? Priority { get; set; }
 
         /// <summary>
         /// **参数解释**：转发策略action。  **取值范围**：不涉及

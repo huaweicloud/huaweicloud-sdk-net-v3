@@ -44,6 +44,41 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("page_reverse", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PageReverse { get; set; }
 
+        /// <summary>
+        /// **参数解释**：IPv4或IPv6地址。 支持多值查询，查询条件格式： *ip_address&#x3D;xxx&amp;ip_address&#x3D;xxx*。  **约束限制**：必须是当前负载均衡器绑定的私网地址或者公网地址。  **取值范围**：不涉及  **默认取值**：不涉及
+        /// </summary>
+        [SDKProperty("ip_address", IsQuery = true)]
+        [JsonProperty("ip_address", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> IpAddress { get; set; }
+
+        /// <summary>
+        /// **参数解释**：IP地址是否已加入到域名解析。  **约束限制**：不涉及  **取值范围**： - true：已加入域名解析。 - false：未加入域名解析。  **默认取值**：不涉及
+        /// </summary>
+        [SDKProperty("enable", IsQuery = true)]
+        [JsonProperty("enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Enable { get; set; }
+
+        /// <summary>
+        /// **参数解释**：IP地址类型。 支持多值查询，查询条件格式： *type&#x3D;xxx&amp;type&#x3D;xxx*。  **约束限制**：不涉及  **取值范围**： - vip：私网IP。 - eip：公网IP。  **默认取值**：不涉及
+        /// </summary>
+        [SDKProperty("type", IsQuery = true)]
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Type { get; set; }
+
+        /// <summary>
+        /// **参数解释**：当前IP地址关联的负载均衡实例域名。 支持多值查询，查询条件格式： *domain_name&#x3D;xxx&amp;domain_name&#x3D;xxx*。  **约束限制**： - 如果IP为私网类型，则这里为负载均衡实例的私网域名。 - 如果IP为公网类型，则这里为负载均衡实例的公网域名。  **取值范围**：不涉及  **默认取值**：不涉及
+        /// </summary>
+        [SDKProperty("domain_name", IsQuery = true)]
+        [JsonProperty("domain_name", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> DomainName { get; set; }
+
+        /// <summary>
+        /// **参数解释**：所属的企业项目ID。 支持多值查询，查询条件格式： *enterprise_project_id&#x3D;xxx&amp;enterprise_project_id&#x3D;xxx*。  **约束限制**： 如果enterprise_project_id不传值，默认查询所有企业项目下的资源，鉴权按照细粒度权限鉴权，必须在用户组下分配elb:loadbalancers:listDnsConfig权限。 如果enterprise_project_id传值，鉴权按照企业项目权限鉴权，分为传入具体eps_id和all_granted_eps两种场景，前者查询指定eps_id的eps下的资源，后者查询的是所有有list权限的eps下的资源。  **取值范围**：不涉及  **默认取值**：不涉及
+        /// </summary>
+        [SDKProperty("enterprise_project_id", IsQuery = true)]
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> EnterpriseProjectId { get; set; }
+
 
 
         /// <summary>
@@ -57,6 +92,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  pageReverse: ").Append(PageReverse).Append("\n");
+            sb.Append("  ipAddress: ").Append(IpAddress).Append("\n");
+            sb.Append("  enable: ").Append(Enable).Append("\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  domainName: ").Append(DomainName).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -79,6 +119,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.PageReverse != input.PageReverse || (this.PageReverse != null && !this.PageReverse.Equals(input.PageReverse))) return false;
+            if (this.IpAddress != input.IpAddress || (this.IpAddress != null && input.IpAddress != null && !this.IpAddress.SequenceEqual(input.IpAddress))) return false;
+            if (this.Enable != input.Enable || (this.Enable != null && !this.Enable.Equals(input.Enable))) return false;
+            if (this.Type != input.Type || (this.Type != null && input.Type != null && !this.Type.SequenceEqual(input.Type))) return false;
+            if (this.DomainName != input.DomainName || (this.DomainName != null && input.DomainName != null && !this.DomainName.SequenceEqual(input.DomainName))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && input.EnterpriseProjectId != null && !this.EnterpriseProjectId.SequenceEqual(input.EnterpriseProjectId))) return false;
 
             return true;
         }
@@ -95,6 +140,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.PageReverse != null) hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
+                if (this.IpAddress != null) hashCode = hashCode * 59 + this.IpAddress.GetHashCode();
+                if (this.Enable != null) hashCode = hashCode * 59 + this.Enable.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.DomainName != null) hashCode = hashCode * 59 + this.DomainName.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

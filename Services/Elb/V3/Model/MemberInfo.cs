@@ -101,7 +101,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string OperatingStatus { get; set; }
 
         /// <summary>
-        /// **参数解释**：后端服务器监听器粒度的的健康状态。 若绑定的监听器在该字段中，则以该字段中监听器对应的operating_status为准。 若绑定的监听器不在该字段中，则以外层的operating_status为准。
+        /// **参数解释**：后端服务器监听器粒度的健康状态。 若绑定的监听器在该字段中，则以该字段中监听器对应的operating_status为准。 若绑定的监听器不在该字段中，则以外层的operating_status为准。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public List<MemberStatus> Status { get; set; }

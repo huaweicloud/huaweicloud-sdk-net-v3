@@ -83,7 +83,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string OperatingStatus { get; set; }
 
         /// <summary>
-        /// **参数解释**：后端服务器监听器粒度的的健康状态。  **取值范围**：不涉及
+        /// **参数解释**：后端服务器监听器粒度的健康状态。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public List<MemberStatus> Status { get; set; }

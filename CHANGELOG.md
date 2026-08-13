@@ -1,3 +1,89 @@
+# 3.1.206 2026-08-13
+
+### HuaweiCloud SDK ELB
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListDomainIPs**
+    - changes of request param
+      - `+ ip_address`
+      - `+ enable`
+      - `+ type`
+      - `+ domain_name`
+      - `+ enterprise_project_id`
+  - **ShowLoadBalancerTopology**
+    - changes of response param
+      - `* topology.labels.l7policies.priority: string -> int32`
+
+### HuaweiCloud SDK EPS
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Deprecate the API `ShowResourceBindEnterpriseProject`
+
+### HuaweiCloud SDK GaussDB
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListDdlLogs**
+    - changes of request param
+      - `* start_time: string -> int64`
+      - `* end_time: string -> int64`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `SwitchOverDisasterRecovery`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK VOD
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowTakeOverAssetDetails**
+    - changes of response param
+      - `+ base_info.meta_data.audio_codec`
+  - **PublishAssets**
+    - changes of response param
+      - `+ asset_info_array.base_info.meta_data.audio_codec`
+  - **UnpublishAssets**
+    - changes of response param
+      - `+ asset_info_array.base_info.meta_data.audio_codec`
+  - **ShowAssetMeta**
+    - changes of response param
+      - `+ asset_info_array.base_info.meta_data.audio_codec`
+  - **ShowAssetDetail**
+    - changes of response param
+      - `+ base_info.meta_data.audio_codec`
+  - **ShowTakeOverTaskDetails**
+    - changes of response param
+      - `+ assets.base_info.meta_data.audio_codec`
+
 # 3.1.205 2026-08-06
 
 ### HuaweiCloud SDK Cloudtest

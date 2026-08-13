@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public string FlavorSwitch { get; set; }
 
         /// <summary>
-        /// 增删只读节点开关。自动增删只读节点功能需要先[开启数据库代理](https://support.huaweicloud.com/api-gaussdbformysql/CreateGaussMySqlProxy.html)，且只能有一个代理。 - ON：开启。 - OFF：关闭。
+        /// 增删只读节点开关。自动增删只读节点功能需要先[开启数据库代理](https://support.huaweicloud.com/api-taurusdb/CreateGaussMySqlProxy.html)，且只能有一个代理。 - ON：开启。 - OFF：关闭。
         /// </summary>
         [JsonProperty("read_only_switch", NullValueHandling = NullValueHandling.Ignore)]
         public string ReadOnlySwitch { get; set; }

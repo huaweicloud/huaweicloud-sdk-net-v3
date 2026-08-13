@@ -515,6 +515,12 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         [JsonProperty("codec", NullValueHandling = NullValueHandling.Ignore)]
         public CodecEnum Codec { get; set; }
         /// <summary>
+        /// 音频编码格式。 须知：仅在2025/01/01之后创建的媒资元数据/转码产物包含该参数。
+        /// </summary>
+        [JsonProperty("audio_codec", NullValueHandling = NullValueHandling.Ignore)]
+        public string AudioCodec { get; set; }
+
+        /// <summary>
         /// 视频时长，单位：秒。  若视频的原时长为非整数，则该字段值为原时长的向下取整。 若视频的原时长小于1，则该字段值为1。
         /// </summary>
         [JsonProperty("duration", NullValueHandling = NullValueHandling.Ignore)]
@@ -585,6 +591,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             sb.Append("class MetaData {\n");
             sb.Append("  packType: ").Append(PackType).Append("\n");
             sb.Append("  codec: ").Append(Codec).Append("\n");
+            sb.Append("  audioCodec: ").Append(AudioCodec).Append("\n");
             sb.Append("  duration: ").Append(Duration).Append("\n");
             sb.Append("  durationMs: ").Append(DurationMs).Append("\n");
             sb.Append("  videoSize: ").Append(VideoSize).Append("\n");
@@ -615,6 +622,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             if (input == null) return false;
             if (this.PackType != input.PackType) return false;
             if (this.Codec != input.Codec) return false;
+            if (this.AudioCodec != input.AudioCodec || (this.AudioCodec != null && !this.AudioCodec.Equals(input.AudioCodec))) return false;
             if (this.Duration != input.Duration || (this.Duration != null && !this.Duration.Equals(input.Duration))) return false;
             if (this.DurationMs != input.DurationMs || (this.DurationMs != null && !this.DurationMs.Equals(input.DurationMs))) return false;
             if (this.VideoSize != input.VideoSize || (this.VideoSize != null && !this.VideoSize.Equals(input.VideoSize))) return false;
@@ -639,6 +647,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                 var hashCode = 41;
                 hashCode = hashCode * 59 + this.PackType.GetHashCode();
                 hashCode = hashCode * 59 + this.Codec.GetHashCode();
+                if (this.AudioCodec != null) hashCode = hashCode * 59 + this.AudioCodec.GetHashCode();
                 if (this.Duration != null) hashCode = hashCode * 59 + this.Duration.GetHashCode();
                 if (this.DurationMs != null) hashCode = hashCode * 59 + this.DurationMs.GetHashCode();
                 if (this.VideoSize != null) hashCode = hashCode * 59 + this.VideoSize.GetHashCode();

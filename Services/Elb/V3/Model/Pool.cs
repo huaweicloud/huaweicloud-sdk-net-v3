@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     public class Pool 
     {
         /// <summary>
-        /// **参数解释**：修改保护状态,。  **取值范围**： - nonProtection: 不保护。 - consoleProtection: 控制台修改保护。
+        /// **参数解释**：修改保护状态。  **取值范围**： - nonProtection: 不保护。 - consoleProtection: 控制台修改保护。
         /// </summary>
-        /// <value>**参数解释**：修改保护状态,。  **取值范围**： - nonProtection: 不保护。 - consoleProtection: 控制台修改保护。</value>
+        /// <value>**参数解释**：修改保护状态。  **取值范围**： - nonProtection: 不保护。 - consoleProtection: 控制台修改保护。</value>
         [JsonConverter(typeof(EnumClassConverter<ProtectionStatusEnum>))]
         public class ProtectionStatusEnum
         {
@@ -252,7 +252,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// **参数解释**：修改保护状态,。  **取值范围**： - nonProtection: 不保护。 - consoleProtection: 控制台修改保护。
+        /// **参数解释**：修改保护状态。  **取值范围**： - nonProtection: 不保护。 - consoleProtection: 控制台修改保护。
         /// </summary>
         [JsonProperty("protection_status", NullValueHandling = NullValueHandling.Ignore)]
         public ProtectionStatusEnum ProtectionStatus { get; set; }

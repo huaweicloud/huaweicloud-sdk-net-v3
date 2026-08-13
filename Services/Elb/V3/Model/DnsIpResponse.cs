@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// **参数解释**：是否已加入到域名解析。  **取值范围**： true：已加入域名解析。 false：未加入域名解析。
+        /// **参数解释**：IP地址是否已加入到域名解析。  **取值范围**： - true：已加入域名解析。 - false：未加入域名解析。
         /// </summary>
         [JsonProperty("enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enable { get; set; }
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string IpAddress { get; set; }
 
         /// <summary>
-        /// **参数解释**：IP地址类型。  **取值范围**： vip：私网IP。 eip：公网IP。
+        /// **参数解释**：IP地址类型。  **取值范围**： - vip：私网IP。 - eip：公网IP。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

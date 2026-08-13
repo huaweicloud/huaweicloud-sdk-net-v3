@@ -395,6 +395,7 @@ namespace HuaweiCloud.SDK.Eps.V1
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ShowResourceBindEnterpriseProjectResponse ShowResourceBindEnterpriseProject(ShowResourceBindEnterpriseProjectRequest showResourceBindEnterpriseProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -405,6 +406,7 @@ namespace HuaweiCloud.SDK.Eps.V1
             return JsonUtils.DeSerialize<ShowResourceBindEnterpriseProjectResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ShowResourceBindEnterpriseProjectResponse> ShowResourceBindEnterpriseProjectInvoker(ShowResourceBindEnterpriseProjectRequest showResourceBindEnterpriseProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();

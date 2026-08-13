@@ -3374,6 +3374,32 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 容灾实例倒换
+        ///
+        /// 容灾实例倒换。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SwitchOverDisasterRecoveryResponse SwitchOverDisasterRecovery(SwitchOverDisasterRecoveryRequest switchOverDisasterRecoveryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(switchOverDisasterRecoveryRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/switchover", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchOverDisasterRecoveryRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<SwitchOverDisasterRecoveryResponse>(response);
+        }
+
+        public SyncInvoker<SwitchOverDisasterRecoveryResponse> SwitchOverDisasterRecoveryInvoker(SwitchOverDisasterRecoveryRequest switchOverDisasterRecoveryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(switchOverDisasterRecoveryRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/switchover", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchOverDisasterRecoveryRequest);
+            return new SyncInvoker<SwitchOverDisasterRecoveryResponse>(this, "PUT", request, JsonUtils.DeSerialize<SwitchOverDisasterRecoveryResponse>);
+        }
+        
+        /// <summary>
         /// 开启/关闭秒级监控
         ///
         /// 开启或关闭指定实例的5秒级监控。

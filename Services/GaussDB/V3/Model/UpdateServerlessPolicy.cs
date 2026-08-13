@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
     {
 
         /// <summary>
-        /// 单节点VCPUs伸缩下限，取值范围可根据[查询数据库规格](https://support.huaweicloud.com/api-gaussdb/ShowGaussMySqlFlavors.html)接口获取。
+        /// 单节点VCPUs伸缩下限，取值范围可根据[查询数据库规格](https://support.huaweicloud.com/api-taurusdb/ShowGaussMySqlFlavors.html)接口获取。
         /// </summary>
         [JsonProperty("min_vcpus", NullValueHandling = NullValueHandling.Ignore)]
         public int? MinVcpus { get; set; }
 
         /// <summary>
-        /// 单节点VCPUs伸缩上限，取值范围可根据[查询数据库规格](https://support.huaweicloud.com/api-gaussdb/ShowGaussMySqlFlavors.html)接口获取。
+        /// 单节点VCPUs伸缩上限，取值范围可根据[查询数据库规格](https://support.huaweicloud.com/api-taurusdb/ShowGaussMySqlFlavors.html)接口获取。
         /// </summary>
         [JsonProperty("max_vcpus", NullValueHandling = NullValueHandling.Ignore)]
         public int? MaxVcpus { get; set; }
