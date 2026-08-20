@@ -20,13 +20,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// 分区
         /// </summary>
         [JsonProperty("partition", NullValueHandling = NullValueHandling.Ignore)]
-        public string Partition { get; set; }
+        public int? Partition { get; set; }
 
         /// <summary>
         /// 消息当前位点
         /// </summary>
         [JsonProperty("message_current_offset", NullValueHandling = NullValueHandling.Ignore)]
-        public string MessageCurrentOffset { get; set; }
+        public int? MessageCurrentOffset { get; set; }
 
         /// <summary>
         /// topic名称

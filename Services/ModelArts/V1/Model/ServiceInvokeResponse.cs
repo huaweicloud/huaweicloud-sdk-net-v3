@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.ModelArts.V1.Model
 {
     /// <summary>
-    /// **参数解释：** 服务调用时的相关配置。
+    /// **参数解释：**  服务调用时的相关配置。
     /// </summary>
     public class ServiceInvokeResponse 
     {
@@ -106,6 +106,12 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         [JsonProperty("fuse_configs", NullValueHandling = NullValueHandling.Ignore)]
         public FuseConfig FuseConfigs { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("elb_connection", NullValueHandling = NullValueHandling.Ignore)]
+        public ElbConnectionResponse ElbConnection { get; set; }
+
 
 
         /// <summary>
@@ -130,6 +136,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  requestRetryCntMax: ").Append(RequestRetryCntMax).Append("\n");
             sb.Append("  requestRetryIntervalMs: ").Append(RequestRetryIntervalMs).Append("\n");
             sb.Append("  fuseConfigs: ").Append(FuseConfigs).Append("\n");
+            sb.Append("  elbConnection: ").Append(ElbConnection).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -163,6 +170,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.RequestRetryCntMax != input.RequestRetryCntMax || (this.RequestRetryCntMax != null && !this.RequestRetryCntMax.Equals(input.RequestRetryCntMax))) return false;
             if (this.RequestRetryIntervalMs != input.RequestRetryIntervalMs || (this.RequestRetryIntervalMs != null && !this.RequestRetryIntervalMs.Equals(input.RequestRetryIntervalMs))) return false;
             if (this.FuseConfigs != input.FuseConfigs || (this.FuseConfigs != null && !this.FuseConfigs.Equals(input.FuseConfigs))) return false;
+            if (this.ElbConnection != input.ElbConnection || (this.ElbConnection != null && !this.ElbConnection.Equals(input.ElbConnection))) return false;
 
             return true;
         }
@@ -190,6 +198,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 if (this.RequestRetryCntMax != null) hashCode = hashCode * 59 + this.RequestRetryCntMax.GetHashCode();
                 if (this.RequestRetryIntervalMs != null) hashCode = hashCode * 59 + this.RequestRetryIntervalMs.GetHashCode();
                 if (this.FuseConfigs != null) hashCode = hashCode * 59 + this.FuseConfigs.GetHashCode();
+                if (this.ElbConnection != null) hashCode = hashCode * 59 + this.ElbConnection.GetHashCode();
                 return hashCode;
             }
         }

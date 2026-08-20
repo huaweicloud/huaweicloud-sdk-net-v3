@@ -17,112 +17,118 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
     {
 
         /// <summary>
-        /// **参数解释：**  状态Id。 **取值范围：**  不涉及。
+        /// 状态ID。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// **参数解释：**  工作项的状态属性。 **取值范围：**  - START - IN_PROGRESS - END
+        /// 工作项的状态属性。
         /// </summary>
         [JsonProperty("belonging", NullValueHandling = NullValueHandling.Ignore)]
         public string Belonging { get; set; }
 
         /// <summary>
-        /// **参数解释：**  状态所属的项目空间id。 **取值范围：**  不涉及。
+        /// 状态所属的项目空间ID。
         /// </summary>
         [JsonProperty("space_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SpaceId { get; set; }
 
         /// <summary>
-        /// **参数解释：**  状态名称。 **取值范围：**  不涉及。
+        /// 状态名称。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// **参数解释：**  状态code值。 **取值范围：**  不涉及。
+        /// 状态code值。
         /// </summary>
         [JsonProperty("code", NullValueHandling = NullValueHandling.Ignore)]
         public string Code { get; set; }
 
         /// <summary>
-        /// **参数解释：**  状态定义级别，1,2,3为系统级，4为租户自定义，5为项目自定义。 **取值范围：**  不涉及。
+        /// 状态定义级别，1,2,3为系统级，4为租户自定义，5为项目自定义。
         /// </summary>
         [JsonProperty("definition_type", NullValueHandling = NullValueHandling.Ignore)]
         public string DefinitionType { get; set; }
 
         /// <summary>
-        /// **参数解释：**  状态归属定义级别，1,2,3为系统级，4为租户自定义，5为项目自定义。区别于definition_type。如果为系统级和租户自定义级，在项目中会复制一份元数据，归属于项目空间。 **取值范围：**  不涉及。
+        /// 状态归属定义级别，1,2,3为系统级，4为租户自定义，5为项目自定义。区别于definition_type。如果为系统级和租户自定义级，在项目中会复制一份元数据，归属于项目空间。
         /// </summary>
         [JsonProperty("belong_definition_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? BelongDefinitionType { get; set; }
 
         /// <summary>
-        /// **参数解释：**  状态名称，和name值相同。 **取值范围：**  不涉及。
+        /// 状态名称，和name值相同。
         /// </summary>
         [JsonProperty("display_value", NullValueHandling = NullValueHandling.Ignore)]
         public string DisplayValue { get; set; }
 
         /// <summary>
-        /// **参数解释：**  位置顺序。 **取值范围：**  不涉及。
+        /// 位置顺序。
         /// </summary>
         [JsonProperty("position", NullValueHandling = NullValueHandling.Ignore)]
         public int? Position { get; set; }
 
         /// <summary>
-        /// **参数解释：**  是否显示。 **取值范围：**  不涉及。
+        /// 是否显示。
         /// </summary>
         [JsonProperty("displayable", NullValueHandling = NullValueHandling.Ignore)]
         public int? Displayable { get; set; }
 
         /// <summary>
-        /// **参数解释：**  是否可编辑。 **取值范围：**  不涉及。
+        /// 是否可编辑。
         /// </summary>
         [JsonProperty("editable", NullValueHandling = NullValueHandling.Ignore)]
         public int? Editable { get; set; }
 
         /// <summary>
-        /// **参数解释：**  是否可删除。 **取值范围：**  不涉及。
+        /// 是否可删除。
         /// </summary>
         [JsonProperty("deletable", NullValueHandling = NullValueHandling.Ignore)]
         public int? Deletable { get; set; }
 
         /// <summary>
-        /// **参数解释：**  是否可变，即是否为固定值。 **取值范围：**  不涉及。
+        /// 是否可变，即是否为固定值。
         /// </summary>
         [JsonProperty("mutable", NullValueHandling = NullValueHandling.Ignore)]
         public int? Mutable { get; set; }
 
         /// <summary>
-        /// **参数解释：**  标题的拼音首字母。 **取值范围：**  不涉及。
+        /// 标题的拼音首字母。
         /// </summary>
         [JsonProperty("title_py", NullValueHandling = NullValueHandling.Ignore)]
         public string TitlePy { get; set; }
 
         /// <summary>
-        /// **参数解释：**  创建人用户Id。 **取值范围：**  不涉及。
+        /// 创建人用户ID。
         /// </summary>
         [JsonProperty("created_by", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedBy { get; set; }
 
         /// <summary>
-        /// **参数解释：**  创建时间。Unix时间戳，精度为毫秒。 **取值范围：**  不涉及。
+        /// 创建时间。Unix时间戳，精度为毫秒。
         /// </summary>
         [JsonProperty("created_date", NullValueHandling = NullValueHandling.Ignore)]
         public long? CreatedDate { get; set; }
 
         /// <summary>
-        /// **参数解释：**  最近修改时间。Unix时间戳，精度为毫秒。 **取值范围：**  不涉及。
+        /// 最近修改时间。Unix时间戳，精度为毫秒。
         /// </summary>
         [JsonProperty("modified_date", NullValueHandling = NullValueHandling.Ignore)]
         public long? ModifiedDate { get; set; }
 
         /// <summary>
-        /// **参数解释：**  最近修改人用户Id。 **取值范围：**    不涉及。
+        /// 最近修改人用户ID。
         /// </summary>
         [JsonProperty("modified_by", NullValueHandling = NullValueHandling.Ignore)]
         public string ModifiedBy { get; set; }
+
+        /// <summary>
+        /// 工作流配置中用于标识是否新增“节点责任人/节点结束时间”。
+        /// </summary>
+        [JsonProperty("linkage_node_fields", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? LinkageNodeFields { get; set; }
 
 
 
@@ -151,6 +157,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             sb.Append("  createdDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  modifiedDate: ").Append(ModifiedDate).Append("\n");
             sb.Append("  modifiedBy: ").Append(ModifiedBy).Append("\n");
+            sb.Append("  linkageNodeFields: ").Append(LinkageNodeFields).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -187,6 +194,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             if (this.CreatedDate != input.CreatedDate || (this.CreatedDate != null && !this.CreatedDate.Equals(input.CreatedDate))) return false;
             if (this.ModifiedDate != input.ModifiedDate || (this.ModifiedDate != null && !this.ModifiedDate.Equals(input.ModifiedDate))) return false;
             if (this.ModifiedBy != input.ModifiedBy || (this.ModifiedBy != null && !this.ModifiedBy.Equals(input.ModifiedBy))) return false;
+            if (this.LinkageNodeFields != input.LinkageNodeFields || (this.LinkageNodeFields != null && !this.LinkageNodeFields.Equals(input.LinkageNodeFields))) return false;
 
             return true;
         }
@@ -217,6 +225,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                 if (this.CreatedDate != null) hashCode = hashCode * 59 + this.CreatedDate.GetHashCode();
                 if (this.ModifiedDate != null) hashCode = hashCode * 59 + this.ModifiedDate.GetHashCode();
                 if (this.ModifiedBy != null) hashCode = hashCode * 59 + this.ModifiedBy.GetHashCode();
+                if (this.LinkageNodeFields != null) hashCode = hashCode * 59 + this.LinkageNodeFields.GetHashCode();
                 return hashCode;
             }
         }

@@ -17,25 +17,31 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
     {
 
         /// <summary>
-        /// 标签id
+        /// 标签ID，可通过查询标签列表接口获取，响应消息体中的id字段的值就是标签ID。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 标签所属工作项类型，对应工作项的type字段
+        /// 标签所属工作项类型编码。
+        /// </summary>
+        [JsonProperty("category_types", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> CategoryTypes { get; set; }
+
+        /// <summary>
+        /// 标签所属工作项类型，对应工作项的type字段，枚举类型。
         /// </summary>
         [JsonProperty("label_type", NullValueHandling = NullValueHandling.Ignore)]
         public string LabelType { get; set; }
 
         /// <summary>
-        /// 标签颜色RGB
+        /// 标签颜色RGB。 0~16个字符。
         /// </summary>
         [JsonProperty("color", NullValueHandling = NullValueHandling.Ignore)]
         public string Color { get; set; }
 
         /// <summary>
-        /// 标签标题
+        /// 标签标题。 1~30个字符。
         /// </summary>
         [JsonProperty("title", NullValueHandling = NullValueHandling.Ignore)]
         public string Title { get; set; }
@@ -50,6 +56,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             var sb = new StringBuilder();
             sb.Append("class LabelEntity {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("  categoryTypes: ").Append(CategoryTypes).Append("\n");
             sb.Append("  labelType: ").Append(LabelType).Append("\n");
             sb.Append("  color: ").Append(Color).Append("\n");
             sb.Append("  title: ").Append(Title).Append("\n");
@@ -72,6 +79,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             if (input == null) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.CategoryTypes != input.CategoryTypes || (this.CategoryTypes != null && input.CategoryTypes != null && !this.CategoryTypes.SequenceEqual(input.CategoryTypes))) return false;
             if (this.LabelType != input.LabelType || (this.LabelType != null && !this.LabelType.Equals(input.LabelType))) return false;
             if (this.Color != input.Color || (this.Color != null && !this.Color.Equals(input.Color))) return false;
             if (this.Title != input.Title || (this.Title != null && !this.Title.Equals(input.Title))) return false;
@@ -88,6 +96,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             {
                 var hashCode = 41;
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.CategoryTypes != null) hashCode = hashCode * 59 + this.CategoryTypes.GetHashCode();
                 if (this.LabelType != null) hashCode = hashCode * 59 + this.LabelType.GetHashCode();
                 if (this.Color != null) hashCode = hashCode * 59 + this.Color.GetHashCode();
                 if (this.Title != null) hashCode = hashCode * 59 + this.Title.GetHashCode();

@@ -43,6 +43,12 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         /// <summary>
         /// 
         /// </summary>
+        [JsonProperty("retention", NullValueHandling = NullValueHandling.Ignore)]
+        public RetentionPolicy Retention { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [JsonProperty("schedule_policy", NullValueHandling = NullValueHandling.Ignore)]
         public SchedulePolicy SchedulePolicy { get; set; }
 
@@ -82,6 +88,12 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         [JsonProperty("asset_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AssetId { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("reserved_time", NullValueHandling = NullValueHandling.Ignore)]
+        public ReserveTime ReservedTime { get; set; }
+
 
 
         /// <summary>
@@ -95,6 +107,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  volumes: ").Append(Volumes).Append("\n");
             sb.Append("  logExportPath: ").Append(LogExportPath).Append("\n");
             sb.Append("  autoStop: ").Append(AutoStop).Append("\n");
+            sb.Append("  retention: ").Append(Retention).Append("\n");
             sb.Append("  schedulePolicy: ").Append(SchedulePolicy).Append("\n");
             sb.Append("  logExportConfig: ").Append(LogExportConfig).Append("\n");
             sb.Append("  notification: ").Append(Notification).Append("\n");
@@ -102,6 +115,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  outputModel: ").Append(OutputModel).Append("\n");
             sb.Append("  assetModel: ").Append(AssetModel).Append("\n");
             sb.Append("  assetId: ").Append(AssetId).Append("\n");
+            sb.Append("  reservedTime: ").Append(ReservedTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -124,6 +138,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.Volumes != input.Volumes || (this.Volumes != null && input.Volumes != null && !this.Volumes.SequenceEqual(input.Volumes))) return false;
             if (this.LogExportPath != input.LogExportPath || (this.LogExportPath != null && !this.LogExportPath.Equals(input.LogExportPath))) return false;
             if (this.AutoStop != input.AutoStop || (this.AutoStop != null && !this.AutoStop.Equals(input.AutoStop))) return false;
+            if (this.Retention != input.Retention || (this.Retention != null && !this.Retention.Equals(input.Retention))) return false;
             if (this.SchedulePolicy != input.SchedulePolicy || (this.SchedulePolicy != null && !this.SchedulePolicy.Equals(input.SchedulePolicy))) return false;
             if (this.LogExportConfig != input.LogExportConfig || (this.LogExportConfig != null && !this.LogExportConfig.Equals(input.LogExportConfig))) return false;
             if (this.Notification != input.Notification || (this.Notification != null && !this.Notification.Equals(input.Notification))) return false;
@@ -131,6 +146,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.OutputModel != input.OutputModel || (this.OutputModel != null && !this.OutputModel.Equals(input.OutputModel))) return false;
             if (this.AssetModel != input.AssetModel || (this.AssetModel != null && !this.AssetModel.Equals(input.AssetModel))) return false;
             if (this.AssetId != input.AssetId || (this.AssetId != null && !this.AssetId.Equals(input.AssetId))) return false;
+            if (this.ReservedTime != input.ReservedTime || (this.ReservedTime != null && !this.ReservedTime.Equals(input.ReservedTime))) return false;
 
             return true;
         }
@@ -147,6 +163,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 if (this.Volumes != null) hashCode = hashCode * 59 + this.Volumes.GetHashCode();
                 if (this.LogExportPath != null) hashCode = hashCode * 59 + this.LogExportPath.GetHashCode();
                 if (this.AutoStop != null) hashCode = hashCode * 59 + this.AutoStop.GetHashCode();
+                if (this.Retention != null) hashCode = hashCode * 59 + this.Retention.GetHashCode();
                 if (this.SchedulePolicy != null) hashCode = hashCode * 59 + this.SchedulePolicy.GetHashCode();
                 if (this.LogExportConfig != null) hashCode = hashCode * 59 + this.LogExportConfig.GetHashCode();
                 if (this.Notification != null) hashCode = hashCode * 59 + this.Notification.GetHashCode();
@@ -154,6 +171,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 if (this.OutputModel != null) hashCode = hashCode * 59 + this.OutputModel.GetHashCode();
                 if (this.AssetModel != null) hashCode = hashCode * 59 + this.AssetModel.GetHashCode();
                 if (this.AssetId != null) hashCode = hashCode * 59 + this.AssetId.GetHashCode();
+                if (this.ReservedTime != null) hashCode = hashCode * 59 + this.ReservedTime.GetHashCode();
                 return hashCode;
             }
         }

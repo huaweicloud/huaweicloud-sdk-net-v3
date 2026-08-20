@@ -17,49 +17,49 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// 订阅任务id
+        /// **参数解释：** 订阅任务id **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public long? Id { get; set; }
 
         /// <summary>
-        /// 创建时间
+        /// **参数解释：** 创建时间 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? CreateTime { get; set; }
 
         /// <summary>
-        /// 最近更新时间
+        /// **参数解释：** 最近更新时间 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("update_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? UpdateTime { get; set; }
 
         /// <summary>
-        /// - 订阅任务的名称 - [单词字符] [减号] [中文字符] 长度不超过32
+        /// **参数解释：** 订阅任务的名称 **约束限制：** 长度不超过32个字符。 **取值范围：** 支持大小写字母、中文字符、“-”
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// - 订阅任务类型，类型如下： - 0：日报 - 1：周报 - 2：月报
+        /// **参数解释：** 订阅任务类型 **取值范围：** - 0：日报 - 1：周报 - 2：月报
         /// </summary>
         [JsonProperty("period_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? PeriodType { get; set; }
 
         /// <summary>
-        /// 接收运营报表的邮箱地址。支持同时输入多个邮箱地址，多个邮箱地址用英文逗号（,）分隔。
+        /// **参数解释：** 接收运营报表的邮箱地址 &gt; 支持同时输入多个邮箱地址  **取值范围：** 多个邮箱地址用英文逗号（,）分隔
         /// </summary>
         [JsonProperty("emails", NullValueHandling = NullValueHandling.Ignore)]
         public string Emails { get; set; }
 
         /// <summary>
-        /// 订阅的域名列表，支持同时输入多个域名，多个域名用半角逗号（,）分隔；说明：如果该参数为all，则为账号下的所有域名订阅运营报表。
+        /// **参数解释：** 订阅的域名列表 &gt; 支持同时输入多个域名  **取值范围：** - 多个域名用半角逗号（,）分隔 - 如果该参数为all，则为账号下的所有域名订阅运营报表
         /// </summary>
         [JsonProperty("domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainName { get; set; }
 
         /// <summary>
-        /// - 运营报表类型。支持同时输入多个报表类型，多个报表类型以英文逗号（,）分隔。 - 0：访问区域分布 - 1：国家分布 - 2：运营商分布 - 3：域名排行（按流量排序） - 4：热门URL（按流量排序） - 5：热门URL（按请求数排序） - 6：热门Referer（按流量排序） - 7：热门Referer（按请求数排序） - 10：回源热门URL（按流量排序） - 11：回源热门URL（按请求数排序） - 13：热门UA（按流量排序） - 14：热门UA（按请求数排序）
+        /// **参数解释：** 运营报表类型 &gt; 支持同时输入多个报表类型  **取值范围：** - 多个报表类型以英文逗号（,）分隔 - 0：访问区域分布 - 1：国家分布 - 2：运营商分布 - 3：域名排行（按流量排序） - 4：热门URL（按流量排序） - 5：热门URL（按请求数排序） - 6：热门Referer（按流量排序） - 7：热门Referer（按请求数排序） - 10：回源热门URL（按流量排序） - 11：回源热门URL（按请求数排序） - 13：热门UA（按流量排序） - 14：热门UA（按请求数排序）
         /// </summary>
         [JsonProperty("report_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ReportType { get; set; }

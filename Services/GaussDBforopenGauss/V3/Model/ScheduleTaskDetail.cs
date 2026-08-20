@@ -62,7 +62,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// 任务信息。
         /// </summary>
         [JsonProperty("task_content", NullValueHandling = NullValueHandling.Ignore)]
-        public Object TaskContent { get; set; }
+        public string TaskContent { get; set; }
 
 
 

@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// 区域
+        /// **参数解释：** 服务范围 **取值范围：** - mainland_china：中国大陆 - outside_mainland_china：中国大陆境外
         /// </summary>
         [JsonProperty("service_area", NullValueHandling = NullValueHandling.Ignore)]
         public string ServiceArea { get; set; }
 
         /// <summary>
-        /// 按域名维每天客户端访问详情统计
+        /// **参数解释：** 按域名维每天客户端访问详情统计 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
         public List<Dictionary<string, Object>> Result { get; set; }

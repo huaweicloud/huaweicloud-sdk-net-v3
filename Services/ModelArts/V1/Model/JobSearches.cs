@@ -59,6 +59,18 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public string TrainType { get; set; }
 
         /// <summary>
+        /// **参数解释**：按 TMS 标签筛选训练作业列表。 **约束限制**：   - 最多 10 个标签条件；   - 同一 &#x60;key&#x60; 不可重复；   - 同一 &#x60;key&#x60; 下 &#x60;values&#x60; 不可重复；   - 传入本参数时须同时满足 &#x60;filters&#x60; 中 &#x60;create_time&#x60; 条件：未传则默认最近 31 天，时间跨度不得超过 31 天。 **匹配规则**：   - 同一 &#x60;key&#x60; 下多个 &#x60;values&#x60; 为 **OR**；   - 不同 &#x60;key&#x60; 之间为 **AND**；   - &#x60;values&#x60; 为空或仅含空字符串时，按 **仅匹配该 key**（不限 value）处理。 **取值范围**：不涉及。 **默认取值**：不传则不按标签筛选。
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ListTagFilter> Tags { get; set; }
+
+        /// <summary>
+        /// **参数解释**：按训练实例所在节点宿主机 IP 筛选训练作业列表。 **约束限制**：   - 最多 10 个 IP；   - 每个元素须为合法 IPv4/IPv6 地址；   - 传入本参数时须同时满足 &#x60;filters&#x60; 中 &#x60;create_time&#x60; 条件：未传则默认最近 31 天，时间跨度不得超过 31 天。 **匹配规则**：   - 多个 IP 之间为 **OR**（命中任一 IP 即匹配） **取值范围**：不涉及。 **默认取值**：不传则不按 IP 筛选。
+        /// </summary>
+        [JsonProperty("host_ips", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> HostIps { get; set; }
+
+        /// <summary>
         /// 查询作业要过滤的一系列条件。
         /// </summary>
         [JsonProperty("filters", NullValueHandling = NullValueHandling.Ignore)]
@@ -80,6 +92,8 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  groupBy: ").Append(GroupBy).Append("\n");
             sb.Append("  workspaceId: ").Append(WorkspaceId).Append("\n");
             sb.Append("  trainType: ").Append(TrainType).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  hostIps: ").Append(HostIps).Append("\n");
             sb.Append("  filters: ").Append(Filters).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -106,6 +120,8 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.GroupBy != input.GroupBy || (this.GroupBy != null && !this.GroupBy.Equals(input.GroupBy))) return false;
             if (this.WorkspaceId != input.WorkspaceId || (this.WorkspaceId != null && !this.WorkspaceId.Equals(input.WorkspaceId))) return false;
             if (this.TrainType != input.TrainType || (this.TrainType != null && !this.TrainType.Equals(input.TrainType))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.HostIps != input.HostIps || (this.HostIps != null && input.HostIps != null && !this.HostIps.SequenceEqual(input.HostIps))) return false;
             if (this.Filters != input.Filters || (this.Filters != null && input.Filters != null && !this.Filters.SequenceEqual(input.Filters))) return false;
 
             return true;
@@ -126,6 +142,8 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 if (this.GroupBy != null) hashCode = hashCode * 59 + this.GroupBy.GetHashCode();
                 if (this.WorkspaceId != null) hashCode = hashCode * 59 + this.WorkspaceId.GetHashCode();
                 if (this.TrainType != null) hashCode = hashCode * 59 + this.TrainType.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.HostIps != null) hashCode = hashCode * 59 + this.HostIps.GetHashCode();
                 if (this.Filters != null) hashCode = hashCode * 59 + this.Filters.GetHashCode();
                 return hashCode;
             }

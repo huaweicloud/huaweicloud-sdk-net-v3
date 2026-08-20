@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
         [JsonProperty("pipeline_run_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PipelineRunId { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 流水线运行失败详情。 **取值范围**： 不涉及。 
+        /// </summary>
+        [JsonProperty("error_msg", NullValueHandling = NullValueHandling.Ignore)]
+        public string ErrorMsg { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             var sb = new StringBuilder();
             sb.Append("class RunPipelineResponse {\n");
             sb.Append("  pipelineRunId: ").Append(PipelineRunId).Append("\n");
+            sb.Append("  errorMsg: ").Append(ErrorMsg).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
         {
             if (input == null) return false;
             if (this.PipelineRunId != input.PipelineRunId || (this.PipelineRunId != null && !this.PipelineRunId.Equals(input.PipelineRunId))) return false;
+            if (this.ErrorMsg != input.ErrorMsg || (this.ErrorMsg != null && !this.ErrorMsg.Equals(input.ErrorMsg))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             {
                 var hashCode = 41;
                 if (this.PipelineRunId != null) hashCode = hashCode * 59 + this.PipelineRunId.GetHashCode();
+                if (this.ErrorMsg != null) hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
                 return hashCode;
             }
         }

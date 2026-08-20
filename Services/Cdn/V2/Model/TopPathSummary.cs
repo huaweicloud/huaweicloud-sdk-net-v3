@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// top100 path访问路径
+        /// **参数解释：** top100 path访问路径 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("path", NullValueHandling = NullValueHandling.Ignore)]
         public string Path { get; set; }
 
         /// <summary>
-        /// top100path访问次数
+        /// **参数解释：** top100 path访问次数 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public long? Value { get; set; }

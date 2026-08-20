@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 修改跨VPC访问结果。
+        /// **参数解释**： 修改跨VPC访问结果。 **取值范围**： - true：修改跨VPC访问成功。 - false：修改跨VPC访问失败。
         /// </summary>
         [JsonProperty("success", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Success { get; set; }
 
         /// <summary>
-        /// 修改broker跨VPC访问的结果列表。
+        /// **参数解释**： 修改broker跨VPC访问的结果列表。
         /// </summary>
         [JsonProperty("results", NullValueHandling = NullValueHandling.Ignore)]
         public List<UpdateInstanceCrossVpcIpRespResults> Results { get; set; }

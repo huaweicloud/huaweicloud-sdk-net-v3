@@ -40,12 +40,6 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         [JsonProperty("dim_router", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> DimRouter { get; set; }
 
-        /// <summary>
-        /// **参数解释**： 子维度列表。
-        /// </summary>
-        [JsonProperty("children", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ShowCeshierarchyRespChildren> Children { get; set; }
-
 
 
         /// <summary>
@@ -59,7 +53,6 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             sb.Append("  metrics: ").Append(Metrics).Append("\n");
             sb.Append("  keyName: ").Append(KeyName).Append("\n");
             sb.Append("  dimRouter: ").Append(DimRouter).Append("\n");
-            sb.Append("  children: ").Append(Children).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -82,7 +75,6 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             if (this.Metrics != input.Metrics || (this.Metrics != null && input.Metrics != null && !this.Metrics.SequenceEqual(input.Metrics))) return false;
             if (this.KeyName != input.KeyName || (this.KeyName != null && input.KeyName != null && !this.KeyName.SequenceEqual(input.KeyName))) return false;
             if (this.DimRouter != input.DimRouter || (this.DimRouter != null && input.DimRouter != null && !this.DimRouter.SequenceEqual(input.DimRouter))) return false;
-            if (this.Children != input.Children || (this.Children != null && input.Children != null && !this.Children.SequenceEqual(input.Children))) return false;
 
             return true;
         }
@@ -99,7 +91,6 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                 if (this.Metrics != null) hashCode = hashCode * 59 + this.Metrics.GetHashCode();
                 if (this.KeyName != null) hashCode = hashCode * 59 + this.KeyName.GetHashCode();
                 if (this.DimRouter != null) hashCode = hashCode * 59 + this.DimRouter.GetHashCode();
-                if (this.Children != null) hashCode = hashCode * 59 + this.Children.GetHashCode();
                 return hashCode;
             }
         }

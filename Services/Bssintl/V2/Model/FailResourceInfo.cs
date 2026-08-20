@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
     {
 
         /// <summary>
-        /// |参数名称：错误码| |参数约束及描述：错误码|
+        /// 状态码。
         /// </summary>
         [JsonProperty("error_code", NullValueHandling = NullValueHandling.Ignore)]
         public string ErrorCode { get; set; }
 
         /// <summary>
-        /// |参数名称：错误描述| |参数约束及描述：错误描述|
+        /// 错误描述信息。
         /// </summary>
         [JsonProperty("error_msg", NullValueHandling = NullValueHandling.Ignore)]
         public string ErrorMsg { get; set; }
 
         /// <summary>
-        /// |参数名称：资源ID| |参数约束及描述：资源ID|
+        /// 资源ID。
         /// </summary>
         [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceId { get; set; }

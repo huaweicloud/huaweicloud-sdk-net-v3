@@ -11,40 +11,46 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.ModelArts.V1.Model
 {
     /// <summary>
-    /// **参数解释：** 服务日志配置信息。
+    /// **参数解释：**  服务日志配置信息。
     /// </summary>
     public class LogConfigResponse 
     {
 
         /// <summary>
-        /// **参数解释：** 日志输出类型。 **取值范围：** - STDOUT：日志输出到控制台或终端。 - EVENT：k8s事件。
+        /// **参数解释：** 日志输出类型。 **取值范围：** - STDOUT：日志输出到控制台或终端。 - EVENT：k8s事件。 - FILE：容器日志文件
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// **参数解释：** 日志服务状态。 **取值范围：** - ON：开启。 - OFF：关闭。
+        /// **参数解释：** 日志服务状态。 **取值范围：** - ON：开启。 - OFF：关闭。 - FAILED：开启失败。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// **参数解释：** 日志组ID，用户选择自己已有的日志组，不填时，会自动创建。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+        /// **参数解释：** 日志组ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("log_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LogGroupId { get; set; }
 
         /// <summary>
-        /// **参数解释：** 日志流id，用户选择自己已有的日志组。不填时，会自动创建。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+        /// **参数解释：** 日志流id。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("log_stream_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LogStreamId { get; set; }
 
         /// <summary>
-        /// **参数解释：** 日志流对应的部署ID。当日志策略为default或pool时有值。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+        /// **参数解释：** 日志流对应的部署ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("deployment_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DeploymentId { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 失败原因，部署开启LTS对接失败的原因。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+        /// </summary>
+        [JsonProperty("failure_reason", NullValueHandling = NullValueHandling.Ignore)]
+        public string FailureReason { get; set; }
 
 
 
@@ -60,6 +66,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  logGroupId: ").Append(LogGroupId).Append("\n");
             sb.Append("  logStreamId: ").Append(LogStreamId).Append("\n");
             sb.Append("  deploymentId: ").Append(DeploymentId).Append("\n");
+            sb.Append("  failureReason: ").Append(FailureReason).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,6 +90,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.LogGroupId != input.LogGroupId || (this.LogGroupId != null && !this.LogGroupId.Equals(input.LogGroupId))) return false;
             if (this.LogStreamId != input.LogStreamId || (this.LogStreamId != null && !this.LogStreamId.Equals(input.LogStreamId))) return false;
             if (this.DeploymentId != input.DeploymentId || (this.DeploymentId != null && !this.DeploymentId.Equals(input.DeploymentId))) return false;
+            if (this.FailureReason != input.FailureReason || (this.FailureReason != null && !this.FailureReason.Equals(input.FailureReason))) return false;
 
             return true;
         }
@@ -100,6 +108,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 if (this.LogGroupId != null) hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
                 if (this.LogStreamId != null) hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
                 if (this.DeploymentId != null) hashCode = hashCode * 59 + this.DeploymentId.GetHashCode();
+                if (this.FailureReason != null) hashCode = hashCode * 59 + this.FailureReason.GetHashCode();
                 return hashCode;
             }
         }

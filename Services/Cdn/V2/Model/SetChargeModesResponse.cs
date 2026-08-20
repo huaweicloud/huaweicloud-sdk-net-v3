@@ -17,37 +17,37 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// 账号的计费模式
+        /// **参数解释：** 账号的计费模式 **取值范围：** - flux：流量 - bw：带宽
         /// </summary>
         [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
         public string ChargeMode { get; set; }
 
         /// <summary>
-        /// 加速类型
+        /// **参数解释：** 加速类型 **取值范围：** base：基础加速
         /// </summary>
         [JsonProperty("product_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductType { get; set; }
 
         /// <summary>
-        /// 该模式生效时间
+        /// **参数解释：** 该模式生效时间 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("effective_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? EffectiveTime { get; set; }
 
         /// <summary>
-        /// 创建时间
+        /// **参数解释：** 创建时间 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? CreateTime { get; set; }
 
         /// <summary>
-        /// 该模式的区域
+        /// **参数解释：** 该模式的区域 **取值范围：** mainland_china：中国大陆
         /// </summary>
         [JsonProperty("service_area", NullValueHandling = NullValueHandling.Ignore)]
         public string ServiceArea { get; set; }
 
         /// <summary>
-        /// 状态,首次开通状态为active,之后修改为upcoming
+        /// **参数解释：** 状态 &gt; 首次开通状态为active（已生效）,之后修改为upcoming（待生效）  **取值范围：** - active：已生效 - upcoming：待生效
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }

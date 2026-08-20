@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// 返回数据
         /// </summary>
         [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
-        public List<FieldVO> Result { get; set; }
+        public List<FieldLongDateVO> Result { get; set; }
 
 
 

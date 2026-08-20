@@ -108,6 +108,13 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public string AssetId { get; set; }
 
         /// <summary>
+        /// **参数解释：** 节点IP地址，按节点IP地址查询该节点IP下POD对应的服务，默认不过滤。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+        /// </summary>
+        [SDKProperty("node_ip", IsQuery = true)]
+        [JsonProperty("node_ip", NullValueHandling = NullValueHandling.Ignore)]
+        public string NodeIp { get; set; }
+
+        /// <summary>
         /// **参数解释：** 排序方式 **约束限制：** 不涉及。 **取值范围：** - ASC: 递增排序。 - DESC: 递减排序。 **默认取值：** DESC。
         /// </summary>
         [SDKProperty("sort_dir", IsQuery = true)]
@@ -150,6 +157,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  userName: ").Append(UserName).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  assetId: ").Append(AssetId).Append("\n");
+            sb.Append("  nodeIp: ").Append(NodeIp).Append("\n");
             sb.Append("  sortDir: ").Append(SortDir).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
@@ -184,6 +192,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && !this.Tags.Equals(input.Tags))) return false;
             if (this.AssetId != input.AssetId || (this.AssetId != null && !this.AssetId.Equals(input.AssetId))) return false;
+            if (this.NodeIp != input.NodeIp || (this.NodeIp != null && !this.NodeIp.Equals(input.NodeIp))) return false;
             if (this.SortDir != input.SortDir || (this.SortDir != null && !this.SortDir.Equals(input.SortDir))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
@@ -212,6 +221,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.AssetId != null) hashCode = hashCode * 59 + this.AssetId.GetHashCode();
+                if (this.NodeIp != null) hashCode = hashCode * 59 + this.NodeIp.GetHashCode();
                 if (this.SortDir != null) hashCode = hashCode * 59 + this.SortDir.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();

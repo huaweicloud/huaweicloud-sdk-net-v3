@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
         public OfficialWebsiteRatingResult OfficialWebsiteRatingResult { get; set; }
 
         /// <summary>
-        /// 存在可选折扣优惠时返回折扣优惠维度询价结果，每个折扣优惠一组询价结果，具体参见表4。
+        /// 存在可选折扣优惠时返回折扣优惠维度询价结果，每个折扣优惠一组询价结果，具体参见OptionalDiscountRatingResult。
         /// </summary>
         [JsonProperty("optional_discount_rating_results", NullValueHandling = NullValueHandling.Ignore)]
         public List<OptionalDiscountRatingResult> OptionalDiscountRatingResults { get; set; }

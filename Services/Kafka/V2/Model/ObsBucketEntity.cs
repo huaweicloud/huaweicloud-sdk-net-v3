@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public Object Owner { get; set; }
 
         /// <summary>
-        /// **参数解释**： 桶的创建时间。 **取值范围**： 长度为24的字符串。
+        /// **参数解释**： 桶的创建时间。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("creationDate", NullValueHandling = NullValueHandling.Ignore)]
         public long? CreationDate { get; set; }

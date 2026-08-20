@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
     public class ModSubCustomerBudgetReq 
     {
         /// <summary>
-        /// |参数名称：预算模式| |参数的约束及描述：MONTHLY 月度预算 PACKAGE 一次性预算 ，此参数不携带或携带值为null时，默认值为MONTHLY。|
+        /// 预算模式。MONTHLY：月度预算 PACKAGE：一次性预算，此参数不携带或携带值为null时，默认值为MONTHLY。
         /// </summary>
-        /// <value>|参数名称：预算模式| |参数的约束及描述：MONTHLY 月度预算 PACKAGE 一次性预算 ，此参数不携带或携带值为null时，默认值为MONTHLY。|</value>
+        /// <value>预算模式。MONTHLY：月度预算 PACKAGE：一次性预算，此参数不携带或携带值为null时，默认值为MONTHLY。</value>
         [JsonConverter(typeof(EnumClassConverter<BudgetTypeEnum>))]
         public class BudgetTypeEnum
         {
@@ -156,12 +156,12 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
         public string IndirectPartnerId { get; set; }
 
         /// <summary>
-        /// |参数名称：预算模式| |参数的约束及描述：MONTHLY 月度预算 PACKAGE 一次性预算 ，此参数不携带或携带值为null时，默认值为MONTHLY。|
+        /// 预算模式。MONTHLY：月度预算 PACKAGE：一次性预算，此参数不携带或携带值为null时，默认值为MONTHLY。
         /// </summary>
         [JsonProperty("budget_type", NullValueHandling = NullValueHandling.Ignore)]
         public BudgetTypeEnum BudgetType { get; set; }
         /// <summary>
-        /// |参数名称：设置超预算时是否自动冻结| |参数的约束及描述：0：手工冻结 1：自动冻结，此参数不携带或携带值为null或携带值为空时，字段不生效。|
+        /// 设置超预算时是否自动冻结。0：手工冻结 1：自动冻结，此参数不携带或携带值为null或携带值为空时，字段不生效。
         /// </summary>
         [JsonProperty("frozen_operate_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? FrozenOperateType { get; set; }

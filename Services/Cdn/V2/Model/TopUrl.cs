@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// 配置开关
+        /// **参数解释：** 配置开关 **约束限制：** 不涉及 **取值范围：** - true：打开 - false：关闭 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enable { get; set; }
 
         /// <summary>
-        /// 热点统计配置指标的上报数量。如top_url 100、top_url 1000
+        /// **参数解释：** 热点统计配置指标的上报数量 &gt; 如top_url 100、top_url 1000  **约束限制：** 不涉及 **取值范围：** 0-2000 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 热点统计类指标是否支持按状态码上报
+        /// **参数解释：** 热点统计类指标是否支持按状态码上报 **约束限制：** 不涉及 **取值范围：** - true：热点统计类指标支持按状态码上报 - false：热点统计类指标不支持按状态码上报 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("sort_by_code", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SortByCode { get; set; }

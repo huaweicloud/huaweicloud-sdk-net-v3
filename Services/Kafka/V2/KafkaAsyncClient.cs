@@ -2068,7 +2068,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/extend-check", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaScalePreCheckInfoRequest);
             var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ShowKafkaScalePreCheckInfoResponse>(response);
+            var showKafkaScalePreCheckInfoResponse = JsonUtils.DeSerializeNull<ShowKafkaScalePreCheckInfoResponse>(response);
+            showKafkaScalePreCheckInfoResponse.Body = JsonUtils.DeSerializeList<ShowKafkaScalePreCheckInfoEntity>(response);
+            return showKafkaScalePreCheckInfoResponse;
         }
 
         public AsyncInvoker<ShowKafkaScalePreCheckInfoResponse> ShowKafkaScalePreCheckInfoAsyncInvoker(ShowKafkaScalePreCheckInfoRequest showKafkaScalePreCheckInfoRequest)
@@ -2077,7 +2079,12 @@ namespace HuaweiCloud.SDK.Kafka.V2
             if (StringUtils.TryConvertToNonEmptyString(showKafkaScalePreCheckInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/extend-check", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaScalePreCheckInfoRequest);
-            return new AsyncInvoker<ShowKafkaScalePreCheckInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowKafkaScalePreCheckInfoResponse>);
+            return new AsyncInvoker<ShowKafkaScalePreCheckInfoResponse>(this, "GET", request, response =>
+            {
+                var showKafkaScalePreCheckInfoResponse = JsonUtils.DeSerializeNull<ShowKafkaScalePreCheckInfoResponse>(response);
+                showKafkaScalePreCheckInfoResponse.Body = JsonUtils.DeSerializeList<ShowKafkaScalePreCheckInfoEntity>(response);
+                return showKafkaScalePreCheckInfoResponse;
+            });
         }
         
         /// <summary>
@@ -2641,7 +2648,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/autotopic", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceAutoCreateTopicRequest);
             var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerializeNull<UpdateInstanceAutoCreateTopicResponse>(response);
+            return JsonUtils.DeSerialize<UpdateInstanceAutoCreateTopicResponse>(response);
         }
 
         public AsyncInvoker<UpdateInstanceAutoCreateTopicResponse> UpdateInstanceAutoCreateTopicAsyncInvoker(UpdateInstanceAutoCreateTopicRequest updateInstanceAutoCreateTopicRequest)
@@ -2650,7 +2657,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
             if (StringUtils.TryConvertToNonEmptyString(updateInstanceAutoCreateTopicRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/autotopic", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceAutoCreateTopicRequest);
-            return new AsyncInvoker<UpdateInstanceAutoCreateTopicResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateInstanceAutoCreateTopicResponse>);
+            return new AsyncInvoker<UpdateInstanceAutoCreateTopicResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateInstanceAutoCreateTopicResponse>);
         }
         
         /// <summary>
@@ -2943,7 +2950,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/upgrade", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeInstanceRequest);
             var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerializeNull<UpgradeInstanceResponse>(response);
+            return JsonUtils.DeSerialize<UpgradeInstanceResponse>(response);
         }
 
         public AsyncInvoker<UpgradeInstanceResponse> UpgradeInstanceAsyncInvoker(UpgradeInstanceRequest upgradeInstanceRequest)
@@ -2952,7 +2959,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
             if (StringUtils.TryConvertToNonEmptyString(upgradeInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/upgrade", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeInstanceRequest);
-            return new AsyncInvoker<UpgradeInstanceResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpgradeInstanceResponse>);
+            return new AsyncInvoker<UpgradeInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<UpgradeInstanceResponse>);
         }
         
         /// <summary>

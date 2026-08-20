@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public List<string> UserDefinedColumns { get; set; }
 
         /// <summary>
-        /// **参数解释**:   时区。 **约束限制**:   不涉及。 **取值范围**:   - +08:00 **默认取值**:   +08:00
+        /// **参数解释**:   时区。 **约束限制**:   不涉及。 **取值范围**:   - +08:00  **默认取值**:   +08:00
         /// </summary>
         [JsonProperty("time_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string TimeZone { get; set; }

@@ -440,7 +440,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// **参数解释**： 资源规格标识。 **取值范围**： [- dms.instance.kafka.cluster.c3.mini：Kafka实例的基准带宽为100MByte/秒。 - dms.instance.kafka.cluster.c3.small.2：Kafka实例的基准带宽为300MByte/秒。 - dms.instance.kafka.cluster.c3.middle.2：Kafka实例的基准带宽为600MByte/秒。 - dms.instance.kafka.cluster.c3.high.2：Kafka实例的基准带宽为1200MByte/秒。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt,ax) [不涉及。](tag:hcs)
+        /// **参数解释**： 资源规格标识。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("resource_spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceSpecCode { get; set; }
@@ -737,7 +737,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? ConnectorEnable { get; set; }
 
         /// <summary>
-        /// **参数解释**： connector节点数量。 **取值范围**： 2-16。
+        /// **参数解释**： connector节点数量。 **取值范围**： 0-16。
         /// </summary>
         [JsonProperty("connector_node_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? ConnectorNodeNum { get; set; }

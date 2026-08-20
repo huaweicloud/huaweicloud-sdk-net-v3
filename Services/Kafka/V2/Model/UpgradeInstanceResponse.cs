@@ -17,10 +17,16 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 提交升级任务id
+        /// **参数解释**： 实例升级任务ID。 **取值范围**： 不涉及。
         /// </summary>
-        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public string Body { get; set; }
+        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string JobId { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 实例升级调度任务ID。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("schedule_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ScheduleId { get; set; }
 
 
 
@@ -31,7 +37,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class UpgradeInstanceResponse {\n");
-            sb.Append("  body: ").Append(Body).Append("\n");
+            sb.Append("  jobId: ").Append(JobId).Append("\n");
+            sb.Append("  scheduleId: ").Append(ScheduleId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -50,7 +57,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool Equals(UpgradeInstanceResponse input)
         {
             if (input == null) return false;
-            if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.ScheduleId != input.ScheduleId || (this.ScheduleId != null && !this.ScheduleId.Equals(input.ScheduleId))) return false;
 
             return true;
         }
@@ -63,7 +71,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.ScheduleId != null) hashCode = hashCode * 59 + this.ScheduleId.GetHashCode();
                 return hashCode;
             }
         }

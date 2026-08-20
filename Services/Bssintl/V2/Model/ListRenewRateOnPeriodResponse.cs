@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
     {
 
         /// <summary>
-        /// |参数名称：币种。CNY：人民币。USD：美元。| |参数约束及描述：币种。CNY：人民币。USD：美元。|
+        /// 币种。USD：美元。值为空代表美元。
         /// </summary>
         [JsonProperty("currency", NullValueHandling = NullValueHandling.Ignore)]
         public string Currency { get; set; }
 
         /// <summary>
-        /// |参数名称：主资源（包含从资源）询价结果| |参数约束以及描述：主资源（包含从资源）询价结果|
+        /// 主资源（包含从资源）询价结果。具体请参见表RenewInquiryResultInfo。
         /// </summary>
         [JsonProperty("renew_inquiry_results", NullValueHandling = NullValueHandling.Ignore)]
         public List<RenewInquiryResultInfo> RenewInquiryResults { get; set; }
@@ -35,13 +35,13 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
         public OfficialWebsiteRatingResultV2 OfficialWebsiteRatingResult { get; set; }
 
         /// <summary>
-        /// |参数名称：存在可选折扣优惠时返回折扣优惠维度询价结果，每个折扣优惠一组询价结果| |参数约束以及描述：存在可选折扣优惠时返回折扣优惠维度询价结果，每个折扣优惠一组询价结果|
+        /// 存在可选折扣优惠时返回折扣优惠维度询价结果，每个折扣优惠一组询价结果，具体参见表OptionalDiscountRatingResultV2。
         /// </summary>
         [JsonProperty("optional_discount_rating_results", NullValueHandling = NullValueHandling.Ignore)]
         public List<OptionalDiscountRatingResultV2> OptionalDiscountRatingResults { get; set; }
 
         /// <summary>
-        /// |参数名称：失败的资源信息列表| |参数约束以及描述：失败的资源信息列表|
+        /// 失败的资源信息列表。具体请参见表FailResourceInfo。
         /// </summary>
         [JsonProperty("fail_resource_infos", NullValueHandling = NullValueHandling.Ignore)]
         public List<FailResourceInfo> FailResourceInfos { get; set; }

@@ -152,7 +152,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// Smart Connect节点数量。不能小于2个。 如果不填，默认是2个。 
         /// </summary>
         [JsonProperty("node_cnt", NullValueHandling = NullValueHandling.Ignore)]
-        public string NodeCnt { get; set; }
+        public int? NodeCnt { get; set; }
 
         /// <summary>
         /// 转储节点规格编码。仅老规格实例需要填写。 

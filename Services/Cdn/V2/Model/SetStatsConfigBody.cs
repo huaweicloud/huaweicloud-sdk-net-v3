@@ -17,25 +17,25 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// 配置类别.0：热点统计类
+        /// **参数解释：** 配置类型 **约束限制：** 不涉及 **取值范围：** - 0：热点统计 - 1：ces上报 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("config_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? ConfigType { get; set; }
 
         /// <summary>
-        /// 资源类型。domain:resource_name为域名，account:resource_name为账号
+        /// **参数解释：** 资源类型 **约束限制：** 不涉及 **取值范围：** - domain：域名，对应resource_name需配置为域名 - account：账号，对应resource_name需配置为账号 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceType { get; set; }
 
         /// <summary>
-        /// 资源名称为账号或域名。多个域名以英文逗号分隔
+        /// **参数解释：** 资源名称 &gt; 账号或域名  **约束限制：** 不涉及 **取值范围：** 多个资源名称以英文逗号分隔 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("resource_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceName { get; set; }
 
         /// <summary>
-        /// 配置信息.top指标仅支持ua、refer、url、origin url
+        /// **参数解释：** 配置信息 **约束限制：** 不涉及 **取值范围：** - ua：HTTP请求头User-Agent的值 - refer：HTTP请求头referer的值 - url：客户访问的http地址 - originurl：回源url **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("config_info", NullValueHandling = NullValueHandling.Ignore)]
         public Object ConfigInfo { get; set; }

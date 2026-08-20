@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// **参数解释**： 任务总数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("job_count", NullValueHandling = NullValueHandling.Ignore)]
-        public string JobCount { get; set; }
+        public int? JobCount { get; set; }
 
         /// <summary>
         /// **参数解释**： 任务列表。

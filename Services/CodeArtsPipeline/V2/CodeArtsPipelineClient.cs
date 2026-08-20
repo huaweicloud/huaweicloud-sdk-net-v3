@@ -115,37 +115,6 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2
         }
         
         /// <summary>
-        /// 批量获取流水线状态
-        ///
-        /// 批量获取流水线状态和阶段信息
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public BatchShowPipelinesStatusResponse BatchShowPipelinesStatus(BatchShowPipelinesStatusRequest batchShowPipelinesStatusRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/pipelines/status", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchShowPipelinesStatusRequest);
-            var response = DoHttpRequestSync("GET", request);
-            var batchShowPipelinesStatusResponse = JsonUtils.DeSerializeNull<BatchShowPipelinesStatusResponse>(response);
-            batchShowPipelinesStatusResponse.Body = JsonUtils.DeSerializeList<PipelineExecuteStates>(response);
-            return batchShowPipelinesStatusResponse;
-        }
-
-        public SyncInvoker<BatchShowPipelinesStatusResponse> BatchShowPipelinesStatusInvoker(BatchShowPipelinesStatusRequest batchShowPipelinesStatusRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/pipelines/status", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchShowPipelinesStatusRequest);
-            return new SyncInvoker<BatchShowPipelinesStatusResponse>(this, "GET", request, response =>
-            {
-                var batchShowPipelinesStatusResponse = JsonUtils.DeSerializeNull<BatchShowPipelinesStatusResponse>(response);
-                batchShowPipelinesStatusResponse.Body = JsonUtils.DeSerializeList<PipelineExecuteStates>(response);
-                return batchShowPipelinesStatusResponse;
-            });
-        }
-        
-        /// <summary>
         /// 创建基础插件
         ///
         /// 创建基础插件
@@ -730,6 +699,54 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2
             var urlPath = HttpUtils.AddUrlPath("/v1/{domain_id}/relation/plugins", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listBasePluginsNewPostRequest);
             return new SyncInvoker<ListBasePluginsNewPostResponse>(this, "POST", request, JsonUtils.DeSerialize<ListBasePluginsNewPostResponse>);
+        }
+        
+        /// <summary>
+        /// 查询扩展点列表
+        ///
+        /// 查询扩展点列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListEndpointsDetailsResponse ListEndpointsDetails(ListEndpointsDetailsRequest listEndpointsDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/serviceconnection/endpoints", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEndpointsDetailsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListEndpointsDetailsResponse>(response);
+        }
+
+        public SyncInvoker<ListEndpointsDetailsResponse> ListEndpointsDetailsInvoker(ListEndpointsDetailsRequest listEndpointsDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/serviceconnection/endpoints", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEndpointsDetailsRequest);
+            return new SyncInvoker<ListEndpointsDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListEndpointsDetailsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询插件列表
+        ///
+        /// 查询插件列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListModulesDetailResponse ListModulesDetail(ListModulesDetailRequest listModulesDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/extensions/modules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listModulesDetailRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListModulesDetailResponse>(response);
+        }
+
+        public SyncInvoker<ListModulesDetailResponse> ListModulesDetailInvoker(ListModulesDetailRequest listModulesDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/extensions/modules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listModulesDetailRequest);
+            return new SyncInvoker<ListModulesDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ListModulesDetailResponse>);
         }
         
         /// <summary>
@@ -2240,6 +2257,30 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2
             var urlPath = HttpUtils.AddUrlPath("/v1/{domain_id}/common/upload-publisher-icon", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", uploadPublisherIconRequest);
             return new SyncInvoker<UploadPublisherIconResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UploadPublisherIconResponse>);
+        }
+        
+        /// <summary>
+        /// 代理调用外部服务接口
+        ///
+        /// 代理调用外部服务接口。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public InvokeEndpointProxyResponse InvokeEndpointProxy(InvokeEndpointProxyRequest invokeEndpointProxyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/serviceconnection/endpointproxy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", invokeEndpointProxyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<InvokeEndpointProxyResponse>(response);
+        }
+
+        public SyncInvoker<InvokeEndpointProxyResponse> InvokeEndpointProxyInvoker(InvokeEndpointProxyRequest invokeEndpointProxyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/serviceconnection/endpointproxy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", invokeEndpointProxyRequest);
+            return new SyncInvoker<InvokeEndpointProxyResponse>(this, "POST", request, JsonUtils.DeSerialize<InvokeEndpointProxyResponse>);
         }
         
         /// <summary>

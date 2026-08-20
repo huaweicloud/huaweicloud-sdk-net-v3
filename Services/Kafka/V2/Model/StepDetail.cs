@@ -32,13 +32,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// **参数解释**： 开始时间。     **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string StartTime { get; set; }
+        public long? StartTime { get; set; }
 
         /// <summary>
         /// **参数解释**： 结束时间。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string EndTime { get; set; }
+        public long? EndTime { get; set; }
 
 
 

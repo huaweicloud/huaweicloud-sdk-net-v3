@@ -64,6 +64,18 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         [JsonProperty("running_records", NullValueHandling = NullValueHandling.Ignore)]
         public List<RunningRecord> RunningRecords { get; set; }
 
+        /// <summary>
+        /// **参数解释**：作业已经保留时长。  **约束限制**：仅当创建训练作业时，设置了&#x60;reserved_time&#x60;时返回。  **取值范围**：不涉及。    **默认取值**：不涉及。
+        /// </summary>
+        [JsonProperty("retention_time", NullValueHandling = NullValueHandling.Ignore)]
+        public int? RetentionTime { get; set; }
+
+        /// <summary>
+        /// **参数解释**：训练作业各 Task 的 IP 信息。 **约束限制**：仅当查询请求携带 &#x60;host_ips&#x60; 时返回；且仅返回与筛选 IP 匹配的记录。 **取值范围**：不涉及。 **默认取值**：不传 &#x60;host_ips&#x60; 时不返回。
+        /// </summary>
+        [JsonProperty("task_ips", NullValueHandling = NullValueHandling.Ignore)]
+        public List<TaskIP> TaskIps { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +93,8 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  taskStatuses: ").Append(TaskStatuses).Append("\n");
             sb.Append("  runningRecords: ").Append(RunningRecords).Append("\n");
+            sb.Append("  retentionTime: ").Append(RetentionTime).Append("\n");
+            sb.Append("  taskIps: ").Append(TaskIps).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +121,8 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
             if (this.TaskStatuses != input.TaskStatuses || (this.TaskStatuses != null && input.TaskStatuses != null && !this.TaskStatuses.SequenceEqual(input.TaskStatuses))) return false;
             if (this.RunningRecords != input.RunningRecords || (this.RunningRecords != null && input.RunningRecords != null && !this.RunningRecords.SequenceEqual(input.RunningRecords))) return false;
+            if (this.RetentionTime != input.RetentionTime || (this.RetentionTime != null && !this.RetentionTime.Equals(input.RetentionTime))) return false;
+            if (this.TaskIps != input.TaskIps || (this.TaskIps != null && input.TaskIps != null && !this.TaskIps.SequenceEqual(input.TaskIps))) return false;
 
             return true;
         }
@@ -127,6 +143,8 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.TaskStatuses != null) hashCode = hashCode * 59 + this.TaskStatuses.GetHashCode();
                 if (this.RunningRecords != null) hashCode = hashCode * 59 + this.RunningRecords.GetHashCode();
+                if (this.RetentionTime != null) hashCode = hashCode * 59 + this.RetentionTime.GetHashCode();
+                if (this.TaskIps != null) hashCode = hashCode * 59 + this.TaskIps.GetHashCode();
                 return hashCode;
             }
         }

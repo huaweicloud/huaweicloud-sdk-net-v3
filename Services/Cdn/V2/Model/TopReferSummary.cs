@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// referer值。
+        /// **参数解释：** referer值 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("refer", NullValueHandling = NullValueHandling.Ignore)]
         public string Refer { get; set; }
 
         /// <summary>
-        /// 对应查询类型的值。（流量单位：Byte）
+        /// **参数解释：** 对应查询类型的值 **取值范围：** 若值为流量，流量单位：Byte
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public long? Value { get; set; }

@@ -362,7 +362,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// **参数解释：**  激活次数。Bug激活时自动赋值。 **取值范围：**  不涉及。
         /// </summary>
         [JsonProperty("activate_times", NullValueHandling = NullValueHandling.Ignore)]
-        public int? ActivateTimes { get; set; }
+        public string ActivateTimes { get; set; }
 
         /// <summary>
         /// 
@@ -566,7 +566,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// **参数解释：**  回归不通过次数。缺陷测试不通过时自动赋值。 **取值范围：**  不涉及。
         /// </summary>
         [JsonProperty("regression_failure_number", NullValueHandling = NullValueHandling.Ignore)]
-        public int? RegressionFailureNumber { get; set; }
+        public string RegressionFailureNumber { get; set; }
 
         /// <summary>
         /// 
@@ -608,7 +608,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// **参数解释：**  测试不通过次数。 **取值范围：**  不涉及。
         /// </summary>
         [JsonProperty("test_failures_times", NullValueHandling = NullValueHandling.Ignore)]
-        public int? TestFailuresTimes { get; set; }
+        public string TestFailuresTimes { get; set; }
 
         /// <summary>
         /// **参数解释：**  测试责任人。通常用于“测试”状态节点。 **取值范围：**  不涉及。

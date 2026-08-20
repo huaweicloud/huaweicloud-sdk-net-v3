@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// advertised.listeners IP/域名。
+        /// **参数解释**： advertised.listeners IP/域名。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("advertised_ip", NullValueHandling = NullValueHandling.Ignore)]
         public string AdvertisedIp { get; set; }
 
         /// <summary>
-        /// 修改broker跨VPC访问的状态。
+        /// **参数解释**： 修改broker跨VPC访问的状态。 **取值范围**： - true：修改broker跨VPC访问成功。 - false：修改broker跨VPC访问失败。
         /// </summary>
         [JsonProperty("success", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Success { get; set; }
 
         /// <summary>
-        /// listeners IP。
+        /// **参数解释**： listeners IP。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("ip", NullValueHandling = NullValueHandling.Ignore)]
         public string Ip { get; set; }

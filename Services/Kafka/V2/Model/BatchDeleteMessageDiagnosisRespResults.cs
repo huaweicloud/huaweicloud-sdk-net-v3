@@ -19,8 +19,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// <summary>
         /// 报告删除结果
         /// </summary>
-        [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? Result { get; set; }
+        [JsonProperty("success", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Success { get; set; }
 
         /// <summary>
         /// 报告ID
@@ -37,7 +37,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class BatchDeleteMessageDiagnosisRespResults {\n");
-            sb.Append("  result: ").Append(Result).Append("\n");
+            sb.Append("  success: ").Append(Success).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -57,7 +57,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool Equals(BatchDeleteMessageDiagnosisRespResults input)
         {
             if (input == null) return false;
-            if (this.Result != input.Result || (this.Result != null && !this.Result.Equals(input.Result))) return false;
+            if (this.Success != input.Success || (this.Success != null && !this.Success.Equals(input.Success))) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
 
             return true;
@@ -71,7 +71,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Result != null) hashCode = hashCode * 59 + this.Result.GetHashCode();
+                if (this.Success != null) hashCode = hashCode * 59 + this.Success.GetHashCode();
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 return hashCode;
             }

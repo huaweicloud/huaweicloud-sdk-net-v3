@@ -46,6 +46,12 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         [JsonProperty("last_message_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? LastMessageTime { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 客户端ID。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("client_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ClientId { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +66,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             sb.Append("  brokerOffset: ").Append(BrokerOffset).Append("\n");
             sb.Append("  consumerOffset: ").Append(ConsumerOffset).Append("\n");
             sb.Append("  lastMessageTime: ").Append(LastMessageTime).Append("\n");
+            sb.Append("  clientId: ").Append(ClientId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,6 +90,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             if (this.BrokerOffset != input.BrokerOffset || (this.BrokerOffset != null && !this.BrokerOffset.Equals(input.BrokerOffset))) return false;
             if (this.ConsumerOffset != input.ConsumerOffset || (this.ConsumerOffset != null && !this.ConsumerOffset.Equals(input.ConsumerOffset))) return false;
             if (this.LastMessageTime != input.LastMessageTime || (this.LastMessageTime != null && !this.LastMessageTime.Equals(input.LastMessageTime))) return false;
+            if (this.ClientId != input.ClientId || (this.ClientId != null && !this.ClientId.Equals(input.ClientId))) return false;
 
             return true;
         }
@@ -100,6 +108,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 if (this.BrokerOffset != null) hashCode = hashCode * 59 + this.BrokerOffset.GetHashCode();
                 if (this.ConsumerOffset != null) hashCode = hashCode * 59 + this.ConsumerOffset.GetHashCode();
                 if (this.LastMessageTime != null) hashCode = hashCode * 59 + this.LastMessageTime.GetHashCode();
+                if (this.ClientId != null) hashCode = hashCode * 59 + this.ClientId.GetHashCode();
                 return hashCode;
             }
         }

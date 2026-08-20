@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// 数据分组方式
+        /// **参数解释：** 数据分组方式 **取值范围：** - domain：按域名分组 - country：按国际&amp;地区分组 - province：按省份分组 - isp：按运营商分组
         /// </summary>
         [JsonProperty("group_by", NullValueHandling = NullValueHandling.Ignore)]
         public string GroupBy { get; set; }
 
         /// <summary>
-        /// 按指定的分组方式组织的数据
+        /// **参数解释：** 按指定的分组方式组织的数据 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Object> Result { get; set; }

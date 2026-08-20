@@ -65,16 +65,22 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public string LtsStrategy { get; set; }
 
         /// <summary>
-        /// **参数解释：** 部署对接lts状态。 **取值范围：** - ON：开启。 - OFF：关闭。
+        /// **参数解释：** 服务容器标准输出对接lts开关状态。 **取值范围：** - ON：开启。 - OFF：关闭。
         /// </summary>
         [JsonProperty("lts_status", NullValueHandling = NullValueHandling.Ignore)]
         public string LtsStatus { get; set; }
 
         /// <summary>
-        /// **参数解释：** 部署对接lts k8s事件状态。 **取值范围：** - ON：开启。 - OFF：关闭。
+        /// **参数解释：** 服务对接lts k8s事件开关状态。 **取值范围：** - ON：开启。 - OFF：关闭。
         /// </summary>
         [JsonProperty("lts_event_status", NullValueHandling = NullValueHandling.Ignore)]
         public string LtsEventStatus { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 服务容器日志文件对接lts开关状态。 **取值范围：** - ON：开启。 - OFF：关闭。
+        /// </summary>
+        [JsonProperty("lts_file_status", NullValueHandling = NullValueHandling.Ignore)]
+        public string LtsFileStatus { get; set; }
 
         /// <summary>
         /// **参数解释：** 服务日志配置信息。
@@ -107,6 +113,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  ltsStrategy: ").Append(LtsStrategy).Append("\n");
             sb.Append("  ltsStatus: ").Append(LtsStatus).Append("\n");
             sb.Append("  ltsEventStatus: ").Append(LtsEventStatus).Append("\n");
+            sb.Append("  ltsFileStatus: ").Append(LtsFileStatus).Append("\n");
             sb.Append("  logConfigs: ").Append(LogConfigs).Append("\n");
             sb.Append("  deployTimeoutMinutes: ").Append(DeployTimeoutMinutes).Append("\n");
             sb.Append("}\n");
@@ -137,6 +144,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.LtsStrategy != input.LtsStrategy || (this.LtsStrategy != null && !this.LtsStrategy.Equals(input.LtsStrategy))) return false;
             if (this.LtsStatus != input.LtsStatus || (this.LtsStatus != null && !this.LtsStatus.Equals(input.LtsStatus))) return false;
             if (this.LtsEventStatus != input.LtsEventStatus || (this.LtsEventStatus != null && !this.LtsEventStatus.Equals(input.LtsEventStatus))) return false;
+            if (this.LtsFileStatus != input.LtsFileStatus || (this.LtsFileStatus != null && !this.LtsFileStatus.Equals(input.LtsFileStatus))) return false;
             if (this.LogConfigs != input.LogConfigs || (this.LogConfigs != null && input.LogConfigs != null && !this.LogConfigs.SequenceEqual(input.LogConfigs))) return false;
             if (this.DeployTimeoutMinutes != input.DeployTimeoutMinutes || (this.DeployTimeoutMinutes != null && !this.DeployTimeoutMinutes.Equals(input.DeployTimeoutMinutes))) return false;
 
@@ -161,6 +169,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 if (this.LtsStrategy != null) hashCode = hashCode * 59 + this.LtsStrategy.GetHashCode();
                 if (this.LtsStatus != null) hashCode = hashCode * 59 + this.LtsStatus.GetHashCode();
                 if (this.LtsEventStatus != null) hashCode = hashCode * 59 + this.LtsEventStatus.GetHashCode();
+                if (this.LtsFileStatus != null) hashCode = hashCode * 59 + this.LtsFileStatus.GetHashCode();
                 if (this.LogConfigs != null) hashCode = hashCode * 59 + this.LogConfigs.GetHashCode();
                 if (this.DeployTimeoutMinutes != null) hashCode = hashCode * 59 + this.DeployTimeoutMinutes.GetHashCode();
                 return hashCode;

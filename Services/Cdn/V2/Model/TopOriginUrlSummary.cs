@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// 回源url名称
+        /// **参数解释：** 回源url **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("origin_url", NullValueHandling = NullValueHandling.Ignore)]
         public string OriginUrl { get; set; }
 
         /// <summary>
-        /// 对应查询类型的值。（流量单位：Byte）
+        /// **参数解释：** 对应查询类型的值 **取值范围：** 若值为流量，流量单位：Byte
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public long? Value { get; set; }
 
         /// <summary>
-        /// 该origin url的流量(或请求数)占当前查询条件下总流量(或请求数)的比例。保留4位小数
+        /// **参数解释：** 该origin url的流量（或请求数）占当前查询条件下总流量（或请求数）的比例 **取值范围：** 保留4位小数
         /// </summary>
         [JsonProperty("ratio", NullValueHandling = NullValueHandling.Ignore)]
         public double? Ratio { get; set; }

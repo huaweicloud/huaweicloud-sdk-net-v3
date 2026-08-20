@@ -44,7 +44,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// **参数解释**： 回收时间。  **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("in_recycle_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string InRecycleTime { get; set; }
+        public long? InRecycleTime { get; set; }
 
         /// <summary>
         /// **参数解释**： 保留时间。  **取值范围**： 1~7。
@@ -56,7 +56,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// **参数解释**： 自动删除时间。  **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("auto_delete_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string AutoDeleteTime { get; set; }
+        public long? AutoDeleteTime { get; set; }
 
         /// <summary>
         /// **参数解释**： 每小时的费用。  **取值范围**： 不涉及。

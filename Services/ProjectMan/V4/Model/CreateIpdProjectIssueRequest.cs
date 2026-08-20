@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public CreateIpdProjectIssueRequestBody Body { get; set; }
+        public CreateIpdProjectIssueParam Body { get; set; }
 
 
 

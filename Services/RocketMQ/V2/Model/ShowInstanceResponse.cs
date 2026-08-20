@@ -185,7 +185,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public bool? EnablePublicip { get; set; }
 
         /// <summary>
-        /// **参数解释**： 实例绑定的弹性IP地址的ID。  以英文逗号隔开多个弹性IP地址的ID。  如果开启了公网访问功能（即enable_publicip为true），该字段为必选。 **约束限制**： 不涉及。 **取值范围**： - true：开启。 - false：不开启。 **默认取值**： 不涉及。
+        /// **参数解释**： 实例绑定的弹性IP地址的ID。  以英文逗号隔开多个弹性IP地址的ID。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("publicip_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicipId { get; set; }
@@ -203,7 +203,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public bool? SslEnable { get; set; }
 
         /// <summary>
-        /// **参数解释**： 跨VPC访问信息。 **约束限制**： 不涉及。 **取值范围**： - true：开启。 - false：未开启。 **默认取值**： 不涉及。
+        /// **参数解释**： 跨VPC访问信息。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("cross_vpc_info", NullValueHandling = NullValueHandling.Ignore)]
         public string CrossVpcInfo { get; set; }

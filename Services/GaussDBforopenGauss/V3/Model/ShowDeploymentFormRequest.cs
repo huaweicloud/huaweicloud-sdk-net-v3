@@ -152,14 +152,14 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// **参数解释**: 事务一致性类型。 **约束限制**: 不涉及。 **取值范围**: - strong - eventual **默认取值**: 不涉及。
+        /// **参数解释**: 事务一致性类型。 **约束限制**: 不涉及。 **取值范围**: - strong - eventual  **默认取值**: 不涉及。
         /// </summary>
         [SDKProperty("consistency", IsQuery = true)]
         [JsonProperty("consistency", NullValueHandling = NullValueHandling.Ignore)]
         public string Consistency { get; set; }
 
         /// <summary>
-        /// **参数解释**: 副本一致性协议类型。 **约束限制**: 不涉及。 **取值范围**: - quorum - paxos **默认取值**: 不涉及。
+        /// **参数解释**: 副本一致性协议类型。 **约束限制**: 不涉及。 **取值范围**: - quorum - paxos  **默认取值**: 不涉及。
         /// </summary>
         [SDKProperty("consistency_protocol", IsQuery = true)]
         [JsonProperty("consistency_protocol", NullValueHandling = NullValueHandling.Ignore)]

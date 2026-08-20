@@ -293,6 +293,121 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             }
         }
 
+        /// <summary>
+        /// **参数解释：** 资源池类型。 **取值范围：** - LOGICAL ：逻辑池。 - PHYSICAL ：物理池。
+        /// </summary>
+        /// <value>**参数解释：** 资源池类型。 **取值范围：** - LOGICAL ：逻辑池。 - PHYSICAL ：物理池。</value>
+        [JsonConverter(typeof(EnumClassConverter<PoolTypeEnum>))]
+        public class PoolTypeEnum
+        {
+            /// <summary>
+            /// Enum LOGICAL for value: LOGICAL
+            /// </summary>
+            public static readonly PoolTypeEnum LOGICAL = new PoolTypeEnum("LOGICAL");
+
+            /// <summary>
+            /// Enum PHYSICAL for value: PHYSICAL
+            /// </summary>
+            public static readonly PoolTypeEnum PHYSICAL = new PoolTypeEnum("PHYSICAL");
+
+            private static readonly Dictionary<string, PoolTypeEnum> StaticFields =
+            new Dictionary<string, PoolTypeEnum>()
+            {
+                { "LOGICAL", LOGICAL },
+                { "PHYSICAL", PHYSICAL },
+            };
+
+            private string _value;
+
+            public PoolTypeEnum()
+            {
+
+            }
+
+            public PoolTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static PoolTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as PoolTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(PoolTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(PoolTypeEnum a, PoolTypeEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(PoolTypeEnum a, PoolTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// **参数解释：** 工作空间ID。未创建工作空间时默认值为“0”，存在创建并使用的工作空间，以实际取值为准。 **取值范围：** 不涉及。
@@ -350,7 +465,18 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         /// **参数解释：** 当前专属池支持的规格。
         /// </summary>
         [JsonProperty("flavors", NullValueHandling = NullValueHandling.Ignore)]
-        public List<InferFlavor> Flavors { get; set; }
+        public List<NotebookFlavor> Flavors { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 资源池类型。 **取值范围：** - LOGICAL ：逻辑池。 - PHYSICAL ：物理池。
+        /// </summary>
+        [JsonProperty("pool_type", NullValueHandling = NullValueHandling.Ignore)]
+        public PoolTypeEnum PoolType { get; set; }
+        /// <summary>
+        /// **参数解释：** 物理资源池ID，逻辑子池对应的父池ID。 **取值范围：** 不涉及。
+        /// </summary>
+        [JsonProperty("physical_pool_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string PhysicalPoolId { get; set; }
 
 
 
@@ -371,6 +497,8 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  createAt: ").Append(CreateAt).Append("\n");
             sb.Append("  updateAt: ").Append(UpdateAt).Append("\n");
             sb.Append("  flavors: ").Append(Flavors).Append("\n");
+            sb.Append("  poolType: ").Append(PoolType).Append("\n");
+            sb.Append("  physicalPoolId: ").Append(PhysicalPoolId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -399,6 +527,8 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.CreateAt != input.CreateAt || (this.CreateAt != null && !this.CreateAt.Equals(input.CreateAt))) return false;
             if (this.UpdateAt != input.UpdateAt || (this.UpdateAt != null && !this.UpdateAt.Equals(input.UpdateAt))) return false;
             if (this.Flavors != input.Flavors || (this.Flavors != null && input.Flavors != null && !this.Flavors.SequenceEqual(input.Flavors))) return false;
+            if (this.PoolType != input.PoolType) return false;
+            if (this.PhysicalPoolId != input.PhysicalPoolId || (this.PhysicalPoolId != null && !this.PhysicalPoolId.Equals(input.PhysicalPoolId))) return false;
 
             return true;
         }
@@ -421,6 +551,8 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 if (this.CreateAt != null) hashCode = hashCode * 59 + this.CreateAt.GetHashCode();
                 if (this.UpdateAt != null) hashCode = hashCode * 59 + this.UpdateAt.GetHashCode();
                 if (this.Flavors != null) hashCode = hashCode * 59 + this.Flavors.GetHashCode();
+                hashCode = hashCode * 59 + this.PoolType.GetHashCode();
+                if (this.PhysicalPoolId != null) hashCode = hashCode * 59 + this.PhysicalPoolId.GetHashCode();
                 return hashCode;
             }
         }

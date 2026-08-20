@@ -17,53 +17,46 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// 查询起始时间戳，需与结束时间戳同时指定，左闭右开，设置方式如下： - interval为300时，start_time设置为整5分钟时刻点，如：1631240100000(对应2021-09-10 10:15:00) - interval为3600时，start_time设置为整小时时刻点，如：1631239200000(对应2021-09-10 10:00:00) - interval为86400时，start_time设置为东8区零点时刻点，如：1631203200000(对应2021-09-10 00:00:00)
+        /// **参数解释：** 查询起始时间戳 **约束限制：** 该参数只能传0点毫秒时间戳 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [SDKProperty("start_time", IsQuery = true)]
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? StartTime { get; set; }
 
         /// <summary>
-        /// 查询结束时间戳，需与开始时间戳同时指定，左闭右开，设置方式如下： - interval为300时，end_time设置为整5分钟时刻点，如：1631243700000(对应2021-09-10 11:15:00) - interval为3600时，end_time设置为整小时时刻点，如：1631325600000(对应2021-09-11 10:00:00) - interval为86400时，end_time设置为东8区零点时刻点，如：1631376000000(对应2021-09-12 00:00:00)
+        /// **参数解释：** 查询结束时间戳 **约束限制：** 该参数只能传0点毫秒时间戳 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [SDKProperty("end_time", IsQuery = true)]
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? EndTime { get; set; }
 
         /// <summary>
-        /// 域名列表，多个域名以逗号（半角）分隔，如：www.test1.com,www.test2.com all表示查询名下全部域名。如果域名在查询时间段内无数据，结果将不返回该域名的信息。
+        /// **参数解释：** 域名列表 &gt; 如果域名在查询时间段内无数据，结果将不返回该域名的信息  **约束限制：** 仅支持查询已经在CDN创建成功的域名 **取值范围：** - all表示查询名下全部域名 - 多个域名以逗号（半角）分隔，如：www.test1.com,www.test2.com **默认取值：** 不涉及
         /// </summary>
         [SDKProperty("domain_name", IsQuery = true)]
         [JsonProperty("domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainName { get; set; }
 
         /// <summary>
-        /// - 统计指标类型 - 目前只支持flux（流量），req_num（请求数）
+        /// **参数解释：** 统计指标类型 **约束限制：** 不涉及 **取值范围：** - flux：流量 - req_num：请求数 **默认取值：** 不涉及
         /// </summary>
         [SDKProperty("stat_type", IsQuery = true)]
         [JsonProperty("stat_type", NullValueHandling = NullValueHandling.Ignore)]
         public string StatType { get; set; }
 
         /// <summary>
-        /// 服务区域：mainland_china(大陆)，outside_mainland_china(海外)，默认为global(全球)
+        /// **参数解释：** 服务范围 **约束限制：** 不涉及 **取值范围：** - mainland_china：中国大陆 - outside_mainland_china：中国大陆境外 - global：全球 **默认取值：** global：全球
         /// </summary>
         [SDKProperty("service_area", IsQuery = true)]
         [JsonProperty("service_area", NullValueHandling = NullValueHandling.Ignore)]
         public string ServiceArea { get; set; }
 
         /// <summary>
-        /// 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，\&quot;all\&quot;表示所有项目。注意：当使用子账号调用接口时，该参数必传。
+        /// **参数解释：** 企业项目id &gt; 您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id  **约束限制：** - 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目 - 当使用子账号调用接口时，该参数必传 **取值范围：** all表示所有项目 **默认取值：** 不涉及
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
-
-        /// <summary>
-        /// 是否包含百分比数据，默认false
-        /// </summary>
-        [SDKProperty("include_ratio", IsQuery = true)]
-        [JsonProperty("include_ratio", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? IncludeRatio { get; set; }
 
 
 
@@ -80,7 +73,6 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  statType: ").Append(StatType).Append("\n");
             sb.Append("  serviceArea: ").Append(ServiceArea).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
-            sb.Append("  includeRatio: ").Append(IncludeRatio).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -105,7 +97,6 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             if (this.StatType != input.StatType || (this.StatType != null && !this.StatType.Equals(input.StatType))) return false;
             if (this.ServiceArea != input.ServiceArea || (this.ServiceArea != null && !this.ServiceArea.Equals(input.ServiceArea))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
-            if (this.IncludeRatio != input.IncludeRatio || (this.IncludeRatio != null && !this.IncludeRatio.Equals(input.IncludeRatio))) return false;
 
             return true;
         }
@@ -124,7 +115,6 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                 if (this.StatType != null) hashCode = hashCode * 59 + this.StatType.GetHashCode();
                 if (this.ServiceArea != null) hashCode = hashCode * 59 + this.ServiceArea.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.IncludeRatio != null) hashCode = hashCode * 59 + this.IncludeRatio.GetHashCode();
                 return hashCode;
             }
         }

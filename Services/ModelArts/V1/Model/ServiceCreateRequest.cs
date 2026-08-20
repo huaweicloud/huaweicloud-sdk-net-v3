@@ -56,7 +56,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         /// 
         /// </summary>
         [JsonProperty("runtime_config", NullValueHandling = NullValueHandling.Ignore)]
-        public RuntimeConfig RuntimeConfig { get; set; }
+        public RuntimeConfigCreateRequest RuntimeConfig { get; set; }
 
         /// <summary>
         /// 
@@ -71,10 +71,10 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public string LtsStrategy { get; set; }
 
         /// <summary>
-        /// **参数解释：** 日志配置。 **约束限制：** 当开启LTS日志的时候，STDOUT类型为必填。 数量上限为2个。
+        /// **参数解释：** 服务日志配置。 **约束限制：** 数量上限为[3](tag:hws,hws_hk,fcs,fcs_super)[2](tag:hcs,hcs_sm)个，且每种类型只可配置一个。
         /// </summary>
         [JsonProperty("log_configs", NullValueHandling = NullValueHandling.Ignore)]
-        public List<LtsConfig> LogConfigs { get; set; }
+        public List<LtsConfiguration> LogConfigs { get; set; }
 
         /// <summary>
         /// **参数解释：** 服务标签。 **约束限制：** 上限20个。
@@ -89,7 +89,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public string WorkspaceId { get; set; }
 
         /// <summary>
-        /// **参数解释：** 定时停止配置。 **约束限制：** 最多支持一个定时任务。
+        /// **参数解释：**  定时停止配置。 **约束限制：**  最多支持一个定时任务。
         /// </summary>
         [JsonProperty("schedule", NullValueHandling = NullValueHandling.Ignore)]
         public List<ScheduleConfig> Schedule { get; set; }

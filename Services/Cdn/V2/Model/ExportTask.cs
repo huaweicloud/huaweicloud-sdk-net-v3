@@ -17,37 +17,37 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// 导出任务id
+        /// **参数解释：** 导出任务id **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("task_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TaskId { get; set; }
 
         /// <summary>
-        /// 导出任务名称
+        /// **参数解释：** 导出任务名称 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("task_name", NullValueHandling = NullValueHandling.Ignore)]
         public string TaskName { get; set; }
 
         /// <summary>
-        /// **参数解释：** 应用模板状态（域名粒度） **约束限制：** 不涉及 **取值范围：** - success: 应用模板成功 - fail: 应用模板失败  **默认取值：** 不涉及
+        /// **参数解释：** 任务状态 **约束限制：** 不涉及 **取值范围：** - success: 成功 - fail: 失败 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 下载链接
+        /// **参数解释：** 下载链接 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("download_link", NullValueHandling = NullValueHandling.Ignore)]
         public string DownloadLink { get; set; }
 
         /// <summary>
-        /// 创建时间
+        /// **参数解释：** 创建时间 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? CreateTime { get; set; }
 
         /// <summary>
-        /// 最近更新时间
+        /// **参数解释：** 最近更新时间 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("update_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? UpdateTime { get; set; }

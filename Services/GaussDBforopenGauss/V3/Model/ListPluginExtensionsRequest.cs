@@ -145,11 +145,18 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 
+        /// **参数解释**: 数据库名称。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
         /// </summary>
-        [SDKProperty("body", IsBody = true)]
-        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public ListPluginExtensionsRequestBody Body { get; set; }
+        [SDKProperty("db_name", IsQuery = true)]
+        [JsonProperty("db_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string DbName { get; set; }
+
+        /// <summary>
+        /// **参数解释**: 插件名称。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
+        /// </summary>
+        [SDKProperty("plugin_name", IsQuery = true)]
+        [JsonProperty("plugin_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string PluginName { get; set; }
 
 
 
@@ -162,7 +169,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("class ListPluginExtensionsRequest {\n");
             sb.Append("  xLanguage: ").Append(XLanguage).Append("\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
-            sb.Append("  body: ").Append(Body).Append("\n");
+            sb.Append("  dbName: ").Append(DbName).Append("\n");
+            sb.Append("  pluginName: ").Append(PluginName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -183,7 +191,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             if (input == null) return false;
             if (this.XLanguage != input.XLanguage) return false;
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
-            if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
+            if (this.DbName != input.DbName || (this.DbName != null && !this.DbName.Equals(input.DbName))) return false;
+            if (this.PluginName != input.PluginName || (this.PluginName != null && !this.PluginName.Equals(input.PluginName))) return false;
 
             return true;
         }
@@ -198,7 +207,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                 var hashCode = 41;
                 hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
+                if (this.DbName != null) hashCode = hashCode * 59 + this.DbName.GetHashCode();
+                if (this.PluginName != null) hashCode = hashCode * 59 + this.PluginName.GetHashCode();
                 return hashCode;
             }
         }

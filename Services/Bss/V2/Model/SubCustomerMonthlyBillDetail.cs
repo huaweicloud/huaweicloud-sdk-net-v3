@@ -71,7 +71,7 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
         public string TradeTime { get; set; }
 
         /// <summary>
-        /// 订单ID或交易ID，扣费维度的唯一标识。 账单类型为1，2，3，4，8时为订单ID。其它场景下为交易ID。非月末扣费：应收ID月末扣费：账单ID
+        /// 订单ID或交易ID，扣费维度的唯一标识。 账单类型为1，2，3，4，8和103时为订单ID。其它场景下为交易ID。非月末扣费：应收ID月末扣费：账单ID
         /// </summary>
         [JsonProperty("trade_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TradeId { get; set; }
@@ -304,6 +304,24 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
         [JsonProperty("period_num", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? PeriodNum { get; set; }
 
+        /// <summary>
+        /// 企业项目标识（企业项目ID），该参数非必填，最大长度：64
+        /// </summary>
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
+        /// 订单类型，该参数非必填，1：开通 2：续订 3：变更 4：退订 10：包年/包月转按需 11：按需转包年/包月 13：试用 14：转商用 15：费用调整
+        /// </summary>
+        [JsonProperty("order_type", NullValueHandling = NullValueHandling.Ignore)]
+        public int? OrderType { get; set; }
+
+        /// <summary>
+        /// 付款方式，节省计划和预留实例有值。枚举值：ALL_UPFRONT：全预付；PARTIAL_UPFRONT：部分预付；NO_UPFRONT：零预付
+        /// </summary>
+        [JsonProperty("payment_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string PaymentType { get; set; }
+
 
 
         /// <summary>
@@ -361,6 +379,9 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
             sb.Append("  subResourceId: ").Append(SubResourceId).Append("\n");
             sb.Append("  subResourceName: ").Append(SubResourceName).Append("\n");
             sb.Append("  periodNum: ").Append(PeriodNum).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  orderType: ").Append(OrderType).Append("\n");
+            sb.Append("  paymentType: ").Append(PaymentType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -427,6 +448,9 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
             if (this.SubResourceId != input.SubResourceId || (this.SubResourceId != null && !this.SubResourceId.Equals(input.SubResourceId))) return false;
             if (this.SubResourceName != input.SubResourceName || (this.SubResourceName != null && !this.SubResourceName.Equals(input.SubResourceName))) return false;
             if (this.PeriodNum != input.PeriodNum || (this.PeriodNum != null && !this.PeriodNum.Equals(input.PeriodNum))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.OrderType != input.OrderType || (this.OrderType != null && !this.OrderType.Equals(input.OrderType))) return false;
+            if (this.PaymentType != input.PaymentType || (this.PaymentType != null && !this.PaymentType.Equals(input.PaymentType))) return false;
 
             return true;
         }
@@ -487,6 +511,9 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
                 if (this.SubResourceId != null) hashCode = hashCode * 59 + this.SubResourceId.GetHashCode();
                 if (this.SubResourceName != null) hashCode = hashCode * 59 + this.SubResourceName.GetHashCode();
                 if (this.PeriodNum != null) hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.OrderType != null) hashCode = hashCode * 59 + this.OrderType.GetHashCode();
+                if (this.PaymentType != null) hashCode = hashCode * 59 + this.PaymentType.GetHashCode();
                 return hashCode;
             }
         }

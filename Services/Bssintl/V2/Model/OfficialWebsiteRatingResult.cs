@@ -23,13 +23,13 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
         public decimal? OfficialWebsiteAmount { get; set; }
 
         /// <summary>
-        /// 价格度量单位标识。 1：元
+        /// 价格度量单位标识。 1：美元
         /// </summary>
         [JsonProperty("measure_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? MeasureId { get; set; }
 
         /// <summary>
-        /// 产品询价结果，具体参见表5。
+        /// 产品询价结果，具体参见PeriodProductOfficialRatingResult。
         /// </summary>
         [JsonProperty("product_rating_results", NullValueHandling = NullValueHandling.Ignore)]
         public List<PeriodProductOfficialRatingResult> ProductRatingResults { get; set; }

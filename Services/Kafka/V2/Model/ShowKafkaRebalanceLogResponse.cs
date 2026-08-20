@@ -17,52 +17,64 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 日志ID。
+        /// **参数解释**： 日志ID。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 实例ID。
+        /// **参数解释**： 实例ID。 **取值范围**： 不涉及。
         /// </summary>
-        [JsonProperty("instanceId", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 状态。
+        /// **参数解释**： 重平衡日志状态。 **取值范围**： - OPEN：已开启重平衡日志。 - CLOSE：已关闭重平衡日志。 - OPENING：重平衡日志开启中。 - CLOSING：重平衡日志关闭中。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 日志流ID。
+        /// **参数解释**： 日志流ID。 **取值范围**： 不涉及。
         /// </summary>
-        [JsonProperty("logStreamId", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("log_stream_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LogStreamId { get; set; }
 
         /// <summary>
-        /// 日志组ID。
+        /// **参数解释**： 日志组ID。 **取值范围**： 不涉及。
         /// </summary>
-        [JsonProperty("logGroupId", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("log_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LogGroupId { get; set; }
 
         /// <summary>
-        /// 看板ID。
+        /// **参数解释**： 看板ID。 **取值范围**： 不涉及。
         /// </summary>
-        [JsonProperty("dashboardId", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("dashboard_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DashboardId { get; set; }
 
         /// <summary>
-        /// 创建时间。
+        /// **参数解释**： 日志类型。 **取值范围**： 不涉及。
         /// </summary>
-        [JsonProperty("createAt", NullValueHandling = NullValueHandling.Ignore)]
-        public string CreateAt { get; set; }
+        [JsonProperty("log_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string LogType { get; set; }
 
         /// <summary>
-        /// 更新时间。
+        /// **参数解释**： 日志文件名称。 **取值范围**： 不涉及。
         /// </summary>
-        [JsonProperty("updateAt", NullValueHandling = NullValueHandling.Ignore)]
-        public string UpdateAt { get; set; }
+        [JsonProperty("log_file_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string LogFileName { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 创建时间。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
+        public long? CreatedAt { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 更新时间。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
+        public long? UpdatedAt { get; set; }
 
 
 
@@ -79,8 +91,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  logStreamId: ").Append(LogStreamId).Append("\n");
             sb.Append("  logGroupId: ").Append(LogGroupId).Append("\n");
             sb.Append("  dashboardId: ").Append(DashboardId).Append("\n");
-            sb.Append("  createAt: ").Append(CreateAt).Append("\n");
-            sb.Append("  updateAt: ").Append(UpdateAt).Append("\n");
+            sb.Append("  logType: ").Append(LogType).Append("\n");
+            sb.Append("  logFileName: ").Append(LogFileName).Append("\n");
+            sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -105,8 +119,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             if (this.LogStreamId != input.LogStreamId || (this.LogStreamId != null && !this.LogStreamId.Equals(input.LogStreamId))) return false;
             if (this.LogGroupId != input.LogGroupId || (this.LogGroupId != null && !this.LogGroupId.Equals(input.LogGroupId))) return false;
             if (this.DashboardId != input.DashboardId || (this.DashboardId != null && !this.DashboardId.Equals(input.DashboardId))) return false;
-            if (this.CreateAt != input.CreateAt || (this.CreateAt != null && !this.CreateAt.Equals(input.CreateAt))) return false;
-            if (this.UpdateAt != input.UpdateAt || (this.UpdateAt != null && !this.UpdateAt.Equals(input.UpdateAt))) return false;
+            if (this.LogType != input.LogType || (this.LogType != null && !this.LogType.Equals(input.LogType))) return false;
+            if (this.LogFileName != input.LogFileName || (this.LogFileName != null && !this.LogFileName.Equals(input.LogFileName))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
 
             return true;
         }
@@ -125,8 +141,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 if (this.LogStreamId != null) hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
                 if (this.LogGroupId != null) hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
                 if (this.DashboardId != null) hashCode = hashCode * 59 + this.DashboardId.GetHashCode();
-                if (this.CreateAt != null) hashCode = hashCode * 59 + this.CreateAt.GetHashCode();
-                if (this.UpdateAt != null) hashCode = hashCode * 59 + this.UpdateAt.GetHashCode();
+                if (this.LogType != null) hashCode = hashCode * 59 + this.LogType.GetHashCode();
+                if (this.LogFileName != null) hashCode = hashCode * 59 + this.LogFileName.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 return hashCode;
             }
         }

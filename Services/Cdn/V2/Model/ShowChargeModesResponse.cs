@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// 计费模式查询结果
+        /// **参数解释：** 计费模式查询结果 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
         public List<Dictionary<string, Object>> Result { get; set; }

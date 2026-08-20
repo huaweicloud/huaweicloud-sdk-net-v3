@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
     {
 
         /// <summary>
-        /// |参数名称：官网价格。单位为元| |参数约束及描述：官网价格。单位为元|
+        /// 官网价格。单位为元
         /// </summary>
         [JsonProperty("official_website_amount", NullValueHandling = NullValueHandling.Ignore)]
         public string OfficialWebsiteAmount { get; set; }
 
         /// <summary>
-        /// |参数名称：分期金额的官网价。单位为元| |参数约束及描述：分期金额的官网价。单位为元|
+        /// 分期金额的官网价。单位为元
         /// </summary>
         [JsonProperty("installment_official_website_amount", NullValueHandling = NullValueHandling.Ignore)]
         public string InstallmentOfficialWebsiteAmount { get; set; }
 
         /// <summary>
-        /// |参数名称：分期付款的周期类型。2：月| |参数的约束及描述：分期付款的周期类型。2：月|
+        /// 分期付款的周期类型。2：月
         /// </summary>
         [JsonProperty("installment_period_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? InstallmentPeriodType { get; set; }

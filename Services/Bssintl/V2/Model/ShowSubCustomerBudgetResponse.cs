@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
     public class ShowSubCustomerBudgetResponse : SdkResponse
     {
         /// <summary>
-        /// |参数名称：预算模式| |参数的约束及描述：MONTHLY 月度预算 PACKAGE 一次性预算|
+        /// 预算模式。 MONTHLY：月度预算 PACKAGE：一次性预算
         /// </summary>
-        /// <value>|参数名称：预算模式| |参数的约束及描述：MONTHLY 月度预算 PACKAGE 一次性预算|</value>
+        /// <value>预算模式。 MONTHLY：月度预算 PACKAGE：一次性预算</value>
         [JsonConverter(typeof(EnumClassConverter<BudgetTypeEnum>))]
         public class BudgetTypeEnum
         {
@@ -156,7 +156,7 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
         public string Currency { get; set; }
 
         /// <summary>
-        /// |参数名称：预算模式| |参数的约束及描述：MONTHLY 月度预算 PACKAGE 一次性预算|
+        /// 预算模式。 MONTHLY：月度预算 PACKAGE：一次性预算
         /// </summary>
         [JsonProperty("budget_type", NullValueHandling = NullValueHandling.Ignore)]
         public BudgetTypeEnum BudgetType { get; set; }

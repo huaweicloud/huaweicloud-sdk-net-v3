@@ -282,7 +282,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public string Database { get; set; }
 
         /// <summary>
-        /// **参数解释** 声明记录所匹配且允许访问的数据库用户。 **约束限制** 不支持系统用户。 **取值范围** - all：表明该记录匹配所有用户。 - 特定的数据库用户名或者用逗号分隔的用户列表。 **默认取值**: 不涉及。 
+        /// **参数解释** 声明记录所匹配且允许访问的数据库用户。 **约束限制** 不支持系统用户。 **取值范围** - all：表明该记录匹配所有用户。 - 特定的数据库用户名或者用逗号分隔的用户列表。  **默认取值**: 不涉及。 
         /// </summary>
         [JsonProperty("user", NullValueHandling = NullValueHandling.Ignore)]
         public string User { get; set; }

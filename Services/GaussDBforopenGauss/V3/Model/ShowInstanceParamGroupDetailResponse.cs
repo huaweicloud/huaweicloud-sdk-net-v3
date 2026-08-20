@@ -17,31 +17,37 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
     {
 
         /// <summary>
-        /// 引擎版本。
+        /// **参数解释**: 实例对应参数组ID。 **取值范围**: 不涉及。
+        /// </summary>
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// **参数解释**: 引擎版本。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("datastore_version", NullValueHandling = NullValueHandling.Ignore)]
         public string DatastoreVersion { get; set; }
 
         /// <summary>
-        /// 引擎名称。
+        /// **参数解释**: 引擎名称。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("datastore_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DatastoreName { get; set; }
 
         /// <summary>
-        /// 创建时间，格式为\&quot;yyyy-MM-dd HH:mm:ss\&quot;。
+        /// **参数解释**: 创建时间，格式为\&quot;yyyy-MM-dd HH:mm:ss\&quot;。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("created", NullValueHandling = NullValueHandling.Ignore)]
         public string Created { get; set; }
 
         /// <summary>
-        /// 更新时间，格式为\&quot;yyyy-MM-ddHH:mm:ss\&quot;。
+        /// **参数解释**: 更新时间，格式为\&quot;yyyy-MM-dd HH:mm:ss\&quot;。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("updated", NullValueHandling = NullValueHandling.Ignore)]
         public string Updated { get; set; }
 
         /// <summary>
-        /// 参数对象，用户基于默认参数模板自定义的参数配置。
+        /// **参数解释**: 参数对象，用户基于默认参数模板自定义的参数配置，具体请参考ConfigurationParameterResult。
         /// </summary>
         [JsonProperty("configuration_parameters", NullValueHandling = NullValueHandling.Ignore)]
         public List<ConfigurationParameterResult> ConfigurationParameters { get; set; }
@@ -55,6 +61,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShowInstanceParamGroupDetailResponse {\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  datastoreVersion: ").Append(DatastoreVersion).Append("\n");
             sb.Append("  datastoreName: ").Append(DatastoreName).Append("\n");
             sb.Append("  created: ").Append(Created).Append("\n");
@@ -78,6 +85,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public bool Equals(ShowInstanceParamGroupDetailResponse input)
         {
             if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.DatastoreVersion != input.DatastoreVersion || (this.DatastoreVersion != null && !this.DatastoreVersion.Equals(input.DatastoreVersion))) return false;
             if (this.DatastoreName != input.DatastoreName || (this.DatastoreName != null && !this.DatastoreName.Equals(input.DatastoreName))) return false;
             if (this.Created != input.Created || (this.Created != null && !this.Created.Equals(input.Created))) return false;
@@ -95,6 +103,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.DatastoreVersion != null) hashCode = hashCode * 59 + this.DatastoreVersion.GetHashCode();
                 if (this.DatastoreName != null) hashCode = hashCode * 59 + this.DatastoreName.GetHashCode();
                 if (this.Created != null) hashCode = hashCode * 59 + this.Created.GetHashCode();

@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
         public decimal? DiscountAmount { get; set; }
 
         /// <summary>
-        /// 价格度量单位标识。 1：元
+        /// 价格度量单位标识。 1：美元
         /// </summary>
         [JsonProperty("measure_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? MeasureId { get; set; }
@@ -65,7 +65,7 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
         public int? BestOffer { get; set; }
 
         /// <summary>
-        /// 产品询价结果，具体参见表5。
+        /// 产品询价结果，具体参见PeriodProductRatingResult。
         /// </summary>
         [JsonProperty("product_rating_results", NullValueHandling = NullValueHandling.Ignore)]
         public List<PeriodProductRatingResult> ProductRatingResults { get; set; }

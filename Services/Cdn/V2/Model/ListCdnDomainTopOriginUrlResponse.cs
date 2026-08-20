@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// 详情数据对象。
+        /// **参数解释：** 数据详情 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("top_origin_url_summary", NullValueHandling = NullValueHandling.Ignore)]
         public List<TopOriginUrlSummary> TopOriginUrlSummary { get; set; }

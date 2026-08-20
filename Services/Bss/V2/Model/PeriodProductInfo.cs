@@ -83,7 +83,7 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
         public int? SubscriptionNum { get; set; }
 
         /// <summary>
-        /// 费用分期模式。 HALF_PAY：半付ZERO_PAY：零付NA：不支持费用分期模式  说明： 此参数不携带或携带值为空串或携带值为null时，默认值为“NA”。暂只支持CloudPond产品。
+        /// 费用分期模式。HALF_PAY：半付 ZERO_PAY：零付 NA：不支持费用分期模式。说明：此参数不携带或携带值为空串或携带值为null时，默认值为“NA”。暂只支持CloudPond产品。
         /// </summary>
         [JsonProperty("fee_installment_mode", NullValueHandling = NullValueHandling.Ignore)]
         public string FeeInstallmentMode { get; set; }
