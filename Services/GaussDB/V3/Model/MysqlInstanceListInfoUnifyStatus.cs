@@ -172,6 +172,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<InstanceTagItem> Tags { get; set; }
 
+        /// <summary>
+        /// **参数解释**：  当前内核版本是否EOS。  **取值范围**：  - true：版本EOS。 - false：版本正常维护。
+        /// </summary>
+        [JsonProperty("eos_tag", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EosTag { get; set; }
+
 
 
         /// <summary>
@@ -207,6 +213,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  chargeInfo: ").Append(ChargeInfo).Append("\n");
             sb.Append("  dedicatedResourceId: ").Append(DedicatedResourceId).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  eosTag: ").Append(EosTag).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -251,6 +258,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (this.ChargeInfo != input.ChargeInfo || (this.ChargeInfo != null && !this.ChargeInfo.Equals(input.ChargeInfo))) return false;
             if (this.DedicatedResourceId != input.DedicatedResourceId || (this.DedicatedResourceId != null && !this.DedicatedResourceId.Equals(input.DedicatedResourceId))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.EosTag != input.EosTag || (this.EosTag != null && !this.EosTag.Equals(input.EosTag))) return false;
 
             return true;
         }
@@ -289,6 +297,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 if (this.ChargeInfo != null) hashCode = hashCode * 59 + this.ChargeInfo.GetHashCode();
                 if (this.DedicatedResourceId != null) hashCode = hashCode * 59 + this.DedicatedResourceId.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.EosTag != null) hashCode = hashCode * 59 + this.EosTag.GetHashCode();
                 return hashCode;
             }
         }

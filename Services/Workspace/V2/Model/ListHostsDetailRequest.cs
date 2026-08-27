@@ -136,6 +136,242 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             }
         }
 
+        /// <summary>
+        /// 排序字段名称，需要结合sort_type字段一起使用。 - instance_total 云办公主机上的实例总数 - available_vcpus 云办公主机可用的vCPU核数 - available_memory 云办公主机可用的内存大小
+        /// </summary>
+        /// <value>排序字段名称，需要结合sort_type字段一起使用。 - instance_total 云办公主机上的实例总数 - available_vcpus 云办公主机可用的vCPU核数 - available_memory 云办公主机可用的内存大小</value>
+        [JsonConverter(typeof(EnumClassConverter<SortFieldEnum>))]
+        public class SortFieldEnum
+        {
+            /// <summary>
+            /// Enum INSTANCE_TOTAL for value: instance_total
+            /// </summary>
+            public static readonly SortFieldEnum INSTANCE_TOTAL = new SortFieldEnum("instance_total");
+
+            /// <summary>
+            /// Enum AVAILABLE_VCPUS for value: available_vcpus
+            /// </summary>
+            public static readonly SortFieldEnum AVAILABLE_VCPUS = new SortFieldEnum("available_vcpus");
+
+            /// <summary>
+            /// Enum AVAILABLE_MEMORY for value: available_memory
+            /// </summary>
+            public static readonly SortFieldEnum AVAILABLE_MEMORY = new SortFieldEnum("available_memory");
+
+            private static readonly Dictionary<string, SortFieldEnum> StaticFields =
+            new Dictionary<string, SortFieldEnum>()
+            {
+                { "instance_total", INSTANCE_TOTAL },
+                { "available_vcpus", AVAILABLE_VCPUS },
+                { "available_memory", AVAILABLE_MEMORY },
+            };
+
+            private string _value;
+
+            public SortFieldEnum()
+            {
+
+            }
+
+            public SortFieldEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static SortFieldEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as SortFieldEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(SortFieldEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(SortFieldEnum a, SortFieldEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(SortFieldEnum a, SortFieldEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
+        /// 排序类型，默认升序，需要结合sort_field字段一起使用。 - ASC 升序。 - DESC 降序。
+        /// </summary>
+        /// <value>排序类型，默认升序，需要结合sort_field字段一起使用。 - ASC 升序。 - DESC 降序。</value>
+        [JsonConverter(typeof(EnumClassConverter<SortTypeEnum>))]
+        public class SortTypeEnum
+        {
+            /// <summary>
+            /// Enum ASC for value: ASC
+            /// </summary>
+            public static readonly SortTypeEnum ASC = new SortTypeEnum("ASC");
+
+            /// <summary>
+            /// Enum DESC for value: DESC
+            /// </summary>
+            public static readonly SortTypeEnum DESC = new SortTypeEnum("DESC");
+
+            private static readonly Dictionary<string, SortTypeEnum> StaticFields =
+            new Dictionary<string, SortTypeEnum>()
+            {
+                { "ASC", ASC },
+                { "DESC", DESC },
+            };
+
+            private string _value;
+
+            public SortTypeEnum()
+            {
+
+            }
+
+            public SortTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static SortTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as SortTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(SortTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(SortTypeEnum a, SortTypeEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(SortTypeEnum a, SortTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 云办公主机名称。
@@ -213,6 +449,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("changes_since", NullValueHandling = NullValueHandling.Ignore)]
         public string ChangesSince { get; set; }
 
+        /// <summary>
+        /// 排序字段名称，需要结合sort_type字段一起使用。 - instance_total 云办公主机上的实例总数 - available_vcpus 云办公主机可用的vCPU核数 - available_memory 云办公主机可用的内存大小
+        /// </summary>
+        [SDKProperty("sort_field", IsQuery = true)]
+        [JsonProperty("sort_field", NullValueHandling = NullValueHandling.Ignore)]
+        public SortFieldEnum SortField { get; set; }
+        /// <summary>
+        /// 排序类型，默认升序，需要结合sort_field字段一起使用。 - ASC 升序。 - DESC 降序。
+        /// </summary>
+        [SDKProperty("sort_type", IsQuery = true)]
+        [JsonProperty("sort_type", NullValueHandling = NullValueHandling.Ignore)]
+        public SortTypeEnum SortType { get; set; }
 
 
         /// <summary>
@@ -233,6 +481,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("  changesSince: ").Append(ChangesSince).Append("\n");
+            sb.Append("  sortField: ").Append(SortField).Append("\n");
+            sb.Append("  sortType: ").Append(SortType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -262,6 +512,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
             if (this.ChangesSince != input.ChangesSince || (this.ChangesSince != null && !this.ChangesSince.Equals(input.ChangesSince))) return false;
+            if (this.SortField != input.SortField) return false;
+            if (this.SortType != input.SortType) return false;
 
             return true;
         }
@@ -285,6 +537,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 if (this.ChangesSince != null) hashCode = hashCode * 59 + this.ChangesSince.GetHashCode();
+                hashCode = hashCode * 59 + this.SortField.GetHashCode();
+                hashCode = hashCode * 59 + this.SortType.GetHashCode();
                 return hashCode;
             }
         }

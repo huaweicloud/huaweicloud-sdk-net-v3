@@ -148,6 +148,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// 桌面ID。
+        /// </summary>
+        [JsonProperty("desktop_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DesktopId { get; set; }
+
 
 
         /// <summary>
@@ -179,6 +185,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  sourceIp: ").Append(SourceIp).Append("\n");
             sb.Append("  publicIp: ").Append(PublicIp).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  desktopId: ").Append(DesktopId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -219,6 +226,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.SourceIp != input.SourceIp || (this.SourceIp != null && !this.SourceIp.Equals(input.SourceIp))) return false;
             if (this.PublicIp != input.PublicIp || (this.PublicIp != null && !this.PublicIp.Equals(input.PublicIp))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.DesktopId != input.DesktopId || (this.DesktopId != null && !this.DesktopId.Equals(input.DesktopId))) return false;
 
             return true;
         }
@@ -253,6 +261,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.SourceIp != null) hashCode = hashCode * 59 + this.SourceIp.GetHashCode();
                 if (this.PublicIp != null) hashCode = hashCode * 59 + this.PublicIp.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.DesktopId != null) hashCode = hashCode * 59 + this.DesktopId.GetHashCode();
                 return hashCode;
             }
         }

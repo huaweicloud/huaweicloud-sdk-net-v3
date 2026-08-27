@@ -53,6 +53,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public List<string> ScriptIds { get; set; }
 
         /// <summary>
+        /// 执行的命令行，与script_ids二选一。
+        /// </summary>
+        [JsonProperty("command", NullValueHandling = NullValueHandling.Ignore)]
+        public string Command { get; set; }
+
+        /// <summary>
+        /// 命令行的类型（POWERSHELL，BAT，SHELL）。
+        /// </summary>
+        [JsonProperty("command_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string CommandType { get; set; }
+
+        /// <summary>
         /// 执行脚本的超时时间，单位分钟。
         /// </summary>
         [JsonProperty("execution_timeout", NullValueHandling = NullValueHandling.Ignore)]
@@ -73,6 +85,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  grayFailThreshold: ").Append(GrayFailThreshold).Append("\n");
             sb.Append("  resourceIds: ").Append(ResourceIds).Append("\n");
             sb.Append("  scriptIds: ").Append(ScriptIds).Append("\n");
+            sb.Append("  command: ").Append(Command).Append("\n");
+            sb.Append("  commandType: ").Append(CommandType).Append("\n");
             sb.Append("  executionTimeout: ").Append(ExecutionTimeout).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -98,6 +112,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.GrayFailThreshold != input.GrayFailThreshold || (this.GrayFailThreshold != null && !this.GrayFailThreshold.Equals(input.GrayFailThreshold))) return false;
             if (this.ResourceIds != input.ResourceIds || (this.ResourceIds != null && input.ResourceIds != null && !this.ResourceIds.SequenceEqual(input.ResourceIds))) return false;
             if (this.ScriptIds != input.ScriptIds || (this.ScriptIds != null && input.ScriptIds != null && !this.ScriptIds.SequenceEqual(input.ScriptIds))) return false;
+            if (this.Command != input.Command || (this.Command != null && !this.Command.Equals(input.Command))) return false;
+            if (this.CommandType != input.CommandType || (this.CommandType != null && !this.CommandType.Equals(input.CommandType))) return false;
             if (this.ExecutionTimeout != input.ExecutionTimeout || (this.ExecutionTimeout != null && !this.ExecutionTimeout.Equals(input.ExecutionTimeout))) return false;
 
             return true;
@@ -117,6 +133,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.GrayFailThreshold != null) hashCode = hashCode * 59 + this.GrayFailThreshold.GetHashCode();
                 if (this.ResourceIds != null) hashCode = hashCode * 59 + this.ResourceIds.GetHashCode();
                 if (this.ScriptIds != null) hashCode = hashCode * 59 + this.ScriptIds.GetHashCode();
+                if (this.Command != null) hashCode = hashCode * 59 + this.Command.GetHashCode();
+                if (this.CommandType != null) hashCode = hashCode * 59 + this.CommandType.GetHashCode();
                 if (this.ExecutionTimeout != null) hashCode = hashCode * 59 + this.ExecutionTimeout.GetHashCode();
                 return hashCode;
             }

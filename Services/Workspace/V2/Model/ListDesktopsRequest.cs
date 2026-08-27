@@ -15,6 +15,127 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     /// </summary>
     public class ListDesktopsRequest 
     {
+        /// <summary>
+        /// 加域状态。|- 1 正常。 2 脱域。 3 未上报。
+        /// </summary>
+        /// <value>加域状态。|- 1 正常。 2 脱域。 3 未上报。</value>
+        [JsonConverter(typeof(EnumClassConverter<DomainStatusEnum>))]
+        public class DomainStatusEnum
+        {
+            /// <summary>
+            /// Enum NUMBER_1 for value: 1
+            /// </summary>
+            public static readonly DomainStatusEnum NUMBER_1 = new DomainStatusEnum(1);
+
+            /// <summary>
+            /// Enum NUMBER_2 for value: 2
+            /// </summary>
+            public static readonly DomainStatusEnum NUMBER_2 = new DomainStatusEnum(2);
+
+            /// <summary>
+            /// Enum NUMBER_3 for value: 3
+            /// </summary>
+            public static readonly DomainStatusEnum NUMBER_3 = new DomainStatusEnum(3);
+
+            private static readonly Dictionary<int?, DomainStatusEnum> StaticFields =
+            new Dictionary<int?, DomainStatusEnum>()
+            {
+                { 1, NUMBER_1 },
+                { 2, NUMBER_2 },
+                { 3, NUMBER_3 },
+            };
+
+            private int? _value;
+
+            public DomainStatusEnum()
+            {
+
+            }
+
+            public DomainStatusEnum(int? value)
+            {
+                _value = value;
+            }
+
+            public static DomainStatusEnum FromValue(int? value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public int? GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as DomainStatusEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(DomainStatusEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(DomainStatusEnum a, DomainStatusEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(DomainStatusEnum a, DomainStatusEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 桌面所属用户，支持根据用户名模糊查询。
@@ -51,6 +172,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
+        /// <summary>
+        /// 加域状态。|- 1 正常。 2 脱域。 3 未上报。
+        /// </summary>
+        [SDKProperty("domain_status", IsQuery = true)]
+        [JsonProperty("domain_status", NullValueHandling = NullValueHandling.Ignore)]
+        public DomainStatusEnum DomainStatus { get; set; }
         /// <summary>
         /// 桌面池ID,多个桌面池ID用逗号隔开。
         /// </summary>
@@ -121,6 +248,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  desktopIp: ").Append(DesktopIp).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  domainStatus: ").Append(DomainStatus).Append("\n");
             sb.Append("  poolId: ").Append(PoolId).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  desktopType: ").Append(DesktopType).Append("\n");
@@ -152,6 +280,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.DesktopIp != input.DesktopIp || (this.DesktopIp != null && !this.DesktopIp.Equals(input.DesktopIp))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.DomainStatus != input.DomainStatus) return false;
             if (this.PoolId != input.PoolId || (this.PoolId != null && !this.PoolId.Equals(input.PoolId))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.DesktopType != input.DesktopType || (this.DesktopType != null && !this.DesktopType.Equals(input.DesktopType))) return false;
@@ -177,6 +306,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.DesktopIp != null) hashCode = hashCode * 59 + this.DesktopIp.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                hashCode = hashCode * 59 + this.DomainStatus.GetHashCode();
                 if (this.PoolId != null) hashCode = hashCode * 59 + this.PoolId.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.DesktopType != null) hashCode = hashCode * 59 + this.DesktopType.GetHashCode();

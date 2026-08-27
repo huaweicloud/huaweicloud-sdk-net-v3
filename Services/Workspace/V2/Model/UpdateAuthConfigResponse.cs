@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("sms_login_enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SmsLoginEnabled { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("login_captcha", NullValueHandling = NullValueHandling.Ignore)]
+        public LoginCaptchaConfig LoginCaptcha { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("class UpdateAuthConfigResponse {\n");
             sb.Append("  authConfigId: ").Append(AuthConfigId).Append("\n");
             sb.Append("  smsLoginEnabled: ").Append(SmsLoginEnabled).Append("\n");
+            sb.Append("  loginCaptcha: ").Append(LoginCaptcha).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (input == null) return false;
             if (this.AuthConfigId != input.AuthConfigId || (this.AuthConfigId != null && !this.AuthConfigId.Equals(input.AuthConfigId))) return false;
             if (this.SmsLoginEnabled != input.SmsLoginEnabled || (this.SmsLoginEnabled != null && !this.SmsLoginEnabled.Equals(input.SmsLoginEnabled))) return false;
+            if (this.LoginCaptcha != input.LoginCaptcha || (this.LoginCaptcha != null && !this.LoginCaptcha.Equals(input.LoginCaptcha))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 var hashCode = 41;
                 if (this.AuthConfigId != null) hashCode = hashCode * 59 + this.AuthConfigId.GetHashCode();
                 if (this.SmsLoginEnabled != null) hashCode = hashCode * 59 + this.SmsLoginEnabled.GetHashCode();
+                if (this.LoginCaptcha != null) hashCode = hashCode * 59 + this.LoginCaptcha.GetHashCode();
                 return hashCode;
             }
         }

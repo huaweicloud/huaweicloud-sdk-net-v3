@@ -44,13 +44,13 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         /// 
         /// </summary>
         [JsonProperty("gpu", NullValueHandling = NullValueHandling.Ignore)]
-        public ResourceFlavorSpecGpu Gpu { get; set; }
+        public ResourceFlavorXpu Gpu { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("npu", NullValueHandling = NullValueHandling.Ignore)]
-        public ResourceFlavorSpecNpu Npu { get; set; }
+        public ResourceFlavorXpu Npu { get; set; }
 
         /// <summary>
         /// **参数解释**：资源规格实例的存储资源信息。

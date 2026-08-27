@@ -3620,6 +3620,132 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         }
         
         /// <summary>
+        /// 创建泛协议配置
+        ///
+        /// 提供创建泛协议配置的功能，仅企业版白名单支持。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateProtocolConfigResponse CreateProtocolConfig(CreateProtocolConfigRequest createProtocolConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/protocol-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createProtocolConfigRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateProtocolConfigResponse>(response);
+        }
+
+        public SyncInvoker<CreateProtocolConfigResponse> CreateProtocolConfigInvoker(CreateProtocolConfigRequest createProtocolConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/protocol-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createProtocolConfigRequest);
+            return new SyncInvoker<CreateProtocolConfigResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateProtocolConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 删除泛协议配置
+        ///
+        /// 提供删除泛协议配置的功能，仅企业版白名单支持。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteProtocolConfigResponse DeleteProtocolConfig(DeleteProtocolConfigRequest deleteProtocolConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteProtocolConfigRequest.ProtocolId, out var valueOfProtocolId)) urlParam.Add("protocol_id", valueOfProtocolId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/protocol-configs/{protocol_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteProtocolConfigRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteProtocolConfigResponse>(response);
+        }
+
+        public SyncInvoker<DeleteProtocolConfigResponse> DeleteProtocolConfigInvoker(DeleteProtocolConfigRequest deleteProtocolConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteProtocolConfigRequest.ProtocolId, out var valueOfProtocolId)) urlParam.Add("protocol_id", valueOfProtocolId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/protocol-configs/{protocol_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteProtocolConfigRequest);
+            return new SyncInvoker<DeleteProtocolConfigResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteProtocolConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 查询泛协议配置列表
+        ///
+        /// 提供查询泛协议配置列表的功能，仅企业版白名单支持。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListProtocolConfigsResponse ListProtocolConfigs(ListProtocolConfigsRequest listProtocolConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/protocol-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProtocolConfigsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListProtocolConfigsResponse>(response);
+        }
+
+        public SyncInvoker<ListProtocolConfigsResponse> ListProtocolConfigsInvoker(ListProtocolConfigsRequest listProtocolConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/protocol-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProtocolConfigsRequest);
+            return new SyncInvoker<ListProtocolConfigsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListProtocolConfigsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询泛协议配置详情
+        ///
+        /// 提供查询泛协议配置详情的功能，仅企业版白名单支持。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowProtocolConfigResponse ShowProtocolConfig(ShowProtocolConfigRequest showProtocolConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showProtocolConfigRequest.ProtocolId, out var valueOfProtocolId)) urlParam.Add("protocol_id", valueOfProtocolId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/protocol-configs/{protocol_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProtocolConfigRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowProtocolConfigResponse>(response);
+        }
+
+        public SyncInvoker<ShowProtocolConfigResponse> ShowProtocolConfigInvoker(ShowProtocolConfigRequest showProtocolConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showProtocolConfigRequest.ProtocolId, out var valueOfProtocolId)) urlParam.Add("protocol_id", valueOfProtocolId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/protocol-configs/{protocol_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProtocolConfigRequest);
+            return new SyncInvoker<ShowProtocolConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowProtocolConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 更新泛协议配置
+        ///
+        /// 提供更新泛协议配置的功能，仅企业版白名单支持。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateProtocolConfigResponse UpdateProtocolConfig(UpdateProtocolConfigRequest updateProtocolConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateProtocolConfigRequest.ProtocolId, out var valueOfProtocolId)) urlParam.Add("protocol_id", valueOfProtocolId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/protocol-configs/{protocol_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateProtocolConfigRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateProtocolConfigResponse>(response);
+        }
+
+        public SyncInvoker<UpdateProtocolConfigResponse> UpdateProtocolConfigInvoker(UpdateProtocolConfigRequest updateProtocolConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateProtocolConfigRequest.ProtocolId, out var valueOfProtocolId)) urlParam.Add("protocol_id", valueOfProtocolId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/protocol-configs/{protocol_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateProtocolConfigRequest);
+            return new SyncInvoker<UpdateProtocolConfigResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateProtocolConfigResponse>);
+        }
+        
+        /// <summary>
         /// 创建预调配模板
         ///
         /// 应用服务器可调用此接口在物联网平台创建一个预调配模板。用户的设备未在平台注册时，可以通过预调配模板在设备首次接入物联网平台时将设备信息自动注册到物联网平台。

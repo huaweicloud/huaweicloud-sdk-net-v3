@@ -154,6 +154,18 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("tde_info", NullValueHandling = NullValueHandling.Ignore)]
         public MysqlTdeInfo TdeInfo { get; set; }
 
+        /// <summary>
+        /// **参数解释**：  是否打开本地Binlog日志。  **约束限制**：  不涉及。  **取值范围**：  - true: 打开。 - false: 关闭。  **默认取值**：  false。
+        /// </summary>
+        [JsonProperty("enable_binlog", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableBinlog { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("volume_auto_expand", NullValueHandling = NullValueHandling.Ignore)]
+        public MysqlVolumeAutoExpandPolicy VolumeAutoExpand { get; set; }
+
 
 
         /// <summary>
@@ -186,6 +198,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  dedicatedResourceId: ").Append(DedicatedResourceId).Append("\n");
             sb.Append("  restorePoint: ").Append(RestorePoint).Append("\n");
             sb.Append("  tdeInfo: ").Append(TdeInfo).Append("\n");
+            sb.Append("  enableBinlog: ").Append(EnableBinlog).Append("\n");
+            sb.Append("  volumeAutoExpand: ").Append(VolumeAutoExpand).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -227,6 +241,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (this.DedicatedResourceId != input.DedicatedResourceId || (this.DedicatedResourceId != null && !this.DedicatedResourceId.Equals(input.DedicatedResourceId))) return false;
             if (this.RestorePoint != input.RestorePoint || (this.RestorePoint != null && !this.RestorePoint.Equals(input.RestorePoint))) return false;
             if (this.TdeInfo != input.TdeInfo || (this.TdeInfo != null && !this.TdeInfo.Equals(input.TdeInfo))) return false;
+            if (this.EnableBinlog != input.EnableBinlog || (this.EnableBinlog != null && !this.EnableBinlog.Equals(input.EnableBinlog))) return false;
+            if (this.VolumeAutoExpand != input.VolumeAutoExpand || (this.VolumeAutoExpand != null && !this.VolumeAutoExpand.Equals(input.VolumeAutoExpand))) return false;
 
             return true;
         }
@@ -262,6 +278,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 if (this.DedicatedResourceId != null) hashCode = hashCode * 59 + this.DedicatedResourceId.GetHashCode();
                 if (this.RestorePoint != null) hashCode = hashCode * 59 + this.RestorePoint.GetHashCode();
                 if (this.TdeInfo != null) hashCode = hashCode * 59 + this.TdeInfo.GetHashCode();
+                if (this.EnableBinlog != null) hashCode = hashCode * 59 + this.EnableBinlog.GetHashCode();
+                if (this.VolumeAutoExpand != null) hashCode = hashCode * 59 + this.VolumeAutoExpand.GetHashCode();
                 return hashCode;
             }
         }

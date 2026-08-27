@@ -52,6 +52,18 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         [JsonProperty("port_ip", NullValueHandling = NullValueHandling.Ignore)]
         public string PortIp { get; set; }
 
+        /// <summary>
+        /// **参数解释**：NAT ID。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
+        /// </summary>
+        [JsonProperty("nat_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string NatId { get; set; }
+
+        /// <summary>
+        /// **参数解释**：EIP ID。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
+        /// </summary>
+        [JsonProperty("eip_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EipId { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +79,8 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  connectCidrs: ").Append(ConnectCidrs).Append("\n");
             sb.Append("  portId: ").Append(PortId).Append("\n");
             sb.Append("  portIp: ").Append(PortIp).Append("\n");
+            sb.Append("  natId: ").Append(NatId).Append("\n");
+            sb.Append("  eipId: ").Append(EipId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +105,8 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.ConnectCidrs != input.ConnectCidrs || (this.ConnectCidrs != null && !this.ConnectCidrs.Equals(input.ConnectCidrs))) return false;
             if (this.PortId != input.PortId || (this.PortId != null && input.PortId != null && !this.PortId.SequenceEqual(input.PortId))) return false;
             if (this.PortIp != input.PortIp || (this.PortIp != null && !this.PortIp.Equals(input.PortIp))) return false;
+            if (this.NatId != input.NatId || (this.NatId != null && !this.NatId.Equals(input.NatId))) return false;
+            if (this.EipId != input.EipId || (this.EipId != null && !this.EipId.Equals(input.EipId))) return false;
 
             return true;
         }
@@ -109,6 +125,8 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 if (this.ConnectCidrs != null) hashCode = hashCode * 59 + this.ConnectCidrs.GetHashCode();
                 if (this.PortId != null) hashCode = hashCode * 59 + this.PortId.GetHashCode();
                 if (this.PortIp != null) hashCode = hashCode * 59 + this.PortIp.GetHashCode();
+                if (this.NatId != null) hashCode = hashCode * 59 + this.NatId.GetHashCode();
+                if (this.EipId != null) hashCode = hashCode * 59 + this.EipId.GetHashCode();
                 return hashCode;
             }
         }

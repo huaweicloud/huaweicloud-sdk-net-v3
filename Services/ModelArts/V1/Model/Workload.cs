@@ -77,6 +77,12 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public string Status { get; set; }
 
         /// <summary>
+        /// **参数解释**：作业创建者。 **取值范围**：不涉及。
+        /// </summary>
+        [JsonProperty("userName", NullValueHandling = NullValueHandling.Ignore)]
+        public string UserName { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("resourceRequirement", NullValueHandling = NullValueHandling.Ignore)]
@@ -149,6 +155,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  jobUUID: ").Append(JobUUID).Append("\n");
             sb.Append("  flavor: ").Append(Flavor).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  userName: ").Append(UserName).Append("\n");
             sb.Append("  resourceRequirement: ").Append(ResourceRequirement).Append("\n");
             sb.Append("  priority: ").Append(Priority).Append("\n");
             sb.Append("  runningDuration: ").Append(RunningDuration).Append("\n");
@@ -186,6 +193,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.JobUUID != input.JobUUID || (this.JobUUID != null && !this.JobUUID.Equals(input.JobUUID))) return false;
             if (this.Flavor != input.Flavor || (this.Flavor != null && !this.Flavor.Equals(input.Flavor))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
             if (this.ResourceRequirement != input.ResourceRequirement || (this.ResourceRequirement != null && !this.ResourceRequirement.Equals(input.ResourceRequirement))) return false;
             if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
             if (this.RunningDuration != input.RunningDuration || (this.RunningDuration != null && !this.RunningDuration.Equals(input.RunningDuration))) return false;
@@ -217,6 +225,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 if (this.JobUUID != null) hashCode = hashCode * 59 + this.JobUUID.GetHashCode();
                 if (this.Flavor != null) hashCode = hashCode * 59 + this.Flavor.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
                 if (this.ResourceRequirement != null) hashCode = hashCode * 59 + this.ResourceRequirement.GetHashCode();
                 if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
                 if (this.RunningDuration != null) hashCode = hashCode * 59 + this.RunningDuration.GetHashCode();

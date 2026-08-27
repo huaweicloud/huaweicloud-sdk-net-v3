@@ -88,6 +88,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("show_detail", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ShowDetail { get; set; }
 
+        /// <summary>
+        /// **参数解释**：  任务扩展字段，默认null。
+        /// </summary>
+        [JsonProperty("extend_fields", NullValueHandling = NullValueHandling.Ignore)]
+        public Dictionary<string, Object> ExtendFields { get; set; }
+
 
 
         /// <summary>
@@ -109,6 +115,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  endedTime: ").Append(EndedTime).Append("\n");
             sb.Append("  failReason: ").Append(FailReason).Append("\n");
             sb.Append("  showDetail: ").Append(ShowDetail).Append("\n");
+            sb.Append("  extendFields: ").Append(ExtendFields).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -139,6 +146,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (this.EndedTime != input.EndedTime || (this.EndedTime != null && !this.EndedTime.Equals(input.EndedTime))) return false;
             if (this.FailReason != input.FailReason || (this.FailReason != null && !this.FailReason.Equals(input.FailReason))) return false;
             if (this.ShowDetail != input.ShowDetail || (this.ShowDetail != null && !this.ShowDetail.Equals(input.ShowDetail))) return false;
+            if (this.ExtendFields != input.ExtendFields || (this.ExtendFields != null && input.ExtendFields != null && !this.ExtendFields.SequenceEqual(input.ExtendFields))) return false;
 
             return true;
         }
@@ -163,6 +171,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 if (this.EndedTime != null) hashCode = hashCode * 59 + this.EndedTime.GetHashCode();
                 if (this.FailReason != null) hashCode = hashCode * 59 + this.FailReason.GetHashCode();
                 if (this.ShowDetail != null) hashCode = hashCode * 59 + this.ShowDetail.GetHashCode();
+                if (this.ExtendFields != null) hashCode = hashCode * 59 + this.ExtendFields.GetHashCode();
                 return hashCode;
             }
         }

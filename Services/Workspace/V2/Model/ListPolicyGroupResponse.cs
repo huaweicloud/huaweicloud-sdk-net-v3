@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// 策略组。
         /// </summary>
         [JsonProperty("policy_groups", NullValueHandling = NullValueHandling.Ignore)]
-        public List<PolicyGroupForList> PolicyGroups { get; set; }
+        public List<PolicyGroupForBaseList> PolicyGroups { get; set; }
 
         /// <summary>
         /// 总数。

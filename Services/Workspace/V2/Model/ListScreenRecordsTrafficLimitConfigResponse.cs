@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// 录屏记录。
         /// </summary>
         [JsonProperty("configs", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ScreenRecordsConfigResultReqConfigs> Configs { get; set; }
+        public List<UpdateScreenRecordsTrafficLimitConfigRequestBodyConfigs> Configs { get; set; }
 
 
 

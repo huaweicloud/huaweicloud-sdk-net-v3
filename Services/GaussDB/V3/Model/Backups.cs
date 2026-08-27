@@ -214,6 +214,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
+        /// <summary>
+        /// **参数解释**：  备份类型。  **取值范围**： - differential：差量备份。 - completed：全量备份。
+        /// </summary>
+        [JsonProperty("backup_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string BackupMode { get; set; }
+
 
 
         /// <summary>
@@ -236,6 +242,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  instanceName: ").Append(InstanceName).Append("\n");
             sb.Append("  backupLevel: ").Append(BackupLevel).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  backupMode: ").Append(BackupMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -267,6 +274,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (this.InstanceName != input.InstanceName || (this.InstanceName != null && !this.InstanceName.Equals(input.InstanceName))) return false;
             if (this.BackupLevel != input.BackupLevel) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.BackupMode != input.BackupMode || (this.BackupMode != null && !this.BackupMode.Equals(input.BackupMode))) return false;
 
             return true;
         }
@@ -292,6 +300,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 if (this.InstanceName != null) hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
                 hashCode = hashCode * 59 + this.BackupLevel.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.BackupMode != null) hashCode = hashCode * 59 + this.BackupMode.GetHashCode();
                 return hashCode;
             }
         }

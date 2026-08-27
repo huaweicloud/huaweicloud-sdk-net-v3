@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
 
 
         /// <summary>
-        /// **参数解释**：实例描述信息。 **约束限制**：不涉及。 **取值范围**：长度限制为512字符，且不能包含字符&amp;&lt;&gt;\&quot;&#39;/。 **默认取值**：不涉及。
+        /// **参数解释**：实例描述信息。 **约束限制**：不涉及。 **取值范围**：长度限制为512字符，不可包含特殊字符&lt;&gt;，缺省值为空。 **默认取值**：不涉及。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
@@ -167,7 +167,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public string ImageId { get; set; }
 
         /// <summary>
-        /// **参数解释**：实例名称。 **约束限制**：不涉及。 **取值范围**：长度限制为128个字符，支持大小写字母、数字、中划线和下划线，名称可重复。 **默认取值**：不涉及。
+        /// **参数解释**：实例名称。 **约束限制**：不涉及。 **取值范围**：长度限制为128个字符， 支持大小写字母、数字、中划线、下划线和中文，名称可重复。 **默认取值**：不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
@@ -232,6 +232,12 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         [JsonProperty("duration", NullValueHandling = NullValueHandling.Ignore)]
         public int? Duration { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("public_network_config", NullValueHandling = NullValueHandling.Ignore)]
+        public PublicNetworkConfig PublicNetworkConfig { get; set; }
+
 
 
         /// <summary>
@@ -258,6 +264,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  dataVolumes: ").Append(DataVolumes).Append("\n");
             sb.Append("  userVpc: ").Append(UserVpc).Append("\n");
             sb.Append("  duration: ").Append(Duration).Append("\n");
+            sb.Append("  publicNetworkConfig: ").Append(PublicNetworkConfig).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -293,6 +300,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.DataVolumes != input.DataVolumes || (this.DataVolumes != null && input.DataVolumes != null && !this.DataVolumes.SequenceEqual(input.DataVolumes))) return false;
             if (this.UserVpc != input.UserVpc || (this.UserVpc != null && !this.UserVpc.Equals(input.UserVpc))) return false;
             if (this.Duration != input.Duration || (this.Duration != null && !this.Duration.Equals(input.Duration))) return false;
+            if (this.PublicNetworkConfig != input.PublicNetworkConfig || (this.PublicNetworkConfig != null && !this.PublicNetworkConfig.Equals(input.PublicNetworkConfig))) return false;
 
             return true;
         }
@@ -322,6 +330,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 if (this.DataVolumes != null) hashCode = hashCode * 59 + this.DataVolumes.GetHashCode();
                 if (this.UserVpc != null) hashCode = hashCode * 59 + this.UserVpc.GetHashCode();
                 if (this.Duration != null) hashCode = hashCode * 59 + this.Duration.GetHashCode();
+                if (this.PublicNetworkConfig != null) hashCode = hashCode * 59 + this.PublicNetworkConfig.GetHashCode();
                 return hashCode;
             }
         }

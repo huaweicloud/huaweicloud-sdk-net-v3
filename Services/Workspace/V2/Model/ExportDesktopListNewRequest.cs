@@ -360,6 +360,121 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             }
         }
 
+        /// <summary>
+        /// 桌面池类型，DYNAMIC：动态池，STATIC：静态池。
+        /// </summary>
+        /// <value>桌面池类型，DYNAMIC：动态池，STATIC：静态池。</value>
+        [JsonConverter(typeof(EnumClassConverter<PoolTypeEnum>))]
+        public class PoolTypeEnum
+        {
+            /// <summary>
+            /// Enum DYNAMIC for value: DYNAMIC
+            /// </summary>
+            public static readonly PoolTypeEnum DYNAMIC = new PoolTypeEnum("DYNAMIC");
+
+            /// <summary>
+            /// Enum STATIC for value: STATIC
+            /// </summary>
+            public static readonly PoolTypeEnum STATIC = new PoolTypeEnum("STATIC");
+
+            private static readonly Dictionary<string, PoolTypeEnum> StaticFields =
+            new Dictionary<string, PoolTypeEnum>()
+            {
+                { "DYNAMIC", DYNAMIC },
+                { "STATIC", STATIC },
+            };
+
+            private string _value;
+
+            public PoolTypeEnum()
+            {
+
+            }
+
+            public PoolTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static PoolTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as PoolTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(PoolTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(PoolTypeEnum a, PoolTypeEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(PoolTypeEnum a, PoolTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 桌面名。
@@ -367,6 +482,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [SDKProperty("computer_name", IsQuery = true)]
         [JsonProperty("computer_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ComputerName { get; set; }
+
+        /// <summary>
+        /// 桌面名列表
+        /// </summary>
+        [SDKProperty("computer_names", IsQuery = true)]
+        [JsonProperty("computer_names", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> ComputerNames { get; set; }
 
         /// <summary>
         /// 桌面IP地址。
@@ -436,13 +558,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("sort_type", NullValueHandling = NullValueHandling.Ignore)]
         public SortTypeEnum SortType { get; set; }
         /// <summary>
-        /// 桌面池ID,多个桌面池ID用逗号隔开。
-        /// </summary>
-        [SDKProperty("pool_id", IsQuery = true)]
-        [JsonProperty("pool_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string PoolId { get; set; }
-
-        /// <summary>
         /// 是否分配了用户。
         /// </summary>
         [SDKProperty("user_attached", IsQuery = true)]
@@ -484,6 +599,47 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("connection_status_version", NullValueHandling = NullValueHandling.Ignore)]
         public string ConnectionStatusVersion { get; set; }
 
+        /// <summary>
+        /// 桌面池ID,多个桌面池ID用逗号隔开。
+        /// </summary>
+        [SDKProperty("pool_id", IsQuery = true)]
+        [JsonProperty("pool_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string PoolId { get; set; }
+
+        /// <summary>
+        /// 是否只导出桌面池桌面。 - true：只导出桌面池桌面，此时可配合pool_name、pool_type、pool_in_maintenance_mode过滤参数对桌面池进行过滤 - false：只导出普通桌面，忽略其他pool_name、pool_type、pool_in_maintenance_mode过滤参数参数
+        /// </summary>
+        [SDKProperty("include_pool", IsQuery = true)]
+        [JsonProperty("include_pool", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IncludePool { get; set; }
+
+        /// <summary>
+        /// 桌面池名称。
+        /// </summary>
+        [SDKProperty("pool_name", IsQuery = true)]
+        [JsonProperty("pool_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string PoolName { get; set; }
+
+        /// <summary>
+        /// 桌面池类型，DYNAMIC：动态池，STATIC：静态池。
+        /// </summary>
+        [SDKProperty("pool_type", IsQuery = true)]
+        [JsonProperty("pool_type", NullValueHandling = NullValueHandling.Ignore)]
+        public PoolTypeEnum PoolType { get; set; }
+        /// <summary>
+        /// 按照维护状态过滤。
+        /// </summary>
+        [SDKProperty("pool_in_maintenance_mode", IsQuery = true)]
+        [JsonProperty("pool_in_maintenance_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? PoolInMaintenanceMode { get; set; }
+
+        /// <summary>
+        /// 按照企业项目ID过滤桌面池。
+        /// </summary>
+        [SDKProperty("pool_enterprise_project_id", IsQuery = true)]
+        [JsonProperty("pool_enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string PoolEnterpriseProjectId { get; set; }
+
 
 
         /// <summary>
@@ -494,6 +650,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ExportDesktopListNewRequest {\n");
             sb.Append("  computerName: ").Append(ComputerName).Append("\n");
+            sb.Append("  computerNames: ").Append(ComputerNames).Append("\n");
             sb.Append("  desktopIp: ").Append(DesktopIp).Append("\n");
             sb.Append("  desktopId: ").Append(DesktopId).Append("\n");
             sb.Append("  tag: ").Append(Tag).Append("\n");
@@ -504,13 +661,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  userNames: ").Append(UserNames).Append("\n");
             sb.Append("  sortField: ").Append(SortField).Append("\n");
             sb.Append("  sortType: ").Append(SortType).Append("\n");
-            sb.Append("  poolId: ").Append(PoolId).Append("\n");
             sb.Append("  userAttached: ").Append(UserAttached).Append("\n");
             sb.Append("  imageId: ").Append(ImageId).Append("\n");
             sb.Append("  chargeMode: ").Append(ChargeMode).Append("\n");
             sb.Append("  inMaintenanceMode: ").Append(InMaintenanceMode).Append("\n");
             sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
             sb.Append("  connectionStatusVersion: ").Append(ConnectionStatusVersion).Append("\n");
+            sb.Append("  poolId: ").Append(PoolId).Append("\n");
+            sb.Append("  includePool: ").Append(IncludePool).Append("\n");
+            sb.Append("  poolName: ").Append(PoolName).Append("\n");
+            sb.Append("  poolType: ").Append(PoolType).Append("\n");
+            sb.Append("  poolInMaintenanceMode: ").Append(PoolInMaintenanceMode).Append("\n");
+            sb.Append("  poolEnterpriseProjectId: ").Append(PoolEnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -530,6 +692,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             if (input == null) return false;
             if (this.ComputerName != input.ComputerName || (this.ComputerName != null && !this.ComputerName.Equals(input.ComputerName))) return false;
+            if (this.ComputerNames != input.ComputerNames || (this.ComputerNames != null && input.ComputerNames != null && !this.ComputerNames.SequenceEqual(input.ComputerNames))) return false;
             if (this.DesktopIp != input.DesktopIp || (this.DesktopIp != null && !this.DesktopIp.Equals(input.DesktopIp))) return false;
             if (this.DesktopId != input.DesktopId || (this.DesktopId != null && !this.DesktopId.Equals(input.DesktopId))) return false;
             if (this.Tag != input.Tag || (this.Tag != null && !this.Tag.Equals(input.Tag))) return false;
@@ -540,13 +703,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.UserNames != input.UserNames || (this.UserNames != null && input.UserNames != null && !this.UserNames.SequenceEqual(input.UserNames))) return false;
             if (this.SortField != input.SortField) return false;
             if (this.SortType != input.SortType) return false;
-            if (this.PoolId != input.PoolId || (this.PoolId != null && !this.PoolId.Equals(input.PoolId))) return false;
             if (this.UserAttached != input.UserAttached || (this.UserAttached != null && !this.UserAttached.Equals(input.UserAttached))) return false;
             if (this.ImageId != input.ImageId || (this.ImageId != null && !this.ImageId.Equals(input.ImageId))) return false;
             if (this.ChargeMode != input.ChargeMode || (this.ChargeMode != null && !this.ChargeMode.Equals(input.ChargeMode))) return false;
             if (this.InMaintenanceMode != input.InMaintenanceMode || (this.InMaintenanceMode != null && !this.InMaintenanceMode.Equals(input.InMaintenanceMode))) return false;
             if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
             if (this.ConnectionStatusVersion != input.ConnectionStatusVersion || (this.ConnectionStatusVersion != null && !this.ConnectionStatusVersion.Equals(input.ConnectionStatusVersion))) return false;
+            if (this.PoolId != input.PoolId || (this.PoolId != null && !this.PoolId.Equals(input.PoolId))) return false;
+            if (this.IncludePool != input.IncludePool || (this.IncludePool != null && !this.IncludePool.Equals(input.IncludePool))) return false;
+            if (this.PoolName != input.PoolName || (this.PoolName != null && !this.PoolName.Equals(input.PoolName))) return false;
+            if (this.PoolType != input.PoolType) return false;
+            if (this.PoolInMaintenanceMode != input.PoolInMaintenanceMode || (this.PoolInMaintenanceMode != null && !this.PoolInMaintenanceMode.Equals(input.PoolInMaintenanceMode))) return false;
+            if (this.PoolEnterpriseProjectId != input.PoolEnterpriseProjectId || (this.PoolEnterpriseProjectId != null && !this.PoolEnterpriseProjectId.Equals(input.PoolEnterpriseProjectId))) return false;
 
             return true;
         }
@@ -560,6 +728,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             {
                 var hashCode = 41;
                 if (this.ComputerName != null) hashCode = hashCode * 59 + this.ComputerName.GetHashCode();
+                if (this.ComputerNames != null) hashCode = hashCode * 59 + this.ComputerNames.GetHashCode();
                 if (this.DesktopIp != null) hashCode = hashCode * 59 + this.DesktopIp.GetHashCode();
                 if (this.DesktopId != null) hashCode = hashCode * 59 + this.DesktopId.GetHashCode();
                 if (this.Tag != null) hashCode = hashCode * 59 + this.Tag.GetHashCode();
@@ -570,13 +739,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.UserNames != null) hashCode = hashCode * 59 + this.UserNames.GetHashCode();
                 hashCode = hashCode * 59 + this.SortField.GetHashCode();
                 hashCode = hashCode * 59 + this.SortType.GetHashCode();
-                if (this.PoolId != null) hashCode = hashCode * 59 + this.PoolId.GetHashCode();
                 if (this.UserAttached != null) hashCode = hashCode * 59 + this.UserAttached.GetHashCode();
                 if (this.ImageId != null) hashCode = hashCode * 59 + this.ImageId.GetHashCode();
                 if (this.ChargeMode != null) hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
                 if (this.InMaintenanceMode != null) hashCode = hashCode * 59 + this.InMaintenanceMode.GetHashCode();
                 if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
                 if (this.ConnectionStatusVersion != null) hashCode = hashCode * 59 + this.ConnectionStatusVersion.GetHashCode();
+                if (this.PoolId != null) hashCode = hashCode * 59 + this.PoolId.GetHashCode();
+                if (this.IncludePool != null) hashCode = hashCode * 59 + this.IncludePool.GetHashCode();
+                if (this.PoolName != null) hashCode = hashCode * 59 + this.PoolName.GetHashCode();
+                hashCode = hashCode * 59 + this.PoolType.GetHashCode();
+                if (this.PoolInMaintenanceMode != null) hashCode = hashCode * 59 + this.PoolInMaintenanceMode.GetHashCode();
+                if (this.PoolEnterpriseProjectId != null) hashCode = hashCode * 59 + this.PoolEnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

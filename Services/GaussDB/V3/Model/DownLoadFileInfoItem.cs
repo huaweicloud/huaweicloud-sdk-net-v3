@@ -32,7 +32,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// **参数解释**：  日志文件大小，单位为字节。  **取值范围**：  不涉及。 
         /// </summary>
         [JsonProperty("file_size", NullValueHandling = NullValueHandling.Ignore)]
-        public int? FileSize { get; set; }
+        public long? FileSize { get; set; }
 
         /// <summary>
         /// **参数解释**：  日志下载链接。  **取值范围**：  不涉及。 
@@ -44,7 +44,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// **参数解释**：  下载链接过期时间，格式为\&quot;yyyy-MM-dd HH:mm:ss\&quot;。  **取值范围**：  不涉及。 
         /// </summary>
         [JsonProperty("expire_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string ExpireTime { get; set; }
+        public long? ExpireTime { get; set; }
 
 
 

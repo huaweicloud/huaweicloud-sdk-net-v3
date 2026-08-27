@@ -64,6 +64,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("sms_login_enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SmsLoginEnabled { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("login_captcha", NullValueHandling = NullValueHandling.Ignore)]
+        public LoginCaptchaConfig LoginCaptcha { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +87,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  emergencyLoginMode: ").Append(EmergencyLoginMode).Append("\n");
             sb.Append("  saml2AuthConfig: ").Append(Saml2AuthConfig).Append("\n");
             sb.Append("  smsLoginEnabled: ").Append(SmsLoginEnabled).Append("\n");
+            sb.Append("  loginCaptcha: ").Append(LoginCaptcha).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +114,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.EmergencyLoginMode != input.EmergencyLoginMode || (this.EmergencyLoginMode != null && !this.EmergencyLoginMode.Equals(input.EmergencyLoginMode))) return false;
             if (this.Saml2AuthConfig != input.Saml2AuthConfig || (this.Saml2AuthConfig != null && !this.Saml2AuthConfig.Equals(input.Saml2AuthConfig))) return false;
             if (this.SmsLoginEnabled != input.SmsLoginEnabled || (this.SmsLoginEnabled != null && !this.SmsLoginEnabled.Equals(input.SmsLoginEnabled))) return false;
+            if (this.LoginCaptcha != input.LoginCaptcha || (this.LoginCaptcha != null && !this.LoginCaptcha.Equals(input.LoginCaptcha))) return false;
 
             return true;
         }
@@ -127,6 +135,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.EmergencyLoginMode != null) hashCode = hashCode * 59 + this.EmergencyLoginMode.GetHashCode();
                 if (this.Saml2AuthConfig != null) hashCode = hashCode * 59 + this.Saml2AuthConfig.GetHashCode();
                 if (this.SmsLoginEnabled != null) hashCode = hashCode * 59 + this.SmsLoginEnabled.GetHashCode();
+                if (this.LoginCaptcha != null) hashCode = hashCode * 59 + this.LoginCaptcha.GetHashCode();
                 return hashCode;
             }
         }

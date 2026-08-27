@@ -166,6 +166,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("pool_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PoolId { get; set; }
 
+        /// <summary>
+        /// 加域状态。|- 1 正常。 2 脱域。 3 未上报。
+        /// </summary>
+        [JsonProperty("domain_status", NullValueHandling = NullValueHandling.Ignore)]
+        public int? DomainStatus { get; set; }
+
 
 
         /// <summary>
@@ -200,6 +206,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
             sb.Append("  connectStatus: ").Append(ConnectStatus).Append("\n");
             sb.Append("  poolId: ").Append(PoolId).Append("\n");
+            sb.Append("  domainStatus: ").Append(DomainStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -243,6 +250,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
             if (this.ConnectStatus != input.ConnectStatus || (this.ConnectStatus != null && !this.ConnectStatus.Equals(input.ConnectStatus))) return false;
             if (this.PoolId != input.PoolId || (this.PoolId != null && !this.PoolId.Equals(input.PoolId))) return false;
+            if (this.DomainStatus != input.DomainStatus || (this.DomainStatus != null && !this.DomainStatus.Equals(input.DomainStatus))) return false;
 
             return true;
         }
@@ -280,6 +288,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
                 if (this.ConnectStatus != null) hashCode = hashCode * 59 + this.ConnectStatus.GetHashCode();
                 if (this.PoolId != null) hashCode = hashCode * 59 + this.PoolId.GetHashCode();
+                if (this.DomainStatus != null) hashCode = hashCode * 59 + this.DomainStatus.GetHashCode();
                 return hashCode;
             }
         }

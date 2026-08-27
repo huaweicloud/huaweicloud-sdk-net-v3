@@ -167,10 +167,22 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public List<NodesWeight> NodesReadWeight { get; set; }
 
         /// <summary>
+        /// **参数解释**：  数据库代理节点的可用区设置。  **约束限制**：  不传该字段，代理节点可用区将随机设置，优先与数据库节点可用区保持一致；传入该字段，代理节点将设置在指定可用区。
+        /// </summary>
+        [JsonProperty("proxy_nodes_az_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> ProxyNodesAzList { get; set; }
+
+        /// <summary>
         /// 数据库VPC下的子网ID。
         /// </summary>
         [JsonProperty("subnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetId { get; set; }
+
+        /// <summary>
+        /// **参数解释**：   数据库代理IP，获取方法如下。 - 用户自定义代理IP时，由用户自定义传入。 - 用户不指定代理IP时，随机在指定子网下生成的IPV4地址。  **约束限制**：  指定子网下的可用IP，获取方法如下： 登录TaurusDB的控制台界面，单击实例名称，进入实例详情页面，在该页面单击数据库代理，新增代理，查看已使用IP地址，查找指定子网下未被使用的IP。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
+        /// </summary>
+        [JsonProperty("proxy_ip", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProxyIp { get; set; }
 
         /// <summary>
         /// 是否开启新增节点自动加入该Proxy。如果需要设置是否开启新增节点自动加入该Proxy，请联系客服人员添加白名单，加入白名单后，方可输入该字段。  取值范围： - ON：开启。 - OFF：关闭。
@@ -199,7 +211,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  proxyMode: ").Append(ProxyMode).Append("\n");
             sb.Append("  routeMode: ").Append(RouteMode).Append("\n");
             sb.Append("  nodesReadWeight: ").Append(NodesReadWeight).Append("\n");
+            sb.Append("  proxyNodesAzList: ").Append(ProxyNodesAzList).Append("\n");
             sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
+            sb.Append("  proxyIp: ").Append(ProxyIp).Append("\n");
             sb.Append("  newNodeAutoAddStatus: ").Append(NewNodeAutoAddStatus).Append("\n");
             sb.Append("  newNodeWeight: ").Append(NewNodeWeight).Append("\n");
             sb.Append("}\n");
@@ -226,7 +240,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (this.ProxyMode != input.ProxyMode) return false;
             if (this.RouteMode != input.RouteMode || (this.RouteMode != null && !this.RouteMode.Equals(input.RouteMode))) return false;
             if (this.NodesReadWeight != input.NodesReadWeight || (this.NodesReadWeight != null && input.NodesReadWeight != null && !this.NodesReadWeight.SequenceEqual(input.NodesReadWeight))) return false;
+            if (this.ProxyNodesAzList != input.ProxyNodesAzList || (this.ProxyNodesAzList != null && input.ProxyNodesAzList != null && !this.ProxyNodesAzList.SequenceEqual(input.ProxyNodesAzList))) return false;
             if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
+            if (this.ProxyIp != input.ProxyIp || (this.ProxyIp != null && !this.ProxyIp.Equals(input.ProxyIp))) return false;
             if (this.NewNodeAutoAddStatus != input.NewNodeAutoAddStatus || (this.NewNodeAutoAddStatus != null && !this.NewNodeAutoAddStatus.Equals(input.NewNodeAutoAddStatus))) return false;
             if (this.NewNodeWeight != input.NewNodeWeight || (this.NewNodeWeight != null && !this.NewNodeWeight.Equals(input.NewNodeWeight))) return false;
 
@@ -247,7 +263,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 hashCode = hashCode * 59 + this.ProxyMode.GetHashCode();
                 if (this.RouteMode != null) hashCode = hashCode * 59 + this.RouteMode.GetHashCode();
                 if (this.NodesReadWeight != null) hashCode = hashCode * 59 + this.NodesReadWeight.GetHashCode();
+                if (this.ProxyNodesAzList != null) hashCode = hashCode * 59 + this.ProxyNodesAzList.GetHashCode();
                 if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
+                if (this.ProxyIp != null) hashCode = hashCode * 59 + this.ProxyIp.GetHashCode();
                 if (this.NewNodeAutoAddStatus != null) hashCode = hashCode * 59 + this.NewNodeAutoAddStatus.GetHashCode();
                 if (this.NewNodeWeight != null) hashCode = hashCode * 59 + this.NewNodeWeight.GetHashCode();
                 return hashCode;

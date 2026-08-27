@@ -46,6 +46,12 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         [JsonProperty("ai_cpu", NullValueHandling = NullValueHandling.Ignore)]
         public string AiCpu { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 区分卡类型，如Snt9b3、Snt9b2 **取值范围：** 不涉及。
+        /// </summary>
+        [JsonProperty("type_alias", NullValueHandling = NullValueHandling.Ignore)]
+        public string TypeAlias { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +66,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  aiCore: ").Append(AiCore).Append("\n");
             sb.Append("  aiCpu: ").Append(AiCpu).Append("\n");
+            sb.Append("  typeAlias: ").Append(TypeAlias).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,6 +90,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
             if (this.AiCore != input.AiCore || (this.AiCore != null && !this.AiCore.Equals(input.AiCore))) return false;
             if (this.AiCpu != input.AiCpu || (this.AiCpu != null && !this.AiCpu.Equals(input.AiCpu))) return false;
+            if (this.TypeAlias != input.TypeAlias || (this.TypeAlias != null && !this.TypeAlias.Equals(input.TypeAlias))) return false;
 
             return true;
         }
@@ -100,6 +108,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.AiCore != null) hashCode = hashCode * 59 + this.AiCore.GetHashCode();
                 if (this.AiCpu != null) hashCode = hashCode * 59 + this.AiCpu.GetHashCode();
+                if (this.TypeAlias != null) hashCode = hashCode * 59 + this.TypeAlias.GetHashCode();
                 return hashCode;
             }
         }

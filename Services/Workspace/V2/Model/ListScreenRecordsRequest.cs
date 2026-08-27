@@ -38,6 +38,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string DesktopId { get; set; }
 
         /// <summary>
+        /// 桌面名称列表，多个名称用英文逗号分割，最多支持100个桌面名称
+        /// </summary>
+        [SDKProperty("desktop_names", IsQuery = true)]
+        [JsonProperty("desktop_names", NullValueHandling = NullValueHandling.Ignore)]
+        public string DesktopNames { get; set; }
+
+        /// <summary>
         /// 根据用户名称过滤结果。
         /// </summary>
         [SDKProperty("username", IsQuery = true)]
@@ -98,6 +105,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  desktopId: ").Append(DesktopId).Append("\n");
+            sb.Append("  desktopNames: ").Append(DesktopNames).Append("\n");
             sb.Append("  username: ").Append(Username).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
@@ -126,6 +134,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.DesktopId != input.DesktopId || (this.DesktopId != null && !this.DesktopId.Equals(input.DesktopId))) return false;
+            if (this.DesktopNames != input.DesktopNames || (this.DesktopNames != null && !this.DesktopNames.Equals(input.DesktopNames))) return false;
             if (this.Username != input.Username || (this.Username != null && !this.Username.Equals(input.Username))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
@@ -148,6 +157,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.DesktopId != null) hashCode = hashCode * 59 + this.DesktopId.GetHashCode();
+                if (this.DesktopNames != null) hashCode = hashCode * 59 + this.DesktopNames.GetHashCode();
                 if (this.Username != null) hashCode = hashCode * 59 + this.Username.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();

@@ -21,7 +21,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public ScreenRecordsConfigResultReq Body { get; set; }
+        public UpdateScreenRecordsTrafficLimitConfigRequestBody Body { get; set; }
 
 
 

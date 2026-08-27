@@ -29,6 +29,18 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public Value MaxValue { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("allValue", NullValueHandling = NullValueHandling.Ignore)]
+        public Value AllValue { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("allMaxValue", NullValueHandling = NullValueHandling.Ignore)]
+        public Value AllMaxValue { get; set; }
+
+        /// <summary>
         /// UTC时间，格式yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;。
         /// </summary>
         [JsonProperty("timestamp", NullValueHandling = NullValueHandling.Ignore)]
@@ -51,6 +63,8 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("class Capacity {\n");
             sb.Append("  value: ").Append(Value).Append("\n");
             sb.Append("  maxValue: ").Append(MaxValue).Append("\n");
+            sb.Append("  allValue: ").Append(AllValue).Append("\n");
+            sb.Append("  allMaxValue: ").Append(AllMaxValue).Append("\n");
             sb.Append("  timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("  window: ").Append(Window).Append("\n");
             sb.Append("}\n");
@@ -73,6 +87,8 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (input == null) return false;
             if (this.Value != input.Value || (this.Value != null && !this.Value.Equals(input.Value))) return false;
             if (this.MaxValue != input.MaxValue || (this.MaxValue != null && !this.MaxValue.Equals(input.MaxValue))) return false;
+            if (this.AllValue != input.AllValue || (this.AllValue != null && !this.AllValue.Equals(input.AllValue))) return false;
+            if (this.AllMaxValue != input.AllMaxValue || (this.AllMaxValue != null && !this.AllMaxValue.Equals(input.AllMaxValue))) return false;
             if (this.Timestamp != input.Timestamp || (this.Timestamp != null && !this.Timestamp.Equals(input.Timestamp))) return false;
             if (this.Window != input.Window || (this.Window != null && !this.Window.Equals(input.Window))) return false;
 
@@ -89,6 +105,8 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 var hashCode = 41;
                 if (this.Value != null) hashCode = hashCode * 59 + this.Value.GetHashCode();
                 if (this.MaxValue != null) hashCode = hashCode * 59 + this.MaxValue.GetHashCode();
+                if (this.AllValue != null) hashCode = hashCode * 59 + this.AllValue.GetHashCode();
+                if (this.AllMaxValue != null) hashCode = hashCode * 59 + this.AllMaxValue.GetHashCode();
                 if (this.Timestamp != null) hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
                 if (this.Window != null) hashCode = hashCode * 59 + this.Window.GetHashCode();
                 return hashCode;

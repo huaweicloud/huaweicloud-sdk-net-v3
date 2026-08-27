@@ -245,6 +245,127 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             }
         }
 
+        /// <summary>
+        /// 加域状态。|- 1 正常。 2 脱域。 3 未上报。
+        /// </summary>
+        /// <value>加域状态。|- 1 正常。 2 脱域。 3 未上报。</value>
+        [JsonConverter(typeof(EnumClassConverter<DomainStatusEnum>))]
+        public class DomainStatusEnum
+        {
+            /// <summary>
+            /// Enum NUMBER_1 for value: 1
+            /// </summary>
+            public static readonly DomainStatusEnum NUMBER_1 = new DomainStatusEnum(1);
+
+            /// <summary>
+            /// Enum NUMBER_2 for value: 2
+            /// </summary>
+            public static readonly DomainStatusEnum NUMBER_2 = new DomainStatusEnum(2);
+
+            /// <summary>
+            /// Enum NUMBER_3 for value: 3
+            /// </summary>
+            public static readonly DomainStatusEnum NUMBER_3 = new DomainStatusEnum(3);
+
+            private static readonly Dictionary<int?, DomainStatusEnum> StaticFields =
+            new Dictionary<int?, DomainStatusEnum>()
+            {
+                { 1, NUMBER_1 },
+                { 2, NUMBER_2 },
+                { 3, NUMBER_3 },
+            };
+
+            private int? _value;
+
+            public DomainStatusEnum()
+            {
+
+            }
+
+            public DomainStatusEnum(int? value)
+            {
+                _value = value;
+            }
+
+            public static DomainStatusEnum FromValue(int? value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public int? GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as DomainStatusEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(DomainStatusEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(DomainStatusEnum a, DomainStatusEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(DomainStatusEnum a, DomainStatusEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 桌面状态。  - ACTIVE：运行中。 - SHUTOFF：关机。 - ERROR：异常。 - HIBERNATED：休眠。
@@ -259,6 +380,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [SDKProperty("user_name", IsQuery = true)]
         [JsonProperty("user_name", NullValueHandling = NullValueHandling.Ignore)]
         public string UserName { get; set; }
+
+        /// <summary>
+        /// 用户ID。
+        /// </summary>
+        [SDKProperty("user_id", IsQuery = true)]
+        [JsonProperty("user_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string UserId { get; set; }
 
         /// <summary>
         /// 桌面所属用户，批量筛选，最多不超过100个用户。
@@ -328,6 +456,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("desktop_type", NullValueHandling = NullValueHandling.Ignore)]
         public string DesktopType { get; set; }
 
+        /// <summary>
+        /// 加域状态。|- 1 正常。 2 脱域。 3 未上报。
+        /// </summary>
+        [SDKProperty("domain_status", IsQuery = true)]
+        [JsonProperty("domain_status", NullValueHandling = NullValueHandling.Ignore)]
+        public DomainStatusEnum DomainStatus { get; set; }
         /// <summary>
         /// 桌面的标签。样例：  - key1&#x3D;value1。 - key1&#x3D;value1，key2&#x3D;value2。
         /// </summary>
@@ -405,6 +539,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string AvailabilityZone { get; set; }
 
+        /// <summary>
+        /// agent版本。
+        /// </summary>
+        [SDKProperty("agent_version", IsQuery = true)]
+        [JsonProperty("agent_version", NullValueHandling = NullValueHandling.Ignore)]
+        public string AgentVersion { get; set; }
+
 
 
         /// <summary>
@@ -416,6 +557,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("class ListDesktopsDetailRequest {\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  userName: ").Append(UserName).Append("\n");
+            sb.Append("  userId: ").Append(UserId).Append("\n");
             sb.Append("  userNames: ").Append(UserNames).Append("\n");
             sb.Append("  sortField: ").Append(SortField).Append("\n");
             sb.Append("  sortType: ").Append(SortType).Append("\n");
@@ -426,6 +568,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  desktopId: ").Append(DesktopId).Append("\n");
             sb.Append("  desktopType: ").Append(DesktopType).Append("\n");
+            sb.Append("  domainStatus: ").Append(DomainStatus).Append("\n");
             sb.Append("  tag: ").Append(Tag).Append("\n");
             sb.Append("  poolId: ").Append(PoolId).Append("\n");
             sb.Append("  userAttached: ").Append(UserAttached).Append("\n");
@@ -437,6 +580,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
             sb.Append("  isSupportInternet: ").Append(IsSupportInternet).Append("\n");
             sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
+            sb.Append("  agentVersion: ").Append(AgentVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -457,6 +601,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (input == null) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
+            if (this.UserId != input.UserId || (this.UserId != null && !this.UserId.Equals(input.UserId))) return false;
             if (this.UserNames != input.UserNames || (this.UserNames != null && input.UserNames != null && !this.UserNames.SequenceEqual(input.UserNames))) return false;
             if (this.SortField != input.SortField) return false;
             if (this.SortType != input.SortType) return false;
@@ -467,6 +612,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.DesktopId != input.DesktopId || (this.DesktopId != null && input.DesktopId != null && !this.DesktopId.SequenceEqual(input.DesktopId))) return false;
             if (this.DesktopType != input.DesktopType || (this.DesktopType != null && !this.DesktopType.Equals(input.DesktopType))) return false;
+            if (this.DomainStatus != input.DomainStatus) return false;
             if (this.Tag != input.Tag || (this.Tag != null && !this.Tag.Equals(input.Tag))) return false;
             if (this.PoolId != input.PoolId || (this.PoolId != null && !this.PoolId.Equals(input.PoolId))) return false;
             if (this.UserAttached != input.UserAttached || (this.UserAttached != null && !this.UserAttached.Equals(input.UserAttached))) return false;
@@ -478,6 +624,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
             if (this.IsSupportInternet != input.IsSupportInternet || (this.IsSupportInternet != null && !this.IsSupportInternet.Equals(input.IsSupportInternet))) return false;
             if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
+            if (this.AgentVersion != input.AgentVersion || (this.AgentVersion != null && !this.AgentVersion.Equals(input.AgentVersion))) return false;
 
             return true;
         }
@@ -492,6 +639,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 var hashCode = 41;
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.UserId != null) hashCode = hashCode * 59 + this.UserId.GetHashCode();
                 if (this.UserNames != null) hashCode = hashCode * 59 + this.UserNames.GetHashCode();
                 hashCode = hashCode * 59 + this.SortField.GetHashCode();
                 hashCode = hashCode * 59 + this.SortType.GetHashCode();
@@ -502,6 +650,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.DesktopId != null) hashCode = hashCode * 59 + this.DesktopId.GetHashCode();
                 if (this.DesktopType != null) hashCode = hashCode * 59 + this.DesktopType.GetHashCode();
+                hashCode = hashCode * 59 + this.DomainStatus.GetHashCode();
                 if (this.Tag != null) hashCode = hashCode * 59 + this.Tag.GetHashCode();
                 if (this.PoolId != null) hashCode = hashCode * 59 + this.PoolId.GetHashCode();
                 if (this.UserAttached != null) hashCode = hashCode * 59 + this.UserAttached.GetHashCode();
@@ -513,6 +662,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
                 if (this.IsSupportInternet != null) hashCode = hashCode * 59 + this.IsSupportInternet.GetHashCode();
                 if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
+                if (this.AgentVersion != null) hashCode = hashCode * 59 + this.AgentVersion.GetHashCode();
                 return hashCode;
             }
         }

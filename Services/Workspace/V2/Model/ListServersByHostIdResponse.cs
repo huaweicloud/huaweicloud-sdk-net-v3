@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("servers", NullValueHandling = NullValueHandling.Ignore)]
         public List<ListServersRspServers> Servers { get; set; }
 
+        /// <summary>
+        /// 计算机实例总数。
+        /// </summary>
+        [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Total { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ListServersByHostIdResponse {\n");
             sb.Append("  servers: ").Append(Servers).Append("\n");
+            sb.Append("  total: ").Append(Total).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             if (input == null) return false;
             if (this.Servers != input.Servers || (this.Servers != null && input.Servers != null && !this.Servers.SequenceEqual(input.Servers))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             {
                 var hashCode = 41;
                 if (this.Servers != null) hashCode = hashCode * 59 + this.Servers.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
                 return hashCode;
             }
         }

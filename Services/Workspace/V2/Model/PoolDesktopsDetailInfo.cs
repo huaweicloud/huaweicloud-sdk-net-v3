@@ -385,6 +385,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string TaskStatus { get; set; }
 
         /// <summary>
+        /// 加域状态。|- 1 正常。 2 脱域。 3 未上报。
+        /// </summary>
+        [JsonProperty("domain_status", NullValueHandling = NullValueHandling.Ignore)]
+        public int? DomainStatus { get; set; }
+
+        /// <summary>
         /// 是否处于维护模式,true表示维护模式，false表示不处于维护模式。
         /// </summary>
         [JsonProperty("in_maintenance_mode", NullValueHandling = NullValueHandling.Ignore)]
@@ -587,6 +593,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Domain { get; set; }
 
         /// <summary>
+        /// agent版本。
+        /// </summary>
+        [JsonProperty("agent_version", NullValueHandling = NullValueHandling.Ignore)]
+        public string AgentVersion { get; set; }
+
+        /// <summary>
         /// 桌面与桌面池不一致的规格类型: - PRODUCT: 产品ID不一致 - IMAGE: 镜像ID不一致
         /// </summary>
         [JsonProperty("inconsistent_types", NullValueHandling = NullValueHandling.Ignore)]
@@ -615,6 +627,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  flavor: ").Append(Flavor).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  taskStatus: ").Append(TaskStatus).Append("\n");
+            sb.Append("  domainStatus: ").Append(DomainStatus).Append("\n");
             sb.Append("  inMaintenanceMode: ").Append(InMaintenanceMode).Append("\n");
             sb.Append("  created: ").Append(Created).Append("\n");
             sb.Append("  securityGroups: ").Append(SecurityGroups).Append("\n");
@@ -649,6 +662,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  isFreeze: ").Append(IsFreeze).Append("\n");
             sb.Append("  isolated: ").Append(Isolated).Append("\n");
             sb.Append("  domain: ").Append(Domain).Append("\n");
+            sb.Append("  agentVersion: ").Append(AgentVersion).Append("\n");
             sb.Append("  inconsistentTypes: ").Append(InconsistentTypes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -682,6 +696,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.Flavor != input.Flavor || (this.Flavor != null && !this.Flavor.Equals(input.Flavor))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.TaskStatus != input.TaskStatus || (this.TaskStatus != null && !this.TaskStatus.Equals(input.TaskStatus))) return false;
+            if (this.DomainStatus != input.DomainStatus || (this.DomainStatus != null && !this.DomainStatus.Equals(input.DomainStatus))) return false;
             if (this.InMaintenanceMode != input.InMaintenanceMode || (this.InMaintenanceMode != null && !this.InMaintenanceMode.Equals(input.InMaintenanceMode))) return false;
             if (this.Created != input.Created || (this.Created != null && !this.Created.Equals(input.Created))) return false;
             if (this.SecurityGroups != input.SecurityGroups || (this.SecurityGroups != null && input.SecurityGroups != null && !this.SecurityGroups.SequenceEqual(input.SecurityGroups))) return false;
@@ -716,6 +731,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.IsFreeze != input.IsFreeze || (this.IsFreeze != null && !this.IsFreeze.Equals(input.IsFreeze))) return false;
             if (this.Isolated != input.Isolated || (this.Isolated != null && !this.Isolated.Equals(input.Isolated))) return false;
             if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
+            if (this.AgentVersion != input.AgentVersion || (this.AgentVersion != null && !this.AgentVersion.Equals(input.AgentVersion))) return false;
             if (this.InconsistentTypes != input.InconsistentTypes || (this.InconsistentTypes != null && input.InconsistentTypes != null && !this.InconsistentTypes.SequenceEqual(input.InconsistentTypes))) return false;
 
             return true;
@@ -743,6 +759,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Flavor != null) hashCode = hashCode * 59 + this.Flavor.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.TaskStatus != null) hashCode = hashCode * 59 + this.TaskStatus.GetHashCode();
+                if (this.DomainStatus != null) hashCode = hashCode * 59 + this.DomainStatus.GetHashCode();
                 if (this.InMaintenanceMode != null) hashCode = hashCode * 59 + this.InMaintenanceMode.GetHashCode();
                 if (this.Created != null) hashCode = hashCode * 59 + this.Created.GetHashCode();
                 if (this.SecurityGroups != null) hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
@@ -777,6 +794,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.IsFreeze != null) hashCode = hashCode * 59 + this.IsFreeze.GetHashCode();
                 if (this.Isolated != null) hashCode = hashCode * 59 + this.Isolated.GetHashCode();
                 if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
+                if (this.AgentVersion != null) hashCode = hashCode * 59 + this.AgentVersion.GetHashCode();
                 if (this.InconsistentTypes != null) hashCode = hashCode * 59 + this.InconsistentTypes.GetHashCode();
                 return hashCode;
             }

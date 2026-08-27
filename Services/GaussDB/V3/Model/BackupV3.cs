@@ -106,6 +106,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("time_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string TimeZone { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 备份类型。 **取值范围**： - differential：差量备份。 - completed：全量备份。
+        /// </summary>
+        [JsonProperty("backup_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string BackupMode { get; set; }
+
 
 
         /// <summary>
@@ -130,6 +136,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  backupMethod: ").Append(BackupMethod).Append("\n");
             sb.Append("  useDetail: ").Append(UseDetail).Append("\n");
             sb.Append("  timeZone: ").Append(TimeZone).Append("\n");
+            sb.Append("  backupMode: ").Append(BackupMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -163,6 +170,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (this.BackupMethod != input.BackupMethod || (this.BackupMethod != null && !this.BackupMethod.Equals(input.BackupMethod))) return false;
             if (this.UseDetail != input.UseDetail || (this.UseDetail != null && !this.UseDetail.Equals(input.UseDetail))) return false;
             if (this.TimeZone != input.TimeZone || (this.TimeZone != null && !this.TimeZone.Equals(input.TimeZone))) return false;
+            if (this.BackupMode != input.BackupMode || (this.BackupMode != null && !this.BackupMode.Equals(input.BackupMode))) return false;
 
             return true;
         }
@@ -190,6 +198,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 if (this.BackupMethod != null) hashCode = hashCode * 59 + this.BackupMethod.GetHashCode();
                 if (this.UseDetail != null) hashCode = hashCode * 59 + this.UseDetail.GetHashCode();
                 if (this.TimeZone != null) hashCode = hashCode * 59 + this.TimeZone.GetHashCode();
+                if (this.BackupMode != null) hashCode = hashCode * 59 + this.BackupMode.GetHashCode();
                 return hashCode;
             }
         }

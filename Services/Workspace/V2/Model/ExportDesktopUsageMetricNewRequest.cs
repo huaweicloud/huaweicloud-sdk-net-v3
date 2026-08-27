@@ -38,6 +38,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string ResourceName { get; set; }
 
         /// <summary>
+        /// 资源ID(精确匹配)。
+        /// </summary>
+        [SDKProperty("resource_id", IsQuery = true)]
+        [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ResourceId { get; set; }
+
+        /// <summary>
         /// 最小空闲天数。
         /// </summary>
         [SDKProperty("min_idle_days", IsQuery = true)]
@@ -98,6 +105,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("  resourceName: ").Append(ResourceName).Append("\n");
+            sb.Append("  resourceId: ").Append(ResourceId).Append("\n");
             sb.Append("  minIdleDays: ").Append(MinIdleDays).Append("\n");
             sb.Append("  maxIdleDays: ").Append(MaxIdleDays).Append("\n");
             sb.Append("  usageMinHours: ").Append(UsageMinHours).Append("\n");
@@ -126,6 +134,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
             if (this.ResourceName != input.ResourceName || (this.ResourceName != null && !this.ResourceName.Equals(input.ResourceName))) return false;
+            if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
             if (this.MinIdleDays != input.MinIdleDays || (this.MinIdleDays != null && !this.MinIdleDays.Equals(input.MinIdleDays))) return false;
             if (this.MaxIdleDays != input.MaxIdleDays || (this.MaxIdleDays != null && !this.MaxIdleDays.Equals(input.MaxIdleDays))) return false;
             if (this.UsageMinHours != input.UsageMinHours || (this.UsageMinHours != null && !this.UsageMinHours.Equals(input.UsageMinHours))) return false;
@@ -148,6 +157,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 if (this.ResourceName != null) hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
+                if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
                 if (this.MinIdleDays != null) hashCode = hashCode * 59 + this.MinIdleDays.GetHashCode();
                 if (this.MaxIdleDays != null) hashCode = hashCode * 59 + this.MaxIdleDays.GetHashCode();
                 if (this.UsageMinHours != null) hashCode = hashCode * 59 + this.UsageMinHours.GetHashCode();

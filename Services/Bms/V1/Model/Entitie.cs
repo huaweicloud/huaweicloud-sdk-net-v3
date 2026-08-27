@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         [JsonProperty("nic_id", NullValueHandling = NullValueHandling.Ignore)]
         public string NicId { get; set; }
 
+        /// <summary>
+        /// 子任务执行失败的具体原因
+        /// </summary>
+        [JsonProperty("errorcode_message", NullValueHandling = NullValueHandling.Ignore)]
+        public string ErrorcodeMessage { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             sb.Append("class Entitie {\n");
             sb.Append("  serverId: ").Append(ServerId).Append("\n");
             sb.Append("  nicId: ").Append(NicId).Append("\n");
+            sb.Append("  errorcodeMessage: ").Append(ErrorcodeMessage).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             if (input == null) return false;
             if (this.ServerId != input.ServerId || (this.ServerId != null && !this.ServerId.Equals(input.ServerId))) return false;
             if (this.NicId != input.NicId || (this.NicId != null && !this.NicId.Equals(input.NicId))) return false;
+            if (this.ErrorcodeMessage != input.ErrorcodeMessage || (this.ErrorcodeMessage != null && !this.ErrorcodeMessage.Equals(input.ErrorcodeMessage))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                 var hashCode = 41;
                 if (this.ServerId != null) hashCode = hashCode * 59 + this.ServerId.GetHashCode();
                 if (this.NicId != null) hashCode = hashCode * 59 + this.NicId.GetHashCode();
+                if (this.ErrorcodeMessage != null) hashCode = hashCode * 59 + this.ErrorcodeMessage.GetHashCode();
                 return hashCode;
             }
         }

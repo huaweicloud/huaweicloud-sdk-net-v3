@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         /// 训练作业资源规格列表。
         /// </summary>
         [JsonProperty("flavors", NullValueHandling = NullValueHandling.Ignore)]
-        public List<FlavorResponse> Flavors { get; set; }
+        public List<FlavorResponseWithSupport> Flavors { get; set; }
 
 
 

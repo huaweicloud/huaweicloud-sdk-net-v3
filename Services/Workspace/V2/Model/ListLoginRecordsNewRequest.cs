@@ -93,6 +93,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("max_network_rtt", NullValueHandling = NullValueHandling.Ignore)]
         public int? MaxNetworkRtt { get; set; }
 
+        /// <summary>
+        /// 域名筛选条件，用于根据域名筛选用户连接记录。
+        /// </summary>
+        [SDKProperty("domain", IsQuery = true)]
+        [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
+        public string Domain { get; set; }
+
 
 
         /// <summary>
@@ -113,6 +120,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  minNetworkRtt: ").Append(MinNetworkRtt).Append("\n");
             sb.Append("  maxNetworkRtt: ").Append(MaxNetworkRtt).Append("\n");
+            sb.Append("  domain: ").Append(Domain).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -142,6 +150,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.MinNetworkRtt != input.MinNetworkRtt || (this.MinNetworkRtt != null && !this.MinNetworkRtt.Equals(input.MinNetworkRtt))) return false;
             if (this.MaxNetworkRtt != input.MaxNetworkRtt || (this.MaxNetworkRtt != null && !this.MaxNetworkRtt.Equals(input.MaxNetworkRtt))) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
 
             return true;
         }
@@ -165,6 +174,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.MinNetworkRtt != null) hashCode = hashCode * 59 + this.MinNetworkRtt.GetHashCode();
                 if (this.MaxNetworkRtt != null) hashCode = hashCode * 59 + this.MaxNetworkRtt.GetHashCode();
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
                 return hashCode;
             }
         }

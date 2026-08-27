@@ -52,6 +52,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("retention_duration", NullValueHandling = NullValueHandling.Ignore)]
         public int? RetentionDuration { get; set; }
 
+        /// <summary>
+        /// 登录时，录屏审计提醒频率（天/次）。取值为1~30天，0 表示每次登录都提醒。
+        /// </summary>
+        [JsonProperty("reminder_frequency", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ReminderFrequency { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +73,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  obsBucketSource: ").Append(ObsBucketSource).Append("\n");
             sb.Append("  obsBucketName: ").Append(ObsBucketName).Append("\n");
             sb.Append("  retentionDuration: ").Append(RetentionDuration).Append("\n");
+            sb.Append("  reminderFrequency: ").Append(ReminderFrequency).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +98,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.ObsBucketSource != input.ObsBucketSource || (this.ObsBucketSource != null && !this.ObsBucketSource.Equals(input.ObsBucketSource))) return false;
             if (this.ObsBucketName != input.ObsBucketName || (this.ObsBucketName != null && !this.ObsBucketName.Equals(input.ObsBucketName))) return false;
             if (this.RetentionDuration != input.RetentionDuration || (this.RetentionDuration != null && !this.RetentionDuration.Equals(input.RetentionDuration))) return false;
+            if (this.ReminderFrequency != input.ReminderFrequency || (this.ReminderFrequency != null && !this.ReminderFrequency.Equals(input.ReminderFrequency))) return false;
 
             return true;
         }
@@ -109,6 +117,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.ObsBucketSource != null) hashCode = hashCode * 59 + this.ObsBucketSource.GetHashCode();
                 if (this.ObsBucketName != null) hashCode = hashCode * 59 + this.ObsBucketName.GetHashCode();
                 if (this.RetentionDuration != null) hashCode = hashCode * 59 + this.RetentionDuration.GetHashCode();
+                if (this.ReminderFrequency != null) hashCode = hashCode * 59 + this.ReminderFrequency.GetHashCode();
                 return hashCode;
             }
         }

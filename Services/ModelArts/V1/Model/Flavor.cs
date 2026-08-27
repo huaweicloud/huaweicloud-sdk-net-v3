@@ -118,6 +118,12 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         [JsonProperty("ascend", NullValueHandling = NullValueHandling.Ignore)]
         public AscendInfo Ascend { get; set; }
 
+        /// <summary>
+        /// **参数解释**：是否支持ENI挂载。
+        /// </summary>
+        [JsonProperty("support_eni", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SupportEni { get; set; }
+
 
 
         /// <summary>
@@ -144,6 +150,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  vcpus: ").Append(Vcpus).Append("\n");
             sb.Append("  gpu: ").Append(Gpu).Append("\n");
             sb.Append("  ascend: ").Append(Ascend).Append("\n");
+            sb.Append("  supportEni: ").Append(SupportEni).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -179,6 +186,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.Vcpus != input.Vcpus || (this.Vcpus != null && !this.Vcpus.Equals(input.Vcpus))) return false;
             if (this.Gpu != input.Gpu || (this.Gpu != null && !this.Gpu.Equals(input.Gpu))) return false;
             if (this.Ascend != input.Ascend || (this.Ascend != null && !this.Ascend.Equals(input.Ascend))) return false;
+            if (this.SupportEni != input.SupportEni || (this.SupportEni != null && !this.SupportEni.Equals(input.SupportEni))) return false;
 
             return true;
         }
@@ -208,6 +216,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 if (this.Vcpus != null) hashCode = hashCode * 59 + this.Vcpus.GetHashCode();
                 if (this.Gpu != null) hashCode = hashCode * 59 + this.Gpu.GetHashCode();
                 if (this.Ascend != null) hashCode = hashCode * 59 + this.Ascend.GetHashCode();
+                if (this.SupportEni != null) hashCode = hashCode * 59 + this.SupportEni.GetHashCode();
                 return hashCode;
             }
         }

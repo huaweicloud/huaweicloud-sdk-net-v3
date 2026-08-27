@@ -465,7 +465,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         /// **参数解释：** 当前专属池支持的规格。
         /// </summary>
         [JsonProperty("flavors", NullValueHandling = NullValueHandling.Ignore)]
-        public List<NotebookFlavor> Flavors { get; set; }
+        public List<InferFlavor> Flavors { get; set; }
 
         /// <summary>
         /// **参数解释：** 资源池类型。 **取值范围：** - LOGICAL ：逻辑池。 - PHYSICAL ：物理池。

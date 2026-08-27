@@ -501,7 +501,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public string WorkspaceId { get; set; }
 
         /// <summary>
-        /// **参数解释**：实例的机器规格。如下规格仅供参考，实际支持的规格以具体区域为准。 modelarts.vm.cpu.2u：Intel CPU通用规格，用于快速数据探索和实验。 modelarts.vm.cpu.8u：Intel CPU算力增强型，适用于密集计算场景下运算。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
+        /// **参数解释**：实例的机器规格编码，支持模糊匹配查询。如下规格仅供参考，实际支持的规格以具体区域为准。 modelarts.vm.cpu.2u：Intel CPU通用规格，用于快速数据探索和实验。 modelarts.vm.cpu.8u：Intel CPU算力增强型，适用于密集计算场景下运算。 **约束限制**：不支持专属资源池的自定义规格查询。 **取值范围**：长度限制1-256字符，支持数字、大小写字母、小数点、下划线或中划线。 **默认取值**：不涉及。
         /// </summary>
         [SDKProperty("flavor", IsQuery = true)]
         [JsonProperty("flavor", NullValueHandling = NullValueHandling.Ignore)]
@@ -529,11 +529,46 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public string Billing { get; set; }
 
         /// <summary>
-        /// **参数解释**：实例标签信息。 **约束限制**：不涉及。 **取值范围**：不以逗号，竖划线开头，不以逗号结尾，不出现连续的竖划线和逗号，允许中文、西文、葡文等语言以及空格_.:/&#x3D;+-@特殊字符，且字符间以逗号或者竖划线分割。 **默认取值**：不涉及。
+        /// **参数解释**：实例标签信息。 **约束限制**：不涉及。 **取值范围**：不以逗号，竖划线开头，不以逗号结尾，不出现连续的竖划线和逗号，允许中文、西文、葡文等语言以及空格_.:/&#x3D;+-@特殊字符，且字符间以逗号或者竖划线分割。例：tag_key1|tag_value1,tag_key2|tag_value2。 **默认取值**：不涉及。
         /// </summary>
         [SDKProperty("tags", IsQuery = true)]
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public string Tags { get; set; }
+
+        /// <summary>
+        /// **参数解释**：SWR镜像路径，该参数是针对返回参数NotebookResp中Image的swr_path属性进行模糊匹配查询。 **约束限制**：不涉及。 **取值范围**：长度限制2048个字符，支持数字、大小写字母、下划线、中划线、点号、冒号和斜杠，0-2048个字符。 **默认取值**：不涉及。
+        /// </summary>
+        [SDKProperty("swr_path", IsQuery = true)]
+        [JsonProperty("swr_path", NullValueHandling = NullValueHandling.Ignore)]
+        public string SwrPath { get; set; }
+
+        /// <summary>
+        /// **参数解释**：专属资源池名称，支持模糊匹配查询。 **约束限制**：不涉及。 **取值范围**：长度限制1-64字符，支持数字、大小写字母和中划线。 **默认取值**：不涉及。
+        /// </summary>
+        [SDKProperty("pool_name", IsQuery = true)]
+        [JsonProperty("pool_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string PoolName { get; set; }
+
+        /// <summary>
+        /// **参数解释**：实例描述信息，支持模糊匹配查询。 **约束限制**：不涉及。 **取值范围**：长度限制为512字符，不可包含特殊字符&lt;&gt;。 **默认取值**：不涉及。
+        /// </summary>
+        [SDKProperty("description", IsQuery = true)]
+        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// **参数解释**：节点IP。 **约束限制**：不涉及。 **取值范围**：正确的IPv4地址，暂不支持IPv6地址。 **默认取值**：不涉及。
+        /// </summary>
+        [SDKProperty("ip", IsQuery = true)]
+        [JsonProperty("ip", NullValueHandling = NullValueHandling.Ignore)]
+        public string Ip { get; set; }
+
+        /// <summary>
+        /// **参数解释**：实例创建用户名称，支持模糊匹配查询。 **约束限制**：不涉及。 **取值范围**：长度限制1-256字符，支持数字、大小写字母、小数点、下划线或中划线。 **默认取值**：不涉及。
+        /// </summary>
+        [SDKProperty("username", IsQuery = true)]
+        [JsonProperty("username", NullValueHandling = NullValueHandling.Ignore)]
+        public string Username { get; set; }
 
 
 
@@ -559,6 +594,11 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  billing: ").Append(Billing).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  swrPath: ").Append(SwrPath).Append("\n");
+            sb.Append("  poolName: ").Append(PoolName).Append("\n");
+            sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  ip: ").Append(Ip).Append("\n");
+            sb.Append("  username: ").Append(Username).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -592,6 +632,11 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Billing != input.Billing || (this.Billing != null && !this.Billing.Equals(input.Billing))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && !this.Tags.Equals(input.Tags))) return false;
+            if (this.SwrPath != input.SwrPath || (this.SwrPath != null && !this.SwrPath.Equals(input.SwrPath))) return false;
+            if (this.PoolName != input.PoolName || (this.PoolName != null && !this.PoolName.Equals(input.PoolName))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Ip != input.Ip || (this.Ip != null && !this.Ip.Equals(input.Ip))) return false;
+            if (this.Username != input.Username || (this.Username != null && !this.Username.Equals(input.Username))) return false;
 
             return true;
         }
@@ -619,6 +664,11 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Billing != null) hashCode = hashCode * 59 + this.Billing.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.SwrPath != null) hashCode = hashCode * 59 + this.SwrPath.GetHashCode();
+                if (this.PoolName != null) hashCode = hashCode * 59 + this.PoolName.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Ip != null) hashCode = hashCode * 59 + this.Ip.GetHashCode();
+                if (this.Username != null) hashCode = hashCode * 59 + this.Username.GetHashCode();
                 return hashCode;
             }
         }

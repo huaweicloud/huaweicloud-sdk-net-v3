@@ -28,6 +28,18 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         [JsonProperty("capacity", NullValueHandling = NullValueHandling.Ignore)]
         public Capacity Capacity { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("available", NullValueHandling = NullValueHandling.Ignore)]
+        public Available Available { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("workload", NullValueHandling = NullValueHandling.Ignore)]
+        public WorkloadInfo Workload { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +51,8 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("class MetricTableItem {\n");
             sb.Append("  allocated: ").Append(Allocated).Append("\n");
             sb.Append("  capacity: ").Append(Capacity).Append("\n");
+            sb.Append("  available: ").Append(Available).Append("\n");
+            sb.Append("  workload: ").Append(Workload).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +73,8 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (input == null) return false;
             if (this.Allocated != input.Allocated || (this.Allocated != null && !this.Allocated.Equals(input.Allocated))) return false;
             if (this.Capacity != input.Capacity || (this.Capacity != null && !this.Capacity.Equals(input.Capacity))) return false;
+            if (this.Available != input.Available || (this.Available != null && !this.Available.Equals(input.Available))) return false;
+            if (this.Workload != input.Workload || (this.Workload != null && !this.Workload.Equals(input.Workload))) return false;
 
             return true;
         }
@@ -73,6 +89,8 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 var hashCode = 41;
                 if (this.Allocated != null) hashCode = hashCode * 59 + this.Allocated.GetHashCode();
                 if (this.Capacity != null) hashCode = hashCode * 59 + this.Capacity.GetHashCode();
+                if (this.Available != null) hashCode = hashCode * 59 + this.Available.GetHashCode();
+                if (this.Workload != null) hashCode = hashCode * 59 + this.Workload.GetHashCode();
                 return hashCode;
             }
         }

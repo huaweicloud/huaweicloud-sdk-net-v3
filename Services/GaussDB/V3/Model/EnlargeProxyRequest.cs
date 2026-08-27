@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("proxy_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProxyId { get; set; }
 
+        /// <summary>
+        /// **参数解释**：  数据库代理节点的可用区设置。  **约束限制**：  不传该字段，代理节点可用区将随机设置，优先与数据库节点可用区保持一致；传入该字段，代理节点将设置在指定可用区。
+        /// </summary>
+        [JsonProperty("proxy_nodes_az_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> ProxyNodesAzList { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("class EnlargeProxyRequest {\n");
             sb.Append("  nodeNum: ").Append(NodeNum).Append("\n");
             sb.Append("  proxyId: ").Append(ProxyId).Append("\n");
+            sb.Append("  proxyNodesAzList: ").Append(ProxyNodesAzList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (input == null) return false;
             if (this.NodeNum != input.NodeNum || (this.NodeNum != null && !this.NodeNum.Equals(input.NodeNum))) return false;
             if (this.ProxyId != input.ProxyId || (this.ProxyId != null && !this.ProxyId.Equals(input.ProxyId))) return false;
+            if (this.ProxyNodesAzList != input.ProxyNodesAzList || (this.ProxyNodesAzList != null && input.ProxyNodesAzList != null && !this.ProxyNodesAzList.SequenceEqual(input.ProxyNodesAzList))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 var hashCode = 41;
                 if (this.NodeNum != null) hashCode = hashCode * 59 + this.NodeNum.GetHashCode();
                 if (this.ProxyId != null) hashCode = hashCode * 59 + this.ProxyId.GetHashCode();
+                if (this.ProxyNodesAzList != null) hashCode = hashCode * 59 + this.ProxyNodesAzList.GetHashCode();
                 return hashCode;
             }
         }

@@ -382,6 +382,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("enable_user_create_snapshot", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableUserCreateSnapshot { get; set; }
 
+        /// <summary>
+        /// 开户完成时间。
+        /// </summary>
+        [JsonProperty("complete_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string CompleteTime { get; set; }
+
 
 
         /// <summary>
@@ -425,6 +431,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  isAuthorizedInstallAgent: ").Append(IsAuthorizedInstallAgent).Append("\n");
             sb.Append("  isSupportIpv6: ").Append(IsSupportIpv6).Append("\n");
             sb.Append("  enableUserCreateSnapshot: ").Append(EnableUserCreateSnapshot).Append("\n");
+            sb.Append("  completeTime: ").Append(CompleteTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -477,6 +484,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.IsAuthorizedInstallAgent != input.IsAuthorizedInstallAgent || (this.IsAuthorizedInstallAgent != null && !this.IsAuthorizedInstallAgent.Equals(input.IsAuthorizedInstallAgent))) return false;
             if (this.IsSupportIpv6 != input.IsSupportIpv6 || (this.IsSupportIpv6 != null && !this.IsSupportIpv6.Equals(input.IsSupportIpv6))) return false;
             if (this.EnableUserCreateSnapshot != input.EnableUserCreateSnapshot || (this.EnableUserCreateSnapshot != null && !this.EnableUserCreateSnapshot.Equals(input.EnableUserCreateSnapshot))) return false;
+            if (this.CompleteTime != input.CompleteTime || (this.CompleteTime != null && !this.CompleteTime.Equals(input.CompleteTime))) return false;
 
             return true;
         }
@@ -523,6 +531,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.IsAuthorizedInstallAgent != null) hashCode = hashCode * 59 + this.IsAuthorizedInstallAgent.GetHashCode();
                 if (this.IsSupportIpv6 != null) hashCode = hashCode * 59 + this.IsSupportIpv6.GetHashCode();
                 if (this.EnableUserCreateSnapshot != null) hashCode = hashCode * 59 + this.EnableUserCreateSnapshot.GetHashCode();
+                if (this.CompleteTime != null) hashCode = hashCode * 59 + this.CompleteTime.GetHashCode();
                 return hashCode;
             }
         }

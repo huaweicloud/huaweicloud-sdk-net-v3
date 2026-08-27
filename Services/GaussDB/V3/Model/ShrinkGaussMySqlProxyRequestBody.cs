@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("node_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? NodeNum { get; set; }
 
+        /// <summary>
+        /// **参数解释**：  数据库代理节点的节点ID。  获取方式请参见[查询数据库代理信息列表](https://support.huaweicloud.com/api-taurusdb/ShowGaussMySqlProxyList.html)。  **约束限制**：  不传该字段，将随机删除代理节点；传入该字段，将删除指定ID的代理节点。
+        /// </summary>
+        [JsonProperty("node_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> NodeIds { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             var sb = new StringBuilder();
             sb.Append("class ShrinkGaussMySqlProxyRequestBody {\n");
             sb.Append("  nodeNum: ").Append(NodeNum).Append("\n");
+            sb.Append("  nodeIds: ").Append(NodeIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             if (input == null) return false;
             if (this.NodeNum != input.NodeNum || (this.NodeNum != null && !this.NodeNum.Equals(input.NodeNum))) return false;
+            if (this.NodeIds != input.NodeIds || (this.NodeIds != null && input.NodeIds != null && !this.NodeIds.SequenceEqual(input.NodeIds))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             {
                 var hashCode = 41;
                 if (this.NodeNum != null) hashCode = hashCode * 59 + this.NodeNum.GetHashCode();
+                if (this.NodeIds != null) hashCode = hashCode * 59 + this.NodeIds.GetHashCode();
                 return hashCode;
             }
         }
