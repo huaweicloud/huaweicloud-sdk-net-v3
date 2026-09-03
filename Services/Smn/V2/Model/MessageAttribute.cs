@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
 
 
         /// <summary>
-        /// 属性名称。属性名称只能包含小写英文字母([a-z])、数字([0-9])、下划线(_)，下划线不能出现在开始或结尾，下划线不能连续出现，长度为1到32个字符
+        /// 属性名称。属性名称只能包含小写英文字母([a-z])、数字([0-9])、下划线(\\_)，下划线不能出现在开始或结尾，下划线不能连续出现，长度为1到32个字符
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }

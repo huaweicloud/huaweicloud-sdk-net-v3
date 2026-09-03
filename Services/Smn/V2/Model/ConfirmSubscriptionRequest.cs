@@ -17,21 +17,21 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
     {
 
         /// <summary>
-        /// Topic的唯一的资源标识，可通过[查询主题列表](smn_api_51004.xml)获取该标识。
+        /// Topic的唯一的资源标识，可通过[查询主题列表](smn_api_51004.xml)获取该标识。当订阅类型为短信或邮件时，与token、endpoint参数组合使用，三个参数中设置任意两个或全部设置均可确认订阅成功；当订阅类型为其他时，该参数必填，需与token同时设置。
         /// </summary>
         [SDKProperty("topic_urn", IsQuery = true)]
         [JsonProperty("topic_urn", NullValueHandling = NullValueHandling.Ignore)]
         public string TopicUrn { get; set; }
 
         /// <summary>
-        /// 订阅终端地址。
+        /// 订阅终端地址。仅当订阅类型为短信或邮件时可设置，与token、topic_urn参数组合使用，三个参数中设置任意两个或全部设置均可确认订阅成功。
         /// </summary>
         [SDKProperty("endpoint", IsQuery = true)]
         [JsonProperty("endpoint", NullValueHandling = NullValueHandling.Ignore)]
         public string Endpoint { get; set; }
 
         /// <summary>
-        /// 确认订阅Token信息。
+        /// 确认订阅Token信息。（订阅链接中携带的token信息）
         /// </summary>
         [SDKProperty("token", IsQuery = true)]
         [JsonProperty("token", NullValueHandling = NullValueHandling.Ignore)]

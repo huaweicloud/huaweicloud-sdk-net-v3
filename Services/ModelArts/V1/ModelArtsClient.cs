@@ -276,6 +276,31 @@ namespace HuaweiCloud.SDK.ModelArts.V1
         }
         
         /// <summary>
+        /// 批量删除训练作业
+        ///
+        /// 批量删除训练作业接口用于一次性从ModelArts平台上移除多个已创建的训练作业。
+        /// 该接口适用于以下场景：当用户需要集中清理多个已完成或不再需要的训练作业时，可以通过此接口批量删除，避免逐个调用删除接口。使用该接口的前提条件是待删除的训练作业均已存在、属于同一工作空间，且用户具有删除训练作业的权限。删除操作完成后，训练作业将从平台中永久移除，相关资源和配置也将被清理。若待删除作业数量超过100、作业不存在、作业不属于同一工作空间或用户无权限操作，接口将返回相应的错误信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchDeleteTrainingJobResponse BatchDeleteTrainingJob(BatchDeleteTrainingJobRequest batchDeleteTrainingJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/training-jobs/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteTrainingJobRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<BatchDeleteTrainingJobResponse>(response);
+        }
+
+        public SyncInvoker<BatchDeleteTrainingJobResponse> BatchDeleteTrainingJobInvoker(BatchDeleteTrainingJobRequest batchDeleteTrainingJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/training-jobs/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteTrainingJobRequest);
+            return new SyncInvoker<BatchDeleteTrainingJobResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteTrainingJobResponse>);
+        }
+        
+        /// <summary>
         /// 批量操作Lite Server实例
         ///
         /// 批量操作Lite Server实例接口用于对多个Lite Server实例进行统一操作，如启动、停止、重启或删除等。该接口适用于以下场景：当需要对多个Lite Server实例进行相同的操作，例如在维护期间批量停止实例、更新配置后批量重启实例或清理不再需要的实例时，用户可通过此接口高效地完成批量操作。使用该接口的前提条件是目标Lite Server实例已存在且用户具有相应的操作权限。操作完成后，所有指定的Lite Server实例将根据请求完成相应的状态变更或被移除，相关资源和配置也将被相应调整或清理。若目标Lite Server实例不存在、用户无权限操作或请求参数不正确，接口将返回相应的错误信息。
@@ -792,6 +817,31 @@ namespace HuaweiCloud.SDK.ModelArts.V1
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/modelarts-service-v2/resource-instances/count", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", countInferServicesByTagsRequest);
             return new SyncInvoker<CountInferServicesByTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<CountInferServicesByTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 按标签统计训练作业资源数量
+        ///
+        /// 按标签统计训练作业资源数量接口用于根据标签等条件查询当前项目下符合条件的训练作业总数。
+        /// 该接口适用于以下场景：当用户需要按标签键值、资源名称等条件统计训练作业数量时，可以通过此接口进行查询。使用该接口的前提条件是用户已登录并具有查看训练作业标签的权限。查询操作完成后，平台将返回符合条件的训练作业总数。若用户无权限操作，接口将返回相应的错误信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CountTrainingJobsByTagsResponse CountTrainingJobsByTags(CountTrainingJobsByTagsRequest countTrainingJobsByTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/modelarts-training-job/resource-instances/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", countTrainingJobsByTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CountTrainingJobsByTagsResponse>(response);
+        }
+
+        public SyncInvoker<CountTrainingJobsByTagsResponse> CountTrainingJobsByTagsInvoker(CountTrainingJobsByTagsRequest countTrainingJobsByTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/modelarts-training-job/resource-instances/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", countTrainingJobsByTagsRequest);
+            return new SyncInvoker<CountTrainingJobsByTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<CountTrainingJobsByTagsResponse>);
         }
         
         /// <summary>
@@ -2652,6 +2702,32 @@ namespace HuaweiCloud.SDK.ModelArts.V1
         }
         
         /// <summary>
+        /// 查询精调训练任务产物列表
+        ///
+        /// 查询精调训练任务产物列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListFtArtifactsResponse ListFtArtifacts(ListFtArtifactsRequest listFtArtifactsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listFtArtifactsRequest.TrainingJobId, out var valueOfTrainingJobId)) urlParam.Add("training_job_id", valueOfTrainingJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/training-jobs/{training_job_id}/ft-artifacts", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFtArtifactsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListFtArtifactsResponse>(response);
+        }
+
+        public SyncInvoker<ListFtArtifactsResponse> ListFtArtifactsInvoker(ListFtArtifactsRequest listFtArtifactsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listFtArtifactsRequest.TrainingJobId, out var valueOfTrainingJobId)) urlParam.Add("training_job_id", valueOfTrainingJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/training-jobs/{training_job_id}/ft-artifacts", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFtArtifactsRequest);
+            return new SyncInvoker<ListFtArtifactsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListFtArtifactsResponse>);
+        }
+        
+        /// <summary>
         /// 查询Hyper Cluster详情列表
         ///
         /// 查询Hyper Cluster详情列表接口用于获取所有Hyper Cluster的详细信息。该接口适用于以下场景：当用户需要了解系统中所有超节点网络的配置和状态时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询Hyper Cluster详情的权限。查询操作完成后，接口将返回所有超节点网络的详细信息，包括ID、名称、子网信息等。若用户无权限操作或系统中没有Hyper Cluster，接口将返回相应的错误信息。
@@ -3469,6 +3545,31 @@ namespace HuaweiCloud.SDK.ModelArts.V1
         }
         
         /// <summary>
+        /// 查询项目下训练作业标签列表
+        ///
+        /// 查询项目下训练作业标签列表接口用于获取指定项目下所有训练作业已使用的标签集合，按标签key聚合，每个key下包含所有不同的value。
+        /// 该接口适用于以下场景：当用户需要了解项目下训练作业已使用的所有标签键值对，以便进行标签筛选、资源分类或管理时，可以通过此接口获取标签列表。使用该接口的前提条件是用户具有查看标签的权限。查询操作完成后，平台将返回项目下所有训练作业标签的聚合结果，按key分组，每个key下列出该key出现过的所有不同value。若用户无权限操作，接口将返回相应的错误信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListTrainingJobTagsResponse ListTrainingJobTags(ListTrainingJobTagsRequest listTrainingJobTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/modelarts-training-job/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTrainingJobTagsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListTrainingJobTagsResponse>(response);
+        }
+
+        public SyncInvoker<ListTrainingJobTagsResponse> ListTrainingJobTagsInvoker(ListTrainingJobTagsRequest listTrainingJobTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/modelarts-training-job/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTrainingJobTagsRequest);
+            return new SyncInvoker<ListTrainingJobTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTrainingJobTagsResponse>);
+        }
+        
+        /// <summary>
         /// 查询训练作业的实例历史调度信息
         ///
         /// 查询训练作业调度的实例IP、节点IP等信息，可通过schedule_count参数查询具体的某一次调度的实例信息。
@@ -3523,6 +3624,31 @@ namespace HuaweiCloud.SDK.ModelArts.V1
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/training-job-searches", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listTrainingJobsRequest);
             return new SyncInvoker<ListTrainingJobsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListTrainingJobsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询训练作业资源列表（按标签筛选）
+        ///
+        /// 查询训练作业资源列表接口用于按标签、资源名称等条件筛选项目下符合条件的训练作业资源，并返回每个作业的标签信息。
+        /// 该接口适用于以下场景：当用户需要通过标签或资源名称筛选训练作业，以进行资源分类管理或批量操作时，可以通过此接口获取符合条件的作业资源列表。使用该接口的前提条件是用户具有查看标签的权限。查询操作完成后，平台将返回符合条件的作业资源列表及总数。若标签格式不合法、标签key重复或用户无权限操作，接口将返回相应的错误信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListTrainingJobsByTagsResponse ListTrainingJobsByTags(ListTrainingJobsByTagsRequest listTrainingJobsByTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/modelarts-training-job/resource-instances/filter", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listTrainingJobsByTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ListTrainingJobsByTagsResponse>(response);
+        }
+
+        public SyncInvoker<ListTrainingJobsByTagsResponse> ListTrainingJobsByTagsInvoker(ListTrainingJobsByTagsRequest listTrainingJobsByTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/modelarts-training-job/resource-instances/filter", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listTrainingJobsByTagsRequest);
+            return new SyncInvoker<ListTrainingJobsByTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListTrainingJobsByTagsResponse>);
         }
         
         /// <summary>
@@ -3599,6 +3725,31 @@ namespace HuaweiCloud.SDK.ModelArts.V1
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/intranet-connection/{id}/modify", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyInferIntranetConnectionsRequest);
             return new SyncInvoker<ModifyInferIntranetConnectionsResponse>(this, "POST", request, JsonUtils.DeSerialize<ModifyInferIntranetConnectionsResponse>);
+        }
+        
+        /// <summary>
+        /// 修改训练配额
+        ///
+        /// 修改训练配额接口用于修改用户在ModelArts服务中的训练资源配额信息。
+        /// 该接口适用于以下场景：当管理员需要调整用户的训练资源配额（如作业个数配额、自动老化开关、配额告警通知等）时，可以通过此接口进行修改。使用该接口的前提条件是用户已登录并具有修改配额的权限。修改成功后，用户的训练资源配额将被更新。若用户无权限或配额信息无效，接口将返回相应的错误信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ModifyTrainingQuotasResponse ModifyTrainingQuotas(ModifyTrainingQuotasRequest modifyTrainingQuotasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/training-quotas", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyTrainingQuotasRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<ModifyTrainingQuotasResponse>(response);
+        }
+
+        public SyncInvoker<ModifyTrainingQuotasResponse> ModifyTrainingQuotasInvoker(ModifyTrainingQuotasRequest modifyTrainingQuotasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/training-quotas", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyTrainingQuotasRequest);
+            return new SyncInvoker<ModifyTrainingQuotasResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyTrainingQuotasResponse>);
         }
         
         /// <summary>
@@ -3709,6 +3860,32 @@ namespace HuaweiCloud.SDK.ModelArts.V1
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/pools/{pool_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", patchPoolRequest);
             return new SyncInvoker<PatchPoolResponse>(this, "PATCH", request, JsonUtils.DeSerialize<PatchPoolResponse>);
+        }
+        
+        /// <summary>
+        /// 发布精调训练产物为模型资产
+        ///
+        /// 训练任务运行成功后，将产生的模型信息发布到资产中心。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public PublishFtArtifactsResponse PublishFtArtifacts(PublishFtArtifactsRequest publishFtArtifactsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(publishFtArtifactsRequest.TrainingJobId, out var valueOfTrainingJobId)) urlParam.Add("training_job_id", valueOfTrainingJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/training-jobs/{training_job_id}/ft-artifacts/publish", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", publishFtArtifactsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<PublishFtArtifactsResponse>(response);
+        }
+
+        public SyncInvoker<PublishFtArtifactsResponse> PublishFtArtifactsInvoker(PublishFtArtifactsRequest publishFtArtifactsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(publishFtArtifactsRequest.TrainingJobId, out var valueOfTrainingJobId)) urlParam.Add("training_job_id", valueOfTrainingJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/training-jobs/{training_job_id}/ft-artifacts/publish", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", publishFtArtifactsRequest);
+            return new SyncInvoker<PublishFtArtifactsResponse>(this, "POST", request, JsonUtils.DeSerialize<PublishFtArtifactsResponse>);
         }
         
         /// <summary>
@@ -4157,6 +4334,59 @@ namespace HuaweiCloud.SDK.ModelArts.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/notebooks/{instance_id}/storage/{storage_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDynamicStorageRequest);
             return new SyncInvoker<ShowDynamicStorageResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDynamicStorageResponse>);
+        }
+        
+        /// <summary>
+        /// 查询精调训练作业详情
+        ///
+        /// 查询精调训练作业详情接口用于获取ModelArts平台上指定训练作业的详细信息。
+        /// 该接口适用于以下场景：当用户需要查看特定训练作业的运行状态和配置信息时，可以通过此接口获取作业详情。使用该接口的前提条件是用户已知训练作业ID，并具有查看作业详情的权限。查询操作完成后，平台将返回包含训练作业的状态、配置、日志等详细信息。若训练作业ID不存在或用户无权限操作，接口将返回相应的错误信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowFtDetailResponse ShowFtDetail(ShowFtDetailRequest showFtDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showFtDetailRequest.TrainingJobId, out var valueOfTrainingJobId)) urlParam.Add("training_job_id", valueOfTrainingJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/training-jobs/{training_job_id}/ft-detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFtDetailRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowFtDetailResponse>(response);
+        }
+
+        public SyncInvoker<ShowFtDetailResponse> ShowFtDetailInvoker(ShowFtDetailRequest showFtDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showFtDetailRequest.TrainingJobId, out var valueOfTrainingJobId)) urlParam.Add("training_job_id", valueOfTrainingJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/training-jobs/{training_job_id}/ft-detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFtDetailRequest);
+            return new SyncInvoker<ShowFtDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFtDetailResponse>);
+        }
+        
+        /// <summary>
+        /// 查询精调训练任务指标信息
+        ///
+        /// 查询精调训练任务指标信息，如：训练loss等。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowFtMetricsResponse ShowFtMetrics(ShowFtMetricsRequest showFtMetricsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showFtMetricsRequest.TrainingJobId, out var valueOfTrainingJobId)) urlParam.Add("training_job_id", valueOfTrainingJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/training-jobs/{training_job_id}/ft-metrics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFtMetricsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowFtMetricsResponse>(response);
+        }
+
+        public SyncInvoker<ShowFtMetricsResponse> ShowFtMetricsInvoker(ShowFtMetricsRequest showFtMetricsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showFtMetricsRequest.TrainingJobId, out var valueOfTrainingJobId)) urlParam.Add("training_job_id", valueOfTrainingJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/training-jobs/{training_job_id}/ft-metrics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFtMetricsRequest);
+            return new SyncInvoker<ShowFtMetricsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFtMetricsResponse>);
         }
         
         /// <summary>
@@ -4867,6 +5097,31 @@ namespace HuaweiCloud.SDK.ModelArts.V1
         }
         
         /// <summary>
+        /// 查询资源池规格最大可用资源
+        ///
+        /// 查询资源池规格最大可用资源接口用于获取指定资源池中指定资源规格可分配的最大CPU和内存资源。
+        /// 该接口适用于以下场景：当用户需要在创建训练作业前了解资源池中某规格的可用资源上限，以便合理选择规格和节点数时，可以通过此接口进行查询。使用该接口的前提条件是用户已知资源池ID和资源规格ID，并具有查看训练资源的权限。查询操作完成后，平台将返回该规格在资源池中的最大可用CPU核数和内存大小。若资源池或规格不存在、或用户无权限操作，接口将返回相应的错误信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowTrainingFlavorMaxAvailableResourceResponse ShowTrainingFlavorMaxAvailableResource(ShowTrainingFlavorMaxAvailableResourceRequest showTrainingFlavorMaxAvailableResourceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/training-pool-flavors", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTrainingFlavorMaxAvailableResourceRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowTrainingFlavorMaxAvailableResourceResponse>(response);
+        }
+
+        public SyncInvoker<ShowTrainingFlavorMaxAvailableResourceResponse> ShowTrainingFlavorMaxAvailableResourceInvoker(ShowTrainingFlavorMaxAvailableResourceRequest showTrainingFlavorMaxAvailableResourceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/training-pool-flavors", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTrainingFlavorMaxAvailableResourceRequest);
+            return new SyncInvoker<ShowTrainingFlavorMaxAvailableResourceResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTrainingFlavorMaxAvailableResourceResponse>);
+        }
+        
+        /// <summary>
         /// 查询训练作业详情
         ///
         /// 查询训练作业详情。
@@ -4941,6 +5196,35 @@ namespace HuaweiCloud.SDK.ModelArts.V1
         }
         
         /// <summary>
+        /// 查询训练作业指定任务的日志
+        ///
+        /// 查询训练作业指定任务的日志接口用于获取ModelArts平台上指定训练作业任务的实时运行日志。
+        /// 该接口适用于以下场景：当用户需要查看特定训练任务的运行日志以便排查问题或监控训练进度时，可以通过此接口获取日志内容。使用该接口的前提条件是用户已知训练作业ID和任务ID，并具有查看日志的权限。查询操作完成后，平台将返回包含日志内容、起止行号等信息。若训练作业ID或任务ID不存在、任务未生成日志或用户无权限操作，接口将返回相应的错误信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowTrainingJobLogsFromAomResponse ShowTrainingJobLogsFromAom(ShowTrainingJobLogsFromAomRequest showTrainingJobLogsFromAomRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTrainingJobLogsFromAomRequest.TrainingJobId, out var valueOfTrainingJobId)) urlParam.Add("training_job_id", valueOfTrainingJobId);
+            if (StringUtils.TryConvertToNonEmptyString(showTrainingJobLogsFromAomRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/training-jobs/{training_job_id}/logs/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTrainingJobLogsFromAomRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowTrainingJobLogsFromAomResponse>(response);
+        }
+
+        public SyncInvoker<ShowTrainingJobLogsFromAomResponse> ShowTrainingJobLogsFromAomInvoker(ShowTrainingJobLogsFromAomRequest showTrainingJobLogsFromAomRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTrainingJobLogsFromAomRequest.TrainingJobId, out var valueOfTrainingJobId)) urlParam.Add("training_job_id", valueOfTrainingJobId);
+            if (StringUtils.TryConvertToNonEmptyString(showTrainingJobLogsFromAomRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/training-jobs/{training_job_id}/logs/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTrainingJobLogsFromAomRequest);
+            return new SyncInvoker<ShowTrainingJobLogsFromAomResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTrainingJobLogsFromAomResponse>);
+        }
+        
+        /// <summary>
         /// 查询训练作业指定任务的日志（预览）
         ///
         /// 查询训练作业指定任务的日志（预览）。
@@ -4994,6 +5278,33 @@ namespace HuaweiCloud.SDK.ModelArts.V1
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/training-jobs/{training_job_id}/metrics/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTrainingJobMetricsRequest);
             return new SyncInvoker<ShowTrainingJobMetricsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTrainingJobMetricsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询训练作业的路由规划信息
+        ///
+        /// 查询训练作业的路由规划信息接口用于获取指定训练作业在Ascend规格专属资源池下的路由规划（rank映射）结果。
+        /// 该接口适用于以下场景：当用户在Ascend 910规格专属资源池上创建了多节点（节点数不少于3）训练作业，且需要查询作业实际生效的rank映射关系以进行性能调优或问题定位时，可以通过此接口获取路由规划信息。使用该接口的前提条件是用户已知训练作业ID，并具有查看作业详情的权限。查询操作完成后，平台将返回该作业的路由规划状态与rank映射结果。若训练作业不满足路由规划条件（非Ascend 910规格或节点数少于3），接口将返回状态为failed的默认rank映射结果；若训练作业ID不存在或用户无权限操作，接口将返回相应的错误信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowTrainingJobRoutePlanResponse ShowTrainingJobRoutePlan(ShowTrainingJobRoutePlanRequest showTrainingJobRoutePlanRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTrainingJobRoutePlanRequest.TrainingJobId, out var valueOfTrainingJobId)) urlParam.Add("training_job_id", valueOfTrainingJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/training-jobs/{training_job_id}/route_plan", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTrainingJobRoutePlanRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowTrainingJobRoutePlanResponse>(response);
+        }
+
+        public SyncInvoker<ShowTrainingJobRoutePlanResponse> ShowTrainingJobRoutePlanInvoker(ShowTrainingJobRoutePlanRequest showTrainingJobRoutePlanRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTrainingJobRoutePlanRequest.TrainingJobId, out var valueOfTrainingJobId)) urlParam.Add("training_job_id", valueOfTrainingJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/training-jobs/{training_job_id}/route_plan", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTrainingJobRoutePlanRequest);
+            return new SyncInvoker<ShowTrainingJobRoutePlanResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTrainingJobRoutePlanResponse>);
         }
         
         /// <summary>
@@ -5705,6 +6016,31 @@ namespace HuaweiCloud.SDK.ModelArts.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/workspaces/{workspace_id}/auth", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", validateAuthorizationRequest);
             return new SyncInvoker<ValidateAuthorizationResponse>(this, "POST", request, JsonUtils.DeSerialize<ValidateAuthorizationResponse>);
+        }
+        
+        /// <summary>
+        /// 校验训练作业名称
+        ///
+        /// 校验训练作业名称接口用于校验ModelArts平台上创建训练作业的名称是否重复。
+        /// 该接口适用于以下场景：当用户需要创建训练作业时，可以通过此接口校验训练作业名称是否存在，新创建的名称不存在时才能创建成功。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ValidateTrainingJobNameResponse ValidateTrainingJobName(ValidateTrainingJobNameRequest validateTrainingJobNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/training-job-names", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", validateTrainingJobNameRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ValidateTrainingJobNameResponse>(response);
+        }
+
+        public SyncInvoker<ValidateTrainingJobNameResponse> ValidateTrainingJobNameInvoker(ValidateTrainingJobNameRequest validateTrainingJobNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/training-job-names", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", validateTrainingJobNameRequest);
+            return new SyncInvoker<ValidateTrainingJobNameResponse>(this, "GET", request, JsonUtils.DeSerialize<ValidateTrainingJobNameResponse>);
         }
         
         /// <summary>

@@ -29,19 +29,19 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         public string ClientSecret { get; set; }
 
         /// <summary>
-        /// 该字段为关键字字段。当protocol值为feishu时，这里的keyword字段和sign_secret字段二者必选其一。当用户在飞书或钉钉自定义机器人端添加关键字校验的安全策略时，这里的关键字必须是飞书或钉钉自定义机器人中所填写的关键字之一。
+        /// 该字段为关键字字段。当protocol值为feishu时，这里的keyword字段和sign_secret字段最多选其一。当用户在飞书或钉钉自定义机器人端添加关键字校验的安全策略时，这里的关键字必须是飞书或钉钉页面创建自定义机器人时所填写的关键字之一。
         /// </summary>
         [JsonProperty("keyword", NullValueHandling = NullValueHandling.Ignore)]
         public string Keyword { get; set; }
 
         /// <summary>
-        /// 这是加签密钥字段。当protocol协议为feishu时，这个字段和keyword字段二者必选且只能选其一。密钥配置必须与客户在飞书或钉钉自定义机器人的密钥配置完全一致。例如，如果在飞书端配置了密钥并且没有配置关键字，则在此处填入从飞书获取的密钥字段，如果在飞书端没有配置密钥并且配置了关键字，则不填写该字段。
+        /// 这是加签密钥字段。当protocol协议为feishu时，这个字段和keyword字段二者最多选其一。密钥配置必须与客户在飞书或钉钉自定义机器人的密钥配置完全一致。例如，如果在飞书端配置了密钥并且没有配置关键字，则在此处填入从飞书获取的密钥字段，如果在飞书端没有配置密钥并且配置了关键字，则不填写该字段。
         /// </summary>
         [JsonProperty("sign_secret", NullValueHandling = NullValueHandling.Ignore)]
         public string SignSecret { get; set; }
 
         /// <summary>
-        /// 该字段为http header字段，用户可以在字段限制范围内自定义http header，header字段内容以KV对形式存在。当使用主题发送时，已确认的订阅发送消息会携带用户自定义的http header。 header应满足如下要求： key值限定为：包含英文字母([A-Za-z])、数字([0-9])、中划线(-)hyphens，中划线不得作为结尾，不得连续出现。 K/V不得超过10个 key需要以\&quot;x-\&quot;开头，不能以\&quot;x-smn\&quot;开头，正确示例：x-abc-cba, x-abc 所有K/V长度总和不得超过1024个字符 key不区分大小写 key值不可重复 value值限定为ASCII码，不支持中文或其他Unicode，支持空格
+        /// 该字段为http header字段，用户可以在字段限制范围内自定义http header，header字段内容以KV对形式存在。当使用主题发送时，已确认的订阅发送消息会携带用户自定义的http header。 header应满足如下要求： key值限定为：包含英文字母([A-Za-z])、数字([0-9])、中划线(-)hyphens，中划线不得作为开头和结尾，不得连续出现。 K/V不得超过10个 key需要以字母开头，不能以\&quot;x-smn\&quot;开头，正确示例:abc,x-abc 所有K/V长度总和不得超过1024个字符 key不区分大小写 key值不可重复 value值限定为ASCII码，不支持中文或其他Unicode，支持空格
         /// </summary>
         [JsonProperty("header", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, string> Header { get; set; }
@@ -64,6 +64,12 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         [JsonProperty("robot_code", NullValueHandling = NullValueHandling.Ignore)]
         public string RobotCode { get; set; }
 
+        /// <summary>
+        /// 是否启用验证码，默认为false。当protocol值为sms或callnotify，且该字段值设置为true时，发送订阅确认短信为验证码格式；该字段为false或者不存在时，发送的订阅确认短信为超链接格式。当protocol值为其他协议时，该字段不生效
+        /// </summary>
+        [JsonProperty("verification_code_enabled", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? VerificationCodeEnabled { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +87,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
             sb.Append("  appKey: ").Append(AppKey).Append("\n");
             sb.Append("  appSecret: ").Append(AppSecret).Append("\n");
             sb.Append("  robotCode: ").Append(RobotCode).Append("\n");
+            sb.Append("  verificationCodeEnabled: ").Append(VerificationCodeEnabled).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +114,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
             if (this.AppKey != input.AppKey || (this.AppKey != null && !this.AppKey.Equals(input.AppKey))) return false;
             if (this.AppSecret != input.AppSecret || (this.AppSecret != null && !this.AppSecret.Equals(input.AppSecret))) return false;
             if (this.RobotCode != input.RobotCode || (this.RobotCode != null && !this.RobotCode.Equals(input.RobotCode))) return false;
+            if (this.VerificationCodeEnabled != input.VerificationCodeEnabled || (this.VerificationCodeEnabled != null && !this.VerificationCodeEnabled.Equals(input.VerificationCodeEnabled))) return false;
 
             return true;
         }
@@ -127,6 +135,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
                 if (this.AppKey != null) hashCode = hashCode * 59 + this.AppKey.GetHashCode();
                 if (this.AppSecret != null) hashCode = hashCode * 59 + this.AppSecret.GetHashCode();
                 if (this.RobotCode != null) hashCode = hashCode * 59 + this.RobotCode.GetHashCode();
+                if (this.VerificationCodeEnabled != null) hashCode = hashCode * 59 + this.VerificationCodeEnabled.GetHashCode();
                 return hashCode;
             }
         }

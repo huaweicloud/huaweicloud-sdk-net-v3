@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.Smnglobal.V2.Model
         [JsonProperty("endpoint", NullValueHandling = NullValueHandling.Ignore)]
         public string Endpoint { get; set; }
 
+        /// <summary>
+        /// 是否启用验证码，默认为false。当protocol值为sms或callnotify，且该字段值设置为true时，发送订阅确认短信为验证码格式；该字段为false或者不存在时，发送的订阅确认短信为超链接格式。当protocol值为其他协议时，该字段不生效
+        /// </summary>
+        [JsonProperty("verification_code_enabled", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? VerificationCodeEnabled { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Smnglobal.V2.Model
             var sb = new StringBuilder();
             sb.Append("class CreateSubscriptionUserRequestSmsEndpointInfo {\n");
             sb.Append("  endpoint: ").Append(Endpoint).Append("\n");
+            sb.Append("  verificationCodeEnabled: ").Append(VerificationCodeEnabled).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.Smnglobal.V2.Model
         {
             if (input == null) return false;
             if (this.Endpoint != input.Endpoint || (this.Endpoint != null && !this.Endpoint.Equals(input.Endpoint))) return false;
+            if (this.VerificationCodeEnabled != input.VerificationCodeEnabled || (this.VerificationCodeEnabled != null && !this.VerificationCodeEnabled.Equals(input.VerificationCodeEnabled))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.Smnglobal.V2.Model
             {
                 var hashCode = 41;
                 if (this.Endpoint != null) hashCode = hashCode * 59 + this.Endpoint.GetHashCode();
+                if (this.VerificationCodeEnabled != null) hashCode = hashCode * 59 + this.VerificationCodeEnabled.GetHashCode();
                 return hashCode;
             }
         }

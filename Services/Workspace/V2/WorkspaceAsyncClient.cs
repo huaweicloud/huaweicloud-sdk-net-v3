@@ -1852,6 +1852,56 @@ namespace HuaweiCloud.SDK.Workspace.V2
         }
         
         /// <summary>
+        /// 查询公共技能列表（只读）
+        ///
+        /// 企业租户查询公共技能列表（只读），支持按分类、状态过滤。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListCommonSkillsResponse> ListCommonSkillsAsync(ListCommonSkillsRequest listCommonSkillsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/common-skills", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCommonSkillsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListCommonSkillsResponse>(response);
+        }
+
+        public AsyncInvoker<ListCommonSkillsResponse> ListCommonSkillsAsyncInvoker(ListCommonSkillsRequest listCommonSkillsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/common-skills", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCommonSkillsRequest);
+            return new AsyncInvoker<ListCommonSkillsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCommonSkillsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询公共技能详情（只读）
+        ///
+        /// 企业租户查询公共技能详情（只读）。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowCommonSkillResponse> ShowCommonSkillAsync(ShowCommonSkillRequest showCommonSkillRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showCommonSkillRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/common-skills/{skill_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCommonSkillRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowCommonSkillResponse>(response);
+        }
+
+        public AsyncInvoker<ShowCommonSkillResponse> ShowCommonSkillAsyncInvoker(ShowCommonSkillRequest showCommonSkillRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showCommonSkillRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/common-skills/{skill_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCommonSkillRequest);
+            return new AsyncInvoker<ShowCommonSkillResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCommonSkillResponse>);
+        }
+        
+        /// <summary>
         /// 导出连接记录(待废弃)
         ///
         /// 该接口用于导出连接记录，待废弃。
@@ -3130,6 +3180,32 @@ namespace HuaweiCloud.SDK.Workspace.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/desktop-pools/{pool_id}/volumes/batch-add", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addDesktopPoolVolumesRequest);
             return new AsyncInvoker<AddDesktopPoolVolumesResponse>(this, "POST", request, JsonUtils.DeSerialize<AddDesktopPoolVolumesResponse>);
+        }
+        
+        /// <summary>
+        /// 桌面池绑定用户
+        ///
+        /// 将用户绑定到桌面池。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<AttachDesktopPoolUserResponse> AttachDesktopPoolUserAsync(AttachDesktopPoolUserRequest attachDesktopPoolUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(attachDesktopPoolUserRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/desktop-pools/{pool_id}/attach", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", attachDesktopPoolUserRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<AttachDesktopPoolUserResponse>(response);
+        }
+
+        public AsyncInvoker<AttachDesktopPoolUserResponse> AttachDesktopPoolUserAsyncInvoker(AttachDesktopPoolUserRequest attachDesktopPoolUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(attachDesktopPoolUserRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/desktop-pools/{pool_id}/attach", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", attachDesktopPoolUserRequest);
+            return new AsyncInvoker<AttachDesktopPoolUserResponse>(this, "POST", request, JsonUtils.DeSerialize<AttachDesktopPoolUserResponse>);
         }
         
         /// <summary>
@@ -7962,6 +8038,628 @@ namespace HuaweiCloud.SDK.Workspace.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/sites/{site_id}/subnet-ids", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSubnetIdsRequest);
             return new AsyncInvoker<UpdateSubnetIdsResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSubnetIdsResponse>);
+        }
+        
+        /// <summary>
+        /// 创建技能绑定
+        ///
+        /// 批量绑定技能到实例。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateSkillBindingsResponse> CreateSkillBindingsAsync(CreateSkillBindingsRequest createSkillBindingsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skill-bindings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSkillBindingsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateSkillBindingsResponse>(response);
+        }
+
+        public AsyncInvoker<CreateSkillBindingsResponse> CreateSkillBindingsAsyncInvoker(CreateSkillBindingsRequest createSkillBindingsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skill-bindings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSkillBindingsRequest);
+            return new AsyncInvoker<CreateSkillBindingsResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateSkillBindingsResponse>);
+        }
+        
+        /// <summary>
+        /// 删除技能绑定
+        ///
+        /// 批量解绑技能。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteSkillBindingsResponse> DeleteSkillBindingsAsync(DeleteSkillBindingsRequest deleteSkillBindingsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skill-bindings/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSkillBindingsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<DeleteSkillBindingsResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteSkillBindingsResponse> DeleteSkillBindingsAsyncInvoker(DeleteSkillBindingsRequest deleteSkillBindingsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skill-bindings/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSkillBindingsRequest);
+            return new AsyncInvoker<DeleteSkillBindingsResponse>(this, "POST", request, JsonUtils.DeSerialize<DeleteSkillBindingsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询公共技能绑定的资源列表
+        ///
+        /// 查询公共技能绑定的资源列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListCommonSkillResourcesResponse> ListCommonSkillResourcesAsync(ListCommonSkillResourcesRequest listCommonSkillResourcesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listCommonSkillResourcesRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/common-skills/{skill_id}/resources", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCommonSkillResourcesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListCommonSkillResourcesResponse>(response);
+        }
+
+        public AsyncInvoker<ListCommonSkillResourcesResponse> ListCommonSkillResourcesAsyncInvoker(ListCommonSkillResourcesRequest listCommonSkillResourcesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listCommonSkillResourcesRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/common-skills/{skill_id}/resources", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCommonSkillResourcesRequest);
+            return new AsyncInvoker<ListCommonSkillResourcesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCommonSkillResourcesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询实例绑定的技能列表
+        ///
+        /// 查询实例绑定的技能列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListInstanceSkillsResponse> ListInstanceSkillsAsync(ListInstanceSkillsRequest listInstanceSkillsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceSkillsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/instances/{instance_id}/skills", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceSkillsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceSkillsResponse>(response);
+        }
+
+        public AsyncInvoker<ListInstanceSkillsResponse> ListInstanceSkillsAsyncInvoker(ListInstanceSkillsRequest listInstanceSkillsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceSkillsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/instances/{instance_id}/skills", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceSkillsRequest);
+            return new AsyncInvoker<ListInstanceSkillsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceSkillsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询安全策略管控资源列表
+        ///
+        /// 查询安全策略管控的资源列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListSecurityPolicyControlResourcesResponse> ListSecurityPolicyControlResourcesAsync(ListSecurityPolicyControlResourcesRequest listSecurityPolicyControlResourcesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/security-policy-control/resources", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecurityPolicyControlResourcesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListSecurityPolicyControlResourcesResponse>(response);
+        }
+
+        public AsyncInvoker<ListSecurityPolicyControlResourcesResponse> ListSecurityPolicyControlResourcesAsyncInvoker(ListSecurityPolicyControlResourcesRequest listSecurityPolicyControlResourcesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/security-policy-control/resources", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecurityPolicyControlResourcesRequest);
+            return new AsyncInvoker<ListSecurityPolicyControlResourcesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSecurityPolicyControlResourcesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询企业技能绑定的资源列表
+        ///
+        /// 查询企业自研技能绑定的资源列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListSkillResourcesResponse> ListSkillResourcesAsync(ListSkillResourcesRequest listSkillResourcesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listSkillResourcesRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skills/{skill_id}/resources", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSkillResourcesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListSkillResourcesResponse>(response);
+        }
+
+        public AsyncInvoker<ListSkillResourcesResponse> ListSkillResourcesAsyncInvoker(ListSkillResourcesRequest listSkillResourcesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listSkillResourcesRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skills/{skill_id}/resources", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSkillResourcesRequest);
+            return new AsyncInvoker<ListSkillResourcesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSkillResourcesResponse>);
+        }
+        
+        /// <summary>
+        /// 更新安全策略管控
+        ///
+        /// 批量更新实例的安全策略管控状态。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateSecurityPolicyControlResponse> UpdateSecurityPolicyControlAsync(UpdateSecurityPolicyControlRequest updateSecurityPolicyControlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skills/security-policy-control", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSecurityPolicyControlRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<UpdateSecurityPolicyControlResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateSecurityPolicyControlResponse> UpdateSecurityPolicyControlAsyncInvoker(UpdateSecurityPolicyControlRequest updateSecurityPolicyControlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skills/security-policy-control", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSecurityPolicyControlRequest);
+            return new AsyncInvoker<UpdateSecurityPolicyControlResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateSecurityPolicyControlResponse>);
+        }
+        
+        /// <summary>
+        /// 批量查询技能包
+        ///
+        /// 根据技能ID列表批量查询当前生效的技能包信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchListSkillPackagesResponse> BatchListSkillPackagesAsync(BatchListSkillPackagesRequest batchListSkillPackagesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skill-packages/batch-query", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchListSkillPackagesRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<BatchListSkillPackagesResponse>(response);
+        }
+
+        public AsyncInvoker<BatchListSkillPackagesResponse> BatchListSkillPackagesAsyncInvoker(BatchListSkillPackagesRequest batchListSkillPackagesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skill-packages/batch-query", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchListSkillPackagesRequest);
+            return new AsyncInvoker<BatchListSkillPackagesResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchListSkillPackagesResponse>);
+        }
+        
+        /// <summary>
+        /// 生成下载地址
+        ///
+        /// 生成企业自研技能包的OBS预签名下载地址。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateDownloadUrlResponse> CreateDownloadUrlAsync(CreateDownloadUrlRequest createDownloadUrlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createDownloadUrlRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            if (StringUtils.TryConvertToNonEmptyString(createDownloadUrlRequest.PackageId, out var valueOfPackageId)) urlParam.Add("package_id", valueOfPackageId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skills/{skill_id}/packages/{package_id}/download-url", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDownloadUrlRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateDownloadUrlResponse>(response);
+        }
+
+        public AsyncInvoker<CreateDownloadUrlResponse> CreateDownloadUrlAsyncInvoker(CreateDownloadUrlRequest createDownloadUrlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createDownloadUrlRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            if (StringUtils.TryConvertToNonEmptyString(createDownloadUrlRequest.PackageId, out var valueOfPackageId)) urlParam.Add("package_id", valueOfPackageId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skills/{skill_id}/packages/{package_id}/download-url", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDownloadUrlRequest);
+            return new AsyncInvoker<CreateDownloadUrlResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDownloadUrlResponse>);
+        }
+        
+        /// <summary>
+        /// 创建技能包
+        ///
+        /// 为企业自研技能上传新版本技能包。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateSkillPackageResponse> CreateSkillPackageAsync(CreateSkillPackageRequest createSkillPackageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createSkillPackageRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skills/{skill_id}/packages", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSkillPackageRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateSkillPackageResponse>(response);
+        }
+
+        public AsyncInvoker<CreateSkillPackageResponse> CreateSkillPackageAsyncInvoker(CreateSkillPackageRequest createSkillPackageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createSkillPackageRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skills/{skill_id}/packages", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSkillPackageRequest);
+            return new AsyncInvoker<CreateSkillPackageResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateSkillPackageResponse>);
+        }
+        
+        /// <summary>
+        /// 生成上传地址
+        ///
+        /// 生成OBS预签名上传地址，用于企业自研技能包上传。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateUploadUrlsResponse> CreateUploadUrlsAsync(CreateUploadUrlsRequest createUploadUrlsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skill-packages/upload-urls", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createUploadUrlsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateUploadUrlsResponse>(response);
+        }
+
+        public AsyncInvoker<CreateUploadUrlsResponse> CreateUploadUrlsAsyncInvoker(CreateUploadUrlsRequest createUploadUrlsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skill-packages/upload-urls", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createUploadUrlsRequest);
+            return new AsyncInvoker<CreateUploadUrlsResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateUploadUrlsResponse>);
+        }
+        
+        /// <summary>
+        /// 删除技能包
+        ///
+        /// 删除企业自研技能的技能包。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteSkillPackageResponse> DeleteSkillPackageAsync(DeleteSkillPackageRequest deleteSkillPackageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteSkillPackageRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteSkillPackageRequest.PackageId, out var valueOfPackageId)) urlParam.Add("package_id", valueOfPackageId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skills/{skill_id}/packages/{package_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSkillPackageRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteSkillPackageResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteSkillPackageResponse> DeleteSkillPackageAsyncInvoker(DeleteSkillPackageRequest deleteSkillPackageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteSkillPackageRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteSkillPackageRequest.PackageId, out var valueOfPackageId)) urlParam.Add("package_id", valueOfPackageId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skills/{skill_id}/packages/{package_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSkillPackageRequest);
+            return new AsyncInvoker<DeleteSkillPackageResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSkillPackageResponse>);
+        }
+        
+        /// <summary>
+        /// 扩展技能包区域
+        ///
+        /// 为企业自研技能包扩展新的OBS区域。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ExpandSkillPackageRegionResponse> ExpandSkillPackageRegionAsync(ExpandSkillPackageRegionRequest expandSkillPackageRegionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(expandSkillPackageRegionRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            if (StringUtils.TryConvertToNonEmptyString(expandSkillPackageRegionRequest.PackageId, out var valueOfPackageId)) urlParam.Add("package_id", valueOfPackageId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skills/{skill_id}/packages/{package_id}/regions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", expandSkillPackageRegionRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ExpandSkillPackageRegionResponse>(response);
+        }
+
+        public AsyncInvoker<ExpandSkillPackageRegionResponse> ExpandSkillPackageRegionAsyncInvoker(ExpandSkillPackageRegionRequest expandSkillPackageRegionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(expandSkillPackageRegionRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            if (StringUtils.TryConvertToNonEmptyString(expandSkillPackageRegionRequest.PackageId, out var valueOfPackageId)) urlParam.Add("package_id", valueOfPackageId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skills/{skill_id}/packages/{package_id}/regions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", expandSkillPackageRegionRequest);
+            return new AsyncInvoker<ExpandSkillPackageRegionResponse>(this, "POST", request, JsonUtils.DeSerialize<ExpandSkillPackageRegionResponse>);
+        }
+        
+        /// <summary>
+        /// 查询公共技能包列表（只读）
+        ///
+        /// 企业租户查询公共技能的技能包列表（只读）。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListCommonSkillPackagesResponse> ListCommonSkillPackagesAsync(ListCommonSkillPackagesRequest listCommonSkillPackagesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listCommonSkillPackagesRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/common-skills/{skill_id}/packages", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCommonSkillPackagesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListCommonSkillPackagesResponse>(response);
+        }
+
+        public AsyncInvoker<ListCommonSkillPackagesResponse> ListCommonSkillPackagesAsyncInvoker(ListCommonSkillPackagesRequest listCommonSkillPackagesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listCommonSkillPackagesRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/common-skills/{skill_id}/packages", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCommonSkillPackagesRequest);
+            return new AsyncInvoker<ListCommonSkillPackagesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCommonSkillPackagesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询技能包列表
+        ///
+        /// 查询企业自研技能的技能包列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListSkillPackagesResponse> ListSkillPackagesAsync(ListSkillPackagesRequest listSkillPackagesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listSkillPackagesRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skills/{skill_id}/packages", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSkillPackagesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListSkillPackagesResponse>(response);
+        }
+
+        public AsyncInvoker<ListSkillPackagesResponse> ListSkillPackagesAsyncInvoker(ListSkillPackagesRequest listSkillPackagesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listSkillPackagesRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skills/{skill_id}/packages", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSkillPackagesRequest);
+            return new AsyncInvoker<ListSkillPackagesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSkillPackagesResponse>);
+        }
+        
+        /// <summary>
+        /// 移除技能包区域
+        ///
+        /// 批量移除企业自研技能包的OBS区域。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<RemoveSkillPackageRegionResponse> RemoveSkillPackageRegionAsync(RemoveSkillPackageRegionRequest removeSkillPackageRegionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(removeSkillPackageRegionRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            if (StringUtils.TryConvertToNonEmptyString(removeSkillPackageRegionRequest.PackageId, out var valueOfPackageId)) urlParam.Add("package_id", valueOfPackageId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skills/{skill_id}/packages/{package_id}/regions/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeSkillPackageRegionRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<RemoveSkillPackageRegionResponse>(response);
+        }
+
+        public AsyncInvoker<RemoveSkillPackageRegionResponse> RemoveSkillPackageRegionAsyncInvoker(RemoveSkillPackageRegionRequest removeSkillPackageRegionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(removeSkillPackageRegionRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            if (StringUtils.TryConvertToNonEmptyString(removeSkillPackageRegionRequest.PackageId, out var valueOfPackageId)) urlParam.Add("package_id", valueOfPackageId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skills/{skill_id}/packages/{package_id}/regions/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeSkillPackageRegionRequest);
+            return new AsyncInvoker<RemoveSkillPackageRegionResponse>(this, "POST", request, JsonUtils.DeSerialize<RemoveSkillPackageRegionResponse>);
+        }
+        
+        /// <summary>
+        /// 查询公共技能包详情（只读）
+        ///
+        /// 企业租户查询公共技能的技能包详情（只读）。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowCommonSkillPackageResponse> ShowCommonSkillPackageAsync(ShowCommonSkillPackageRequest showCommonSkillPackageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showCommonSkillPackageRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            if (StringUtils.TryConvertToNonEmptyString(showCommonSkillPackageRequest.PackageId, out var valueOfPackageId)) urlParam.Add("package_id", valueOfPackageId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/common-skills/{skill_id}/packages/{package_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCommonSkillPackageRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowCommonSkillPackageResponse>(response);
+        }
+
+        public AsyncInvoker<ShowCommonSkillPackageResponse> ShowCommonSkillPackageAsyncInvoker(ShowCommonSkillPackageRequest showCommonSkillPackageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showCommonSkillPackageRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            if (StringUtils.TryConvertToNonEmptyString(showCommonSkillPackageRequest.PackageId, out var valueOfPackageId)) urlParam.Add("package_id", valueOfPackageId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/common-skills/{skill_id}/packages/{package_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCommonSkillPackageRequest);
+            return new AsyncInvoker<ShowCommonSkillPackageResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCommonSkillPackageResponse>);
+        }
+        
+        /// <summary>
+        /// 查询技能包详情
+        ///
+        /// 查询企业自研技能的技能包详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowSkillPackageResponse> ShowSkillPackageAsync(ShowSkillPackageRequest showSkillPackageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showSkillPackageRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            if (StringUtils.TryConvertToNonEmptyString(showSkillPackageRequest.PackageId, out var valueOfPackageId)) urlParam.Add("package_id", valueOfPackageId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skills/{skill_id}/packages/{package_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSkillPackageRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowSkillPackageResponse>(response);
+        }
+
+        public AsyncInvoker<ShowSkillPackageResponse> ShowSkillPackageAsyncInvoker(ShowSkillPackageRequest showSkillPackageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showSkillPackageRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            if (StringUtils.TryConvertToNonEmptyString(showSkillPackageRequest.PackageId, out var valueOfPackageId)) urlParam.Add("package_id", valueOfPackageId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skills/{skill_id}/packages/{package_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSkillPackageRequest);
+            return new AsyncInvoker<ShowSkillPackageResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSkillPackageResponse>);
+        }
+        
+        /// <summary>
+        /// 更新技能包
+        ///
+        /// 更新企业自研技能的技能包信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateSkillPackageResponse> UpdateSkillPackageAsync(UpdateSkillPackageRequest updateSkillPackageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateSkillPackageRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            if (StringUtils.TryConvertToNonEmptyString(updateSkillPackageRequest.PackageId, out var valueOfPackageId)) urlParam.Add("package_id", valueOfPackageId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skills/{skill_id}/packages/{package_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSkillPackageRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateSkillPackageResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateSkillPackageResponse> UpdateSkillPackageAsyncInvoker(UpdateSkillPackageRequest updateSkillPackageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateSkillPackageRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            if (StringUtils.TryConvertToNonEmptyString(updateSkillPackageRequest.PackageId, out var valueOfPackageId)) urlParam.Add("package_id", valueOfPackageId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skills/{skill_id}/packages/{package_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSkillPackageRequest);
+            return new AsyncInvoker<UpdateSkillPackageResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSkillPackageResponse>);
+        }
+        
+        /// <summary>
+        /// 创建企业自研技能
+        ///
+        /// 创建企业自研技能，支持同时上传技能包。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateSkillResponse> CreateSkillAsync(CreateSkillRequest createSkillRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skills", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSkillRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateSkillResponse>(response);
+        }
+
+        public AsyncInvoker<CreateSkillResponse> CreateSkillAsyncInvoker(CreateSkillRequest createSkillRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skills", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSkillRequest);
+            return new AsyncInvoker<CreateSkillResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateSkillResponse>);
+        }
+        
+        /// <summary>
+        /// 删除企业自研技能
+        ///
+        /// 删除企业自研技能。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteSkillResponse> DeleteSkillAsync(DeleteSkillRequest deleteSkillRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteSkillRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skills/{skill_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSkillRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteSkillResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteSkillResponse> DeleteSkillAsyncInvoker(DeleteSkillRequest deleteSkillRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteSkillRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skills/{skill_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSkillRequest);
+            return new AsyncInvoker<DeleteSkillResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSkillResponse>);
+        }
+        
+        /// <summary>
+        /// 查询企业自研技能列表
+        ///
+        /// 查询企业自研技能列表，支持按分类、状态过滤。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListSkillsResponse> ListSkillsAsync(ListSkillsRequest listSkillsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skills", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSkillsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListSkillsResponse>(response);
+        }
+
+        public AsyncInvoker<ListSkillsResponse> ListSkillsAsyncInvoker(ListSkillsRequest listSkillsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skills", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSkillsRequest);
+            return new AsyncInvoker<ListSkillsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSkillsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询企业自研技能详情
+        ///
+        /// 查询企业自研技能详情，包含技能包摘要列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowSkillResponse> ShowSkillAsync(ShowSkillRequest showSkillRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showSkillRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skills/{skill_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSkillRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowSkillResponse>(response);
+        }
+
+        public AsyncInvoker<ShowSkillResponse> ShowSkillAsyncInvoker(ShowSkillRequest showSkillRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showSkillRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skills/{skill_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSkillRequest);
+            return new AsyncInvoker<ShowSkillResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSkillResponse>);
+        }
+        
+        /// <summary>
+        /// 更新企业自研技能
+        ///
+        /// 更新企业自研技能信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateSkillResponse> UpdateSkillAsync(UpdateSkillRequest updateSkillRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateSkillRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skills/{skill_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSkillRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateSkillResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateSkillResponse> UpdateSkillAsyncInvoker(UpdateSkillRequest updateSkillRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateSkillRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/ai-agents/skills/{skill_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSkillRequest);
+            return new AsyncInvoker<UpdateSkillResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSkillResponse>);
         }
         
         /// <summary>

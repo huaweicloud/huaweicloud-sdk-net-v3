@@ -99,6 +99,30 @@ namespace HuaweiCloud.SDK.Evs.V2
         }
         
         /// <summary>
+        /// 修改云硬盘计费模式
+        ///
+        /// 将挂载状态下的云硬盘的计费模式有按需转成包周期，且到期时间和挂载的虚拟机保持一致。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ChangeVolumeChargeModeResponse> ChangeVolumeChargeModeAsync(ChangeVolumeChargeModeRequest changeVolumeChargeModeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/change-charge-mode", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeVolumeChargeModeRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<ChangeVolumeChargeModeResponse>(response);
+        }
+
+        public AsyncInvoker<ChangeVolumeChargeModeResponse> ChangeVolumeChargeModeAsyncInvoker(ChangeVolumeChargeModeRequest changeVolumeChargeModeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/change-charge-mode", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeVolumeChargeModeRequest);
+            return new AsyncInvoker<ChangeVolumeChargeModeResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ChangeVolumeChargeModeResponse>);
+        }
+        
+        /// <summary>
         /// 接受云硬盘过户
         ///
         /// 通过云硬盘过户记录ID以及身份认证密钥来接受云硬盘过户。

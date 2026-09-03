@@ -517,6 +517,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 合并Binlog
+        ///
+        /// 合并Binlog
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateBinlogMergeResponse CreateBinlogMerge(CreateBinlogMergeRequest createBinlogMergeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createBinlogMergeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/packlog", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createBinlogMergeRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateBinlogMergeResponse>(response);
+        }
+
+        public SyncInvoker<CreateBinlogMergeResponse> CreateBinlogMergeInvoker(CreateBinlogMergeRequest createBinlogMergeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createBinlogMergeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/packlog", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createBinlogMergeRequest);
+            return new SyncInvoker<CreateBinlogMergeResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateBinlogMergeResponse>);
+        }
+        
+        /// <summary>
         /// 创建参数模板
         ///
         /// 创建参数模板。
@@ -538,6 +564,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createConfigurationRequest);
             return new SyncInvoker<CreateConfigurationResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateConfigurationResponse>);
+        }
+        
+        /// <summary>
+        /// 磁盘容量趋势诊断
+        ///
+        /// 磁盘容量趋势诊断
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateDiskSpaceDiagnosisResponse CreateDiskSpaceDiagnosis(CreateDiskSpaceDiagnosisRequest createDiskSpaceDiagnosisRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createDiskSpaceDiagnosisRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/diagnosis/disk", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDiskSpaceDiagnosisRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateDiskSpaceDiagnosisResponse>(response);
+        }
+
+        public SyncInvoker<CreateDiskSpaceDiagnosisResponse> CreateDiskSpaceDiagnosisInvoker(CreateDiskSpaceDiagnosisRequest createDiskSpaceDiagnosisRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createDiskSpaceDiagnosisRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/diagnosis/disk", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDiskSpaceDiagnosisRequest);
+            return new SyncInvoker<CreateDiskSpaceDiagnosisResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDiskSpaceDiagnosisResponse>);
         }
         
         /// <summary>
@@ -816,6 +868,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/delete-selection", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBackupSelectionRequest);
             return new SyncInvoker<DeleteBackupSelectionResponse>(this, "POST", request, JsonUtils.DeSerialize<DeleteBackupSelectionResponse>);
+        }
+        
+        /// <summary>
+        /// 删除Binlog合并记录
+        ///
+        /// 删除Binlog合并记录
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteBinlogMergeResponse DeleteBinlogMerge(DeleteBinlogMergeRequest deleteBinlogMergeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteBinlogMergeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/packlog", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBinlogMergeRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteBinlogMergeResponse>(response);
+        }
+
+        public SyncInvoker<DeleteBinlogMergeResponse> DeleteBinlogMergeInvoker(DeleteBinlogMergeRequest deleteBinlogMergeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteBinlogMergeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/packlog", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBinlogMergeRequest);
+            return new SyncInvoker<DeleteBinlogMergeResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteBinlogMergeResponse>);
         }
         
         /// <summary>
@@ -1127,6 +1205,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/apply", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableConfigurationRequest);
             return new SyncInvoker<EnableConfigurationResponse>(this, "PUT", request, JsonUtils.DeSerialize<EnableConfigurationResponse>);
+        }
+        
+        /// <summary>
+        /// 查询实例CES监控指标名称列表
+        ///
+        /// 查询实例CES监控指标名称列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public GetInstancesOpsMetricNamesResponse GetInstancesOpsMetricNames(GetInstancesOpsMetricNamesRequest getInstancesOpsMetricNamesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(getInstancesOpsMetricNamesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ops/metric-names", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getInstancesOpsMetricNamesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<GetInstancesOpsMetricNamesResponse>(response);
+        }
+
+        public SyncInvoker<GetInstancesOpsMetricNamesResponse> GetInstancesOpsMetricNamesInvoker(GetInstancesOpsMetricNamesRequest getInstancesOpsMetricNamesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(getInstancesOpsMetricNamesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ops/metric-names", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getInstancesOpsMetricNamesRequest);
+            return new SyncInvoker<GetInstancesOpsMetricNamesResponse>(this, "GET", request, JsonUtils.DeSerialize<GetInstancesOpsMetricNamesResponse>);
         }
         
         /// <summary>
@@ -2334,6 +2438,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 查询被删除实例保留的备份
+        ///
+        /// 查询被删除实例保留的备份
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListRetainBackupsResponse ListRetainBackups(ListRetainBackupsRequest listRetainBackupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listRetainBackupsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/retain-backups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRetainBackupsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListRetainBackupsResponse>(response);
+        }
+
+        public SyncInvoker<ListRetainBackupsResponse> ListRetainBackupsInvoker(ListRetainBackupsRequest listRetainBackupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listRetainBackupsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/retain-backups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRetainBackupsRequest);
+            return new SyncInvoker<ListRetainBackupsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRetainBackupsResponse>);
+        }
+        
+        /// <summary>
         /// 查询事件列表
         ///
         /// 查询事件列表
@@ -2898,6 +3028,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 设置备份加密开关
+        ///
+        /// 设置备份加密开关
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ModifyNewBackupEncryptResponse ModifyNewBackupEncrypt(ModifyNewBackupEncryptRequest modifyNewBackupEncryptRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(modifyNewBackupEncryptRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/encryption", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyNewBackupEncryptRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ModifyNewBackupEncryptResponse>(response);
+        }
+
+        public SyncInvoker<ModifyNewBackupEncryptResponse> ModifyNewBackupEncryptInvoker(ModifyNewBackupEncryptRequest modifyNewBackupEncryptRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(modifyNewBackupEncryptRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/encryption", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyNewBackupEncryptRequest);
+            return new SyncInvoker<ModifyNewBackupEncryptResponse>(this, "POST", request, JsonUtils.DeSerialize<ModifyNewBackupEncryptResponse>);
+        }
+        
+        /// <summary>
         /// 修改pg_hba.conf文件的单个或多个配置
         ///
         /// 修改/新增pg_hba.conf文件的单个或多个配置，以priority做唯一标识，priority不存在的新增，存在的修改
@@ -2975,6 +3131,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replace-node", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", notifyReplaceNodeRequest);
             return new SyncInvoker<NotifyReplaceNodeResponse>(this, "POST", request, JsonUtils.DeSerialize<NotifyReplaceNodeResponse>);
+        }
+        
+        /// <summary>
+        /// 查询未加密实例是否打开备份加密开关
+        ///
+        /// 查询未加密实例是否打开备份加密开关
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public QueryNewBackupEncryptionResponse QueryNewBackupEncryption(QueryNewBackupEncryptionRequest queryNewBackupEncryptionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(queryNewBackupEncryptionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/encryption", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", queryNewBackupEncryptionRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<QueryNewBackupEncryptionResponse>(response);
+        }
+
+        public SyncInvoker<QueryNewBackupEncryptionResponse> QueryNewBackupEncryptionInvoker(QueryNewBackupEncryptionRequest queryNewBackupEncryptionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(queryNewBackupEncryptionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/encryption", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", queryNewBackupEncryptionRequest);
+            return new SyncInvoker<QueryNewBackupEncryptionResponse>(this, "GET", request, JsonUtils.DeSerialize<QueryNewBackupEncryptionResponse>);
         }
         
         /// <summary>
@@ -3233,6 +3415,30 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setBackupPolicyRequest);
             return new SyncInvoker<SetBackupPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SetBackupPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 设置备份保留策略
+        ///
+        /// 设置备份保留策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SetBackupRetainPolicyResponse SetBackupRetainPolicy(SetBackupRetainPolicyRequest setBackupRetainPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backup-retain-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setBackupRetainPolicyRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<SetBackupRetainPolicyResponse>(response);
+        }
+
+        public SyncInvoker<SetBackupRetainPolicyResponse> SetBackupRetainPolicyInvoker(SetBackupRetainPolicyRequest setBackupRetainPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backup-retain-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setBackupRetainPolicyRequest);
+            return new SyncInvoker<SetBackupRetainPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<SetBackupRetainPolicyResponse>);
         }
         
         /// <summary>
@@ -3680,6 +3886,30 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 查询备份保留策略
+        ///
+        /// 查询备份保留策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowBackupRetainPolicyResponse ShowBackupRetainPolicy(ShowBackupRetainPolicyRequest showBackupRetainPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backup-retain-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupRetainPolicyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ShowBackupRetainPolicyResponse>(response);
+        }
+
+        public SyncInvoker<ShowBackupRetainPolicyResponse> ShowBackupRetainPolicyInvoker(ShowBackupRetainPolicyRequest showBackupRetainPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backup-retain-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupRetainPolicyRequest);
+            return new SyncInvoker<ShowBackupRetainPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowBackupRetainPolicyResponse>);
+        }
+        
+        /// <summary>
         /// 查询备份用量总览
         ///
         /// 查询备份用量总览
@@ -3701,6 +3931,54 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/backup-usage", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupUsageRequest);
             return new SyncInvoker<ShowBackupUsageResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBackupUsageResponse>);
+        }
+        
+        /// <summary>
+        /// 查询备份空间告警配置
+        ///
+        /// 查询备份空间告警配置，未配置时返回默认值。告警关闭时仅返回alarm_enabled字段。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowBackupUsageAlarmConfigResponse ShowBackupUsageAlarmConfig(ShowBackupUsageAlarmConfigRequest showBackupUsageAlarmConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/usage-alarm-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupUsageAlarmConfigRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowBackupUsageAlarmConfigResponse>(response);
+        }
+
+        public SyncInvoker<ShowBackupUsageAlarmConfigResponse> ShowBackupUsageAlarmConfigInvoker(ShowBackupUsageAlarmConfigRequest showBackupUsageAlarmConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/usage-alarm-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupUsageAlarmConfigRequest);
+            return new SyncInvoker<ShowBackupUsageAlarmConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBackupUsageAlarmConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 查询备份空间超阈值实例列表
+        ///
+        /// 查询当前项目和账号下备份空间使用量超过告警阈值的实例列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowBackupUsageExceededInstancesResponse ShowBackupUsageExceededInstances(ShowBackupUsageExceededInstancesRequest showBackupUsageExceededInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/usage-alarm/exceeded-instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupUsageExceededInstancesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowBackupUsageExceededInstancesResponse>(response);
+        }
+
+        public SyncInvoker<ShowBackupUsageExceededInstancesResponse> ShowBackupUsageExceededInstancesInvoker(ShowBackupUsageExceededInstancesRequest showBackupUsageExceededInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/usage-alarm/exceeded-instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupUsageExceededInstancesRequest);
+            return new SyncInvoker<ShowBackupUsageExceededInstancesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBackupUsageExceededInstancesResponse>);
         }
         
         /// <summary>
@@ -4165,6 +4443,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/restart-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRestartPolicyRequest);
             return new SyncInvoker<ShowRestartPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRestartPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 获取已恢复库表信息
+        ///
+        /// 获取已恢复库表信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowRestoreTablesResponse ShowRestoreTables(ShowRestoreTablesRequest showRestoreTablesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showRestoreTablesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/get-restore-tables", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRestoreTablesRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ShowRestoreTablesResponse>(response);
+        }
+
+        public SyncInvoker<ShowRestoreTablesResponse> ShowRestoreTablesInvoker(ShowRestoreTablesRequest showRestoreTablesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showRestoreTablesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/get-restore-tables", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRestoreTablesRequest);
+            return new SyncInvoker<ShowRestoreTablesResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowRestoreTablesResponse>);
         }
         
         /// <summary>
@@ -4712,6 +5016,30 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 修改备份空间告警配置
+        ///
+        /// 修改备份空间告警配置，包括告警开关、阈值百分比和增量百分比。关闭告警时不需要传阈值和增量参数。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateBackupUsageAlarmConfigResponse UpdateBackupUsageAlarmConfig(UpdateBackupUsageAlarmConfigRequest updateBackupUsageAlarmConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/usage-alarm-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateBackupUsageAlarmConfigRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateBackupUsageAlarmConfigResponse>(response);
+        }
+
+        public SyncInvoker<UpdateBackupUsageAlarmConfigResponse> UpdateBackupUsageAlarmConfigInvoker(UpdateBackupUsageAlarmConfigRequest updateBackupUsageAlarmConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/usage-alarm-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateBackupUsageAlarmConfigRequest);
+            return new SyncInvoker<UpdateBackupUsageAlarmConfigResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateBackupUsageAlarmConfigResponse>);
+        }
+        
+        /// <summary>
         /// 修改参数模板参数
         ///
         /// 修改参数模板参数。
@@ -4839,6 +5167,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/alias", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceAliasRequest);
             return new SyncInvoker<UpdateInstanceAliasResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateInstanceAliasResponse>);
+        }
+        
+        /// <summary>
+        /// 切换实例备份方式
+        ///
+        /// 切换实例备份方式
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateInstanceBackupMethodResponse UpdateInstanceBackupMethod(UpdateInstanceBackupMethodRequest updateInstanceBackupMethodRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceBackupMethodRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/method", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceBackupMethodRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateInstanceBackupMethodResponse>(response);
+        }
+
+        public SyncInvoker<UpdateInstanceBackupMethodResponse> UpdateInstanceBackupMethodInvoker(UpdateInstanceBackupMethodRequest updateInstanceBackupMethodRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceBackupMethodRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/method", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceBackupMethodRequest);
+            return new SyncInvoker<UpdateInstanceBackupMethodResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateInstanceBackupMethodResponse>);
         }
         
         /// <summary>
@@ -5570,6 +5924,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 查询实例代理节点的引擎版本信息
+        ///
+        /// 获取某个实例下代理节点的引擎版本信息，用于版本升级判断。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceAllProxyVersionResponse ListInstanceAllProxyVersion(ListInstanceAllProxyVersionRequest listInstanceAllProxyVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceAllProxyVersionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/engine-version", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceAllProxyVersionRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceAllProxyVersionResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceAllProxyVersionResponse> ListInstanceAllProxyVersionInvoker(ListInstanceAllProxyVersionRequest listInstanceAllProxyVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceAllProxyVersionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/engine-version", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceAllProxyVersionRequest);
+            return new SyncInvoker<ListInstanceAllProxyVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceAllProxyVersionResponse>);
+        }
+        
+        /// <summary>
         /// 重置数据库密码
         ///
         /// 重置数据库密码.
@@ -5671,6 +6051,62 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/readonly-status", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setReadOnlySwitchRequest);
             return new SyncInvoker<SetReadOnlySwitchResponse>(this, "PUT", request, JsonUtils.DeSerialize<SetReadOnlySwitchResponse>);
+        }
+        
+        /// <summary>
+        /// 查询数据库代理慢日志信息列表
+        ///
+        /// 查询数据库代理慢日志信息列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowMySqlProxySlowLogListResponse ShowMySqlProxySlowLogList(ShowMySqlProxySlowLogListRequest showMySqlProxySlowLogListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showMySqlProxySlowLogListRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showMySqlProxySlowLogListRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/slow-log", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMySqlProxySlowLogListRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowMySqlProxySlowLogListResponse>(response);
+        }
+
+        public SyncInvoker<ShowMySqlProxySlowLogListResponse> ShowMySqlProxySlowLogListInvoker(ShowMySqlProxySlowLogListRequest showMySqlProxySlowLogListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showMySqlProxySlowLogListRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showMySqlProxySlowLogListRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/slow-log", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMySqlProxySlowLogListRequest);
+            return new SyncInvoker<ShowMySqlProxySlowLogListResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowMySqlProxySlowLogListResponse>);
+        }
+        
+        /// <summary>
+        /// 更改数据库代理慢日志上报开关
+        ///
+        /// 更改数据库代理慢日志上报开关。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SwitchMySqlProxySlowLogResponse SwitchMySqlProxySlowLog(SwitchMySqlProxySlowLogRequest switchMySqlProxySlowLogRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(switchMySqlProxySlowLogRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(switchMySqlProxySlowLogRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/slow-log", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchMySqlProxySlowLogRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<SwitchMySqlProxySlowLogResponse>(response);
+        }
+
+        public SyncInvoker<SwitchMySqlProxySlowLogResponse> SwitchMySqlProxySlowLogInvoker(SwitchMySqlProxySlowLogRequest switchMySqlProxySlowLogRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(switchMySqlProxySlowLogRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(switchMySqlProxySlowLogRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/slow-log", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchMySqlProxySlowLogRequest);
+            return new SyncInvoker<SwitchMySqlProxySlowLogResponse>(this, "PUT", request, JsonUtils.DeSerialize<SwitchMySqlProxySlowLogResponse>);
         }
         
         /// <summary>
@@ -6808,6 +7244,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 查询磁盘容量趋势诊断结果
+        ///
+        /// 查询磁盘容量趋势诊断结果
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowDiskSpaceDiagnosisResponse ShowDiskSpaceDiagnosis(ShowDiskSpaceDiagnosisRequest showDiskSpaceDiagnosisRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showDiskSpaceDiagnosisRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/diagnosis/disk", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDiskSpaceDiagnosisRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowDiskSpaceDiagnosisResponse>(response);
+        }
+
+        public SyncInvoker<ShowDiskSpaceDiagnosisResponse> ShowDiskSpaceDiagnosisInvoker(ShowDiskSpaceDiagnosisRequest showDiskSpaceDiagnosisRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showDiskSpaceDiagnosisRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/diagnosis/disk", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDiskSpaceDiagnosisRequest);
+            return new SyncInvoker<ShowDiskSpaceDiagnosisResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDiskSpaceDiagnosisResponse>);
+        }
+        
+        /// <summary>
         /// 查询一键kill会话历史
         ///
         /// 查询一键kill会话历史
@@ -6857,6 +7319,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ops/intelligent-kill-session/statistic", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIntelligentKillSessionStatisticRequest);
             return new SyncInvoker<ShowIntelligentKillSessionStatisticResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowIntelligentKillSessionStatisticResponse>);
+        }
+        
+        /// <summary>
+        /// 查询诊断项sql详情
+        ///
+        /// 查询诊断项sql详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowSqlDiagnosisResponse ShowSqlDiagnosis(ShowSqlDiagnosisRequest showSqlDiagnosisRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showSqlDiagnosisRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/diagnosis/sql", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSqlDiagnosisRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowSqlDiagnosisResponse>(response);
+        }
+
+        public SyncInvoker<ShowSqlDiagnosisResponse> ShowSqlDiagnosisInvoker(ShowSqlDiagnosisRequest showSqlDiagnosisRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showSqlDiagnosisRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/diagnosis/sql", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSqlDiagnosisRequest);
+            return new SyncInvoker<ShowSqlDiagnosisResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSqlDiagnosisResponse>);
         }
         
         /// <summary>

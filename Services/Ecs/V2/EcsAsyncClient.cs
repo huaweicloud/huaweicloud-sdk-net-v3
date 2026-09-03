@@ -79,6 +79,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<AssociateServerVirtualIpResponse> AssociateServerVirtualIpAsync(AssociateServerVirtualIpRequest associateServerVirtualIpRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -89,6 +90,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             return JsonUtils.DeSerialize<AssociateServerVirtualIpResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<AssociateServerVirtualIpResponse> AssociateServerVirtualIpAsyncInvoker(AssociateServerVirtualIpRequest associateServerVirtualIpRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -131,6 +133,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<BatchAddServerGroupMemberResponse> BatchAddServerGroupMemberAsync(BatchAddServerGroupMemberRequest batchAddServerGroupMemberRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -141,6 +144,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             return JsonUtils.DeSerialize<BatchAddServerGroupMemberResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<BatchAddServerGroupMemberResponse> BatchAddServerGroupMemberAsyncInvoker(BatchAddServerGroupMemberRequest batchAddServerGroupMemberRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -237,6 +241,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<BatchDeleteServerGroupMemberResponse> BatchDeleteServerGroupMemberAsync(BatchDeleteServerGroupMemberRequest batchDeleteServerGroupMemberRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -247,6 +252,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             return JsonUtils.DeSerialize<BatchDeleteServerGroupMemberResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<BatchDeleteServerGroupMemberResponse> BatchDeleteServerGroupMemberAsyncInvoker(BatchDeleteServerGroupMemberRequest batchDeleteServerGroupMemberRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -969,6 +975,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<DisassociateServerVirtualIpResponse> DisassociateServerVirtualIpAsync(DisassociateServerVirtualIpRequest disassociateServerVirtualIpRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -979,6 +986,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             return JsonUtils.DeSerialize<DisassociateServerVirtualIpResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<DisassociateServerVirtualIpResponse> DisassociateServerVirtualIpAsyncInvoker(DisassociateServerVirtualIpRequest disassociateServerVirtualIpRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1475,6 +1483,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<NovaAssociateSecurityGroupResponse> NovaAssociateSecurityGroupAsync(NovaAssociateSecurityGroupRequest novaAssociateSecurityGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1485,6 +1494,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             return JsonUtils.DeSerializeNull<NovaAssociateSecurityGroupResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<NovaAssociateSecurityGroupResponse> NovaAssociateSecurityGroupAsyncInvoker(NovaAssociateSecurityGroupRequest novaAssociateSecurityGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1501,6 +1511,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<NovaAttachInterfaceResponse> NovaAttachInterfaceAsync(NovaAttachInterfaceRequest novaAttachInterfaceRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1511,6 +1522,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             return JsonUtils.DeSerialize<NovaAttachInterfaceResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<NovaAttachInterfaceResponse> NovaAttachInterfaceAsyncInvoker(NovaAttachInterfaceRequest novaAttachInterfaceRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1529,6 +1541,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<NovaCreateKeypairResponse> NovaCreateKeypairAsync(NovaCreateKeypairRequest novaCreateKeypairRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1538,6 +1551,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             return JsonUtils.DeSerialize<NovaCreateKeypairResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<NovaCreateKeypairResponse> NovaCreateKeypairAsyncInvoker(NovaCreateKeypairRequest novaCreateKeypairRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1557,6 +1571,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<NovaCreateServersResponse> NovaCreateServersAsync(NovaCreateServersRequest novaCreateServersRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1566,6 +1581,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             return JsonUtils.DeSerialize<NovaCreateServersResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<NovaCreateServersResponse> NovaCreateServersAsyncInvoker(NovaCreateServersRequest novaCreateServersRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1581,6 +1597,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<NovaDeleteKeypairResponse> NovaDeleteKeypairAsync(NovaDeleteKeypairRequest novaDeleteKeypairRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1591,6 +1608,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             return JsonUtils.DeSerializeNull<NovaDeleteKeypairResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<NovaDeleteKeypairResponse> NovaDeleteKeypairAsyncInvoker(NovaDeleteKeypairRequest novaDeleteKeypairRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1607,6 +1625,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<NovaDeleteServerResponse> NovaDeleteServerAsync(NovaDeleteServerRequest novaDeleteServerRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1617,6 +1636,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             return JsonUtils.DeSerializeNull<NovaDeleteServerResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<NovaDeleteServerResponse> NovaDeleteServerAsyncInvoker(NovaDeleteServerRequest novaDeleteServerRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1633,6 +1653,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<NovaDisassociateSecurityGroupResponse> NovaDisassociateSecurityGroupAsync(NovaDisassociateSecurityGroupRequest novaDisassociateSecurityGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1643,6 +1664,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             return JsonUtils.DeSerializeNull<NovaDisassociateSecurityGroupResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<NovaDisassociateSecurityGroupResponse> NovaDisassociateSecurityGroupAsyncInvoker(NovaDisassociateSecurityGroupRequest novaDisassociateSecurityGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1685,6 +1707,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<NovaListKeypairsResponse> NovaListKeypairsAsync(NovaListKeypairsRequest novaListKeypairsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1694,6 +1717,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             return JsonUtils.DeSerialize<NovaListKeypairsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<NovaListKeypairsResponse> NovaListKeypairsAsyncInvoker(NovaListKeypairsRequest novaListKeypairsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1709,6 +1733,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<NovaListServerSecurityGroupsResponse> NovaListServerSecurityGroupsAsync(NovaListServerSecurityGroupsRequest novaListServerSecurityGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1719,6 +1744,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             return JsonUtils.DeSerialize<NovaListServerSecurityGroupsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<NovaListServerSecurityGroupsResponse> NovaListServerSecurityGroupsAsyncInvoker(NovaListServerSecurityGroupsRequest novaListServerSecurityGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1735,6 +1761,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<NovaListServersResponse> NovaListServersAsync(NovaListServersRequest novaListServersRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1744,6 +1771,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             return JsonUtils.DeSerialize<NovaListServersResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<NovaListServersResponse> NovaListServersAsyncInvoker(NovaListServersRequest novaListServersRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1759,6 +1787,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<NovaListServersDetailsResponse> NovaListServersDetailsAsync(NovaListServersDetailsRequest novaListServersDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1768,6 +1797,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             return JsonUtils.DeSerialize<NovaListServersDetailsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<NovaListServersDetailsResponse> NovaListServersDetailsAsyncInvoker(NovaListServersDetailsRequest novaListServersDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1783,6 +1813,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<NovaShowFlavorExtraSpecsResponse> NovaShowFlavorExtraSpecsAsync(NovaShowFlavorExtraSpecsRequest novaShowFlavorExtraSpecsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1793,6 +1824,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             return JsonUtils.DeSerialize<NovaShowFlavorExtraSpecsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<NovaShowFlavorExtraSpecsResponse> NovaShowFlavorExtraSpecsAsyncInvoker(NovaShowFlavorExtraSpecsRequest novaShowFlavorExtraSpecsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1809,6 +1841,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<NovaShowKeypairResponse> NovaShowKeypairAsync(NovaShowKeypairRequest novaShowKeypairRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1819,6 +1852,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             return JsonUtils.DeSerialize<NovaShowKeypairResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<NovaShowKeypairResponse> NovaShowKeypairAsyncInvoker(NovaShowKeypairRequest novaShowKeypairRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1835,6 +1869,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<NovaShowServerResponse> NovaShowServerAsync(NovaShowServerRequest novaShowServerRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1845,6 +1880,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             return JsonUtils.DeSerialize<NovaShowServerResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<NovaShowServerResponse> NovaShowServerAsyncInvoker(NovaShowServerRequest novaShowServerRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1861,6 +1897,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<NovaShowServerInterfaceResponse> NovaShowServerInterfaceAsync(NovaShowServerInterfaceRequest novaShowServerInterfaceRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1872,6 +1909,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             return JsonUtils.DeSerialize<NovaShowServerInterfaceResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<NovaShowServerInterfaceResponse> NovaShowServerInterfaceAsyncInvoker(NovaShowServerInterfaceRequest novaShowServerInterfaceRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1891,6 +1929,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<RegisterServerMonitorResponse> RegisterServerMonitorAsync(RegisterServerMonitorRequest registerServerMonitorRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1901,6 +1940,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             return JsonUtils.DeSerializeNull<RegisterServerMonitorResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<RegisterServerMonitorResponse> RegisterServerMonitorAsyncInvoker(RegisterServerMonitorRequest registerServerMonitorRequest)
         {
             var urlParam = new Dictionary<string, string>();

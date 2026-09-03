@@ -64,6 +64,12 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         [JsonProperty("filter_polices", NullValueHandling = NullValueHandling.Ignore)]
         public List<SubscriptionsFilterPolicy> FilterPolices { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("extension", NullValueHandling = NullValueHandling.Ignore)]
+        public SubscriptionExtensionResponse Extension { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +87,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
             sb.Append("  remark: ").Append(Remark).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  filterPolices: ").Append(FilterPolices).Append("\n");
+            sb.Append("  extension: ").Append(Extension).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +114,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
             if (this.Remark != input.Remark || (this.Remark != null && !this.Remark.Equals(input.Remark))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.FilterPolices != input.FilterPolices || (this.FilterPolices != null && input.FilterPolices != null && !this.FilterPolices.SequenceEqual(input.FilterPolices))) return false;
+            if (this.Extension != input.Extension || (this.Extension != null && !this.Extension.Equals(input.Extension))) return false;
 
             return true;
         }
@@ -127,6 +135,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
                 if (this.Remark != null) hashCode = hashCode * 59 + this.Remark.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.FilterPolices != null) hashCode = hashCode * 59 + this.FilterPolices.GetHashCode();
+                if (this.Extension != null) hashCode = hashCode * 59 + this.Extension.GetHashCode();
                 return hashCode;
             }
         }

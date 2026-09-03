@@ -540,6 +540,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string AvailabilityZone { get; set; }
 
         /// <summary>
+        /// 是否过滤不带标签的桌面，为true时只返回不带任何标签的桌面。
+        /// </summary>
+        [SDKProperty("without_any_tag", IsQuery = true)]
+        [JsonProperty("without_any_tag", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? WithoutAnyTag { get; set; }
+
+        /// <summary>
         /// agent版本。
         /// </summary>
         [SDKProperty("agent_version", IsQuery = true)]
@@ -580,6 +587,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
             sb.Append("  isSupportInternet: ").Append(IsSupportInternet).Append("\n");
             sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
+            sb.Append("  withoutAnyTag: ").Append(WithoutAnyTag).Append("\n");
             sb.Append("  agentVersion: ").Append(AgentVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -624,6 +632,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
             if (this.IsSupportInternet != input.IsSupportInternet || (this.IsSupportInternet != null && !this.IsSupportInternet.Equals(input.IsSupportInternet))) return false;
             if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
+            if (this.WithoutAnyTag != input.WithoutAnyTag || (this.WithoutAnyTag != null && !this.WithoutAnyTag.Equals(input.WithoutAnyTag))) return false;
             if (this.AgentVersion != input.AgentVersion || (this.AgentVersion != null && !this.AgentVersion.Equals(input.AgentVersion))) return false;
 
             return true;
@@ -662,6 +671,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
                 if (this.IsSupportInternet != null) hashCode = hashCode * 59 + this.IsSupportInternet.GetHashCode();
                 if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
+                if (this.WithoutAnyTag != null) hashCode = hashCode * 59 + this.WithoutAnyTag.GetHashCode();
                 if (this.AgentVersion != null) hashCode = hashCode * 59 + this.AgentVersion.GetHashCode();
                 return hashCode;
             }

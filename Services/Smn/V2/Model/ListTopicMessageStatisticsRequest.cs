@@ -24,14 +24,14 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         public string TopicUrn { get; set; }
 
         /// <summary>
-        /// 起始时间
+        /// 起始时间，取UTC时区的整点时间(支持查询近31天的计量数据)。
         /// </summary>
         [SDKProperty("start_time", IsQuery = true)]
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 结束时间
+        /// 结束时间，取UTC时区的整点时间(支持查询近31天的计量数据)。
         /// </summary>
         [SDKProperty("end_time", IsQuery = true)]
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]

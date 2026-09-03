@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Smnglobal.V2.Model
     public class ListSubscriptionUserRequest 
     {
         /// <summary>
-        /// 协议。 http：HTTP终端 https：HTTPS终端 sms：短信 email：邮件
+        /// 协议。 http：HTTP终端 https：HTTPS终端 sms：短信 email：邮件 callnotify: 语音 wechat: 企业微信机器人 dingding: 钉钉群机器人 feishu: 飞书群机器人 welink: WeLink群机器人 ding_talk_bot: 个人钉钉协议
         /// </summary>
-        /// <value>协议。 http：HTTP终端 https：HTTPS终端 sms：短信 email：邮件</value>
+        /// <value>协议。 http：HTTP终端 https：HTTPS终端 sms：短信 email：邮件 callnotify: 语音 wechat: 企业微信机器人 dingding: 钉钉群机器人 feishu: 飞书群机器人 welink: WeLink群机器人 ding_talk_bot: 个人钉钉协议</value>
         [JsonConverter(typeof(EnumClassConverter<ProtocolEnum>))]
         public class ProtocolEnum
         {
@@ -42,6 +42,36 @@ namespace HuaweiCloud.SDK.Smnglobal.V2.Model
             /// </summary>
             public static readonly ProtocolEnum EMAIL = new ProtocolEnum("email");
 
+            /// <summary>
+            /// Enum CALLNOTIFY for value: callnotify
+            /// </summary>
+            public static readonly ProtocolEnum CALLNOTIFY = new ProtocolEnum("callnotify");
+
+            /// <summary>
+            /// Enum WECHAT for value: wechat
+            /// </summary>
+            public static readonly ProtocolEnum WECHAT = new ProtocolEnum("wechat");
+
+            /// <summary>
+            /// Enum DINGDING for value: dingding
+            /// </summary>
+            public static readonly ProtocolEnum DINGDING = new ProtocolEnum("dingding");
+
+            /// <summary>
+            /// Enum FEISHU for value: feishu
+            /// </summary>
+            public static readonly ProtocolEnum FEISHU = new ProtocolEnum("feishu");
+
+            /// <summary>
+            /// Enum WELINK for value: welink
+            /// </summary>
+            public static readonly ProtocolEnum WELINK = new ProtocolEnum("welink");
+
+            /// <summary>
+            /// Enum DING_TALK_BOT for value: ding_talk_bot
+            /// </summary>
+            public static readonly ProtocolEnum DING_TALK_BOT = new ProtocolEnum("ding_talk_bot");
+
             private static readonly Dictionary<string, ProtocolEnum> StaticFields =
             new Dictionary<string, ProtocolEnum>()
             {
@@ -49,6 +79,12 @@ namespace HuaweiCloud.SDK.Smnglobal.V2.Model
                 { "https", HTTPS },
                 { "sms", SMS },
                 { "email", EMAIL },
+                { "callnotify", CALLNOTIFY },
+                { "wechat", WECHAT },
+                { "dingding", DINGDING },
+                { "feishu", FEISHU },
+                { "welink", WELINK },
+                { "ding_talk_bot", DING_TALK_BOT },
             };
 
             private string _value;
@@ -272,7 +308,7 @@ namespace HuaweiCloud.SDK.Smnglobal.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 协议。 http：HTTP终端 https：HTTPS终端 sms：短信 email：邮件
+        /// 协议。 http：HTTP终端 https：HTTPS终端 sms：短信 email：邮件 callnotify: 语音 wechat: 企业微信机器人 dingding: 钉钉群机器人 feishu: 飞书群机器人 welink: WeLink群机器人 ding_talk_bot: 个人钉钉协议
         /// </summary>
         [SDKProperty("protocol", IsQuery = true)]
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
@@ -284,7 +320,7 @@ namespace HuaweiCloud.SDK.Smnglobal.V2.Model
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
-        /// 订阅用户分组。
+        /// 订阅用户分组。该字段支持模糊查询。
         /// </summary>
         [SDKProperty("group", IsQuery = true)]
         [JsonProperty("group", NullValueHandling = NullValueHandling.Ignore)]

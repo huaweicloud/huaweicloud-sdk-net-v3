@@ -52,6 +52,42 @@ namespace HuaweiCloud.SDK.Smnglobal.V2.Model
         [JsonProperty("email", NullValueHandling = NullValueHandling.Ignore)]
         public CreateSubscriptionUserRequestEmailEndpointInfo Email { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("callnotify", NullValueHandling = NullValueHandling.Ignore)]
+        public CreateSubscriptionUserRequestCallnotifyEndpointInfo Callnotify { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("wechat", NullValueHandling = NullValueHandling.Ignore)]
+        public CreateSubscriptionUserRequestWechatEndpointInfo Wechat { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("dingding", NullValueHandling = NullValueHandling.Ignore)]
+        public CreateSubscriptionUserRequestDingdingEndpointInfo Dingding { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("feishu", NullValueHandling = NullValueHandling.Ignore)]
+        public CreateSubscriptionUserRequestFeishuEndpointInfo Feishu { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("welink", NullValueHandling = NullValueHandling.Ignore)]
+        public CreateSubscriptionUserRequestWelinkEndpointInfo Welink { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("ding_talk_bot", NullValueHandling = NullValueHandling.Ignore)]
+        public CreateSubscriptionUserRequestDingTalkBotEndpointInfo DingTalkBot { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +103,12 @@ namespace HuaweiCloud.SDK.Smnglobal.V2.Model
             sb.Append("  https: ").Append(Https).Append("\n");
             sb.Append("  sms: ").Append(Sms).Append("\n");
             sb.Append("  email: ").Append(Email).Append("\n");
+            sb.Append("  callnotify: ").Append(Callnotify).Append("\n");
+            sb.Append("  wechat: ").Append(Wechat).Append("\n");
+            sb.Append("  dingding: ").Append(Dingding).Append("\n");
+            sb.Append("  feishu: ").Append(Feishu).Append("\n");
+            sb.Append("  welink: ").Append(Welink).Append("\n");
+            sb.Append("  dingTalkBot: ").Append(DingTalkBot).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +133,12 @@ namespace HuaweiCloud.SDK.Smnglobal.V2.Model
             if (this.Https != input.Https || (this.Https != null && !this.Https.Equals(input.Https))) return false;
             if (this.Sms != input.Sms || (this.Sms != null && !this.Sms.Equals(input.Sms))) return false;
             if (this.Email != input.Email || (this.Email != null && !this.Email.Equals(input.Email))) return false;
+            if (this.Callnotify != input.Callnotify || (this.Callnotify != null && !this.Callnotify.Equals(input.Callnotify))) return false;
+            if (this.Wechat != input.Wechat || (this.Wechat != null && !this.Wechat.Equals(input.Wechat))) return false;
+            if (this.Dingding != input.Dingding || (this.Dingding != null && !this.Dingding.Equals(input.Dingding))) return false;
+            if (this.Feishu != input.Feishu || (this.Feishu != null && !this.Feishu.Equals(input.Feishu))) return false;
+            if (this.Welink != input.Welink || (this.Welink != null && !this.Welink.Equals(input.Welink))) return false;
+            if (this.DingTalkBot != input.DingTalkBot || (this.DingTalkBot != null && !this.DingTalkBot.Equals(input.DingTalkBot))) return false;
 
             return true;
         }
@@ -109,6 +157,12 @@ namespace HuaweiCloud.SDK.Smnglobal.V2.Model
                 if (this.Https != null) hashCode = hashCode * 59 + this.Https.GetHashCode();
                 if (this.Sms != null) hashCode = hashCode * 59 + this.Sms.GetHashCode();
                 if (this.Email != null) hashCode = hashCode * 59 + this.Email.GetHashCode();
+                if (this.Callnotify != null) hashCode = hashCode * 59 + this.Callnotify.GetHashCode();
+                if (this.Wechat != null) hashCode = hashCode * 59 + this.Wechat.GetHashCode();
+                if (this.Dingding != null) hashCode = hashCode * 59 + this.Dingding.GetHashCode();
+                if (this.Feishu != null) hashCode = hashCode * 59 + this.Feishu.GetHashCode();
+                if (this.Welink != null) hashCode = hashCode * 59 + this.Welink.GetHashCode();
+                if (this.DingTalkBot != null) hashCode = hashCode * 59 + this.DingTalkBot.GetHashCode();
                 return hashCode;
             }
         }

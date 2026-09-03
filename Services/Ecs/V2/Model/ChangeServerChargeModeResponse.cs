@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
         public string OrderId { get; set; }
 
+        /// <summary>
+        /// 提交任务成功后返回的任务ID，用户可以使用该ID对任务执行情况进行查询。
+        /// </summary>
+        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string JobId { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ChangeServerChargeModeResponse {\n");
             sb.Append("  orderId: ").Append(OrderId).Append("\n");
+            sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             if (input == null) return false;
             if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             {
                 var hashCode = 41;
                 if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 return hashCode;
             }
         }

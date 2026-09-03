@@ -20,13 +20,13 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         /// 
         /// </summary>
         [JsonProperty("allocated", NullValueHandling = NullValueHandling.Ignore)]
-        public WorkloadStatistics Allocated { get; set; }
+        public WorkloadStatisticsInfo Allocated { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("queue", NullValueHandling = NullValueHandling.Ignore)]
-        public WorkloadStatistics Queue { get; set; }
+        public WorkloadStatisticsInfo Queue { get; set; }
 
         /// <summary>
         /// UTC时间，格式yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;。

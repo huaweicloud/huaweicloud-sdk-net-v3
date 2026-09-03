@@ -154,6 +154,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// 安全策略管控，1&#x3D;开启，0&#x3D;关闭
+        /// </summary>
+        [JsonProperty("security_policy_control", NullValueHandling = NullValueHandling.Ignore)]
+        public int? SecurityPolicyControl { get; set; }
+
 
 
         /// <summary>
@@ -186,6 +192,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  risks: ").Append(Risks).Append("\n");
             sb.Append("  agentVersion: ").Append(AgentVersion).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  securityPolicyControl: ").Append(SecurityPolicyControl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -227,6 +234,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.Risks != input.Risks || (this.Risks != null && input.Risks != null && !this.Risks.SequenceEqual(input.Risks))) return false;
             if (this.AgentVersion != input.AgentVersion || (this.AgentVersion != null && !this.AgentVersion.Equals(input.AgentVersion))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.SecurityPolicyControl != input.SecurityPolicyControl || (this.SecurityPolicyControl != null && !this.SecurityPolicyControl.Equals(input.SecurityPolicyControl))) return false;
 
             return true;
         }
@@ -262,6 +270,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Risks != null) hashCode = hashCode * 59 + this.Risks.GetHashCode();
                 if (this.AgentVersion != null) hashCode = hashCode * 59 + this.AgentVersion.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.SecurityPolicyControl != null) hashCode = hashCode * 59 + this.SecurityPolicyControl.GetHashCode();
                 return hashCode;
             }
         }

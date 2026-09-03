@@ -505,11 +505,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string DesktopId { get; set; }
 
         /// <summary>
-        /// 桌面的标签。标签的键和标签的值用“&#x3D;”连接。
+        /// 桌面的标签。标签的键和标签的值用”&#x3D;”连接。
         /// </summary>
         [SDKProperty("tag", IsQuery = true)]
         [JsonProperty("tag", NullValueHandling = NullValueHandling.Ignore)]
         public string Tag { get; set; }
+
+        /// <summary>
+        /// 是否过滤不带标签的桌面，为true时只返回不带任何标签的桌面。
+        /// </summary>
+        [SDKProperty("without_any_tag", IsQuery = true)]
+        [JsonProperty("without_any_tag", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? WithoutAnyTag { get; set; }
 
         /// <summary>
         /// 语言。  - zh_CN：中文 - en_US：英文
@@ -654,6 +661,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  desktopIp: ").Append(DesktopIp).Append("\n");
             sb.Append("  desktopId: ").Append(DesktopId).Append("\n");
             sb.Append("  tag: ").Append(Tag).Append("\n");
+            sb.Append("  withoutAnyTag: ").Append(WithoutAnyTag).Append("\n");
             sb.Append("  language: ").Append(Language).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  desktopType: ").Append(DesktopType).Append("\n");
@@ -696,6 +704,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.DesktopIp != input.DesktopIp || (this.DesktopIp != null && !this.DesktopIp.Equals(input.DesktopIp))) return false;
             if (this.DesktopId != input.DesktopId || (this.DesktopId != null && !this.DesktopId.Equals(input.DesktopId))) return false;
             if (this.Tag != input.Tag || (this.Tag != null && !this.Tag.Equals(input.Tag))) return false;
+            if (this.WithoutAnyTag != input.WithoutAnyTag || (this.WithoutAnyTag != null && !this.WithoutAnyTag.Equals(input.WithoutAnyTag))) return false;
             if (this.Language != input.Language) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.DesktopType != input.DesktopType || (this.DesktopType != null && !this.DesktopType.Equals(input.DesktopType))) return false;
@@ -732,6 +741,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.DesktopIp != null) hashCode = hashCode * 59 + this.DesktopIp.GetHashCode();
                 if (this.DesktopId != null) hashCode = hashCode * 59 + this.DesktopId.GetHashCode();
                 if (this.Tag != null) hashCode = hashCode * 59 + this.Tag.GetHashCode();
+                if (this.WithoutAnyTag != null) hashCode = hashCode * 59 + this.WithoutAnyTag.GetHashCode();
                 hashCode = hashCode * 59 + this.Language.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.DesktopType != null) hashCode = hashCode * 59 + this.DesktopType.GetHashCode();

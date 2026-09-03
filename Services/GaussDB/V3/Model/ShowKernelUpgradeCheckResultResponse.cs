@@ -17,10 +17,22 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
     {
 
         /// <summary>
-        /// **参数解释**：  预检查任务ID集合。  **取值范围**：  不涉及。
+        /// **参数解释**：  预检查结果。  **取值范围**：  - true：成功。 - false：失败。
         /// </summary>
-        [JsonProperty("job_ids", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> JobIds { get; set; }
+        [JsonProperty("upgrade_precheck_result", NullValueHandling = NullValueHandling.Ignore)]
+        public string UpgradePrecheckResult { get; set; }
+
+        /// <summary>
+        /// **参数解释**：  预检查完成时间。  **取值范围**：  格式为UNIX时间戳，单位是毫秒，时区为UTC标准时区。
+        /// </summary>
+        [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
+        public long? UpdatedAt { get; set; }
+
+        /// <summary>
+        /// **参数解释**：  实例预检查详情。
+        /// </summary>
+        [JsonProperty("upgrade_precheck_detail", NullValueHandling = NullValueHandling.Ignore)]
+        public List<UpgradeDatabasePrecheckResult> UpgradePrecheckDetail { get; set; }
 
 
 
@@ -31,7 +43,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShowKernelUpgradeCheckResultResponse {\n");
-            sb.Append("  jobIds: ").Append(JobIds).Append("\n");
+            sb.Append("  upgradePrecheckResult: ").Append(UpgradePrecheckResult).Append("\n");
+            sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
+            sb.Append("  upgradePrecheckDetail: ").Append(UpgradePrecheckDetail).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -50,7 +64,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public bool Equals(ShowKernelUpgradeCheckResultResponse input)
         {
             if (input == null) return false;
-            if (this.JobIds != input.JobIds || (this.JobIds != null && input.JobIds != null && !this.JobIds.SequenceEqual(input.JobIds))) return false;
+            if (this.UpgradePrecheckResult != input.UpgradePrecheckResult || (this.UpgradePrecheckResult != null && !this.UpgradePrecheckResult.Equals(input.UpgradePrecheckResult))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.UpgradePrecheckDetail != input.UpgradePrecheckDetail || (this.UpgradePrecheckDetail != null && input.UpgradePrecheckDetail != null && !this.UpgradePrecheckDetail.SequenceEqual(input.UpgradePrecheckDetail))) return false;
 
             return true;
         }
@@ -63,7 +79,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.JobIds != null) hashCode = hashCode * 59 + this.JobIds.GetHashCode();
+                if (this.UpgradePrecheckResult != null) hashCode = hashCode * 59 + this.UpgradePrecheckResult.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.UpgradePrecheckDetail != null) hashCode = hashCode * 59 + this.UpgradePrecheckDetail.GetHashCode();
                 return hashCode;
             }
         }

@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         [JsonProperty("remark", NullValueHandling = NullValueHandling.Ignore)]
         public string Remark { get; set; }
 
+        /// <summary>
+        /// 订阅终端收到的验证码。
+        /// </summary>
+        [JsonProperty("verification_code", NullValueHandling = NullValueHandling.Ignore)]
+        public string VerificationCode { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
             var sb = new StringBuilder();
             sb.Append("class UpdateSubscriptionRequestBody {\n");
             sb.Append("  remark: ").Append(Remark).Append("\n");
+            sb.Append("  verificationCode: ").Append(VerificationCode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         {
             if (input == null) return false;
             if (this.Remark != input.Remark || (this.Remark != null && !this.Remark.Equals(input.Remark))) return false;
+            if (this.VerificationCode != input.VerificationCode || (this.VerificationCode != null && !this.VerificationCode.Equals(input.VerificationCode))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
             {
                 var hashCode = 41;
                 if (this.Remark != null) hashCode = hashCode * 59 + this.Remark.GetHashCode();
+                if (this.VerificationCode != null) hashCode = hashCode * 59 + this.VerificationCode.GetHashCode();
                 return hashCode;
             }
         }

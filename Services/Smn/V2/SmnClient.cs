@@ -687,7 +687,7 @@ namespace HuaweiCloud.SDK.Smn.V2
             var urlPath = HttpUtils.AddUrlPath("/smn/{certificate_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadHttpCertRequest);
             var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerializeNull<DownloadHttpCertResponse>(response);
+            return JsonUtils.DeSerialize<DownloadHttpCertResponse>(response);
         }
 
         public SyncInvoker<DownloadHttpCertResponse> DownloadHttpCertInvoker(DownloadHttpCertRequest downloadHttpCertRequest)
@@ -696,7 +696,7 @@ namespace HuaweiCloud.SDK.Smn.V2
             if (StringUtils.TryConvertToNonEmptyString(downloadHttpCertRequest.CertificateId, out var valueOfCertificateId)) urlParam.Add("certificate_id", valueOfCertificateId);
             var urlPath = HttpUtils.AddUrlPath("/smn/{certificate_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadHttpCertRequest);
-            return new SyncInvoker<DownloadHttpCertResponse>(this, "GET", request, JsonUtils.DeSerializeNull<DownloadHttpCertResponse>);
+            return new SyncInvoker<DownloadHttpCertResponse>(this, "GET", request, JsonUtils.DeSerialize<DownloadHttpCertResponse>);
         }
         
         /// <summary>
@@ -713,7 +713,7 @@ namespace HuaweiCloud.SDK.Smn.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/notifications/certifications/download/{certificate_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadHttpSignCertRequest);
             var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerializeNull<DownloadHttpSignCertResponse>(response);
+            return JsonUtils.DeSerialize<DownloadHttpSignCertResponse>(response);
         }
 
         public SyncInvoker<DownloadHttpSignCertResponse> DownloadHttpSignCertInvoker(DownloadHttpSignCertRequest downloadHttpSignCertRequest)
@@ -722,7 +722,7 @@ namespace HuaweiCloud.SDK.Smn.V2
             if (StringUtils.TryConvertToNonEmptyString(downloadHttpSignCertRequest.CertificateId, out var valueOfCertificateId)) urlParam.Add("certificate_id", valueOfCertificateId);
             var urlPath = HttpUtils.AddUrlPath("/v2/notifications/certifications/download/{certificate_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadHttpSignCertRequest);
-            return new SyncInvoker<DownloadHttpSignCertResponse>(this, "GET", request, JsonUtils.DeSerializeNull<DownloadHttpSignCertResponse>);
+            return new SyncInvoker<DownloadHttpSignCertResponse>(this, "GET", request, JsonUtils.DeSerialize<DownloadHttpSignCertResponse>);
         }
         
         /// <summary>

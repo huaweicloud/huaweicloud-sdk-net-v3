@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Smnglobal.V2.Model
         [JsonProperty("group", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Group { get; set; }
 
+        /// <summary>
+        /// 订阅终端收到的验证码。
+        /// </summary>
+        [JsonProperty("verification_code", NullValueHandling = NullValueHandling.Ignore)]
+        public string VerificationCode { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Smnglobal.V2.Model
             sb.Append("class UpdateSubscriptionUserRequestBody {\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  group: ").Append(Group).Append("\n");
+            sb.Append("  verificationCode: ").Append(VerificationCode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.Smnglobal.V2.Model
             if (input == null) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Group != input.Group || (this.Group != null && input.Group != null && !this.Group.SequenceEqual(input.Group))) return false;
+            if (this.VerificationCode != input.VerificationCode || (this.VerificationCode != null && !this.VerificationCode.Equals(input.VerificationCode))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.Smnglobal.V2.Model
                 var hashCode = 41;
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Group != null) hashCode = hashCode * 59 + this.Group.GetHashCode();
+                if (this.VerificationCode != null) hashCode = hashCode * 59 + this.VerificationCode.GetHashCode();
                 return hashCode;
             }
         }

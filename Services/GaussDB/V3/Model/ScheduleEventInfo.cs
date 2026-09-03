@@ -101,10 +101,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public string ExecuteTime { get; set; }
 
         /// <summary>
-        /// **参数解释**：  事件执行窗口。
+        /// 
         /// </summary>
         [JsonProperty("execution_time_window", NullValueHandling = NullValueHandling.Ignore)]
-        public Object ExecutionTimeWindow { get; set; }
+        public ExecuteWindow ExecutionTimeWindow { get; set; }
 
         /// <summary>
         /// **参数解释**：  事件对象信息列表，包含事件对象ID和事件对象的执行状态

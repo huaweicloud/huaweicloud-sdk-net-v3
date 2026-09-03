@@ -29,10 +29,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public List<EventInstances> EventInstances { get; set; }
 
         /// <summary>
-        /// **参数解释**：  事件执行窗口。  **约束限制**：  当operation_type为reservation时，该字段必传。
+        /// 
         /// </summary>
         [JsonProperty("event_schedule_window", NullValueHandling = NullValueHandling.Ignore)]
-        public Object EventScheduleWindow { get; set; }
+        public EventScheduleWindow EventScheduleWindow { get; set; }
 
 
 

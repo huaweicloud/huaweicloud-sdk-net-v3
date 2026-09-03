@@ -23,10 +23,10 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public Value Value { get; set; }
 
         /// <summary>
-        /// 最大弹性资源量减去故障资源和热备节点的资源。
+        /// 
         /// </summary>
         [JsonProperty("maxValue", NullValueHandling = NullValueHandling.Ignore)]
-        public Object MaxValue { get; set; }
+        public Value MaxValue { get; set; }
 
         /// <summary>
         /// UTC时间，格式yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;。

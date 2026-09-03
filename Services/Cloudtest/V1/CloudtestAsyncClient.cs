@@ -46,6 +46,32 @@ namespace HuaweiCloud.SDK.Cloudtest.V1
         }
         
         /// <summary>
+        /// 添加测试套
+        ///
+        /// 添加测试套
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<AddOrUpdateTestsuiteInfoUsingResponse> AddOrUpdateTestsuiteInfoUsingAsync(AddOrUpdateTestsuiteInfoUsingRequest addOrUpdateTestsuiteInfoUsingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(addOrUpdateTestsuiteInfoUsingRequest.ServiceId, out var valueOfServiceId)) urlParam.Add("service_id", valueOfServiceId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/projects/{service_id}/testsuite", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addOrUpdateTestsuiteInfoUsingRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<AddOrUpdateTestsuiteInfoUsingResponse>(response);
+        }
+
+        public AsyncInvoker<AddOrUpdateTestsuiteInfoUsingResponse> AddOrUpdateTestsuiteInfoUsingAsyncInvoker(AddOrUpdateTestsuiteInfoUsingRequest addOrUpdateTestsuiteInfoUsingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(addOrUpdateTestsuiteInfoUsingRequest.ServiceId, out var valueOfServiceId)) urlParam.Add("service_id", valueOfServiceId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/projects/{service_id}/testsuite", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addOrUpdateTestsuiteInfoUsingRequest);
+            return new AsyncInvoker<AddOrUpdateTestsuiteInfoUsingResponse>(this, "POST", request, JsonUtils.DeSerialize<AddOrUpdateTestsuiteInfoUsingResponse>);
+        }
+        
+        /// <summary>
         /// 新增用例评论
         ///
         /// 新增用例评论
@@ -869,6 +895,32 @@ namespace HuaweiCloud.SDK.Cloudtest.V1
             var urlPath = HttpUtils.AddUrlPath("/v4/{project_id}/versions/{version_uri}/test-reports/{report_uri}/custom-infos/{custom_info_uri}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTestReportCustomDetailByUriRequest);
             return new AsyncInvoker<DeleteTestReportCustomDetailByUriResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteTestReportCustomDetailByUriResponse>);
+        }
+        
+        /// <summary>
+        /// 根据任务Id列表批量删除任务
+        ///
+        /// 根据任务Id列表批量删除任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteTestsuiteInfosUsingResponse> DeleteTestsuiteInfosUsingAsync(DeleteTestsuiteInfosUsingRequest deleteTestsuiteInfosUsingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteTestsuiteInfosUsingRequest.ServiceId, out var valueOfServiceId)) urlParam.Add("service_id", valueOfServiceId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/projects/{service_id}/testsuite", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTestsuiteInfosUsingRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteTestsuiteInfosUsingResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteTestsuiteInfosUsingResponse> DeleteTestsuiteInfosUsingAsyncInvoker(DeleteTestsuiteInfosUsingRequest deleteTestsuiteInfosUsingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteTestsuiteInfosUsingRequest.ServiceId, out var valueOfServiceId)) urlParam.Add("service_id", valueOfServiceId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/projects/{service_id}/testsuite", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTestsuiteInfosUsingRequest);
+            return new AsyncInvoker<DeleteTestsuiteInfosUsingResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTestsuiteInfosUsingResponse>);
         }
         
         /// <summary>
@@ -3607,6 +3659,34 @@ namespace HuaweiCloud.SDK.Cloudtest.V1
         }
         
         /// <summary>
+        /// 根据任务id查询任务
+        ///
+        /// 根据任务id查询任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowTestsuiteInfoUsingResponse> ShowTestsuiteInfoUsingAsync(ShowTestsuiteInfoUsingRequest showTestsuiteInfoUsingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTestsuiteInfoUsingRequest.ServiceId, out var valueOfServiceId)) urlParam.Add("service_id", valueOfServiceId);
+            if (StringUtils.TryConvertToNonEmptyString(showTestsuiteInfoUsingRequest.SuiteId, out var valueOfSuiteId)) urlParam.Add("suite_id", valueOfSuiteId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/projects/{service_id}/testsuite/{suite_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTestsuiteInfoUsingRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowTestsuiteInfoUsingResponse>(response);
+        }
+
+        public AsyncInvoker<ShowTestsuiteInfoUsingResponse> ShowTestsuiteInfoUsingAsyncInvoker(ShowTestsuiteInfoUsingRequest showTestsuiteInfoUsingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTestsuiteInfoUsingRequest.ServiceId, out var valueOfServiceId)) urlParam.Add("service_id", valueOfServiceId);
+            if (StringUtils.TryConvertToNonEmptyString(showTestsuiteInfoUsingRequest.SuiteId, out var valueOfSuiteId)) urlParam.Add("suite_id", valueOfSuiteId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/projects/{service_id}/testsuite/{suite_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTestsuiteInfoUsingRequest);
+            return new AsyncInvoker<ShowTestsuiteInfoUsingResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTestsuiteInfoUsingResponse>);
+        }
+        
+        /// <summary>
         /// 获取租户订单信息
         ///
         /// 获取租户订单信息
@@ -3654,6 +3734,34 @@ namespace HuaweiCloud.SDK.Cloudtest.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/testcases/execute-info/statistic-by-user", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserExecuteTestCaseInfoRequest);
             return new AsyncInvoker<ShowUserExecuteTestCaseInfoResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowUserExecuteTestCaseInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 启动测试套
+        ///
+        /// 启动测试套
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<StartTestsuiteUsingResponse> StartTestsuiteUsingAsync(StartTestsuiteUsingRequest startTestsuiteUsingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(startTestsuiteUsingRequest.ServiceId, out var valueOfServiceId)) urlParam.Add("service_id", valueOfServiceId);
+            if (StringUtils.TryConvertToNonEmptyString(startTestsuiteUsingRequest.SuiteId, out var valueOfSuiteId)) urlParam.Add("suite_id", valueOfSuiteId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/projects/{service_id}/testsuite/{suite_id}/start", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startTestsuiteUsingRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<StartTestsuiteUsingResponse>(response);
+        }
+
+        public AsyncInvoker<StartTestsuiteUsingResponse> StartTestsuiteUsingAsyncInvoker(StartTestsuiteUsingRequest startTestsuiteUsingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(startTestsuiteUsingRequest.ServiceId, out var valueOfServiceId)) urlParam.Add("service_id", valueOfServiceId);
+            if (StringUtils.TryConvertToNonEmptyString(startTestsuiteUsingRequest.SuiteId, out var valueOfSuiteId)) urlParam.Add("suite_id", valueOfSuiteId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/projects/{service_id}/testsuite/{suite_id}/start", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startTestsuiteUsingRequest);
+            return new AsyncInvoker<StartTestsuiteUsingResponse>(this, "POST", request, JsonUtils.DeSerialize<StartTestsuiteUsingResponse>);
         }
         
         /// <summary>
@@ -3878,6 +3986,34 @@ namespace HuaweiCloud.SDK.Cloudtest.V1
             var urlPath = HttpUtils.AddUrlPath("/v4/{project_id}/versions/{version_uri}/test-reports/{report_uri}/custom-infos/{custom_info_uri}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTestReportCustomDetailByUriRequest);
             return new AsyncInvoker<UpdateTestReportCustomDetailByUriResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateTestReportCustomDetailByUriResponse>);
+        }
+        
+        /// <summary>
+        /// 更新测试套
+        ///
+        /// 更新测试套
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateTestsuiteInfoUsingResponse> UpdateTestsuiteInfoUsingAsync(UpdateTestsuiteInfoUsingRequest updateTestsuiteInfoUsingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateTestsuiteInfoUsingRequest.ServiceId, out var valueOfServiceId)) urlParam.Add("service_id", valueOfServiceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateTestsuiteInfoUsingRequest.SuiteId, out var valueOfSuiteId)) urlParam.Add("suite_id", valueOfSuiteId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/projects/{service_id}/testsuite/{suite_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTestsuiteInfoUsingRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateTestsuiteInfoUsingResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateTestsuiteInfoUsingResponse> UpdateTestsuiteInfoUsingAsyncInvoker(UpdateTestsuiteInfoUsingRequest updateTestsuiteInfoUsingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateTestsuiteInfoUsingRequest.ServiceId, out var valueOfServiceId)) urlParam.Add("service_id", valueOfServiceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateTestsuiteInfoUsingRequest.SuiteId, out var valueOfSuiteId)) urlParam.Add("suite_id", valueOfSuiteId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/projects/{service_id}/testsuite/{suite_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTestsuiteInfoUsingRequest);
+            return new AsyncInvoker<UpdateTestsuiteInfoUsingResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateTestsuiteInfoUsingResponse>);
         }
         
         /// <summary>
