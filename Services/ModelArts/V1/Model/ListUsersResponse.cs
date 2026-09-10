@@ -8,19 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Evs.V2.Model
+namespace HuaweiCloud.SDK.ModelArts.V1.Model
 {
     /// <summary>
-    /// 退订包周期云硬盘的响应body体
+    /// Response Object
     /// </summary>
-    public class UnsubscribeVolumeResponseBody 
+    public class ListUsersResponse : SdkResponse
     {
 
         /// <summary>
-        /// 退订包周期云硬盘的结果。
+        /// **参数解释**：授权对象列表。
         /// </summary>
-        [JsonProperty("results", NullValueHandling = NullValueHandling.Ignore)]
-        public List<UnsubscribeVolume> Results { get; set; }
+        [JsonProperty("users", NullValueHandling = NullValueHandling.Ignore)]
+        public List<UserInfo> Users { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UnsubscribeVolumeResponseBody {\n");
-            sb.Append("  results: ").Append(Results).Append("\n");
+            sb.Append("class ListUsersResponse {\n");
+            sb.Append("  users: ").Append(Users).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,16 +41,16 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UnsubscribeVolumeResponseBody);
+            return this.Equals(input as ListUsersResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(UnsubscribeVolumeResponseBody input)
+        public bool Equals(ListUsersResponse input)
         {
             if (input == null) return false;
-            if (this.Results != input.Results || (this.Results != null && input.Results != null && !this.Results.SequenceEqual(input.Results))) return false;
+            if (this.Users != input.Users || (this.Users != null && input.Users != null && !this.Users.SequenceEqual(input.Users))) return false;
 
             return true;
         }
@@ -63,7 +63,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Results != null) hashCode = hashCode * 59 + this.Results.GetHashCode();
+                if (this.Users != null) hashCode = hashCode * 59 + this.Users.GetHashCode();
                 return hashCode;
             }
         }

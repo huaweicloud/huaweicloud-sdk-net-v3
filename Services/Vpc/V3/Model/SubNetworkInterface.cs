@@ -17,121 +17,127 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
     {
 
         /// <summary>
-        /// 功能说明：辅助弹性网卡的唯一标识 取值范围：带(-)的标准UUID
+        /// **参数解释**： 辅助弹性网卡的资源ID。辅助弹性网卡创建成功后，会生成一个辅助弹性网卡 ID，是辅助弹性网卡对应的唯一标识。 **取值范围**： 带“-”的标准UUID格式。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 功能说明：虚拟子网ID 取值范围：标准UUID
+        /// **参数解释**： 辅助弹性网卡所在的虚拟子网ID。 **取值范围**： 带“-”的标准UUID格式。
         /// </summary>
         [JsonProperty("virsubnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VirsubnetId { get; set; }
 
         /// <summary>
-        /// 功能说明：辅助弹性网卡的私有IPv4地址 取值范围：必须在虚拟子网的网段内，不填则随机在虚拟子网网段内随机分配
+        /// **参数解释**： 辅助弹性网卡的私有IPv4地址。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("private_ip_address", NullValueHandling = NullValueHandling.Ignore)]
         public string PrivateIpAddress { get; set; }
 
         /// <summary>
-        /// 功能说明：辅助弹性网卡的IPv6地址
+        /// **参数解释**： 辅助弹性网卡的私有IPv6地址。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("ipv6_ip_address", NullValueHandling = NullValueHandling.Ignore)]
         public string Ipv6IpAddress { get; set; }
 
         /// <summary>
-        /// 功能说明：辅助弹性网卡的mac地址 取值范围：合法的mac地址，系统随机分配
+        /// **参数解释**： 辅助弹性网卡的MAC地址。 **取值范围**： 合法的MAC地址，系统随机分配。
         /// </summary>
         [JsonProperty("mac_address", NullValueHandling = NullValueHandling.Ignore)]
         public string MacAddress { get; set; }
 
         /// <summary>
-        /// 功能说明：设备ID 取值范围：标准UUID 
+        /// **参数解释**： 辅助弹性网卡的宿主网卡所属的设备ID。 **取值范围**： 带“-”的标准UUID格式。
         /// </summary>
         [JsonProperty("parent_device_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ParentDeviceId { get; set; }
 
         /// <summary>
-        /// 功能说明：宿主网络接口的ID 取值范围：标准UUID
+        /// **参数解释**： 辅助弹性网卡所挂载的弹性网卡的ID。 **取值范围**： 带“-”的标准UUID格式。
         /// </summary>
         [JsonProperty("parent_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ParentId { get; set; }
 
         /// <summary>
-        /// 功能说明：辅助弹性网卡的描述信息 取值范围：0-255个字符，不能包含“&lt;”和“&gt;”
+        /// **参数解释**： 辅助弹性网卡的描述信息。 **取值范围**： 0-255个字符，不能包含“&lt;”和“&gt;”。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 功能说明：辅助弹性网卡所属的VPC_ID 取值范围：标准UUID
+        /// **参数解释**： 辅助弹性网卡所属VPC的ID。 **取值范围**： 带“-”的标准UUID格式。
         /// </summary>
         [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VpcId { get; set; }
 
         /// <summary>
-        /// 功能说明：辅助弹性网卡的VLAN ID 取值范围：1-4094 约束：同一个宿主网络接口下唯一
+        /// **参数解释**： 辅助弹性网卡的VLAN ID。 **取值范围**： 1-4094
         /// </summary>
         [JsonProperty("vlan_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? VlanId { get; set; }
 
         /// <summary>
-        /// 功能说明：安全组的ID列表；例如：\&quot;security_groups\&quot;: [\&quot;a0608cbf-d047-4f54-8b28-cd7b59853fff\&quot;] 取值范围：默认值为系统默认安全组
+        /// **参数解释**： 辅助弹性网卡关联的安全组的ID列表。例如：\&quot;security_groups\&quot;: [\&quot;a0608cbf-d047-4f54-8b28-cd7b59853fff\&quot;]。 **取值范围**： 如果请求时不指定此参数，辅助弹性网卡创建后会自动关联默认安全组。
         /// </summary>
         [JsonProperty("security_groups", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> SecurityGroups { get; set; }
 
         /// <summary>
-        /// 功能说明：辅助弹性网卡的标签列表
+        /// **参数解释**： 辅助弹性网卡的标签信息，包括标签键和标签值，可用来分类和标识资源。详情请参见Tag对象。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ResourceTag> Tags { get; set; }
+        public List<ResponseTag> Tags { get; set; }
 
         /// <summary>
-        /// 功能说明：辅助弹性网卡所属项目ID
+        /// **参数解释**： 辅助弹性网卡所属的项目ID。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 功能说明：辅助弹性网卡的创建时间 取值范围：UTC时间格式：yyyy-MM-ddTHH:mm:ss
+        /// **参数解释**： 辅助弹性网卡的创建时间。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// 1. 扩展属性：IP/Mac对列表，allowed_address_pair参见“allowed_address_pair对象” 2. 使用说明: IP地址不允许为 “0.0.0.0”如果allowed_address_pairs配置地址池较大的CIDR（掩码小于24位），建议为该port配置一个单独的安全组硬件SDN环境不支持ip_address属性配置为CIDR
+        /// **参数解释**： 辅助弹性网卡的更新时间。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
+        public DateTime? UpdatedAt { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 辅助弹性网卡的IP/Mac对列表，详情请参见“AllowedAddressPair”对象表。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("allowed_address_pairs", NullValueHandling = NullValueHandling.Ignore)]
         public List<AllowedAddressPair> AllowedAddressPairs { get; set; }
 
         /// <summary>
-        /// 功能说明：辅助弹性网卡当前状态
+        /// **参数解释**： 辅助弹性网卡的状态。 **取值范围**： - NORMAL：表示辅助弹性网卡已挂载在弹性网卡上。 - UNBOUND：表示辅助弹性网卡未挂载在弹性网卡上。
         /// </summary>
         [JsonProperty("state", NullValueHandling = NullValueHandling.Ignore)]
         public string State { get; set; }
 
         /// <summary>
-        /// 功能说明：辅助弹性网卡所属实例ID，例如RDS实例ID
+        /// **参数解释**： 辅助弹性网卡所属的云服务实例ID，例如RDS实例ID。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 功能说明：辅助弹性网卡所属实例类型，例如“RDS”
+        /// **参数解释**： 辅助弹性网卡所属的云服务实例类型，例如“RDS”。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("instance_type", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceType { get; set; }
 
         /// <summary>
-        /// 功能说明：辅助弹性网卡所在站点的公网出口信息
+        /// **参数解释**： 辅助弹性网卡所在站点的公网出口信息。 **取值范围**： - center：默认值，表示作用域为中心。 - 某个AZ ID：表示作用域为具体的AZ。
         /// </summary>
         [JsonProperty("scope", NullValueHandling = NullValueHandling.Ignore)]
         public string Scope { get; set; }
 
         /// <summary>
-        /// 功能说明：辅助弹性网卡安全使能标记，如果不使能则安全组不生效。 取值范围：true（使能），false（不使能）
+        /// **参数解释**： 辅助弹性网卡安全使能标记，如果不使能则安全组不生效。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("security_enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SecurityEnabled { get; set; }
@@ -159,6 +165,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  allowedAddressPairs: ").Append(AllowedAddressPairs).Append("\n");
             sb.Append("  state: ").Append(State).Append("\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
@@ -197,6 +204,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
             if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
             if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
             if (this.AllowedAddressPairs != input.AllowedAddressPairs || (this.AllowedAddressPairs != null && input.AllowedAddressPairs != null && !this.AllowedAddressPairs.SequenceEqual(input.AllowedAddressPairs))) return false;
             if (this.State != input.State || (this.State != null && !this.State.Equals(input.State))) return false;
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
@@ -229,6 +237,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 if (this.AllowedAddressPairs != null) hashCode = hashCode * 59 + this.AllowedAddressPairs.GetHashCode();
                 if (this.State != null) hashCode = hashCode * 59 + this.State.GetHashCode();
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();

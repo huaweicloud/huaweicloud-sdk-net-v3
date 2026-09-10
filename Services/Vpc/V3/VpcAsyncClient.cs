@@ -68,6 +68,31 @@ namespace HuaweiCloud.SDK.Vpc.V3
         }
         
         /// <summary>
+        /// 挂载辅助弹性网卡
+        ///
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<AttachSubNetworkInterfaceResponse> AttachSubNetworkInterfaceAsync(AttachSubNetworkInterfaceRequest attachSubNetworkInterfaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(attachSubNetworkInterfaceRequest.SubNetworkInterfaceId, out var valueOfSubNetworkInterfaceId)) urlParam.Add("sub_network_interface_id", valueOfSubNetworkInterfaceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/sub-network-interfaces/{sub_network_interface_id}/attach", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", attachSubNetworkInterfaceRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<AttachSubNetworkInterfaceResponse>(response);
+        }
+
+        public AsyncInvoker<AttachSubNetworkInterfaceResponse> AttachSubNetworkInterfaceAsyncInvoker(AttachSubNetworkInterfaceRequest attachSubNetworkInterfaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(attachSubNetworkInterfaceRequest.SubNetworkInterfaceId, out var valueOfSubNetworkInterfaceId)) urlParam.Add("sub_network_interface_id", valueOfSubNetworkInterfaceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/sub-network-interfaces/{sub_network_interface_id}/attach", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", attachSubNetworkInterfaceRequest);
+            return new AsyncInvoker<AttachSubNetworkInterfaceResponse>(this, "POST", request, JsonUtils.DeSerialize<AttachSubNetworkInterfaceResponse>);
+        }
+        
+        /// <summary>
         /// 批量添加端口资源标签
         ///
         /// 为指定的端口批量添加标签。
@@ -145,6 +170,33 @@ namespace HuaweiCloud.SDK.Vpc.V3
         }
         
         /// <summary>
+        /// 批量添加辅助弹性网卡资源标签
+        ///
+        /// 为指定的辅助弹性网卡资源实例批量添加标签。
+        /// 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchCreateSubNetworkInterfaceTagsResponse> BatchCreateSubNetworkInterfaceTagsAsync(BatchCreateSubNetworkInterfaceTagsRequest batchCreateSubNetworkInterfaceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateSubNetworkInterfaceTagsRequest.SubNetworkInterfaceId, out var valueOfSubNetworkInterfaceId)) urlParam.Add("sub_network_interface_id", valueOfSubNetworkInterfaceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/sub-network-interfaces/{sub_network_interface_id}/tags/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateSubNetworkInterfaceTagsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<BatchCreateSubNetworkInterfaceTagsResponse>(response);
+        }
+
+        public AsyncInvoker<BatchCreateSubNetworkInterfaceTagsResponse> BatchCreateSubNetworkInterfaceTagsAsyncInvoker(BatchCreateSubNetworkInterfaceTagsRequest batchCreateSubNetworkInterfaceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateSubNetworkInterfaceTagsRequest.SubNetworkInterfaceId, out var valueOfSubNetworkInterfaceId)) urlParam.Add("sub_network_interface_id", valueOfSubNetworkInterfaceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/sub-network-interfaces/{sub_network_interface_id}/tags/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateSubNetworkInterfaceTagsRequest);
+            return new AsyncInvoker<BatchCreateSubNetworkInterfaceTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateSubNetworkInterfaceTagsResponse>);
+        }
+        
+        /// <summary>
         /// 批量删除端口资源标签
         ///
         /// 为指定的端口资源实例批量删除标签。
@@ -172,6 +224,33 @@ namespace HuaweiCloud.SDK.Vpc.V3
         }
         
         /// <summary>
+        /// 批量删除辅助弹性网卡资源标签
+        ///
+        /// 为指定的辅助弹性网卡资源实例批量删除标签。
+        /// 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchDeleteSubNetworkInterfaceTagsResponse> BatchDeleteSubNetworkInterfaceTagsAsync(BatchDeleteSubNetworkInterfaceTagsRequest batchDeleteSubNetworkInterfaceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteSubNetworkInterfaceTagsRequest.SubNetworkInterfaceId, out var valueOfSubNetworkInterfaceId)) urlParam.Add("sub_network_interface_id", valueOfSubNetworkInterfaceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/sub-network-interfaces/{sub_network_interface_id}/tags/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteSubNetworkInterfaceTagsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<BatchDeleteSubNetworkInterfaceTagsResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDeleteSubNetworkInterfaceTagsResponse> BatchDeleteSubNetworkInterfaceTagsAsyncInvoker(BatchDeleteSubNetworkInterfaceTagsRequest batchDeleteSubNetworkInterfaceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteSubNetworkInterfaceTagsRequest.SubNetworkInterfaceId, out var valueOfSubNetworkInterfaceId)) urlParam.Add("sub_network_interface_id", valueOfSubNetworkInterfaceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/sub-network-interfaces/{sub_network_interface_id}/tags/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteSubNetworkInterfaceTagsRequest);
+            return new AsyncInvoker<BatchDeleteSubNetworkInterfaceTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteSubNetworkInterfaceTagsResponse>);
+        }
+        
+        /// <summary>
         /// 查询端口资源实例数量
         ///
         /// 使用标签过滤查询端口实例数量。
@@ -193,6 +272,30 @@ namespace HuaweiCloud.SDK.Vpc.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/resource-instances/count", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", countPortsByTagsRequest);
             return new AsyncInvoker<CountPortsByTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<CountPortsByTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询辅助弹性网卡资源实例数量
+        ///
+        /// 使用标签过滤查询辅助弹性网卡实例数量。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CountSubNetworkInterfacesByTagsResponse> CountSubNetworkInterfacesByTagsAsync(CountSubNetworkInterfacesByTagsRequest countSubNetworkInterfacesByTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/sub-network-interfaces/resource-instances/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", countSubNetworkInterfacesByTagsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CountSubNetworkInterfacesByTagsResponse>(response);
+        }
+
+        public AsyncInvoker<CountSubNetworkInterfacesByTagsResponse> CountSubNetworkInterfacesByTagsAsyncInvoker(CountSubNetworkInterfacesByTagsRequest countSubNetworkInterfacesByTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/sub-network-interfaces/resource-instances/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", countSubNetworkInterfacesByTagsRequest);
+            return new AsyncInvoker<CountSubNetworkInterfacesByTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<CountSubNetworkInterfacesByTagsResponse>);
         }
         
         /// <summary>
@@ -292,6 +395,33 @@ namespace HuaweiCloud.SDK.Vpc.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/sub-network-interfaces", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSubNetworkInterfaceRequest);
             return new AsyncInvoker<CreateSubNetworkInterfaceResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateSubNetworkInterfaceResponse>);
+        }
+        
+        /// <summary>
+        /// 添加辅助弹性网卡资源标签
+        ///
+        /// 给指定辅助弹性网卡资源实例增加标签信息。
+        /// 此接口为幂等接口：创建时，如果创建的标签之前已经存在（key相同），则覆盖之前的标签。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateSubNetworkInterfaceTagResponse> CreateSubNetworkInterfaceTagAsync(CreateSubNetworkInterfaceTagRequest createSubNetworkInterfaceTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createSubNetworkInterfaceTagRequest.SubNetworkInterfaceId, out var valueOfSubNetworkInterfaceId)) urlParam.Add("sub_network_interface_id", valueOfSubNetworkInterfaceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/sub-network-interfaces/{sub_network_interface_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSubNetworkInterfaceTagRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<CreateSubNetworkInterfaceTagResponse>(response);
+        }
+
+        public AsyncInvoker<CreateSubNetworkInterfaceTagResponse> CreateSubNetworkInterfaceTagAsyncInvoker(CreateSubNetworkInterfaceTagRequest createSubNetworkInterfaceTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createSubNetworkInterfaceTagRequest.SubNetworkInterfaceId, out var valueOfSubNetworkInterfaceId)) urlParam.Add("sub_network_interface_id", valueOfSubNetworkInterfaceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/sub-network-interfaces/{sub_network_interface_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSubNetworkInterfaceTagRequest);
+            return new AsyncInvoker<CreateSubNetworkInterfaceTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateSubNetworkInterfaceTagResponse>);
         }
         
         /// <summary>
@@ -498,6 +628,35 @@ namespace HuaweiCloud.SDK.Vpc.V3
         }
         
         /// <summary>
+        /// 删除辅助弹性网卡资源标签
+        ///
+        /// 删除指定辅助弹性网卡资源实例的标签信息
+        /// 该接口为幂等接口：删除的key不存在报404，key不能为空或者空字符串。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteSubNetworkInterfaceTagResponse> DeleteSubNetworkInterfaceTagAsync(DeleteSubNetworkInterfaceTagRequest deleteSubNetworkInterfaceTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteSubNetworkInterfaceTagRequest.SubNetworkInterfaceId, out var valueOfSubNetworkInterfaceId)) urlParam.Add("sub_network_interface_id", valueOfSubNetworkInterfaceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteSubNetworkInterfaceTagRequest.TagKey, out var valueOfTagKey)) urlParam.Add("tag_key", valueOfTagKey);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/sub-network-interfaces/{sub_network_interface_id}/tags/{tag_key}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSubNetworkInterfaceTagRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteSubNetworkInterfaceTagResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteSubNetworkInterfaceTagResponse> DeleteSubNetworkInterfaceTagAsyncInvoker(DeleteSubNetworkInterfaceTagRequest deleteSubNetworkInterfaceTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteSubNetworkInterfaceTagRequest.SubNetworkInterfaceId, out var valueOfSubNetworkInterfaceId)) urlParam.Add("sub_network_interface_id", valueOfSubNetworkInterfaceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteSubNetworkInterfaceTagRequest.TagKey, out var valueOfTagKey)) urlParam.Add("tag_key", valueOfTagKey);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/sub-network-interfaces/{sub_network_interface_id}/tags/{tag_key}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSubNetworkInterfaceTagRequest);
+            return new AsyncInvoker<DeleteSubNetworkInterfaceTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSubNetworkInterfaceTagResponse>);
+        }
+        
+        /// <summary>
         /// 删除流量镜像筛选条件
         ///
         /// 删除流量镜像筛选条件
@@ -599,6 +758,32 @@ namespace HuaweiCloud.SDK.Vpc.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/virsubnet-cidr-reservations/{virsubnet_cidr_reservation_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVirsubnetCidrReservationRequest);
             return new AsyncInvoker<DeleteVirsubnetCidrReservationResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteVirsubnetCidrReservationResponse>);
+        }
+        
+        /// <summary>
+        /// 卸载辅助弹性网卡
+        ///
+        /// 辅助弹性网卡支持从云服务器网卡之间迁移，用户可以通过此接口从云服务器网卡中解绑辅助弹性网卡，再绑定辅助弹性网卡到其他云服务器网卡上。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DetachSubNetworkInterfaceResponse> DetachSubNetworkInterfaceAsync(DetachSubNetworkInterfaceRequest detachSubNetworkInterfaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(detachSubNetworkInterfaceRequest.SubNetworkInterfaceId, out var valueOfSubNetworkInterfaceId)) urlParam.Add("sub_network_interface_id", valueOfSubNetworkInterfaceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/sub-network-interfaces/{sub_network_interface_id}/detach", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detachSubNetworkInterfaceRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<DetachSubNetworkInterfaceResponse>(response);
+        }
+
+        public AsyncInvoker<DetachSubNetworkInterfaceResponse> DetachSubNetworkInterfaceAsyncInvoker(DetachSubNetworkInterfaceRequest detachSubNetworkInterfaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(detachSubNetworkInterfaceRequest.SubNetworkInterfaceId, out var valueOfSubNetworkInterfaceId)) urlParam.Add("sub_network_interface_id", valueOfSubNetworkInterfaceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/sub-network-interfaces/{sub_network_interface_id}/detach", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detachSubNetworkInterfaceRequest);
+            return new AsyncInvoker<DetachSubNetworkInterfaceResponse>(this, "POST", request, JsonUtils.DeSerialize<DetachSubNetworkInterfaceResponse>);
         }
         
         /// <summary>
@@ -722,6 +907,30 @@ namespace HuaweiCloud.SDK.Vpc.V3
         }
         
         /// <summary>
+        /// 查询辅助弹性网卡项目标签
+        ///
+        /// 查询租户在指定项目下，辅助弹性网卡资源的所有标签信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListSubNetworkInterfaceTagsResponse> ListSubNetworkInterfaceTagsAsync(ListSubNetworkInterfaceTagsRequest listSubNetworkInterfaceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/sub-network-interfaces/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSubNetworkInterfaceTagsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListSubNetworkInterfaceTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ListSubNetworkInterfaceTagsResponse> ListSubNetworkInterfaceTagsAsyncInvoker(ListSubNetworkInterfaceTagsRequest listSubNetworkInterfaceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/sub-network-interfaces/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSubNetworkInterfaceTagsRequest);
+            return new AsyncInvoker<ListSubNetworkInterfaceTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSubNetworkInterfaceTagsResponse>);
+        }
+        
+        /// <summary>
         /// 查询租户下辅助弹性网卡列表
         ///
         /// 查询辅助弹性网卡列表，单次查询最多返回2000条数据
@@ -743,6 +952,30 @@ namespace HuaweiCloud.SDK.Vpc.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/sub-network-interfaces", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSubNetworkInterfacesRequest);
             return new AsyncInvoker<ListSubNetworkInterfacesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSubNetworkInterfacesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询辅助弹性网卡资源实例列表
+        ///
+        /// 使用标签过滤，查询辅助弹性网卡实例列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListSubNetworkInterfacesByTagsResponse> ListSubNetworkInterfacesByTagsAsync(ListSubNetworkInterfacesByTagsRequest listSubNetworkInterfacesByTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/sub-network-interfaces/resource-instances/filter", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSubNetworkInterfacesByTagsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ListSubNetworkInterfacesByTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ListSubNetworkInterfacesByTagsResponse> ListSubNetworkInterfacesByTagsAsyncInvoker(ListSubNetworkInterfacesByTagsRequest listSubNetworkInterfacesByTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/sub-network-interfaces/resource-instances/filter", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSubNetworkInterfacesByTagsRequest);
+            return new AsyncInvoker<ListSubNetworkInterfacesByTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListSubNetworkInterfacesByTagsResponse>);
         }
         
         /// <summary>
@@ -1093,6 +1326,32 @@ namespace HuaweiCloud.SDK.Vpc.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/sub-network-interfaces/{sub_network_interface_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSubNetworkInterfaceRequest);
             return new AsyncInvoker<ShowSubNetworkInterfaceResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSubNetworkInterfaceResponse>);
+        }
+        
+        /// <summary>
+        /// 查询辅助弹性网卡资源标签
+        ///
+        /// 查询指定辅助弹性网卡实例的标签信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowSubNetworkInterfaceTagsResponse> ShowSubNetworkInterfaceTagsAsync(ShowSubNetworkInterfaceTagsRequest showSubNetworkInterfaceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showSubNetworkInterfaceTagsRequest.SubNetworkInterfaceId, out var valueOfSubNetworkInterfaceId)) urlParam.Add("sub_network_interface_id", valueOfSubNetworkInterfaceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/sub-network-interfaces/{sub_network_interface_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSubNetworkInterfaceTagsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowSubNetworkInterfaceTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ShowSubNetworkInterfaceTagsResponse> ShowSubNetworkInterfaceTagsAsyncInvoker(ShowSubNetworkInterfaceTagsRequest showSubNetworkInterfaceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showSubNetworkInterfaceTagsRequest.SubNetworkInterfaceId, out var valueOfSubNetworkInterfaceId)) urlParam.Add("sub_network_interface_id", valueOfSubNetworkInterfaceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/sub-network-interfaces/{sub_network_interface_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSubNetworkInterfaceTagsRequest);
+            return new AsyncInvoker<ShowSubNetworkInterfaceTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSubNetworkInterfaceTagsResponse>);
         }
         
         /// <summary>

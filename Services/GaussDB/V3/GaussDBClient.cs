@@ -3974,6 +3974,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ShowRestoreTablesResponse ShowRestoreTables(ShowRestoreTablesRequest showRestoreTablesRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -3984,6 +3985,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             return JsonUtils.DeSerialize<ShowRestoreTablesResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ShowRestoreTablesResponse> ShowRestoreTablesInvoker(ShowRestoreTablesRequest showRestoreTablesRequest)
         {
             var urlParam = new Dictionary<string, string>();

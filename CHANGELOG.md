@@ -1,3 +1,95 @@
+# 3.1.210 2026-09-10
+
+### HuaweiCloud SDK GaussDB
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Deprecate the API `ShowRestoreTables`
+
+### HuaweiCloud SDK ModelArts
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the APIs `AttachDevServerPort`, `DetachDevServerPort`, `ListUsers`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `ShowRiskInfo`
+    - `QueryAutoSqlLimiting`
+    - `CollectInstanceStatistic`
+    - `GetInstancesOpsResourceUsage`
+    - `ListComputeResource`
+    - `ListOperateRecord`
+    - `ShowAgencyPolicy`
+    - `GetAvailableVpcs`
+    - `ListInstancesResourceMetrics`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListShareBackups**
+    - changes of response param
+      - `+ backups.datastore.type`
+      - `+ backups.datastore.version`
+      - `* backups.datastore: object -> object<ShareBackupDatastore>`
+
+### HuaweiCloud SDK VPC
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `CountSubNetworkInterfacesByTags`
+    - `ListSubNetworkInterfacesByTags`
+    - `ShowSubNetworkInterfaceTags`
+    - `CreateSubNetworkInterfaceTag`
+    - `BatchCreateSubNetworkInterfaceTags`
+    - `BatchDeleteSubNetworkInterfaceTags`
+    - `DeleteSubNetworkInterfaceTag`
+    - `ListSubNetworkInterfaceTags`
+    - `AttachSubNetworkInterface`
+    - `DetachSubNetworkInterface`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListSubNetworkInterfaces**
+    - changes of response param
+      - `+ sub_network_interfaces.updated_at`
+      - `* sub_network_interfaces.tags: list<ResourceTag> -> list<ResponseTag>`
+  - **CreateSubNetworkInterface**
+    - changes of response param
+      - `+ sub_network_interface.updated_at`
+      - `* sub_network_interface.tags: list<ResourceTag> -> list<ResponseTag>`
+  - **BatchCreateSubNetworkInterface**
+    - changes of response param
+      - `+ sub_network_interfaces.updated_at`
+      - `* sub_network_interfaces.tags: list<ResourceTag> -> list<ResponseTag>`
+  - **ShowSubNetworkInterface**
+    - changes of response param
+      - `+ sub_network_interface.updated_at`
+      - `* sub_network_interface.tags: list<ResourceTag> -> list<ResponseTag>`
+  - **UpdateSubNetworkInterface**
+    - changes of response param
+      - `+ sub_network_interface.updated_at`
+      - `* sub_network_interface.tags: list<ResourceTag> -> list<ResponseTag>`
+  - **MigrateSubNetworkInterface**
+    - changes of response param
+      - `+ sub_network_interfaces.updated_at`
+      - `* sub_network_interfaces.tags: list<ResourceTag> -> list<ResponseTag>`
+
 # 3.1.209 2026-09-03
 
 ### HuaweiCloud SDK Cloudtest

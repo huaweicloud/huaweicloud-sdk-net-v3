@@ -1,0 +1,89 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.Rds.V3.Model
+{
+    /// <summary>
+    /// Response Object
+    /// </summary>
+    public class ListOperateRecordResponse : SdkResponse
+    {
+
+        /// <summary>
+        /// 本次查询事件列表返回的事件记录的总条数
+        /// </summary>
+        [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Count { get; set; }
+
+        /// <summary>
+        /// 本次查询事件列表返回的事件记录
+        /// </summary>
+        [JsonProperty("traces", NullValueHandling = NullValueHandling.Ignore)]
+        public List<OperateRecord> Traces { get; set; }
+
+        /// <summary>
+        /// 所有事件类型
+        /// </summary>
+        [JsonProperty("all_operate_type", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> AllOperateType { get; set; }
+
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class ListOperateRecordResponse {\n");
+            sb.Append("  count: ").Append(Count).Append("\n");
+            sb.Append("  traces: ").Append(Traces).Append("\n");
+            sb.Append("  allOperateType: ").Append(AllOperateType).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as ListOperateRecordResponse);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(ListOperateRecordResponse input)
+        {
+            if (input == null) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.Traces != input.Traces || (this.Traces != null && input.Traces != null && !this.Traces.SequenceEqual(input.Traces))) return false;
+            if (this.AllOperateType != input.AllOperateType || (this.AllOperateType != null && input.AllOperateType != null && !this.AllOperateType.SequenceEqual(input.AllOperateType))) return false;
+
+            return true;
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                var hashCode = 41;
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.Traces != null) hashCode = hashCode * 59 + this.Traces.GetHashCode();
+                if (this.AllOperateType != null) hashCode = hashCode * 59 + this.AllOperateType.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

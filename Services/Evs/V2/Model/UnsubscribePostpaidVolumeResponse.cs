@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// 
         /// </summary>
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public List<UnsubscribeVolumeResponseBody> Body { get; set; }
+        public Object Body { get; set; }
 
 
 
@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public bool Equals(UnsubscribePostpaidVolumeResponse input)
         {
             if (input == null) return false;
-            if (this.Body != input.Body || (this.Body != null && input.Body != null && !this.Body.SequenceEqual(input.Body))) return false;
+            if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
             return true;
         }

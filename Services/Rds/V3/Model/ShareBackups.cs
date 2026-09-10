@@ -83,10 +83,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public string InstanceStatus { get; set; }
 
         /// <summary>
-        /// 数据库版本信息。
+        /// 
         /// </summary>
         [JsonProperty("datastore", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Datastore { get; set; }
+        public ShareBackupDatastore Datastore { get; set; }
 
         /// <summary>
         /// 共享者用户名称。

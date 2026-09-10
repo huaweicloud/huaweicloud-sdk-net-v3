@@ -41,6 +41,32 @@ namespace HuaweiCloud.SDK.ModelArts.V1
         }
         
         /// <summary>
+        /// Lite Server服务器挂载网卡
+        ///
+        /// Lite Server服务器挂载网卡
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public AttachDevServerPortResponse AttachDevServerPort(AttachDevServerPortRequest attachDevServerPortRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(attachDevServerPortRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dev-servers/{id}/attach-ports", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", attachDevServerPortRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<AttachDevServerPortResponse>(response);
+        }
+
+        public SyncInvoker<AttachDevServerPortResponse> AttachDevServerPortInvoker(AttachDevServerPortRequest attachDevServerPortRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(attachDevServerPortRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dev-servers/{id}/attach-ports", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", attachDevServerPortRequest);
+            return new SyncInvoker<AttachDevServerPortResponse>(this, "POST", request, JsonUtils.DeSerialize<AttachDevServerPortResponse>);
+        }
+        
+        /// <summary>
         /// Lite Server服务器挂载磁盘
         ///
         /// Lite Server服务器挂载磁盘接口用于将额外的磁盘挂载到Lite Server服务器上。该接口适用于以下场景：当用户需要扩展Lite Server服务器的存储空间以满足更大的数据存储需求时，可以通过此接口将指定的磁盘挂载到服务器上。使用该接口的前提条件是Lite Server服务器已创建且处于运行状态、或者停止状态，用户具有挂载磁盘的权限，且指定的磁盘已存在且未被其他服务器使用。挂载操作完成后，磁盘将成功挂载到Lite Server服务器上，用户可以访问和使用新增的存储空间。若Lite Server服务器不存在、指定的磁盘不存在或已被使用，或用户无权限操作，接口将返回相应的错误信息。
@@ -2064,6 +2090,34 @@ namespace HuaweiCloud.SDK.ModelArts.V1
         }
         
         /// <summary>
+        /// Lite Server服务器卸载网卡
+        ///
+        /// Lite Server服务器卸载网卡接口用于从服务器中移除指定的网络接口卡。该接口适用于以下场景：当服务器需要进行硬件维护、资源回收或网络配置调整时，用户可通过此接口卸载不再使用的网卡设备。使用该接口的前提条件是目标网卡已正确安装并处于可操作状态，且用户具有系统管理员权限。卸载操作完成后，网卡将从服务器配置中移除，相关驱动和网络参数也将被清除。若目标网卡不存在、用户权限不足或服务器处于运行状态，接口将返回对应的错误信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DetachDevServerPortResponse DetachDevServerPort(DetachDevServerPortRequest detachDevServerPortRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(detachDevServerPortRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            if (StringUtils.TryConvertToNonEmptyString(detachDevServerPortRequest.PortId, out var valueOfPortId)) urlParam.Add("port_id", valueOfPortId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dev-servers/{id}/detach-ports/{port_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detachDevServerPortRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DetachDevServerPortResponse>(response);
+        }
+
+        public SyncInvoker<DetachDevServerPortResponse> DetachDevServerPortInvoker(DetachDevServerPortRequest detachDevServerPortRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(detachDevServerPortRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            if (StringUtils.TryConvertToNonEmptyString(detachDevServerPortRequest.PortId, out var valueOfPortId)) urlParam.Add("port_id", valueOfPortId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dev-servers/{id}/detach-ports/{port_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detachDevServerPortRequest);
+            return new SyncInvoker<DetachDevServerPortResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DetachDevServerPortResponse>);
+        }
+        
+        /// <summary>
         /// Lite Server服务器卸载磁盘
         ///
         /// Lite Server服务器卸载磁盘接口用于从Lite Server服务器上卸载已挂载的磁盘。该接口适用于以下场景：当用户需要释放存储资源或重新分配磁盘时，可以通过此接口卸载指定的磁盘。使用该接口的前提条件是Lite Server服务器已创建且处于运行状态、或者停止状态，用户具有卸载磁盘的权限，且指定的磁盘已挂载到服务器上。卸载操作完成后，磁盘将从Lite Server服务器上成功卸载，用户可以将其挂载到其他服务器或进行其他操作。若Lite Server服务器不存在、指定的磁盘未挂载到服务器上，或用户无权限操作，接口将返回相应的错误信息。
@@ -3649,6 +3703,30 @@ namespace HuaweiCloud.SDK.ModelArts.V1
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/modelarts-training-job/resource-instances/filter", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listTrainingJobsByTagsRequest);
             return new SyncInvoker<ListTrainingJobsByTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListTrainingJobsByTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询用户列表
+        ///
+        /// 查询用户列表接口用于获取系统中用户的列表信息。该接口适用于以下场景：当需要查看系统中所有用户或根据特定条件筛选用户时，管理员或系统可以通过此接口查询用户列表。使用该接口的前提条件是用户已存在且查询者具有相应的权限。查询操作完成后，接口将返回符合条件的用户列表；若系统中无用户或查询者无权限操作，接口将返回相应的错误信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListUsersResponse ListUsers(ListUsersRequest listUsersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/workspaces/users/list", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUsersRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListUsersResponse>(response);
+        }
+
+        public SyncInvoker<ListUsersResponse> ListUsersInvoker(ListUsersRequest listUsersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/workspaces/users/list", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUsersRequest);
+            return new SyncInvoker<ListUsersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListUsersResponse>);
         }
         
         /// <summary>

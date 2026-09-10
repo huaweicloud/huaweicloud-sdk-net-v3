@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
     {
 
         /// <summary>
-        /// **参数解释**  自动备份保留策略。NONE不保留，LAST保留最后一个，ALL全部保留。  **约束限制**  不涉及       **取值范围**  NONE、LAST、ALL  **默认取值**  不涉及。
+        /// **参数解释**  自动备份保留策略。NONE不保留，LAST保留最后一个，ALL全部保留。  **约束限制**  不涉及  **取值范围**  NONE、LAST、ALL  **默认取值**  不涉及。
         /// </summary>
         [JsonProperty("auto", NullValueHandling = NullValueHandling.Ignore)]
         public string Auto { get; set; }
 
         /// <summary>
-        /// **参数解释**  手动备份保留策略。NONE不保留，LAST保留最后一个，ALL全部保留。  **约束限制**  不涉及      **取值范围**  NONE、LAST、ALL  **默认取值**  不涉及。
+        /// **参数解释**  手动备份保留策略。NONE不保留，LAST保留最后一个，ALL全部保留。  **约束限制**  不涉及  **取值范围**  NONE、LAST、ALL  **默认取值**  不涉及。
         /// </summary>
         [JsonProperty("manual", NullValueHandling = NullValueHandling.Ignore)]
         public string Manual { get; set; }
