@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 同步点池请求详细参数
+    /// 同步节点池请求详细参数
     /// </summary>
     public class NodePoolUpgradeSpec 
     {
@@ -56,7 +56,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// 
         /// </summary>
         [JsonProperty("nodeTemplate", NullValueHandling = NullValueHandling.Ignore)]
-        public NodeTemplate NodeTemplate { get; set; }
+        public UpgradeNodePoolSpecNodeTemplate NodeTemplate { get; set; }
 
 
 

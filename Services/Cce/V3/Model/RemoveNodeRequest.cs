@@ -24,6 +24,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string ClusterId { get; set; }
 
         /// <summary>
+        /// **参数解释**： 移除节点时是否解绑节点默认安全组。 **约束限制**： 不涉及 **取值范围**： - false：移除节点时保留节点默认安全组 - true：移除节点时解绑节点默认安全组  **默认取值**： false
+        /// </summary>
+        [SDKProperty("removeNodeSystemSecurityGroup", IsQuery = true)]
+        [JsonProperty("removeNodeSystemSecurityGroup", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? RemoveNodeSystemSecurityGroup { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
@@ -40,6 +47,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             var sb = new StringBuilder();
             sb.Append("class RemoveNodeRequest {\n");
             sb.Append("  clusterId: ").Append(ClusterId).Append("\n");
+            sb.Append("  removeNodeSystemSecurityGroup: ").Append(RemoveNodeSystemSecurityGroup).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -60,6 +68,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             if (input == null) return false;
             if (this.ClusterId != input.ClusterId || (this.ClusterId != null && !this.ClusterId.Equals(input.ClusterId))) return false;
+            if (this.RemoveNodeSystemSecurityGroup != input.RemoveNodeSystemSecurityGroup || (this.RemoveNodeSystemSecurityGroup != null && !this.RemoveNodeSystemSecurityGroup.Equals(input.RemoveNodeSystemSecurityGroup))) return false;
             if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
             return true;
@@ -74,6 +83,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             {
                 var hashCode = 41;
                 if (this.ClusterId != null) hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
+                if (this.RemoveNodeSystemSecurityGroup != null) hashCode = hashCode * 59 + this.RemoveNodeSystemSecurityGroup.GetHashCode();
                 if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }

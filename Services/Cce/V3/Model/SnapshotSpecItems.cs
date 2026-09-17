@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 子任务ID
+        /// **参数解释：** 子任务ID **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
@@ -35,19 +35,19 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// 任务创建时间
+        /// **参数解释：** 任务创建时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("creationTimestamp", NullValueHandling = NullValueHandling.Ignore)]
         public string CreationTimestamp { get; set; }
 
         /// <summary>
-        /// 任务更新时间
+        /// **参数解释：** 任务更新时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("updateTimestamp", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdateTimestamp { get; set; }
 
         /// <summary>
-        /// 信息
+        /// **参数解释：** 信息 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("message", NullValueHandling = NullValueHandling.Ignore)]
         public string Message { get; set; }

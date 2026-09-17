@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 更新指定集群配置参数内容请求体
+    /// **参数解释：** 更新指定集群配置参数内容请求体 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
     public class UpdateClusterConfigurationsBody 
     {
 
         /// <summary>
-        /// API版本，固定值**v3**
+        /// **参数解释：** API版本，固定值**v3** **约束限制：** 固定值 **取值范围：** - v3  **默认取值：** v3 
         /// </summary>
         [JsonProperty("apiVersion", NullValueHandling = NullValueHandling.Ignore)]
         public string ApiVersion { get; set; }
 
         /// <summary>
-        /// API类型，固定值**Configuration**
+        /// **参数解释：** API类型，固定值**Configuration** **约束限制：** 固定值 **取值范围：** - Configuration  **默认取值：** Configuration 
         /// </summary>
         [JsonProperty("kind", NullValueHandling = NullValueHandling.Ignore)]
         public string Kind { get; set; }

@@ -88,6 +88,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         [JsonProperty("line_num", NullValueHandling = NullValueHandling.Ignore)]
         public string LineNum { get; set; }
 
+        /// <summary>
+        /// 推荐的创建索引命令。使用此命令创建索引可优化该慢查询语句。如果结果为空，说明不需要推荐索引，或AI未识别出可优化的索引。
+        /// </summary>
+        [JsonProperty("index_recommendation", NullValueHandling = NullValueHandling.Ignore)]
+        public string IndexRecommendation { get; set; }
+
 
 
         /// <summary>
@@ -109,6 +115,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             sb.Append("  collection: ").Append(Collection).Append("\n");
             sb.Append("  logTime: ").Append(LogTime).Append("\n");
             sb.Append("  lineNum: ").Append(LineNum).Append("\n");
+            sb.Append("  indexRecommendation: ").Append(IndexRecommendation).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -139,6 +146,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             if (this.Collection != input.Collection || (this.Collection != null && !this.Collection.Equals(input.Collection))) return false;
             if (this.LogTime != input.LogTime || (this.LogTime != null && !this.LogTime.Equals(input.LogTime))) return false;
             if (this.LineNum != input.LineNum || (this.LineNum != null && !this.LineNum.Equals(input.LineNum))) return false;
+            if (this.IndexRecommendation != input.IndexRecommendation || (this.IndexRecommendation != null && !this.IndexRecommendation.Equals(input.IndexRecommendation))) return false;
 
             return true;
         }
@@ -163,6 +171,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                 if (this.Collection != null) hashCode = hashCode * 59 + this.Collection.GetHashCode();
                 if (this.LogTime != null) hashCode = hashCode * 59 + this.LogTime.GetHashCode();
                 if (this.LineNum != null) hashCode = hashCode * 59 + this.LineNum.GetHashCode();
+                if (this.IndexRecommendation != null) hashCode = hashCode * 59 + this.IndexRecommendation.GetHashCode();
                 return hashCode;
             }
         }

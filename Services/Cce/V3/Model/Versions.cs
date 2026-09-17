@@ -11,49 +11,49 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 具体插件版本信息
+    /// **参数解释**： 具体插件版本信息。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
     public class Versions 
     {
 
         /// <summary>
-        /// 插件版本号
+        /// **参数解释**： 插件版本号。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }
 
         /// <summary>
-        /// 插件安装参数
+        /// **参数解释**： 插件安装参数。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("input", NullValueHandling = NullValueHandling.Ignore)]
         public Object Input { get; set; }
 
         /// <summary>
-        /// 是否为稳定版本
+        /// **参数解释**： 是否为稳定版本。 **约束限制**： 不涉及 **取值范围**： - true：稳定版本 - false：非稳定版本  **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("stable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Stable { get; set; }
 
         /// <summary>
-        /// 供界面使用的翻译信息
+        /// **参数解释**： 供界面使用的翻译信息。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("translate", NullValueHandling = NullValueHandling.Ignore)]
         public Object Translate { get; set; }
 
         /// <summary>
-        /// 支持集群版本号
+        /// **参数解释**： 支持集群版本号。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("supportVersions", NullValueHandling = NullValueHandling.Ignore)]
         public List<SupportVersions> SupportVersions { get; set; }
 
         /// <summary>
-        /// 创建时间
+        /// **参数解释**： 创建时间。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("creationTimestamp", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? CreationTimestamp { get; set; }
 
         /// <summary>
-        /// 更新时间
+        /// **参数解释**： 更新时间。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("updateTimestamp", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? UpdateTimestamp { get; set; }

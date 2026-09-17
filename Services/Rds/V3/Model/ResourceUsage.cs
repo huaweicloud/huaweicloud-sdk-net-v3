@@ -20,19 +20,19 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// 当前使用量。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
-        public float? Value { get; set; }
+        public double? Value { get; set; }
 
         /// <summary>
         /// 总量。
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
-        public float? Total { get; set; }
+        public double? Total { get; set; }
 
         /// <summary>
         /// 对比值。
         /// </summary>
         [JsonProperty("contrast", NullValueHandling = NullValueHandling.Ignore)]
-        public float? Contrast { get; set; }
+        public double? Contrast { get; set; }
 
         /// <summary>
         /// 单位。

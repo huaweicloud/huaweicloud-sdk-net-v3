@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 模板实例的值
+    /// **参数解释：** 模板实例的值 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
     public class CreateReleaseReqBodyValues 
     {
 
         /// <summary>
-        /// 镜像拉取策略
+        /// **参数解释：** 镜像拉取策略 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("imagePullPolicy", NullValueHandling = NullValueHandling.Ignore)]
         public string ImagePullPolicy { get; set; }
 
         /// <summary>
-        /// 镜像标签
+        /// **参数解释：** 镜像标签 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("imageTag", NullValueHandling = NullValueHandling.Ignore)]
         public string ImageTag { get; set; }

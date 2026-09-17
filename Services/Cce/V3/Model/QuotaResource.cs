@@ -17,37 +17,37 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 资源类型
+        /// **参数解释：** 资源类型 **约束限制：** 不涉及 **取值范围：** - cluster：表示集群配额  **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("quotaKey", NullValueHandling = NullValueHandling.Ignore)]
         public string QuotaKey { get; set; }
 
         /// <summary>
-        /// 配额值
+        /// **参数解释：** 资源配额值 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("quotaLimit", NullValueHandling = NullValueHandling.Ignore)]
         public int? QuotaLimit { get; set; }
 
         /// <summary>
-        /// 已创建的资源个数
+        /// **参数解释：** 已创建的资源个数 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("used", NullValueHandling = NullValueHandling.Ignore)]
         public int? Used { get; set; }
 
         /// <summary>
-        /// 单位
+        /// **参数解释：** 资源单位 **约束限制：** 不涉及 **取值范围：** - count：个数  **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("unit", NullValueHandling = NullValueHandling.Ignore)]
         public string Unit { get; set; }
 
         /// <summary>
-        /// 局点ID。若资源不涉及此参数，则不返回该参数。
+        /// **参数解释：** 局点ID。若资源不涉及此参数，则不返回该参数。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("regionId", NullValueHandling = NullValueHandling.Ignore)]
         public string RegionId { get; set; }
 
         /// <summary>
-        /// 可用区ID。若资源不涉及此参数，则不返回该参数。
+        /// **参数解释：** 可用区ID。若资源不涉及此参数，则不返回该参数。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("availabilityZoneId", NullValueHandling = NullValueHandling.Ignore)]
         public string AvailabilityZoneId { get; set; }

@@ -11,31 +11,31 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 风险项来源
+    /// **参数解释：** 风险项来源。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
     public class RiskSource 
     {
 
         /// <summary>
-        /// 配置风险项
+        /// **参数解释：** 配置风险项。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("configurationRisks", NullValueHandling = NullValueHandling.Ignore)]
         public List<ConfigurationRisks> ConfigurationRisks { get; set; }
 
         /// <summary>
-        /// 废弃API风险
+        /// **参数解释：** 废弃API风险。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("deprecatedAPIRisks", NullValueHandling = NullValueHandling.Ignore)]
         public List<DeprecatedAPIRisks> DeprecatedAPIRisks { get; set; }
 
         /// <summary>
-        /// 节点风险
+        /// **参数解释：** 节点风险。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("nodeRisks", NullValueHandling = NullValueHandling.Ignore)]
         public List<NodeRisks> NodeRisks { get; set; }
 
         /// <summary>
-        /// 插件风险
+        /// **参数解释：** 插件风险。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("addonRisks", NullValueHandling = NullValueHandling.Ignore)]
         public List<AddonRisks> AddonRisks { get; set; }

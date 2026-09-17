@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 节点优先级批量配置
+    /// **参数解释：** 节点优先级批量配置，通过节点标签选择器匹配节点并为匹配的节点设置升级优先级。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
     public class NodePriority 
     {
@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public NodeSelector NodeSelector { get; set; }
 
         /// <summary>
-        /// 该批次节点的优先级，默认值为0，优先级最低，数值越大优先级越高
+        /// **参数解释：** 该批次节点的优先级，数值越大优先级越高 **约束限制：** 不涉及 **取值范围：** 非负整数 **默认取值：** 0
         /// </summary>
         [JsonProperty("priority", NullValueHandling = NullValueHandling.Ignore)]
         public int? Priority { get; set; }

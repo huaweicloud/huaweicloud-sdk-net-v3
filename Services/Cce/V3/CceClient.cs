@@ -419,9 +419,9 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
-        /// 获取集群证书
+        /// 获取集群访问证书
         ///
-        /// 该API用于获取指定集群的证书信息。
+        /// 该API用于获取指定集群的访问证书信息。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -702,7 +702,7 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/api/v3/addons/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAddonInstanceRequest);
             var response = DoHttpRequestSync("DELETE", request);
-            return JsonUtils.DeSerialize<DeleteAddonInstanceResponse>(response);
+            return JsonUtils.DeSerializeNull<DeleteAddonInstanceResponse>(response);
         }
 
         public SyncInvoker<DeleteAddonInstanceResponse> DeleteAddonInstanceInvoker(DeleteAddonInstanceRequest deleteAddonInstanceRequest)
@@ -711,7 +711,7 @@ namespace HuaweiCloud.SDK.Cce.V3
             if (StringUtils.TryConvertToNonEmptyString(deleteAddonInstanceRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/api/v3/addons/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAddonInstanceRequest);
-            return new SyncInvoker<DeleteAddonInstanceResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteAddonInstanceResponse>);
+            return new SyncInvoker<DeleteAddonInstanceResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteAddonInstanceResponse>);
         }
         
         /// <summary>
@@ -898,7 +898,7 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/cce/cam/v3/clusters/{cluster_id}/namespace/{namespace}/releases/{name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteReleaseRequest);
             var response = DoHttpRequestSync("DELETE", request);
-            return JsonUtils.DeSerialize<DeleteReleaseResponse>(response);
+            return JsonUtils.DeSerializeNull<DeleteReleaseResponse>(response);
         }
 
         public SyncInvoker<DeleteReleaseResponse> DeleteReleaseInvoker(DeleteReleaseRequest deleteReleaseRequest)
@@ -909,7 +909,7 @@ namespace HuaweiCloud.SDK.Cce.V3
             if (StringUtils.TryConvertToNonEmptyString(deleteReleaseRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
             var urlPath = HttpUtils.AddUrlPath("/cce/cam/v3/clusters/{cluster_id}/namespace/{namespace}/releases/{name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteReleaseRequest);
-            return new SyncInvoker<DeleteReleaseResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteReleaseResponse>);
+            return new SyncInvoker<DeleteReleaseResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteReleaseResponse>);
         }
         
         /// <summary>
@@ -1198,6 +1198,36 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/hibernate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", hibernateClusterRequest);
             return new SyncInvoker<HibernateClusterResponse>(this, "POST", request, JsonUtils.DeSerializeNull<HibernateClusterResponse>);
+        }
+        
+        /// <summary>
+        /// 节点腾挪
+        ///
+        /// 该API用于在指定集群下腾挪节点到另一集群。
+        /// 
+        /// &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public InplaceMigrateNodeResponse InplaceMigrateNode(InplaceMigrateNodeRequest inplaceMigrateNodeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(inplaceMigrateNodeRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            if (StringUtils.TryConvertToNonEmptyString(inplaceMigrateNodeRequest.TargetClusterId, out var valueOfTargetClusterId)) urlParam.Add("target_cluster_id", valueOfTargetClusterId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/operation/in-place-migrateto/{target_cluster_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", inplaceMigrateNodeRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<InplaceMigrateNodeResponse>(response);
+        }
+
+        public SyncInvoker<InplaceMigrateNodeResponse> InplaceMigrateNodeInvoker(InplaceMigrateNodeRequest inplaceMigrateNodeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(inplaceMigrateNodeRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            if (StringUtils.TryConvertToNonEmptyString(inplaceMigrateNodeRequest.TargetClusterId, out var valueOfTargetClusterId)) urlParam.Add("target_cluster_id", valueOfTargetClusterId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/operation/in-place-migrateto/{target_cluster_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", inplaceMigrateNodeRequest);
+            return new SyncInvoker<InplaceMigrateNodeResponse>(this, "POST", request, JsonUtils.DeSerialize<InplaceMigrateNodeResponse>);
         }
         
         /// <summary>
@@ -1911,9 +1941,9 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
-        /// 吊销用户的集群证书
+        /// 吊销集群访问证书
         ///
-        /// 该API用于吊销指定集群的用户证书
+        /// 该API用于吊销指定集群的访问证书
         /// 
         /// &gt; 吊销操作完成后，此证书申请人之前下载的证书和 kubectl 配置文件无法再用于连接集群。此证书申请人可以重新下载证书或 kubectl 配置文件，并使用新下载的文件连接集群
         /// 
@@ -1965,11 +1995,11 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
-        /// 轮转用户的集群证书
+        /// 轮转集群证书
         ///
         /// 该API用于轮转指定集群的证书
         /// 
-        /// &gt; 只支持1.19及以上集群版本
+        /// &gt; 只支持1.15.11及以上集群版本
         /// &gt; 操作完成后，用户集群组件的证书有效期会续期5年。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.

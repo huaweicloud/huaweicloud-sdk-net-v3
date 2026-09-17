@@ -65,6 +65,13 @@ namespace HuaweiCloud.SDK.Rc.V1.Model
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
+        /// <summary>
+        /// 资源组ID
+        /// </summary>
+        [SDKProperty("group_id", IsQuery = true)]
+        [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string GroupId { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +88,7 @@ namespace HuaweiCloud.SDK.Rc.V1.Model
             sb.Append("  tag: ").Append(Tag).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  marker: ").Append(Marker).Append("\n");
+            sb.Append("  groupId: ").Append(GroupId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -106,6 +114,7 @@ namespace HuaweiCloud.SDK.Rc.V1.Model
             if (this.Tag != input.Tag || (this.Tag != null && input.Tag != null && !this.Tag.SequenceEqual(input.Tag))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
 
             return true;
         }
@@ -125,6 +134,7 @@ namespace HuaweiCloud.SDK.Rc.V1.Model
                 if (this.Tag != null) hashCode = hashCode * 59 + this.Tag.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
                 return hashCode;
             }
         }

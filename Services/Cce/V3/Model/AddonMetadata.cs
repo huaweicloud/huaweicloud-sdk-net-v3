@@ -11,49 +11,49 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 插件基本信息，集合类的元素类型，包含一组由不同名称定义的属性。
+    /// **参数解释**： 插件基本信息，集合类的元素类型，包含一组由不同名称定义的属性。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
     public class AddonMetadata 
     {
 
         /// <summary>
-        /// 唯一id标识
+        /// **参数解释**： 插件实例唯一ID标识，创建成功后系统自动生成。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("uid", NullValueHandling = NullValueHandling.Ignore)]
         public string Uid { get; set; }
 
         /// <summary>
-        /// 插件名称
+        /// **参数解释**： 插件名称 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 插件别名
+        /// **参数解释**： 插件别名。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("alias", NullValueHandling = NullValueHandling.Ignore)]
         public string Alias { get; set; }
 
         /// <summary>
-        /// 插件标签，key/value对格式，接口保留字段，填写不会生效
+        /// **参数解释**： 插件标签，key/value对格式，接口保留字段，填写不会生效。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("labels", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, string> Labels { get; set; }
 
         /// <summary>
-        /// 插件注解，由key/value组成 - 安装：固定值为{\&quot;addon.install/type\&quot;:\&quot;install\&quot;} - 升级：固定值为{\&quot;addon.upgrade/type\&quot;:\&quot;upgrade\&quot;} 
+        /// **参数解释**： 插件注解，由key/value组成。 **约束限制**： 不涉及 **取值范围**： - 安装时固定值为{\&quot;addon.install/type\&quot;:\&quot;install\&quot;} - 升级时固定值为{\&quot;addon.upgrade/type\&quot;:\&quot;upgrade\&quot;}  **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("annotations", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, string> Annotations { get; set; }
 
         /// <summary>
-        /// 更新时间
+        /// **参数解释**： 更新时间 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("updateTimestamp", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? UpdateTimestamp { get; set; }
 
         /// <summary>
-        /// 创建时间
+        /// **参数解释**： 创建时间，创建成功后系统自动生成，填写无效。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("creationTimestamp", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? CreationTimestamp { get; set; }

@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// api版本，默认为v3
+        /// **参数解释：** API版本，默认为v3 **约束限制：** 不涉及 **取值范围：** - v3  **默认取值：** v3 
         /// </summary>
         [JsonProperty("apiVersion", NullValueHandling = NullValueHandling.Ignore)]
         public string ApiVersion { get; set; }
 
         /// <summary>
-        /// 资源类型
+        /// **参数解释：** 资源类型 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("kind", NullValueHandling = NullValueHandling.Ignore)]
         public string Kind { get; set; }
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public UpgradeTaskMetadata Metadata { get; set; }
 
         /// <summary>
-        /// 集群升级任务列表
+        /// **参数解释：** 集群升级任务列表 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("items", NullValueHandling = NullValueHandling.Ignore)]
         public List<UpgradeTaskResponseBody> Items { get; set; }

@@ -11,31 +11,31 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 
+    /// **参数解释：** 升级时插件操作配置。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
     public class UpgradeAddonConfig 
     {
 
         /// <summary>
-        /// 插件名称
+        /// **参数解释：** CCE插件名称 **约束限制：** 不涉及 **取值范围：** 集群中已安装的插件名称。[集群中已安装插件详情见[获取AddonInstance列表](https://support.huaweicloud.com/api-cce/cce_02_0326.html)](tag:hws) **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("addonTemplateName", NullValueHandling = NullValueHandling.Ignore)]
         public string AddonTemplateName { get; set; }
 
         /// <summary>
-        /// 执行动作，当前升级场景支持操作为\&quot;patch\&quot;
+        /// **参数解释：** 升级插件的执行动作 **约束限制：** 不涉及 **取值范围：** - patch：表示升级插件版本  **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("operation", NullValueHandling = NullValueHandling.Ignore)]
         public string Operation { get; set; }
 
         /// <summary>
-        /// 目标插件版本号
+        /// **参数解释：** 目标插件版本号 **约束限制：** 目标插件版本必须与目标集群版本配套。[集群版本配套关系见[查询AddonTemplates列表](https://support.huaweicloud.com/api-cce/cce_02_0321.html)](tag:hws) **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }
 
         /// <summary>
-        /// 插件参数列表，Key:Value格式
+        /// **参数解释：** 插件参数列表，Key:Value格式。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("values", NullValueHandling = NullValueHandling.Ignore)]
         public Object Values { get; set; }

@@ -20,19 +20,19 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
         /// **参数解释**： 起始偏移。 **取值范围**： 不涉及。 
         /// </summary>
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Offset { get; set; }
+        public long? Offset { get; set; }
 
         /// <summary>
         /// **参数解释**： 查询大小。 **取值范围**： 不涉及。 
         /// </summary>
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Limit { get; set; }
+        public long? Limit { get; set; }
 
         /// <summary>
         /// **参数解释**： 记录总数。 **取值范围**： 不涉及。 
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Total { get; set; }
+        public long? Total { get; set; }
 
         /// <summary>
         /// **参数解释**： 流水线模板列表，包含流水线模板的详细信息。 **取值范围**： 不涉及。 

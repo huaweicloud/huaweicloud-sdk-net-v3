@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 升级配置
+    /// **参数解释：** 升级配置 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
     public class UpgradeStrategy 
     {
 
         /// <summary>
-        /// 升级策略类型，当前仅支持原地升级类型\&quot;inPlaceRollingUpdate\&quot;
+        /// **参数解释：** 升级策略类型 **约束限制：** 当前仅支持inPlaceRollingUpdate类型 **取值范围：** - \&quot;inPlaceRollingUpdate\&quot;：原地升级类型  **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

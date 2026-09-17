@@ -25,8 +25,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// <summary>
         /// **参数解释**：  总记录数。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
         /// </summary>
-        [JsonProperty("total_count", NullValueHandling = NullValueHandling.Ignore)]
-        public int? TotalCount { get; set; }
+        [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Total { get; set; }
 
 
 
@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             var sb = new StringBuilder();
             sb.Append("class ListInstanceBackupSummaryResponse {\n");
             sb.Append("  infos: ").Append(Infos).Append("\n");
-            sb.Append("  totalCount: ").Append(TotalCount).Append("\n");
+            sb.Append("  total: ").Append(Total).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -58,7 +58,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             if (input == null) return false;
             if (this.Infos != input.Infos || (this.Infos != null && input.Infos != null && !this.Infos.SequenceEqual(input.Infos))) return false;
-            if (this.TotalCount != input.TotalCount || (this.TotalCount != null && !this.TotalCount.Equals(input.TotalCount))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
 
             return true;
         }
@@ -72,7 +72,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             {
                 var hashCode = 41;
                 if (this.Infos != null) hashCode = hashCode * 59 + this.Infos.GetHashCode();
-                if (this.TotalCount != null) hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
                 return hashCode;
             }
         }

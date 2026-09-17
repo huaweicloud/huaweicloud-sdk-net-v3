@@ -43,14 +43,14 @@ namespace HuaweiCloud.SDK.Rc.V1.Model
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string CreateTime { get; set; }
+        [JsonProperty("created", NullValueHandling = NullValueHandling.Ignore)]
+        public string Created { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("update_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string UpdateTime { get; set; }
+        [JsonProperty("updated", NullValueHandling = NullValueHandling.Ignore)]
+        public string Updated { get; set; }
 
 
 
@@ -65,8 +65,8 @@ namespace HuaweiCloud.SDK.Rc.V1.Model
             sb.Append("  domainId: ").Append(DomainId).Append("\n");
             sb.Append("  groupName: ").Append(GroupName).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
-            sb.Append("  createTime: ").Append(CreateTime).Append("\n");
-            sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
+            sb.Append("  created: ").Append(Created).Append("\n");
+            sb.Append("  updated: ").Append(Updated).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -89,8 +89,8 @@ namespace HuaweiCloud.SDK.Rc.V1.Model
             if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
             if (this.GroupName != input.GroupName || (this.GroupName != null && !this.GroupName.Equals(input.GroupName))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
-            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
-            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.Created != input.Created || (this.Created != null && !this.Created.Equals(input.Created))) return false;
+            if (this.Updated != input.Updated || (this.Updated != null && !this.Updated.Equals(input.Updated))) return false;
 
             return true;
         }
@@ -107,8 +107,8 @@ namespace HuaweiCloud.SDK.Rc.V1.Model
                 if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
                 if (this.GroupName != null) hashCode = hashCode * 59 + this.GroupName.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.Created != null) hashCode = hashCode * 59 + this.Created.GetHashCode();
+                if (this.Updated != null) hashCode = hashCode * 59 + this.Updated.GetHashCode();
                 return hashCode;
             }
         }

@@ -11,25 +11,25 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 升级任务状态信息
+    /// **参数解释：** 升级任务状态信息 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
     public class UpgradeTaskStatus 
     {
 
         /// <summary>
-        /// 升级任务状态. &gt; Init：初始化 &gt; Queuing：等待 &gt; Running：运行中 &gt; Pause：暂停 &gt; Success：成功 &gt; Failed：失败 
+        /// **参数解释：** 升级任务状态 **约束限制：** 不涉及 **取值范围：** - Init：初始化 - Queuing：等待 - Running：运行中 - Pause：暂停 - Success：成功 - Failed：失败  **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("phase", NullValueHandling = NullValueHandling.Ignore)]
         public string Phase { get; set; }
 
         /// <summary>
-        /// 升级任务进度
+        /// **参数解释：** 升级任务进度 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("progress", NullValueHandling = NullValueHandling.Ignore)]
         public string Progress { get; set; }
 
         /// <summary>
-        /// 升级任务结束时间
+        /// **参数解释：** 升级任务结束时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("completionTime", NullValueHandling = NullValueHandling.Ignore)]
         public string CompletionTime { get; set; }

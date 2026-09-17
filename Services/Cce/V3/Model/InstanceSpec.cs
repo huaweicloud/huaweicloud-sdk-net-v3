@@ -11,55 +11,55 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// spec是集合类的元素类型，内容为插件实例具体信息
+    /// **参数解释**： spec是集合类的元素类型，内容为插件实例具体信息。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
     public class InstanceSpec 
     {
 
         /// <summary>
-        /// 集群id
+        /// **参数解释**： 集群ID **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("clusterID", NullValueHandling = NullValueHandling.Ignore)]
         public string ClusterID { get; set; }
 
         /// <summary>
-        /// 插件模板版本号，如1.0.0
+        /// **参数解释**： 插件模板版本号，如1.0.0。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }
 
         /// <summary>
-        /// 插件模板名称，如coredns
+        /// **参数解释**： 插件模板名称，如coredns。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("addonTemplateName", NullValueHandling = NullValueHandling.Ignore)]
         public string AddonTemplateName { get; set; }
 
         /// <summary>
-        /// **参数解释：** 插件模板类型 **约束限制：** 不涉及 **取值范围：** - helm: 表示使用Helm包进行部署的模板类型 - static: 表示静态模板类型  **默认取值：** 不涉及
+        /// **参数解释**： 插件模板类型。 **约束限制**： 不涉及 **取值范围**： - helm：表示使用Helm包进行部署的模板类型 - static：表示静态模板类型  **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("addonTemplateType", NullValueHandling = NullValueHandling.Ignore)]
         public string AddonTemplateType { get; set; }
 
         /// <summary>
-        /// 插件模板logo图片的地址
+        /// **参数解释**： 插件模板logo图片的地址。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("addonTemplateLogo", NullValueHandling = NullValueHandling.Ignore)]
         public string AddonTemplateLogo { get; set; }
 
         /// <summary>
-        /// 插件模板所属类型
+        /// **参数解释**： 插件模板所属类型。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("addonTemplateLabels", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AddonTemplateLabels { get; set; }
 
         /// <summary>
-        /// 插件模板描述
+        /// **参数解释**： 插件模板描述。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 插件模板安装参数（各插件不同），请根据具体插件模板信息填写安装参数。
+        /// **参数解释**： 插件模板安装参数（各插件不同），请根据具体插件模板信息填写安装参数。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("values", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Object> Values { get; set; }

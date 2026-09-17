@@ -41,6 +41,18 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
         public string UpdateTime { get; set; }
 
         /// <summary>
+        /// **参数解释**： 触发类型列表。 **约束限制**： 不涉及。 **取值范围**： - Manual：手动触发。 - Scheduler：定时触发。 - RollBack：回退触发。 - CreateTag：Tag事件触发。 - Note：评论触发。 - Issue：Issue触发。 - MR：MR触发。 - CR：CR触发。 - Generic：流水线触发器触发。 - Push：Push事件触发。 - SubPipeline：子流水线触发。 **默认取值**： 不涉及。 
+        /// </summary>
+        [JsonProperty("trigger_type", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> TriggerType { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 执行人ID列表。 **约束限制**： 不涉及。 **取值范围**： 32位字符，仅由数字和字母组成。 **默认取值**： 不涉及。 
+        /// </summary>
+        [JsonProperty("executor_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> ExecutorIds { get; set; }
+
+        /// <summary>
         /// **参数解释**： 起始偏移。 **约束限制**： 不涉及。 **取值范围**： 大于等于零。 **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
@@ -64,6 +76,24 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
         [JsonProperty("sort_dir", NullValueHandling = NullValueHandling.Ignore)]
         public string SortDir { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 是否返回Job状态详情。 **约束限制**： 不涉及。 **取值范围**： - true：返回Job状态列表。 - false：不返回。 **默认取值**： false。 
+        /// </summary>
+        [JsonProperty("show_job_details", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ShowJobDetails { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 阶段ID，用于指定返回Job状态详情的阶段。 **约束限制**： 不涉及。 **取值范围**： 32位字符，仅由数字和字母组成。 **默认取值**： 不涉及，为空时默认取流水线最后一个阶段。 
+        /// </summary>
+        [JsonProperty("stage_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string StageId { get; set; }
+
+        /// <summary>
+        /// **参数解释**： Job ID，仅在show_job_details为true时生效，用于过滤包含指定Job的执行记录。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+        /// </summary>
+        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string JobId { get; set; }
+
 
 
         /// <summary>
@@ -77,10 +107,15 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
+            sb.Append("  triggerType: ").Append(TriggerType).Append("\n");
+            sb.Append("  executorIds: ").Append(ExecutorIds).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  sortKey: ").Append(SortKey).Append("\n");
             sb.Append("  sortDir: ").Append(SortDir).Append("\n");
+            sb.Append("  showJobDetails: ").Append(ShowJobDetails).Append("\n");
+            sb.Append("  stageId: ").Append(StageId).Append("\n");
+            sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -103,10 +138,15 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
             if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.TriggerType != input.TriggerType || (this.TriggerType != null && input.TriggerType != null && !this.TriggerType.SequenceEqual(input.TriggerType))) return false;
+            if (this.ExecutorIds != input.ExecutorIds || (this.ExecutorIds != null && input.ExecutorIds != null && !this.ExecutorIds.SequenceEqual(input.ExecutorIds))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.SortKey != input.SortKey || (this.SortKey != null && !this.SortKey.Equals(input.SortKey))) return false;
             if (this.SortDir != input.SortDir || (this.SortDir != null && !this.SortDir.Equals(input.SortDir))) return false;
+            if (this.ShowJobDetails != input.ShowJobDetails || (this.ShowJobDetails != null && !this.ShowJobDetails.Equals(input.ShowJobDetails))) return false;
+            if (this.StageId != input.StageId || (this.StageId != null && !this.StageId.Equals(input.StageId))) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
 
             return true;
         }
@@ -123,10 +163,15 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
                 if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.TriggerType != null) hashCode = hashCode * 59 + this.TriggerType.GetHashCode();
+                if (this.ExecutorIds != null) hashCode = hashCode * 59 + this.ExecutorIds.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.SortKey != null) hashCode = hashCode * 59 + this.SortKey.GetHashCode();
                 if (this.SortDir != null) hashCode = hashCode * 59 + this.SortDir.GetHashCode();
+                if (this.ShowJobDetails != null) hashCode = hashCode * 59 + this.ShowJobDetails.GetHashCode();
+                if (this.StageId != null) hashCode = hashCode * 59 + this.StageId.GetHashCode();
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 return hashCode;
             }
         }

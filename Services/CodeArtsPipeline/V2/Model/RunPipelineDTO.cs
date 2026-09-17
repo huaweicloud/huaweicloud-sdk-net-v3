@@ -46,6 +46,18 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
         [JsonProperty("choose_stages", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ChooseStages { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 是否为子流水线触发。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+        /// </summary>
+        [JsonProperty("sub_hook", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SubHook { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 使用哪一个执行方案运行流水线。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+        /// </summary>
+        [JsonProperty("execution_plan_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ExecutionPlanId { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +72,8 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             sb.Append("  variables: ").Append(Variables).Append("\n");
             sb.Append("  chooseJobs: ").Append(ChooseJobs).Append("\n");
             sb.Append("  chooseStages: ").Append(ChooseStages).Append("\n");
+            sb.Append("  subHook: ").Append(SubHook).Append("\n");
+            sb.Append("  executionPlanId: ").Append(ExecutionPlanId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,6 +97,8 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             if (this.Variables != input.Variables || (this.Variables != null && input.Variables != null && !this.Variables.SequenceEqual(input.Variables))) return false;
             if (this.ChooseJobs != input.ChooseJobs || (this.ChooseJobs != null && input.ChooseJobs != null && !this.ChooseJobs.SequenceEqual(input.ChooseJobs))) return false;
             if (this.ChooseStages != input.ChooseStages || (this.ChooseStages != null && input.ChooseStages != null && !this.ChooseStages.SequenceEqual(input.ChooseStages))) return false;
+            if (this.SubHook != input.SubHook || (this.SubHook != null && !this.SubHook.Equals(input.SubHook))) return false;
+            if (this.ExecutionPlanId != input.ExecutionPlanId || (this.ExecutionPlanId != null && !this.ExecutionPlanId.Equals(input.ExecutionPlanId))) return false;
 
             return true;
         }
@@ -100,6 +116,8 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
                 if (this.Variables != null) hashCode = hashCode * 59 + this.Variables.GetHashCode();
                 if (this.ChooseJobs != null) hashCode = hashCode * 59 + this.ChooseJobs.GetHashCode();
                 if (this.ChooseStages != null) hashCode = hashCode * 59 + this.ChooseStages.GetHashCode();
+                if (this.SubHook != null) hashCode = hashCode * 59 + this.SubHook.GetHashCode();
+                if (this.ExecutionPlanId != null) hashCode = hashCode * 59 + this.ExecutionPlanId.GetHashCode();
                 return hashCode;
             }
         }

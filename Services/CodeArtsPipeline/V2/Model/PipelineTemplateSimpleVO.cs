@@ -98,7 +98,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
         /// **参数解释**： 是否展示流水线源。 **取值范围**： - true：展示流水线源。 - false：不展示流水线源。 
         /// </summary>
         [JsonProperty("is_show_source", NullValueHandling = NullValueHandling.Ignore)]
-        public string IsShowSource { get; set; }
+        public bool? IsShowSource { get; set; }
 
         /// <summary>
         /// **参数解释**： 模板编排的阶段列表。 **约束限制**： 不涉及。 

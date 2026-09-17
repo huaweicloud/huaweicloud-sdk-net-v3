@@ -35,6 +35,24 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
         public int? Total { get; set; }
 
         /// <summary>
+        /// **参数解释**： 当前系统时间。 **取值范围**： 不涉及。 
+        /// </summary>
+        [JsonProperty("current_system_time", NullValueHandling = NullValueHandling.Ignore)]
+        public long? CurrentSystemTime { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("highest_confidentiality", NullValueHandling = NullValueHandling.Ignore)]
+        public ListPipelinesPageHighestConfidentiality HighestConfidentiality { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 隐藏数据数量。 **约束限制**： 非涉密场景无该字段。 **取值范围**： 不涉及。 
+        /// </summary>
+        [JsonProperty("number_of_hidden_data", NullValueHandling = NullValueHandling.Ignore)]
+        public long? NumberOfHiddenData { get; set; }
+
+        /// <summary>
         /// **参数解释**： 流水线。 **取值范围**： 不涉及。 
         /// </summary>
         [JsonProperty("pipelines", NullValueHandling = NullValueHandling.Ignore)]
@@ -52,6 +70,9 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  total: ").Append(Total).Append("\n");
+            sb.Append("  currentSystemTime: ").Append(CurrentSystemTime).Append("\n");
+            sb.Append("  highestConfidentiality: ").Append(HighestConfidentiality).Append("\n");
+            sb.Append("  numberOfHiddenData: ").Append(NumberOfHiddenData).Append("\n");
             sb.Append("  pipelines: ").Append(Pipelines).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -74,6 +95,9 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.CurrentSystemTime != input.CurrentSystemTime || (this.CurrentSystemTime != null && !this.CurrentSystemTime.Equals(input.CurrentSystemTime))) return false;
+            if (this.HighestConfidentiality != input.HighestConfidentiality || (this.HighestConfidentiality != null && !this.HighestConfidentiality.Equals(input.HighestConfidentiality))) return false;
+            if (this.NumberOfHiddenData != input.NumberOfHiddenData || (this.NumberOfHiddenData != null && !this.NumberOfHiddenData.Equals(input.NumberOfHiddenData))) return false;
             if (this.Pipelines != input.Pipelines || (this.Pipelines != null && input.Pipelines != null && !this.Pipelines.SequenceEqual(input.Pipelines))) return false;
 
             return true;
@@ -90,6 +114,9 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.CurrentSystemTime != null) hashCode = hashCode * 59 + this.CurrentSystemTime.GetHashCode();
+                if (this.HighestConfidentiality != null) hashCode = hashCode * 59 + this.HighestConfidentiality.GetHashCode();
+                if (this.NumberOfHiddenData != null) hashCode = hashCode * 59 + this.NumberOfHiddenData.GetHashCode();
                 if (this.Pipelines != null) hashCode = hashCode * 59 + this.Pipelines.GetHashCode();
                 return hashCode;
             }

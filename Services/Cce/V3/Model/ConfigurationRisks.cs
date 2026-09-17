@@ -17,43 +17,43 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 组件名称
+        /// **参数解释：** 组件名称。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("package", NullValueHandling = NullValueHandling.Ignore)]
         public string Package { get; set; }
 
         /// <summary>
-        /// 涉及文件路径
+        /// **参数解释：** 涉及文件路径。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("sourceFile", NullValueHandling = NullValueHandling.Ignore)]
         public string SourceFile { get; set; }
 
         /// <summary>
-        /// 节点信息
+        /// **参数解释：** 节点信息。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("nodeMsg", NullValueHandling = NullValueHandling.Ignore)]
         public string NodeMsg { get; set; }
 
         /// <summary>
-        /// 参数值
+        /// **参数解释：** 参数值。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("field", NullValueHandling = NullValueHandling.Ignore)]
         public string Field { get; set; }
 
         /// <summary>
-        /// 修改操作类型
+        /// **参数解释：** 修改操作类型。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("operation", NullValueHandling = NullValueHandling.Ignore)]
         public string Operation { get; set; }
 
         /// <summary>
-        /// 原始值
+        /// **参数解释：** 原始值。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("originalValue", NullValueHandling = NullValueHandling.Ignore)]
         public string OriginalValue { get; set; }
 
         /// <summary>
-        /// 当前值
+        /// **参数解释：** 当前值。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

@@ -41,6 +41,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         public string SrcDomain { get; set; }
 
         /// <summary>
+        /// 所属特性集，适用于SF类型工作项
+        /// </summary>
+        [JsonProperty("feature_set", NullValueHandling = NullValueHandling.Ignore)]
+        public string FeatureSet { get; set; }
+
+        /// <summary>
         /// 提交人Id
         /// </summary>
         [JsonProperty("submitted_by", NullValueHandling = NullValueHandling.Ignore)]
@@ -130,6 +136,42 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         [JsonProperty("need_break", NullValueHandling = NullValueHandling.Ignore)]
         public string NeedBreak { get; set; }
 
+        /// <summary>
+        /// 工作项层级ID
+        /// </summary>
+        [JsonProperty("category_layer_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string CategoryLayerId { get; set; }
+
+        /// <summary>
+        /// 父工作项ID
+        /// </summary>
+        [JsonProperty("parent_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ParentId { get; set; }
+
+        /// <summary>
+        /// IR关联的RR的ID
+        /// </summary>
+        [JsonProperty("ir2rr", NullValueHandling = NullValueHandling.Ignore)]
+        public string Ir2rr { get; set; }
+
+        /// <summary>
+        /// US关联的RR的ID
+        /// </summary>
+        [JsonProperty("us2rr", NullValueHandling = NullValueHandling.Ignore)]
+        public string Us2rr { get; set; }
+
+        /// <summary>
+        /// 关联工作项ID，多值使用英文逗号分隔
+        /// </summary>
+        [JsonProperty("link", NullValueHandling = NullValueHandling.Ignore)]
+        public string Link { get; set; }
+
+        /// <summary>
+        /// IR关联的SF的ID
+        /// </summary>
+        [JsonProperty("ir2feature", NullValueHandling = NullValueHandling.Ignore)]
+        public string Ir2feature { get; set; }
+
 
 
         /// <summary>
@@ -143,6 +185,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  srcDomain: ").Append(SrcDomain).Append("\n");
+            sb.Append("  featureSet: ").Append(FeatureSet).Append("\n");
             sb.Append("  submittedBy: ").Append(SubmittedBy).Append("\n");
             sb.Append("  domainId: ").Append(DomainId).Append("\n");
             sb.Append("  recipient: ").Append(Recipient).Append("\n");
@@ -158,6 +201,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             sb.Append("  workloadManDay: ").Append(WorkloadManDay).Append("\n");
             sb.Append("  businessDomain: ").Append(BusinessDomain).Append("\n");
             sb.Append("  needBreak: ").Append(NeedBreak).Append("\n");
+            sb.Append("  categoryLayerId: ").Append(CategoryLayerId).Append("\n");
+            sb.Append("  parentId: ").Append(ParentId).Append("\n");
+            sb.Append("  ir2rr: ").Append(Ir2rr).Append("\n");
+            sb.Append("  us2rr: ").Append(Us2rr).Append("\n");
+            sb.Append("  link: ").Append(Link).Append("\n");
+            sb.Append("  ir2feature: ").Append(Ir2feature).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -180,6 +229,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.SrcDomain != input.SrcDomain || (this.SrcDomain != null && !this.SrcDomain.Equals(input.SrcDomain))) return false;
+            if (this.FeatureSet != input.FeatureSet || (this.FeatureSet != null && !this.FeatureSet.Equals(input.FeatureSet))) return false;
             if (this.SubmittedBy != input.SubmittedBy || (this.SubmittedBy != null && !this.SubmittedBy.Equals(input.SubmittedBy))) return false;
             if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
             if (this.Recipient != input.Recipient || (this.Recipient != null && input.Recipient != null && !this.Recipient.SequenceEqual(input.Recipient))) return false;
@@ -195,6 +245,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
             if (this.WorkloadManDay != input.WorkloadManDay || (this.WorkloadManDay != null && !this.WorkloadManDay.Equals(input.WorkloadManDay))) return false;
             if (this.BusinessDomain != input.BusinessDomain || (this.BusinessDomain != null && !this.BusinessDomain.Equals(input.BusinessDomain))) return false;
             if (this.NeedBreak != input.NeedBreak || (this.NeedBreak != null && !this.NeedBreak.Equals(input.NeedBreak))) return false;
+            if (this.CategoryLayerId != input.CategoryLayerId || (this.CategoryLayerId != null && !this.CategoryLayerId.Equals(input.CategoryLayerId))) return false;
+            if (this.ParentId != input.ParentId || (this.ParentId != null && !this.ParentId.Equals(input.ParentId))) return false;
+            if (this.Ir2rr != input.Ir2rr || (this.Ir2rr != null && !this.Ir2rr.Equals(input.Ir2rr))) return false;
+            if (this.Us2rr != input.Us2rr || (this.Us2rr != null && !this.Us2rr.Equals(input.Us2rr))) return false;
+            if (this.Link != input.Link || (this.Link != null && !this.Link.Equals(input.Link))) return false;
+            if (this.Ir2feature != input.Ir2feature || (this.Ir2feature != null && !this.Ir2feature.Equals(input.Ir2feature))) return false;
 
             return true;
         }
@@ -211,6 +267,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.SrcDomain != null) hashCode = hashCode * 59 + this.SrcDomain.GetHashCode();
+                if (this.FeatureSet != null) hashCode = hashCode * 59 + this.FeatureSet.GetHashCode();
                 if (this.SubmittedBy != null) hashCode = hashCode * 59 + this.SubmittedBy.GetHashCode();
                 if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
                 if (this.Recipient != null) hashCode = hashCode * 59 + this.Recipient.GetHashCode();
@@ -226,6 +283,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
                 if (this.WorkloadManDay != null) hashCode = hashCode * 59 + this.WorkloadManDay.GetHashCode();
                 if (this.BusinessDomain != null) hashCode = hashCode * 59 + this.BusinessDomain.GetHashCode();
                 if (this.NeedBreak != null) hashCode = hashCode * 59 + this.NeedBreak.GetHashCode();
+                if (this.CategoryLayerId != null) hashCode = hashCode * 59 + this.CategoryLayerId.GetHashCode();
+                if (this.ParentId != null) hashCode = hashCode * 59 + this.ParentId.GetHashCode();
+                if (this.Ir2rr != null) hashCode = hashCode * 59 + this.Ir2rr.GetHashCode();
+                if (this.Us2rr != null) hashCode = hashCode * 59 + this.Us2rr.GetHashCode();
+                if (this.Link != null) hashCode = hashCode * 59 + this.Link.GetHashCode();
+                if (this.Ir2feature != null) hashCode = hashCode * 59 + this.Ir2feature.GetHashCode();
                 return hashCode;
             }
         }

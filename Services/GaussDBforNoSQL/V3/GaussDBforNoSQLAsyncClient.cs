@@ -22,6 +22,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<ApplyConfigurationResponse> ApplyConfigurationAsync(ApplyConfigurationRequest applyConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -32,6 +33,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             return JsonUtils.DeSerialize<ApplyConfigurationResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<ApplyConfigurationResponse> ApplyConfigurationAsyncInvoker(ApplyConfigurationRequest applyConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -983,6 +985,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<ListConfigurationsResponse> ListConfigurationsAsync(ListConfigurationsRequest listConfigurationsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -992,6 +995,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             return JsonUtils.DeSerialize<ListConfigurationsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<ListConfigurationsResponse> ListConfigurationsAsyncInvoker(ListConfigurationsRequest listConfigurationsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1173,12 +1177,13 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
-        /// 查询指定条件下的所有实例规格信息
+        /// 查询所有实例规格信息
         ///
         /// 查询指定条件下的所有实例规格信息。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<ListFlavorsResponse> ListFlavorsAsync(ListFlavorsRequest listFlavorsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1188,6 +1193,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             return JsonUtils.DeSerialize<ListFlavorsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<ListFlavorsResponse> ListFlavorsAsyncInvoker(ListFlavorsRequest listFlavorsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1381,6 +1387,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<ListInstancesByTagsResponse> ListInstancesByTagsAsync(ListInstancesByTagsRequest listInstancesByTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1390,6 +1397,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             return JsonUtils.DeSerialize<ListInstancesByTagsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<ListInstancesByTagsResponse> ListInstancesByTagsAsyncInvoker(ListInstancesByTagsRequest listInstancesByTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1759,6 +1767,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<ListSlowLogsResponse> ListSlowLogsAsync(ListSlowLogsRequest listSlowLogsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1769,6 +1778,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             return JsonUtils.DeSerialize<ListSlowLogsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<ListSlowLogsResponse> ListSlowLogsAsyncInvoker(ListSlowLogsRequest listSlowLogsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -2687,6 +2697,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<ShowBackupPolicyResponse> ShowBackupPolicyAsync(ShowBackupPolicyRequest showBackupPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -2697,6 +2708,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             return JsonUtils.DeSerialize<ShowBackupPolicyResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<ShowBackupPolicyResponse> ShowBackupPolicyAsyncInvoker(ShowBackupPolicyRequest showBackupPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -2789,6 +2801,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<ShowErrorLogResponse> ShowErrorLogAsync(ShowErrorLogRequest showErrorLogRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -2799,6 +2812,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             return JsonUtils.DeSerialize<ShowErrorLogResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<ShowErrorLogResponse> ShowErrorLogAsyncInvoker(ShowErrorLogRequest showErrorLogRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -3665,6 +3679,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<UpdateInstanceConfigurationResponse> UpdateInstanceConfigurationAsync(UpdateInstanceConfigurationRequest updateInstanceConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -3675,6 +3690,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             return JsonUtils.DeSerialize<UpdateInstanceConfigurationResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<UpdateInstanceConfigurationResponse> UpdateInstanceConfigurationAsyncInvoker(UpdateInstanceConfigurationRequest updateInstanceConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();

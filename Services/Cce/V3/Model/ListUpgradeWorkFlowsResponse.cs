@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// API类型，固定值“List”，该值不可修改。 
+        /// **参数解释：** API类型，固定值\&quot;List\&quot;，该值不可修改 **约束限制：** 固定值 **取值范围：** - List  **默认取值：** List 
         /// </summary>
         [JsonProperty("kind", NullValueHandling = NullValueHandling.Ignore)]
         public string Kind { get; set; }
 
         /// <summary>
-        /// API版本，固定值“v3”，该值不可修改。 
+        /// **参数解释：** API版本，固定值\&quot;v3\&quot;，该值不可修改 **约束限制：** 固定值 **取值范围：** - v3  **默认取值：** v3 
         /// </summary>
         [JsonProperty("apiVersion", NullValueHandling = NullValueHandling.Ignore)]
         public string ApiVersion { get; set; }
 
         /// <summary>
-        /// 
+        /// **参数解释：** 升级工作流列表 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("items", NullValueHandling = NullValueHandling.Ignore)]
         public List<UpgradeWorkFlow> Items { get; set; }

@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// 风险版本信息
         /// </summary>
         [JsonProperty("risks", NullValueHandling = NullValueHandling.Ignore)]
-        public List<EngineRiskDesc> Risks { get; set; }
+        public List<ShowRiskInfoEngineRiskDesc> Risks { get; set; }
 
         /// <summary>
         /// 

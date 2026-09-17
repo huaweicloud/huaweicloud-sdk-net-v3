@@ -88,6 +88,24 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
         [JsonProperty("security_level", NullValueHandling = NullValueHandling.Ignore)]
         public int? SecurityLevel { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 是否禁用流水线。 **取值范围**： - true：流水线已禁用。 - false：流水线未禁用。 
+        /// </summary>
+        [JsonProperty("banned", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Banned { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 流水线描述。 **取值范围**： 不涉及。 
+        /// </summary>
+        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 流水线标签列表。 **取值范围**： 不涉及。 
+        /// </summary>
+        [JsonProperty("tag_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ListPipelinesPageTagList> TagList { get; set; }
+
 
 
         /// <summary>
@@ -109,6 +127,9 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             sb.Append("  latestRun: ").Append(LatestRun).Append("\n");
             sb.Append("  convertSign: ").Append(ConvertSign).Append("\n");
             sb.Append("  securityLevel: ").Append(SecurityLevel).Append("\n");
+            sb.Append("  banned: ").Append(Banned).Append("\n");
+            sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  tagList: ").Append(TagList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -139,6 +160,9 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             if (this.LatestRun != input.LatestRun || (this.LatestRun != null && !this.LatestRun.Equals(input.LatestRun))) return false;
             if (this.ConvertSign != input.ConvertSign || (this.ConvertSign != null && !this.ConvertSign.Equals(input.ConvertSign))) return false;
             if (this.SecurityLevel != input.SecurityLevel || (this.SecurityLevel != null && !this.SecurityLevel.Equals(input.SecurityLevel))) return false;
+            if (this.Banned != input.Banned || (this.Banned != null && !this.Banned.Equals(input.Banned))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.TagList != input.TagList || (this.TagList != null && input.TagList != null && !this.TagList.SequenceEqual(input.TagList))) return false;
 
             return true;
         }
@@ -163,6 +187,9 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
                 if (this.LatestRun != null) hashCode = hashCode * 59 + this.LatestRun.GetHashCode();
                 if (this.ConvertSign != null) hashCode = hashCode * 59 + this.ConvertSign.GetHashCode();
                 if (this.SecurityLevel != null) hashCode = hashCode * 59 + this.SecurityLevel.GetHashCode();
+                if (this.Banned != null) hashCode = hashCode * 59 + this.Banned.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.TagList != null) hashCode = hashCode * 59 + this.TagList.GetHashCode();
                 return hashCode;
             }
         }

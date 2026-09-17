@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string ClusterId { get; set; }
 
         /// <summary>
-        /// 集群升级任务引导流程ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
+        /// **参数解释：** 集群升级任务引导流程ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [SDKProperty("upgrade_workflow_id", IsPath = true)]
         [JsonProperty("upgrade_workflow_id", NullValueHandling = NullValueHandling.Ignore)]

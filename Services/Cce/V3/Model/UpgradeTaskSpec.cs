@@ -11,25 +11,25 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 升级任务属性
+    /// **参数解释：** 升级任务属性 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
     public class UpgradeTaskSpec 
     {
 
         /// <summary>
-        /// 升级前集群版本
+        /// **参数解释：** 升级前集群版本 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }
 
         /// <summary>
-        /// 升级的目标集群版本
+        /// **参数解释：** 升级的目标集群版本 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("targetVersion", NullValueHandling = NullValueHandling.Ignore)]
         public string TargetVersion { get; set; }
 
         /// <summary>
-        /// 升级任务附属信息
+        /// **参数解释：** 升级任务附属信息 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("items", NullValueHandling = NullValueHandling.Ignore)]
         public Object Items { get; set; }

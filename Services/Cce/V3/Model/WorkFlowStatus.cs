@@ -23,13 +23,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public WorkFlowPhase? Phase { get; set; }
 
         /// <summary>
-        /// 升级流程中的各个任务项的执行状态
+        /// **参数解释：** 升级流程中的各个任务项的执行状态 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("pointStatuses", NullValueHandling = NullValueHandling.Ignore)]
         public List<PointStatus> PointStatuses { get; set; }
 
         /// <summary>
-        /// 表示该升级流程的任务执行线路
+        /// **参数解释：** 表示该升级流程的任务执行线路 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("lineStatuses", NullValueHandling = NullValueHandling.Ignore)]
         public List<LineStatus> LineStatuses { get; set; }

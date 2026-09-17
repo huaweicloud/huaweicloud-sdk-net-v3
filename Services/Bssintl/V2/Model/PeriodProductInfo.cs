@@ -82,6 +82,12 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
         [JsonProperty("subscription_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? SubscriptionNum { get; set; }
 
+        /// <summary>
+        /// 费用分期模式。HALF_PAY：半付 ZERO_PAY：零付 NA：不支持费用分期模式。说明：此参数不携带或携带值为空串或携带值为null时，默认值为“NA”。暂只支持ECS产品。
+        /// </summary>
+        [JsonProperty("fee_installment_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string FeeInstallmentMode { get; set; }
+
 
 
         /// <summary>
@@ -102,6 +108,7 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
             sb.Append("  periodType: ").Append(PeriodType).Append("\n");
             sb.Append("  periodNum: ").Append(PeriodNum).Append("\n");
             sb.Append("  subscriptionNum: ").Append(SubscriptionNum).Append("\n");
+            sb.Append("  feeInstallmentMode: ").Append(FeeInstallmentMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -131,6 +138,7 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
             if (this.PeriodType != input.PeriodType || (this.PeriodType != null && !this.PeriodType.Equals(input.PeriodType))) return false;
             if (this.PeriodNum != input.PeriodNum || (this.PeriodNum != null && !this.PeriodNum.Equals(input.PeriodNum))) return false;
             if (this.SubscriptionNum != input.SubscriptionNum || (this.SubscriptionNum != null && !this.SubscriptionNum.Equals(input.SubscriptionNum))) return false;
+            if (this.FeeInstallmentMode != input.FeeInstallmentMode || (this.FeeInstallmentMode != null && !this.FeeInstallmentMode.Equals(input.FeeInstallmentMode))) return false;
 
             return true;
         }
@@ -154,6 +162,7 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
                 if (this.PeriodType != null) hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
                 if (this.PeriodNum != null) hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
                 if (this.SubscriptionNum != null) hashCode = hashCode * 59 + this.SubscriptionNum.GetHashCode();
+                if (this.FeeInstallmentMode != null) hashCode = hashCode * 59 + this.FeeInstallmentMode.GetHashCode();
                 return hashCode;
             }
         }

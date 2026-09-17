@@ -195,6 +195,180 @@ namespace HuaweiCloud.SDK.Rc.V1
         }
         
         /// <summary>
+        /// 创建高级查询
+        ///
+        /// Create Resource Query Language
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateStoredQueryResponse CreateStoredQuery(CreateStoredQueryRequest createStoredQueryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/resource-center/stored-queries", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createStoredQueryRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateStoredQueryResponse>(response);
+        }
+
+        public SyncInvoker<CreateStoredQueryResponse> CreateStoredQueryInvoker(CreateStoredQueryRequest createStoredQueryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/resource-center/stored-queries", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createStoredQueryRequest);
+            return new SyncInvoker<CreateStoredQueryResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateStoredQueryResponse>);
+        }
+        
+        /// <summary>
+        /// 删除高级查询
+        ///
+        /// Select resources by SQL
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteStoredQueryResponse DeleteStoredQuery(DeleteStoredQueryRequest deleteStoredQueryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteStoredQueryRequest.QueryId, out var valueOfQueryId)) urlParam.Add("query_id", valueOfQueryId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/resource-center/stored-queries/{query_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStoredQueryRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteStoredQueryResponse>(response);
+        }
+
+        public SyncInvoker<DeleteStoredQueryResponse> DeleteStoredQueryInvoker(DeleteStoredQueryRequest deleteStoredQueryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteStoredQueryRequest.QueryId, out var valueOfQueryId)) urlParam.Add("query_id", valueOfQueryId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/resource-center/stored-queries/{query_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStoredQueryRequest);
+            return new SyncInvoker<DeleteStoredQueryResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteStoredQueryResponse>);
+        }
+        
+        /// <summary>
+        /// 列举高级查询Schema
+        ///
+        /// List Schemas
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListSchemasResponse ListSchemas(ListSchemasRequest listSchemasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/resource-center/schemas", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSchemasRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListSchemasResponse>(response);
+        }
+
+        public SyncInvoker<ListSchemasResponse> ListSchemasInvoker(ListSchemasRequest listSchemasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/resource-center/schemas", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSchemasRequest);
+            return new SyncInvoker<ListSchemasResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSchemasResponse>);
+        }
+        
+        /// <summary>
+        /// 列出高级查询
+        ///
+        /// List Resource Query Language
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListStoredQueriesResponse ListStoredQueries(ListStoredQueriesRequest listStoredQueriesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/resource-center/stored-queries", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStoredQueriesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListStoredQueriesResponse>(response);
+        }
+
+        public SyncInvoker<ListStoredQueriesResponse> ListStoredQueriesInvoker(ListStoredQueriesRequest listStoredQueriesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/resource-center/stored-queries", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStoredQueriesRequest);
+            return new SyncInvoker<ListStoredQueriesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStoredQueriesResponse>);
+        }
+        
+        /// <summary>
+        /// 运行高级查询
+        ///
+        /// Run Resource Query Language
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RunQueryResponse RunQuery(RunQueryRequest runQueryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/resource-center/run-query", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runQueryRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<RunQueryResponse>(response);
+        }
+
+        public SyncInvoker<RunQueryResponse> RunQueryInvoker(RunQueryRequest runQueryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/resource-center/run-query", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runQueryRequest);
+            return new SyncInvoker<RunQueryResponse>(this, "POST", request, JsonUtils.DeSerialize<RunQueryResponse>);
+        }
+        
+        /// <summary>
+        /// 查询单个高级查询
+        ///
+        /// Show Resource Query Language
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowStoredQueryResponse ShowStoredQuery(ShowStoredQueryRequest showStoredQueryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showStoredQueryRequest.QueryId, out var valueOfQueryId)) urlParam.Add("query_id", valueOfQueryId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/resource-center/stored-queries/{query_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStoredQueryRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowStoredQueryResponse>(response);
+        }
+
+        public SyncInvoker<ShowStoredQueryResponse> ShowStoredQueryInvoker(ShowStoredQueryRequest showStoredQueryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showStoredQueryRequest.QueryId, out var valueOfQueryId)) urlParam.Add("query_id", valueOfQueryId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/resource-center/stored-queries/{query_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStoredQueryRequest);
+            return new SyncInvoker<ShowStoredQueryResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowStoredQueryResponse>);
+        }
+        
+        /// <summary>
+        /// 更新单个高级查询
+        ///
+        /// Update Resource Query Language
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateStoredQueryResponse UpdateStoredQuery(UpdateStoredQueryRequest updateStoredQueryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateStoredQueryRequest.QueryId, out var valueOfQueryId)) urlParam.Add("query_id", valueOfQueryId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/resource-center/stored-queries/{query_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStoredQueryRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateStoredQueryResponse>(response);
+        }
+
+        public SyncInvoker<UpdateStoredQueryResponse> UpdateStoredQueryInvoker(UpdateStoredQueryRequest updateStoredQueryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateStoredQueryRequest.QueryId, out var valueOfQueryId)) urlParam.Add("query_id", valueOfQueryId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/resource-center/stored-queries/{query_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStoredQueryRequest);
+            return new SyncInvoker<UpdateStoredQueryResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateStoredQueryResponse>);
+        }
+        
+        /// <summary>
         /// 列举资源关系
         ///
         /// 指定资源ID，查询该资源与其他资源的关联关系，需要当前用户有resourcecenter::listResourceRelation权限。

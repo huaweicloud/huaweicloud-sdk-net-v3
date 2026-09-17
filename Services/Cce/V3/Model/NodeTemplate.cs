@@ -158,6 +158,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// <summary>
         /// 
         /// </summary>
+        [JsonProperty("volumeConfig", NullValueHandling = NullValueHandling.Ignore)]
+        public VolumeConfig VolumeConfig { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [JsonProperty("rootVolume", NullValueHandling = NullValueHandling.Ignore)]
         public Volume RootVolume { get; set; }
 
@@ -293,6 +299,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  az: ").Append(Az).Append("\n");
             sb.Append("  os: ").Append(Os).Append("\n");
             sb.Append("  login: ").Append(Login).Append("\n");
+            sb.Append("  volumeConfig: ").Append(VolumeConfig).Append("\n");
             sb.Append("  rootVolume: ").Append(RootVolume).Append("\n");
             sb.Append("  dataVolumes: ").Append(DataVolumes).Append("\n");
             sb.Append("  storage: ").Append(Storage).Append("\n");
@@ -336,6 +343,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.Az != input.Az || (this.Az != null && !this.Az.Equals(input.Az))) return false;
             if (this.Os != input.Os || (this.Os != null && !this.Os.Equals(input.Os))) return false;
             if (this.Login != input.Login || (this.Login != null && !this.Login.Equals(input.Login))) return false;
+            if (this.VolumeConfig != input.VolumeConfig || (this.VolumeConfig != null && !this.VolumeConfig.Equals(input.VolumeConfig))) return false;
             if (this.RootVolume != input.RootVolume || (this.RootVolume != null && !this.RootVolume.Equals(input.RootVolume))) return false;
             if (this.DataVolumes != input.DataVolumes || (this.DataVolumes != null && input.DataVolumes != null && !this.DataVolumes.SequenceEqual(input.DataVolumes))) return false;
             if (this.Storage != input.Storage || (this.Storage != null && !this.Storage.Equals(input.Storage))) return false;
@@ -373,6 +381,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.Az != null) hashCode = hashCode * 59 + this.Az.GetHashCode();
                 if (this.Os != null) hashCode = hashCode * 59 + this.Os.GetHashCode();
                 if (this.Login != null) hashCode = hashCode * 59 + this.Login.GetHashCode();
+                if (this.VolumeConfig != null) hashCode = hashCode * 59 + this.VolumeConfig.GetHashCode();
                 if (this.RootVolume != null) hashCode = hashCode * 59 + this.RootVolume.GetHashCode();
                 if (this.DataVolumes != null) hashCode = hashCode * 59 + this.DataVolumes.GetHashCode();
                 if (this.Storage != null) hashCode = hashCode * 59 + this.Storage.GetHashCode();

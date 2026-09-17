@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 模板的ID
+        /// **参数解释：** 模板的ID。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [SDKProperty("chart_id", IsPath = true)]
         [JsonProperty("chart_id", NullValueHandling = NullValueHandling.Ignore)]

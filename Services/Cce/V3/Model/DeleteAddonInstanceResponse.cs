@@ -17,34 +17,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// API类型，固定值“Addon”，该值不可修改。
+        /// **参数解释**： 删除插件实例的返回结果。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
-        [JsonProperty("kind", NullValueHandling = NullValueHandling.Ignore)]
-        public string Kind { get; set; }
-
-        /// <summary>
-        /// API版本，固定值“v3”，该值不可修改。
-        /// </summary>
-        [JsonProperty("apiVersion", NullValueHandling = NullValueHandling.Ignore)]
-        public string ApiVersion { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
-        public AddonMetadata Metadata { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("spec", NullValueHandling = NullValueHandling.Ignore)]
-        public InstanceSpec Spec { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public AddonInstanceStatus Status { get; set; }
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
+        public string Body { get; set; }
 
 
 
@@ -55,11 +31,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DeleteAddonInstanceResponse {\n");
-            sb.Append("  kind: ").Append(Kind).Append("\n");
-            sb.Append("  apiVersion: ").Append(ApiVersion).Append("\n");
-            sb.Append("  metadata: ").Append(Metadata).Append("\n");
-            sb.Append("  spec: ").Append(Spec).Append("\n");
-            sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -78,11 +50,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public bool Equals(DeleteAddonInstanceResponse input)
         {
             if (input == null) return false;
-            if (this.Kind != input.Kind || (this.Kind != null && !this.Kind.Equals(input.Kind))) return false;
-            if (this.ApiVersion != input.ApiVersion || (this.ApiVersion != null && !this.ApiVersion.Equals(input.ApiVersion))) return false;
-            if (this.Metadata != input.Metadata || (this.Metadata != null && !this.Metadata.Equals(input.Metadata))) return false;
-            if (this.Spec != input.Spec || (this.Spec != null && !this.Spec.Equals(input.Spec))) return false;
-            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
             return true;
         }
@@ -95,11 +63,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Kind != null) hashCode = hashCode * 59 + this.Kind.GetHashCode();
-                if (this.ApiVersion != null) hashCode = hashCode * 59 + this.ApiVersion.GetHashCode();
-                if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
-                if (this.Spec != null) hashCode = hashCode * 59 + this.Spec.GetHashCode();
-                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

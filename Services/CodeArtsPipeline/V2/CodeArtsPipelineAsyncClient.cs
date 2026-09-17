@@ -16,6 +16,38 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2
 
         
         /// <summary>
+        /// 手动卡点通过
+        ///
+        /// 手动卡点通过
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<AcceptCheckpointResponse> AcceptCheckpointAsync(AcceptCheckpointRequest acceptCheckpointRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(acceptCheckpointRequest.StepRunId, out var valueOfStepRunId)) urlParam.Add("step_run_id", valueOfStepRunId);
+            if (StringUtils.TryConvertToNonEmptyString(acceptCheckpointRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(acceptCheckpointRequest.PipelineId, out var valueOfPipelineId)) urlParam.Add("pipeline_id", valueOfPipelineId);
+            if (StringUtils.TryConvertToNonEmptyString(acceptCheckpointRequest.PipelineRunId, out var valueOfPipelineRunId)) urlParam.Add("pipeline_run_id", valueOfPipelineRunId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/api/pipelines/{pipeline_id}/pipeline-runs/{pipeline_run_id}/steps/{step_run_id}/manual/pass", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", acceptCheckpointRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<AcceptCheckpointResponse>(response);
+        }
+
+        public AsyncInvoker<AcceptCheckpointResponse> AcceptCheckpointAsyncInvoker(AcceptCheckpointRequest acceptCheckpointRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(acceptCheckpointRequest.StepRunId, out var valueOfStepRunId)) urlParam.Add("step_run_id", valueOfStepRunId);
+            if (StringUtils.TryConvertToNonEmptyString(acceptCheckpointRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(acceptCheckpointRequest.PipelineId, out var valueOfPipelineId)) urlParam.Add("pipeline_id", valueOfPipelineId);
+            if (StringUtils.TryConvertToNonEmptyString(acceptCheckpointRequest.PipelineRunId, out var valueOfPipelineRunId)) urlParam.Add("pipeline_run_id", valueOfPipelineRunId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/api/pipelines/{pipeline_id}/pipeline-runs/{pipeline_run_id}/steps/{step_run_id}/manual/pass", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", acceptCheckpointRequest);
+            return new AsyncInvoker<AcceptCheckpointResponse>(this, "POST", request, JsonUtils.DeSerialize<AcceptCheckpointResponse>);
+        }
+        
+        /// <summary>
         /// 通过人工审核
         ///
         /// 通过人工审核
@@ -113,6 +145,32 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2
                 batchShowPipelinesLatestStatusResponse.Body = JsonUtils.DeSerializeList<PipelineLatestRun>(response);
                 return batchShowPipelinesLatestStatusResponse;
             });
+        }
+        
+        /// <summary>
+        /// 创建告警策略
+        ///
+        /// 创建流水线告警策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateAlertPolicyResponse> CreateAlertPolicyAsync(CreateAlertPolicyRequest createAlertPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createAlertPolicyRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{tenant_id}/api/alert/policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createAlertPolicyRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateAlertPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<CreateAlertPolicyResponse> CreateAlertPolicyAsyncInvoker(CreateAlertPolicyRequest createAlertPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createAlertPolicyRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{tenant_id}/api/alert/policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createAlertPolicyRequest);
+            return new AsyncInvoker<CreateAlertPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAlertPolicyResponse>);
         }
         
         /// <summary>
@@ -243,6 +301,32 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/api/pipelines", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createPipelineNewRequest);
             return new AsyncInvoker<CreatePipelineNewResponse>(this, "POST", request, JsonUtils.DeSerialize<CreatePipelineNewResponse>);
+        }
+        
+        /// <summary>
+        /// 新建流水线标签
+        ///
+        /// 新建流水线标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreatePipelineTagResponse> CreatePipelineTagAsync(CreatePipelineTagRequest createPipelineTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createPipelineTagRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/api/pipeline-tag/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createPipelineTagRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreatePipelineTagResponse>(response);
+        }
+
+        public AsyncInvoker<CreatePipelineTagResponse> CreatePipelineTagAsyncInvoker(CreatePipelineTagRequest createPipelineTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createPipelineTagRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/api/pipeline-tag/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createPipelineTagRequest);
+            return new AsyncInvoker<CreatePipelineTagResponse>(this, "POST", request, JsonUtils.DeSerialize<CreatePipelineTagResponse>);
         }
         
         /// <summary>
@@ -402,6 +486,60 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2
         }
         
         /// <summary>
+        /// 创建参数组
+        ///
+        /// 创建参数组
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateVariableGroupResponse> CreateVariableGroupAsync(CreateVariableGroupRequest createVariableGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createVariableGroupRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/api/pipeline/variable/group/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVariableGroupRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateVariableGroupResponse>(response);
+        }
+
+        public AsyncInvoker<CreateVariableGroupResponse> CreateVariableGroupAsyncInvoker(CreateVariableGroupRequest createVariableGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createVariableGroupRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/api/pipeline/variable/group/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createVariableGroupRequest);
+            return new AsyncInvoker<CreateVariableGroupResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateVariableGroupResponse>);
+        }
+        
+        /// <summary>
+        /// 删除告警策略
+        ///
+        /// 删除流水线告警策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteAlertPolicyResponse> DeleteAlertPolicyAsync(DeleteAlertPolicyRequest deleteAlertPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteAlertPolicyRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteAlertPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{tenant_id}/api/alert/policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAlertPolicyRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteAlertPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteAlertPolicyResponse> DeleteAlertPolicyAsyncInvoker(DeleteAlertPolicyRequest deleteAlertPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteAlertPolicyRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteAlertPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{tenant_id}/api/alert/policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAlertPolicyRequest);
+            return new AsyncInvoker<DeleteAlertPolicyResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteAlertPolicyResponse>);
+        }
+        
+        /// <summary>
         /// 删除基础插件
         ///
         /// 删除基础插件
@@ -479,6 +617,32 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/api/pipeline-group/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePipelineGroupRequest);
             return new AsyncInvoker<DeletePipelineGroupResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeletePipelineGroupResponse>);
+        }
+        
+        /// <summary>
+        /// 删除流水线标签
+        ///
+        /// 删除流水线标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeletePipelineTagResponse> DeletePipelineTagAsync(DeletePipelineTagRequest deletePipelineTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deletePipelineTagRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/api/pipeline-tag/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePipelineTagRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeletePipelineTagResponse>(response);
+        }
+
+        public AsyncInvoker<DeletePipelineTagResponse> DeletePipelineTagAsyncInvoker(DeletePipelineTagRequest deletePipelineTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deletePipelineTagRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/api/pipeline-tag/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePipelineTagRequest);
+            return new AsyncInvoker<DeletePipelineTagResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeletePipelineTagResponse>);
         }
         
         /// <summary>
@@ -615,6 +779,32 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{domain_id}/tenant/rule-sets/{rule_set_id}/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStrategyRequest);
             return new AsyncInvoker<DeleteStrategyResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteStrategyResponse>);
+        }
+        
+        /// <summary>
+        /// 删除参数组
+        ///
+        /// 删除参数组
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteVariableGroupResponse> DeleteVariableGroupAsync(DeleteVariableGroupRequest deleteVariableGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteVariableGroupRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/api/pipeline/variable/group/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVariableGroupRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteVariableGroupResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteVariableGroupResponse> DeleteVariableGroupAsyncInvoker(DeleteVariableGroupRequest deleteVariableGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteVariableGroupRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/api/pipeline/variable/group/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVariableGroupRequest);
+            return new AsyncInvoker<DeleteVariableGroupResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteVariableGroupResponse>);
         }
         
         /// <summary>
@@ -826,6 +1016,39 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2
             var urlPath = HttpUtils.AddUrlPath("/v3/pipelines/list", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPipelineSimpleInfoRequest);
             return new AsyncInvoker<ListPipelineSimpleInfoResponse>(this, "POST", request, JsonUtils.DeSerialize<ListPipelineSimpleInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 查询流水线标签列表
+        ///
+        /// 查询流水线标签列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListPipelineTagResponse> ListPipelineTagAsync(ListPipelineTagRequest listPipelineTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listPipelineTagRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/api/pipeline-tag/list", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPipelineTagRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            var listPipelineTagResponse = JsonUtils.DeSerializeNull<ListPipelineTagResponse>(response);
+            listPipelineTagResponse.Body = JsonUtils.DeSerializeList<PipelineTagResp>(response);
+            return listPipelineTagResponse;
+        }
+
+        public AsyncInvoker<ListPipelineTagResponse> ListPipelineTagAsyncInvoker(ListPipelineTagRequest listPipelineTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listPipelineTagRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/api/pipeline-tag/list", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPipelineTagRequest);
+            return new AsyncInvoker<ListPipelineTagResponse>(this, "GET", request, response =>
+            {
+                var listPipelineTagResponse = JsonUtils.DeSerializeNull<ListPipelineTagResponse>(response);
+                listPipelineTagResponse.Body = JsonUtils.DeSerializeList<PipelineTagResp>(response);
+                return listPipelineTagResponse;
+            });
         }
         
         /// <summary>
@@ -1111,6 +1334,32 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2
         }
         
         /// <summary>
+        /// 查询参数组列表
+        ///
+        /// 查询参数组列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListVariableGroupsResponse> ListVariableGroupsAsync(ListVariableGroupsRequest listVariableGroupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listVariableGroupsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/api/pipeline/variable/group/list", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listVariableGroupsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ListVariableGroupsResponse>(response);
+        }
+
+        public AsyncInvoker<ListVariableGroupsResponse> ListVariableGroupsAsyncInvoker(ListVariableGroupsRequest listVariableGroupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listVariableGroupsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/api/pipeline/variable/group/list", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listVariableGroupsRequest);
+            return new AsyncInvoker<ListVariableGroupsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListVariableGroupsResponse>);
+        }
+        
+        /// <summary>
         /// 发布插件
         ///
         /// 发布插件
@@ -1262,7 +1511,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2
             if (StringUtils.TryConvertToNonEmptyString(retryPipelineRunRequest.PipelineId, out var valueOfPipelineId)) urlParam.Add("pipeline_id", valueOfPipelineId);
             if (StringUtils.TryConvertToNonEmptyString(retryPipelineRunRequest.PipelineRunId, out var valueOfPipelineRunId)) urlParam.Add("pipeline_run_id", valueOfPipelineRunId);
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/api/pipelines/{pipeline_id}/pipeline-runs/{pipeline_run_id}/retry", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", retryPipelineRunRequest);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", retryPipelineRunRequest);
             var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<RetryPipelineRunResponse>(response);
         }
@@ -1274,7 +1523,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2
             if (StringUtils.TryConvertToNonEmptyString(retryPipelineRunRequest.PipelineId, out var valueOfPipelineId)) urlParam.Add("pipeline_id", valueOfPipelineId);
             if (StringUtils.TryConvertToNonEmptyString(retryPipelineRunRequest.PipelineRunId, out var valueOfPipelineRunId)) urlParam.Add("pipeline_run_id", valueOfPipelineRunId);
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/api/pipelines/{pipeline_id}/pipeline-runs/{pipeline_run_id}/retry", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", retryPipelineRunRequest);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", retryPipelineRunRequest);
             return new AsyncInvoker<RetryPipelineRunResponse>(this, "PUT", request, JsonUtils.DeSerialize<RetryPipelineRunResponse>);
         }
         
@@ -1304,6 +1553,34 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/api/pipelines/{pipeline_id}/run", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", runPipelineRequest);
             return new AsyncInvoker<RunPipelineResponse>(this, "POST", request, JsonUtils.DeSerialize<RunPipelineResponse>);
+        }
+        
+        /// <summary>
+        /// 查询告警策略详情
+        ///
+        /// 查询流水线告警策略详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAlertPolicyResponse> ShowAlertPolicyAsync(ShowAlertPolicyRequest showAlertPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showAlertPolicyRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            if (StringUtils.TryConvertToNonEmptyString(showAlertPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{tenant_id}/api/alert/policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAlertPolicyRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowAlertPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAlertPolicyResponse> ShowAlertPolicyAsyncInvoker(ShowAlertPolicyRequest showAlertPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showAlertPolicyRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            if (StringUtils.TryConvertToNonEmptyString(showAlertPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{tenant_id}/api/alert/policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAlertPolicyRequest);
+            return new AsyncInvoker<ShowAlertPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAlertPolicyResponse>);
         }
         
         /// <summary>
@@ -1691,7 +1968,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2
         }
         
         /// <summary>
-        /// 
+        /// 查询项目级策略详情
         ///
         /// 查询项目级策略详情
         /// 
@@ -1854,6 +2131,34 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2
             var urlPath = HttpUtils.AddUrlPath("/v3/templates/{template_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTemplateDetailRequest);
             return new AsyncInvoker<ShowTemplateDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTemplateDetailResponse>);
+        }
+        
+        /// <summary>
+        /// 查询参数组详情
+        ///
+        /// 查询参数组详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowVariableGroupDetailResponse> ShowVariableGroupDetailAsync(ShowVariableGroupDetailRequest showVariableGroupDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showVariableGroupDetailRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(showVariableGroupDetailRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/api/pipeline/variable/group/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVariableGroupDetailRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowVariableGroupDetailResponse>(response);
+        }
+
+        public AsyncInvoker<ShowVariableGroupDetailResponse> ShowVariableGroupDetailAsyncInvoker(ShowVariableGroupDetailRequest showVariableGroupDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showVariableGroupDetailRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(showVariableGroupDetailRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/api/pipeline/variable/group/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVariableGroupDetailRequest);
+            return new AsyncInvoker<ShowVariableGroupDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVariableGroupDetailResponse>);
         }
         
         /// <summary>

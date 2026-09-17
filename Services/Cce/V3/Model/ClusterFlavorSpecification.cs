@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// **参数解释**： 集群节点规模 **取值范围**： - 50: 最大支持50节点 - 200: 最大支持200节点 - 100: 最大支持1000节点 - 2000: 最大支持2000节点
+        /// **参数解释**： 集群节点规模 **取值范围**： - 50: 最大支持50节点 - 200: 最大支持200节点 - 1000: 最大支持1000节点 - 2000: 最大支持2000节点
         /// </summary>
         [JsonProperty("nodeCapacity", NullValueHandling = NullValueHandling.Ignore)]
         public int? NodeCapacity { get; set; }

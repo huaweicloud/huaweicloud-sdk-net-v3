@@ -83,7 +83,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
         public string GroupId { get; set; }
 
         /// <summary>
-        /// **参数解释**： 复制场景使用，为流水线组ID。 **约束限制**： 不涉及。 **取值范围**： 32位字符，仅由数字和字母组成。 **默认取值**： 不涉及。 
+        /// **参数解释**： 复制场景使用，为原流水线ID。 **约束限制**： 不涉及。 **取值范围**： 32位字符，仅由数字和字母组成。 **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
@@ -99,6 +99,48 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
         /// </summary>
         [JsonProperty("security_level", NullValueHandling = NullValueHandling.Ignore)]
         public int? SecurityLevel { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 是否禁用自动生成阶段，仅变更流水线适用。默认值为false，即默认启用自动生成阶段。 **约束限制**： 不涉及。 **取值范围**： - true：禁用自动生成阶段。 - false：启用自动生成阶段。 **默认取值**： false。 
+        /// </summary>
+        [JsonProperty("disable_release_branch_management", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DisableReleaseBranchManagement { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 流水线执行计划列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+        /// </summary>
+        [JsonProperty("execution_plans", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Object> ExecutionPlans { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 项目ID。 **约束限制**： 不涉及。 **取值范围**： 32位字符，仅由数字和字母组成。 **默认取值**： 不涉及。 
+        /// </summary>
+        [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProjectId { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 流水线取消运行策略。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+        /// </summary>
+        [JsonProperty("cancel_strategy", NullValueHandling = NullValueHandling.Ignore)]
+        public Object CancelStrategy { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 流水线密级code。 **约束限制**： 非涉密场景不涉及，涉密场景必填。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+        /// </summary>
+        [JsonProperty("confidentiality_code", NullValueHandling = NullValueHandling.Ignore)]
+        public string ConfidentialityCode { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 委托名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+        /// </summary>
+        [JsonProperty("agency_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string AgencyName { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 关联的通用参数组ID列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+        /// </summary>
+        [JsonProperty("variable_group_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> VariableGroupIds { get; set; }
 
 
 
@@ -123,6 +165,13 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  concurrencyControl: ").Append(ConcurrencyControl).Append("\n");
             sb.Append("  securityLevel: ").Append(SecurityLevel).Append("\n");
+            sb.Append("  disableReleaseBranchManagement: ").Append(DisableReleaseBranchManagement).Append("\n");
+            sb.Append("  executionPlans: ").Append(ExecutionPlans).Append("\n");
+            sb.Append("  projectId: ").Append(ProjectId).Append("\n");
+            sb.Append("  cancelStrategy: ").Append(CancelStrategy).Append("\n");
+            sb.Append("  confidentialityCode: ").Append(ConfidentialityCode).Append("\n");
+            sb.Append("  agencyName: ").Append(AgencyName).Append("\n");
+            sb.Append("  variableGroupIds: ").Append(VariableGroupIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -155,6 +204,13 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.ConcurrencyControl != input.ConcurrencyControl || (this.ConcurrencyControl != null && !this.ConcurrencyControl.Equals(input.ConcurrencyControl))) return false;
             if (this.SecurityLevel != input.SecurityLevel || (this.SecurityLevel != null && !this.SecurityLevel.Equals(input.SecurityLevel))) return false;
+            if (this.DisableReleaseBranchManagement != input.DisableReleaseBranchManagement || (this.DisableReleaseBranchManagement != null && !this.DisableReleaseBranchManagement.Equals(input.DisableReleaseBranchManagement))) return false;
+            if (this.ExecutionPlans != input.ExecutionPlans || (this.ExecutionPlans != null && input.ExecutionPlans != null && !this.ExecutionPlans.SequenceEqual(input.ExecutionPlans))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.CancelStrategy != input.CancelStrategy || (this.CancelStrategy != null && !this.CancelStrategy.Equals(input.CancelStrategy))) return false;
+            if (this.ConfidentialityCode != input.ConfidentialityCode || (this.ConfidentialityCode != null && !this.ConfidentialityCode.Equals(input.ConfidentialityCode))) return false;
+            if (this.AgencyName != input.AgencyName || (this.AgencyName != null && !this.AgencyName.Equals(input.AgencyName))) return false;
+            if (this.VariableGroupIds != input.VariableGroupIds || (this.VariableGroupIds != null && input.VariableGroupIds != null && !this.VariableGroupIds.SequenceEqual(input.VariableGroupIds))) return false;
 
             return true;
         }
@@ -181,6 +237,13 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.ConcurrencyControl != null) hashCode = hashCode * 59 + this.ConcurrencyControl.GetHashCode();
                 if (this.SecurityLevel != null) hashCode = hashCode * 59 + this.SecurityLevel.GetHashCode();
+                if (this.DisableReleaseBranchManagement != null) hashCode = hashCode * 59 + this.DisableReleaseBranchManagement.GetHashCode();
+                if (this.ExecutionPlans != null) hashCode = hashCode * 59 + this.ExecutionPlans.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.CancelStrategy != null) hashCode = hashCode * 59 + this.CancelStrategy.GetHashCode();
+                if (this.ConfidentialityCode != null) hashCode = hashCode * 59 + this.ConfidentialityCode.GetHashCode();
+                if (this.AgencyName != null) hashCode = hashCode * 59 + this.AgencyName.GetHashCode();
+                if (this.VariableGroupIds != null) hashCode = hashCode * 59 + this.VariableGroupIds.GetHashCode();
                 return hashCode;
             }
         }

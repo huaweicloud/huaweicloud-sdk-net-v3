@@ -11,9 +11,9 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 集群升级状态： Init: 任务初始状态 Queuing: 任务已进入执行队列 Running: 任务开始执行 Success: 任务执行成功 Failed: 任务执行失败 
+    /// **参数解释：** 集群升级状态 **约束限制：** 不涉及 **取值范围：** - Init：任务初始状态 - Queuing：任务已进入执行队列 - Running：任务开始执行 - Success：任务执行成功 - Failed：任务执行失败  **默认取值：** 不涉及 
     /// </summary>
-    /// <value>集群升级状态： Init: 任务初始状态 Queuing: 任务已进入执行队列 Running: 任务开始执行 Success: 任务执行成功 Failed: 任务执行失败 </value>
+    /// <value>**参数解释：** 集群升级状态 **约束限制：** 不涉及 **取值范围：** - Init：任务初始状态 - Queuing：任务已进入执行队列 - Running：任务开始执行 - Success：任务执行成功 - Failed：任务执行失败  **默认取值：** 不涉及 </value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     

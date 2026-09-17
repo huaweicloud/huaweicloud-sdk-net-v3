@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
     {
 
         /// <summary>
-        /// 键。  - 最大长度127个unicode字符。  - key不能为空。
+        /// 键。  - 最大长度128个unicode字符。  - key不能为空。
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
         /// <summary>
-        /// 值。  - 每个值最大长度255个unicode字符。
+        /// 值。  - 每个值最大长度256个unicode字符。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

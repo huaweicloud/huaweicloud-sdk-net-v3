@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// 
         /// </summary>
         [JsonProperty("clusterFlavorSpecs", NullValueHandling = NullValueHandling.Ignore)]
-        public ClusterFlavorSpecification ClusterFlavorSpecs { get; set; }
+        public List<ClusterFlavorSpecification> ClusterFlavorSpecs { get; set; }
 
 
 
@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public bool Equals(GetClusterFlavorSpecsResponse input)
         {
             if (input == null) return false;
-            if (this.ClusterFlavorSpecs != input.ClusterFlavorSpecs || (this.ClusterFlavorSpecs != null && !this.ClusterFlavorSpecs.Equals(input.ClusterFlavorSpecs))) return false;
+            if (this.ClusterFlavorSpecs != input.ClusterFlavorSpecs || (this.ClusterFlavorSpecs != null && input.ClusterFlavorSpecs != null && !this.ClusterFlavorSpecs.SequenceEqual(input.ClusterFlavorSpecs))) return false;
 
             return true;
         }

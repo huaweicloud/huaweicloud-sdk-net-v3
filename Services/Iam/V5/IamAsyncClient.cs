@@ -1764,6 +1764,110 @@ namespace HuaweiCloud.SDK.Iam.V5
         }
         
         /// <summary>
+        /// 删除服务专属凭证
+        ///
+        /// 该接口可以用于删除服务专属凭证。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteServiceSpecificCredentialV5Response> DeleteServiceSpecificCredentialV5Async(DeleteServiceSpecificCredentialV5Request deleteServiceSpecificCredentialV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteServiceSpecificCredentialV5Request.CredentialId, out var valueOfCredentialId)) urlParam.Add("credential_id", valueOfCredentialId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteServiceSpecificCredentialV5Request.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/users/{user_id}/service-specific-credentials/{credential_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteServiceSpecificCredentialV5Request);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteServiceSpecificCredentialV5Response>(response);
+        }
+
+        public AsyncInvoker<DeleteServiceSpecificCredentialV5Response> DeleteServiceSpecificCredentialV5AsyncInvoker(DeleteServiceSpecificCredentialV5Request deleteServiceSpecificCredentialV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteServiceSpecificCredentialV5Request.CredentialId, out var valueOfCredentialId)) urlParam.Add("credential_id", valueOfCredentialId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteServiceSpecificCredentialV5Request.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/users/{user_id}/service-specific-credentials/{credential_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteServiceSpecificCredentialV5Request);
+            return new AsyncInvoker<DeleteServiceSpecificCredentialV5Response>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteServiceSpecificCredentialV5Response>);
+        }
+        
+        /// <summary>
+        /// 查询支持服务专属凭证的云服务列表
+        ///
+        /// 该接口可以用于查询支持服务专属凭证的云服务列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListServiceSpecificCredentialSupportedServicesV5Response> ListServiceSpecificCredentialSupportedServicesV5Async(ListServiceSpecificCredentialSupportedServicesV5Request listServiceSpecificCredentialSupportedServicesV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/service-specific-credentials/supported-services", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listServiceSpecificCredentialSupportedServicesV5Request);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListServiceSpecificCredentialSupportedServicesV5Response>(response);
+        }
+
+        public AsyncInvoker<ListServiceSpecificCredentialSupportedServicesV5Response> ListServiceSpecificCredentialSupportedServicesV5AsyncInvoker(ListServiceSpecificCredentialSupportedServicesV5Request listServiceSpecificCredentialSupportedServicesV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/service-specific-credentials/supported-services", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listServiceSpecificCredentialSupportedServicesV5Request);
+            return new AsyncInvoker<ListServiceSpecificCredentialSupportedServicesV5Response>(this, "GET", request, JsonUtils.DeSerialize<ListServiceSpecificCredentialSupportedServicesV5Response>);
+        }
+        
+        /// <summary>
+        /// 查询服务专属凭证列表
+        ///
+        /// 该接口可以用于查询服务专属凭证列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListServiceSpecificCredentialsV5Response> ListServiceSpecificCredentialsV5Async(ListServiceSpecificCredentialsV5Request listServiceSpecificCredentialsV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/service-specific-credentials", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listServiceSpecificCredentialsV5Request);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListServiceSpecificCredentialsV5Response>(response);
+        }
+
+        public AsyncInvoker<ListServiceSpecificCredentialsV5Response> ListServiceSpecificCredentialsV5AsyncInvoker(ListServiceSpecificCredentialsV5Request listServiceSpecificCredentialsV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/service-specific-credentials", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listServiceSpecificCredentialsV5Request);
+            return new AsyncInvoker<ListServiceSpecificCredentialsV5Response>(this, "GET", request, JsonUtils.DeSerialize<ListServiceSpecificCredentialsV5Response>);
+        }
+        
+        /// <summary>
+        /// 更新服务专属凭证
+        ///
+        /// 该接口可以用于更新服务专属凭证的状态或描述。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateServiceSpecificCredentialV5Response> UpdateServiceSpecificCredentialV5Async(UpdateServiceSpecificCredentialV5Request updateServiceSpecificCredentialV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateServiceSpecificCredentialV5Request.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
+            if (StringUtils.TryConvertToNonEmptyString(updateServiceSpecificCredentialV5Request.CredentialId, out var valueOfCredentialId)) urlParam.Add("credential_id", valueOfCredentialId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/users/{user_id}/service-specific-credentials/{credential_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateServiceSpecificCredentialV5Request);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateServiceSpecificCredentialV5Response>(response);
+        }
+
+        public AsyncInvoker<UpdateServiceSpecificCredentialV5Response> UpdateServiceSpecificCredentialV5AsyncInvoker(UpdateServiceSpecificCredentialV5Request updateServiceSpecificCredentialV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateServiceSpecificCredentialV5Request.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
+            if (StringUtils.TryConvertToNonEmptyString(updateServiceSpecificCredentialV5Request.CredentialId, out var valueOfCredentialId)) urlParam.Add("credential_id", valueOfCredentialId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/users/{user_id}/service-specific-credentials/{credential_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateServiceSpecificCredentialV5Request);
+            return new AsyncInvoker<UpdateServiceSpecificCredentialV5Response>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateServiceSpecificCredentialV5Response>);
+        }
+        
+        /// <summary>
         /// 创建IAM用户
         ///
         /// 该接口可以用于创建IAM用户。

@@ -43,6 +43,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// <summary>
         /// 
         /// </summary>
+        [JsonProperty("repairPolicy", NullValueHandling = NullValueHandling.Ignore)]
+        public NodePoolRepairPolicy RepairPolicy { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [JsonProperty("nodeManagementUpdate", NullValueHandling = NullValueHandling.Ignore)]
         public NodeManagement NodeManagementUpdate { get; set; }
 
@@ -89,6 +95,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  initialNodeCount: ").Append(InitialNodeCount).Append("\n");
             sb.Append("  ignoreInitialNodeCount: ").Append(IgnoreInitialNodeCount).Append("\n");
             sb.Append("  autoscaling: ").Append(Autoscaling).Append("\n");
+            sb.Append("  repairPolicy: ").Append(RepairPolicy).Append("\n");
             sb.Append("  nodeManagementUpdate: ").Append(NodeManagementUpdate).Append("\n");
             sb.Append("  customSecurityGroups: ").Append(CustomSecurityGroups).Append("\n");
             sb.Append("  taintPolicyOnExistingNodes: ").Append(TaintPolicyOnExistingNodes).Append("\n");
@@ -117,6 +124,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.InitialNodeCount != input.InitialNodeCount || (this.InitialNodeCount != null && !this.InitialNodeCount.Equals(input.InitialNodeCount))) return false;
             if (this.IgnoreInitialNodeCount != input.IgnoreInitialNodeCount || (this.IgnoreInitialNodeCount != null && !this.IgnoreInitialNodeCount.Equals(input.IgnoreInitialNodeCount))) return false;
             if (this.Autoscaling != input.Autoscaling || (this.Autoscaling != null && !this.Autoscaling.Equals(input.Autoscaling))) return false;
+            if (this.RepairPolicy != input.RepairPolicy || (this.RepairPolicy != null && !this.RepairPolicy.Equals(input.RepairPolicy))) return false;
             if (this.NodeManagementUpdate != input.NodeManagementUpdate || (this.NodeManagementUpdate != null && !this.NodeManagementUpdate.Equals(input.NodeManagementUpdate))) return false;
             if (this.CustomSecurityGroups != input.CustomSecurityGroups || (this.CustomSecurityGroups != null && input.CustomSecurityGroups != null && !this.CustomSecurityGroups.SequenceEqual(input.CustomSecurityGroups))) return false;
             if (this.TaintPolicyOnExistingNodes != input.TaintPolicyOnExistingNodes || (this.TaintPolicyOnExistingNodes != null && !this.TaintPolicyOnExistingNodes.Equals(input.TaintPolicyOnExistingNodes))) return false;
@@ -139,6 +147,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.InitialNodeCount != null) hashCode = hashCode * 59 + this.InitialNodeCount.GetHashCode();
                 if (this.IgnoreInitialNodeCount != null) hashCode = hashCode * 59 + this.IgnoreInitialNodeCount.GetHashCode();
                 if (this.Autoscaling != null) hashCode = hashCode * 59 + this.Autoscaling.GetHashCode();
+                if (this.RepairPolicy != null) hashCode = hashCode * 59 + this.RepairPolicy.GetHashCode();
                 if (this.NodeManagementUpdate != null) hashCode = hashCode * 59 + this.NodeManagementUpdate.GetHashCode();
                 if (this.CustomSecurityGroups != null) hashCode = hashCode * 59 + this.CustomSecurityGroups.GetHashCode();
                 if (this.TaintPolicyOnExistingNodes != null) hashCode = hashCode * 59 + this.TaintPolicyOnExistingNodes.GetHashCode();

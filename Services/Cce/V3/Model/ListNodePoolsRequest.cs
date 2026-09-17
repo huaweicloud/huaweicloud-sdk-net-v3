@@ -30,6 +30,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("showDefaultNodePool", NullValueHandling = NullValueHandling.Ignore)]
         public string ShowDefaultNodePool { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 节点池conditions是否反映整个节点池整体状态。 **约束限制：** 不涉及 **取值范围：** - true: 节点池的conditions反映整个节点池整体状态。 - false: 节点池的conditions仅反映默认伸缩组的状态。  **默认取值：** 不指定时默认为false
+        /// </summary>
+        [SDKProperty("advanceStatus", IsQuery = true)]
+        [JsonProperty("advanceStatus", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? AdvanceStatus { get; set; }
+
 
 
         /// <summary>
@@ -41,6 +48,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("class ListNodePoolsRequest {\n");
             sb.Append("  clusterId: ").Append(ClusterId).Append("\n");
             sb.Append("  showDefaultNodePool: ").Append(ShowDefaultNodePool).Append("\n");
+            sb.Append("  advanceStatus: ").Append(AdvanceStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -61,6 +69,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (input == null) return false;
             if (this.ClusterId != input.ClusterId || (this.ClusterId != null && !this.ClusterId.Equals(input.ClusterId))) return false;
             if (this.ShowDefaultNodePool != input.ShowDefaultNodePool || (this.ShowDefaultNodePool != null && !this.ShowDefaultNodePool.Equals(input.ShowDefaultNodePool))) return false;
+            if (this.AdvanceStatus != input.AdvanceStatus || (this.AdvanceStatus != null && !this.AdvanceStatus.Equals(input.AdvanceStatus))) return false;
 
             return true;
         }
@@ -75,6 +84,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 var hashCode = 41;
                 if (this.ClusterId != null) hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
                 if (this.ShowDefaultNodePool != null) hashCode = hashCode * 59 + this.ShowDefaultNodePool.GetHashCode();
+                if (this.AdvanceStatus != null) hashCode = hashCode * 59 + this.AdvanceStatus.GetHashCode();
                 return hashCode;
             }
         }

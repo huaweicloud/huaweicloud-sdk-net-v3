@@ -163,6 +163,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// <summary>
         /// 
         /// </summary>
+        [JsonProperty("repairPolicy", NullValueHandling = NullValueHandling.Ignore)]
+        public NodePoolRepairPolicy RepairPolicy { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [JsonProperty("nodeManagement", NullValueHandling = NullValueHandling.Ignore)]
         public NodeManagement NodeManagement { get; set; }
 
@@ -215,6 +221,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  nodeTemplate: ").Append(NodeTemplate).Append("\n");
             sb.Append("  initialNodeCount: ").Append(InitialNodeCount).Append("\n");
             sb.Append("  autoscaling: ").Append(Autoscaling).Append("\n");
+            sb.Append("  repairPolicy: ").Append(RepairPolicy).Append("\n");
             sb.Append("  nodeManagement: ").Append(NodeManagement).Append("\n");
             sb.Append("  podSecurityGroups: ").Append(PodSecurityGroups).Append("\n");
             sb.Append("  extensionScaleGroups: ").Append(ExtensionScaleGroups).Append("\n");
@@ -244,6 +251,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.NodeTemplate != input.NodeTemplate || (this.NodeTemplate != null && !this.NodeTemplate.Equals(input.NodeTemplate))) return false;
             if (this.InitialNodeCount != input.InitialNodeCount || (this.InitialNodeCount != null && !this.InitialNodeCount.Equals(input.InitialNodeCount))) return false;
             if (this.Autoscaling != input.Autoscaling || (this.Autoscaling != null && !this.Autoscaling.Equals(input.Autoscaling))) return false;
+            if (this.RepairPolicy != input.RepairPolicy || (this.RepairPolicy != null && !this.RepairPolicy.Equals(input.RepairPolicy))) return false;
             if (this.NodeManagement != input.NodeManagement || (this.NodeManagement != null && !this.NodeManagement.Equals(input.NodeManagement))) return false;
             if (this.PodSecurityGroups != input.PodSecurityGroups || (this.PodSecurityGroups != null && input.PodSecurityGroups != null && !this.PodSecurityGroups.SequenceEqual(input.PodSecurityGroups))) return false;
             if (this.ExtensionScaleGroups != input.ExtensionScaleGroups || (this.ExtensionScaleGroups != null && input.ExtensionScaleGroups != null && !this.ExtensionScaleGroups.SequenceEqual(input.ExtensionScaleGroups))) return false;
@@ -267,6 +275,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.NodeTemplate != null) hashCode = hashCode * 59 + this.NodeTemplate.GetHashCode();
                 if (this.InitialNodeCount != null) hashCode = hashCode * 59 + this.InitialNodeCount.GetHashCode();
                 if (this.Autoscaling != null) hashCode = hashCode * 59 + this.Autoscaling.GetHashCode();
+                if (this.RepairPolicy != null) hashCode = hashCode * 59 + this.RepairPolicy.GetHashCode();
                 if (this.NodeManagement != null) hashCode = hashCode * 59 + this.NodeManagement.GetHashCode();
                 if (this.PodSecurityGroups != null) hashCode = hashCode * 59 + this.PodSecurityGroups.GetHashCode();
                 if (this.ExtensionScaleGroups != null) hashCode = hashCode * 59 + this.ExtensionScaleGroups.GetHashCode();

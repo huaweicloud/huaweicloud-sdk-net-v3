@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     public class ResourceSelector 
     {
         /// <summary>
-        /// 标签键值，取值如下 - node.uid：节点UID。
+        /// **参数解释：** 标签键值 **约束限制：** 不涉及 **取值范围：** - node.uid：节点UID  **默认取值：** 不涉及
         /// </summary>
-        /// <value>标签键值，取值如下 - node.uid：节点UID。</value>
+        /// <value>**参数解释：** 标签键值 **约束限制：** 不涉及 **取值范围：** - node.uid：节点UID  **默认取值：** 不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<KeyEnum>))]
         public class KeyEnum
         {
@@ -125,9 +125,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         }
 
         /// <summary>
-        /// 标签逻辑运算符，当前支持如下取值 - In
+        /// **参数解释：** 标签逻辑运算符 **约束限制：** 不涉及 **取值范围：** - In  **默认取值：** 不涉及
         /// </summary>
-        /// <value>标签逻辑运算符，当前支持如下取值 - In</value>
+        /// <value>**参数解释：** 标签逻辑运算符 **约束限制：** 不涉及 **取值范围：** - In  **默认取值：** 不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<OperatorEnum>))]
         public class OperatorEnum
         {
@@ -235,18 +235,18 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
 
         /// <summary>
-        /// 标签键值，取值如下 - node.uid：节点UID。
+        /// **参数解释：** 标签键值 **约束限制：** 不涉及 **取值范围：** - node.uid：节点UID  **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public KeyEnum Key { get; set; }
         /// <summary>
-        /// 标签值列表
+        /// **参数解释：** 标签值列表 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("values", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Values { get; set; }
 
         /// <summary>
-        /// 标签逻辑运算符，当前支持如下取值 - In
+        /// **参数解释：** 标签逻辑运算符 **约束限制：** 不涉及 **取值范围：** - In  **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("operator", NullValueHandling = NullValueHandling.Ignore)]
         public OperatorEnum Operator { get; set; }

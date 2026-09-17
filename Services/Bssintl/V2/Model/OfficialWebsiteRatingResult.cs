@@ -23,6 +23,18 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
         public decimal? OfficialWebsiteAmount { get; set; }
 
         /// <summary>
+        /// 分期金额的官网价。 说明：暂只支持ECS产品。
+        /// </summary>
+        [JsonProperty("installment_official_website_amount", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstallmentOfficialWebsiteAmount { get; set; }
+
+        /// <summary>
+        /// 分期付款的周期类型。 2：月。说明：暂只支持ECS产品。
+        /// </summary>
+        [JsonProperty("installment_period_type", NullValueHandling = NullValueHandling.Ignore)]
+        public int? InstallmentPeriodType { get; set; }
+
+        /// <summary>
         /// 价格度量单位标识。 1：美元
         /// </summary>
         [JsonProperty("measure_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -44,6 +56,8 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
             var sb = new StringBuilder();
             sb.Append("class OfficialWebsiteRatingResult {\n");
             sb.Append("  officialWebsiteAmount: ").Append(OfficialWebsiteAmount).Append("\n");
+            sb.Append("  installmentOfficialWebsiteAmount: ").Append(InstallmentOfficialWebsiteAmount).Append("\n");
+            sb.Append("  installmentPeriodType: ").Append(InstallmentPeriodType).Append("\n");
             sb.Append("  measureId: ").Append(MeasureId).Append("\n");
             sb.Append("  productRatingResults: ").Append(ProductRatingResults).Append("\n");
             sb.Append("}\n");
@@ -65,6 +79,8 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
         {
             if (input == null) return false;
             if (this.OfficialWebsiteAmount != input.OfficialWebsiteAmount || (this.OfficialWebsiteAmount != null && !this.OfficialWebsiteAmount.Equals(input.OfficialWebsiteAmount))) return false;
+            if (this.InstallmentOfficialWebsiteAmount != input.InstallmentOfficialWebsiteAmount || (this.InstallmentOfficialWebsiteAmount != null && !this.InstallmentOfficialWebsiteAmount.Equals(input.InstallmentOfficialWebsiteAmount))) return false;
+            if (this.InstallmentPeriodType != input.InstallmentPeriodType || (this.InstallmentPeriodType != null && !this.InstallmentPeriodType.Equals(input.InstallmentPeriodType))) return false;
             if (this.MeasureId != input.MeasureId || (this.MeasureId != null && !this.MeasureId.Equals(input.MeasureId))) return false;
             if (this.ProductRatingResults != input.ProductRatingResults || (this.ProductRatingResults != null && input.ProductRatingResults != null && !this.ProductRatingResults.SequenceEqual(input.ProductRatingResults))) return false;
 
@@ -80,6 +96,8 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
             {
                 var hashCode = 41;
                 if (this.OfficialWebsiteAmount != null) hashCode = hashCode * 59 + this.OfficialWebsiteAmount.GetHashCode();
+                if (this.InstallmentOfficialWebsiteAmount != null) hashCode = hashCode * 59 + this.InstallmentOfficialWebsiteAmount.GetHashCode();
+                if (this.InstallmentPeriodType != null) hashCode = hashCode * 59 + this.InstallmentPeriodType.GetHashCode();
                 if (this.MeasureId != null) hashCode = hashCode * 59 + this.MeasureId.GetHashCode();
                 if (this.ProductRatingResults != null) hashCode = hashCode * 59 + this.ProductRatingResults.GetHashCode();
                 return hashCode;

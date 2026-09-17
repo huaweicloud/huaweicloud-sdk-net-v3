@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 任务状态
+        /// **参数解释：** 任务状态 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("phase", NullValueHandling = NullValueHandling.Ignore)]
         public string Phase { get; set; }
 
         /// <summary>
-        /// 任务进度
+        /// **参数解释：** 任务进度 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("progress", NullValueHandling = NullValueHandling.Ignore)]
         public string Progress { get; set; }
 
         /// <summary>
-        /// 完成时间
+        /// **参数解释：** 完成时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("completionTime", NullValueHandling = NullValueHandling.Ignore)]
         public string CompletionTime { get; set; }

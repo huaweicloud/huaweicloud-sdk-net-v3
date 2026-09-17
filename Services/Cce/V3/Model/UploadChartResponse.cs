@@ -17,79 +17,79 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 模板ID
+        /// **参数解释：** 模板ID **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 模板名称
+        /// **参数解释：** 模板名称 **约束限制：** 最长64个字符 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 模板值
+        /// **参数解释：** 模板值 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("values", NullValueHandling = NullValueHandling.Ignore)]
         public string Values { get; set; }
 
         /// <summary>
-        /// 模板翻译资源
+        /// **参数解释：** 模板翻译资源 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("translate", NullValueHandling = NullValueHandling.Ignore)]
         public string Translate { get; set; }
 
         /// <summary>
-        /// 模板介绍
+        /// **参数解释：** 模板介绍 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("instruction", NullValueHandling = NullValueHandling.Ignore)]
         public string Instruction { get; set; }
 
         /// <summary>
-        /// 模板版本
+        /// **参数解释：** 模板版本 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }
 
         /// <summary>
-        /// 模板描述
+        /// **参数解释：** 模板描述 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 模板的来源
+        /// **参数解释：** 模板的来源 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("source", NullValueHandling = NullValueHandling.Ignore)]
         public string Source { get; set; }
 
         /// <summary>
-        /// 模板的图标链接
+        /// **参数解释：** 模板的图标链接 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("icon_url", NullValueHandling = NullValueHandling.Ignore)]
         public string IconUrl { get; set; }
 
         /// <summary>
-        /// 是否公开模板
+        /// **参数解释：** 是否公开模板 **约束限制：** 不涉及 **取值范围：** - true：公开模板 - false：不公开模板  **默认取值：** false
         /// </summary>
         [JsonProperty("public", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Public { get; set; }
 
         /// <summary>
-        /// 模板的链接
+        /// **参数解释：** 模板的链接 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("chart_url", NullValueHandling = NullValueHandling.Ignore)]
         public string ChartUrl { get; set; }
 
         /// <summary>
-        /// 创建时间
+        /// **参数解释：** 创建时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("create_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreateAt { get; set; }
 
         /// <summary>
-        /// 更新时间
+        /// **参数解释：** 更新时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("update_at", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdateAt { get; set; }

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     public class NodePoolCondition 
     {
         /// <summary>
-        /// **参数解释**： 状态类型。 **约束限制**： 不涉及 **取值范围**： - \&quot;TaintSynchronizing\&quot;: 节点池正在同步节点K8s污点，不影响节点池可扩容状态（该状态类型为节点池级别，伸缩组中无该状态类型）。 - \&quot;LabelSynchronizing\&quot;: 节点池正在同步节点K8s标签，不影响节点池可扩容状态（该状态类型为节点池级别，伸缩组中无该状态类型）。 - \&quot;UserTagsSynchronizing\&quot;: 节点池正在同步节点资源标签，不影响节点池可扩容状态（该状态类型为节点池级别，伸缩组中无该状态类型）。 - \&quot;ConfigurationSynchronizing\&quot;: 节点池正在同步节点配置，不影响节点池可扩容状态（该状态类型为节点池级别，伸缩组中无该状态类型）。 - \&quot;Scalable\&quot;：节点池/伸缩组实际的可扩容状态，如果状态为\&quot;False\&quot;时则不会再次触发节点池扩容行为。 - \&quot;QuotaInsufficient\&quot;：节点池/伸缩组扩容依赖的配额不足，影响节点池可扩容状态。 - \&quot;ResourceInsufficient\&quot;：节点池/伸缩组扩容依赖的资源不足，影响节点池可扩容状态。 - \&quot;UnexpectedError\&quot;：节点池/伸缩组非预期扩容失败，影响节点池可扩容状态。 [- \&quot;LockedByOrder\&quot;：节点池/伸缩组被订单锁定，此时Reason为待支付订单ID。](tag:hws,hws_hk) - \&quot;Error\&quot;：节点池/伸缩组错误，通常由于删除失败触发。  **默认取值**： 不涉及
+        /// **参数解释**： 状态类型。 **约束限制**： 不涉及 **取值范围**： - \&quot;TaintSynchronizing\&quot;: 节点池正在同步节点K8s污点，不影响节点池可扩容状态（该状态类型为节点池级别，伸缩组中无该状态类型）。 - \&quot;LabelSynchronizing\&quot;: 节点池正在同步节点K8s标签，不影响节点池可扩容状态（该状态类型为节点池级别，伸缩组中无该状态类型）。 - \&quot;UserTagsSynchronizing\&quot;: 节点池正在同步节点资源标签，不影响节点池可扩容状态（该状态类型为节点池级别，伸缩组中无该状态类型）。 - \&quot;ConfigurationSynchronizing\&quot;: 节点池正在同步节点配置，不影响节点池可扩容状态（该状态类型为节点池级别，伸缩组中无该状态类型）。 - \&quot;Scalable\&quot;：节点池/伸缩组实际的可扩容状态，如果状态为\&quot;False\&quot;时则不会再次触发节点池扩容行为。 - \&quot;QuotaInsufficient\&quot;：节点池/伸缩组扩容依赖的配额不足，影响节点池可扩容状态。 - \&quot;ResourceInsufficient\&quot;：节点池/伸缩组扩容依赖的资源不足，影响节点池可扩容状态。 - \&quot;UnexpectedError\&quot;：节点池/伸缩组非预期扩容失败，影响节点池可扩容状态。 [- \&quot;LockedByOrder\&quot;：伸缩组被订单锁定，此时Reason为待支付订单ID。](tag:hws,hws_hk) - \&quot;Error\&quot;：节点池/伸缩组错误，通常由于删除失败触发。 - \&quot;UnexpectedPeriodNodesIncluded\&quot;：按需节点池中包含包周期节点的异常状态，该状态当前已废弃。  **默认取值**： 不涉及
         /// </summary>
-        /// <value>**参数解释**： 状态类型。 **约束限制**： 不涉及 **取值范围**： - \&quot;TaintSynchronizing\&quot;: 节点池正在同步节点K8s污点，不影响节点池可扩容状态（该状态类型为节点池级别，伸缩组中无该状态类型）。 - \&quot;LabelSynchronizing\&quot;: 节点池正在同步节点K8s标签，不影响节点池可扩容状态（该状态类型为节点池级别，伸缩组中无该状态类型）。 - \&quot;UserTagsSynchronizing\&quot;: 节点池正在同步节点资源标签，不影响节点池可扩容状态（该状态类型为节点池级别，伸缩组中无该状态类型）。 - \&quot;ConfigurationSynchronizing\&quot;: 节点池正在同步节点配置，不影响节点池可扩容状态（该状态类型为节点池级别，伸缩组中无该状态类型）。 - \&quot;Scalable\&quot;：节点池/伸缩组实际的可扩容状态，如果状态为\&quot;False\&quot;时则不会再次触发节点池扩容行为。 - \&quot;QuotaInsufficient\&quot;：节点池/伸缩组扩容依赖的配额不足，影响节点池可扩容状态。 - \&quot;ResourceInsufficient\&quot;：节点池/伸缩组扩容依赖的资源不足，影响节点池可扩容状态。 - \&quot;UnexpectedError\&quot;：节点池/伸缩组非预期扩容失败，影响节点池可扩容状态。 [- \&quot;LockedByOrder\&quot;：节点池/伸缩组被订单锁定，此时Reason为待支付订单ID。](tag:hws,hws_hk) - \&quot;Error\&quot;：节点池/伸缩组错误，通常由于删除失败触发。  **默认取值**： 不涉及</value>
+        /// <value>**参数解释**： 状态类型。 **约束限制**： 不涉及 **取值范围**： - \&quot;TaintSynchronizing\&quot;: 节点池正在同步节点K8s污点，不影响节点池可扩容状态（该状态类型为节点池级别，伸缩组中无该状态类型）。 - \&quot;LabelSynchronizing\&quot;: 节点池正在同步节点K8s标签，不影响节点池可扩容状态（该状态类型为节点池级别，伸缩组中无该状态类型）。 - \&quot;UserTagsSynchronizing\&quot;: 节点池正在同步节点资源标签，不影响节点池可扩容状态（该状态类型为节点池级别，伸缩组中无该状态类型）。 - \&quot;ConfigurationSynchronizing\&quot;: 节点池正在同步节点配置，不影响节点池可扩容状态（该状态类型为节点池级别，伸缩组中无该状态类型）。 - \&quot;Scalable\&quot;：节点池/伸缩组实际的可扩容状态，如果状态为\&quot;False\&quot;时则不会再次触发节点池扩容行为。 - \&quot;QuotaInsufficient\&quot;：节点池/伸缩组扩容依赖的配额不足，影响节点池可扩容状态。 - \&quot;ResourceInsufficient\&quot;：节点池/伸缩组扩容依赖的资源不足，影响节点池可扩容状态。 - \&quot;UnexpectedError\&quot;：节点池/伸缩组非预期扩容失败，影响节点池可扩容状态。 [- \&quot;LockedByOrder\&quot;：伸缩组被订单锁定，此时Reason为待支付订单ID。](tag:hws,hws_hk) - \&quot;Error\&quot;：节点池/伸缩组错误，通常由于删除失败触发。 - \&quot;UnexpectedPeriodNodesIncluded\&quot;：按需节点池中包含包周期节点的异常状态，该状态当前已废弃。  **默认取值**： 不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -72,6 +72,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             /// </summary>
             public static readonly TypeEnum ERROR = new TypeEnum("Error");
 
+            /// <summary>
+            /// Enum UNEXPECTEDPERIODNODESINCLUDED for value: UnexpectedPeriodNodesIncluded
+            /// </summary>
+            public static readonly TypeEnum UNEXPECTEDPERIODNODESINCLUDED = new TypeEnum("UnexpectedPeriodNodesIncluded");
+
             private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
@@ -85,6 +90,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 { "UnexpectedError", UNEXPECTEDERROR },
                 { "LockedByOrder", LOCKEDBYORDER },
                 { "Error", ERROR },
+                { "UnexpectedPeriodNodesIncluded", UNEXPECTEDPERIODNODESINCLUDED },
             };
 
             private string _value;
@@ -180,7 +186,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
 
         /// <summary>
-        /// **参数解释**： 状态类型。 **约束限制**： 不涉及 **取值范围**： - \&quot;TaintSynchronizing\&quot;: 节点池正在同步节点K8s污点，不影响节点池可扩容状态（该状态类型为节点池级别，伸缩组中无该状态类型）。 - \&quot;LabelSynchronizing\&quot;: 节点池正在同步节点K8s标签，不影响节点池可扩容状态（该状态类型为节点池级别，伸缩组中无该状态类型）。 - \&quot;UserTagsSynchronizing\&quot;: 节点池正在同步节点资源标签，不影响节点池可扩容状态（该状态类型为节点池级别，伸缩组中无该状态类型）。 - \&quot;ConfigurationSynchronizing\&quot;: 节点池正在同步节点配置，不影响节点池可扩容状态（该状态类型为节点池级别，伸缩组中无该状态类型）。 - \&quot;Scalable\&quot;：节点池/伸缩组实际的可扩容状态，如果状态为\&quot;False\&quot;时则不会再次触发节点池扩容行为。 - \&quot;QuotaInsufficient\&quot;：节点池/伸缩组扩容依赖的配额不足，影响节点池可扩容状态。 - \&quot;ResourceInsufficient\&quot;：节点池/伸缩组扩容依赖的资源不足，影响节点池可扩容状态。 - \&quot;UnexpectedError\&quot;：节点池/伸缩组非预期扩容失败，影响节点池可扩容状态。 [- \&quot;LockedByOrder\&quot;：节点池/伸缩组被订单锁定，此时Reason为待支付订单ID。](tag:hws,hws_hk) - \&quot;Error\&quot;：节点池/伸缩组错误，通常由于删除失败触发。  **默认取值**： 不涉及
+        /// **参数解释**： 状态类型。 **约束限制**： 不涉及 **取值范围**： - \&quot;TaintSynchronizing\&quot;: 节点池正在同步节点K8s污点，不影响节点池可扩容状态（该状态类型为节点池级别，伸缩组中无该状态类型）。 - \&quot;LabelSynchronizing\&quot;: 节点池正在同步节点K8s标签，不影响节点池可扩容状态（该状态类型为节点池级别，伸缩组中无该状态类型）。 - \&quot;UserTagsSynchronizing\&quot;: 节点池正在同步节点资源标签，不影响节点池可扩容状态（该状态类型为节点池级别，伸缩组中无该状态类型）。 - \&quot;ConfigurationSynchronizing\&quot;: 节点池正在同步节点配置，不影响节点池可扩容状态（该状态类型为节点池级别，伸缩组中无该状态类型）。 - \&quot;Scalable\&quot;：节点池/伸缩组实际的可扩容状态，如果状态为\&quot;False\&quot;时则不会再次触发节点池扩容行为。 - \&quot;QuotaInsufficient\&quot;：节点池/伸缩组扩容依赖的配额不足，影响节点池可扩容状态。 - \&quot;ResourceInsufficient\&quot;：节点池/伸缩组扩容依赖的资源不足，影响节点池可扩容状态。 - \&quot;UnexpectedError\&quot;：节点池/伸缩组非预期扩容失败，影响节点池可扩容状态。 [- \&quot;LockedByOrder\&quot;：伸缩组被订单锁定，此时Reason为待支付订单ID。](tag:hws,hws_hk) - \&quot;Error\&quot;：节点池/伸缩组错误，通常由于删除失败触发。 - \&quot;UnexpectedPeriodNodesIncluded\&quot;：按需节点池中包含包周期节点的异常状态，该状态当前已废弃。  **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }

@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 集群升级特性开关
+    /// **参数解释：** 集群升级特性开关 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
     public class UpgradeFeatureGates 
     {
 
         /// <summary>
-        /// 集群升级Console界面是否支持V4版本，该字段一般由CCE Console使用。
+        /// **参数解释：** 集群升级Console界面是否支持V4版本，该字段一般由CCE Console使用。 **约束限制：** 不涉及 **取值范围：** - true：支持V4版本 - false：不支持V4版本  **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("supportUpgradePageV4", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SupportUpgradePageV4 { get; set; }

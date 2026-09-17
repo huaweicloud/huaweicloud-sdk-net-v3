@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// **参数解释**： 类型 **取值范围**： - Charts：配额类型为模板 
+        /// **参数解释：** 类型 **约束限制：** 不涉及 **取值范围：** - Charts：配额类型为模板  **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// 配额
+        /// **参数解释：** 配额 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("quota", NullValueHandling = NullValueHandling.Ignore)]
         public int? Quota { get; set; }
 
         /// <summary>
-        /// 已使用量
+        /// **参数解释：** 已使用量 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("used", NullValueHandling = NullValueHandling.Ignore)]
         public int? Used { get; set; }

@@ -11,43 +11,43 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 检查项状态信息
+    /// **参数解释：** 检查项状态信息 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
     public class PreCheckItemStatus 
     {
 
         /// <summary>
-        /// 检查项名称
+        /// **参数解释：** 检查项名称 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 检查项类型，取值如下 - Exception: 异常类，需要用户解决 - Risk：风险类，用户确认后可选择跳过
+        /// **参数解释：** 检查项类型 **约束限制：** 不涉及 **取值范围：** - Exception：异常类，需要用户解决 - Risk：风险类，用户确认后可选择跳过  **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("kind", NullValueHandling = NullValueHandling.Ignore)]
         public string Kind { get; set; }
 
         /// <summary>
-        /// 检查项分组，取值如下 - LimitCheck: 集群限制检查 - MasterCheck：控制节点检查 - NodeCheck：用户节点检查 - AddonCheck：插件检查 - ExecuteException：检查流程错误
+        /// **参数解释：** 检查项分组 **约束限制：** 不涉及 **取值范围：** - LimitCheck：集群限制检查 - MasterCheck：控制节点检查 - NodeCheck：用户节点检查 - AddonCheck：插件检查 - ExecuteException：检查流程错误  **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("group", NullValueHandling = NullValueHandling.Ignore)]
         public string Group { get; set; }
 
         /// <summary>
-        /// 检查项风险级别，取值如下 - Info: 提示级别 - Warning：风险级别 - Fatal：严重级别
+        /// **参数解释：** 检查项风险级别 **约束限制：** 不涉及 **取值范围：** - Info：提示级别 - Warning：风险级别 - Fatal：严重级别  **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("level", NullValueHandling = NullValueHandling.Ignore)]
         public string Level { get; set; }
 
         /// <summary>
-        /// 状态，取值如下 - Init: 初始化 - Running 运行中 - Success 成功 - Failed 失败
+        /// **参数解释：** 状态 **约束限制：** 不涉及 **取值范围：** - Init：初始化 - Running：运行中 - Success：成功 - Failed：失败  **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("phase", NullValueHandling = NullValueHandling.Ignore)]
         public string Phase { get; set; }
 
         /// <summary>
-        /// 提示信息
+        /// **参数解释：** 提示信息 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("message", NullValueHandling = NullValueHandling.Ignore)]
         public string Message { get; set; }
@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public RiskSource RiskSource { get; set; }
 
         /// <summary>
-        /// 错误码集合
+        /// **参数解释：** 错误码集合 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("errorCodes", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ErrorCodes { get; set; }

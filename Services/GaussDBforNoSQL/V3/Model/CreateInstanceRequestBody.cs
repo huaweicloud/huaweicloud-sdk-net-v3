@@ -131,6 +131,12 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public RestoreInfo RestoreInfo { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("dr_info", NullValueHandling = NullValueHandling.Ignore)]
+        public DRInfo DrInfo { get; set; }
+
+        /// <summary>
         /// **参数解释：** 数据库访问端口号。 **约束限制：** 目前仅支持GeminiDB Redis实例支持自定义端口，取值范围为：1024~65535，禁用端口号为：2180、2887、3887、6377、6378、6380、8018、8079、8091、8479、8484、8999、12017、12333、50069。  不指定端口时，创建GeminiDB Redis实例的访问端口默认为6379。  如果该实例计划用于搭建双活容灾场景，请配置为8635端口。 **取值范围：** 取值范围为：1024~65535，禁用端口号为：2180、2887、3887、6377、6378、6380、8018、8079、8091、8479、8484、8999、12017、12333、50069。 **默认取值：** 6379。
         /// </summary>
         [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
@@ -176,6 +182,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             sb.Append("  sslOption: ").Append(SslOption).Append("\n");
             sb.Append("  chargeInfo: ").Append(ChargeInfo).Append("\n");
             sb.Append("  restoreInfo: ").Append(RestoreInfo).Append("\n");
+            sb.Append("  drInfo: ").Append(DrInfo).Append("\n");
             sb.Append("  port: ").Append(Port).Append("\n");
             sb.Append("  availabilityZoneDetail: ").Append(AvailabilityZoneDetail).Append("\n");
             sb.Append("  lbAccessControlSettings: ").Append(LbAccessControlSettings).Append("\n");
@@ -216,6 +223,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             if (this.SslOption != input.SslOption || (this.SslOption != null && !this.SslOption.Equals(input.SslOption))) return false;
             if (this.ChargeInfo != input.ChargeInfo || (this.ChargeInfo != null && !this.ChargeInfo.Equals(input.ChargeInfo))) return false;
             if (this.RestoreInfo != input.RestoreInfo || (this.RestoreInfo != null && !this.RestoreInfo.Equals(input.RestoreInfo))) return false;
+            if (this.DrInfo != input.DrInfo || (this.DrInfo != null && !this.DrInfo.Equals(input.DrInfo))) return false;
             if (this.Port != input.Port || (this.Port != null && !this.Port.Equals(input.Port))) return false;
             if (this.AvailabilityZoneDetail != input.AvailabilityZoneDetail || (this.AvailabilityZoneDetail != null && !this.AvailabilityZoneDetail.Equals(input.AvailabilityZoneDetail))) return false;
             if (this.LbAccessControlSettings != input.LbAccessControlSettings || (this.LbAccessControlSettings != null && !this.LbAccessControlSettings.Equals(input.LbAccessControlSettings))) return false;
@@ -250,6 +258,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                 if (this.SslOption != null) hashCode = hashCode * 59 + this.SslOption.GetHashCode();
                 if (this.ChargeInfo != null) hashCode = hashCode * 59 + this.ChargeInfo.GetHashCode();
                 if (this.RestoreInfo != null) hashCode = hashCode * 59 + this.RestoreInfo.GetHashCode();
+                if (this.DrInfo != null) hashCode = hashCode * 59 + this.DrInfo.GetHashCode();
                 if (this.Port != null) hashCode = hashCode * 59 + this.Port.GetHashCode();
                 if (this.AvailabilityZoneDetail != null) hashCode = hashCode * 59 + this.AvailabilityZoneDetail.GetHashCode();
                 if (this.LbAccessControlSettings != null) hashCode = hashCode * 59 + this.LbAccessControlSettings.GetHashCode();

@@ -64,6 +64,12 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
         [JsonProperty("is_show_source", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsShowSource { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 模板manifest版本。 **约束限制**： 不涉及。 **取值范围**： - 3.0：CLASSIC版本。 - 2.0.0：YAML版本。 - 4.0：PAC版本。 - 5.0：DATAOPS版本。 - 6.0：GITCODE_ACTIONS_NEW版本。 **默认取值**： 3.0。 
+        /// </summary>
+        [JsonProperty("manifest_version", NullValueHandling = NullValueHandling.Ignore)]
+        public string ManifestVersion { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +87,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             sb.Append("  isSystem: ").Append(IsSystem).Append("\n");
             sb.Append("  domainId: ").Append(DomainId).Append("\n");
             sb.Append("  isShowSource: ").Append(IsShowSource).Append("\n");
+            sb.Append("  manifestVersion: ").Append(ManifestVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +114,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             if (this.IsSystem != input.IsSystem || (this.IsSystem != null && !this.IsSystem.Equals(input.IsSystem))) return false;
             if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
             if (this.IsShowSource != input.IsShowSource || (this.IsShowSource != null && !this.IsShowSource.Equals(input.IsShowSource))) return false;
+            if (this.ManifestVersion != input.ManifestVersion || (this.ManifestVersion != null && !this.ManifestVersion.Equals(input.ManifestVersion))) return false;
 
             return true;
         }
@@ -127,6 +135,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
                 if (this.IsSystem != null) hashCode = hashCode * 59 + this.IsSystem.GetHashCode();
                 if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
                 if (this.IsShowSource != null) hashCode = hashCode * 59 + this.IsShowSource.GetHashCode();
+                if (this.ManifestVersion != null) hashCode = hashCode * 59 + this.ManifestVersion.GetHashCode();
                 return hashCode;
             }
         }

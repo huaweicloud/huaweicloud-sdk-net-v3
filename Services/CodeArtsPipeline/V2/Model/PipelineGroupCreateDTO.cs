@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
     {
 
         /// <summary>
-        /// **参数解释**： 流水线分组名。 **约束限制**： 不涉及。 **取值范围**： 32位字符，由数字和字母组成。 **默认取值**： 不涉及。 
+        /// **参数解释**： 流水线分组名。 **约束限制**： 不涉及。 **取值范围**： 1到128位字符，不能全为空白字符。 **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// **参数解释**： 父分组ID。 **约束限制**： 不涉及。 **取值范围**： 32位字符，由数字和字母组成。 **默认取值**： 不涉及。 
+        /// **参数解释**： 父分组ID。 **约束限制**： 不涉及。 **取值范围**： 32位字符，由数字和字母组成。不指定父分组时为空字符串。 **默认取值**： 空字符串。 
         /// </summary>
         [JsonProperty("parent_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ParentId { get; set; }

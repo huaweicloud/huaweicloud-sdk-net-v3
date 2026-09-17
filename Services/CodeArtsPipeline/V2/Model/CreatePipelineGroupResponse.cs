@@ -83,6 +83,18 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
         public long? UpdateTime { get; set; }
 
         /// <summary>
+        /// **参数解释**： 分组下的流水线总数。 **取值范围**： 不涉及。 
+        /// </summary>
+        [JsonProperty("pipeline_count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? PipelineCount { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 未分组的流水线数量。 **取值范围**： 不涉及。 
+        /// </summary>
+        [JsonProperty("no_group_count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? NoGroupCount { get; set; }
+
+        /// <summary>
         /// **参数解释**： 流水线分组详情。 **取值范围**： 不涉及。 
         /// </summary>
         [JsonProperty("children", NullValueHandling = NullValueHandling.Ignore)]
@@ -108,6 +120,8 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             sb.Append("  updater: ").Append(Updater).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
             sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
+            sb.Append("  pipelineCount: ").Append(PipelineCount).Append("\n");
+            sb.Append("  noGroupCount: ").Append(NoGroupCount).Append("\n");
             sb.Append("  children: ").Append(Children).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -138,6 +152,8 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             if (this.Updater != input.Updater || (this.Updater != null && !this.Updater.Equals(input.Updater))) return false;
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
             if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.PipelineCount != input.PipelineCount || (this.PipelineCount != null && !this.PipelineCount.Equals(input.PipelineCount))) return false;
+            if (this.NoGroupCount != input.NoGroupCount || (this.NoGroupCount != null && !this.NoGroupCount.Equals(input.NoGroupCount))) return false;
             if (this.Children != input.Children || (this.Children != null && input.Children != null && !this.Children.SequenceEqual(input.Children))) return false;
 
             return true;
@@ -162,6 +178,8 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
                 if (this.Updater != null) hashCode = hashCode * 59 + this.Updater.GetHashCode();
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.PipelineCount != null) hashCode = hashCode * 59 + this.PipelineCount.GetHashCode();
+                if (this.NoGroupCount != null) hashCode = hashCode * 59 + this.NoGroupCount.GetHashCode();
                 if (this.Children != null) hashCode = hashCode * 59 + this.Children.GetHashCode();
                 return hashCode;
             }

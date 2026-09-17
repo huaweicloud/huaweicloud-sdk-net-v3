@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// **参数解释：** 双活对端实例节点数量。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("destination_instance_node_num", NullValueHandling = NullValueHandling.Ignore)]
-        public string DestinationInstanceNodeNum { get; set; }
+        public int? DestinationInstanceNodeNum { get; set; }
 
         /// <summary>
         /// **参数解释：** 双活对端实例规格。 **取值范围：** 不涉及。

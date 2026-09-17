@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     public class NodeStatus 
     {
         /// <summary>
-        /// **参数解释**： 节点状态：节点资源生命周期管理（如安装卸载等）状态和集群内k8s node状态的综合体现 **约束限制**： 不涉及 **取值范围**： - Build：创建中，表示节点正处于创建过程中。 - Installing：安装中，表示节点正处于纳管过程中。 - Upgrading：升级中，表示节点正处于升级过程中。 - Active：运行中，表示节点处于正常状态。 - Abnormal：不可用，表示节点处于异常状态。 - Deleting： 删除中，表示节点正处于删除过程中。 - Error：错误，表示节点处于故障状态。  **默认取值**： 不涉及
+        /// **参数解释**： 节点状态：节点资源生命周期管理（如安装卸载等）状态和集群内k8s node状态的综合体现 **约束限制**： 不涉及 **取值范围**： - Build：创建中，表示节点正处于创建过程中。 - Installing：安装中，表示节点正处于纳管过程中。 - Upgrading：升级中，表示节点正处于升级过程中。 - Active：运行中，表示节点处于正常状态。 - Abnormal：不可用，表示节点处于异常状态。 - Deleting： 删除中，表示节点正处于删除过程中。 - Error：错误，表示节点处于故障状态。 - Repairing： 修复中，表示节点处于修复过程中。仅在节点所在节点池开启节点重启自愈策略时产生，基础自愈策略不产生此状态。 - RepairFailed：修复失败，表示节点处于修复失败状态。仅在节点所在节点池开启节点重启自愈策略时产生，基础自愈策略不产生此状态。  **默认取值**： 不涉及
         /// </summary>
-        /// <value>**参数解释**： 节点状态：节点资源生命周期管理（如安装卸载等）状态和集群内k8s node状态的综合体现 **约束限制**： 不涉及 **取值范围**： - Build：创建中，表示节点正处于创建过程中。 - Installing：安装中，表示节点正处于纳管过程中。 - Upgrading：升级中，表示节点正处于升级过程中。 - Active：运行中，表示节点处于正常状态。 - Abnormal：不可用，表示节点处于异常状态。 - Deleting： 删除中，表示节点正处于删除过程中。 - Error：错误，表示节点处于故障状态。  **默认取值**： 不涉及</value>
+        /// <value>**参数解释**： 节点状态：节点资源生命周期管理（如安装卸载等）状态和集群内k8s node状态的综合体现 **约束限制**： 不涉及 **取值范围**： - Build：创建中，表示节点正处于创建过程中。 - Installing：安装中，表示节点正处于纳管过程中。 - Upgrading：升级中，表示节点正处于升级过程中。 - Active：运行中，表示节点处于正常状态。 - Abnormal：不可用，表示节点处于异常状态。 - Deleting： 删除中，表示节点正处于删除过程中。 - Error：错误，表示节点处于故障状态。 - Repairing： 修复中，表示节点处于修复过程中。仅在节点所在节点池开启节点重启自愈策略时产生，基础自愈策略不产生此状态。 - RepairFailed：修复失败，表示节点处于修复失败状态。仅在节点所在节点池开启节点重启自愈策略时产生，基础自愈策略不产生此状态。  **默认取值**： 不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<PhaseEnum>))]
         public class PhaseEnum
         {
@@ -57,6 +57,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             /// </summary>
             public static readonly PhaseEnum ERROR = new PhaseEnum("Error");
 
+            /// <summary>
+            /// Enum REPAIRING for value: Repairing
+            /// </summary>
+            public static readonly PhaseEnum REPAIRING = new PhaseEnum("Repairing");
+
+            /// <summary>
+            /// Enum REPAIRFAILED for value: RepairFailed
+            /// </summary>
+            public static readonly PhaseEnum REPAIRFAILED = new PhaseEnum("RepairFailed");
+
             private static readonly Dictionary<string, PhaseEnum> StaticFields =
             new Dictionary<string, PhaseEnum>()
             {
@@ -67,6 +77,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 { "Abnormal", ABNORMAL },
                 { "Deleting", DELETING },
                 { "Error", ERROR },
+                { "Repairing", REPAIRING },
+                { "RepairFailed", REPAIRFAILED },
             };
 
             private string _value;
@@ -162,7 +174,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
 
         /// <summary>
-        /// **参数解释**： 节点状态：节点资源生命周期管理（如安装卸载等）状态和集群内k8s node状态的综合体现 **约束限制**： 不涉及 **取值范围**： - Build：创建中，表示节点正处于创建过程中。 - Installing：安装中，表示节点正处于纳管过程中。 - Upgrading：升级中，表示节点正处于升级过程中。 - Active：运行中，表示节点处于正常状态。 - Abnormal：不可用，表示节点处于异常状态。 - Deleting： 删除中，表示节点正处于删除过程中。 - Error：错误，表示节点处于故障状态。  **默认取值**： 不涉及
+        /// **参数解释**： 节点状态：节点资源生命周期管理（如安装卸载等）状态和集群内k8s node状态的综合体现 **约束限制**： 不涉及 **取值范围**： - Build：创建中，表示节点正处于创建过程中。 - Installing：安装中，表示节点正处于纳管过程中。 - Upgrading：升级中，表示节点正处于升级过程中。 - Active：运行中，表示节点处于正常状态。 - Abnormal：不可用，表示节点处于异常状态。 - Deleting： 删除中，表示节点正处于删除过程中。 - Error：错误，表示节点处于故障状态。 - Repairing： 修复中，表示节点处于修复过程中。仅在节点所在节点池开启节点重启自愈策略时产生，基础自愈策略不产生此状态。 - RepairFailed：修复失败，表示节点处于修复失败状态。仅在节点所在节点池开启节点重启自愈策略时产生，基础自愈策略不产生此状态。  **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("phase", NullValueHandling = NullValueHandling.Ignore)]
         public PhaseEnum Phase { get; set; }

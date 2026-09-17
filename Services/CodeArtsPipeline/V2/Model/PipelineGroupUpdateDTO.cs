@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
     {
 
         /// <summary>
-        /// **参数解释**： 流水线分组名。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+        /// **参数解释**： 流水线分组名。 **约束限制**： 不涉及。 **取值范围**： 1到128位字符，不能全为空白字符。 **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }

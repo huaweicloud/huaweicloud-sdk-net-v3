@@ -389,6 +389,30 @@ namespace HuaweiCloud.SDK.Bss.V2
         }
         
         /// <summary>
+        /// 查询商务折扣信息
+        ///
+        /// 功能描述：默认查询华为云框架商务（正在生效），支持产品报价项/分类报价项分页查询，返回全量阶梯折扣及站点区域信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListBusinessDiscountInfoResponse> ListBusinessDiscountInfoAsync(ListBusinessDiscountInfoRequest listBusinessDiscountInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/promotions/business/discount-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBusinessDiscountInfoRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ListBusinessDiscountInfoResponse>(response);
+        }
+
+        public AsyncInvoker<ListBusinessDiscountInfoResponse> ListBusinessDiscountInfoAsyncInvoker(ListBusinessDiscountInfoRequest listBusinessDiscountInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/promotions/business/discount-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBusinessDiscountInfoRequest);
+            return new AsyncInvoker<ListBusinessDiscountInfoResponse>(this, "POST", request, JsonUtils.DeSerialize<ListBusinessDiscountInfoResponse>);
+        }
+        
+        /// <summary>
         /// 查询城市信息
         ///
         /// 伙伴在伙伴销售平台上查询城市信息。

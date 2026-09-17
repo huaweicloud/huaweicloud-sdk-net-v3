@@ -40,6 +40,18 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
         [JsonProperty("sort", NullValueHandling = NullValueHandling.Ignore)]
         public string Sort { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 日志偏移量。仅查询Jenkins日志时使用，其余场景请使用start_offset和end_offset。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+        /// </summary>
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
+        public long? Offset { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 日志级别。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+        /// </summary>
+        [JsonProperty("level", NullValueHandling = NullValueHandling.Ignore)]
+        public string Level { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +65,8 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             sb.Append("  endOffset: ").Append(EndOffset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  sort: ").Append(Sort).Append("\n");
+            sb.Append("  offset: ").Append(Offset).Append("\n");
+            sb.Append("  level: ").Append(Level).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,6 +89,8 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             if (this.EndOffset != input.EndOffset || (this.EndOffset != null && !this.EndOffset.Equals(input.EndOffset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Sort != input.Sort || (this.Sort != null && !this.Sort.Equals(input.Sort))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Level != input.Level || (this.Level != null && !this.Level.Equals(input.Level))) return false;
 
             return true;
         }
@@ -91,6 +107,8 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
                 if (this.EndOffset != null) hashCode = hashCode * 59 + this.EndOffset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Sort != null) hashCode = hashCode * 59 + this.Sort.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Level != null) hashCode = hashCode * 59 + this.Level.GetHashCode();
                 return hashCode;
             }
         }

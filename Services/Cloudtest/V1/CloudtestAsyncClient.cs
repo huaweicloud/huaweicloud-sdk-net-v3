@@ -4773,6 +4773,270 @@ namespace HuaweiCloud.SDK.Cloudtest.V1
         }
         
         /// <summary>
+        /// 向迭代中添加资源
+        ///
+        /// 向迭代中添加资源
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<AddResourceToIteratorResponse> AddResourceToIteratorAsync(AddResourceToIteratorRequest addResourceToIteratorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(addResourceToIteratorRequest.IteratorUri, out var valueOfIteratorUri)) urlParam.Add("iterator_uri", valueOfIteratorUri);
+            var urlPath = HttpUtils.AddUrlPath("/v4/iterators/{iterator_uri}/testcases/batch-add", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addResourceToIteratorRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<AddResourceToIteratorResponse>(response);
+        }
+
+        public AsyncInvoker<AddResourceToIteratorResponse> AddResourceToIteratorAsyncInvoker(AddResourceToIteratorRequest addResourceToIteratorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(addResourceToIteratorRequest.IteratorUri, out var valueOfIteratorUri)) urlParam.Add("iterator_uri", valueOfIteratorUri);
+            var urlPath = HttpUtils.AddUrlPath("/v4/iterators/{iterator_uri}/testcases/batch-add", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addResourceToIteratorRequest);
+            return new AsyncInvoker<AddResourceToIteratorResponse>(this, "POST", request, JsonUtils.DeSerialize<AddResourceToIteratorResponse>);
+        }
+        
+        /// <summary>
+        /// 查询当前租户可见的第三方服务列表
+        ///
+        /// 查询当前租户可见的第三方服务列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListVisibleServicesResponse> ListVisibleServicesAsync(ListVisibleServicesRequest listVisibleServicesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listVisibleServicesRequest.ProjectUuid, out var valueOfProjectUuid)) urlParam.Add("project_uuid", valueOfProjectUuid);
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_uuid}/visible-services", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVisibleServicesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListVisibleServicesResponse>(response);
+        }
+
+        public AsyncInvoker<ListVisibleServicesResponse> ListVisibleServicesAsyncInvoker(ListVisibleServicesRequest listVisibleServicesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listVisibleServicesRequest.ProjectUuid, out var valueOfProjectUuid)) urlParam.Add("project_uuid", valueOfProjectUuid);
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_uuid}/visible-services", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVisibleServicesRequest);
+            return new AsyncInvoker<ListVisibleServicesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListVisibleServicesResponse>);
+        }
+        
+        /// <summary>
+        /// 批量删除测试套件
+        ///
+        /// 批量删除测试套件
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchDeleteTasksResponse> BatchDeleteTasksAsync(BatchDeleteTasksRequest batchDeleteTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteTasksRequest.ProjectUuid, out var valueOfProjectUuid)) urlParam.Add("project_uuid", valueOfProjectUuid);
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_uuid}/tasks/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteTasksRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<BatchDeleteTasksResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDeleteTasksResponse> BatchDeleteTasksAsyncInvoker(BatchDeleteTasksRequest batchDeleteTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteTasksRequest.ProjectUuid, out var valueOfProjectUuid)) urlParam.Add("project_uuid", valueOfProjectUuid);
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_uuid}/tasks/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteTasksRequest);
+            return new AsyncInvoker<BatchDeleteTasksResponse>(this, "DELETE", request, JsonUtils.DeSerialize<BatchDeleteTasksResponse>);
+        }
+        
+        /// <summary>
+        /// 新建测试套件
+        ///
+        /// 新建测试套件
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateTaskResponse> CreateTaskAsync(CreateTaskRequest createTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createTaskRequest.ProjectUuid, out var valueOfProjectUuid)) urlParam.Add("project_uuid", valueOfProjectUuid);
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_uuid}/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTaskRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateTaskResponse>(response);
+        }
+
+        public AsyncInvoker<CreateTaskResponse> CreateTaskAsyncInvoker(CreateTaskRequest createTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createTaskRequest.ProjectUuid, out var valueOfProjectUuid)) urlParam.Add("project_uuid", valueOfProjectUuid);
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_uuid}/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTaskRequest);
+            return new AsyncInvoker<CreateTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 查询测试套件详情
+        ///
+        /// 查询测试套件详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowTaskResponse> ShowTaskAsync(ShowTaskRequest showTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTaskRequest.ProjectUuid, out var valueOfProjectUuid)) urlParam.Add("project_uuid", valueOfProjectUuid);
+            if (StringUtils.TryConvertToNonEmptyString(showTaskRequest.TaskUri, out var valueOfTaskUri)) urlParam.Add("task_uri", valueOfTaskUri);
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_uuid}/tasks/{task_uri}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTaskRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowTaskResponse>(response);
+        }
+
+        public AsyncInvoker<ShowTaskResponse> ShowTaskAsyncInvoker(ShowTaskRequest showTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTaskRequest.ProjectUuid, out var valueOfProjectUuid)) urlParam.Add("project_uuid", valueOfProjectUuid);
+            if (StringUtils.TryConvertToNonEmptyString(showTaskRequest.TaskUri, out var valueOfTaskUri)) urlParam.Add("task_uri", valueOfTaskUri);
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_uuid}/tasks/{task_uri}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTaskRequest);
+            return new AsyncInvoker<ShowTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 修改测试套件
+        ///
+        /// 修改测试套件
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateTaskResponse> UpdateTaskAsync(UpdateTaskRequest updateTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateTaskRequest.ProjectUuid, out var valueOfProjectUuid)) urlParam.Add("project_uuid", valueOfProjectUuid);
+            if (StringUtils.TryConvertToNonEmptyString(updateTaskRequest.TaskUri, out var valueOfTaskUri)) urlParam.Add("task_uri", valueOfTaskUri);
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_uuid}/tasks/{task_uri}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTaskRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateTaskResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateTaskResponse> UpdateTaskAsyncInvoker(UpdateTaskRequest updateTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateTaskRequest.ProjectUuid, out var valueOfProjectUuid)) urlParam.Add("project_uuid", valueOfProjectUuid);
+            if (StringUtils.TryConvertToNonEmptyString(updateTaskRequest.TaskUri, out var valueOfTaskUri)) urlParam.Add("task_uri", valueOfTaskUri);
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_uuid}/tasks/{task_uri}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTaskRequest);
+            return new AsyncInvoker<UpdateTaskResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 在分支或者迭代下创建用例
+        ///
+        /// 在分支或者迭代下创建用例
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateTestVersionCaseResponse> CreateTestVersionCaseAsync(CreateTestVersionCaseRequest createTestVersionCaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createTestVersionCaseRequest.VersionUri, out var valueOfVersionUri)) urlParam.Add("version_uri", valueOfVersionUri);
+            var urlPath = HttpUtils.AddUrlPath("/v4/versions/{version_uri}/testcases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTestVersionCaseRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateTestVersionCaseResponse>(response);
+        }
+
+        public AsyncInvoker<CreateTestVersionCaseResponse> CreateTestVersionCaseAsyncInvoker(CreateTestVersionCaseRequest createTestVersionCaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createTestVersionCaseRequest.VersionUri, out var valueOfVersionUri)) urlParam.Add("version_uri", valueOfVersionUri);
+            var urlPath = HttpUtils.AddUrlPath("/v4/versions/{version_uri}/testcases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTestVersionCaseRequest);
+            return new AsyncInvoker<CreateTestVersionCaseResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateTestVersionCaseResponse>);
+        }
+        
+        /// <summary>
+        /// 查询用例列表
+        ///
+        /// 查询用例列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListTestCasesByConditionResponse> ListTestCasesByConditionAsync(ListTestCasesByConditionRequest listTestCasesByConditionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listTestCasesByConditionRequest.ProjectUuid, out var valueOfProjectUuid)) urlParam.Add("project_uuid", valueOfProjectUuid);
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_uuid}/testcases/batch-list", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTestCasesByConditionRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ListTestCasesByConditionResponse>(response);
+        }
+
+        public AsyncInvoker<ListTestCasesByConditionResponse> ListTestCasesByConditionAsyncInvoker(ListTestCasesByConditionRequest listTestCasesByConditionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listTestCasesByConditionRequest.ProjectUuid, out var valueOfProjectUuid)) urlParam.Add("project_uuid", valueOfProjectUuid);
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_uuid}/testcases/batch-list", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTestCasesByConditionRequest);
+            return new AsyncInvoker<ListTestCasesByConditionResponse>(this, "POST", request, JsonUtils.DeSerialize<ListTestCasesByConditionResponse>);
+        }
+        
+        /// <summary>
+        /// 查询用例详情
+        ///
+        /// 查询用例详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowTestVersionCaseResponse> ShowTestVersionCaseAsync(ShowTestVersionCaseRequest showTestVersionCaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTestVersionCaseRequest.CaseUri, out var valueOfCaseUri)) urlParam.Add("case_uri", valueOfCaseUri);
+            var urlPath = HttpUtils.AddUrlPath("/v4/testcases/{case_uri}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTestVersionCaseRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowTestVersionCaseResponse>(response);
+        }
+
+        public AsyncInvoker<ShowTestVersionCaseResponse> ShowTestVersionCaseAsyncInvoker(ShowTestVersionCaseRequest showTestVersionCaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTestVersionCaseRequest.CaseUri, out var valueOfCaseUri)) urlParam.Add("case_uri", valueOfCaseUri);
+            var urlPath = HttpUtils.AddUrlPath("/v4/testcases/{case_uri}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTestVersionCaseRequest);
+            return new AsyncInvoker<ShowTestVersionCaseResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTestVersionCaseResponse>);
+        }
+        
+        /// <summary>
+        /// 在分支或者迭代下修改用例
+        ///
+        /// 在分支或者迭代下修改用例
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateTestVersionCaseResponse> UpdateTestVersionCaseAsync(UpdateTestVersionCaseRequest updateTestVersionCaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateTestVersionCaseRequest.CaseUri, out var valueOfCaseUri)) urlParam.Add("case_uri", valueOfCaseUri);
+            var urlPath = HttpUtils.AddUrlPath("/v4/testcases/{case_uri}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTestVersionCaseRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateTestVersionCaseResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateTestVersionCaseResponse> UpdateTestVersionCaseAsyncInvoker(UpdateTestVersionCaseRequest updateTestVersionCaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateTestVersionCaseRequest.CaseUri, out var valueOfCaseUri)) urlParam.Add("case_uri", valueOfCaseUri);
+            var urlPath = HttpUtils.AddUrlPath("/v4/testcases/{case_uri}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTestVersionCaseRequest);
+            return new AsyncInvoker<UpdateTestVersionCaseResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateTestVersionCaseResponse>);
+        }
+        
+        /// <summary>
         /// 添加目录信息
         ///
         /// 添加目录信息
@@ -4794,6 +5058,262 @@ namespace HuaweiCloud.SDK.Cloudtest.V1
             var urlPath = HttpUtils.AddUrlPath("/v4/features", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addFeatureRequest);
             return new AsyncInvoker<AddFeatureResponse>(this, "POST", request, JsonUtils.DeSerialize<AddFeatureResponse>);
+        }
+        
+        /// <summary>
+        /// 向迭代中添加需求
+        ///
+        /// 向迭代中添加需求
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<AddIssuesToIteratorResponse> AddIssuesToIteratorAsync(AddIssuesToIteratorRequest addIssuesToIteratorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(addIssuesToIteratorRequest.ProjectUuid, out var valueOfProjectUuid)) urlParam.Add("project_uuid", valueOfProjectUuid);
+            if (StringUtils.TryConvertToNonEmptyString(addIssuesToIteratorRequest.IteratorUri, out var valueOfIteratorUri)) urlParam.Add("iterator_uri", valueOfIteratorUri);
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_uuid}/iterators/{iterator_uri}/issues", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addIssuesToIteratorRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<AddIssuesToIteratorResponse>(response);
+        }
+
+        public AsyncInvoker<AddIssuesToIteratorResponse> AddIssuesToIteratorAsyncInvoker(AddIssuesToIteratorRequest addIssuesToIteratorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(addIssuesToIteratorRequest.ProjectUuid, out var valueOfProjectUuid)) urlParam.Add("project_uuid", valueOfProjectUuid);
+            if (StringUtils.TryConvertToNonEmptyString(addIssuesToIteratorRequest.IteratorUri, out var valueOfIteratorUri)) urlParam.Add("iterator_uri", valueOfIteratorUri);
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_uuid}/iterators/{iterator_uri}/issues", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addIssuesToIteratorRequest);
+            return new AsyncInvoker<AddIssuesToIteratorResponse>(this, "POST", request, JsonUtils.DeSerialize<AddIssuesToIteratorResponse>);
+        }
+        
+        /// <summary>
+        /// 新增分支
+        ///
+        /// 新增分支
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateBranchResponse> CreateBranchAsync(CreateBranchRequest createBranchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v4/branches", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createBranchRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateBranchResponse>(response);
+        }
+
+        public AsyncInvoker<CreateBranchResponse> CreateBranchAsyncInvoker(CreateBranchRequest createBranchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v4/branches", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createBranchRequest);
+            return new AsyncInvoker<CreateBranchResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateBranchResponse>);
+        }
+        
+        /// <summary>
+        /// 新增迭代
+        ///
+        /// 新增迭代
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateTestIteratorResponse> CreateTestIteratorAsync(CreateTestIteratorRequest createTestIteratorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v4/iterators", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTestIteratorRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateTestIteratorResponse>(response);
+        }
+
+        public AsyncInvoker<CreateTestIteratorResponse> CreateTestIteratorAsyncInvoker(CreateTestIteratorRequest createTestIteratorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v4/iterators", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTestIteratorRequest);
+            return new AsyncInvoker<CreateTestIteratorResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateTestIteratorResponse>);
+        }
+        
+        /// <summary>
+        /// 删除分支
+        ///
+        /// 删除分支
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteBranchResponse> DeleteBranchAsync(DeleteBranchRequest deleteBranchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteBranchRequest.BranchUri, out var valueOfBranchUri)) urlParam.Add("branch_uri", valueOfBranchUri);
+            var urlPath = HttpUtils.AddUrlPath("/v4/branches/{branch_uri}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBranchRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteBranchResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteBranchResponse> DeleteBranchAsyncInvoker(DeleteBranchRequest deleteBranchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteBranchRequest.BranchUri, out var valueOfBranchUri)) urlParam.Add("branch_uri", valueOfBranchUri);
+            var urlPath = HttpUtils.AddUrlPath("/v4/branches/{branch_uri}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBranchRequest);
+            return new AsyncInvoker<DeleteBranchResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteBranchResponse>);
+        }
+        
+        /// <summary>
+        /// 删除迭代
+        ///
+        /// 删除迭代
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteIteratorResponse> DeleteIteratorAsync(DeleteIteratorRequest deleteIteratorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteIteratorRequest.IteratorUri, out var valueOfIteratorUri)) urlParam.Add("iterator_uri", valueOfIteratorUri);
+            var urlPath = HttpUtils.AddUrlPath("/v4/iterators/{iterator_uri}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteIteratorRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteIteratorResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteIteratorResponse> DeleteIteratorAsyncInvoker(DeleteIteratorRequest deleteIteratorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteIteratorRequest.IteratorUri, out var valueOfIteratorUri)) urlParam.Add("iterator_uri", valueOfIteratorUri);
+            var urlPath = HttpUtils.AddUrlPath("/v4/iterators/{iterator_uri}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteIteratorRequest);
+            return new AsyncInvoker<DeleteIteratorResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteIteratorResponse>);
+        }
+        
+        /// <summary>
+        /// 获取分支列表
+        ///
+        /// 获取分支列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListTestBranchesResponse> ListTestBranchesAsync(ListTestBranchesRequest listTestBranchesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v4/branches", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTestBranchesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListTestBranchesResponse>(response);
+        }
+
+        public AsyncInvoker<ListTestBranchesResponse> ListTestBranchesAsyncInvoker(ListTestBranchesRequest listTestBranchesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v4/branches", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTestBranchesRequest);
+            return new AsyncInvoker<ListTestBranchesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTestBranchesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询迭代计划详情，包含统计信息
+        ///
+        /// 查询迭代计划详情，包含统计信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowIteratorResponse> ShowIteratorAsync(ShowIteratorRequest showIteratorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showIteratorRequest.IteratorUri, out var valueOfIteratorUri)) urlParam.Add("iterator_uri", valueOfIteratorUri);
+            var urlPath = HttpUtils.AddUrlPath("/v4/iterators/{iterator_uri}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIteratorRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowIteratorResponse>(response);
+        }
+
+        public AsyncInvoker<ShowIteratorResponse> ShowIteratorAsyncInvoker(ShowIteratorRequest showIteratorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showIteratorRequest.IteratorUri, out var valueOfIteratorUri)) urlParam.Add("iterator_uri", valueOfIteratorUri);
+            var urlPath = HttpUtils.AddUrlPath("/v4/iterators/{iterator_uri}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIteratorRequest);
+            return new AsyncInvoker<ShowIteratorResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowIteratorResponse>);
+        }
+        
+        /// <summary>
+        /// 获取分支详情
+        ///
+        /// 获取分支详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowTestBranchResponse> ShowTestBranchAsync(ShowTestBranchRequest showTestBranchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTestBranchRequest.BranchUri, out var valueOfBranchUri)) urlParam.Add("branch_uri", valueOfBranchUri);
+            var urlPath = HttpUtils.AddUrlPath("/v4/branches/{branch_uri}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTestBranchRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowTestBranchResponse>(response);
+        }
+
+        public AsyncInvoker<ShowTestBranchResponse> ShowTestBranchAsyncInvoker(ShowTestBranchRequest showTestBranchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTestBranchRequest.BranchUri, out var valueOfBranchUri)) urlParam.Add("branch_uri", valueOfBranchUri);
+            var urlPath = HttpUtils.AddUrlPath("/v4/branches/{branch_uri}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTestBranchRequest);
+            return new AsyncInvoker<ShowTestBranchResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTestBranchResponse>);
+        }
+        
+        /// <summary>
+        /// 修改分支
+        ///
+        /// 修改分支
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateBranchResponse> UpdateBranchAsync(UpdateBranchRequest updateBranchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateBranchRequest.BranchUri, out var valueOfBranchUri)) urlParam.Add("branch_uri", valueOfBranchUri);
+            var urlPath = HttpUtils.AddUrlPath("/v4/branches/{branch_uri}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateBranchRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateBranchResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateBranchResponse> UpdateBranchAsyncInvoker(UpdateBranchRequest updateBranchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateBranchRequest.BranchUri, out var valueOfBranchUri)) urlParam.Add("branch_uri", valueOfBranchUri);
+            var urlPath = HttpUtils.AddUrlPath("/v4/branches/{branch_uri}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateBranchRequest);
+            return new AsyncInvoker<UpdateBranchResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateBranchResponse>);
+        }
+        
+        /// <summary>
+        /// 修改迭代
+        ///
+        /// 修改迭代
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateTestIteratorResponse> UpdateTestIteratorAsync(UpdateTestIteratorRequest updateTestIteratorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateTestIteratorRequest.IteratorUri, out var valueOfIteratorUri)) urlParam.Add("iterator_uri", valueOfIteratorUri);
+            var urlPath = HttpUtils.AddUrlPath("/v4/iterators/{iterator_uri}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTestIteratorRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateTestIteratorResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateTestIteratorResponse> UpdateTestIteratorAsyncInvoker(UpdateTestIteratorRequest updateTestIteratorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateTestIteratorRequest.IteratorUri, out var valueOfIteratorUri)) urlParam.Add("iterator_uri", valueOfIteratorUri);
+            var urlPath = HttpUtils.AddUrlPath("/v4/iterators/{iterator_uri}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTestIteratorRequest);
+            return new AsyncInvoker<UpdateTestIteratorResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateTestIteratorResponse>);
         }
         
         /// <summary>

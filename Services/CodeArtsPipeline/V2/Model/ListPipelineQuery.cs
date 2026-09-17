@@ -83,6 +83,36 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
         public string EndTime { get; set; }
 
         /// <summary>
+        /// **参数解释**： 流水线运行更新时间。 **约束限制**： 不涉及。 **取值范围**： 时间戳或yyyy-MM-dd HH:mm:ss格式。 **默认取值**： 不涉及。 
+        /// </summary>
+        [JsonProperty("pipeline_run_update_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string PipelineRunUpdateTime { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 排除的流水线ID。 **约束限制**： 不涉及。 **取值范围**： 32位字符，仅由数字和字母组成。 **默认取值**： 不涉及。 
+        /// </summary>
+        [JsonProperty("exclude_pipeline_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ExcludePipelineId { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 包含的流水线ID。 **约束限制**： 不涉及。 **取值范围**： 32位字符，仅由数字和字母组成。 **默认取值**： 不涉及。 
+        /// </summary>
+        [JsonProperty("include_pipeline_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string IncludePipelineId { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 流水线标签列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+        /// </summary>
+        [JsonProperty("tag_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> TagList { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 流水线版本列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
+        /// </summary>
+        [JsonProperty("manifest_version_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> ManifestVersionList { get; set; }
+
+        /// <summary>
         /// **参数解释**： 起始偏移。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
@@ -136,6 +166,12 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
         [JsonProperty("security_level_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<int?> SecurityLevelList { get; set; }
 
+        /// <summary>
+        /// **参数解释**： DevUC流水线密级列表。 **约束限制**： 非涉密场景无该字段。 **取值范围**： 零及以上正整数。 0：未设置密级。 1：最低密级。 **默认取值**： 不涉及。 
+        /// </summary>
+        [JsonProperty("dev_uc_security_level_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<int?> DevUcSecurityLevelList { get; set; }
+
 
 
         /// <summary>
@@ -156,6 +192,11 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             sb.Append("  executorIds: ").Append(ExecutorIds).Append("\n");
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
+            sb.Append("  pipelineRunUpdateTime: ").Append(PipelineRunUpdateTime).Append("\n");
+            sb.Append("  excludePipelineId: ").Append(ExcludePipelineId).Append("\n");
+            sb.Append("  includePipelineId: ").Append(IncludePipelineId).Append("\n");
+            sb.Append("  tagList: ").Append(TagList).Append("\n");
+            sb.Append("  manifestVersionList: ").Append(ManifestVersionList).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  sortKey: ").Append(SortKey).Append("\n");
@@ -165,6 +206,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             sb.Append("  isBanned: ").Append(IsBanned).Append("\n");
             sb.Append("  queryNew: ").Append(QueryNew).Append("\n");
             sb.Append("  securityLevelList: ").Append(SecurityLevelList).Append("\n");
+            sb.Append("  devUcSecurityLevelList: ").Append(DevUcSecurityLevelList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -194,6 +236,11 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             if (this.ExecutorIds != input.ExecutorIds || (this.ExecutorIds != null && input.ExecutorIds != null && !this.ExecutorIds.SequenceEqual(input.ExecutorIds))) return false;
             if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.PipelineRunUpdateTime != input.PipelineRunUpdateTime || (this.PipelineRunUpdateTime != null && !this.PipelineRunUpdateTime.Equals(input.PipelineRunUpdateTime))) return false;
+            if (this.ExcludePipelineId != input.ExcludePipelineId || (this.ExcludePipelineId != null && !this.ExcludePipelineId.Equals(input.ExcludePipelineId))) return false;
+            if (this.IncludePipelineId != input.IncludePipelineId || (this.IncludePipelineId != null && !this.IncludePipelineId.Equals(input.IncludePipelineId))) return false;
+            if (this.TagList != input.TagList || (this.TagList != null && input.TagList != null && !this.TagList.SequenceEqual(input.TagList))) return false;
+            if (this.ManifestVersionList != input.ManifestVersionList || (this.ManifestVersionList != null && input.ManifestVersionList != null && !this.ManifestVersionList.SequenceEqual(input.ManifestVersionList))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.SortKey != input.SortKey || (this.SortKey != null && !this.SortKey.Equals(input.SortKey))) return false;
@@ -203,6 +250,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             if (this.IsBanned != input.IsBanned || (this.IsBanned != null && !this.IsBanned.Equals(input.IsBanned))) return false;
             if (this.QueryNew != input.QueryNew || (this.QueryNew != null && !this.QueryNew.Equals(input.QueryNew))) return false;
             if (this.SecurityLevelList != input.SecurityLevelList || (this.SecurityLevelList != null && input.SecurityLevelList != null && !this.SecurityLevelList.SequenceEqual(input.SecurityLevelList))) return false;
+            if (this.DevUcSecurityLevelList != input.DevUcSecurityLevelList || (this.DevUcSecurityLevelList != null && input.DevUcSecurityLevelList != null && !this.DevUcSecurityLevelList.SequenceEqual(input.DevUcSecurityLevelList))) return false;
 
             return true;
         }
@@ -226,6 +274,11 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
                 if (this.ExecutorIds != null) hashCode = hashCode * 59 + this.ExecutorIds.GetHashCode();
                 if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.PipelineRunUpdateTime != null) hashCode = hashCode * 59 + this.PipelineRunUpdateTime.GetHashCode();
+                if (this.ExcludePipelineId != null) hashCode = hashCode * 59 + this.ExcludePipelineId.GetHashCode();
+                if (this.IncludePipelineId != null) hashCode = hashCode * 59 + this.IncludePipelineId.GetHashCode();
+                if (this.TagList != null) hashCode = hashCode * 59 + this.TagList.GetHashCode();
+                if (this.ManifestVersionList != null) hashCode = hashCode * 59 + this.ManifestVersionList.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.SortKey != null) hashCode = hashCode * 59 + this.SortKey.GetHashCode();
@@ -235,6 +288,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
                 if (this.IsBanned != null) hashCode = hashCode * 59 + this.IsBanned.GetHashCode();
                 if (this.QueryNew != null) hashCode = hashCode * 59 + this.QueryNew.GetHashCode();
                 if (this.SecurityLevelList != null) hashCode = hashCode * 59 + this.SecurityLevelList.GetHashCode();
+                if (this.DevUcSecurityLevelList != null) hashCode = hashCode * 59 + this.DevUcSecurityLevelList.GetHashCode();
                 return hashCode;
             }
         }

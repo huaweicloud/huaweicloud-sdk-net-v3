@@ -17,25 +17,25 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// **参数解释**： 超节点名称 &gt; 命名规则：以小写字母开头，由小写字母、数字、中划线(-)组成，长度范围1-56位，且不能以中划线(-)结尾。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
+        /// **参数解释**： 超节点名称。 **约束限制**： 不涉及 **取值范围**： 命名规则：以小写字母开头，由小写字母、数字、中划线(-)组成，长度范围1-69位，且不能以中划线(-)结尾。 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// **参数解释**： 超节点ID，资源唯一标识，创建成功后自动生成，填写无效
+        /// **参数解释**： 超节点ID，资源唯一标识，创建成功后自动生成，填写无效 **约束限制**： 不涉及 **取值范围**： UUID格式 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("uid", NullValueHandling = NullValueHandling.Ignore)]
         public string Uid { get; set; }
 
         /// <summary>
-        /// **参数解释**： 创建时间，创建成功后自动生成，填写无效
+        /// **参数解释**： 创建时间，创建成功后自动生成，填写无效 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("creationTimestamp", NullValueHandling = NullValueHandling.Ignore)]
         public string CreationTimestamp { get; set; }
 
         /// <summary>
-        /// **参数解释**： 更新时间，创建成功后自动生成，填写无效
+        /// **参数解释**： 更新时间，系统自动生成，填写无效。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("updateTimestamp", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdateTimestamp { get; set; }

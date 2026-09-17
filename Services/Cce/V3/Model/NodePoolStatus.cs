@@ -168,10 +168,22 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public int? DeletingNode { get; set; }
 
         /// <summary>
-        /// **参数解释**： 当前节点池中就绪的节点数量。 **取值范围**： 不涉及
+        /// **参数解释**： 当前节点池中就绪的节点数量。 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("activeNode", NullValueHandling = NullValueHandling.Ignore)]
         public int? ActiveNode { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 当前节点池中修复中的节点数量。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
+        /// </summary>
+        [JsonProperty("repairingNode", NullValueHandling = NullValueHandling.Ignore)]
+        public int? RepairingNode { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 当前节点池中修复失败的节点数量。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
+        /// </summary>
+        [JsonProperty("repairFailedNode", NullValueHandling = NullValueHandling.Ignore)]
+        public int? RepairFailedNode { get; set; }
 
         /// <summary>
         /// **参数解释** 当前节点池中已经同步了节点池配置参数的节点数量。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
@@ -215,6 +227,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  creatingNode: ").Append(CreatingNode).Append("\n");
             sb.Append("  deletingNode: ").Append(DeletingNode).Append("\n");
             sb.Append("  activeNode: ").Append(ActiveNode).Append("\n");
+            sb.Append("  repairingNode: ").Append(RepairingNode).Append("\n");
+            sb.Append("  repairFailedNode: ").Append(RepairFailedNode).Append("\n");
             sb.Append("  configurationSyncedNodeCount: ").Append(ConfigurationSyncedNodeCount).Append("\n");
             sb.Append("  phase: ").Append(Phase).Append("\n");
             sb.Append("  jobId: ").Append(JobId).Append("\n");
@@ -242,6 +256,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.CreatingNode != input.CreatingNode || (this.CreatingNode != null && !this.CreatingNode.Equals(input.CreatingNode))) return false;
             if (this.DeletingNode != input.DeletingNode || (this.DeletingNode != null && !this.DeletingNode.Equals(input.DeletingNode))) return false;
             if (this.ActiveNode != input.ActiveNode || (this.ActiveNode != null && !this.ActiveNode.Equals(input.ActiveNode))) return false;
+            if (this.RepairingNode != input.RepairingNode || (this.RepairingNode != null && !this.RepairingNode.Equals(input.RepairingNode))) return false;
+            if (this.RepairFailedNode != input.RepairFailedNode || (this.RepairFailedNode != null && !this.RepairFailedNode.Equals(input.RepairFailedNode))) return false;
             if (this.ConfigurationSyncedNodeCount != input.ConfigurationSyncedNodeCount || (this.ConfigurationSyncedNodeCount != null && !this.ConfigurationSyncedNodeCount.Equals(input.ConfigurationSyncedNodeCount))) return false;
             if (this.Phase != input.Phase) return false;
             if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
@@ -263,6 +279,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.CreatingNode != null) hashCode = hashCode * 59 + this.CreatingNode.GetHashCode();
                 if (this.DeletingNode != null) hashCode = hashCode * 59 + this.DeletingNode.GetHashCode();
                 if (this.ActiveNode != null) hashCode = hashCode * 59 + this.ActiveNode.GetHashCode();
+                if (this.RepairingNode != null) hashCode = hashCode * 59 + this.RepairingNode.GetHashCode();
+                if (this.RepairFailedNode != null) hashCode = hashCode * 59 + this.RepairFailedNode.GetHashCode();
                 if (this.ConfigurationSyncedNodeCount != null) hashCode = hashCode * 59 + this.ConfigurationSyncedNodeCount.GetHashCode();
                 hashCode = hashCode * 59 + this.Phase.GetHashCode();
                 if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();

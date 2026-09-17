@@ -44,7 +44,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// 执行时间。单位：ms
         /// </summary>
         [JsonProperty("cost_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string CostTime { get; set; }
+        public int? CostTime { get; set; }
 
         /// <summary>
         /// 日志产生时间，UTC时间。 格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。

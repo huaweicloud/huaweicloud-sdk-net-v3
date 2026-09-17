@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 属主对象
+    /// **参数解释**： 属主对象 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
     public class HyperNodeMetadataOwnerReference 
     {
 
         /// <summary>
-        /// **参数解释**： 节点池名称
+        /// **参数解释**： 节点池名称 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("nodepoolName", NullValueHandling = NullValueHandling.Ignore)]
         public string NodepoolName { get; set; }
 
         /// <summary>
-        /// **参数解释**： 节点池UID
+        /// **参数解释**： 节点池ID **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("nodepoolID", NullValueHandling = NullValueHandling.Ignore)]
         public string NodepoolID { get; set; }

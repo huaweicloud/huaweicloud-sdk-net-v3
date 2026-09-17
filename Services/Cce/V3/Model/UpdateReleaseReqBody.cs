@@ -11,14 +11,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 更新模板实例的请求体
+    /// **参数解释：** 更新模板实例的请求体 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
     public class UpdateReleaseReqBody 
     {
         /// <summary>
-        /// 更新操作，升级为upgrade，回退为rollback
+        /// **参数解释：** 更新操作，升级为upgrade，回退为rollback **约束限制：** 不涉及 **取值范围：** - upgrade：升级 - rollback：回退  **默认取值：** 不涉及
         /// </summary>
-        /// <value>更新操作，升级为upgrade，回退为rollback</value>
+        /// <value>**参数解释：** 更新操作，升级为upgrade，回退为rollback **约束限制：** 不涉及 **取值范围：** - upgrade：升级 - rollback：回退  **默认取值：** 不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<ActionEnum>))]
         public class ActionEnum
         {
@@ -132,13 +132,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
 
         /// <summary>
-        /// 模板ID
+        /// **参数解释：** 模板ID **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("chart_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ChartId { get; set; }
 
         /// <summary>
-        /// 更新操作，升级为upgrade，回退为rollback
+        /// **参数解释：** 更新操作，升级为upgrade，回退为rollback **约束限制：** 不涉及 **取值范围：** - upgrade：升级 - rollback：回退  **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public ActionEnum Action { get; set; }

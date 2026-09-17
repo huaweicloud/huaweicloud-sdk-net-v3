@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("deletionProtection", NullValueHandling = NullValueHandling.Ignore)]
         public bool? DeletionProtection { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("secretConfig", NullValueHandling = NullValueHandling.Ignore)]
+        public SecretConfigUpdate SecretConfig { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  eniNetwork: ").Append(EniNetwork).Append("\n");
             sb.Append("  hostNetwork: ").Append(HostNetwork).Append("\n");
             sb.Append("  deletionProtection: ").Append(DeletionProtection).Append("\n");
+            sb.Append("  secretConfig: ").Append(SecretConfig).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,6 +106,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.EniNetwork != input.EniNetwork || (this.EniNetwork != null && !this.EniNetwork.Equals(input.EniNetwork))) return false;
             if (this.HostNetwork != input.HostNetwork || (this.HostNetwork != null && !this.HostNetwork.Equals(input.HostNetwork))) return false;
             if (this.DeletionProtection != input.DeletionProtection || (this.DeletionProtection != null && !this.DeletionProtection.Equals(input.DeletionProtection))) return false;
+            if (this.SecretConfig != input.SecretConfig || (this.SecretConfig != null && !this.SecretConfig.Equals(input.SecretConfig))) return false;
 
             return true;
         }
@@ -118,6 +126,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.EniNetwork != null) hashCode = hashCode * 59 + this.EniNetwork.GetHashCode();
                 if (this.HostNetwork != null) hashCode = hashCode * 59 + this.HostNetwork.GetHashCode();
                 if (this.DeletionProtection != null) hashCode = hashCode * 59 + this.DeletionProtection.GetHashCode();
+                if (this.SecretConfig != null) hashCode = hashCode * 59 + this.SecretConfig.GetHashCode();
                 return hashCode;
             }
         }

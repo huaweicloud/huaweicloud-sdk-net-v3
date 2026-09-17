@@ -164,7 +164,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// <summary>
         /// **参数解释**： EIP所属的组，IES边缘场景为可用区ID，中心区统一为“center” **取值范围**： 不涉及
         /// </summary>
-        [JsonProperty("PublicBorderGroup", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("publicBorderGroup", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicBorderGroup { get; set; }
 
         /// <summary>

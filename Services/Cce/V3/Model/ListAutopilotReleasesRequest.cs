@@ -24,14 +24,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string ClusterId { get; set; }
 
         /// <summary>
-        /// 模板ID
+        /// **参数解释：** 模板ID。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [SDKProperty("chart_id", IsQuery = true)]
         [JsonProperty("chart_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ChartId { get; set; }
 
         /// <summary>
-        /// 模板对应的命名空间
+        /// **参数解释：** 模板对应的命名空间。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [SDKProperty("namespace", IsQuery = true)]
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]

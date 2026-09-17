@@ -135,7 +135,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// 总数。
         /// </summary>
         [JsonProperty("total_count", NullValueHandling = NullValueHandling.Ignore)]
-        public string TotalCount { get; set; }
+        public int? TotalCount { get; set; }
 
         /// <summary>
         /// 禁用类型。

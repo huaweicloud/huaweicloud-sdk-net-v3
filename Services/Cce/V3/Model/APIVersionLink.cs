@@ -11,14 +11,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// API版本的URL链接信息。
+    /// **参数解释：** API版本的URL链接信息。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
     public class APIVersionLink 
     {
         /// <summary>
-        /// 链接属性。self：自助链接包含版本链接的资源。立即链接后使用这些链接。
+        /// **参数解释：** 链接属性。 **约束限制：** 不涉及 **取值范围：** - self：自助链接包含版本链接的资源。立即链接后使用这些链接。  **默认取值：** 不涉及
         /// </summary>
-        /// <value>链接属性。self：自助链接包含版本链接的资源。立即链接后使用这些链接。</value>
+        /// <value>**参数解释：** 链接属性。 **约束限制：** 不涉及 **取值范围：** - self：自助链接包含版本链接的资源。立即链接后使用这些链接。  **默认取值：** 不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<RelEnum>))]
         public class RelEnum
         {
@@ -126,13 +126,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
 
         /// <summary>
-        /// API版本信息的链接。
+        /// **参数解释：** API版本信息的链接。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("href", NullValueHandling = NullValueHandling.Ignore)]
         public string Href { get; set; }
 
         /// <summary>
-        /// 链接属性。self：自助链接包含版本链接的资源。立即链接后使用这些链接。
+        /// **参数解释：** 链接属性。 **约束限制：** 不涉及 **取值范围：** - self：自助链接包含版本链接的资源。立即链接后使用这些链接。  **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("rel", NullValueHandling = NullValueHandling.Ignore)]
         public RelEnum Rel { get; set; }

@@ -41,12 +41,6 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         public string Action { get; set; }
 
         /// <summary>
-        /// 功能说明：资源所属项目ID
-        /// </summary>
-        [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ProjectId { get; set; }
-
-        /// <summary>
         /// 功能说明：ACL规则协议 取值范围：支持TCP,UDP,ICMP, ICMPV6或者IP协议号（0-255）
         /// </summary>
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
@@ -113,7 +107,6 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  action: ").Append(Action).Append("\n");
-            sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  protocol: ").Append(Protocol).Append("\n");
             sb.Append("  ipVersion: ").Append(IpVersion).Append("\n");
             sb.Append("  sourceIpAddress: ").Append(SourceIpAddress).Append("\n");
@@ -145,7 +138,6 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.Action != input.Action || (this.Action != null && !this.Action.Equals(input.Action))) return false;
-            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
             if (this.Protocol != input.Protocol || (this.Protocol != null && !this.Protocol.Equals(input.Protocol))) return false;
             if (this.IpVersion != input.IpVersion || (this.IpVersion != null && !this.IpVersion.Equals(input.IpVersion))) return false;
             if (this.SourceIpAddress != input.SourceIpAddress || (this.SourceIpAddress != null && !this.SourceIpAddress.Equals(input.SourceIpAddress))) return false;
@@ -171,7 +163,6 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Action != null) hashCode = hashCode * 59 + this.Action.GetHashCode();
-                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.Protocol != null) hashCode = hashCode * 59 + this.Protocol.GetHashCode();
                 if (this.IpVersion != null) hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
                 if (this.SourceIpAddress != null) hashCode = hashCode * 59 + this.SourceIpAddress.GetHashCode();

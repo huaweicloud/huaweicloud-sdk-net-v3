@@ -19,8 +19,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// <summary>
         /// **参数解释**：  实例ID。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
         /// </summary>
-        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
-        public string Id { get; set; }
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceId { get; set; }
 
         /// <summary>
         /// **参数解释**：  实例名称。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
@@ -31,8 +31,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// <summary>
         /// **参数解释**：  备份用量，单位MB。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
         /// </summary>
-        [JsonProperty("backup_use_space", NullValueHandling = NullValueHandling.Ignore)]
-        public double? BackupUseSpace { get; set; }
+        [JsonProperty("backup_used_space", NullValueHandling = NullValueHandling.Ignore)]
+        public double? BackupUsedSpace { get; set; }
 
         /// <summary>
         /// 
@@ -43,8 +43,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("spaces", NullValueHandling = NullValueHandling.Ignore)]
-        public Spaces Spaces { get; set; }
+        [JsonProperty("space", NullValueHandling = NullValueHandling.Ignore)]
+        public Space Space { get; set; }
 
 
 
@@ -55,11 +55,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InstanceBackupSummary {\n");
-            sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
-            sb.Append("  backupUseSpace: ").Append(BackupUseSpace).Append("\n");
+            sb.Append("  backupUsedSpace: ").Append(BackupUsedSpace).Append("\n");
             sb.Append("  datastore: ").Append(Datastore).Append("\n");
-            sb.Append("  spaces: ").Append(Spaces).Append("\n");
+            sb.Append("  space: ").Append(Space).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -78,11 +78,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public bool Equals(InstanceBackupSummary input)
         {
             if (input == null) return false;
-            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
-            if (this.BackupUseSpace != input.BackupUseSpace || (this.BackupUseSpace != null && !this.BackupUseSpace.Equals(input.BackupUseSpace))) return false;
+            if (this.BackupUsedSpace != input.BackupUsedSpace || (this.BackupUsedSpace != null && !this.BackupUsedSpace.Equals(input.BackupUsedSpace))) return false;
             if (this.Datastore != input.Datastore || (this.Datastore != null && !this.Datastore.Equals(input.Datastore))) return false;
-            if (this.Spaces != input.Spaces || (this.Spaces != null && !this.Spaces.Equals(input.Spaces))) return false;
+            if (this.Space != input.Space || (this.Space != null && !this.Space.Equals(input.Space))) return false;
 
             return true;
         }
@@ -95,11 +95,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.BackupUseSpace != null) hashCode = hashCode * 59 + this.BackupUseSpace.GetHashCode();
+                if (this.BackupUsedSpace != null) hashCode = hashCode * 59 + this.BackupUsedSpace.GetHashCode();
                 if (this.Datastore != null) hashCode = hashCode * 59 + this.Datastore.GetHashCode();
-                if (this.Spaces != null) hashCode = hashCode * 59 + this.Spaces.GetHashCode();
+                if (this.Space != null) hashCode = hashCode * 59 + this.Space.GetHashCode();
                 return hashCode;
             }
         }

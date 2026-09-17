@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 插件模板名称
+        /// **参数解释：** 插件模板名称。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("addonTemplateName", NullValueHandling = NullValueHandling.Ignore)]
         public string AddonTemplateName { get; set; }
 
         /// <summary>
-        /// 插件别名
+        /// **参数解释：** 插件别名。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("alias", NullValueHandling = NullValueHandling.Ignore)]
         public string Alias { get; set; }

@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 当前集群版本
+        /// **参数解释：** 当前集群版本 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }
 
         /// <summary>
-        /// 目标集群版本，例如\&quot;v1.23\&quot;
+        /// **参数解释：** 目标集群版本，例如\&quot;v1.23\&quot; **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("targetVersion", NullValueHandling = NullValueHandling.Ignore)]
         public string TargetVersion { get; set; }
 
         /// <summary>
-        /// 目标集群的平台版本号，表示集群版本(version)下的内部版本，不支持用户指定。
+        /// **参数解释：** 目标集群的平台版本号，表示集群版本(version)下的内部版本，不支持用户指定。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("targetPlatformVersion", NullValueHandling = NullValueHandling.Ignore)]
         public string TargetPlatformVersion { get; set; }
@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public UpgradeStrategy Strategy { get; set; }
 
         /// <summary>
-        /// 升级过程中指定的集群配置
+        /// **参数解释：** 升级过程中指定的集群配置 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("config", NullValueHandling = NullValueHandling.Ignore)]
         public Object Config { get; set; }

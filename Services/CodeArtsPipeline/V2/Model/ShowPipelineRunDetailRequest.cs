@@ -37,6 +37,13 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
         [JsonProperty("pipeline_run_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PipelineRunId { get; set; }
 
+        /// <summary>
+        /// 流水线运行编号
+        /// </summary>
+        [SDKProperty("pipeline_run_number", IsQuery = true)]
+        [JsonProperty("pipeline_run_number", NullValueHandling = NullValueHandling.Ignore)]
+        public string PipelineRunNumber { get; set; }
+
 
 
         /// <summary>
@@ -49,6 +56,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  pipelineId: ").Append(PipelineId).Append("\n");
             sb.Append("  pipelineRunId: ").Append(PipelineRunId).Append("\n");
+            sb.Append("  pipelineRunNumber: ").Append(PipelineRunNumber).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -70,6 +78,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
             if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
             if (this.PipelineId != input.PipelineId || (this.PipelineId != null && !this.PipelineId.Equals(input.PipelineId))) return false;
             if (this.PipelineRunId != input.PipelineRunId || (this.PipelineRunId != null && !this.PipelineRunId.Equals(input.PipelineRunId))) return false;
+            if (this.PipelineRunNumber != input.PipelineRunNumber || (this.PipelineRunNumber != null && !this.PipelineRunNumber.Equals(input.PipelineRunNumber))) return false;
 
             return true;
         }
@@ -85,6 +94,7 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
                 if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.PipelineId != null) hashCode = hashCode * 59 + this.PipelineId.GetHashCode();
                 if (this.PipelineRunId != null) hashCode = hashCode * 59 + this.PipelineRunId.GetHashCode();
+                if (this.PipelineRunNumber != null) hashCode = hashCode * 59 + this.PipelineRunNumber.GetHashCode();
                 return hashCode;
             }
         }

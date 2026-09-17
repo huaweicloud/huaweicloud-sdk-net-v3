@@ -1276,6 +1276,7 @@ namespace HuaweiCloud.SDK.Dds.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<ListErrorLogsResponse> ListErrorLogsAsync(ListErrorLogsRequest listErrorLogsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1286,6 +1287,7 @@ namespace HuaweiCloud.SDK.Dds.V3
             return JsonUtils.DeSerialize<ListErrorLogsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<ListErrorLogsResponse> ListErrorLogsAsyncInvoker(ListErrorLogsRequest listErrorLogsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1326,6 +1328,7 @@ namespace HuaweiCloud.SDK.Dds.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<ListFlavorsResponse> ListFlavorsAsync(ListFlavorsRequest listFlavorsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1335,6 +1338,7 @@ namespace HuaweiCloud.SDK.Dds.V3
             return JsonUtils.DeSerialize<ListFlavorsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<ListFlavorsResponse> ListFlavorsAsyncInvoker(ListFlavorsRequest listFlavorsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1676,6 +1680,7 @@ namespace HuaweiCloud.SDK.Dds.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<ListSlowLogsResponse> ListSlowLogsAsync(ListSlowLogsRequest listSlowLogsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1686,6 +1691,7 @@ namespace HuaweiCloud.SDK.Dds.V3
             return JsonUtils.DeSerialize<ListSlowLogsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<ListSlowLogsResponse> ListSlowLogsAsyncInvoker(ListSlowLogsRequest listSlowLogsRequest)
         {
             var urlParam = new Dictionary<string, string>();

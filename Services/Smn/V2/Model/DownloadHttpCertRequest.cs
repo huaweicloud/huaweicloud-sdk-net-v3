@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
     {
 
         /// <summary>
-        /// 证书文件ID名称，格式为SMN-{RegionID}-{UUID}.pem
+        /// 证书文件ID名称，格式为SMN_{RegionID}_{UUID}.pem
         /// </summary>
         [SDKProperty("certificate_id", IsPath = true)]
         [JsonProperty("certificate_id", NullValueHandling = NullValueHandling.Ignore)]

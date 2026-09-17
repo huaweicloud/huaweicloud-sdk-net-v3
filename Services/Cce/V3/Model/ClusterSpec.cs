@@ -550,6 +550,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("certificateAuthority", NullValueHandling = NullValueHandling.Ignore)]
         public CertificateAuthority CertificateAuthority { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("secretConfig", NullValueHandling = NullValueHandling.Ignore)]
+        public SecretConfig SecretConfig { get; set; }
+
 
 
         /// <summary>
@@ -590,6 +596,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  clusterOps: ").Append(ClusterOps).Append("\n");
             sb.Append("  encryptionConfig: ").Append(EncryptionConfig).Append("\n");
             sb.Append("  certificateAuthority: ").Append(CertificateAuthority).Append("\n");
+            sb.Append("  secretConfig: ").Append(SecretConfig).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -639,6 +646,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.ClusterOps != input.ClusterOps || (this.ClusterOps != null && !this.ClusterOps.Equals(input.ClusterOps))) return false;
             if (this.EncryptionConfig != input.EncryptionConfig || (this.EncryptionConfig != null && !this.EncryptionConfig.Equals(input.EncryptionConfig))) return false;
             if (this.CertificateAuthority != input.CertificateAuthority || (this.CertificateAuthority != null && !this.CertificateAuthority.Equals(input.CertificateAuthority))) return false;
+            if (this.SecretConfig != input.SecretConfig || (this.SecretConfig != null && !this.SecretConfig.Equals(input.SecretConfig))) return false;
 
             return true;
         }
@@ -682,6 +690,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.ClusterOps != null) hashCode = hashCode * 59 + this.ClusterOps.GetHashCode();
                 if (this.EncryptionConfig != null) hashCode = hashCode * 59 + this.EncryptionConfig.GetHashCode();
                 if (this.CertificateAuthority != null) hashCode = hashCode * 59 + this.CertificateAuthority.GetHashCode();
+                if (this.SecretConfig != null) hashCode = hashCode * 59 + this.SecretConfig.GetHashCode();
                 return hashCode;
             }
         }

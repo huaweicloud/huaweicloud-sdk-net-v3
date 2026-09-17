@@ -33,8 +33,8 @@ namespace HuaweiCloud.SDK.CodeArtsPipeline.V2.Model
         /// <summary>
         /// 微服务ID
         /// </summary>
-        [SDKProperty("componentId", IsQuery = true)]
-        [JsonProperty("componentId", NullValueHandling = NullValueHandling.Ignore)]
+        [SDKProperty("component_id", IsQuery = true)]
+        [JsonProperty("component_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ComponentId { get; set; }
 
         /// <summary>

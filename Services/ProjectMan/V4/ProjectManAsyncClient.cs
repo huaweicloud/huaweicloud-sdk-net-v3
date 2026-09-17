@@ -68,6 +68,31 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 关联工作项
+        ///
+        /// 将一个工作项与一个或多个目标工作项建立关联关系,同时支持在同一次请求中取消已有关联。
+        /// 关联关系建立后会同步生成 journal 动态记录,并受单工作项关联数量上限约束。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<AssociateScrumIssueResponse> AssociateScrumIssueAsync(AssociateScrumIssueRequest associateScrumIssueRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/issues/associate-issue", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", associateScrumIssueRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<AssociateScrumIssueResponse>(response);
+        }
+
+        public AsyncInvoker<AssociateScrumIssueResponse> AssociateScrumIssueAsyncInvoker(AssociateScrumIssueRequest associateScrumIssueRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/issues/associate-issue", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", associateScrumIssueRequest);
+            return new AsyncInvoker<AssociateScrumIssueResponse>(this, "POST", request, JsonUtils.DeSerialize<AssociateScrumIssueResponse>);
+        }
+        
+        /// <summary>
         /// 批量添加项目成员
         ///
         /// 批量添加项目成员，只能添加和项目创建者同一租户下的成员，不正确的用户id会略过，添加的用户超过权限的，默认角色设置为7
@@ -144,6 +169,31 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 取消关联工作项
+        ///
+        /// 取消两个工作项之间的关联关系。仅项目创建者、项目管理员、工作项责任人、创建人或具有编辑权限的角色可执行取消操作。
+        /// 取消后会同步生成 journal 动态记录。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CancelScrumAssociateResponse> CancelScrumAssociateAsync(CancelScrumAssociateRequest cancelScrumAssociateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/issues/cancel-associate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", cancelScrumAssociateRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CancelScrumAssociateResponse>(response);
+        }
+
+        public AsyncInvoker<CancelScrumAssociateResponse> CancelScrumAssociateAsyncInvoker(CancelScrumAssociateRequest cancelScrumAssociateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/issues/cancel-associate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", cancelScrumAssociateRequest);
+            return new AsyncInvoker<CancelScrumAssociateResponse>(this, "POST", request, JsonUtils.DeSerialize<CancelScrumAssociateResponse>);
+        }
+        
+        /// <summary>
         /// 检查项目名称是否存在
         ///
         /// 检查项目名称是否存在
@@ -215,6 +265,31 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteProjectV4Request);
             return new AsyncInvoker<DeleteProjectV4Response>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteProjectV4Response>);
+        }
+        
+        /// <summary>
+        /// 删除工作项评论
+        ///
+        /// 删除指定工作项下的评论。仅评论创建者可删除，删除评论后工作项的备注内容将被清空。
+        /// 该接口会同步触发 testman 需求通知，用于跨系统数据同步。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteScrumMyIssueNotesResponse> DeleteScrumMyIssueNotesAsync(DeleteScrumMyIssueNotesRequest deleteScrumMyIssueNotesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/workitem/issue-note", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteScrumMyIssueNotesRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteScrumMyIssueNotesResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteScrumMyIssueNotesResponse> DeleteScrumMyIssueNotesAsyncInvoker(DeleteScrumMyIssueNotesRequest deleteScrumMyIssueNotesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/workitem/issue-note", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteScrumMyIssueNotesRequest);
+            return new AsyncInvoker<DeleteScrumMyIssueNotesResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteScrumMyIssueNotesResponse>);
         }
         
         /// <summary>
@@ -341,6 +416,30 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             var urlPath = HttpUtils.AddUrlPath("/v4/projects", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectsV4Request);
             return new AsyncInvoker<ListProjectsV4Response>(this, "GET", request, JsonUtils.DeSerialize<ListProjectsV4Response>);
+        }
+        
+        /// <summary>
+        /// 查询缓存
+        ///
+        /// 查询缓存。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListScrumJobCacheResponse> ListScrumJobCacheAsync(ListScrumJobCacheRequest listScrumJobCacheRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/job-cache/list-cache", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listScrumJobCacheRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ListScrumJobCacheResponse>(response);
+        }
+
+        public AsyncInvoker<ListScrumJobCacheResponse> ListScrumJobCacheAsyncInvoker(ListScrumJobCacheRequest listScrumJobCacheRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/job-cache/list-cache", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listScrumJobCacheRequest);
+            return new AsyncInvoker<ListScrumJobCacheResponse>(this, "POST", request, JsonUtils.DeSerialize<ListScrumJobCacheResponse>);
         }
         
         /// <summary>
@@ -819,6 +918,32 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 批量创建工作项
+        ///
+        /// 批量创建工作项
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchCreateIpdIssuesResponse> BatchCreateIpdIssuesAsync(BatchCreateIpdIssuesRequest batchCreateIpdIssuesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateIpdIssuesRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/issues/batch-create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateIpdIssuesRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<BatchCreateIpdIssuesResponse>(response);
+        }
+
+        public AsyncInvoker<BatchCreateIpdIssuesResponse> BatchCreateIpdIssuesAsyncInvoker(BatchCreateIpdIssuesRequest batchCreateIpdIssuesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateIpdIssuesRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/issues/batch-create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateIpdIssuesRequest);
+            return new AsyncInvoker<BatchCreateIpdIssuesResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchCreateIpdIssuesResponse>);
+        }
+        
+        /// <summary>
         /// 批量创建工作项快照
         ///
         /// 为IPD工作项批量创建快照时，可调用此接口。
@@ -842,6 +967,110 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/baseline-snapshots/create/batch", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateIssueSnapitemsRequest);
             return new AsyncInvoker<BatchCreateIssueSnapitemsResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchCreateIssueSnapitemsResponse>);
+        }
+        
+        /// <summary>
+        /// 批量创建工作项
+        ///
+        /// 批量创建工作项。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchCreateIssuesV2Response> BatchCreateIssuesV2Async(BatchCreateIssuesV2Request batchCreateIssuesV2Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateIssuesV2Request.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/ipdprojectservice/projects/{project_id}/issues/batch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateIssuesV2Request);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<BatchCreateIssuesV2Response>(response);
+        }
+
+        public AsyncInvoker<BatchCreateIssuesV2Response> BatchCreateIssuesV2AsyncInvoker(BatchCreateIssuesV2Request batchCreateIssuesV2Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateIssuesV2Request.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/ipdprojectservice/projects/{project_id}/issues/batch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateIssuesV2Request);
+            return new AsyncInvoker<BatchCreateIssuesV2Response>(this, "POST", request, JsonUtils.DeSerialize<BatchCreateIssuesV2Response>);
+        }
+        
+        /// <summary>
+        /// 批量删除工作项
+        ///
+        /// 批量删除工作项
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchDeleteIpdIssueResponse> BatchDeleteIpdIssueAsync(BatchDeleteIpdIssueRequest batchDeleteIpdIssueRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteIpdIssueRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/issues/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteIpdIssueRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<BatchDeleteIpdIssueResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDeleteIpdIssueResponse> BatchDeleteIpdIssueAsyncInvoker(BatchDeleteIpdIssueRequest batchDeleteIpdIssueRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteIpdIssueRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/issues/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteIpdIssueRequest);
+            return new AsyncInvoker<BatchDeleteIpdIssueResponse>(this, "DELETE", request, JsonUtils.DeSerialize<BatchDeleteIpdIssueResponse>);
+        }
+        
+        /// <summary>
+        /// 批量删除工作项
+        ///
+        /// 批量删除工作项
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchDeleteIpdIssuesResponse> BatchDeleteIpdIssuesAsync(BatchDeleteIpdIssuesRequest batchDeleteIpdIssuesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteIpdIssuesRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/issues/batch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteIpdIssuesRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<BatchDeleteIpdIssuesResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDeleteIpdIssuesResponse> BatchDeleteIpdIssuesAsyncInvoker(BatchDeleteIpdIssuesRequest batchDeleteIpdIssuesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteIpdIssuesRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/issues/batch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteIpdIssuesRequest);
+            return new AsyncInvoker<BatchDeleteIpdIssuesResponse>(this, "DELETE", request, JsonUtils.DeSerialize<BatchDeleteIpdIssuesResponse>);
+        }
+        
+        /// <summary>
+        /// 批量删除计划
+        ///
+        /// 当需要删除发布计划/迭代时，可调用此接口，用户可以根据传入的发布计划/迭代ID列表批量删除计划或迭代。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchDeletePlansResponse> BatchDeletePlansAsync(BatchDeletePlansRequest batchDeletePlansRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchDeletePlansRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/planservice/projects/{project_id}/plans/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeletePlansRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<BatchDeletePlansResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDeletePlansResponse> BatchDeletePlansAsyncInvoker(BatchDeletePlansRequest batchDeletePlansRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchDeletePlansRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/planservice/projects/{project_id}/plans/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeletePlansRequest);
+            return new AsyncInvoker<BatchDeletePlansResponse>(this, "DELETE", request, JsonUtils.DeSerialize<BatchDeletePlansResponse>);
         }
         
         /// <summary>
@@ -871,6 +1100,84 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 工作项流程批量流转
+        ///
+        /// 工作项流程批量流转
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchTransferIpdWorkItemFlowResponse> BatchTransferIpdWorkItemFlowAsync(BatchTransferIpdWorkItemFlowRequest batchTransferIpdWorkItemFlowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchTransferIpdWorkItemFlowRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/work-item/processes/transfer-batch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchTransferIpdWorkItemFlowRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<BatchTransferIpdWorkItemFlowResponse>(response);
+        }
+
+        public AsyncInvoker<BatchTransferIpdWorkItemFlowResponse> BatchTransferIpdWorkItemFlowAsyncInvoker(BatchTransferIpdWorkItemFlowRequest batchTransferIpdWorkItemFlowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchTransferIpdWorkItemFlowRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/work-item/processes/transfer-batch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchTransferIpdWorkItemFlowRequest);
+            return new AsyncInvoker<BatchTransferIpdWorkItemFlowResponse>(this, "PUT", request, JsonUtils.DeSerialize<BatchTransferIpdWorkItemFlowResponse>);
+        }
+        
+        /// <summary>
+        /// 批量基线或取消基线
+        ///
+        /// 批量基线或取消基线
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchUpdateBaselineResponse> BatchUpdateBaselineAsync(BatchUpdateBaselineRequest batchUpdateBaselineRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchUpdateBaselineRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/planservice/projects/{project_id}/plans/batch-baseline", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUpdateBaselineRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<BatchUpdateBaselineResponse>(response);
+        }
+
+        public AsyncInvoker<BatchUpdateBaselineResponse> BatchUpdateBaselineAsyncInvoker(BatchUpdateBaselineRequest batchUpdateBaselineRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchUpdateBaselineRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/planservice/projects/{project_id}/plans/batch-baseline", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUpdateBaselineRequest);
+            return new AsyncInvoker<BatchUpdateBaselineResponse>(this, "PUT", request, JsonUtils.DeSerialize<BatchUpdateBaselineResponse>);
+        }
+        
+        /// <summary>
+        /// 批量更新工作项
+        ///
+        /// 批量更新工作项，单次最多支持50个工作项。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchUpdateIpdIssuesResponse> BatchUpdateIpdIssuesAsync(BatchUpdateIpdIssuesRequest batchUpdateIpdIssuesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchUpdateIpdIssuesRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/issues/batch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUpdateIpdIssuesRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<BatchUpdateIpdIssuesResponse>(response);
+        }
+
+        public AsyncInvoker<BatchUpdateIpdIssuesResponse> BatchUpdateIpdIssuesAsyncInvoker(BatchUpdateIpdIssuesRequest batchUpdateIpdIssuesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchUpdateIpdIssuesRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/issues/batch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUpdateIpdIssuesRequest);
+            return new AsyncInvoker<BatchUpdateIpdIssuesResponse>(this, "PUT", request, JsonUtils.DeSerialize<BatchUpdateIpdIssuesResponse>);
+        }
+        
+        /// <summary>
         /// 批量更新快照可删除标识
         ///
         /// 批量更新快照的可删除标识状态。
@@ -894,6 +1201,62 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/baseline-snapshots/deletions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUpdateSnapshotDeletableFlagRequest);
             return new AsyncInvoker<BatchUpdateSnapshotDeletableFlagResponse>(this, "PUT", request, JsonUtils.DeSerialize<BatchUpdateSnapshotDeletableFlagResponse>);
+        }
+        
+        /// <summary>
+        /// 更新发布/迭代状态
+        ///
+        /// 更新发布/迭代状态
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ChangePlanStatusResponse> ChangePlanStatusAsync(ChangePlanStatusRequest changePlanStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(changePlanStatusRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(changePlanStatusRequest.PlanId, out var valueOfPlanId)) urlParam.Add("plan_id", valueOfPlanId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/planservice/projects/{project_id}/plans/{plan_id}/status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changePlanStatusRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<ChangePlanStatusResponse>(response);
+        }
+
+        public AsyncInvoker<ChangePlanStatusResponse> ChangePlanStatusAsyncInvoker(ChangePlanStatusRequest changePlanStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(changePlanStatusRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(changePlanStatusRequest.PlanId, out var valueOfPlanId)) urlParam.Add("plan_id", valueOfPlanId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/planservice/projects/{project_id}/plans/{plan_id}/status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changePlanStatusRequest);
+            return new AsyncInvoker<ChangePlanStatusResponse>(this, "PUT", request, JsonUtils.DeSerialize<ChangePlanStatusResponse>);
+        }
+        
+        /// <summary>
+        /// 创建工作项评论
+        ///
+        /// 为工作项创建评论、回复评论
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateIpdIssueCommentsResponse> CreateIpdIssueCommentsAsync(CreateIpdIssueCommentsRequest createIpdIssueCommentsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createIpdIssueCommentsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(createIpdIssueCommentsRequest.IssueId, out var valueOfIssueId)) urlParam.Add("issue_id", valueOfIssueId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/issues/{issue_id}/comments", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createIpdIssueCommentsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateIpdIssueCommentsResponse>(response);
+        }
+
+        public AsyncInvoker<CreateIpdIssueCommentsResponse> CreateIpdIssueCommentsAsyncInvoker(CreateIpdIssueCommentsRequest createIpdIssueCommentsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createIpdIssueCommentsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(createIpdIssueCommentsRequest.IssueId, out var valueOfIssueId)) urlParam.Add("issue_id", valueOfIssueId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/issues/{issue_id}/comments", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createIpdIssueCommentsRequest);
+            return new AsyncInvoker<CreateIpdIssueCommentsResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateIpdIssueCommentsResponse>);
         }
         
         /// <summary>
@@ -1003,6 +1366,32 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 新建计划
+        ///
+        /// 在项目下新建计划（里程碑、发布、迭代），支持创建子迭代。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreatePlansResponse> CreatePlansAsync(CreatePlansRequest createPlansRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createPlansRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/planservice/projects/{project_id}/plans", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createPlansRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreatePlansResponse>(response);
+        }
+
+        public AsyncInvoker<CreatePlansResponse> CreatePlansAsyncInvoker(CreatePlansRequest createPlansRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createPlansRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/planservice/projects/{project_id}/plans", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createPlansRequest);
+            return new AsyncInvoker<CreatePlansResponse>(this, "POST", request, JsonUtils.DeSerialize<CreatePlansResponse>);
+        }
+        
+        /// <summary>
         /// 创建计划管理快照
         ///
         /// 为指定的发布/迭代及其中的工作项创建一个快照。
@@ -1052,6 +1441,36 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             var urlPath = HttpUtils.AddUrlPath("/v2/ipdprojectservice/projects/{project_id}/images", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteIpdImageInIssueRequest);
             return new AsyncInvoker<DeleteIpdImageInIssueResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteIpdImageInIssueResponse>);
+        }
+        
+        /// <summary>
+        /// 删除工作项评论
+        ///
+        /// 删除工作项评论
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteIpdIssueCommentResponse> DeleteIpdIssueCommentAsync(DeleteIpdIssueCommentRequest deleteIpdIssueCommentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteIpdIssueCommentRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteIpdIssueCommentRequest.IssueId, out var valueOfIssueId)) urlParam.Add("issue_id", valueOfIssueId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteIpdIssueCommentRequest.CommentId, out var valueOfCommentId)) urlParam.Add("comment_id", valueOfCommentId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/issues/{issue_id}/comments/{comment_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteIpdIssueCommentRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteIpdIssueCommentResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteIpdIssueCommentResponse> DeleteIpdIssueCommentAsyncInvoker(DeleteIpdIssueCommentRequest deleteIpdIssueCommentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteIpdIssueCommentRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteIpdIssueCommentRequest.IssueId, out var valueOfIssueId)) urlParam.Add("issue_id", valueOfIssueId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteIpdIssueCommentRequest.CommentId, out var valueOfCommentId)) urlParam.Add("comment_id", valueOfCommentId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/issues/{issue_id}/comments/{comment_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteIpdIssueCommentRequest);
+            return new AsyncInvoker<DeleteIpdIssueCommentResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteIpdIssueCommentResponse>);
         }
         
         /// <summary>
@@ -1137,6 +1556,60 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 获取模型树配置信息
+        ///
+        /// 获取模型树配置信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<GetModelConfigResponse> GetModelConfigAsync(GetModelConfigRequest getModelConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(getModelConfigRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/model-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getModelConfigRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<GetModelConfigResponse>(response);
+        }
+
+        public AsyncInvoker<GetModelConfigResponse> GetModelConfigAsyncInvoker(GetModelConfigRequest getModelConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(getModelConfigRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/model-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getModelConfigRequest);
+            return new AsyncInvoker<GetModelConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<GetModelConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 查询工作项评论
+        ///
+        /// 查询工作项的评论，包含用户创建的评论和系统创建的关键信息评论
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListIpdIssueCommentsResponse> ListIpdIssueCommentsAsync(ListIpdIssueCommentsRequest listIpdIssueCommentsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listIpdIssueCommentsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(listIpdIssueCommentsRequest.IssueId, out var valueOfIssueId)) urlParam.Add("issue_id", valueOfIssueId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/issues/{issue_id}/comments", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIpdIssueCommentsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListIpdIssueCommentsResponse>(response);
+        }
+
+        public AsyncInvoker<ListIpdIssueCommentsResponse> ListIpdIssueCommentsAsyncInvoker(ListIpdIssueCommentsRequest listIpdIssueCommentsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listIpdIssueCommentsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(listIpdIssueCommentsRequest.IssueId, out var valueOfIssueId)) urlParam.Add("issue_id", valueOfIssueId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/issues/{issue_id}/comments", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIpdIssueCommentsRequest);
+            return new AsyncInvoker<ListIpdIssueCommentsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListIpdIssueCommentsResponse>);
+        }
+        
+        /// <summary>
         /// 查询标签列表
         ///
         /// 查询标签列表，不分页，支持按标题搜索。
@@ -1160,6 +1633,32 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIpdLabelsRequest);
             return new AsyncInvoker<ListIpdLabelsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListIpdLabelsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询字段列表
+        ///
+        /// 分页查询字段列表，关键字搜索支持标题、字段类型、创建人搜索。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListIpdProjectFieldsResponse> ListIpdProjectFieldsAsync(ListIpdProjectFieldsRequest listIpdProjectFieldsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listIpdProjectFieldsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/fields", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIpdProjectFieldsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListIpdProjectFieldsResponse>(response);
+        }
+
+        public AsyncInvoker<ListIpdProjectFieldsResponse> ListIpdProjectFieldsAsyncInvoker(ListIpdProjectFieldsRequest listIpdProjectFieldsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listIpdProjectFieldsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/fields", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIpdProjectFieldsRequest);
+            return new AsyncInvoker<ListIpdProjectFieldsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListIpdProjectFieldsResponse>);
         }
         
         /// <summary>
@@ -1327,6 +1826,86 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 发布/迭代计划列表查询
+        ///
+        /// 发布/迭代计划列表查询
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListPlanResponse> ListPlanAsync(ListPlanRequest listPlanRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listPlanRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/planservice/projects/{project_id}/plans/query", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPlanRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListPlanResponse>(response);
+        }
+
+        public AsyncInvoker<ListPlanResponse> ListPlanAsyncInvoker(ListPlanRequest listPlanRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listPlanRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/planservice/projects/{project_id}/plans/query", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPlanRequest);
+            return new AsyncInvoker<ListPlanResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPlanResponse>);
+        }
+        
+        /// <summary>
+        /// 发布/迭代计划详情查询
+        ///
+        /// 查询指定发布或迭代计划的详情信息，包含其子迭代列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListPlanDetailResponse> ListPlanDetailAsync(ListPlanDetailRequest listPlanDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listPlanDetailRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(listPlanDetailRequest.PlanId, out var valueOfPlanId)) urlParam.Add("plan_id", valueOfPlanId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/planservice/projects/{project_id}/plans/{plan_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPlanDetailRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListPlanDetailResponse>(response);
+        }
+
+        public AsyncInvoker<ListPlanDetailResponse> ListPlanDetailAsyncInvoker(ListPlanDetailRequest listPlanDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listPlanDetailRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(listPlanDetailRequest.PlanId, out var valueOfPlanId)) urlParam.Add("plan_id", valueOfPlanId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/planservice/projects/{project_id}/plans/{plan_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPlanDetailRequest);
+            return new AsyncInvoker<ListPlanDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPlanDetailResponse>);
+        }
+        
+        /// <summary>
+        /// 查询项目下的用户
+        ///
+        /// 查询项目下的所有用户
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListProjectUsersResponse> ListProjectUsersAsync(ListProjectUsersRequest listProjectUsersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listProjectUsersRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectUsersRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListProjectUsersResponse>(response);
+        }
+
+        public AsyncInvoker<ListProjectUsersResponse> ListProjectUsersAsyncInvoker(ListProjectUsersRequest listProjectUsersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listProjectUsersRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectUsersRequest);
+            return new AsyncInvoker<ListProjectUsersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListProjectUsersResponse>);
+        }
+        
+        /// <summary>
         /// 更新IPD变更评审单
         ///
         /// 更新变更评审单，传参方式与portal页面一致。
@@ -1383,6 +1962,58 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 根据快照版本查询特性集
+        ///
+        /// 根据快照版本查询特性集
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowBaselineSnapshotsResponse> ShowBaselineSnapshotsAsync(ShowBaselineSnapshotsRequest showBaselineSnapshotsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showBaselineSnapshotsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/feature-set/query", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBaselineSnapshotsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowBaselineSnapshotsResponse>(response);
+        }
+
+        public AsyncInvoker<ShowBaselineSnapshotsResponse> ShowBaselineSnapshotsAsyncInvoker(ShowBaselineSnapshotsRequest showBaselineSnapshotsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showBaselineSnapshotsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/feature-set/query", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBaselineSnapshotsRequest);
+            return new AsyncInvoker<ShowBaselineSnapshotsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBaselineSnapshotsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询工作项状态列表
+        ///
+        /// 查询工作项状态列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowCategoryStatusResponse> ShowCategoryStatusAsync(ShowCategoryStatusRequest showCategoryStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showCategoryStatusRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCategoryStatusRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowCategoryStatusResponse>(response);
+        }
+
+        public AsyncInvoker<ShowCategoryStatusResponse> ShowCategoryStatusAsyncInvoker(ShowCategoryStatusRequest showCategoryStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showCategoryStatusRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCategoryStatusRequest);
+            return new AsyncInvoker<ShowCategoryStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCategoryStatusResponse>);
+        }
+        
+        /// <summary>
         /// 查询工作项实例字段列表
         ///
         /// 查询创建工作项实例时可用的字段配置信息，包含系统字段和项目自定义字段。
@@ -1411,6 +2042,56 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 查询项目下工作项类型的关联关系配置
+        ///
+        /// 查询项目下工作项类型的关联关系配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowIpdIssueRelationsConfigByProjectResponse> ShowIpdIssueRelationsConfigByProjectAsync(ShowIpdIssueRelationsConfigByProjectRequest showIpdIssueRelationsConfigByProjectRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showIpdIssueRelationsConfigByProjectRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/ipdprojectservice/projects/{project_id}/issue-relation-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIpdIssueRelationsConfigByProjectRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowIpdIssueRelationsConfigByProjectResponse>(response);
+        }
+
+        public AsyncInvoker<ShowIpdIssueRelationsConfigByProjectResponse> ShowIpdIssueRelationsConfigByProjectAsyncInvoker(ShowIpdIssueRelationsConfigByProjectRequest showIpdIssueRelationsConfigByProjectRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showIpdIssueRelationsConfigByProjectRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/ipdprojectservice/projects/{project_id}/issue-relation-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIpdIssueRelationsConfigByProjectRequest);
+            return new AsyncInvoker<ShowIpdIssueRelationsConfigByProjectResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowIpdIssueRelationsConfigByProjectResponse>);
+        }
+        
+        /// <summary>
+        /// 查询IPD项目列表
+        ///
+        /// 查询IPD项目列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowIpdProjectListResponse> ShowIpdProjectListAsync(ShowIpdProjectListRequest showIpdProjectListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/ipd", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIpdProjectListRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowIpdProjectListResponse>(response);
+        }
+
+        public AsyncInvoker<ShowIpdProjectListResponse> ShowIpdProjectListAsyncInvoker(ShowIpdProjectListRequest showIpdProjectListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/ipd", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIpdProjectListRequest);
+            return new AsyncInvoker<ShowIpdProjectListResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowIpdProjectListResponse>);
+        }
+        
+        /// <summary>
         /// 查询外部链接
         ///
         /// 需要获取IPD项目下工作项对应的外部链接列表时，可调用此接口，用户可以通过项目ID和工作项ID查询该工作项关联的所有外部链接。
@@ -1436,6 +2117,34 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             var urlPath = HttpUtils.AddUrlPath("/v2/projects/{project_id}/issues/{issue_id}/associate-third-party", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIpdThirdPartyAssociatedRequest);
             return new AsyncInvoker<ShowIpdThirdPartyAssociatedResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowIpdThirdPartyAssociatedResponse>);
+        }
+        
+        /// <summary>
+        /// 查询工作项流程信息
+        ///
+        /// 查询工作项流程信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowIpdWorkItemFlowResponse> ShowIpdWorkItemFlowAsync(ShowIpdWorkItemFlowRequest showIpdWorkItemFlowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showIpdWorkItemFlowRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(showIpdWorkItemFlowRequest.IssueId, out var valueOfIssueId)) urlParam.Add("issue_id", valueOfIssueId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/work-item/{issue_id}/flow/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIpdWorkItemFlowRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowIpdWorkItemFlowResponse>(response);
+        }
+
+        public AsyncInvoker<ShowIpdWorkItemFlowResponse> ShowIpdWorkItemFlowAsyncInvoker(ShowIpdWorkItemFlowRequest showIpdWorkItemFlowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showIpdWorkItemFlowRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(showIpdWorkItemFlowRequest.IssueId, out var valueOfIssueId)) urlParam.Add("issue_id", valueOfIssueId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/work-item/{issue_id}/flow/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIpdWorkItemFlowRequest);
+            return new AsyncInvoker<ShowIpdWorkItemFlowResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowIpdWorkItemFlowResponse>);
         }
         
         /// <summary>
@@ -1493,6 +2202,30 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 查询个人工作台工作项列表
+        ///
+        /// 需要获取当前登录用户在租户空间中的所有工作项列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowTenantIssueListResponse> ShowTenantIssueListAsync(ShowTenantIssueListRequest showTenantIssueListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/tenant/query", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showTenantIssueListRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ShowTenantIssueListResponse>(response);
+        }
+
+        public AsyncInvoker<ShowTenantIssueListResponse> ShowTenantIssueListAsyncInvoker(ShowTenantIssueListRequest showTenantIssueListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/tenant/query", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showTenantIssueListRequest);
+            return new AsyncInvoker<ShowTenantIssueListResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowTenantIssueListResponse>);
+        }
+        
+        /// <summary>
         /// 获取工作流的详情及每条流转线的详情
         ///
         /// 获取工作流的详情及每条流转线的详情
@@ -1542,6 +2275,36 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/work-item/flow/transfer", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", transferWorkItemFlowRequest);
             return new AsyncInvoker<TransferWorkItemFlowResponse>(this, "POST", request, JsonUtils.DeSerialize<TransferWorkItemFlowResponse>);
+        }
+        
+        /// <summary>
+        /// 修改工作项评论
+        ///
+        /// 修改工作项评论
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateIpdIssueCommentResponse> UpdateIpdIssueCommentAsync(UpdateIpdIssueCommentRequest updateIpdIssueCommentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateIpdIssueCommentRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(updateIpdIssueCommentRequest.IssueId, out var valueOfIssueId)) urlParam.Add("issue_id", valueOfIssueId);
+            if (StringUtils.TryConvertToNonEmptyString(updateIpdIssueCommentRequest.CommentId, out var valueOfCommentId)) urlParam.Add("comment_id", valueOfCommentId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/issues/{issue_id}/comments/{comment_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateIpdIssueCommentRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateIpdIssueCommentResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateIpdIssueCommentResponse> UpdateIpdIssueCommentAsyncInvoker(UpdateIpdIssueCommentRequest updateIpdIssueCommentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateIpdIssueCommentRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(updateIpdIssueCommentRequest.IssueId, out var valueOfIssueId)) urlParam.Add("issue_id", valueOfIssueId);
+            if (StringUtils.TryConvertToNonEmptyString(updateIpdIssueCommentRequest.CommentId, out var valueOfCommentId)) urlParam.Add("comment_id", valueOfCommentId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/issues/{issue_id}/comments/{comment_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateIpdIssueCommentRequest);
+            return new AsyncInvoker<UpdateIpdIssueCommentResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateIpdIssueCommentResponse>);
         }
         
         /// <summary>
@@ -1598,6 +2361,34 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             var urlPath = HttpUtils.AddUrlPath("/v2/projects/{project_id}/issues/{issue_id}/associate-third-party", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateIpdThirdPartyRequest);
             return new AsyncInvoker<UpdateIpdThirdPartyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateIpdThirdPartyResponse>);
+        }
+        
+        /// <summary>
+        /// 更新计划
+        ///
+        /// 更新指定计划信息，支持更新里程碑、发布、迭代的属性。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdatePlanInfoResponse> UpdatePlanInfoAsync(UpdatePlanInfoRequest updatePlanInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updatePlanInfoRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(updatePlanInfoRequest.PlanId, out var valueOfPlanId)) urlParam.Add("plan_id", valueOfPlanId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/planservice/projects/{project_id}/plans/{plan_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePlanInfoRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdatePlanInfoResponse>(response);
+        }
+
+        public AsyncInvoker<UpdatePlanInfoResponse> UpdatePlanInfoAsyncInvoker(UpdatePlanInfoRequest updatePlanInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updatePlanInfoRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(updatePlanInfoRequest.PlanId, out var valueOfPlanId)) urlParam.Add("plan_id", valueOfPlanId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/planservice/projects/{project_id}/plans/{plan_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePlanInfoRequest);
+            return new AsyncInvoker<UpdatePlanInfoResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePlanInfoResponse>);
         }
         
         /// <summary>
@@ -1867,6 +2658,30 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 批量删除工作项
+        ///
+        /// 批量删除工作项。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchDeleteScrumWorkitemResponse> BatchDeleteScrumWorkitemAsync(BatchDeleteScrumWorkitemRequest batchDeleteScrumWorkitemRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/workitem/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteScrumWorkitemRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<BatchDeleteScrumWorkitemResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDeleteScrumWorkitemResponse> BatchDeleteScrumWorkitemAsyncInvoker(BatchDeleteScrumWorkitemRequest batchDeleteScrumWorkitemRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/workitem/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteScrumWorkitemRequest);
+            return new AsyncInvoker<BatchDeleteScrumWorkitemResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchDeleteScrumWorkitemResponse>);
+        }
+        
+        /// <summary>
         /// 查询当前项目下已经关联的工作项
         ///
         /// 查询当前项目下已经关联的工作项
@@ -1890,6 +2705,30 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/issues/batch-associated-issues", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchListAssociatedIssuesRequest);
             return new AsyncInvoker<BatchListAssociatedIssuesResponse>(this, "GET", request, JsonUtils.DeSerialize<BatchListAssociatedIssuesResponse>);
+        }
+        
+        /// <summary>
+        /// 批量编辑工作项
+        ///
+        /// 批量编辑工作项。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchUpdateScrumIssuesResponse> BatchUpdateScrumIssuesAsync(BatchUpdateScrumIssuesRequest batchUpdateScrumIssuesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/workitem/issues", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUpdateScrumIssuesRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<BatchUpdateScrumIssuesResponse>(response);
+        }
+
+        public AsyncInvoker<BatchUpdateScrumIssuesResponse> BatchUpdateScrumIssuesAsyncInvoker(BatchUpdateScrumIssuesRequest batchUpdateScrumIssuesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/workitem/issues", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUpdateScrumIssuesRequest);
+            return new AsyncInvoker<BatchUpdateScrumIssuesResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchUpdateScrumIssuesResponse>);
         }
         
         /// <summary>
@@ -2784,6 +3623,32 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 获取项目公共配置
+        ///
+        /// 获取项目公共配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListWorkitemConfigsResponse> ListWorkitemConfigsAsync(ListWorkitemConfigsRequest listWorkitemConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listWorkitemConfigsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/project/{project_id}/public-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listWorkitemConfigsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListWorkitemConfigsResponse>(response);
+        }
+
+        public AsyncInvoker<ListWorkitemConfigsResponse> ListWorkitemConfigsAsyncInvoker(ListWorkitemConfigsRequest listWorkitemConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listWorkitemConfigsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            var urlPath = HttpUtils.AddUrlPath("/v4/project/{project_id}/public-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listWorkitemConfigsRequest);
+            return new AsyncInvoker<ListWorkitemConfigsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListWorkitemConfigsResponse>);
+        }
+        
+        /// <summary>
         /// 高级查询我的待办工作项
         ///
         /// 高级查询我的待办工作项
@@ -3049,6 +3914,78 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
             var urlPath = HttpUtils.AddUrlPath("/v4/projects/{project_id}/modules/{module_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateProjectModuleRequest);
             return new AsyncInvoker<UpdateProjectModuleResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateProjectModuleResponse>);
+        }
+        
+        /// <summary>
+        /// 工作项添加评论
+        ///
+        /// 工作项添加评论。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateScrumIssueNotesResponse> UpdateScrumIssueNotesAsync(UpdateScrumIssueNotesRequest updateScrumIssueNotesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/issues/update-issue-notes", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateScrumIssueNotesRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<UpdateScrumIssueNotesResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateScrumIssueNotesResponse> UpdateScrumIssueNotesAsyncInvoker(UpdateScrumIssueNotesRequest updateScrumIssueNotesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/issues/update-issue-notes", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateScrumIssueNotesRequest);
+            return new AsyncInvoker<UpdateScrumIssueNotesResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateScrumIssueNotesResponse>);
+        }
+        
+        /// <summary>
+        /// 工作项状态流转
+        ///
+        /// 工作项状态流转。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateScrumIssueWorkflowResponse> UpdateScrumIssueWorkflowAsync(UpdateScrumIssueWorkflowRequest updateScrumIssueWorkflowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/workitem/issue-flowage", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateScrumIssueWorkflowRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<UpdateScrumIssueWorkflowResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateScrumIssueWorkflowResponse> UpdateScrumIssueWorkflowAsyncInvoker(UpdateScrumIssueWorkflowRequest updateScrumIssueWorkflowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/workitem/issue-flowage", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateScrumIssueWorkflowRequest);
+            return new AsyncInvoker<UpdateScrumIssueWorkflowResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateScrumIssueWorkflowResponse>);
+        }
+        
+        /// <summary>
+        /// 更新工作项评论
+        ///
+        /// 更新工作项评论。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateScrumMyIssueNotesResponse> UpdateScrumMyIssueNotesAsync(UpdateScrumMyIssueNotesRequest updateScrumMyIssueNotesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/workitem/issue-note", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateScrumMyIssueNotesRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<UpdateScrumMyIssueNotesResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateScrumMyIssueNotesResponse> UpdateScrumMyIssueNotesAsyncInvoker(UpdateScrumMyIssueNotesRequest updateScrumMyIssueNotesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/workitem/issue-note", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateScrumMyIssueNotesRequest);
+            return new AsyncInvoker<UpdateScrumMyIssueNotesResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateScrumMyIssueNotesResponse>);
         }
         
         /// <summary>

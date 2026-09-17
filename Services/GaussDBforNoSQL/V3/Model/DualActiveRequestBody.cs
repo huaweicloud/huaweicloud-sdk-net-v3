@@ -17,16 +17,22 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
     {
 
         /// <summary>
-        /// 参数解释 搭建双活目标实例所在的region。 约束限制 不涉及。 取值范围 不涉及。 默认取值 不涉及。
+        /// **参数解释：** 搭建双活目标实例所在的region。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("destination_region", NullValueHandling = NullValueHandling.Ignore)]
         public string DestinationRegion { get; set; }
 
         /// <summary>
-        /// 参数解释 搭建双活目标实例ID。 约束限制 不涉及。 取值范围 不涉及。 默认取值 不涉及。
+        /// **参数解释：** 搭建双活目标实例ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("destination_instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DestinationInstanceId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("tables", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Tables { get; set; }
 
 
 
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             sb.Append("class DualActiveRequestBody {\n");
             sb.Append("  destinationRegion: ").Append(DestinationRegion).Append("\n");
             sb.Append("  destinationInstanceId: ").Append(DestinationInstanceId).Append("\n");
+            sb.Append("  tables: ").Append(Tables).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             if (input == null) return false;
             if (this.DestinationRegion != input.DestinationRegion || (this.DestinationRegion != null && !this.DestinationRegion.Equals(input.DestinationRegion))) return false;
             if (this.DestinationInstanceId != input.DestinationInstanceId || (this.DestinationInstanceId != null && !this.DestinationInstanceId.Equals(input.DestinationInstanceId))) return false;
+            if (this.Tables != input.Tables || (this.Tables != null && input.Tables != null && !this.Tables.SequenceEqual(input.Tables))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                 var hashCode = 41;
                 if (this.DestinationRegion != null) hashCode = hashCode * 59 + this.DestinationRegion.GetHashCode();
                 if (this.DestinationInstanceId != null) hashCode = hashCode * 59 + this.DestinationInstanceId.GetHashCode();
+                if (this.Tables != null) hashCode = hashCode * 59 + this.Tables.GetHashCode();
                 return hashCode;
             }
         }

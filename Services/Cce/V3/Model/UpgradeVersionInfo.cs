@@ -11,31 +11,31 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 版本信息
+    /// **参数解释：** 版本信息 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
     /// </summary>
     public class UpgradeVersionInfo 
     {
 
         /// <summary>
-        /// 正式版本号，如：v1.19.10
+        /// **参数解释：** 正式版本号，如：v1.19.10 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("release", NullValueHandling = NullValueHandling.Ignore)]
         public string Release { get; set; }
 
         /// <summary>
-        /// 补丁版本号，如r0
+        /// **参数解释：** 补丁版本号，如r0 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("patch", NullValueHandling = NullValueHandling.Ignore)]
         public string Patch { get; set; }
 
         /// <summary>
-        /// 推荐升级的目标补丁版本号，如r0
+        /// **参数解释：** 推荐升级的目标补丁版本号，如r0 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("suggestPatch", NullValueHandling = NullValueHandling.Ignore)]
         public string SuggestPatch { get; set; }
 
         /// <summary>
-        /// 升级目标版本集合
+        /// **参数解释：** 升级目标版本集合 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("targetVersions", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> TargetVersions { get; set; }
