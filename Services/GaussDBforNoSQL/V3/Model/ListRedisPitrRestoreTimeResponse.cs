@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
     {
 
         /// <summary>
-        /// Redis可恢复时间点列表。 yyyy-mm-ddThh:mm:ssZ字符串格式，T指某个时间的开始，Z指时区偏移量。
+        /// **参数解释：** Redis可恢复时间点列表。yyyy-mm-ddThh:mm:ssZ字符串格式，T指某个时间的开始，Z指时区偏移量。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("restore_time", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> RestoreTime { get; set; }
 
         /// <summary>
-        /// Redis实例可恢复时间点总数。
+        /// **参数解释：** Redis实例可恢复时间点总数。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("total_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? TotalCount { get; set; }

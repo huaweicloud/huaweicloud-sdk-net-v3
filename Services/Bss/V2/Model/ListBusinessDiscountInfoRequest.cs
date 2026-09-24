@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
     {
 
         /// <summary>
-        /// 忽略大小写，中文：zh_cn 英文：en_us。缺省为zh_cn
+        /// 语言，非必填，忽略大小写，中文：zh_cn 英文：en_us。缺省为zh_cn
         /// </summary>
         [SDKProperty("X-Language", IsHeader = true)]
         [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]

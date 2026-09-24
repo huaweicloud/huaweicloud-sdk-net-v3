@@ -766,6 +766,30 @@ namespace HuaweiCloud.SDK.Bssintl.V2
         }
         
         /// <summary>
+        /// 查询云服务类型资源规格定价
+        ///
+        /// 客户或伙伴在自建平台查询云服务类型资源规格定价，辅助购买决策
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListResourceSpecsPriceResponse> ListResourceSpecsPriceAsync(ListResourceSpecsPriceRequest listResourceSpecsPriceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/products/resource-specs-price/query", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listResourceSpecsPriceRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ListResourceSpecsPriceResponse>(response);
+        }
+
+        public AsyncInvoker<ListResourceSpecsPriceResponse> ListResourceSpecsPriceAsyncInvoker(ListResourceSpecsPriceRequest listResourceSpecsPriceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/products/resource-specs-price/query", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listResourceSpecsPriceRequest);
+            return new AsyncInvoker<ListResourceSpecsPriceResponse>(this, "POST", request, JsonUtils.DeSerialize<ListResourceSpecsPriceResponse>);
+        }
+        
+        /// <summary>
         /// 查询资源类型列表
         ///
         /// 伙伴在伙伴销售平台查询资源类型的列表。

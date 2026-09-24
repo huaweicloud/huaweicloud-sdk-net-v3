@@ -1,0 +1,194 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.Bssintl.V2.Model
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public class ResourceSpecsPriceFilter 
+    {
+        /// <summary>
+        /// 过滤条件的key值，必填，支持RESOURCE_SPEC：资源规格编码、CHARGING_MODE：计费模式
+        /// </summary>
+        /// <value>过滤条件的key值，必填，支持RESOURCE_SPEC：资源规格编码、CHARGING_MODE：计费模式</value>
+        [JsonConverter(typeof(EnumClassConverter<KeyEnum>))]
+        public class KeyEnum
+        {
+            /// <summary>
+            /// Enum RESOURCE_SPEC for value: RESOURCE_SPEC
+            /// </summary>
+            public static readonly KeyEnum RESOURCE_SPEC = new KeyEnum("RESOURCE_SPEC");
+
+            /// <summary>
+            /// Enum CHARGING_MODE for value: CHARGING_MODE
+            /// </summary>
+            public static readonly KeyEnum CHARGING_MODE = new KeyEnum("CHARGING_MODE");
+
+            private static readonly Dictionary<string, KeyEnum> StaticFields =
+            new Dictionary<string, KeyEnum>()
+            {
+                { "RESOURCE_SPEC", RESOURCE_SPEC },
+                { "CHARGING_MODE", CHARGING_MODE },
+            };
+
+            private string _value;
+
+            public KeyEnum()
+            {
+
+            }
+
+            public KeyEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static KeyEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as KeyEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(KeyEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(KeyEnum a, KeyEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(KeyEnum a, KeyEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+
+        /// <summary>
+        /// 过滤条件的key值，必填，支持RESOURCE_SPEC：资源规格编码、CHARGING_MODE：计费模式
+        /// </summary>
+        [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
+        public KeyEnum Key { get; set; }
+        /// <summary>
+        /// 过滤条件的value值，必填，不支持模糊查询。当key&#x3D;CHARGING_MODE时，此处取值如下：PERIOD：包年/包月、ON_DEMAND：按需、ONE_TIME：一次性、ON_DEMAND_PKG：按需套餐包
+        /// </summary>
+        [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
+        public string Value { get; set; }
+
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class ResourceSpecsPriceFilter {\n");
+            sb.Append("  key: ").Append(Key).Append("\n");
+            sb.Append("  value: ").Append(Value).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as ResourceSpecsPriceFilter);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(ResourceSpecsPriceFilter input)
+        {
+            if (input == null) return false;
+            if (this.Key != input.Key) return false;
+            if (this.Value != input.Value || (this.Value != null && !this.Value.Equals(input.Value))) return false;
+
+            return true;
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Key.GetHashCode();
+                if (this.Value != null) hashCode = hashCode * 59 + this.Value.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

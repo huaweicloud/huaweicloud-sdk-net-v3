@@ -39,6 +39,8 @@ namespace HuaweiCloud.SDK.Ddm.V1
             "https://ddm.ru-moscow-1.myhuaweicloud.com");
         public static readonly Region AE_AD_1 = new Region("ae-ad-1",
             "https://ddm.ae-ad-1.myhuaweicloud.com");
+        public static readonly Region AP_SOUTHEAST_3 = new Region("ap-southeast-3",
+            "https://ddm.ap-southeast-3.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("DDM");
 
@@ -60,6 +62,7 @@ namespace HuaweiCloud.SDK.Ddm.V1
                 { "my-kualalumpur-1", MY_KUALALUMPUR_1 },
                 { "ru-moscow-1", RU_MOSCOW_1 },
                 { "ae-ad-1", AE_AD_1 },
+                { "ap-southeast-3", AP_SOUTHEAST_3 },
         };
 
         public static Region ValueOf(string regionId)

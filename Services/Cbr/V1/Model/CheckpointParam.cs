@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
     {
 
         /// <summary>
-        /// 是否自动触发,true:自动触发，false：非自动触发。
+        /// 是否自动触发,true：自动触发，false：非自动触发。
         /// </summary>
         [JsonProperty("auto_trigger", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AutoTrigger { get; set; }
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 是否增量备份，true:增量备份，false：非增量备份。
+        /// 是否增量备份，true：增量备份，false：非增量备份。
         /// </summary>
         [JsonProperty("incremental", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Incremental { get; set; }
@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("policy_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PolicyId { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 手动备份的保留时长，单位为天。设置该参数后，备份副本将在保留时长到期后自动删除。用于为手动备份设置自动过期时间，避免手动备份堆积导致存储容量浪费。不设置此参数时，备份将永久保留。 **约束限制**： 当auto_trigger为true时不支持传此参数，自动备份的保留时间由关联的备份策略指定。auto_trigger不传或为false时支持指定此参数。 **取值范围**： -  1~36500：指定保留天数，备份将在创建时间 + 该天数后到期并自动删除。 - -1：永久保留，备份不会自动过期。  **默认取值**： -1 &gt; 该特性目前处于公测阶段，部分Region可能无法使用
+        /// </summary>
+        [JsonProperty("retention_duration_days", NullValueHandling = NullValueHandling.Ignore)]
+        public int? RetentionDurationDays { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  resources: ").Append(Resources).Append("\n");
             sb.Append("  resourceDetails: ").Append(ResourceDetails).Append("\n");
             sb.Append("  policyId: ").Append(PolicyId).Append("\n");
+            sb.Append("  retentionDurationDays: ").Append(RetentionDurationDays).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,6 +106,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             if (this.Resources != input.Resources || (this.Resources != null && input.Resources != null && !this.Resources.SequenceEqual(input.Resources))) return false;
             if (this.ResourceDetails != input.ResourceDetails || (this.ResourceDetails != null && input.ResourceDetails != null && !this.ResourceDetails.SequenceEqual(input.ResourceDetails))) return false;
             if (this.PolicyId != input.PolicyId || (this.PolicyId != null && !this.PolicyId.Equals(input.PolicyId))) return false;
+            if (this.RetentionDurationDays != input.RetentionDurationDays || (this.RetentionDurationDays != null && !this.RetentionDurationDays.Equals(input.RetentionDurationDays))) return false;
 
             return true;
         }
@@ -118,6 +126,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 if (this.Resources != null) hashCode = hashCode * 59 + this.Resources.GetHashCode();
                 if (this.ResourceDetails != null) hashCode = hashCode * 59 + this.ResourceDetails.GetHashCode();
                 if (this.PolicyId != null) hashCode = hashCode * 59 + this.PolicyId.GetHashCode();
+                if (this.RetentionDurationDays != null) hashCode = hashCode * 59 + this.RetentionDurationDays.GetHashCode();
                 return hashCode;
             }
         }

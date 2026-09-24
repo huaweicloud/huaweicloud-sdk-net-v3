@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
     public class ShowProtectableRequest 
     {
         /// <summary>
-        /// 可保护性类型
+        /// **参数解释：** 可保护性类型 **约束限制：** 不涉及 **取值范围：** 可选参数为server,disk,turbo,workspace和workspace_v2 server： 云服务器类型 disk：云硬盘类型 turbo：turbo类型 workspace：workspace类型 workspace_v2：workspace_v2类型 **默认取值：** 不涉及
         /// </summary>
-        /// <value>可保护性类型</value>
+        /// <value>**参数解释：** 可保护性类型 **约束限制：** 不涉及 **取值范围：** 可选参数为server,disk,turbo,workspace和workspace_v2 server： 云服务器类型 disk：云硬盘类型 turbo：turbo类型 workspace：workspace类型 workspace_v2：workspace_v2类型 **默认取值：** 不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<ProtectableTypeEnum>))]
         public class ProtectableTypeEnum
         {
@@ -32,11 +32,29 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             /// </summary>
             public static readonly ProtectableTypeEnum DISK = new ProtectableTypeEnum("disk");
 
+            /// <summary>
+            /// Enum TURBO for value: turbo
+            /// </summary>
+            public static readonly ProtectableTypeEnum TURBO = new ProtectableTypeEnum("turbo");
+
+            /// <summary>
+            /// Enum WORKSPACE for value: workspace
+            /// </summary>
+            public static readonly ProtectableTypeEnum WORKSPACE = new ProtectableTypeEnum("workspace");
+
+            /// <summary>
+            /// Enum WORKSPACE_V2 for value: workspace_v2
+            /// </summary>
+            public static readonly ProtectableTypeEnum WORKSPACE_V2 = new ProtectableTypeEnum("workspace_v2");
+
             private static readonly Dictionary<string, ProtectableTypeEnum> StaticFields =
             new Dictionary<string, ProtectableTypeEnum>()
             {
                 { "server", SERVER },
                 { "disk", DISK },
+                { "turbo", TURBO },
+                { "workspace", WORKSPACE },
+                { "workspace_v2", WORKSPACE_V2 },
             };
 
             private string _value;
@@ -139,7 +157,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 可保护性类型
+        /// **参数解释：** 可保护性类型 **约束限制：** 不涉及 **取值范围：** 可选参数为server,disk,turbo,workspace和workspace_v2 server： 云服务器类型 disk：云硬盘类型 turbo：turbo类型 workspace：workspace类型 workspace_v2：workspace_v2类型 **默认取值：** 不涉及
         /// </summary>
         [SDKProperty("protectable_type", IsPath = true)]
         [JsonProperty("protectable_type", NullValueHandling = NullValueHandling.Ignore)]

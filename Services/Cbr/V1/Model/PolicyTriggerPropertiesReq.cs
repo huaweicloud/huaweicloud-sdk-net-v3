@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("pattern", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Pattern { get; set; }
 
+        /// <summary>
+        /// 启动时间窗口大小
+        /// </summary>
+        [JsonProperty("start_window_minutes", NullValueHandling = NullValueHandling.Ignore)]
+        public int? StartWindowMinutes { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             var sb = new StringBuilder();
             sb.Append("class PolicyTriggerPropertiesReq {\n");
             sb.Append("  pattern: ").Append(Pattern).Append("\n");
+            sb.Append("  startWindowMinutes: ").Append(StartWindowMinutes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             if (input == null) return false;
             if (this.Pattern != input.Pattern || (this.Pattern != null && input.Pattern != null && !this.Pattern.SequenceEqual(input.Pattern))) return false;
+            if (this.StartWindowMinutes != input.StartWindowMinutes || (this.StartWindowMinutes != null && !this.StartWindowMinutes.Equals(input.StartWindowMinutes))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             {
                 var hashCode = 41;
                 if (this.Pattern != null) hashCode = hashCode * 59 + this.Pattern.GetHashCode();
+                if (this.StartWindowMinutes != null) hashCode = hashCode * 59 + this.StartWindowMinutes.GetHashCode();
                 return hashCode;
             }
         }

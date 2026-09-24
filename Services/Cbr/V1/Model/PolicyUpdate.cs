@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// 
         /// </summary>
         [JsonProperty("trigger", NullValueHandling = NullValueHandling.Ignore)]
-        public PolicyTriggerReq Trigger { get; set; }
+        public PolicyTriggerUpdateReq Trigger { get; set; }
 
 
 

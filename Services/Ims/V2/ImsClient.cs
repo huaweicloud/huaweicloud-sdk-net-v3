@@ -818,6 +818,7 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ShowJobResponse ShowJob(ShowJobRequest showJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -828,6 +829,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             return JsonUtils.DeSerialize<ShowJobResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ShowJobResponse> ShowJobInvoker(ShowJobRequest showJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -946,6 +948,7 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public GlanceAddImageMemberResponse GlanceAddImageMember(GlanceAddImageMemberRequest glanceAddImageMemberRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -956,6 +959,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             return JsonUtils.DeSerialize<GlanceAddImageMemberResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<GlanceAddImageMemberResponse> GlanceAddImageMemberInvoker(GlanceAddImageMemberRequest glanceAddImageMemberRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -996,6 +1000,7 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public GlanceCreateTagResponse GlanceCreateTag(GlanceCreateTagRequest glanceCreateTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1007,6 +1012,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             return JsonUtils.DeSerializeNull<GlanceCreateTagResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<GlanceCreateTagResponse> GlanceCreateTagInvoker(GlanceCreateTagRequest glanceCreateTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1050,6 +1056,7 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public GlanceDeleteImageMemberResponse GlanceDeleteImageMember(GlanceDeleteImageMemberRequest glanceDeleteImageMemberRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1061,6 +1068,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             return JsonUtils.DeSerializeNull<GlanceDeleteImageMemberResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<GlanceDeleteImageMemberResponse> GlanceDeleteImageMemberInvoker(GlanceDeleteImageMemberRequest glanceDeleteImageMemberRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1078,6 +1086,7 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public GlanceDeleteTagResponse GlanceDeleteTag(GlanceDeleteTagRequest glanceDeleteTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1089,6 +1098,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             return JsonUtils.DeSerializeNull<GlanceDeleteTagResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<GlanceDeleteTagResponse> GlanceDeleteTagInvoker(GlanceDeleteTagRequest glanceDeleteTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1184,6 +1194,7 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public GlanceListImagesResponse GlanceListImages(GlanceListImagesRequest glanceListImagesRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1193,6 +1204,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             return JsonUtils.DeSerialize<GlanceListImagesResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<GlanceListImagesResponse> GlanceListImagesInvoker(GlanceListImagesRequest glanceListImagesRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1208,6 +1220,7 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public GlanceShowImageResponse GlanceShowImage(GlanceShowImageRequest glanceShowImageRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1218,6 +1231,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             return JsonUtils.DeSerialize<GlanceShowImageResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<GlanceShowImageResponse> GlanceShowImageInvoker(GlanceShowImageRequest glanceShowImageRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1310,6 +1324,7 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public GlanceUpdateImageResponse GlanceUpdateImage(GlanceUpdateImageRequest glanceUpdateImageRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1320,6 +1335,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             return JsonUtils.DeSerialize<GlanceUpdateImageResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<GlanceUpdateImageResponse> GlanceUpdateImageInvoker(GlanceUpdateImageRequest glanceUpdateImageRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1336,6 +1352,7 @@ namespace HuaweiCloud.SDK.Ims.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public GlanceUpdateImageMemberResponse GlanceUpdateImageMember(GlanceUpdateImageMemberRequest glanceUpdateImageMemberRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1347,6 +1364,7 @@ namespace HuaweiCloud.SDK.Ims.V2
             return JsonUtils.DeSerialize<GlanceUpdateImageMemberResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<GlanceUpdateImageMemberResponse> GlanceUpdateImageMemberInvoker(GlanceUpdateImageMemberRequest glanceUpdateImageMemberRequest)
         {
             var urlParam = new Dictionary<string, string>();

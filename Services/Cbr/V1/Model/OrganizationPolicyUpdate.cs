@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// 
         /// </summary>
         [JsonProperty("policy_trigger", NullValueHandling = NullValueHandling.Ignore)]
-        public PolicyTriggerReq PolicyTrigger { get; set; }
+        public PolicyTriggerUpdateReq PolicyTrigger { get; set; }
 
         /// <summary>
         /// 组织策略生效范围

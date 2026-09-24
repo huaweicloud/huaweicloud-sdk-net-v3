@@ -3731,6 +3731,58 @@ namespace HuaweiCloud.SDK.Swr.V2
         }
         
         /// <summary>
+        /// 查询内网访问连接列表
+        ///
+        /// 查询内网访问连接列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInternalEndpointConnectionsResponse ListInternalEndpointConnections(ListInternalEndpointConnectionsRequest listInternalEndpointConnectionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listInternalEndpointConnectionsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/internal-endpoint/connections", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInternalEndpointConnectionsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInternalEndpointConnectionsResponse>(response);
+        }
+
+        public SyncInvoker<ListInternalEndpointConnectionsResponse> ListInternalEndpointConnectionsInvoker(ListInternalEndpointConnectionsRequest listInternalEndpointConnectionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listInternalEndpointConnectionsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/internal-endpoint/connections", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInternalEndpointConnectionsRequest);
+            return new SyncInvoker<ListInternalEndpointConnectionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInternalEndpointConnectionsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询内网访问白名单列表
+        ///
+        /// 查询内网访问白名单列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInternalEndpointPermissionsResponse ListInternalEndpointPermissions(ListInternalEndpointPermissionsRequest listInternalEndpointPermissionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listInternalEndpointPermissionsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/internal-endpoint/permissions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInternalEndpointPermissionsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInternalEndpointPermissionsResponse>(response);
+        }
+
+        public SyncInvoker<ListInternalEndpointPermissionsResponse> ListInternalEndpointPermissionsInvoker(ListInternalEndpointPermissionsRequest listInternalEndpointPermissionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listInternalEndpointPermissionsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/internal-endpoint/permissions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInternalEndpointPermissionsRequest);
+            return new SyncInvoker<ListInternalEndpointPermissionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInternalEndpointPermissionsResponse>);
+        }
+        
+        /// <summary>
         /// 获取命名空间下所有制品仓库列表
         ///
         /// 获取命名空间下所有制品仓库列表
@@ -4812,6 +4864,58 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/webhook/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceWebhookRequest);
             return new SyncInvoker<UpdateInstanceWebhookResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceWebhookResponse>);
+        }
+        
+        /// <summary>
+        /// 允许或拒绝内网访问连接
+        ///
+        /// 允许或拒绝内网访问连接
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateInternalEndpointConnectionsResponse UpdateInternalEndpointConnections(UpdateInternalEndpointConnectionsRequest updateInternalEndpointConnectionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateInternalEndpointConnectionsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/internal-endpoint/connections/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInternalEndpointConnectionsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<UpdateInternalEndpointConnectionsResponse>(response);
+        }
+
+        public SyncInvoker<UpdateInternalEndpointConnectionsResponse> UpdateInternalEndpointConnectionsInvoker(UpdateInternalEndpointConnectionsRequest updateInternalEndpointConnectionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateInternalEndpointConnectionsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/internal-endpoint/connections/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInternalEndpointConnectionsRequest);
+            return new SyncInvoker<UpdateInternalEndpointConnectionsResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateInternalEndpointConnectionsResponse>);
+        }
+        
+        /// <summary>
+        /// 添加或移除内网访问白名单
+        ///
+        /// 添加或移除内网访问白名单
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateInternalEndpointPermissionsResponse UpdateInternalEndpointPermissions(UpdateInternalEndpointPermissionsRequest updateInternalEndpointPermissionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateInternalEndpointPermissionsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/internal-endpoint/permissions/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInternalEndpointPermissionsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<UpdateInternalEndpointPermissionsResponse>(response);
+        }
+
+        public SyncInvoker<UpdateInternalEndpointPermissionsResponse> UpdateInternalEndpointPermissionsInvoker(UpdateInternalEndpointPermissionsRequest updateInternalEndpointPermissionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateInternalEndpointPermissionsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/internal-endpoint/permissions/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInternalEndpointPermissionsRequest);
+            return new SyncInvoker<UpdateInternalEndpointPermissionsResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateInternalEndpointPermissionsResponse>);
         }
         
     }

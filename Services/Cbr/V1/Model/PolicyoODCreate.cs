@@ -88,6 +88,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("cross_account_urn", NullValueHandling = NullValueHandling.Ignore)]
         public string CrossAccountUrn { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("advanced_retention_rules", NullValueHandling = NullValueHandling.Ignore)]
+        public PolicyAdvancedRetentionRules AdvancedRetentionRules { get; set; }
+
 
 
         /// <summary>
@@ -109,6 +115,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  yearBackups: ").Append(YearBackups).Append("\n");
             sb.Append("  fullBackupInterval: ").Append(FullBackupInterval).Append("\n");
             sb.Append("  crossAccountUrn: ").Append(CrossAccountUrn).Append("\n");
+            sb.Append("  advancedRetentionRules: ").Append(AdvancedRetentionRules).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -139,6 +146,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             if (this.YearBackups != input.YearBackups || (this.YearBackups != null && !this.YearBackups.Equals(input.YearBackups))) return false;
             if (this.FullBackupInterval != input.FullBackupInterval || (this.FullBackupInterval != null && !this.FullBackupInterval.Equals(input.FullBackupInterval))) return false;
             if (this.CrossAccountUrn != input.CrossAccountUrn || (this.CrossAccountUrn != null && !this.CrossAccountUrn.Equals(input.CrossAccountUrn))) return false;
+            if (this.AdvancedRetentionRules != input.AdvancedRetentionRules || (this.AdvancedRetentionRules != null && !this.AdvancedRetentionRules.Equals(input.AdvancedRetentionRules))) return false;
 
             return true;
         }
@@ -163,6 +171,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 if (this.YearBackups != null) hashCode = hashCode * 59 + this.YearBackups.GetHashCode();
                 if (this.FullBackupInterval != null) hashCode = hashCode * 59 + this.FullBackupInterval.GetHashCode();
                 if (this.CrossAccountUrn != null) hashCode = hashCode * 59 + this.CrossAccountUrn.GetHashCode();
+                if (this.AdvancedRetentionRules != null) hashCode = hashCode * 59 + this.AdvancedRetentionRules.GetHashCode();
                 return hashCode;
             }
         }

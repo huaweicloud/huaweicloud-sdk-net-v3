@@ -264,6 +264,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public string ResourceType { get; set; }
 
         /// <summary>
+        /// 策略ID，取值范围不涉及。
+        /// </summary>
+        [JsonProperty("scheduled_operation_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ScheduledOperationId { get; set; }
+
+        /// <summary>
         /// 备份状态 - available: 可用 - protecting: 保护中 - deleting: 删除中 - restoring: 恢复中 - error: 异常 - waiting_protect: 等待保护 - waiting_delete: 等待删除 - waiting_restore: 等待恢复
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
@@ -341,6 +347,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  resourceName: ").Append(ResourceName).Append("\n");
             sb.Append("  resourceSize: ").Append(ResourceSize).Append("\n");
             sb.Append("  resourceType: ").Append(ResourceType).Append("\n");
+            sb.Append("  scheduledOperationId: ").Append(ScheduledOperationId).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  vaultId: ").Append(VaultId).Append("\n");
@@ -384,6 +391,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             if (this.ResourceName != input.ResourceName || (this.ResourceName != null && !this.ResourceName.Equals(input.ResourceName))) return false;
             if (this.ResourceSize != input.ResourceSize || (this.ResourceSize != null && !this.ResourceSize.Equals(input.ResourceSize))) return false;
             if (this.ResourceType != input.ResourceType || (this.ResourceType != null && !this.ResourceType.Equals(input.ResourceType))) return false;
+            if (this.ScheduledOperationId != input.ScheduledOperationId || (this.ScheduledOperationId != null && !this.ScheduledOperationId.Equals(input.ScheduledOperationId))) return false;
             if (this.Status != input.Status) return false;
             if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
             if (this.VaultId != input.VaultId || (this.VaultId != null && !this.VaultId.Equals(input.VaultId))) return false;
@@ -421,6 +429,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 if (this.ResourceName != null) hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
                 if (this.ResourceSize != null) hashCode = hashCode * 59 + this.ResourceSize.GetHashCode();
                 if (this.ResourceType != null) hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
+                if (this.ScheduledOperationId != null) hashCode = hashCode * 59 + this.ScheduledOperationId.GetHashCode();
                 hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 if (this.VaultId != null) hashCode = hashCode * 59 + this.VaultId.GetHashCode();

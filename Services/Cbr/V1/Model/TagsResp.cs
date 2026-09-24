@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// 值列表。  value最大长度43个字符。  value可以为空字符串。  key只能由中文，字母，数字，“-”，“_”组成。
         /// </summary>
         [JsonProperty("values", NullValueHandling = NullValueHandling.Ignore)]
-        public string Values { get; set; }
+        public List<string> Values { get; set; }
 
 
 
@@ -58,7 +58,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             if (input == null) return false;
             if (this.Key != input.Key || (this.Key != null && !this.Key.Equals(input.Key))) return false;
-            if (this.Values != input.Values || (this.Values != null && !this.Values.Equals(input.Values))) return false;
+            if (this.Values != input.Values || (this.Values != null && input.Values != null && !this.Values.SequenceEqual(input.Values))) return false;
 
             return true;
         }

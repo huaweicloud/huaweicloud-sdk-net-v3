@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
     {
 
         /// <summary>
-        /// 查询Redis实例指定时间点恢复所占用的存储空间。 单位：GB
+        /// **参数解释：** 查询Redis实例指定时间点恢复所占用的存储空间。单位：GB **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("storage", NullValueHandling = NullValueHandling.Ignore)]
         public string Storage { get; set; }

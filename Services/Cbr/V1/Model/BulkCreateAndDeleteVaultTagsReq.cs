@@ -135,7 +135,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// 标签列表。  tags不允许为空列表。  tags中最多包含10个key。  tags中key不允许重复。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Tag> Tags { get; set; }
+        public List<BulkCreateAndDeleteTags> Tags { get; set; }
 
         /// <summary>
         /// 系统标签列表。  op_service权限可以访问，和tags二选一。  目前TMS调用时只包含一个resource_tag结构体 ，key固定为：_sys_enterprise_project_id。  value是UUID或0,value为0表示默认企业项目。  现在仅支持create操作。

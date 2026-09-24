@@ -53,13 +53,13 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public double? SnapshotFree { get; set; }
 
         /// <summary>
-        /// **参数解释**：  全量备份大小，单位GB。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
+        /// **参数解释**：  全量备份大小，单位MB。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
         /// </summary>
         [JsonProperty("db", NullValueHandling = NullValueHandling.Ignore)]
         public double? Db { get; set; }
 
         /// <summary>
-        /// **参数解释**：  增量备份大小，单位GB。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
+        /// **参数解释**：  增量备份大小，单位MB。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
         /// </summary>
         [JsonProperty("log", NullValueHandling = NullValueHandling.Ignore)]
         public double? Log { get; set; }

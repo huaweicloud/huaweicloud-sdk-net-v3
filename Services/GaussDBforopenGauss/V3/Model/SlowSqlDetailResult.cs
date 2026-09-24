@@ -83,16 +83,16 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public string QueryPlan { get; set; }
 
         /// <summary>
-        /// **参数解释**: 开始时间UTC时间。 **取值范围**: 格式为yyyy-mm-ddThh:mm:ss+0000。
+        /// **参数解释**: 开始时间UTC时间，格式为yyyy-mm-ddThh:mm:ss+0000。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? StartTime { get; set; }
+        public string StartTime { get; set; }
 
         /// <summary>
-        /// **参数解释**: 结束时间UTC时间。 **取值范围**: 格式为yyyy-mm-ddThh:mm:ss+0000。
+        /// **参数解释**: 结束时间UTC时间，格式为yyyy-mm-ddThh:mm:ss+0000。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("finish_time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? FinishTime { get; set; }
+        public string FinishTime { get; set; }
 
         /// <summary>
         /// **参数解释**: 返回行。 **取值范围**: 不涉及。
@@ -122,25 +122,25 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// **参数解释**: 总耗时（单位：微秒）。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("total_time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? TotalTime { get; set; }
+        public string TotalTime { get; set; }
 
         /// <summary>
         /// **参数解释**: CPU耗时（单位：微秒）。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("cpu_time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? CpuTime { get; set; }
+        public string CpuTime { get; set; }
 
         /// <summary>
         /// **参数解释**: 计划耗时（单位：微秒）。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("plan_time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? PlanTime { get; set; }
+        public string PlanTime { get; set; }
 
         /// <summary>
         /// **参数解释**: IO耗时（单位：微秒）。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("io_time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? IoTime { get; set; }
+        public string IoTime { get; set; }
 
         /// <summary>
         /// **参数解释**: 加锁次数。 **取值范围**: 不涉及。
@@ -152,7 +152,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// **参数解释**: 加锁耗时(单位：微秒)。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("lock_time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? LockTime { get; set; }
+        public string LockTime { get; set; }
 
 
 

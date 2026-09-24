@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// 
         /// </summary>
         [JsonProperty("tag", NullValueHandling = NullValueHandling.Ignore)]
-        public Tag Tag { get; set; }
+        public TagCreate Tag { get; set; }
 
 
 

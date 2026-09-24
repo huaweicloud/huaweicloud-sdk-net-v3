@@ -70,6 +70,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("vault_delete", NullValueHandling = NullValueHandling.Ignore)]
         public OpExtendInfoVaultDelete VaultDelete { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("update_expiration_time", NullValueHandling = NullValueHandling.Ignore)]
+        public OpExtendInfoUpdateExpirationTime UpdateExpirationTime { get; set; }
+
 
 
         /// <summary>
@@ -88,6 +94,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  resource: ").Append(Resource).Append("\n");
             sb.Append("  restore: ").Append(Restore).Append("\n");
             sb.Append("  vaultDelete: ").Append(VaultDelete).Append("\n");
+            sb.Append("  updateExpirationTime: ").Append(UpdateExpirationTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,6 +122,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             if (this.Resource != input.Resource || (this.Resource != null && !this.Resource.Equals(input.Resource))) return false;
             if (this.Restore != input.Restore || (this.Restore != null && !this.Restore.Equals(input.Restore))) return false;
             if (this.VaultDelete != input.VaultDelete || (this.VaultDelete != null && !this.VaultDelete.Equals(input.VaultDelete))) return false;
+            if (this.UpdateExpirationTime != input.UpdateExpirationTime || (this.UpdateExpirationTime != null && !this.UpdateExpirationTime.Equals(input.UpdateExpirationTime))) return false;
 
             return true;
         }
@@ -136,6 +144,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 if (this.Resource != null) hashCode = hashCode * 59 + this.Resource.GetHashCode();
                 if (this.Restore != null) hashCode = hashCode * 59 + this.Restore.GetHashCode();
                 if (this.VaultDelete != null) hashCode = hashCode * 59 + this.VaultDelete.GetHashCode();
+                if (this.UpdateExpirationTime != null) hashCode = hashCode * 59 + this.UpdateExpirationTime.GetHashCode();
                 return hashCode;
             }
         }

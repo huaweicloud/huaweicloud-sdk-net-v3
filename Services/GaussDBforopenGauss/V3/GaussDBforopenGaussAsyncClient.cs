@@ -6435,6 +6435,32 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 获取SQL限流推荐规则
+        ///
+        /// 获取SQL限流推荐规则
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListSqlRecommendRulesResponse> ListSqlRecommendRulesAsync(ListSqlRecommendRulesRequest listSqlRecommendRulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listSqlRecommendRulesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/limit-task/recommend-rule", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listSqlRecommendRulesRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ListSqlRecommendRulesResponse>(response);
+        }
+
+        public AsyncInvoker<ListSqlRecommendRulesResponse> ListSqlRecommendRulesAsyncInvoker(ListSqlRecommendRulesRequest listSqlRecommendRulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listSqlRecommendRulesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/limit-task/recommend-rule", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listSqlRecommendRulesRequest);
+            return new AsyncInvoker<ListSqlRecommendRulesResponse>(this, "POST", request, JsonUtils.DeSerialize<ListSqlRecommendRulesResponse>);
+        }
+        
+        /// <summary>
         /// 查询SQL链路信息
         ///
         /// 要用于查询SQL某次执行（对应归一化SQL ID和唯一SQL ID传值）过程中的全部链路信息，包含各个阶段的多维度耗时统计。对于分布式版实例，可查询对应SQL的完整执行链路，包含CN和DN上SQL语句的耗时分析。

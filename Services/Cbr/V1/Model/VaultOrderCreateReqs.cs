@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// 
         /// </summary>
         [JsonProperty("vault", NullValueHandling = NullValueHandling.Ignore)]
-        public VaultOrder Vault { get; set; }
+        public PrePaidVaultOrder Vault { get; set; }
 
 
 

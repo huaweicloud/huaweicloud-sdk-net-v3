@@ -64,6 +64,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("volumes", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Volumes { get; set; }
 
+        /// <summary>
+        /// 云桌面信息，取值范围不涉及。
+        /// </summary>
+        [JsonProperty("workspace", NullValueHandling = NullValueHandling.Ignore)]
+        public string Workspace { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +87,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  ports: ").Append(Ports).Append("\n");
             sb.Append("  server: ").Append(Server).Append("\n");
             sb.Append("  volumes: ").Append(Volumes).Append("\n");
+            sb.Append("  workspace: ").Append(Workspace).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +114,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             if (this.Ports != input.Ports || (this.Ports != null && input.Ports != null && !this.Ports.SequenceEqual(input.Ports))) return false;
             if (this.Server != input.Server || (this.Server != null && !this.Server.Equals(input.Server))) return false;
             if (this.Volumes != input.Volumes || (this.Volumes != null && input.Volumes != null && !this.Volumes.SequenceEqual(input.Volumes))) return false;
+            if (this.Workspace != input.Workspace || (this.Workspace != null && !this.Workspace.Equals(input.Workspace))) return false;
 
             return true;
         }
@@ -127,6 +135,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 if (this.Ports != null) hashCode = hashCode * 59 + this.Ports.GetHashCode();
                 if (this.Server != null) hashCode = hashCode * 59 + this.Server.GetHashCode();
                 if (this.Volumes != null) hashCode = hashCode * 59 + this.Volumes.GetHashCode();
+                if (this.Workspace != null) hashCode = hashCode * 59 + this.Workspace.GetHashCode();
                 return hashCode;
             }
         }
