@@ -89,7 +89,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public string WorkspaceId { get; set; }
 
         /// <summary>
-        /// **参数解释：**  定时停止配置。 **约束限制：** 1.不填保留原有值。 2.仅当body中另一个参数description为空时，此参数才生效。
+        /// **参数解释：** 定时停止配置。 **约束限制：** 1.不填保留原有值。 2.仅当body中另一个参数description为空时，此参数才生效。
         /// </summary>
         [JsonProperty("schedule", NullValueHandling = NullValueHandling.Ignore)]
         public List<ScheduleConfig> Schedule { get; set; }

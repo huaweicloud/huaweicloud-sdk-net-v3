@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.ModelArts.V1.Model
 {
     /// <summary>
-    /// **参数解释：**  服务调用时的相关配置。 **约束限制：**  不涉及。
+    /// **参数解释：** 服务调用时的相关配置。 **约束限制：** 不涉及。
     /// </summary>
     public class ServiceInvokeCreateRequest 
     {

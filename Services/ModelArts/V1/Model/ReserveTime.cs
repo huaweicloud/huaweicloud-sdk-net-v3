@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
     {
 
         /// <summary>
-        /// **参数解释**：时间单位。  **约束限制**：不涉及。  **取值范围**：  - HOURS：小时   **默认取值**：不涉及。
+        /// **参数解释**：时间单位。 **约束限制**：不涉及。 **取值范围**： - HOURS：小时  **默认取值**：不涉及。
         /// </summary>
         [JsonProperty("time_unit", NullValueHandling = NullValueHandling.Ignore)]
         public string TimeUnit { get; set; }
 
         /// <summary>
-        /// **参数解释**：保留时长。  **约束限制**：不涉及。  **取值范围**：最小值为1。  **默认取值**：不涉及。
+        /// **参数解释**：保留时长。 **约束限制**：不涉及。 **取值范围**：最小值为1。 **默认取值**：不涉及。
         /// </summary>
         [JsonProperty("duration", NullValueHandling = NullValueHandling.Ignore)]
         public int? Duration { get; set; }

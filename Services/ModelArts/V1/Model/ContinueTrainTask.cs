@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public int? SkippedSteps { get; set; }
 
         /// <summary>
-        /// 是否续训任务。  0: 非续训, 1:续训。
+        /// 是否续训任务。 0: 非续训, 1:续训。
         /// </summary>
         [JsonProperty("restore_training", NullValueHandling = NullValueHandling.Ignore)]
         public int? RestoreTraining { get; set; }

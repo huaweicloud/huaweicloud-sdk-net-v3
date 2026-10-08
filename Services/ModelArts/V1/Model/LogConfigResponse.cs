@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.ModelArts.V1.Model
 {
     /// <summary>
-    /// **参数解释：**  服务日志配置信息。
+    /// **参数解释：** 服务日志配置信息。
     /// </summary>
     public class LogConfigResponse 
     {

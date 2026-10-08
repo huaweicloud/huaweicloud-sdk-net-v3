@@ -89,7 +89,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public string WorkspaceId { get; set; }
 
         /// <summary>
-        /// **参数解释：**  定时停止配置。 **约束限制：**  最多支持一个定时任务。
+        /// **参数解释：** 定时停止配置。 **约束限制：** 最多支持一个定时任务。
         /// </summary>
         [JsonProperty("schedule", NullValueHandling = NullValueHandling.Ignore)]
         public List<ScheduleConfig> Schedule { get; set; }

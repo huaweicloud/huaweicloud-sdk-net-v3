@@ -2359,6 +2359,32 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 获取弹性云服务器的控制台日志
+        ///
+        /// 获取弹性云服务器云主机的控制台日志。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowServerConsoleOutputResponse> ShowServerConsoleOutputAsync(ShowServerConsoleOutputRequest showServerConsoleOutputRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showServerConsoleOutputRequest.ServerId, out var valueOfServerId)) urlParam.Add("server_id", valueOfServerId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/console-output", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showServerConsoleOutputRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowServerConsoleOutputResponse>(response);
+        }
+
+        public AsyncInvoker<ShowServerConsoleOutputResponse> ShowServerConsoleOutputAsyncInvoker(ShowServerConsoleOutputRequest showServerConsoleOutputRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showServerConsoleOutputRequest.ServerId, out var valueOfServerId)) urlParam.Add("server_id", valueOfServerId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/console-output", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showServerConsoleOutputRequest);
+            return new AsyncInvoker<ShowServerConsoleOutputResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowServerConsoleOutputResponse>);
+        }
+        
+        /// <summary>
         /// 查询云服务器组详情
         ///
         /// 查询弹性云服务器组详情。

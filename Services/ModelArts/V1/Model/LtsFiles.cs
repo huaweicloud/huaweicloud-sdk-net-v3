@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.ModelArts.V1.Model
 {
     /// <summary>
-    /// **参数解释：**  容器日志文件配置。 **约束限制：**  数量上限为10个。
+    /// **参数解释：** 容器日志文件配置。 **约束限制：** 数量上限为10个。
     /// </summary>
     public class LtsFiles 
     {
