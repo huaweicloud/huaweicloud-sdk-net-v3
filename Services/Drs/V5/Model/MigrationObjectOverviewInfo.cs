@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public string DstCount { get; set; }
 
         /// <summary>
-        /// 状态. NOT_START：未启动，TRANSFERING：迁移中，COMPLETED：已完成，FAILED：失败，TRANSFER_WHEN_END：结束后迁移
+        /// 状态。 - NOT_START：未启动。 - TRANSFERING：迁移中。 - COMPLETED：已完成。 - FAILED：失败。 - TRANSFER_WHEN_END：结束后迁移。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }

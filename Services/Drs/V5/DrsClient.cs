@@ -15,6 +15,32 @@ namespace HuaweiCloud.SDK.Drs.V5
 
         
         /// <summary>
+        /// 关联SMN主题信息
+        ///
+        /// 关联SMN主题信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public AssociateSmnTopicResponse AssociateSmnTopic(AssociateSmnTopicRequest associateSmnTopicRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(associateSmnTopicRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/associate-smn-topic", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateSmnTopicRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<AssociateSmnTopicResponse>(response);
+        }
+
+        public SyncInvoker<AssociateSmnTopicResponse> AssociateSmnTopicInvoker(AssociateSmnTopicRequest associateSmnTopicRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(associateSmnTopicRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/associate-smn-topic", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateSmnTopicRequest);
+            return new SyncInvoker<AssociateSmnTopicResponse>(this, "POST", request, JsonUtils.DeSerialize<AssociateSmnTopicResponse>);
+        }
+        
+        /// <summary>
         /// 批量异步创建任务
         ///
         /// 批量异步创建任务，根据请求参数不同，可以批量异步创建实时迁移、实时同步、实时灾备等任务。
@@ -197,6 +223,32 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 规格变更
+        ///
+        /// 规格变更
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ChangeJobFlavorResponse ChangeJobFlavor(ChangeJobFlavorRequest changeJobFlavorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(changeJobFlavorRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/change-flavor", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeJobFlavorRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ChangeJobFlavorResponse>(response);
+        }
+
+        public SyncInvoker<ChangeJobFlavorResponse> ChangeJobFlavorInvoker(ChangeJobFlavorRequest changeJobFlavorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(changeJobFlavorRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/change-flavor", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeJobFlavorRequest);
+            return new SyncInvoker<ChangeJobFlavorResponse>(this, "POST", request, JsonUtils.DeSerialize<ChangeJobFlavorResponse>);
+        }
+        
+        /// <summary>
         /// 按需转包周期
         ///
         /// DRS同步和灾备任务按需计费转包周期计费。
@@ -229,6 +281,7 @@ namespace HuaweiCloud.SDK.Drs.V5
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public CheckDataFilterResponse CheckDataFilter(CheckDataFilterRequest checkDataFilterRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -239,6 +292,7 @@ namespace HuaweiCloud.SDK.Drs.V5
             return JsonUtils.DeSerialize<CheckDataFilterResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<CheckDataFilterResponse> CheckDataFilterInvoker(CheckDataFilterRequest checkDataFilterRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -246,6 +300,32 @@ namespace HuaweiCloud.SDK.Drs.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/job/{job_id}/data-filtering/check", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkDataFilterRequest);
             return new SyncInvoker<CheckDataFilterResponse>(this, "POST", request, JsonUtils.DeSerialize<CheckDataFilterResponse>);
+        }
+        
+        /// <summary>
+        /// 校验数据过滤规则
+        ///
+        /// 校验数据过滤规则
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CheckDataFilterRulesResponse CheckDataFilterRules(CheckDataFilterRulesRequest checkDataFilterRulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(checkDataFilterRulesRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/check-filter-rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkDataFilterRulesRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CheckDataFilterRulesResponse>(response);
+        }
+
+        public SyncInvoker<CheckDataFilterRulesResponse> CheckDataFilterRulesInvoker(CheckDataFilterRulesRequest checkDataFilterRulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(checkDataFilterRulesRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/check-filter-rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkDataFilterRulesRequest);
+            return new SyncInvoker<CheckDataFilterRulesResponse>(this, "POST", request, JsonUtils.DeSerialize<CheckDataFilterRulesResponse>);
         }
         
         /// <summary>
@@ -300,6 +380,32 @@ namespace HuaweiCloud.SDK.Drs.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/job/{job_id}/columns/collect", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", collectColumnsRequest);
             return new SyncInvoker<CollectColumnsResponse>(this, "POST", request, JsonUtils.DeSerialize<CollectColumnsResponse>);
+        }
+        
+        /// <summary>
+        /// 采集数据过滤规则信息
+        ///
+        /// 采集数据过滤规则信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CollectDataFilterRulesResponse CollectDataFilterRules(CollectDataFilterRulesRequest collectDataFilterRulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(collectDataFilterRulesRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/filter-rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", collectDataFilterRulesRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CollectDataFilterRulesResponse>(response);
+        }
+
+        public SyncInvoker<CollectDataFilterRulesResponse> CollectDataFilterRulesInvoker(CollectDataFilterRulesRequest collectDataFilterRulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(collectDataFilterRulesRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/filter-rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", collectDataFilterRulesRequest);
+            return new SyncInvoker<CollectDataFilterRulesResponse>(this, "POST", request, JsonUtils.DeSerialize<CollectDataFilterRulesResponse>);
         }
         
         /// <summary>
@@ -491,7 +597,7 @@ namespace HuaweiCloud.SDK.Drs.V5
         /// <summary>
         /// 创建任务
         ///
-        /// 创建单个任务，根据请求参数不同，可以创建单个实时迁移、实时同步、实时灾备等任务。
+        /// 创建单个任务，根据请求参数不同，可以创建单个实时迁移、实时同步任务。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -617,12 +723,39 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 删除数据过滤规则信息
+        ///
+        /// 删除数据过滤规则信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteDataFilterRulesResponse DeleteDataFilterRules(DeleteDataFilterRulesRequest deleteDataFilterRulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteDataFilterRulesRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/filter-rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDataFilterRulesRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteDataFilterRulesResponse>(response);
+        }
+
+        public SyncInvoker<DeleteDataFilterRulesResponse> DeleteDataFilterRulesInvoker(DeleteDataFilterRulesRequest deleteDataFilterRulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteDataFilterRulesRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/filter-rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDataFilterRulesRequest);
+            return new SyncInvoker<DeleteDataFilterRulesResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteDataFilterRulesResponse>);
+        }
+        
+        /// <summary>
         /// 删除驱动文件（不再推广）
         ///
         /// 删除驱动文件。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public DeleteJdbcDriverResponse DeleteJdbcDriver(DeleteJdbcDriverRequest deleteJdbcDriverRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -632,6 +765,7 @@ namespace HuaweiCloud.SDK.Drs.V5
             return JsonUtils.DeSerialize<DeleteJdbcDriverResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<DeleteJdbcDriverResponse> DeleteJdbcDriverInvoker(DeleteJdbcDriverRequest deleteJdbcDriverRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -817,6 +951,30 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 下载文件
+        ///
+        /// 下载文件
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DownloadFileResponse DownloadFile(DownloadFileRequest downloadFileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/download", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadFileRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<DownloadFileResponse>(response);
+        }
+
+        public SyncInvoker<DownloadFileResponse> DownloadFileInvoker(DownloadFileRequest downloadFileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/download", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadFileRequest);
+            return new SyncInvoker<DownloadFileResponse>(this, "POST", request, JsonUtils.DeSerialize<DownloadFileResponse>);
+        }
+        
+        /// <summary>
         /// 操作指定ID任务
         ///
         /// 操作租户指定ID任务。
@@ -864,6 +1022,30 @@ namespace HuaweiCloud.SDK.Drs.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/export/template", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", exportCreationTemplateRequest);
             return new SyncInvoker<ExportCreationTemplateResponse>(this, "POST", request, JsonUtils.DeSerialize<ExportCreationTemplateResponse>);
+        }
+        
+        /// <summary>
+        /// 导出任务列表
+        ///
+        /// 导出任务列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ExportJobListResponse ExportJobList(ExportJobListRequest exportJobListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/export-jobs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", exportJobListRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ExportJobListResponse>(response);
+        }
+
+        public SyncInvoker<ExportJobListResponse> ExportJobListInvoker(ExportJobListRequest exportJobListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/export-jobs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", exportJobListRequest);
+            return new SyncInvoker<ExportJobListResponse>(this, "POST", request, JsonUtils.DeSerialize<ExportJobListResponse>);
         }
         
         /// <summary>
@@ -1131,6 +1313,7 @@ namespace HuaweiCloud.SDK.Drs.V5
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ListJdbcDriversResponse ListJdbcDrivers(ListJdbcDriversRequest listJdbcDriversRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1140,6 +1323,7 @@ namespace HuaweiCloud.SDK.Drs.V5
             return JsonUtils.DeSerialize<ListJdbcDriversResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ListJdbcDriversResponse> ListJdbcDriversInvoker(ListJdbcDriversRequest listJdbcDriversRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1259,6 +1443,7 @@ namespace HuaweiCloud.SDK.Drs.V5
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ListLinksResponse ListLinks(ListLinksRequest listLinksRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1268,6 +1453,7 @@ namespace HuaweiCloud.SDK.Drs.V5
             return JsonUtils.DeSerialize<ListLinksResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ListLinksResponse> ListLinksInvoker(ListLinksRequest listLinksRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1302,6 +1488,30 @@ namespace HuaweiCloud.SDK.Drs.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{resource_type}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectTagsRequest);
             return new SyncInvoker<ListProjectTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListProjectTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询流量回放支持的源数据库设置
+        ///
+        /// 根据参数不同，可查询当前环境的流量回放支持的源数据库相关配置，包括源数据库来源、流量文件来源和流量文件类型。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListReplaySupportSourceConfigResponse ListReplaySupportSourceConfig(ListReplaySupportSourceConfigRequest listReplaySupportSourceConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/support-replay-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listReplaySupportSourceConfigRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListReplaySupportSourceConfigResponse>(response);
+        }
+
+        public SyncInvoker<ListReplaySupportSourceConfigResponse> ListReplaySupportSourceConfigInvoker(ListReplaySupportSourceConfigRequest listReplaySupportSourceConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/support-replay-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listReplaySupportSourceConfigRequest);
+            return new SyncInvoker<ListReplaySupportSourceConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ListReplaySupportSourceConfigResponse>);
         }
         
         /// <summary>
@@ -1440,6 +1650,7 @@ namespace HuaweiCloud.SDK.Drs.V5
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ListsAgencyPermissionsResponse ListsAgencyPermissions(ListsAgencyPermissionsRequest listsAgencyPermissionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1449,6 +1660,7 @@ namespace HuaweiCloud.SDK.Drs.V5
             return JsonUtils.DeSerialize<ListsAgencyPermissionsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ListsAgencyPermissionsResponse> ListsAgencyPermissionsInvoker(ListsAgencyPermissionsRequest listsAgencyPermissionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1536,6 +1748,32 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 重置订阅任务
+        ///
+        /// 重置订阅任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ResetSubscriptionResponse ResetSubscription(ResetSubscriptionRequest resetSubscriptionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(resetSubscriptionRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/subscription/{job_id}/reset", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetSubscriptionRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ResetSubscriptionResponse>(response);
+        }
+
+        public SyncInvoker<ResetSubscriptionResponse> ResetSubscriptionInvoker(ResetSubscriptionRequest resetSubscriptionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(resetSubscriptionRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/subscription/{job_id}/reset", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetSubscriptionRequest);
+            return new SyncInvoker<ResetSubscriptionResponse>(this, "POST", request, JsonUtils.DeSerialize<ResetSubscriptionResponse>);
+        }
+        
+        /// <summary>
         /// 继续对比任务
         ///
         /// 继续对比任务
@@ -1559,6 +1797,58 @@ namespace HuaweiCloud.SDK.Drs.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/compare/restart", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartCompareJobsRequest);
             return new SyncInvoker<RestartCompareJobsResponse>(this, "POST", request, JsonUtils.DeSerialize<RestartCompareJobsResponse>);
+        }
+        
+        /// <summary>
+        /// 重试订阅任务
+        ///
+        /// 重试订阅任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RetrySubscriptionResponse RetrySubscription(RetrySubscriptionRequest retrySubscriptionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(retrySubscriptionRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/subscription/{job_id}/retry", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", retrySubscriptionRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<RetrySubscriptionResponse>(response);
+        }
+
+        public SyncInvoker<RetrySubscriptionResponse> RetrySubscriptionInvoker(RetrySubscriptionRequest retrySubscriptionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(retrySubscriptionRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/subscription/{job_id}/retry", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", retrySubscriptionRequest);
+            return new SyncInvoker<RetrySubscriptionResponse>(this, "POST", request, JsonUtils.DeSerialize<RetrySubscriptionResponse>);
+        }
+        
+        /// <summary>
+        /// 保存数据过滤规则
+        ///
+        /// 保存数据过滤规则
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SaveDataFilterRulesResponse SaveDataFilterRules(SaveDataFilterRulesRequest saveDataFilterRulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(saveDataFilterRulesRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/filter-rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", saveDataFilterRulesRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<SaveDataFilterRulesResponse>(response);
+        }
+
+        public SyncInvoker<SaveDataFilterRulesResponse> SaveDataFilterRulesInvoker(SaveDataFilterRulesRequest saveDataFilterRulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(saveDataFilterRulesRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/filter-rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", saveDataFilterRulesRequest);
+            return new SyncInvoker<SaveDataFilterRulesResponse>(this, "PUT", request, JsonUtils.DeSerialize<SaveDataFilterRulesResponse>);
         }
         
         /// <summary>
@@ -1594,6 +1884,7 @@ namespace HuaweiCloud.SDK.Drs.V5
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ShowAgencyInfoResponse ShowAgencyInfo(ShowAgencyInfoRequest showAgencyInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1604,6 +1895,7 @@ namespace HuaweiCloud.SDK.Drs.V5
             return JsonUtils.DeSerialize<ShowAgencyInfoResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ShowAgencyInfoResponse> ShowAgencyInfoInvoker(ShowAgencyInfoRequest showAgencyInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1775,12 +2067,39 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 获取数据过滤规则信息结果
+        ///
+        /// 获取数据过滤规则信息结果
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowDataFilterRulesResultResponse ShowDataFilterRulesResult(ShowDataFilterRulesResultRequest showDataFilterRulesResultRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showDataFilterRulesResultRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/filter-rules/result", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDataFilterRulesResultRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowDataFilterRulesResultResponse>(response);
+        }
+
+        public SyncInvoker<ShowDataFilterRulesResultResponse> ShowDataFilterRulesResultInvoker(ShowDataFilterRulesResultRequest showDataFilterRulesResultRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showDataFilterRulesResultRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/filter-rules/result", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDataFilterRulesResultRequest);
+            return new SyncInvoker<ShowDataFilterRulesResultResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDataFilterRulesResultResponse>);
+        }
+        
+        /// <summary>
         /// 获取数据过滤校验结果
         ///
         /// 获取数据过滤校验结果
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ShowDataFilteringResultResponse ShowDataFilteringResult(ShowDataFilteringResultRequest showDataFilteringResultRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1791,6 +2110,7 @@ namespace HuaweiCloud.SDK.Drs.V5
             return JsonUtils.DeSerialize<ShowDataFilteringResultResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ShowDataFilteringResultResponse> ShowDataFilteringResultInvoker(ShowDataFilteringResultRequest showDataFilteringResultRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -2033,6 +2353,30 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 查询下载文件列表
+        ///
+        /// 查询下载文件列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowFilesResponse ShowFiles(ShowFilesRequest showFilesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/files", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFilesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowFilesResponse>(response);
+        }
+
+        public SyncInvoker<ShowFilesResponse> ShowFilesInvoker(ShowFilesRequest showFilesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/files", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFilesRequest);
+            return new SyncInvoker<ShowFilesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFilesResponse>);
+        }
+        
+        /// <summary>
         /// 查询健康对比任务详情
         ///
         /// 查询健康对比任务详情。
@@ -2198,6 +2542,30 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 查询链路的任务规格信息
+        ///
+        /// 根据参数不同，可查询实时迁移、实时同步、实时灾备等场景的不同链路的任务规格信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowLinkFlavorsResponse ShowLinkFlavors(ShowLinkFlavorsRequest showLinkFlavorsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/link-flavors", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLinkFlavorsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowLinkFlavorsResponse>(response);
+        }
+
+        public SyncInvoker<ShowLinkFlavorsResponse> ShowLinkFlavorsInvoker(ShowLinkFlavorsRequest showLinkFlavorsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/link-flavors", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLinkFlavorsRequest);
+            return new SyncInvoker<ShowLinkFlavorsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLinkFlavorsResponse>);
+        }
+        
+        /// <summary>
         /// 获取任务价格信息
         ///
         /// 获取询价接口的参数。
@@ -2248,6 +2616,32 @@ namespace HuaweiCloud.SDK.Drs.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/monitor-data", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMonitorDataRequest);
             return new SyncInvoker<ShowMonitorDataResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowMonitorDataResponse>);
+        }
+        
+        /// <summary>
+        /// 查询对象的列加工（列映射、列过滤）情况
+        ///
+        /// 查询对象的列加工（列映射、列过滤）情况
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowObjectColumnInfoResponse ShowObjectColumnInfo(ShowObjectColumnInfoRequest showObjectColumnInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showObjectColumnInfoRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/job/{job_id}/object-column-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showObjectColumnInfoRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowObjectColumnInfoResponse>(response);
+        }
+
+        public SyncInvoker<ShowObjectColumnInfoResponse> ShowObjectColumnInfoInvoker(ShowObjectColumnInfoRequest showObjectColumnInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showObjectColumnInfoRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/job/{job_id}/object-column-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showObjectColumnInfoRequest);
+            return new SyncInvoker<ShowObjectColumnInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowObjectColumnInfoResponse>);
         }
         
         /// <summary>
@@ -2335,6 +2729,32 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 查询录制回放的目标库SQL执行情况
+        ///
+        /// 查询基于目标库执行时间的回放SQL统计
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowReplayExecuteRecordResponse ShowReplayExecuteRecord(ShowReplayExecuteRecordRequest showReplayExecuteRecordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showReplayExecuteRecordRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/replay-execute-record", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReplayExecuteRecordRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowReplayExecuteRecordResponse>(response);
+        }
+
+        public SyncInvoker<ShowReplayExecuteRecordResponse> ShowReplayExecuteRecordInvoker(ShowReplayExecuteRecordRequest showReplayExecuteRecordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showReplayExecuteRecordRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/replay-execute-record", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReplayExecuteRecordRequest);
+            return new SyncInvoker<ShowReplayExecuteRecordResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowReplayExecuteRecordResponse>);
+        }
+        
+        /// <summary>
         /// 查询录制回放任务进度
         ///
         /// 查询录制回放任务进度
@@ -2358,6 +2778,32 @@ namespace HuaweiCloud.SDK.Drs.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/replay-progress", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReplayProgressRequest);
             return new SyncInvoker<ShowReplayProgressResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowReplayProgressResponse>);
+        }
+        
+        /// <summary>
+        /// 查询录制回放的源库SQL执行情况
+        ///
+        /// 查询基于源库执行时间的回放SQL统计
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowReplayRecordResponse ShowReplayRecord(ShowReplayRecordRequest showReplayRecordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showReplayRecordRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/replay-record", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReplayRecordRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowReplayRecordResponse>(response);
+        }
+
+        public SyncInvoker<ShowReplayRecordResponse> ShowReplayRecordInvoker(ShowReplayRecordRequest showReplayRecordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showReplayRecordRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/replay-record", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReplayRecordRequest);
+            return new SyncInvoker<ShowReplayRecordResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowReplayRecordResponse>);
         }
         
         /// <summary>
@@ -2436,6 +2882,58 @@ namespace HuaweiCloud.SDK.Drs.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/backup-migration-jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReplicationJobRequest);
             return new SyncInvoker<ShowReplicationJobResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowReplicationJobResponse>);
+        }
+        
+        /// <summary>
+        /// 查询录制回放报表下载链接
+        ///
+        /// 获取可下载文件的obs临时链接
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowReportFileObsUrisResponse ShowReportFileObsUris(ShowReportFileObsUrisRequest showReportFileObsUrisRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showReportFileObsUrisRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/export/obs-uris", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReportFileObsUrisRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowReportFileObsUrisResponse>(response);
+        }
+
+        public SyncInvoker<ShowReportFileObsUrisResponse> ShowReportFileObsUrisInvoker(ShowReportFileObsUrisRequest showReportFileObsUrisRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showReportFileObsUrisRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/export/obs-uris", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showReportFileObsUrisRequest);
+            return new SyncInvoker<ShowReportFileObsUrisResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowReportFileObsUrisResponse>);
+        }
+        
+        /// <summary>
+        /// 任务SMN订阅信息查询
+        ///
+        /// 任务SMN订阅信息查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowSmnSubscriptionDetailResponse ShowSmnSubscriptionDetail(ShowSmnSubscriptionDetailRequest showSmnSubscriptionDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showSmnSubscriptionDetailRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/smn-subscription-detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSmnSubscriptionDetailRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowSmnSubscriptionDetailResponse>(response);
+        }
+
+        public SyncInvoker<ShowSmnSubscriptionDetailResponse> ShowSmnSubscriptionDetailInvoker(ShowSmnSubscriptionDetailRequest showSmnSubscriptionDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showSmnSubscriptionDetailRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/smn-subscription-detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSmnSubscriptionDetailRequest);
+            return new SyncInvoker<ShowSmnSubscriptionDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSmnSubscriptionDetailResponse>);
         }
         
         /// <summary>
@@ -2539,6 +3037,58 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 查询灾备任务上一次倒换信息
+        ///
+        /// 查询灾备任务上一次倒换信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowSwitchoverInfoResponse ShowSwitchoverInfo(ShowSwitchoverInfoRequest showSwitchoverInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showSwitchoverInfoRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/switchover-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSwitchoverInfoRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowSwitchoverInfoResponse>(response);
+        }
+
+        public SyncInvoker<ShowSwitchoverInfoResponse> ShowSwitchoverInfoInvoker(ShowSwitchoverInfoRequest showSwitchoverInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showSwitchoverInfoRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/switchover-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSwitchoverInfoRequest);
+            return new SyncInvoker<ShowSwitchoverInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSwitchoverInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 查询异步任务执行进度
+        ///
+        /// 查询异步任务执行进度。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowTaskExecuteProgressResponse ShowTaskExecuteProgress(ShowTaskExecuteProgressRequest showTaskExecuteProgressRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTaskExecuteProgressRequest.AsyncJobId, out var valueOfAsyncJobId)) urlParam.Add("async_job_id", valueOfAsyncJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{async_job_id}/progress", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTaskExecuteProgressRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowTaskExecuteProgressResponse>(response);
+        }
+
+        public SyncInvoker<ShowTaskExecuteProgressResponse> ShowTaskExecuteProgressInvoker(ShowTaskExecuteProgressRequest showTaskExecuteProgressRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTaskExecuteProgressRequest.AsyncJobId, out var valueOfAsyncJobId)) urlParam.Add("async_job_id", valueOfAsyncJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{async_job_id}/progress", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTaskExecuteProgressRequest);
+            return new SyncInvoker<ShowTaskExecuteProgressResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTaskExecuteProgressResponse>);
+        }
+        
+        /// <summary>
         /// 展示时间轴
         ///
         /// 指定不同的任务ID可以展示当前任务创建时间、启动时间、重试、重置等操作的时间轴信息。
@@ -2591,6 +3141,32 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 启动订阅任务
+        ///
+        /// 启动订阅任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public StartSubscriptionResponse StartSubscription(StartSubscriptionRequest startSubscriptionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(startSubscriptionRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/subscription/{job_id}/start", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startSubscriptionRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<StartSubscriptionResponse>(response);
+        }
+
+        public SyncInvoker<StartSubscriptionResponse> StartSubscriptionInvoker(StartSubscriptionRequest startSubscriptionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(startSubscriptionRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/subscription/{job_id}/start", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startSubscriptionRequest);
+            return new SyncInvoker<StartSubscriptionResponse>(this, "POST", request, JsonUtils.DeSerialize<StartSubscriptionResponse>);
+        }
+        
+        /// <summary>
         /// 结束任务
         ///
         /// 结束租户指定ID任务。
@@ -2623,6 +3199,7 @@ namespace HuaweiCloud.SDK.Drs.V5
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncJdbcDriverResponse SyncJdbcDriver(SyncJdbcDriverRequest syncJdbcDriverRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -2633,6 +3210,7 @@ namespace HuaweiCloud.SDK.Drs.V5
             return JsonUtils.DeSerialize<SyncJdbcDriverResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<SyncJdbcDriverResponse> SyncJdbcDriverInvoker(SyncJdbcDriverRequest syncJdbcDriverRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -2675,6 +3253,7 @@ namespace HuaweiCloud.SDK.Drs.V5
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public UpdateAgencyPolicyResponse UpdateAgencyPolicy(UpdateAgencyPolicyRequest updateAgencyPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -2685,6 +3264,7 @@ namespace HuaweiCloud.SDK.Drs.V5
             return JsonUtils.DeSerialize<UpdateAgencyPolicyResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<UpdateAgencyPolicyResponse> UpdateAgencyPolicyInvoker(UpdateAgencyPolicyRequest updateAgencyPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -2723,7 +3303,7 @@ namespace HuaweiCloud.SDK.Drs.V5
         /// <summary>
         /// 修改对比策略
         ///
-        /// 修改周期性对比的对比策略，目前仅MySQL-&gt;MySQL、MySQL-&gt;GaussDB(for MySQL)、MySQL-&gt;GaussDB(DWS)、GaussDB(for MySQL)-&gt;MySQL同步任务，MySQL-&gt;MySQL、MySQL-&gt;GaussDB(for MySQL)迁移任务，MySQL-&gt;MySQL、MySQL-&gt;GaussDB(for MySQL)、GaussDB(for MySQL)-&gt;GaussDB(for MySQL)、DDM-&gt;DDM、DDS-DDS灾备任务支持对比策略设置。
+        /// 修改周期性对比的对比策略，目前仅MySQL-&gt;MySQL、MySQL-&gt;GaussDB(DWS)、TaurusDB-&gt;MySQL、MySQL-GaussDB集中式，GaussDB分布式-GaussDB集中式，GaussDB集中式-MySQL，GaussDBV1-GaussDB集中式，GaussDB集中式-GaussDBV1，GaussDB集中式-GaussDB集中式，OpenGauss-GaussDB分布式，OpenGauss-GaussDB集中式，GaussDB集中式-Oracle，Oracle-GaussDB集中式，GaussDB分布式-GaussDB分布式，GaussDB分布式-Oracle，Oracle-GaussDB分布式，MySQL-TaurusDB，TaurusDB-TaurusDB，GaussDB集中式-GaussDB透明多写，GaussDB分布式-GaussDB透明多写，GaussDB透明多写-GaussDB透明多写，GaussDB透明多写-GaussDB分布式，GaussDB透明多写-GaussDB集中式，Oracle-GaussDB透明多写，GaussDB透明多写-Oracle，DB2-GaussDB分布式，DB2-GaussDB集中式，GaussDB分布式-DB2，GaussDB集中式-DB2同步任务，MySQL-&gt;MySQL、MySQL-&gt;TaurusDB迁移任务，MySQL-&gt;MySQL、MySQL-TaurusDB、TaurusDB-&gt;TaurusDB、DDM-&gt;DDM、DDS-DDS灾备任务支持对比策略设置。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2938,6 +3518,7 @@ namespace HuaweiCloud.SDK.Drs.V5
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public UploadJdbcDriverResponse UploadJdbcDriver(UploadJdbcDriverRequest uploadJdbcDriverRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -2947,6 +3528,7 @@ namespace HuaweiCloud.SDK.Drs.V5
             return JsonUtils.DeSerialize<UploadJdbcDriverResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<UploadJdbcDriverResponse> UploadJdbcDriverInvoker(UploadJdbcDriverRequest uploadJdbcDriverRequest)
         {
             var urlParam = new Dictionary<string, string>();

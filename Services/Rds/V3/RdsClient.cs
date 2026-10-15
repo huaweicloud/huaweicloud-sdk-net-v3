@@ -4906,6 +4906,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 查询实例的向量存储配置
+        ///
+        /// 查询实例的向量存储配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowVectorStorageConfigResponse ShowVectorStorageConfig(ShowVectorStorageConfigRequest showVectorStorageConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showVectorStorageConfigRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/vector-storage", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVectorStorageConfigRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowVectorStorageConfigResponse>(response);
+        }
+
+        public SyncInvoker<ShowVectorStorageConfigResponse> ShowVectorStorageConfigInvoker(ShowVectorStorageConfigRequest showVectorStorageConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showVectorStorageConfigRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/vector-storage", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVectorStorageConfigRequest);
+            return new SyncInvoker<ShowVectorStorageConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVectorStorageConfigResponse>);
+        }
+        
+        /// <summary>
         /// 手动倒换主备
         ///
         /// 手动倒换主备.
@@ -5679,6 +5705,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/to-period", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateToPeriodRequest);
             return new SyncInvoker<UpdateToPeriodResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateToPeriodResponse>);
+        }
+        
+        /// <summary>
+        /// 修改实例的向量存储配置
+        ///
+        /// 修改实例的向量存储配置，开启或关闭向量存储功能。该接口为异步接口，返回工作流ID。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateVectorStorageConfigResponse UpdateVectorStorageConfig(UpdateVectorStorageConfigRequest updateVectorStorageConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateVectorStorageConfigRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/vector-storage", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateVectorStorageConfigRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateVectorStorageConfigResponse>(response);
+        }
+
+        public SyncInvoker<UpdateVectorStorageConfigResponse> UpdateVectorStorageConfigInvoker(UpdateVectorStorageConfigRequest updateVectorStorageConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateVectorStorageConfigRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/vector-storage", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateVectorStorageConfigRequest);
+            return new SyncInvoker<UpdateVectorStorageConfigResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateVectorStorageConfigResponse>);
         }
         
         /// <summary>

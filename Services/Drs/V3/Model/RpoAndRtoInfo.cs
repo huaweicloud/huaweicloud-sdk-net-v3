@@ -11,31 +11,31 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Drs.V3.Model
 {
     /// <summary>
-    /// RpoAndRTO信息体
+    /// RPO和RTO信息体
     /// </summary>
     public class RpoAndRtoInfo 
     {
 
         /// <summary>
-        /// 检查点
+        /// **参数解释**：  数据复制的检查点位置，标识已同步数据的Binlog位置。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("check_point", NullValueHandling = NullValueHandling.Ignore)]
         public string CheckPoint { get; set; }
 
         /// <summary>
-        /// 延迟
+        /// **参数解释**：  数据同步延迟时间。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("delay", NullValueHandling = NullValueHandling.Ignore)]
         public string Delay { get; set; }
 
         /// <summary>
-        /// gtid集合
+        /// **参数解释**：  全局事务ID集合（Global Transaction Identifier），用于标识已执行的事务。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("gtid_set", NullValueHandling = NullValueHandling.Ignore)]
         public string GtidSet { get; set; }
 
         /// <summary>
-        /// 当前时间 ，格式为“yyyy-MM-dd HH:mm:ss”
+        /// **参数解释**：  RPO或RTO的统计时间点，格式为\&quot;yyyy-MM-dd HH:mm:ss\&quot;。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("time", NullValueHandling = NullValueHandling.Ignore)]
         public string Time { get; set; }

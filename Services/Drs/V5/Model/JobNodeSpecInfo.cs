@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     public class JobNodeSpecInfo 
     {
         /// <summary>
-        /// 实例规格编码。取值： - micro：极小规格。 - small：小规格。 - medium：中规格。 - high：大规格。
+        /// **参数解释**：  DRS任务实例规格编码，决定迁移实例的计算资源大小。  **约束限制**：  除实时同步任务以外，其他类型任务的规格只支持取high。  **取值范围**：  - micro：极小规格 - small：小规格 - medium：中规格 - high：大规格  **默认取值**：  不涉及
         /// </summary>
-        /// <value>实例规格编码。取值： - micro：极小规格。 - small：小规格。 - medium：中规格。 - high：大规格。</value>
+        /// <value>**参数解释**：  DRS任务实例规格编码，决定迁移实例的计算资源大小。  **约束限制**：  除实时同步任务以外，其他类型任务的规格只支持取high。  **取值范围**：  - micro：极小规格 - small：小规格 - medium：中规格 - high：大规格  **默认取值**：  不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<NodeTypeEnum>))]
         public class NodeTypeEnum
         {
@@ -144,7 +144,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
 
 
         /// <summary>
-        /// 实例规格编码。取值： - micro：极小规格。 - small：小规格。 - medium：中规格。 - high：大规格。
+        /// **参数解释**：  DRS任务实例规格编码，决定迁移实例的计算资源大小。  **约束限制**：  除实时同步任务以外，其他类型任务的规格只支持取high。  **取值范围**：  - micro：极小规格 - small：小规格 - medium：中规格 - high：大规格  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("node_type", NullValueHandling = NullValueHandling.Ignore)]
         public NodeTypeEnum NodeType { get; set; }

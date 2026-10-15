@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         }
 
         /// <summary>
-        /// 结果类型。取值： - shard_statistics：回放概览基于时间维度统计信息。 - slow_sql：慢SQL详情。 - error_sql： 回放异常SQL详情。 - slow_sql_template：慢SQL统计信息。  - error_sql_template：异常SQL统计信息。 - replaying_sql：正在回放SQL详情。 - error_classification：回放异常SQL分类。
+        /// 结果类型。取值： - shard_statistics：回放概览基于时间维度统计信息。 - slow_sql：慢SQL详情。 - error_sql： 回放异常SQL详情。 - slow_sql_template：慢SQL统计信息。  - error_sql_template：异常SQL统计信息。 - replaying_sql：正在回放SQL详情。 - error_classification：回放异常SQL分类。 - sql_result_inconsistent：回放库和镜像库里面SQL执行结果不一致详情。 - replayed_sql：流量回放已回放SQL统计信息。 - ugo_error_sql：ugo转换失败信息。 - sql_object_statistic：SQL对象统计信息。 - archive_capture_data：录制产生文件的SQL data数据。
         /// </summary>
-        /// <value>结果类型。取值： - shard_statistics：回放概览基于时间维度统计信息。 - slow_sql：慢SQL详情。 - error_sql： 回放异常SQL详情。 - slow_sql_template：慢SQL统计信息。  - error_sql_template：异常SQL统计信息。 - replaying_sql：正在回放SQL详情。 - error_classification：回放异常SQL分类。</value>
+        /// <value>结果类型。取值： - shard_statistics：回放概览基于时间维度统计信息。 - slow_sql：慢SQL详情。 - error_sql： 回放异常SQL详情。 - slow_sql_template：慢SQL统计信息。  - error_sql_template：异常SQL统计信息。 - replaying_sql：正在回放SQL详情。 - error_classification：回放异常SQL分类。 - sql_result_inconsistent：回放库和镜像库里面SQL执行结果不一致详情。 - replayed_sql：流量回放已回放SQL统计信息。 - ugo_error_sql：ugo转换失败信息。 - sql_object_statistic：SQL对象统计信息。 - archive_capture_data：录制产生文件的SQL data数据。</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -172,6 +172,31 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             /// </summary>
             public static readonly TypeEnum ERROR_CLASSIFICATION = new TypeEnum("error_classification");
 
+            /// <summary>
+            /// Enum SQL_RESULT_INCONSISTENT for value: sql_result_inconsistent
+            /// </summary>
+            public static readonly TypeEnum SQL_RESULT_INCONSISTENT = new TypeEnum("sql_result_inconsistent");
+
+            /// <summary>
+            /// Enum REPLAYED_SQL for value: replayed_sql
+            /// </summary>
+            public static readonly TypeEnum REPLAYED_SQL = new TypeEnum("replayed_sql");
+
+            /// <summary>
+            /// Enum UGO_ERROR_SQL for value: ugo_error_sql
+            /// </summary>
+            public static readonly TypeEnum UGO_ERROR_SQL = new TypeEnum("ugo_error_sql");
+
+            /// <summary>
+            /// Enum SQL_OBJECT_STATISTIC for value: sql_object_statistic
+            /// </summary>
+            public static readonly TypeEnum SQL_OBJECT_STATISTIC = new TypeEnum("sql_object_statistic");
+
+            /// <summary>
+            /// Enum ARCHIVE_CAPTURE_DATA for value: archive_capture_data
+            /// </summary>
+            public static readonly TypeEnum ARCHIVE_CAPTURE_DATA = new TypeEnum("archive_capture_data");
+
             private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
@@ -182,6 +207,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 { "error_sql_template", ERROR_SQL_TEMPLATE },
                 { "replaying_sql", REPLAYING_SQL },
                 { "error_classification", ERROR_CLASSIFICATION },
+                { "sql_result_inconsistent", SQL_RESULT_INCONSISTENT },
+                { "replayed_sql", REPLAYED_SQL },
+                { "ugo_error_sql", UGO_ERROR_SQL },
+                { "sql_object_statistic", SQL_OBJECT_STATISTIC },
+                { "archive_capture_data", ARCHIVE_CAPTURE_DATA },
             };
 
             private string _value;
@@ -520,7 +550,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
         public XLanguageEnum XLanguage { get; set; }
         /// <summary>
-        /// 结果类型。取值： - shard_statistics：回放概览基于时间维度统计信息。 - slow_sql：慢SQL详情。 - error_sql： 回放异常SQL详情。 - slow_sql_template：慢SQL统计信息。  - error_sql_template：异常SQL统计信息。 - replaying_sql：正在回放SQL详情。 - error_classification：回放异常SQL分类。
+        /// 结果类型。取值： - shard_statistics：回放概览基于时间维度统计信息。 - slow_sql：慢SQL详情。 - error_sql： 回放异常SQL详情。 - slow_sql_template：慢SQL统计信息。  - error_sql_template：异常SQL统计信息。 - replaying_sql：正在回放SQL详情。 - error_classification：回放异常SQL分类。 - sql_result_inconsistent：回放库和镜像库里面SQL执行结果不一致详情。 - replayed_sql：流量回放已回放SQL统计信息。 - ugo_error_sql：ugo转换失败信息。 - sql_object_statistic：SQL对象统计信息。 - archive_capture_data：录制产生文件的SQL data数据。
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]

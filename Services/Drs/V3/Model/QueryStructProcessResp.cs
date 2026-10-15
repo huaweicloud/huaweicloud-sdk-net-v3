@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         [JsonProperty("struct_process", NullValueHandling = NullValueHandling.Ignore)]
         public StructProcessResp StructProcess { get; set; }
 
+        /// <summary>
+        /// 灾备数据库信息。
+        /// </summary>
+        [JsonProperty("database_info", NullValueHandling = NullValueHandling.Ignore)]
+        public Object DatabaseInfo { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
             sb.Append("  errorCode: ").Append(ErrorCode).Append("\n");
             sb.Append("  errorMessage: ").Append(ErrorMessage).Append("\n");
             sb.Append("  structProcess: ").Append(StructProcess).Append("\n");
+            sb.Append("  databaseInfo: ").Append(DatabaseInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,6 +82,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
             if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
             if (this.ErrorMessage != input.ErrorMessage || (this.ErrorMessage != null && !this.ErrorMessage.Equals(input.ErrorMessage))) return false;
             if (this.StructProcess != input.StructProcess || (this.StructProcess != null && !this.StructProcess.Equals(input.StructProcess))) return false;
+            if (this.DatabaseInfo != input.DatabaseInfo || (this.DatabaseInfo != null && !this.DatabaseInfo.Equals(input.DatabaseInfo))) return false;
 
             return true;
         }
@@ -91,6 +99,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
                 if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
                 if (this.ErrorMessage != null) hashCode = hashCode * 59 + this.ErrorMessage.GetHashCode();
                 if (this.StructProcess != null) hashCode = hashCode * 59 + this.StructProcess.GetHashCode();
+                if (this.DatabaseInfo != null) hashCode = hashCode * 59 + this.DatabaseInfo.GetHashCode();
                 return hashCode;
             }
         }

@@ -100,6 +100,18 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         [JsonProperty("app_extended_info", NullValueHandling = NullValueHandling.Ignore)]
         public AppExtendedInfo AppExtendedInfo { get; set; }
 
+        /// <summary>
+        /// 是否开启会话预开。
+        /// </summary>
+        [JsonProperty("is_pre_boot", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsPreBoot { get; set; }
+
+        /// <summary>
+        /// 预开状态：0：非预开，1：会话预开，3：应用预开。
+        /// </summary>
+        [JsonProperty("pre_launch_policy", NullValueHandling = NullValueHandling.Ignore)]
+        public int? PreLaunchPolicy { get; set; }
+
 
 
         /// <summary>
@@ -123,6 +135,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             sb.Append("  sourceImageIds: ").Append(SourceImageIds).Append("\n");
             sb.Append("  sandboxEnable: ").Append(SandboxEnable).Append("\n");
             sb.Append("  appExtendedInfo: ").Append(AppExtendedInfo).Append("\n");
+            sb.Append("  isPreBoot: ").Append(IsPreBoot).Append("\n");
+            sb.Append("  preLaunchPolicy: ").Append(PreLaunchPolicy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -155,6 +169,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.SourceImageIds != input.SourceImageIds || (this.SourceImageIds != null && input.SourceImageIds != null && !this.SourceImageIds.SequenceEqual(input.SourceImageIds))) return false;
             if (this.SandboxEnable != input.SandboxEnable || (this.SandboxEnable != null && !this.SandboxEnable.Equals(input.SandboxEnable))) return false;
             if (this.AppExtendedInfo != input.AppExtendedInfo || (this.AppExtendedInfo != null && !this.AppExtendedInfo.Equals(input.AppExtendedInfo))) return false;
+            if (this.IsPreBoot != input.IsPreBoot || (this.IsPreBoot != null && !this.IsPreBoot.Equals(input.IsPreBoot))) return false;
+            if (this.PreLaunchPolicy != input.PreLaunchPolicy || (this.PreLaunchPolicy != null && !this.PreLaunchPolicy.Equals(input.PreLaunchPolicy))) return false;
 
             return true;
         }
@@ -181,6 +197,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.SourceImageIds != null) hashCode = hashCode * 59 + this.SourceImageIds.GetHashCode();
                 if (this.SandboxEnable != null) hashCode = hashCode * 59 + this.SandboxEnable.GetHashCode();
                 if (this.AppExtendedInfo != null) hashCode = hashCode * 59 + this.AppExtendedInfo.GetHashCode();
+                if (this.IsPreBoot != null) hashCode = hashCode * 59 + this.IsPreBoot.GetHashCode();
+                if (this.PreLaunchPolicy != null) hashCode = hashCode * 59 + this.PreLaunchPolicy.GetHashCode();
                 return hashCode;
             }
         }

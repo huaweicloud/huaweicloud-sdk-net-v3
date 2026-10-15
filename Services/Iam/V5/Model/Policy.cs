@@ -58,7 +58,7 @@ namespace HuaweiCloud.SDK.Iam.V5.Model
         public int? AttachmentCount { get; set; }
 
         /// <summary>
-        /// 身份策略描述。
+        /// **参数解释**： 身份策略描述信息。  **约束限制**： 不涉及。  **取值范围**： 长度范围为[0,1000]。  **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }

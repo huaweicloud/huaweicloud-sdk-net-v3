@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
     {
 
         /// <summary>
-        /// 完成进度
+        /// **参数解释**：  完成进度，以百分比形式表示，如\&quot;94%\&quot;、\&quot;100%\&quot;。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("completed", NullValueHandling = NullValueHandling.Ignore)]
         public string Completed { get; set; }
 
         /// <summary>
-        /// 预计剩余时间
+        /// **参数解释**：  该子项迁移的预计剩余时间。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("remaining_time", NullValueHandling = NullValueHandling.Ignore)]
         public string RemainingTime { get; set; }

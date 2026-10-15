@@ -184,6 +184,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("interval_hour", NullValueHandling = NullValueHandling.Ignore)]
         public int? IntervalHour { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 冲突策略。 **约束限制：** 不涉及 **取值范围：** 不涉及 默认取值： 不涉及
+        /// </summary>
+        [JsonProperty("conflict_strategy", NullValueHandling = NullValueHandling.Ignore)]
+        public string ConflictStrategy { get; set; }
+
 
 
         /// <summary>
@@ -201,6 +207,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  nextCompareTime: ").Append(NextCompareTime).Append("\n");
             sb.Append("  comparePolicy: ").Append(ComparePolicy).Append("\n");
             sb.Append("  intervalHour: ").Append(IntervalHour).Append("\n");
+            sb.Append("  conflictStrategy: ").Append(ConflictStrategy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -227,6 +234,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             if (this.NextCompareTime != input.NextCompareTime || (this.NextCompareTime != null && !this.NextCompareTime.Equals(input.NextCompareTime))) return false;
             if (this.ComparePolicy != input.ComparePolicy || (this.ComparePolicy != null && !this.ComparePolicy.Equals(input.ComparePolicy))) return false;
             if (this.IntervalHour != input.IntervalHour || (this.IntervalHour != null && !this.IntervalHour.Equals(input.IntervalHour))) return false;
+            if (this.ConflictStrategy != input.ConflictStrategy || (this.ConflictStrategy != null && !this.ConflictStrategy.Equals(input.ConflictStrategy))) return false;
 
             return true;
         }
@@ -247,6 +255,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 if (this.NextCompareTime != null) hashCode = hashCode * 59 + this.NextCompareTime.GetHashCode();
                 if (this.ComparePolicy != null) hashCode = hashCode * 59 + this.ComparePolicy.GetHashCode();
                 if (this.IntervalHour != null) hashCode = hashCode * 59 + this.IntervalHour.GetHashCode();
+                if (this.ConflictStrategy != null) hashCode = hashCode * 59 + this.ConflictStrategy.GetHashCode();
                 return hashCode;
             }
         }

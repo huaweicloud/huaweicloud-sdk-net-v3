@@ -21,6 +21,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public BatchChangeDataResponse BatchChangeData(BatchChangeDataRequest batchChangeDataRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -30,6 +31,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<BatchChangeDataResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<BatchChangeDataResponse> BatchChangeDataInvoker(BatchChangeDataRequest batchChangeDataRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -45,6 +47,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public BatchCheckJobsResponse BatchCheckJobs(BatchCheckJobsRequest batchCheckJobsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -54,6 +57,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<BatchCheckJobsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<BatchCheckJobsResponse> BatchCheckJobsInvoker(BatchCheckJobsRequest batchCheckJobsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -69,6 +73,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public BatchCheckResultsResponse BatchCheckResults(BatchCheckResultsRequest batchCheckResultsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -78,6 +83,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<BatchCheckResultsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<BatchCheckResultsResponse> BatchCheckResultsInvoker(BatchCheckResultsRequest batchCheckResultsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -93,6 +99,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public BatchCreateJobsResponse BatchCreateJobs(BatchCreateJobsRequest batchCreateJobsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -102,6 +109,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<BatchCreateJobsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<BatchCreateJobsResponse> BatchCreateJobsInvoker(BatchCreateJobsRequest batchCreateJobsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -117,6 +125,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public BatchDeleteJobsResponse BatchDeleteJobs(BatchDeleteJobsRequest batchDeleteJobsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -126,6 +135,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<BatchDeleteJobsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<BatchDeleteJobsResponse> BatchDeleteJobsInvoker(BatchDeleteJobsRequest batchDeleteJobsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -141,6 +151,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public BatchListJobDetailsResponse BatchListJobDetails(BatchListJobDetailsRequest batchListJobDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -150,6 +161,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<BatchListJobDetailsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<BatchListJobDetailsResponse> BatchListJobDetailsInvoker(BatchListJobDetailsRequest batchListJobDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -165,6 +177,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public BatchListJobStatusResponse BatchListJobStatus(BatchListJobStatusRequest batchListJobStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -174,6 +187,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<BatchListJobStatusResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<BatchListJobStatusResponse> BatchListJobStatusInvoker(BatchListJobStatusRequest batchListJobStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -263,6 +277,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public BatchListStructProcessResponse BatchListStructProcess(BatchListStructProcessRequest batchListStructProcessRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -272,6 +287,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<BatchListStructProcessResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<BatchListStructProcessResponse> BatchListStructProcessInvoker(BatchListStructProcessRequest batchListStructProcessRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -287,6 +303,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public BatchResetPasswordResponse BatchResetPassword(BatchResetPasswordRequest batchResetPasswordRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -296,6 +313,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<BatchResetPasswordResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<BatchResetPasswordResponse> BatchResetPasswordInvoker(BatchResetPasswordRequest batchResetPasswordRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -311,6 +329,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public BatchRestoreTaskResponse BatchRestoreTask(BatchRestoreTaskRequest batchRestoreTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -320,6 +339,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<BatchRestoreTaskResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<BatchRestoreTaskResponse> BatchRestoreTaskInvoker(BatchRestoreTaskRequest batchRestoreTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -337,6 +357,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public BatchSetDefinerResponse BatchSetDefiner(BatchSetDefinerRequest batchSetDefinerRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -346,6 +367,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<BatchSetDefinerResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<BatchSetDefinerResponse> BatchSetDefinerInvoker(BatchSetDefinerRequest batchSetDefinerRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -361,6 +383,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public BatchSetObjectsResponse BatchSetObjects(BatchSetObjectsRequest batchSetObjectsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -370,6 +393,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<BatchSetObjectsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<BatchSetObjectsResponse> BatchSetObjectsInvoker(BatchSetObjectsRequest batchSetObjectsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -386,6 +410,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public BatchSetPolicyResponse BatchSetPolicy(BatchSetPolicyRequest batchSetPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -395,6 +420,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<BatchSetPolicyResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<BatchSetPolicyResponse> BatchSetPolicyInvoker(BatchSetPolicyRequest batchSetPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -411,6 +437,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public BatchSetSmnResponse BatchSetSmn(BatchSetSmnRequest batchSetSmnRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -420,6 +447,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<BatchSetSmnResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<BatchSetSmnResponse> BatchSetSmnInvoker(BatchSetSmnRequest batchSetSmnRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -437,6 +465,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public BatchSetSpeedResponse BatchSetSpeed(BatchSetSpeedRequest batchSetSpeedRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -446,6 +475,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<BatchSetSpeedResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<BatchSetSpeedResponse> BatchSetSpeedInvoker(BatchSetSpeedRequest batchSetSpeedRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -461,6 +491,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public BatchShowParamsResponse BatchShowParams(BatchShowParamsRequest batchShowParamsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -470,6 +501,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<BatchShowParamsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<BatchShowParamsResponse> BatchShowParamsInvoker(BatchShowParamsRequest batchShowParamsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -485,6 +517,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public BatchStartJobsResponse BatchStartJobs(BatchStartJobsRequest batchStartJobsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -494,6 +527,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<BatchStartJobsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<BatchStartJobsResponse> BatchStartJobsInvoker(BatchStartJobsRequest batchStartJobsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -509,6 +543,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public BatchStopJobsResponse BatchStopJobs(BatchStopJobsRequest batchStopJobsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -518,6 +553,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<BatchStopJobsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<BatchStopJobsResponse> BatchStopJobsInvoker(BatchStopJobsRequest batchStopJobsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -533,6 +569,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public BatchSwitchoverResponse BatchSwitchover(BatchSwitchoverRequest batchSwitchoverRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -542,6 +579,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<BatchSwitchoverResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<BatchSwitchoverResponse> BatchSwitchoverInvoker(BatchSwitchoverRequest batchSwitchoverRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -557,6 +595,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public BatchUpdateJobResponse BatchUpdateJob(BatchUpdateJobRequest batchUpdateJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -566,6 +605,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<BatchUpdateJobResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<BatchUpdateJobResponse> BatchUpdateJobInvoker(BatchUpdateJobRequest batchUpdateJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -581,6 +621,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public BatchUpdateUserResponse BatchUpdateUser(BatchUpdateUserRequest batchUpdateUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -590,6 +631,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<BatchUpdateUserResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<BatchUpdateUserResponse> BatchUpdateUserInvoker(BatchUpdateUserRequest batchUpdateUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -606,6 +648,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public BatchValidateClustersConnectionsResponse BatchValidateClustersConnections(BatchValidateClustersConnectionsRequest batchValidateClustersConnectionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -615,6 +658,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<BatchValidateClustersConnectionsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<BatchValidateClustersConnectionsResponse> BatchValidateClustersConnectionsInvoker(BatchValidateClustersConnectionsRequest batchValidateClustersConnectionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -630,6 +674,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public BatchValidateConnectionsResponse BatchValidateConnections(BatchValidateConnectionsRequest batchValidateConnectionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -639,6 +684,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<BatchValidateConnectionsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<BatchValidateConnectionsResponse> BatchValidateConnectionsInvoker(BatchValidateConnectionsRequest batchValidateConnectionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -654,6 +700,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public CreateCompareResultFileResponse CreateCompareResultFile(CreateCompareResultFileRequest createCompareResultFileRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -664,6 +711,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<CreateCompareResultFileResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<CreateCompareResultFileResponse> CreateCompareResultFileInvoker(CreateCompareResultFileRequest createCompareResultFileRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -680,6 +728,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public CreateCompareTaskResponse CreateCompareTask(CreateCompareTaskRequest createCompareTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -689,6 +738,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<CreateCompareTaskResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<CreateCompareTaskResponse> CreateCompareTaskInvoker(CreateCompareTaskRequest createCompareTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -704,6 +754,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public CreateDataLevelTableCompareJobResponse CreateDataLevelTableCompareJob(CreateDataLevelTableCompareJobRequest createDataLevelTableCompareJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -714,6 +765,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<CreateDataLevelTableCompareJobResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<CreateDataLevelTableCompareJobResponse> CreateDataLevelTableCompareJobInvoker(CreateDataLevelTableCompareJobRequest createDataLevelTableCompareJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -730,6 +782,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public CreateObjectLevelCompareJobResponse CreateObjectLevelCompareJob(CreateObjectLevelCompareJobRequest createObjectLevelCompareJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -740,6 +793,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<CreateObjectLevelCompareJobResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<CreateObjectLevelCompareJobResponse> CreateObjectLevelCompareJobInvoker(CreateObjectLevelCompareJobRequest createObjectLevelCompareJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -756,6 +810,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public DeleteCompareJobResponse DeleteCompareJob(DeleteCompareJobRequest deleteCompareJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -767,6 +822,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<DeleteCompareJobResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<DeleteCompareJobResponse> DeleteCompareJobInvoker(DeleteCompareJobRequest deleteCompareJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -784,6 +840,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public DownloadCompareResultFileResponse DownloadCompareResultFile(DownloadCompareResultFileRequest downloadCompareResultFileRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -794,6 +851,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<DownloadCompareResultFileResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<DownloadCompareResultFileResponse> DownloadCompareResultFileInvoker(DownloadCompareResultFileRequest downloadCompareResultFileRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -810,6 +868,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ListAvailableNodeTypesResponse ListAvailableNodeTypes(ListAvailableNodeTypesRequest listAvailableNodeTypesRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -819,6 +878,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<ListAvailableNodeTypesResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ListAvailableNodeTypesResponse> ListAvailableNodeTypesInvoker(ListAvailableNodeTypesRequest listAvailableNodeTypesRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -858,6 +918,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ListCompareResultResponse ListCompareResult(ListCompareResultRequest listCompareResultRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -867,6 +928,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<ListCompareResultResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ListCompareResultResponse> ListCompareResultInvoker(ListCompareResultRequest listCompareResultRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -882,6 +944,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ListContentCompareDetailResponse ListContentCompareDetail(ListContentCompareDetailRequest listContentCompareDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -893,6 +956,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<ListContentCompareDetailResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ListContentCompareDetailResponse> ListContentCompareDetailInvoker(ListContentCompareDetailRequest listContentCompareDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -910,6 +974,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ListContentCompareDifferenceResponse ListContentCompareDifference(ListContentCompareDifferenceRequest listContentCompareDifferenceRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -921,6 +986,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<ListContentCompareDifferenceResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ListContentCompareDifferenceResponse> ListContentCompareDifferenceInvoker(ListContentCompareDifferenceRequest listContentCompareDifferenceRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -938,6 +1004,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ListContentCompareOverviewResponse ListContentCompareOverview(ListContentCompareOverviewRequest listContentCompareOverviewRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -949,6 +1016,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<ListContentCompareOverviewResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ListContentCompareOverviewResponse> ListContentCompareOverviewInvoker(ListContentCompareOverviewRequest listContentCompareOverviewRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -966,6 +1034,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ListDataCompareDetailResponse ListDataCompareDetail(ListDataCompareDetailRequest listDataCompareDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -977,6 +1046,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<ListDataCompareDetailResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ListDataCompareDetailResponse> ListDataCompareDetailInvoker(ListDataCompareDetailRequest listDataCompareDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -994,6 +1064,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ListDataCompareOverviewResponse ListDataCompareOverview(ListDataCompareOverviewRequest listDataCompareOverviewRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1005,6 +1076,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<ListDataCompareOverviewResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ListDataCompareOverviewResponse> ListDataCompareOverviewInvoker(ListDataCompareOverviewRequest listDataCompareOverviewRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1022,6 +1094,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ListDataLevelTableCompareJobsResponse ListDataLevelTableCompareJobs(ListDataLevelTableCompareJobsRequest listDataLevelTableCompareJobsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1032,6 +1105,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<ListDataLevelTableCompareJobsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ListDataLevelTableCompareJobsResponse> ListDataLevelTableCompareJobsInvoker(ListDataLevelTableCompareJobsRequest listDataLevelTableCompareJobsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1048,6 +1122,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ListObejectLevelCompareDetailResponse ListObejectLevelCompareDetail(ListObejectLevelCompareDetailRequest listObejectLevelCompareDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1059,6 +1134,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<ListObejectLevelCompareDetailResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ListObejectLevelCompareDetailResponse> ListObejectLevelCompareDetailInvoker(ListObejectLevelCompareDetailRequest listObejectLevelCompareDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1076,6 +1152,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ListObejectLevelCompareOverviewResponse ListObejectLevelCompareOverview(ListObejectLevelCompareOverviewRequest listObejectLevelCompareOverviewRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1086,6 +1163,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<ListObejectLevelCompareOverviewResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ListObejectLevelCompareOverviewResponse> ListObejectLevelCompareOverviewInvoker(ListObejectLevelCompareOverviewRequest listObejectLevelCompareOverviewRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1102,6 +1180,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ListUsersResponse ListUsers(ListUsersRequest listUsersRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1112,6 +1191,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<ListUsersResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ListUsersResponse> ListUsersInvoker(ListUsersRequest listUsersRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1128,6 +1208,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ModifyGroupAndStreamResponse ModifyGroupAndStream(ModifyGroupAndStreamRequest modifyGroupAndStreamRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1138,6 +1219,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<ModifyGroupAndStreamResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ModifyGroupAndStreamResponse> ModifyGroupAndStreamInvoker(ModifyGroupAndStreamRequest modifyGroupAndStreamRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1154,6 +1236,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public QueryTuningParamsResponse QueryTuningParams(QueryTuningParamsRequest queryTuningParamsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1164,6 +1247,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<QueryTuningParamsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<QueryTuningParamsResponse> QueryTuningParamsInvoker(QueryTuningParamsRequest queryTuningParamsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1180,6 +1264,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SelectGroupAndStreamResponse SelectGroupAndStream(SelectGroupAndStreamRequest selectGroupAndStreamRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1190,6 +1275,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<SelectGroupAndStreamResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<SelectGroupAndStreamResponse> SelectGroupAndStreamInvoker(SelectGroupAndStreamRequest selectGroupAndStreamRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1206,6 +1292,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ShowJobListResponse ShowJobList(ShowJobListRequest showJobListRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1215,6 +1302,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<ShowJobListResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ShowJobListResponse> ShowJobListInvoker(ShowJobListRequest showJobListRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1230,6 +1318,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ShowMonitoringDataResponse ShowMonitoringData(ShowMonitoringDataRequest showMonitoringDataRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1239,6 +1328,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<ShowMonitoringDataResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ShowMonitoringDataResponse> ShowMonitoringDataInvoker(ShowMonitoringDataRequest showMonitoringDataRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1278,6 +1368,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public StartPromptlyDataLevelTableCompareJobResponse StartPromptlyDataLevelTableCompareJob(StartPromptlyDataLevelTableCompareJobRequest startPromptlyDataLevelTableCompareJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1289,6 +1380,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<StartPromptlyDataLevelTableCompareJobResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<StartPromptlyDataLevelTableCompareJobResponse> StartPromptlyDataLevelTableCompareJobInvoker(StartPromptlyDataLevelTableCompareJobRequest startPromptlyDataLevelTableCompareJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1306,6 +1398,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public UpdateParamsResponse UpdateParams(UpdateParamsRequest updateParamsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1316,6 +1409,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<UpdateParamsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<UpdateParamsResponse> UpdateParamsInvoker(UpdateParamsRequest updateParamsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1332,6 +1426,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public UpdateTuningParamsResponse UpdateTuningParams(UpdateTuningParamsRequest updateTuningParamsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1342,6 +1437,7 @@ namespace HuaweiCloud.SDK.Drs.V3
             return JsonUtils.DeSerialize<UpdateTuningParamsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<UpdateTuningParamsResponse> UpdateTuningParamsInvoker(UpdateTuningParamsRequest updateTuningParamsRequest)
         {
             var urlParam = new Dictionary<string, string>();

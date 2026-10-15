@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     {
 
         /// <summary>
-        /// 标签列表
+        /// **参数解释**：  资源标签列表，包含该实例下所有标签的键值对信息。详情请参见BatchResourceTag。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<BatchResourceTag> Tags { get; set; }

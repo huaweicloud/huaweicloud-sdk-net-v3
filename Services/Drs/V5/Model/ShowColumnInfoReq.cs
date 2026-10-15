@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     {
 
         /// <summary>
-        /// 是否重新从node获取列信息
+        /// 是否重新从node获取列信息，默认为否。
         /// </summary>
         [JsonProperty("refresh", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Refresh { get; set; }

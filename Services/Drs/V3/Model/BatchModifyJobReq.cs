@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Drs.V3.Model
 {
     /// <summary>
-    /// 批量修改任务请求体
+    /// 批量修改任务请求体。
     /// </summary>
     public class BatchModifyJobReq 
     {
 
         /// <summary>
-        /// 修改任务请求体
+        /// **参数解释**：  修改任务请求体列表，包含需要修改的一个或多个任务信息，详情请参见ModifyJobReq对象定义。  **约束限制**：  - 建议批量调用数量不超过10个。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("jobs", NullValueHandling = NullValueHandling.Ignore)]
         public List<ModifyJobReq> Jobs { get; set; }

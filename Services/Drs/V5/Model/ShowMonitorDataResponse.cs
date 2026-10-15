@@ -17,127 +17,127 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     {
 
         /// <summary>
-        /// EIP带宽，单位：MB/S
+        /// **参数解释**：  EIP带宽，用于评估公网传输速率是否满足迁移需求。单位：MB/s。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("bandwidth", NullValueHandling = NullValueHandling.Ignore)]
         public string Bandwidth { get; set; }
 
         /// <summary>
-        /// 源库连接状态是否正常。
+        /// **参数解释**：  源库连接状态是否正常。  **约束限制**：  不涉及。  **取值范围**：  - true：源库连接正常 - false：源库连接异常  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("is_src_normal", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsSrcNormal { get; set; }
 
         /// <summary>
-        /// 目标库连接状态是否正常。
+        /// **参数解释**：  目标库连接状态是否正常。  **约束限制**：  不涉及。  **取值范围**：  - true：目标库连接正常 - false：目标库连接异常  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("is_dst_normal", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsDstNormal { get; set; }
 
         /// <summary>
-        /// 源库offSet位点。
+        /// **参数解释**：  源库offset位点，用于判断源库数据同步进度。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("src_offset", NullValueHandling = NullValueHandling.Ignore)]
         public string SrcOffset { get; set; }
 
         /// <summary>
-        /// 迁移实例offSet位点。
+        /// **参数解释**：  迁移实例offset位点，用于判断迁移实例数据同步进度。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("node_offset", NullValueHandling = NullValueHandling.Ignore)]
         public string NodeOffset { get; set; }
 
         /// <summary>
-        /// 目标库offSet位点。
+        /// **参数解释**：  目标库offset位点，用于判断目标库数据同步进度。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("dst_offset", NullValueHandling = NullValueHandling.Ignore)]
         public string DstOffset { get; set; }
 
         /// <summary>
-        /// 源库时延。
+        /// **参数解释**：  源库时延，用于判断数据同步的实时性。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("src_delay", NullValueHandling = NullValueHandling.Ignore)]
         public int? SrcDelay { get; set; }
 
         /// <summary>
-        /// 目标库时延。
+        /// **参数解释**：  目标库时延，用于判断数据同步的实时性。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("dst_delay", NullValueHandling = NullValueHandling.Ignore)]
         public int? DstDelay { get; set; }
 
         /// <summary>
-        /// 源库RPS。
+        /// **参数解释**：  源库RPS（Requests Per Second，每秒请求数），用于评估源库的数据变更速率。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("src_rps", NullValueHandling = NullValueHandling.Ignore)]
         public string SrcRps { get; set; }
 
         /// <summary>
-        /// 源库IO。
+        /// **参数解释**：  源库IO（Input/Output，每秒输入输出操作量），用于评估源库的磁盘读写负载。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("src_io", NullValueHandling = NullValueHandling.Ignore)]
         public string SrcIo { get; set; }
 
         /// <summary>
-        /// 目标库RPS。
+        /// **参数解释**：  目标库RPS（Requests Per Second，每秒请求数），用于评估目标库的数据写入速率。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("dst_rps", NullValueHandling = NullValueHandling.Ignore)]
         public string DstRps { get; set; }
 
         /// <summary>
-        /// 目标库IO。
+        /// **参数解释**：  目标库IO（Input/Output，每秒输入输出操作量），用于评估目标库的磁盘读写负载。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("dst_io", NullValueHandling = NullValueHandling.Ignore)]
         public string DstIo { get; set; }
 
         /// <summary>
-        /// 迁移数据量。单位：MB
+        /// **参数解释**：  已迁移的数据量，用于评估迁移进度。单位：MB。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("trans_data", NullValueHandling = NullValueHandling.Ignore)]
         public string TransData { get; set; }
 
         /// <summary>
-        /// 迁移数据行数。
+        /// **参数解释**：  已迁移的数据行数，用于评估迁移进度。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("trans_lines", NullValueHandling = NullValueHandling.Ignore)]
         public string TransLines { get; set; }
 
         /// <summary>
-        /// 磁盘使用量。单位：GB
+        /// **参数解释**：  迁移实例磁盘使用量，用于监控迁移实例存储容量。单位：GB。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("used_volumes", NullValueHandling = NullValueHandling.Ignore)]
         public string UsedVolumes { get; set; }
 
         /// <summary>
-        /// 内存使用量。单位：MB
+        /// **参数解释**：  迁移实例内存使用量，用于监控迁移实例内存消耗。单位：MB。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("used_memory", NullValueHandling = NullValueHandling.Ignore)]
         public string UsedMemory { get; set; }
 
         /// <summary>
-        /// CPU使用百分比。
+        /// **参数解释**：  迁移实例CPU使用百分比，用于监控迁移实例计算负载。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("used_cpu_percent", NullValueHandling = NullValueHandling.Ignore)]
         public string UsedCpuPercent { get; set; }
 
         /// <summary>
-        /// node磁盘总大小。单位：GB
+        /// **参数解释**：  迁移实例磁盘总大小，与used_volumes配合评估磁盘使用率。单位：GB。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("node_volume_size", NullValueHandling = NullValueHandling.Ignore)]
         public int? NodeVolumeSize { get; set; }
 
         /// <summary>
-        /// node内存总大小。单位：MB
+        /// **参数解释**：  迁移实例内存总大小，与used_memory配合评估内存使用率。单位：MB。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("node_memory_size", NullValueHandling = NullValueHandling.Ignore)]
         public int? NodeMemorySize { get; set; }
 
         /// <summary>
-        /// 更新时间。
+        /// **参数解释**：  监控数据的更新时间，UTC格式，如2023-07-19T03:09:25Z。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("update_time", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdateTime { get; set; }
 
         /// <summary>
-        /// 同步速度。单位：byte/s
+        /// **参数解释**：  同步速度，用于评估数据回放速率。单位：byte/s。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("apply_rate", NullValueHandling = NullValueHandling.Ignore)]
         public int? ApplyRate { get; set; }

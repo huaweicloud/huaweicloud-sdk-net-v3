@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     public class ListInstanceTagsRequest 
     {
         /// <summary>
-        /// 资源类型。 - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备 - subscription：数据订阅 - backupMigration：备份迁移 - replay：录制回放
+        /// **参数解释**：  DRS资源类型，用于指定需要操作标签的资源所属的业务类型。不同资源类型对应不同的DRS任务类型，查询标签时需根据实际任务类型传入对应值。  **约束限制**：  不涉及。  **取值范围**：  - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备 - subscription：数据订阅 - backupMigration：备份迁移 - replay：录制回放 - verify：校验任务  **默认取值**：  不涉及
         /// </summary>
-        /// <value>资源类型。 - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备 - subscription：数据订阅 - backupMigration：备份迁移 - replay：录制回放</value>
+        /// <value>**参数解释**：  DRS资源类型，用于指定需要操作标签的资源所属的业务类型。不同资源类型对应不同的DRS任务类型，查询标签时需根据实际任务类型传入对应值。  **约束限制**：  不涉及。  **取值范围**：  - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备 - subscription：数据订阅 - backupMigration：备份迁移 - replay：录制回放 - verify：校验任务  **默认取值**：  不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<ResourceTypeEnum>))]
         public class ResourceTypeEnum
         {
@@ -52,6 +52,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             /// </summary>
             public static readonly ResourceTypeEnum REPLAY = new ResourceTypeEnum("replay");
 
+            /// <summary>
+            /// Enum VERIFY for value: verify
+            /// </summary>
+            public static readonly ResourceTypeEnum VERIFY = new ResourceTypeEnum("verify");
+
             private static readonly Dictionary<string, ResourceTypeEnum> StaticFields =
             new Dictionary<string, ResourceTypeEnum>()
             {
@@ -61,6 +66,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 { "subscription", SUBSCRIPTION },
                 { "backupMigration", BACKUPMIGRATION },
                 { "replay", REPLAY },
+                { "verify", VERIFY },
             };
 
             private string _value;
@@ -155,9 +161,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         }
 
         /// <summary>
-        /// 请求语言类型。
+        /// **参数解释**：  请求语言类型。  **约束限制**：  不涉及。  **取值范围**：  - en-us：英文 - zh-cn：中文  **默认取值**：  en-us
         /// </summary>
-        /// <value>请求语言类型。</value>
+        /// <value>**参数解释**：  请求语言类型。  **约束限制**：  不涉及。  **取值范围**：  - en-us：英文 - zh-cn：中文  **默认取值**：  en-us</value>
         [JsonConverter(typeof(EnumClassConverter<XLanguageEnum>))]
         public class XLanguageEnum
         {
@@ -271,19 +277,19 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
 
 
         /// <summary>
-        /// 资源类型。 - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备 - subscription：数据订阅 - backupMigration：备份迁移 - replay：录制回放
+        /// **参数解释**：  DRS资源类型，用于指定需要操作标签的资源所属的业务类型。不同资源类型对应不同的DRS任务类型，查询标签时需根据实际任务类型传入对应值。  **约束限制**：  不涉及。  **取值范围**：  - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备 - subscription：数据订阅 - backupMigration：备份迁移 - replay：录制回放 - verify：校验任务  **默认取值**：  不涉及
         /// </summary>
         [SDKProperty("resource_type", IsPath = true)]
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
         public ResourceTypeEnum ResourceType { get; set; }
         /// <summary>
-        /// 请求语言类型。
+        /// **参数解释**：  请求语言类型。  **约束限制**：  不涉及。  **取值范围**：  - en-us：英文 - zh-cn：中文  **默认取值**：  en-us
         /// </summary>
         [SDKProperty("X-Language", IsHeader = true)]
         [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
         public XLanguageEnum XLanguage { get; set; }
         /// <summary>
-        /// 资源ID，即DRS任务ID。
+        /// **参数解释**：  资源ID，即DRS任务ID。用于唯一标识一个DRS任务资源，在标签管理接口中用于定位需要查询标签的具体任务。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [SDKProperty("resource_id", IsPath = true)]
         [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]

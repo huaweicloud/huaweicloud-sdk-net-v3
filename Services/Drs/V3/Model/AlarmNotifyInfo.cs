@@ -11,37 +11,37 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Drs.V3.Model
 {
     /// <summary>
-    /// 异常通知信息
+    /// 异常通知信息。
     /// </summary>
     public class AlarmNotifyInfo 
     {
 
         /// <summary>
-        /// 订阅延迟时间(单位为s)
+        /// **参数解释**：  订阅延迟时间，即异常告警通知的延迟时间，单位为秒。  **约束限制**：  不涉及。  **取值范围**：  1-3600。  **默认取值**：  0
         /// </summary>
         [JsonProperty("delay_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? DelayTime { get; set; }
 
         /// <summary>
-        /// rto延迟时间
+        /// **参数解释**：  RTO（Recovery Time Objective，恢复时间目标）延迟时间，即容灾恢复时间目标的延迟阈值，单位为秒。  **约束限制**：  不涉及。  **取值范围**：  1-3600。  **默认取值**：  0
         /// </summary>
         [JsonProperty("rto_delay", NullValueHandling = NullValueHandling.Ignore)]
         public long? RtoDelay { get; set; }
 
         /// <summary>
-        /// rpo延迟时间
+        /// **参数解释**：  RPO（Recovery Point Objective，恢复点目标）延迟时间，即容灾恢复点目标的延迟阈值，单位为秒。  **约束限制**：  不涉及。  **取值范围**：  1-3600。  **默认取值**：  0
         /// </summary>
         [JsonProperty("rpo_delay", NullValueHandling = NullValueHandling.Ignore)]
         public long? RpoDelay { get; set; }
 
         /// <summary>
-        /// 异常告警是否通知用户
+        /// **参数解释**：  异常告警是否通知用户。  **约束限制**：  不涉及。  **取值范围**：  - true：通知用户 - false：不通知用户  **默认取值**：  false
         /// </summary>
         [JsonProperty("alarm_to_user", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AlarmToUser { get; set; }
 
         /// <summary>
-        /// 收件方式与信息体
+        /// **参数解释**：  收件方式与信息体列表，用于配置异常告警的通知渠道，最多填写两个，详情请参见SubscriptionInfo对象定义。  **约束限制**：  - 最多填写两个。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("subscriptions", NullValueHandling = NullValueHandling.Ignore)]
         public List<SubscriptionInfo> Subscriptions { get; set; }

@@ -598,6 +598,37 @@ namespace HuaweiCloud.SDK.Rgc.V1
         }
         
         /// <summary>
+        /// 列出Landing Zone版本列表
+        ///
+        /// 列出Landing Zone版本列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListLandingZoneVersionResponse ListLandingZoneVersion(ListLandingZoneVersionRequest listLandingZoneVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/landing-zone/version", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLandingZoneVersionRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var listLandingZoneVersionResponse = JsonUtils.DeSerializeNull<ListLandingZoneVersionResponse>(response);
+            listLandingZoneVersionResponse.Body = JsonUtils.DeSerializeList<LandingZoneVersionDetail>(response);
+            return listLandingZoneVersionResponse;
+        }
+
+        public SyncInvoker<ListLandingZoneVersionResponse> ListLandingZoneVersionInvoker(ListLandingZoneVersionRequest listLandingZoneVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/landing-zone/version", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLandingZoneVersionRequest);
+            return new SyncInvoker<ListLandingZoneVersionResponse>(this, "GET", request, response =>
+            {
+                var listLandingZoneVersionResponse = JsonUtils.DeSerializeNull<ListLandingZoneVersionResponse>(response);
+                listLandingZoneVersionResponse.Body = JsonUtils.DeSerializeList<LandingZoneVersionDetail>(response);
+                return listLandingZoneVersionResponse;
+            });
+        }
+        
+        /// <summary>
         /// 设置Landing Zone
         ///
         /// 在当前区域创建或者更新Landing Zone。

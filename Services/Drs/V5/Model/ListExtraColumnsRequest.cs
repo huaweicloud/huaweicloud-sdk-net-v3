@@ -165,6 +165,13 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
+        /// <summary>
+        /// 是否查询所有数据，值为\&quot;true\&quot;时会使得offset和limit参数失效并返回所有记录，默认值为\&quot;false\&quot;。
+        /// </summary>
+        [SDKProperty("fetch_all", IsQuery = true)]
+        [JsonProperty("fetch_all", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? FetchAll { get; set; }
+
 
 
         /// <summary>
@@ -179,6 +186,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  isOnlyShowSent: ").Append(IsOnlyShowSent).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  fetchAll: ").Append(FetchAll).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -202,6 +210,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             if (this.IsOnlyShowSent != input.IsOnlyShowSent || (this.IsOnlyShowSent != null && !this.IsOnlyShowSent.Equals(input.IsOnlyShowSent))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.FetchAll != input.FetchAll || (this.FetchAll != null && !this.FetchAll.Equals(input.FetchAll))) return false;
 
             return true;
         }
@@ -219,6 +228,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 if (this.IsOnlyShowSent != null) hashCode = hashCode * 59 + this.IsOnlyShowSent.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.FetchAll != null) hashCode = hashCode * 59 + this.FetchAll.GetHashCode();
                 return hashCode;
             }
         }

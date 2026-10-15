@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     public class ListLinksRequest 
     {
         /// <summary>
-        /// 请求语言类型。
+        /// **参数解释**：  请求语言类型。  **约束限制**：  不涉及。  **取值范围**：  - en-us：英文 - zh-cn：中文  **默认取值**：  en-us
         /// </summary>
-        /// <value>请求语言类型。</value>
+        /// <value>**参数解释**：  请求语言类型。  **约束限制**：  不涉及。  **取值范围**：  - en-us：英文 - zh-cn：中文  **默认取值**：  en-us</value>
         [JsonConverter(typeof(EnumClassConverter<XLanguageEnum>))]
         public class XLanguageEnum
         {
@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         }
 
         /// <summary>
-        /// 任务场景。取值： - migration：实时迁移。 - sync：实时同步。 - cloudDataGuard：实时灾备。
+        /// **参数解释**：  DRS任务场景类型，用于区分不同的数据复制场景。  **约束限制**：  不涉及。  **取值范围**：  - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备 - replay：流量回放  **默认取值**：  不涉及
         /// </summary>
-        /// <value>任务场景。取值： - migration：实时迁移。 - sync：实时同步。 - cloudDataGuard：实时灾备。</value>
+        /// <value>**参数解释**：  DRS任务场景类型，用于区分不同的数据复制场景。  **约束限制**：  不涉及。  **取值范围**：  - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备 - replay：流量回放  **默认取值**：  不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<JobTypeEnum>))]
         public class JobTypeEnum
         {
@@ -152,12 +152,18 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             /// </summary>
             public static readonly JobTypeEnum CLOUDDATAGUARD = new JobTypeEnum("cloudDataGuard");
 
+            /// <summary>
+            /// Enum REPLAY for value: replay
+            /// </summary>
+            public static readonly JobTypeEnum REPLAY = new JobTypeEnum("replay");
+
             private static readonly Dictionary<string, JobTypeEnum> StaticFields =
             new Dictionary<string, JobTypeEnum>()
             {
                 { "migration", MIGRATION },
                 { "sync", SYNC },
                 { "cloudDataGuard", CLOUDDATAGUARD },
+                { "replay", REPLAY },
             };
 
             private string _value;
@@ -253,26 +259,26 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
 
 
         /// <summary>
-        /// 请求语言类型。
+        /// **参数解释**：  请求语言类型。  **约束限制**：  不涉及。  **取值范围**：  - en-us：英文 - zh-cn：中文  **默认取值**：  en-us
         /// </summary>
         [SDKProperty("X-Language", IsHeader = true)]
         [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
         public XLanguageEnum XLanguage { get; set; }
         /// <summary>
-        /// 任务场景。取值： - migration：实时迁移。 - sync：实时同步。 - cloudDataGuard：实时灾备。
+        /// **参数解释**：  DRS任务场景类型，用于区分不同的数据复制场景。  **约束限制**：  不涉及。  **取值范围**：  - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备 - replay：流量回放  **默认取值**：  不涉及
         /// </summary>
         [SDKProperty("job_type", IsQuery = true)]
         [JsonProperty("job_type", NullValueHandling = NullValueHandling.Ignore)]
         public JobTypeEnum JobType { get; set; }
         /// <summary>
-        /// 偏移量，表示查询该偏移量后面的记录。
+        /// **参数解释**：  偏移量，表示查询该偏移量后面的记录，用于分页查询。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  0
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 查询返回记录的数量限制。
+        /// **参数解释**：  查询返回记录的数量限制，用于分页查询时控制每页返回的数据条数。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

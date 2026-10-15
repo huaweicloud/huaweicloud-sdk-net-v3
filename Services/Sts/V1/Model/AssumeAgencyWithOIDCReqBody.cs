@@ -23,37 +23,37 @@ namespace HuaweiCloud.SDK.Sts.V1.Model
         public int? DurationSeconds { get; set; }
 
         /// <summary>
-        /// **参数解释**： 自定义策略，限制本次会话获得的临时安全凭证的权限范围不会超过该自定义策略指定的权限。  **约束限制**： 本次会话获得的临时安全凭证的权限范围不会超过该自定义策略指定的权限。 长度范围为[2,2048]。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
+        /// **参数解释**： 自定义策略，用于进一步限制临时安全凭证的权限范围。  **约束限制**： 本次会话获得的临时安全凭证的权限范围不会超过自定义策略指定的权限。  **取值范围**： 长度为2到4096个字符。  **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("policy", NullValueHandling = NullValueHandling.Ignore)]
         public string Policy { get; set; }
 
         /// <summary>
-        /// **参数解释**： 预置策略列表，限制本次会话获得的临时安全凭证的权限范围不会超过该预置策略指定的权限。  **约束限制**： 不涉及。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
+        /// **参数解释**： 预置策略列表，限制本次会话获得的临时安全凭证的权限范围不会超过该预置策略指定的权限。 每个元素为预置策略的标识ID，长度限制为1到64个字符，只允许大小写字母、数字、\&quot;_\&quot;、\&quot;-\&quot;，且至少包含一个字符。  **约束限制**： 该数组允许的元素个数最多为20。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("policy_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> PolicyIds { get; set; }
 
         /// <summary>
-        /// **参数解释**： OIDC提供商的URN。  **约束限制**： 长度范围为[0,1500]。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
+        /// **参数解释**： OIDC提供商的URN，在IAM新版控制台的「身份提供商」页面中获取。  **约束限制**： 不涉及。  **取值范围**： 长度最多为1500个字符。格式为5段，用\&quot;:\&quot;分隔，各段允许大小写字母、数字、\&quot;+\&quot;、\&quot;/\&quot;、\&quot;&#x3D;\&quot;、\&quot;-\&quot;、\&quot;_\&quot;（第2段还额外允许 \&quot;*\&quot;），长度限制为：第1段至少1位，第2段0~255位，第3段1~64位，第4段1~64位，第5段至少1位（任意字符）。  **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("provider_urn", NullValueHandling = NullValueHandling.Ignore)]
         public string ProviderUrn { get; set; }
 
         /// <summary>
-        /// **参数解释**： 目标信任委托的URN。  **约束限制**： 长度范围为[0,1500]。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
+        /// **参数解释**： 目标信任委托的URN，在IAM新版控制台的「委托」页面中获取。  **约束限制**： 不涉及。  **取值范围**： 长度最多为1500个字符。  **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("agency_urn", NullValueHandling = NullValueHandling.Ignore)]
         public string AgencyUrn { get; set; }
 
         /// <summary>
-        /// **参数解释**： 信任委托会话的会话名。  **约束限制**： 长度范围为[2,128]。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
+        /// **参数解释**： 信任委托会话的会话名。  **约束限制**： 不涉及。  **取值范围**： 长度为2到128个字符，只允许大小写字母、数字、\&quot;_\&quot;、\&quot;+\&quot;、\&quot;&#x3D;\&quot;、\&quot;,\&quot;、\&quot;.\&quot;、\&quot;@\&quot;、\&quot;-\&quot;。  **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("agency_session_name", NullValueHandling = NullValueHandling.Ignore)]
         public string AgencySessionName { get; set; }
 
         /// <summary>
-        /// **参数解释**： 由身份提供商提供的OIDC令牌。  **约束限制**： 长度范围为[4,20000]。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
+        /// **参数解释**： 由身份提供商提供的OIDC令牌。  **约束限制**： 不涉及。  **取值范围**： 长度为4到20000个字符。  **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("id_token", NullValueHandling = NullValueHandling.Ignore)]
         public string IdToken { get; set; }

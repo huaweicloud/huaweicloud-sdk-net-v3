@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
     {
 
         /// <summary>
-        /// 预检查失败子任务id。
+        /// **参数解释**：  预检查失败子任务ID，用于唯一标识一个预检查失败的子任务。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 预检查失败子任务名称。
+        /// **参数解释**：  预检查失败子任务的名称，用于标识失败的子任务。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 检查结果。
+        /// **参数解释**：  预检查失败子任务的检查结果，表示该子任务的检查是否通过。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("check_result", NullValueHandling = NullValueHandling.Ignore)]
         public string CheckResult { get; set; }

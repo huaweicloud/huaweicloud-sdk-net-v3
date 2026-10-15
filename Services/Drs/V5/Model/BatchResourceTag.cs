@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Drs.V5.Model
 {
     /// <summary>
-    /// 标签信息体
+    /// **参数解释**：  标签键值对信息，包含标签键和标签值。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
     /// </summary>
     public class BatchResourceTag 
     {
 
         /// <summary>
-        /// 标签键。 - 长度为1-128个unicode字符。 - 可以包含任何语种字母、数字、空格和_.:&#x3D;+-@，但首尾不能含有空格，不能以_sys_开头。
+        /// **参数解释**：  标签键。  **约束限制**：  - 长度为1-128个unicode字符。 - 可以包含任何语种字母、数字、空格和_.:&#x3D;+-@，但首尾不能含有空格，不能以_sys_开头。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
         /// <summary>
-        /// 标签值，删除标签时非必填。 - 最大长度255个unicode字符。 - 可以包含任何语种字母、数字、空格和_.:&#x3D;+-@。
+        /// **参数解释**：  标签值，删除标签时非必填。  **约束限制**：  - 最大长度255个unicode字符。 - 可以包含任何语种字母、数字、空格和_.:&#x3D;+-@。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

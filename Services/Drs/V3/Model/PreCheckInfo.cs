@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
     public class PreCheckInfo 
     {
         /// <summary>
-        /// 预检查模式
+        /// **参数解释**：  预检查模式，指定执行预检查的场景类型。请按照任务对应的状态传值，否则可能导致预检查失败，影响任务启动。  **约束限制**：  不涉及。  **取值范围**：  - forStartJob：任务配置中首次启动时预检查 - forRetryJob：任务增量中编辑对象后预检查，或任务失败后重试时预检查  **默认取值**：  不涉及
         /// </summary>
-        /// <value>预检查模式</value>
+        /// <value>**参数解释**：  预检查模式，指定执行预检查的场景类型。请按照任务对应的状态传值，否则可能导致预检查失败，影响任务启动。  **约束限制**：  不涉及。  **取值范围**：  - forStartJob：任务配置中首次启动时预检查 - forRetryJob：任务增量中编辑对象后预检查，或任务失败后重试时预检查  **默认取值**：  不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<PrecheckModeEnum>))]
         public class PrecheckModeEnum
         {
@@ -132,13 +132,13 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
 
 
         /// <summary>
-        /// 任务id
+        /// **参数解释**：  迁移任务ID，用于唯一标识一个数据复制任务，在查询、修改、删除等操作中作为任务的识别凭证。  **约束限制**：  不涉及。  **取值范围**：  UUID格式字符串。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }
 
         /// <summary>
-        /// 预检查模式
+        /// **参数解释**：  预检查模式，指定执行预检查的场景类型。请按照任务对应的状态传值，否则可能导致预检查失败，影响任务启动。  **约束限制**：  不涉及。  **取值范围**：  - forStartJob：任务配置中首次启动时预检查 - forRetryJob：任务增量中编辑对象后预检查，或任务失败后重试时预检查  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("precheck_mode", NullValueHandling = NullValueHandling.Ignore)]
         public PrecheckModeEnum PrecheckMode { get; set; }

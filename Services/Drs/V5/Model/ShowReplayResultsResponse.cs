@@ -64,6 +64,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("error_classifications", NullValueHandling = NullValueHandling.Ignore)]
         public List<ReplayErrorClassification> ErrorClassifications { get; set; }
 
+        /// <summary>
+        /// SQL执行结果不一致数据，在type为sql_result_inconsistent时返回
+        /// </summary>
+        [JsonProperty("compare_results", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ReplayCompareResultResp> CompareResults { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +87,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  errorSqlTemplates: ").Append(ErrorSqlTemplates).Append("\n");
             sb.Append("  replayingSqls: ").Append(ReplayingSqls).Append("\n");
             sb.Append("  errorClassifications: ").Append(ErrorClassifications).Append("\n");
+            sb.Append("  compareResults: ").Append(CompareResults).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +114,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             if (this.ErrorSqlTemplates != input.ErrorSqlTemplates || (this.ErrorSqlTemplates != null && input.ErrorSqlTemplates != null && !this.ErrorSqlTemplates.SequenceEqual(input.ErrorSqlTemplates))) return false;
             if (this.ReplayingSqls != input.ReplayingSqls || (this.ReplayingSqls != null && input.ReplayingSqls != null && !this.ReplayingSqls.SequenceEqual(input.ReplayingSqls))) return false;
             if (this.ErrorClassifications != input.ErrorClassifications || (this.ErrorClassifications != null && input.ErrorClassifications != null && !this.ErrorClassifications.SequenceEqual(input.ErrorClassifications))) return false;
+            if (this.CompareResults != input.CompareResults || (this.CompareResults != null && input.CompareResults != null && !this.CompareResults.SequenceEqual(input.CompareResults))) return false;
 
             return true;
         }
@@ -127,6 +135,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 if (this.ErrorSqlTemplates != null) hashCode = hashCode * 59 + this.ErrorSqlTemplates.GetHashCode();
                 if (this.ReplayingSqls != null) hashCode = hashCode * 59 + this.ReplayingSqls.GetHashCode();
                 if (this.ErrorClassifications != null) hashCode = hashCode * 59 + this.ErrorClassifications.GetHashCode();
+                if (this.CompareResults != null) hashCode = hashCode * 59 + this.CompareResults.GetHashCode();
                 return hashCode;
             }
         }

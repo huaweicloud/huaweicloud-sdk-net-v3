@@ -442,6 +442,18 @@ namespace HuaweiCloud.SDK.As.V1.Model
         [JsonProperty("cpu_options", NullValueHandling = NullValueHandling.Ignore)]
         public CpuOptions CpuOptions { get; set; }
 
+        /// <summary>
+        /// 伸缩配置标签列表。每个伸缩配置最多添加20个标签。
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<TagsSingleValue> Tags { get; set; }
+
+        /// <summary>
+        /// 标签传递策略，OVERRIDE表示扩容时使用伸缩配置标签，SUPPRESS表示扩容时使用伸缩组标签，默认SUPPRESS
+        /// </summary>
+        [JsonProperty("tag_transmission_policy", NullValueHandling = NullValueHandling.Ignore)]
+        public string TagTransmissionPolicy { get; set; }
+
 
 
         /// <summary>
@@ -467,6 +479,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
             sb.Append("  multiFlavorPriorityPolicy: ").Append(MultiFlavorPriorityPolicy).Append("\n");
             sb.Append("  marketType: ").Append(MarketType).Append("\n");
             sb.Append("  cpuOptions: ").Append(CpuOptions).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  tagTransmissionPolicy: ").Append(TagTransmissionPolicy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -501,6 +515,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
             if (this.MultiFlavorPriorityPolicy != input.MultiFlavorPriorityPolicy) return false;
             if (this.MarketType != input.MarketType) return false;
             if (this.CpuOptions != input.CpuOptions || (this.CpuOptions != null && !this.CpuOptions.Equals(input.CpuOptions))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.TagTransmissionPolicy != input.TagTransmissionPolicy || (this.TagTransmissionPolicy != null && !this.TagTransmissionPolicy.Equals(input.TagTransmissionPolicy))) return false;
 
             return true;
         }
@@ -529,6 +545,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
                 hashCode = hashCode * 59 + this.MultiFlavorPriorityPolicy.GetHashCode();
                 hashCode = hashCode * 59 + this.MarketType.GetHashCode();
                 if (this.CpuOptions != null) hashCode = hashCode * 59 + this.CpuOptions.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.TagTransmissionPolicy != null) hashCode = hashCode * 59 + this.TagTransmissionPolicy.GetHashCode();
                 return hashCode;
             }
         }

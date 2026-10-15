@@ -76,6 +76,12 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         [JsonProperty("proportion_value", NullValueHandling = NullValueHandling.Ignore)]
         public string ProportionValue { get; set; }
 
+        /// <summary>
+        /// 灾备数据库信息。
+        /// </summary>
+        [JsonProperty("database_info", NullValueHandling = NullValueHandling.Ignore)]
+        public Object DatabaseInfo { get; set; }
+
 
 
         /// <summary>
@@ -95,6 +101,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
             sb.Append("  reportRemainSeconds: ").Append(ReportRemainSeconds).Append("\n");
             sb.Append("  compareJobTag: ").Append(CompareJobTag).Append("\n");
             sb.Append("  proportionValue: ").Append(ProportionValue).Append("\n");
+            sb.Append("  databaseInfo: ").Append(DatabaseInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -123,6 +130,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
             if (this.ReportRemainSeconds != input.ReportRemainSeconds || (this.ReportRemainSeconds != null && !this.ReportRemainSeconds.Equals(input.ReportRemainSeconds))) return false;
             if (this.CompareJobTag != input.CompareJobTag || (this.CompareJobTag != null && input.CompareJobTag != null && !this.CompareJobTag.SequenceEqual(input.CompareJobTag))) return false;
             if (this.ProportionValue != input.ProportionValue || (this.ProportionValue != null && !this.ProportionValue.Equals(input.ProportionValue))) return false;
+            if (this.DatabaseInfo != input.DatabaseInfo || (this.DatabaseInfo != null && !this.DatabaseInfo.Equals(input.DatabaseInfo))) return false;
 
             return true;
         }
@@ -145,6 +153,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
                 if (this.ReportRemainSeconds != null) hashCode = hashCode * 59 + this.ReportRemainSeconds.GetHashCode();
                 if (this.CompareJobTag != null) hashCode = hashCode * 59 + this.CompareJobTag.GetHashCode();
                 if (this.ProportionValue != null) hashCode = hashCode * 59 + this.ProportionValue.GetHashCode();
+                if (this.DatabaseInfo != null) hashCode = hashCode * 59 + this.DatabaseInfo.GetHashCode();
                 return hashCode;
             }
         }

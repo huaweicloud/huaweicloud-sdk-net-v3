@@ -11,14 +11,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Drs.V5.Model
 {
     /// <summary>
-    /// 租户公网IP信息
+    /// 租户公网IP信息。
     /// </summary>
     public class PublicIpConfig 
     {
         /// <summary>
-        /// 指定公网IP绑定任务的类型： - 主备任务：主是master，备是slave - 其他固定为master
+        /// 指定公网IP绑定任务的类型： - 主备任务：主是master，备是slave。 - 其他固定为master。
         /// </summary>
-        /// <value>指定公网IP绑定任务的类型： - 主备任务：主是master，备是slave - 其他固定为master</value>
+        /// <value>指定公网IP绑定任务的类型： - 主备任务：主是master，备是slave。 - 其他固定为master。</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -132,19 +132,19 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
 
 
         /// <summary>
-        /// 指定公网IP的ID
+        /// 指定公网IP的ID。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 指定公网IP
+        /// 指定公网IP。
         /// </summary>
         [JsonProperty("public_ip", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicIp { get; set; }
 
         /// <summary>
-        /// 指定公网IP绑定任务的类型： - 主备任务：主是master，备是slave - 其他固定为master
+        /// 指定公网IP绑定任务的类型： - 主备任务：主是master，备是slave。 - 其他固定为master。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }

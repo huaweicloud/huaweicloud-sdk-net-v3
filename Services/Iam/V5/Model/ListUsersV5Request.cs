@@ -37,6 +37,13 @@ namespace HuaweiCloud.SDK.Iam.V5.Model
         [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string GroupId { get; set; }
 
+        /// <summary>
+        /// 永久访问密钥ID，即AK。
+        /// </summary>
+        [SDKProperty("access_key_id", IsQuery = true)]
+        [JsonProperty("access_key_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string AccessKeyId { get; set; }
+
 
 
         /// <summary>
@@ -49,6 +56,7 @@ namespace HuaweiCloud.SDK.Iam.V5.Model
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("  groupId: ").Append(GroupId).Append("\n");
+            sb.Append("  accessKeyId: ").Append(AccessKeyId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -70,6 +78,7 @@ namespace HuaweiCloud.SDK.Iam.V5.Model
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
             if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
+            if (this.AccessKeyId != input.AccessKeyId || (this.AccessKeyId != null && !this.AccessKeyId.Equals(input.AccessKeyId))) return false;
 
             return true;
         }
@@ -85,6 +94,7 @@ namespace HuaweiCloud.SDK.Iam.V5.Model
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
+                if (this.AccessKeyId != null) hashCode = hashCode * 59 + this.AccessKeyId.GetHashCode();
                 return hashCode;
             }
         }

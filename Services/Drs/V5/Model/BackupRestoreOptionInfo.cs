@@ -130,6 +130,121 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             }
         }
 
+        /// <summary>
+        /// DBCC一致性校验模式。 - sync 同步 - async 异步
+        /// </summary>
+        /// <value>DBCC一致性校验模式。 - sync 同步 - async 异步</value>
+        [JsonConverter(typeof(EnumClassConverter<ConsistencyCheckModeEnum>))]
+        public class ConsistencyCheckModeEnum
+        {
+            /// <summary>
+            /// Enum SYNC for value: sync
+            /// </summary>
+            public static readonly ConsistencyCheckModeEnum SYNC = new ConsistencyCheckModeEnum("sync");
+
+            /// <summary>
+            /// Enum ASYNC for value: async
+            /// </summary>
+            public static readonly ConsistencyCheckModeEnum ASYNC = new ConsistencyCheckModeEnum("async");
+
+            private static readonly Dictionary<string, ConsistencyCheckModeEnum> StaticFields =
+            new Dictionary<string, ConsistencyCheckModeEnum>()
+            {
+                { "sync", SYNC },
+                { "async", ASYNC },
+            };
+
+            private string _value;
+
+            public ConsistencyCheckModeEnum()
+            {
+
+            }
+
+            public ConsistencyCheckModeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static ConsistencyCheckModeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ConsistencyCheckModeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ConsistencyCheckModeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(ConsistencyCheckModeEnum a, ConsistencyCheckModeEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ConsistencyCheckModeEnum a, ConsistencyCheckModeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 是否覆盖目标数据库，不填默认为false。  值为“true”表示覆盖。  值为“false”表示不覆盖。
@@ -178,6 +293,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("is_delete_backup_file", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsDeleteBackupFile { get; set; }
 
+        /// <summary>
+        /// DBCC一致性校验模式。 - sync 同步 - async 异步
+        /// </summary>
+        [JsonProperty("consistency_check_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public ConsistencyCheckModeEnum ConsistencyCheckMode { get; set; }
 
 
         /// <summary>
@@ -195,6 +315,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  dbNames: ").Append(DbNames).Append("\n");
             sb.Append("  resetDbNameMap: ").Append(ResetDbNameMap).Append("\n");
             sb.Append("  isDeleteBackupFile: ").Append(IsDeleteBackupFile).Append("\n");
+            sb.Append("  consistencyCheckMode: ").Append(ConsistencyCheckMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -221,6 +342,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             if (this.DbNames != input.DbNames || (this.DbNames != null && input.DbNames != null && !this.DbNames.SequenceEqual(input.DbNames))) return false;
             if (this.ResetDbNameMap != input.ResetDbNameMap || (this.ResetDbNameMap != null && input.ResetDbNameMap != null && !this.ResetDbNameMap.SequenceEqual(input.ResetDbNameMap))) return false;
             if (this.IsDeleteBackupFile != input.IsDeleteBackupFile || (this.IsDeleteBackupFile != null && !this.IsDeleteBackupFile.Equals(input.IsDeleteBackupFile))) return false;
+            if (this.ConsistencyCheckMode != input.ConsistencyCheckMode) return false;
 
             return true;
         }
@@ -241,6 +363,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 if (this.DbNames != null) hashCode = hashCode * 59 + this.DbNames.GetHashCode();
                 if (this.ResetDbNameMap != null) hashCode = hashCode * 59 + this.ResetDbNameMap.GetHashCode();
                 if (this.IsDeleteBackupFile != null) hashCode = hashCode * 59 + this.IsDeleteBackupFile.GetHashCode();
+                hashCode = hashCode * 59 + this.ConsistencyCheckMode.GetHashCode();
                 return hashCode;
             }
         }

@@ -52,6 +52,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("compute_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ComputeType { get; set; }
 
+        /// <summary>
+        /// 灾备数据库信息。
+        /// </summary>
+        [JsonProperty("database_info", NullValueHandling = NullValueHandling.Ignore)]
+        public Object DatabaseInfo { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +73,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("  computeType: ").Append(ComputeType).Append("\n");
+            sb.Append("  databaseInfo: ").Append(DatabaseInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +98,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
             if (this.ComputeType != input.ComputeType || (this.ComputeType != null && !this.ComputeType.Equals(input.ComputeType))) return false;
+            if (this.DatabaseInfo != input.DatabaseInfo || (this.DatabaseInfo != null && !this.DatabaseInfo.Equals(input.DatabaseInfo))) return false;
 
             return true;
         }
@@ -109,6 +117,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 if (this.ComputeType != null) hashCode = hashCode * 59 + this.ComputeType.GetHashCode();
+                if (this.DatabaseInfo != null) hashCode = hashCode * 59 + this.DatabaseInfo.GetHashCode();
                 return hashCode;
             }
         }

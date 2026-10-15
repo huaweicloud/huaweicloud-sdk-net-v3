@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         }
 
         /// <summary>
-        /// 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息。 - is_writable：目标库解除只读结果。 - cloud_connection：录制回放他云连通性测试，需配合query_id参数一起查询。 - diagnosis：查询一键诊断结果，需配合query_id参数一起查询。 - diagnosis_history：查询一键诊断结果历史，需配合query_id参数一起查询。 - repair_progress：数据修复进度，需配合query_id参数一起查询。 - repair_detail：数据修复详情，需配合query_id参数一起查询。 - repair_export_status：查询数据修复SQL导出状态，需配合compare_task_id参数一起查询。
+        /// 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息。 - is_writable：目标库解除只读结果。 - cloud_connection：录制回放他云连通性测试，需配合query_id参数一起查询。 - diagnosis：查询一键诊断结果，需配合query_id参数一起查询。 - diagnosis_history：查询一键诊断结果历史，需配合query_id参数一起查询。 - repair_progress：数据修复进度，需配合query_id参数一起查询。 - repair_detail：数据修复详情，需配合query_id参数一起查询。 - repair_export_status：查询数据修复SQL导出状态，需配合compare_task_id参数一起查询。 - db_table_details：库表映射概览。
         /// </summary>
-        /// <value>任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息。 - is_writable：目标库解除只读结果。 - cloud_connection：录制回放他云连通性测试，需配合query_id参数一起查询。 - diagnosis：查询一键诊断结果，需配合query_id参数一起查询。 - diagnosis_history：查询一键诊断结果历史，需配合query_id参数一起查询。 - repair_progress：数据修复进度，需配合query_id参数一起查询。 - repair_detail：数据修复详情，需配合query_id参数一起查询。 - repair_export_status：查询数据修复SQL导出状态，需配合compare_task_id参数一起查询。</value>
+        /// <value>任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息。 - is_writable：目标库解除只读结果。 - cloud_connection：录制回放他云连通性测试，需配合query_id参数一起查询。 - diagnosis：查询一键诊断结果，需配合query_id参数一起查询。 - diagnosis_history：查询一键诊断结果历史，需配合query_id参数一起查询。 - repair_progress：数据修复进度，需配合query_id参数一起查询。 - repair_detail：数据修复详情，需配合query_id参数一起查询。 - repair_export_status：查询数据修复SQL导出状态，需配合compare_task_id参数一起查询。 - db_table_details：库表映射概览。</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -212,6 +212,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             /// </summary>
             public static readonly TypeEnum REPAIR_EXPORT_STATUS = new TypeEnum("repair_export_status");
 
+            /// <summary>
+            /// Enum DB_TABLE_DETAILS for value: db_table_details
+            /// </summary>
+            public static readonly TypeEnum DB_TABLE_DETAILS = new TypeEnum("db_table_details");
+
             private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
@@ -230,6 +235,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 { "repair_progress", REPAIR_PROGRESS },
                 { "repair_detail", REPAIR_DETAIL },
                 { "repair_export_status", REPAIR_EXPORT_STATUS },
+                { "db_table_details", DB_TABLE_DETAILS },
             };
 
             private string _value;
@@ -451,9 +457,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         }
 
         /// <summary>
-        /// 查询对比内容。取值： - overview：对比任务概览。 - list：数据对比任务列表。 - detail：对比详情。 - diff：不一致详情。
+        /// 查询对比内容/预检查类型。取值： - overview：对比任务概览。 - list：数据对比任务列表。 - detail：对比详情。 - diff：不一致详情。 - upgradeJob：升级预检查。
         /// </summary>
-        /// <value>查询对比内容。取值： - overview：对比任务概览。 - list：数据对比任务列表。 - detail：对比详情。 - diff：不一致详情。</value>
+        /// <value>查询对比内容/预检查类型。取值： - overview：对比任务概览。 - list：数据对比任务列表。 - detail：对比详情。 - diff：不一致详情。 - upgradeJob：升级预检查。</value>
         [JsonConverter(typeof(EnumClassConverter<QueryTypeEnum>))]
         public class QueryTypeEnum
         {
@@ -477,6 +483,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             /// </summary>
             public static readonly QueryTypeEnum DIFF = new QueryTypeEnum("diff");
 
+            /// <summary>
+            /// Enum UPGRADEJOB for value: upgradeJob
+            /// </summary>
+            public static readonly QueryTypeEnum UPGRADEJOB = new QueryTypeEnum("upgradeJob");
+
             private static readonly Dictionary<string, QueryTypeEnum> StaticFields =
             new Dictionary<string, QueryTypeEnum>()
             {
@@ -484,6 +495,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 { "list", LIST },
                 { "detail", DETAIL },
                 { "diff", DIFF },
+                { "upgradeJob", UPGRADEJOB },
             };
 
             private string _value;
@@ -711,15 +723,15 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             public static readonly CompareDetailTypeEnum COMPARE = new CompareDetailTypeEnum("compare");
 
             /// <summary>
-            /// Enum UNCOMPARE for value: uncompare
+            /// Enum UNCOMPARE for value: unCompare
             /// </summary>
-            public static readonly CompareDetailTypeEnum UNCOMPARE = new CompareDetailTypeEnum("uncompare");
+            public static readonly CompareDetailTypeEnum UNCOMPARE = new CompareDetailTypeEnum("unCompare");
 
             private static readonly Dictionary<string, CompareDetailTypeEnum> StaticFields =
             new Dictionary<string, CompareDetailTypeEnum>()
             {
                 { "compare", COMPARE },
-                { "uncompare", UNCOMPARE },
+                { "unCompare", UNCOMPARE },
             };
 
             private string _value;
@@ -828,7 +840,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
         public XLanguageEnum XLanguage { get; set; }
         /// <summary>
-        /// 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息。 - is_writable：目标库解除只读结果。 - cloud_connection：录制回放他云连通性测试，需配合query_id参数一起查询。 - diagnosis：查询一键诊断结果，需配合query_id参数一起查询。 - diagnosis_history：查询一键诊断结果历史，需配合query_id参数一起查询。 - repair_progress：数据修复进度，需配合query_id参数一起查询。 - repair_detail：数据修复详情，需配合query_id参数一起查询。 - repair_export_status：查询数据修复SQL导出状态，需配合compare_task_id参数一起查询。
+        /// 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息。 - is_writable：目标库解除只读结果。 - cloud_connection：录制回放他云连通性测试，需配合query_id参数一起查询。 - diagnosis：查询一键诊断结果，需配合query_id参数一起查询。 - diagnosis_history：查询一键诊断结果历史，需配合query_id参数一起查询。 - repair_progress：数据修复进度，需配合query_id参数一起查询。 - repair_detail：数据修复详情，需配合query_id参数一起查询。 - repair_export_status：查询数据修复SQL导出状态，需配合compare_task_id参数一起查询。 - db_table_details：库表映射概览。
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
@@ -861,7 +873,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("compare_type", NullValueHandling = NullValueHandling.Ignore)]
         public CompareTypeEnum CompareType { get; set; }
         /// <summary>
-        /// 查询对比内容。取值： - overview：对比任务概览。 - list：数据对比任务列表。 - detail：对比详情。 - diff：不一致详情。
+        /// 查询对比内容/预检查类型。取值： - overview：对比任务概览。 - list：数据对比任务列表。 - detail：对比详情。 - diff：不一致详情。 - upgradeJob：升级预检查。
         /// </summary>
         [SDKProperty("query_type", IsQuery = true)]
         [JsonProperty("query_type", NullValueHandling = NullValueHandling.Ignore)]

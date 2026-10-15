@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
     {
 
         /// <summary>
-        /// 当前页, 不能超过item除每页任务数量的最大页 
+        /// **参数解释**：  当前页码，用于分页查询时指定返回第几页的数据。填0可获取全部数据项。  **约束限制**：  - 当per_page填0时，cur_page只能填0或1。 - 不能超过传入jobID数量除每页任务数量的最大页。  **取值范围**：  不涉及。  **默认取值**：  1
         /// </summary>
         [JsonProperty("cur_page", NullValueHandling = NullValueHandling.Ignore)]
         public int? CurPage { get; set; }
 
         /// <summary>
-        /// 每页item数量，填0获取全部item
+        /// **参数解释**：  每页返回的记录数，用于分页查询时控制每页数据量。填0可获取全部数据项。  **约束限制**：  - 填0时，cur_page只能填0或1。  **取值范围**：  0-100。  **默认取值**：  5
         /// </summary>
         [JsonProperty("per_page", NullValueHandling = NullValueHandling.Ignore)]
         public int? PerPage { get; set; }

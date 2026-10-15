@@ -11,14 +11,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Drs.V3.Model
 {
     /// <summary>
-    /// 修改任务描述信息、名称，设置异常通知信息、限速等。
+    /// 修改任务描述信息、名称，设置异常通知信息。
     /// </summary>
     public class ModifyJobReq 
     {
         /// <summary>
-        /// 任务模式，FULL_TRANS：全量；FULL_INCR_TRANS：全量+增量；INCR_TRANS：增量。
+        /// **参数解释**：  任务迁移模式，指定数据复制任务的执行方式。  **约束限制**：  - 目前仅支持MySQL到TaurusDB同步任务在配置中或者增量中时修改。  **取值范围**：  - FULL_TRANS：全量迁移，仅迁移历史数据 - FULL_INCR_TRANS：全量+增量迁移，先迁移历史数据再持续同步增量 - INCR_TRANS：增量迁移，仅同步数据变更  **默认取值**：  不涉及
         /// </summary>
-        /// <value>任务模式，FULL_TRANS：全量；FULL_INCR_TRANS：全量+增量；INCR_TRANS：增量。</value>
+        /// <value>**参数解释**：  任务迁移模式，指定数据复制任务的执行方式。  **约束限制**：  - 目前仅支持MySQL到TaurusDB同步任务在配置中或者增量中时修改。  **取值范围**：  - FULL_TRANS：全量迁移，仅迁移历史数据 - FULL_INCR_TRANS：全量+增量迁移，先迁移历史数据再持续同步增量 - INCR_TRANS：增量迁移，仅同步数据变更  **默认取值**：  不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<TaskTypeEnum>))]
         public class TaskTypeEnum
         {
@@ -137,9 +137,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         }
 
         /// <summary>
-        /// node规格类型，测试连接之后修改调用时必填。取值： - micro：极小规格。 - small：小规格。 - medium：中规格。 - high：大规格。 - xlarge：超大规格。 - 2xlarge：极大规格。
+        /// **参数解释**：  DRS任务实例规格编码，决定迁移实例的计算资源大小，测试连接之后修改调用时必填。  **约束限制**：  - 测试连接之后修改调用时必填。 - 具体某种场景支持的取值可以通过查询可用的Node规格获取。  **取值范围**：  - micro：极小规格 - small：小规格 - medium：中规格 - high：大规格 - xlarge：超大规格 - 2xlarge：极大规格  **默认取值**：  high
         /// </summary>
-        /// <value>node规格类型，测试连接之后修改调用时必填。取值： - micro：极小规格。 - small：小规格。 - medium：中规格。 - high：大规格。 - xlarge：超大规格。 - 2xlarge：极大规格。</value>
+        /// <value>**参数解释**：  DRS任务实例规格编码，决定迁移实例的计算资源大小，测试连接之后修改调用时必填。  **约束限制**：  - 测试连接之后修改调用时必填。 - 具体某种场景支持的取值可以通过查询可用的Node规格获取。  **取值范围**：  - micro：极小规格 - small：小规格 - medium：中规格 - high：大规格 - xlarge：超大规格 - 2xlarge：极大规格  **默认取值**：  high</value>
         [JsonConverter(typeof(EnumClassConverter<NodeTypeEnum>))]
         public class NodeTypeEnum
         {
@@ -276,9 +276,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         }
 
         /// <summary>
-        /// 引擎类型，测试连接之后修改调用时必填。mysql：迁移，同步使用。mongodb：迁移使用。cloudDataGuard-mysql：灾备使用
+        /// **参数解释**：  DRS任务引擎类型，测试连接之后修改调用时必填。  **约束限制**：  - 测试连接之后修改调用时必填。 - 详细取值可参考引擎类型说明。  **取值范围**：  - mysql：MySQL到MySQL迁移，MySQL到MySQL同步 - mongodb：MongoDB到DDS迁移与同步 - cloudDataGuard-mysql：MySQL到MySQL灾备 - gaussdbv5：GaussDB同步 - mysql-to-kafka：MySQL到Kafka同步 - taurus-to-kafka：TaurusDB到Kafka同步 - gaussdbv5ha-to-kafka：GaussDB集中式版到Kafka同步 - postgresql：PostgreSQL到PostgreSQL同步 - oracle-to-gaussdbv5：Oracle-GaussDB分布式版 - oracle-to-gaussdbv5ha：Oracle-GaussDB集中式版 - gaussdbv5-to-oracle：GaussDB分布式版-Oracle - gaussdbv5ha-to-oracle：GaussDB集中式版-Oracle - gaussdbv5-to-kafka：GaussDB分布式版-Kafka  **默认取值**：  不涉及
         /// </summary>
-        /// <value>引擎类型，测试连接之后修改调用时必填。mysql：迁移，同步使用。mongodb：迁移使用。cloudDataGuard-mysql：灾备使用</value>
+        /// <value>**参数解释**：  DRS任务引擎类型，测试连接之后修改调用时必填。  **约束限制**：  - 测试连接之后修改调用时必填。 - 详细取值可参考引擎类型说明。  **取值范围**：  - mysql：MySQL到MySQL迁移，MySQL到MySQL同步 - mongodb：MongoDB到DDS迁移与同步 - cloudDataGuard-mysql：MySQL到MySQL灾备 - gaussdbv5：GaussDB同步 - mysql-to-kafka：MySQL到Kafka同步 - taurus-to-kafka：TaurusDB到Kafka同步 - gaussdbv5ha-to-kafka：GaussDB集中式版到Kafka同步 - postgresql：PostgreSQL到PostgreSQL同步 - oracle-to-gaussdbv5：Oracle-GaussDB分布式版 - oracle-to-gaussdbv5ha：Oracle-GaussDB集中式版 - gaussdbv5-to-oracle：GaussDB分布式版-Oracle - gaussdbv5ha-to-oracle：GaussDB集中式版-Oracle - gaussdbv5-to-kafka：GaussDB分布式版-Kafka  **默认取值**：  不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<EngineTypeEnum>))]
         public class EngineTypeEnum
         {
@@ -427,9 +427,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         }
 
         /// <summary>
-        /// 网络类型，测试连接之后修改调用时必填。
+        /// **参数解释**：  任务使用的网络类型，测试连接之后调用必填。  **约束限制**：  - 测试连接之后调用必填。  **取值范围**：  - vpn：虚拟专用网络 - vpc：虚拟私有云 - eip：弹性公网IP  **默认取值**：  不涉及
         /// </summary>
-        /// <value>网络类型，测试连接之后修改调用时必填。</value>
+        /// <value>**参数解释**：  任务使用的网络类型，测试连接之后调用必填。  **约束限制**：  - 测试连接之后调用必填。  **取值范围**：  - vpn：虚拟专用网络 - vpc：虚拟私有云 - eip：弹性公网IP  **默认取值**：  不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<NetTypeEnum>))]
         public class NetTypeEnum
         {
@@ -548,9 +548,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         }
 
         /// <summary>
-        /// 迁移方向,up 入云 灾备场景时对应本云为备,down 出云 灾备场景时对应本云为主,non-dbs 自建
+        /// **参数解释**：  任务的迁移方向，测试连接之后调用必填。  **约束限制**：  - 测试连接之后调用必填。  **取值范围**：  - up：入云，灾备场景时对应本云为备 - down：出云，灾备场景时对应本云为主 - non-dbs：自建  **默认取值**：  不涉及
         /// </summary>
-        /// <value>迁移方向,up 入云 灾备场景时对应本云为备,down 出云 灾备场景时对应本云为主,non-dbs 自建</value>
+        /// <value>**参数解释**：  任务的迁移方向，测试连接之后调用必填。  **约束限制**：  - 测试连接之后调用必填。  **取值范围**：  - up：入云，灾备场景时对应本云为备 - down：出云，灾备场景时对应本云为主 - non-dbs：自建  **默认取值**：  不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<JobDirectionEnum>))]
         public class JobDirectionEnum
         {
@@ -669,9 +669,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         }
 
         /// <summary>
-        /// 迁移类型，migration-实时迁移,sync-实时同步,cloudDataGuard-实时灾备
+        /// **参数解释**：  迁移任务的业务场景类型。  **约束限制**：  不涉及。  **取值范围**：  - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备  **默认取值**：  不涉及
         /// </summary>
-        /// <value>迁移类型，migration-实时迁移,sync-实时同步,cloudDataGuard-实时灾备</value>
+        /// <value>**参数解释**：  迁移任务的业务场景类型。  **约束限制**：  不涉及。  **取值范围**：  - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备  **默认取值**：  不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<DbUseTypeEnum>))]
         public class DbUseTypeEnum
         {
@@ -791,19 +791,19 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
 
 
         /// <summary>
-        /// 任务id
+        /// **参数解释**：  迁移任务ID，用于唯一标识一个数据复制任务，在修改任务时作为任务的识别凭证。  **约束限制**：  不涉及。  **取值范围**：  UUID格式字符串。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }
 
         /// <summary>
-        /// 任务描述，修改任务描述时必填。
+        /// **参数解释**：  任务描述，用于补充说明任务的用途或备注信息。  **约束限制**：  - 修改任务描述时必填。 - 长度为0-256个字符。 - 不能包含!&lt;&gt;&amp;&#39;\&quot;特殊字符。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 任务名称，修改任务名称时必填
+        /// **参数解释**：  任务名称，用于标识和区分不同的数据复制任务。  **约束限制**：  - 需要修改任务名称时填写。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
@@ -815,7 +815,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         public AlarmNotifyInfo AlarmNotify { get; set; }
 
         /// <summary>
-        /// 任务模式，FULL_TRANS：全量；FULL_INCR_TRANS：全量+增量；INCR_TRANS：增量。
+        /// **参数解释**：  任务迁移模式，指定数据复制任务的执行方式。  **约束限制**：  - 目前仅支持MySQL到TaurusDB同步任务在配置中或者增量中时修改。  **取值范围**：  - FULL_TRANS：全量迁移，仅迁移历史数据 - FULL_INCR_TRANS：全量+增量迁移，先迁移历史数据再持续同步增量 - INCR_TRANS：增量迁移，仅同步数据变更  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("task_type", NullValueHandling = NullValueHandling.Ignore)]
         public TaskTypeEnum TaskType { get; set; }
@@ -832,62 +832,62 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         public Endpoint TargetEndpoint { get; set; }
 
         /// <summary>
-        /// node规格类型，测试连接之后修改调用时必填。取值： - micro：极小规格。 - small：小规格。 - medium：中规格。 - high：大规格。 - xlarge：超大规格。 - 2xlarge：极大规格。
+        /// **参数解释**：  DRS任务实例规格编码，决定迁移实例的计算资源大小，测试连接之后修改调用时必填。  **约束限制**：  - 测试连接之后修改调用时必填。 - 具体某种场景支持的取值可以通过查询可用的Node规格获取。  **取值范围**：  - micro：极小规格 - small：小规格 - medium：中规格 - high：大规格 - xlarge：超大规格 - 2xlarge：极大规格  **默认取值**：  high
         /// </summary>
         [JsonProperty("node_type", NullValueHandling = NullValueHandling.Ignore)]
         public NodeTypeEnum NodeType { get; set; }
         /// <summary>
-        /// 引擎类型，测试连接之后修改调用时必填。mysql：迁移，同步使用。mongodb：迁移使用。cloudDataGuard-mysql：灾备使用
+        /// **参数解释**：  DRS任务引擎类型，测试连接之后修改调用时必填。  **约束限制**：  - 测试连接之后修改调用时必填。 - 详细取值可参考引擎类型说明。  **取值范围**：  - mysql：MySQL到MySQL迁移，MySQL到MySQL同步 - mongodb：MongoDB到DDS迁移与同步 - cloudDataGuard-mysql：MySQL到MySQL灾备 - gaussdbv5：GaussDB同步 - mysql-to-kafka：MySQL到Kafka同步 - taurus-to-kafka：TaurusDB到Kafka同步 - gaussdbv5ha-to-kafka：GaussDB集中式版到Kafka同步 - postgresql：PostgreSQL到PostgreSQL同步 - oracle-to-gaussdbv5：Oracle-GaussDB分布式版 - oracle-to-gaussdbv5ha：Oracle-GaussDB集中式版 - gaussdbv5-to-oracle：GaussDB分布式版-Oracle - gaussdbv5ha-to-oracle：GaussDB集中式版-Oracle - gaussdbv5-to-kafka：GaussDB分布式版-Kafka  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("engine_type", NullValueHandling = NullValueHandling.Ignore)]
         public EngineTypeEnum EngineType { get; set; }
         /// <summary>
-        /// 网络类型，测试连接之后修改调用时必填。
+        /// **参数解释**：  任务使用的网络类型，测试连接之后调用必填。  **约束限制**：  - 测试连接之后调用必填。  **取值范围**：  - vpn：虚拟专用网络 - vpc：虚拟私有云 - eip：弹性公网IP  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("net_type", NullValueHandling = NullValueHandling.Ignore)]
         public NetTypeEnum NetType { get; set; }
         /// <summary>
-        /// 保存数据库信息，测试连接之后修改调用时必填为true。
+        /// **参数解释**：  是否保存数据库信息，测试连接之后调用必填。  **约束限制**：  - 测试连接之后调用必填。  **取值范围**：  - true：保存数据库信息 - false：不保存数据库信息  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("store_db_info", NullValueHandling = NullValueHandling.Ignore)]
         public bool? StoreDbInfo { get; set; }
 
         /// <summary>
-        /// 是否为重建任务。
+        /// **参数解释**：  是否为重建任务。  **约束限制**：  不涉及。  **取值范围**：  - true：重建任务 - false：非重建任务  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("is_recreate", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsRecreate { get; set; }
 
         /// <summary>
-        /// 迁移方向,up 入云 灾备场景时对应本云为备,down 出云 灾备场景时对应本云为主,non-dbs 自建
+        /// **参数解释**：  任务的迁移方向，测试连接之后调用必填。  **约束限制**：  - 测试连接之后调用必填。  **取值范围**：  - up：入云，灾备场景时对应本云为备 - down：出云，灾备场景时对应本云为主 - non-dbs：自建  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("job_direction", NullValueHandling = NullValueHandling.Ignore)]
         public JobDirectionEnum JobDirection { get; set; }
         /// <summary>
-        /// 目标实例是否限制为只读。
+        /// **参数解释**：  指定目标数据库实例在迁移过程中是否限制为只读状态。  **约束限制**：  不涉及。  **取值范围**：  - true：目标实例限制为只读 - false：目标实例不限制为只读  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("is_target_readonly", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsTargetReadonly { get; set; }
 
         /// <summary>
-        /// 所有Definer是否迁移到该用户下，MySQL数据库支持该设置，测试连接之后修改调用时必填。 - true：迁移后，所有源数据库对象的Definer都会迁移至该用户下，其他用户需要授权后才具有数据库对象权限 - false：迁移后，将保持源数据库对象Definer定义不变，选择此选项，需要配合下一步用户权限迁移功能，将源数据库的用户全部迁移，这样才能保持源数据库的权限体系完全不变。
+        /// **参数解释**：  所有Definer是否迁移到该用户下，MySQL数据库支持该设置，测试连接之后修改调用时必填。  **约束限制**：  - 测试连接之后修改调用时必填。  **取值范围**：  - true：迁移后，所有源数据库对象的Definer都会迁移至该用户下，其他用户需要授权后才具有数据库对象权限 - false：迁移后，将保持源数据库对象Definer定义不变，选择此选项，需要配合下一步用户权限迁移功能，将源数据库的用户全部迁移，这样才能保持源数据库的权限体系完全不变  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("replace_definer", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ReplaceDefiner { get; set; }
 
         /// <summary>
-        /// 标签信息
+        /// **参数解释**：  标签信息，用于给任务添加标识以便分类管理，详情请参见ResourceTag对象定义。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<ResourceTag> Tags { get; set; }
 
         /// <summary>
-        /// 迁移类型，migration-实时迁移,sync-实时同步,cloudDataGuard-实时灾备
+        /// **参数解释**：  迁移任务的业务场景类型。  **约束限制**：  不涉及。  **取值范围**：  - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("db_use_type", NullValueHandling = NullValueHandling.Ignore)]
         public DbUseTypeEnum DbUseType { get; set; }
         /// <summary>
-        /// 产品ID。
+        /// **参数解释**：  产品ID，用于标识包周期任务的产品信息。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("product_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductId { get; set; }

@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
     {
 
         /// <summary>
-        /// 总数
+        /// **参数解释**：  批量对象选择操作的任务总数，表示本次请求中处理的对象选择任务总数量。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("all_counts", NullValueHandling = NullValueHandling.Ignore)]
         public long? AllCounts { get; set; }
 
         /// <summary>
-        /// 批量对象选择响应列表
+        /// **参数解释**：  批量对象选择操作的响应列表，详情请参见DatabaseObjectResp对象定义。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("results", NullValueHandling = NullValueHandling.Ignore)]
         public List<DatabaseObjectResp> Results { get; set; }

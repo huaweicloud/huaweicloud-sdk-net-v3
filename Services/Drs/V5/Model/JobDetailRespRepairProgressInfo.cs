@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Drs.V5.Model
 {
     /// <summary>
-    /// 修复进度明细。
+    /// **参数解释**：  修复进度明细。  **约束限制**：  不涉及。  **取值范围**：  不涉及  **默认取值**：  不涉及
     /// </summary>
     public class JobDetailRespRepairProgressInfo 
     {

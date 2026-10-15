@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         }
 
         /// <summary>
-        /// 导入的结果类型。取值： - detail：获取最新导入的文件与校验结果，上传后的文件若存在错误，会同时将错误原因标记在文件内。 - synchronized：获取已同步的（已下发的）对象文件结果。 - change: 获取新增和删除的对象结果（当再编辑时使用）
+        /// 导入的结果类型。取值： - detail：获取最新导入的文件与校验结果，上传后的文件若存在错误，会同时将错误原因标记在文件内。 - synchronized：获取已同步的（已下发的）对象文件结果。 - change: 获取新增和删除的对象结果（当再编辑时使用） - compare: 获取已导入的对比键文件结果。 - compare_key_detail: 获取已导入的对比键校验结果，上传后的文件若存在错误，会同时将错误原因标记在文件内。
         /// </summary>
-        /// <value>导入的结果类型。取值： - detail：获取最新导入的文件与校验结果，上传后的文件若存在错误，会同时将错误原因标记在文件内。 - synchronized：获取已同步的（已下发的）对象文件结果。 - change: 获取新增和删除的对象结果（当再编辑时使用）</value>
+        /// <value>导入的结果类型。取值： - detail：获取最新导入的文件与校验结果，上传后的文件若存在错误，会同时将错误原因标记在文件内。 - synchronized：获取已同步的（已下发的）对象文件结果。 - change: 获取新增和删除的对象结果（当再编辑时使用） - compare: 获取已导入的对比键文件结果。 - compare_key_detail: 获取已导入的对比键校验结果，上传后的文件若存在错误，会同时将错误原因标记在文件内。</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -152,12 +152,24 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             /// </summary>
             public static readonly TypeEnum CHANGE = new TypeEnum("change");
 
+            /// <summary>
+            /// Enum COMPARE for value: compare
+            /// </summary>
+            public static readonly TypeEnum COMPARE = new TypeEnum("compare");
+
+            /// <summary>
+            /// Enum COMPARE_KEY_DETAIL for value: compare_key_detail
+            /// </summary>
+            public static readonly TypeEnum COMPARE_KEY_DETAIL = new TypeEnum("compare_key_detail");
+
             private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
                 { "detail", DETAIL },
                 { "synchronized", SYNCHRONIZED },
                 { "change", CHANGE },
+                { "compare", COMPARE },
+                { "compare_key_detail", COMPARE_KEY_DETAIL },
             };
 
             private string _value;
@@ -266,7 +278,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
         public XLanguageEnum XLanguage { get; set; }
         /// <summary>
-        /// 导入的结果类型。取值： - detail：获取最新导入的文件与校验结果，上传后的文件若存在错误，会同时将错误原因标记在文件内。 - synchronized：获取已同步的（已下发的）对象文件结果。 - change: 获取新增和删除的对象结果（当再编辑时使用）
+        /// 导入的结果类型。取值： - detail：获取最新导入的文件与校验结果，上传后的文件若存在错误，会同时将错误原因标记在文件内。 - synchronized：获取已同步的（已下发的）对象文件结果。 - change: 获取新增和删除的对象结果（当再编辑时使用） - compare: 获取已导入的对比键文件结果。 - compare_key_detail: 获取已导入的对比键校验结果，上传后的文件若存在错误，会同时将错误原因标记在文件内。
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]

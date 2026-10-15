@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
     public class BatchUpdateJobRequest 
     {
         /// <summary>
-        /// 请求语言类型
+        /// **参数解释**：  请求语言类型。  **约束限制**：  不涉及。  **取值范围**：  - en-us：英文 - zh-cn：中文  **默认取值**：  en-us
         /// </summary>
-        /// <value>请求语言类型</value>
+        /// <value>**参数解释**：  请求语言类型。  **约束限制**：  不涉及。  **取值范围**：  - en-us：英文 - zh-cn：中文  **默认取值**：  en-us</value>
         [JsonConverter(typeof(EnumClassConverter<XLanguageEnum>))]
         public class XLanguageEnum
         {
@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
 
 
         /// <summary>
-        /// 请求语言类型
+        /// **参数解释**：  请求语言类型。  **约束限制**：  不涉及。  **取值范围**：  - en-us：英文 - zh-cn：中文  **默认取值**：  en-us
         /// </summary>
         [SDKProperty("X-Language", IsHeader = true)]
         [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]

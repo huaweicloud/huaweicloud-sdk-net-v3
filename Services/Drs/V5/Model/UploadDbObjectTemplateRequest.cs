@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         }
 
         /// <summary>
-        /// 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级 - partition：partition分区级导入
+        /// 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级 - partition：partition分区级导入 - compare_key：对比场景下指定分片键导入
         /// </summary>
-        /// <value>文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级 - partition：partition分区级导入</value>
+        /// <value>文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级 - partition：partition分区级导入 - compare_key：对比场景下指定分片键导入</value>
         [JsonConverter(typeof(EnumClassConverter<FileImportDbLevelEnum>))]
         public class FileImportDbLevelEnum
         {
@@ -157,6 +157,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             /// </summary>
             public static readonly FileImportDbLevelEnum PARTITION = new FileImportDbLevelEnum("partition");
 
+            /// <summary>
+            /// Enum COMPARE_KEY for value: compare_key
+            /// </summary>
+            public static readonly FileImportDbLevelEnum COMPARE_KEY = new FileImportDbLevelEnum("compare_key");
+
             private static readonly Dictionary<string, FileImportDbLevelEnum> StaticFields =
             new Dictionary<string, FileImportDbLevelEnum>()
             {
@@ -164,6 +169,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 { "table", TABLE },
                 { "column", COLUMN },
                 { "partition", PARTITION },
+                { "compare_key", COMPARE_KEY },
             };
 
             private string _value;
@@ -272,7 +278,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
         public XLanguageEnum XLanguage { get; set; }
         /// <summary>
-        /// 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级 - partition：partition分区级导入
+        /// 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级 - partition：partition分区级导入 - compare_key：对比场景下指定分片键导入
         /// </summary>
         [SDKProperty("file_import_db_level", IsQuery = true)]
         [JsonProperty("file_import_db_level", NullValueHandling = NullValueHandling.Ignore)]

@@ -64,6 +64,12 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         [JsonProperty("compare_result", NullValueHandling = NullValueHandling.Ignore)]
         public List<ObjectsCompareOverviewInfo> CompareResult { get; set; }
 
+        /// <summary>
+        /// 灾备数据库信息。
+        /// </summary>
+        [JsonProperty("database_info", NullValueHandling = NullValueHandling.Ignore)]
+        public Object DatabaseInfo { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +87,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
             sb.Append("  compareJobId: ").Append(CompareJobId).Append("\n");
             sb.Append("  errorMsg: ").Append(ErrorMsg).Append("\n");
             sb.Append("  compareResult: ").Append(CompareResult).Append("\n");
+            sb.Append("  databaseInfo: ").Append(DatabaseInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +114,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
             if (this.CompareJobId != input.CompareJobId || (this.CompareJobId != null && !this.CompareJobId.Equals(input.CompareJobId))) return false;
             if (this.ErrorMsg != input.ErrorMsg || (this.ErrorMsg != null && !this.ErrorMsg.Equals(input.ErrorMsg))) return false;
             if (this.CompareResult != input.CompareResult || (this.CompareResult != null && input.CompareResult != null && !this.CompareResult.SequenceEqual(input.CompareResult))) return false;
+            if (this.DatabaseInfo != input.DatabaseInfo || (this.DatabaseInfo != null && !this.DatabaseInfo.Equals(input.DatabaseInfo))) return false;
 
             return true;
         }
@@ -127,6 +135,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
                 if (this.CompareJobId != null) hashCode = hashCode * 59 + this.CompareJobId.GetHashCode();
                 if (this.ErrorMsg != null) hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
                 if (this.CompareResult != null) hashCode = hashCode * 59 + this.CompareResult.GetHashCode();
+                if (this.DatabaseInfo != null) hashCode = hashCode * 59 + this.DatabaseInfo.GetHashCode();
                 return hashCode;
             }
         }

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     public class JobBaseInfo 
     {
         /// <summary>
-        /// 任务场景。取值： - migration：实时迁移。 - sync：实时同步。 - cloudDataGuard：实时灾备。
+        /// **参数解释**：  DRS任务场景类型，用于区分不同的数据复制场景。  **约束限制**：  不涉及。  **取值范围**：  - migration：实时迁移 - sync：实时同步  **默认取值**：  不涉及
         /// </summary>
-        /// <value>任务场景。取值： - migration：实时迁移。 - sync：实时同步。 - cloudDataGuard：实时灾备。</value>
+        /// <value>**参数解释**：  DRS任务场景类型，用于区分不同的数据复制场景。  **约束限制**：  不涉及。  **取值范围**：  - migration：实时迁移 - sync：实时同步  **默认取值**：  不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<JobTypeEnum>))]
         public class JobTypeEnum
         {
@@ -137,9 +137,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         }
 
         /// <summary>
-        /// 引擎类型。取值： - oracle-to-gaussdbv5：Oracle同步到GaussDB分布式版，实时同步场景使用。 - redis-to-gaussredis：Redis同步到GeminiDB Redis，实时迁移场景使用。 - rediscluster-to-gaussredis：Redis集群同步到GeminiDB Redis，实时迁移场景使用。 - mysql-to-mysql：MySQL同步到MySQL，实时同步场景使用。
+        /// **参数解释**：  DRS任务引擎类型。  **约束限制**：  不涉及。  **取值范围**：  - oracle-to-gaussdbv5：Oracle同步到GaussDB分布式版，实时同步场景使用 - redis-to-gaussredis：Redis同步到GeminiDB Redis，实时迁移场景使用 - rediscluster-to-gaussredis：Redis集群同步到GeminiDB Redis，实时迁移场景使用 - mysql-to-mysql：MySQL同步到MySQL，实时同步场景使用  **默认取值**：  不涉及
         /// </summary>
-        /// <value>引擎类型。取值： - oracle-to-gaussdbv5：Oracle同步到GaussDB分布式版，实时同步场景使用。 - redis-to-gaussredis：Redis同步到GeminiDB Redis，实时迁移场景使用。 - rediscluster-to-gaussredis：Redis集群同步到GeminiDB Redis，实时迁移场景使用。 - mysql-to-mysql：MySQL同步到MySQL，实时同步场景使用。</value>
+        /// <value>**参数解释**：  DRS任务引擎类型。  **约束限制**：  不涉及。  **取值范围**：  - oracle-to-gaussdbv5：Oracle同步到GaussDB分布式版，实时同步场景使用 - redis-to-gaussredis：Redis同步到GeminiDB Redis，实时迁移场景使用 - rediscluster-to-gaussredis：Redis集群同步到GeminiDB Redis，实时迁移场景使用 - mysql-to-mysql：MySQL同步到MySQL，实时同步场景使用  **默认取值**：  不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<EngineTypeEnum>))]
         public class EngineTypeEnum
         {
@@ -264,9 +264,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         }
 
         /// <summary>
-        /// 迁移方向。取值： - up：入云 ，灾备场景时对应本云为备。 - down：出云，灾备场景时对应本云为主。 - non-dbs：自建。
+        /// **参数解释**：  任务的迁移方向。  **约束限制**：  不涉及。  **取值范围**：  - up：入云，灾备场景时对应本云为备 - down：出云，灾备场景时对应本云为主 - non-dbs：自建  **默认取值**：  不涉及
         /// </summary>
-        /// <value>迁移方向。取值： - up：入云 ，灾备场景时对应本云为备。 - down：出云，灾备场景时对应本云为主。 - non-dbs：自建。</value>
+        /// <value>**参数解释**：  任务的迁移方向。  **约束限制**：  不涉及。  **取值范围**：  - up：入云，灾备场景时对应本云为备 - down：出云，灾备场景时对应本云为主 - non-dbs：自建  **默认取值**：  不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<JobDirectionEnum>))]
         public class JobDirectionEnum
         {
@@ -385,9 +385,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         }
 
         /// <summary>
-        /// 迁移模式。取值： - FULL_TRANS ：全量。 - FULL_INCR_TRANS：全量+增量。 - INCR_TRANS：增量。
+        /// **参数解释**：  任务迁移模式，指定数据复制任务的执行方式。  **约束限制**：  不涉及。  **取值范围**：  - FULL_TRANS：全量迁移，仅迁移历史数据 - FULL_INCR_TRANS：全量+增量迁移，先迁移历史数据再持续同步增量 - INCR_TRANS：增量迁移，仅同步数据变更  **默认取值**：  不涉及
         /// </summary>
-        /// <value>迁移模式。取值： - FULL_TRANS ：全量。 - FULL_INCR_TRANS：全量+增量。 - INCR_TRANS：增量。</value>
+        /// <value>**参数解释**：  任务迁移模式，指定数据复制任务的执行方式。  **约束限制**：  不涉及。  **取值范围**：  - FULL_TRANS：全量迁移，仅迁移历史数据 - FULL_INCR_TRANS：全量+增量迁移，先迁移历史数据再持续同步增量 - INCR_TRANS：增量迁移，仅同步数据变更  **默认取值**：  不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<TaskTypeEnum>))]
         public class TaskTypeEnum
         {
@@ -506,9 +506,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         }
 
         /// <summary>
-        /// 网络类型。取值： - eip：公网网络。 - vpc：VPC网络，灾备场景不支持选择VPC网络。 - vpn：VPN、专线网络。
+        /// **参数解释**：  任务使用的网络类型。  **约束限制**：  - 灾备场景不支持选择VPC网络。  **取值范围**：  - eip：公网网络 - vpc：VPC网络 - vpn：VPN、专线网络  **默认取值**：  不涉及
         /// </summary>
-        /// <value>网络类型。取值： - eip：公网网络。 - vpc：VPC网络，灾备场景不支持选择VPC网络。 - vpn：VPN、专线网络。</value>
+        /// <value>**参数解释**：  任务使用的网络类型。  **约束限制**：  - 灾备场景不支持选择VPC网络。  **取值范围**：  - eip：公网网络 - vpc：VPC网络 - vpn：VPN、专线网络  **默认取值**：  不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<NetTypeEnum>))]
         public class NetTypeEnum
         {
@@ -627,9 +627,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         }
 
         /// <summary>
-        /// 计费模式，默认按需。取值： - period：包周期。 - on_demand：按需。
+        /// **参数解释**：  任务的计费模式，指定数据复制任务的付费方式。  **约束限制**：  不涉及。  **取值范围**：  - period：包周期 - on_demand：按需  **默认取值**：  on_demand
         /// </summary>
-        /// <value>计费模式，默认按需。取值： - period：包周期。 - on_demand：按需。</value>
+        /// <value>**参数解释**：  任务的计费模式，指定数据复制任务的付费方式。  **约束限制**：  不涉及。  **取值范围**：  - period：包周期 - on_demand：按需  **默认取值**：  on_demand</value>
         [JsonConverter(typeof(EnumClassConverter<ChargingModeEnum>))]
         public class ChargingModeEnum
         {
@@ -743,61 +743,61 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
 
 
         /// <summary>
-        /// 任务名称。 约束：任务名称在4位到50位之间，不区分大小写，可以包含字母、数字、中划线或下划线，不能包括其他特殊字符。 - 最小长度：4 - 最大长度：50
+        /// **参数解释**：  任务名称，用于标识和区分不同的数据复制任务。  **约束限制**：  - 长度在4到50位之间，不区分大小写。 - 可以包含字母、数字、中划线或下划线，不能包括其他特殊字符。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 任务场景。取值： - migration：实时迁移。 - sync：实时同步。 - cloudDataGuard：实时灾备。
+        /// **参数解释**：  DRS任务场景类型，用于区分不同的数据复制场景。  **约束限制**：  不涉及。  **取值范围**：  - migration：实时迁移 - sync：实时同步  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("job_type", NullValueHandling = NullValueHandling.Ignore)]
         public JobTypeEnum JobType { get; set; }
         /// <summary>
-        /// 灾备类型是否双主灾备。说明： - job_type 是cloudDataGuard时，必填，灾备类型是双主灾备时，multi_write取值true, 否则为false。 - job_type 是其他类型时，multi_write是非必选参数。
+        /// **参数解释**：  灾备类型是否双主灾备，指定灾备场景下是否启用双向写入功能。  **约束限制**：  - job_type为cloudDataGuard时必填。  **取值范围**：  - true：双主灾备 - false：非双主灾备  **默认取值**：  false
         /// </summary>
         [JsonProperty("multi_write", NullValueHandling = NullValueHandling.Ignore)]
         public bool? MultiWrite { get; set; }
 
         /// <summary>
-        /// 引擎类型。取值： - oracle-to-gaussdbv5：Oracle同步到GaussDB分布式版，实时同步场景使用。 - redis-to-gaussredis：Redis同步到GeminiDB Redis，实时迁移场景使用。 - rediscluster-to-gaussredis：Redis集群同步到GeminiDB Redis，实时迁移场景使用。 - mysql-to-mysql：MySQL同步到MySQL，实时同步场景使用。
+        /// **参数解释**：  DRS任务引擎类型。  **约束限制**：  不涉及。  **取值范围**：  - oracle-to-gaussdbv5：Oracle同步到GaussDB分布式版，实时同步场景使用 - redis-to-gaussredis：Redis同步到GeminiDB Redis，实时迁移场景使用 - rediscluster-to-gaussredis：Redis集群同步到GeminiDB Redis，实时迁移场景使用 - mysql-to-mysql：MySQL同步到MySQL，实时同步场景使用  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("engine_type", NullValueHandling = NullValueHandling.Ignore)]
         public EngineTypeEnum EngineType { get; set; }
         /// <summary>
-        /// 迁移方向。取值： - up：入云 ，灾备场景时对应本云为备。 - down：出云，灾备场景时对应本云为主。 - non-dbs：自建。
+        /// **参数解释**：  任务的迁移方向。  **约束限制**：  不涉及。  **取值范围**：  - up：入云，灾备场景时对应本云为备 - down：出云，灾备场景时对应本云为主 - non-dbs：自建  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("job_direction", NullValueHandling = NullValueHandling.Ignore)]
         public JobDirectionEnum JobDirection { get; set; }
         /// <summary>
-        /// 迁移模式。取值： - FULL_TRANS ：全量。 - FULL_INCR_TRANS：全量+增量。 - INCR_TRANS：增量。
+        /// **参数解释**：  任务迁移模式，指定数据复制任务的执行方式。  **约束限制**：  不涉及。  **取值范围**：  - FULL_TRANS：全量迁移，仅迁移历史数据 - FULL_INCR_TRANS：全量+增量迁移，先迁移历史数据再持续同步增量 - INCR_TRANS：增量迁移，仅同步数据变更  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("task_type", NullValueHandling = NullValueHandling.Ignore)]
         public TaskTypeEnum TaskType { get; set; }
         /// <summary>
-        /// 网络类型。取值： - eip：公网网络。 - vpc：VPC网络，灾备场景不支持选择VPC网络。 - vpn：VPN、专线网络。
+        /// **参数解释**：  任务使用的网络类型。  **约束限制**：  - 灾备场景不支持选择VPC网络。  **取值范围**：  - eip：公网网络 - vpc：VPC网络 - vpn：VPN、专线网络  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("net_type", NullValueHandling = NullValueHandling.Ignore)]
         public NetTypeEnum NetType { get; set; }
         /// <summary>
-        /// 计费模式，默认按需。取值： - period：包周期。 - on_demand：按需。
+        /// **参数解释**：  任务的计费模式，指定数据复制任务的付费方式。  **约束限制**：  不涉及。  **取值范围**：  - period：包周期 - on_demand：按需  **默认取值**：  on_demand
         /// </summary>
         [JsonProperty("charging_mode", NullValueHandling = NullValueHandling.Ignore)]
         public ChargingModeEnum ChargingMode { get; set; }
         /// <summary>
-        /// 企业项目ID。 缺省值：\&quot;0\&quot;，表示\&quot;default\&quot;企业项目。
+        /// **参数解释**：  企业项目ID，用于按企业项目过滤查询结果。  **约束限制**：  - 不传值时设置为null，不能设置为空字符串。 - 当企业项目开关打开时，可以传值。  **取值范围**：  不涉及。  **默认取值**：  \&quot;0\&quot;，表示default企业项目
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 任务描述。 约束：任务描述不能超过256位，且不能包含!&lt;&gt;&amp;&#39;\&quot;\\特殊字符。
+        /// **参数解释**：  任务描述，用于对数据复制任务添加补充说明信息。  **约束限制**：  - 长度不能超过256位。 - 不能包含!&lt;&gt;&amp;&#39;\&quot;\\特殊字符。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 任务定时启动时间。
+        /// **参数解释**：  任务定时启动时间，设置后任务将在指定时间自动启动。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
         public string StartTime { get; set; }
@@ -809,13 +809,13 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public string ExpiredDays { get; set; }
 
         /// <summary>
-        /// 标签信息，最多添加10个标签。
+        /// **参数解释**：  标签信息，用于为数据复制任务添加标签以便分类管理。  **约束限制**：  - 最多添加10个标签。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<ResourceTag> Tags { get; set; }
 
         /// <summary>
-        /// 是否开启云数据库RDS for MySQL/MariaDB的binlog快速清理。
+        /// **参数解释**：  是否开启云数据库RDS for MySQL/MariaDB的binlog快速清理，开启后可自动清理已同步的binlog以释放磁盘空间。  **约束限制**：  - 仅MySQL/MariaDB引擎类型适用。  **取值范围**：  - true：开启binlog快速清理 - false：不开启binlog快速清理  **默认取值**：  false
         /// </summary>
         [JsonProperty("is_open_fast_clean", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsOpenFastClean { get; set; }

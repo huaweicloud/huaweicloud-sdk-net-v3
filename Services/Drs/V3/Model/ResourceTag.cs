@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
     {
 
         /// <summary>
-        /// 标签键，最大长度36，只能包含字母、数字、下划线、中划线和中文，需要修改标签时填写。
+        /// **参数解释**：  标签键。  **约束限制**：  - 最大长度36个字符。 - 只能包含字母、数字、下划线、中划线和中文。 - 需要修改标签时填写。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
         /// <summary>
-        /// 标签值，最大长度43，只能包含字母、数字、下划线、中划线和中文，需要修改标签时填写。
+        /// **参数解释**：  标签值。  **约束限制**：  - 最大长度43个字符。 - 只能包含字母、数字、下划线、中划线和中文。 - 需要修改标签时填写。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

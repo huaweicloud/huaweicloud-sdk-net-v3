@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
     public class PeriodOrderInfo 
     {
         /// <summary>
-        /// 订购周期类型。 取值范围： - 2：表示周期类型为月。 - 3：表示周期类型为年。
+        /// **参数解释**：  订购周期类型。  **约束限制**：  不涉及。  **取值范围**：  - 2：周期类型为月 - 3：周期类型为年  **默认取值**：  不涉及
         /// </summary>
-        /// <value>订购周期类型。 取值范围： - 2：表示周期类型为月。 - 3：表示周期类型为年。</value>
+        /// <value>**参数解释**：  订购周期类型。  **约束限制**：  不涉及。  **取值范围**：  - 2：周期类型为月 - 3：周期类型为年  **默认取值**：  不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<PeriodTypeEnum>))]
         public class PeriodTypeEnum
         {
@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         }
 
         /// <summary>
-        /// 是否自动续订。 取值范围： - 0：表示不自动续订。 - 1：表示自动续订。
+        /// **参数解释**：  是否自动续订。  **约束限制**：  不涉及。  **取值范围**：  - 0：不自动续订 - 1：自动续订  **默认取值**：  不涉及
         /// </summary>
-        /// <value>是否自动续订。 取值范围： - 0：表示不自动续订。 - 1：表示自动续订。</value>
+        /// <value>**参数解释**：  是否自动续订。  **约束限制**：  不涉及。  **取值范围**：  - 0：不自动续订 - 1：自动续订  **默认取值**：  不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<IsAutoRenewEnum>))]
         public class IsAutoRenewEnum
         {
@@ -247,18 +247,18 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
 
 
         /// <summary>
-        /// 订购周期类型。 取值范围： - 2：表示周期类型为月。 - 3：表示周期类型为年。
+        /// **参数解释**：  订购周期类型。  **约束限制**：  不涉及。  **取值范围**：  - 2：周期类型为月 - 3：周期类型为年  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("period_type", NullValueHandling = NullValueHandling.Ignore)]
         public PeriodTypeEnum PeriodType { get; set; }
         /// <summary>
-        /// 订购周期数。 取值范围： - period_type&#x3D;2（周期类型为月）时，取值为[1，9]。 - period_type&#x3D;3（周期类型为年）时，取值为[1，3]。
+        /// **参数解释**：  订购周期数。  **约束限制**：  不涉及。  **取值范围**：  - period_type为2（月）时，取值为1-9 - period_type为3（年）时，取值为1-3  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("period_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? PeriodNum { get; set; }
 
         /// <summary>
-        /// 是否自动续订。 取值范围： - 0：表示不自动续订。 - 1：表示自动续订。
+        /// **参数解释**：  是否自动续订。  **约束限制**：  不涉及。  **取值范围**：  - 0：不自动续订 - 1：自动续订  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("is_auto_renew", NullValueHandling = NullValueHandling.Ignore)]
         public IsAutoRenewEnum IsAutoRenew { get; set; }

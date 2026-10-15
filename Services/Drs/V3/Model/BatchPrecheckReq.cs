@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
     {
 
         /// <summary>
-        /// 批量预检查请求列表
+        /// **参数解释**：  批量预检查请求列表，详情请参见PreCheckInfo对象定义。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("jobs", NullValueHandling = NullValueHandling.Ignore)]
         public List<PreCheckInfo> Jobs { get; set; }

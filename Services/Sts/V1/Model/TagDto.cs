@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Sts.V1.Model
     {
 
         /// <summary>
-        /// **参数解释**： 标签键。  **约束限制**： 长度范围为[1,128]。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
+        /// **参数解释**： 标签键。  **约束限制**： 不涉及。  **取值范围**： 长度为1到128个字符。只允许大小写字母、数字、空格、\&quot;_\&quot;、\&quot;.\&quot;、\&quot;:\&quot;、\&quot;&#x3D;\&quot;、\&quot;+\&quot;、\&quot;-\&quot;、\&quot;@\&quot;、\&quot;/\&quot;，且不能以 \&quot;&amp;#95;sys&amp;#95;\&quot; 开头。  **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
         /// <summary>
-        /// **参数解释**： 标签值。  **约束限制**： 长度范围为[0,255]。  **取值范围**： 取值可以为空字符串，不可以为null。  **默认取值**： 不涉及。 
+        /// **参数解释**： 标签值。  **约束限制**： 不涉及。  **取值范围**： 长度为0到255个字符。只允许大小写字母、数字、空格、\&quot;_\&quot;、\&quot;.\&quot;、\&quot;:\&quot;、\&quot;/\&quot;、\&quot;&#x3D;\&quot;、\&quot;+\&quot;、\&quot;-\&quot;、\&quot;@\&quot;。取值可以为空字符串，不可以为null。  **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

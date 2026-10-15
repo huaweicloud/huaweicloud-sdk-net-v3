@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
     public class InstInfo 
     {
         /// <summary>
-        /// 引擎类型
+        /// **参数解释**：  DRS任务引擎类型。  **约束限制**：  不涉及。  **取值范围**：  - mysql：MySQL到MySQL迁移，MySQL到MySQL同步 - mongodb：MongoDB到DDS迁移与同步 - cloudDataGuard-mysql：MySQL到MySQL灾备 - gaussdbv5：GaussDB同步 - postgresql：PostgreSQL到PostgreSQL同步 - mysql-to-kafka：MySQL到Kafka同步 - taurus-to-kafka：TaurusDB到Kafka同步 - gaussdbv5ha-to-kafka：GaussDB集中式版到Kafka同步  **默认取值**：  不涉及
         /// </summary>
-        /// <value>引擎类型</value>
+        /// <value>**参数解释**：  DRS任务引擎类型。  **约束限制**：  不涉及。  **取值范围**：  - mysql：MySQL到MySQL迁移，MySQL到MySQL同步 - mongodb：MongoDB到DDS迁移与同步 - cloudDataGuard-mysql：MySQL到MySQL灾备 - gaussdbv5：GaussDB同步 - postgresql：PostgreSQL到PostgreSQL同步 - mysql-to-kafka：MySQL到Kafka同步 - taurus-to-kafka：TaurusDB到Kafka同步 - gaussdbv5ha-to-kafka：GaussDB集中式版到Kafka同步  **默认取值**：  不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<EngineTypeEnum>))]
         public class EngineTypeEnum
         {
@@ -167,9 +167,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         }
 
         /// <summary>
-        /// 实例类型 取值：common，high，ultrahigh
+        /// **参数解释**：  实例规格类型。  **约束限制**：  不涉及。  **取值范围**：  - common：中 - high：大 - ultrahigh：极大  **默认取值**：  不涉及
         /// </summary>
-        /// <value>实例类型 取值：common，high，ultrahigh</value>
+        /// <value>**参数解释**：  实例规格类型。  **约束限制**：  不涉及。  **取值范围**：  - common：中 - high：大 - ultrahigh：极大  **默认取值**：  不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<InstTypeEnum>))]
         public class InstTypeEnum
         {
@@ -276,9 +276,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         }
 
         /// <summary>
-        /// 迁移实例的状态
+        /// **参数解释**：  迁移实例的状态。  **约束限制**：  不涉及。  **取值范围**：  - active：运行中 - deleted：已删除  **默认取值**：  不涉及
         /// </summary>
-        /// <value>迁移实例的状态</value>
+        /// <value>**参数解释**：  迁移实例的状态。  **约束限制**：  不涉及。  **取值范围**：  - active：运行中 - deleted：已删除  **默认取值**：  不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -392,40 +392,40 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
 
 
         /// <summary>
-        /// 引擎类型
+        /// **参数解释**：  DRS任务引擎类型。  **约束限制**：  不涉及。  **取值范围**：  - mysql：MySQL到MySQL迁移，MySQL到MySQL同步 - mongodb：MongoDB到DDS迁移与同步 - cloudDataGuard-mysql：MySQL到MySQL灾备 - gaussdbv5：GaussDB同步 - postgresql：PostgreSQL到PostgreSQL同步 - mysql-to-kafka：MySQL到Kafka同步 - taurus-to-kafka：TaurusDB到Kafka同步 - gaussdbv5ha-to-kafka：GaussDB集中式版到Kafka同步  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("engine_type", NullValueHandling = NullValueHandling.Ignore)]
         public EngineTypeEnum EngineType { get; set; }
         /// <summary>
-        /// 实例类型 取值：common，high，ultrahigh
+        /// **参数解释**：  实例规格类型。  **约束限制**：  不涉及。  **取值范围**：  - common：中 - high：大 - ultrahigh：极大  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("inst_type", NullValueHandling = NullValueHandling.Ignore)]
         public InstTypeEnum InstType { get; set; }
         /// <summary>
-        /// 迁移实例所在的私有IP
+        /// **参数解释**：  迁移实例所在的私有IP地址。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("ip", NullValueHandling = NullValueHandling.Ignore)]
         public string Ip { get; set; }
 
         /// <summary>
-        /// 迁移实例所在的公网IP
+        /// **参数解释**：  迁移实例所在的公网IP地址。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("public_ip", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicIp { get; set; }
 
         /// <summary>
-        /// 迁移实例任务定时启动时间
+        /// **参数解释**：  迁移实例任务定时启动时间。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 迁移实例的状态
+        /// **参数解释**：  迁移实例的状态。  **约束限制**：  不涉及。  **取值范围**：  - active：运行中 - deleted：已删除  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
-        /// 迁移实例的磁盘大小
+        /// **参数解释**：  迁移实例的磁盘大小，单位为GB。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及
         /// </summary>
         [JsonProperty("volume_size", NullValueHandling = NullValueHandling.Ignore)]
         public int? VolumeSize { get; set; }

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
     public class DeleteScalingTagInfoRequest 
     {
         /// <summary>
-        /// 资源类型，枚举类：scaling_group_tag。scaling_group_tag表示资源类型为伸缩组。
+        /// 资源类型，枚举类：scaling_group_tag、scaling_configuration_tag。scaling_group_tag表示资源类型为伸缩组，scaling_configuration_tag表示资源类型为伸缩配置。
         /// </summary>
-        /// <value>资源类型，枚举类：scaling_group_tag。scaling_group_tag表示资源类型为伸缩组。</value>
+        /// <value>资源类型，枚举类：scaling_group_tag、scaling_configuration_tag。scaling_group_tag表示资源类型为伸缩组，scaling_configuration_tag表示资源类型为伸缩配置。</value>
         [JsonConverter(typeof(EnumClassConverter<ResourceTypeEnum>))]
         public class ResourceTypeEnum
         {
@@ -27,10 +27,16 @@ namespace HuaweiCloud.SDK.As.V1.Model
             /// </summary>
             public static readonly ResourceTypeEnum SCALING_GROUP_TAG = new ResourceTypeEnum("scaling_group_tag");
 
+            /// <summary>
+            /// Enum SCALING_CONFIGURATION_TAG for value: scaling_configuration_tag
+            /// </summary>
+            public static readonly ResourceTypeEnum SCALING_CONFIGURATION_TAG = new ResourceTypeEnum("scaling_configuration_tag");
+
             private static readonly Dictionary<string, ResourceTypeEnum> StaticFields =
             new Dictionary<string, ResourceTypeEnum>()
             {
                 { "scaling_group_tag", SCALING_GROUP_TAG },
+                { "scaling_configuration_tag", SCALING_CONFIGURATION_TAG },
             };
 
             private string _value;
@@ -126,7 +132,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
 
         /// <summary>
-        /// 资源类型，枚举类：scaling_group_tag。scaling_group_tag表示资源类型为伸缩组。
+        /// 资源类型，枚举类：scaling_group_tag、scaling_configuration_tag。scaling_group_tag表示资源类型为伸缩组，scaling_configuration_tag表示资源类型为伸缩配置。
         /// </summary>
         [SDKProperty("resource_type", IsPath = true)]
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]

@@ -1194,6 +1194,32 @@ namespace HuaweiCloud.SDK.Iam.V5
         }
         
         /// <summary>
+        /// 修改自定义身份策略描述
+        ///
+        /// 该接口可以用于修改自定义身份策略的描述字段。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdatePolicyV5Response> UpdatePolicyV5Async(UpdatePolicyV5Request updatePolicyV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updatePolicyV5Request.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePolicyV5Request);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdatePolicyV5Response>(response);
+        }
+
+        public AsyncInvoker<UpdatePolicyV5Response> UpdatePolicyV5AsyncInvoker(UpdatePolicyV5Request updatePolicyV5Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updatePolicyV5Request.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePolicyV5Request);
+            return new AsyncInvoker<UpdatePolicyV5Response>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdatePolicyV5Response>);
+        }
+        
+        /// <summary>
         /// 为委托或信任委托附加身份策略
         ///
         /// 该接口可以用于为指定委托或信任委托附加指定身份策略。

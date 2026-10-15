@@ -45,14 +45,14 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 开始时间，UTC时间，例如：2020-09-01T18:50:20Z
+        /// 开始时间，格式为毫秒级时间戳。
         /// </summary>
         [SDKProperty("begin_time", IsQuery = true)]
         [JsonProperty("begin_time", NullValueHandling = NullValueHandling.Ignore)]
         public string BeginTime { get; set; }
 
         /// <summary>
-        /// 结束时间，UTC时间，例如：2020-09-01T19:50:20Z
+        /// 结束时间，格式为毫秒级时间戳。
         /// </summary>
         [SDKProperty("end_time", IsQuery = true)]
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
