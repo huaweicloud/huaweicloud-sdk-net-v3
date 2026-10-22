@@ -47,6 +47,12 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public string PoolId { get; set; }
 
         /// <summary>
+        /// **参数解释**：训练作业选择的资源池名称。 **取值范围**：不涉及。
+        /// </summary>
+        [JsonProperty("pool_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string PoolName { get; set; }
+
+        /// <summary>
         /// **参数解释**：训练作业选择的资源池联邦ID。 **取值范围**：不涉及。
         /// </summary>
         [JsonProperty("pool_group_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -84,6 +90,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  flavorName: ").Append(FlavorName).Append("\n");
             sb.Append("  nodeCount: ").Append(NodeCount).Append("\n");
             sb.Append("  poolId: ").Append(PoolId).Append("\n");
+            sb.Append("  poolName: ").Append(PoolName).Append("\n");
             sb.Append("  poolGroupId: ").Append(PoolGroupId).Append("\n");
             sb.Append("  flavorDetail: ").Append(FlavorDetail).Append("\n");
             sb.Append("  mainContainerAllocatedResources: ").Append(MainContainerAllocatedResources).Append("\n");
@@ -111,6 +118,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.FlavorName != input.FlavorName || (this.FlavorName != null && !this.FlavorName.Equals(input.FlavorName))) return false;
             if (this.NodeCount != input.NodeCount || (this.NodeCount != null && !this.NodeCount.Equals(input.NodeCount))) return false;
             if (this.PoolId != input.PoolId || (this.PoolId != null && !this.PoolId.Equals(input.PoolId))) return false;
+            if (this.PoolName != input.PoolName || (this.PoolName != null && !this.PoolName.Equals(input.PoolName))) return false;
             if (this.PoolGroupId != input.PoolGroupId || (this.PoolGroupId != null && !this.PoolGroupId.Equals(input.PoolGroupId))) return false;
             if (this.FlavorDetail != input.FlavorDetail || (this.FlavorDetail != null && !this.FlavorDetail.Equals(input.FlavorDetail))) return false;
             if (this.MainContainerAllocatedResources != input.MainContainerAllocatedResources || (this.MainContainerAllocatedResources != null && !this.MainContainerAllocatedResources.Equals(input.MainContainerAllocatedResources))) return false;
@@ -132,6 +140,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 if (this.FlavorName != null) hashCode = hashCode * 59 + this.FlavorName.GetHashCode();
                 if (this.NodeCount != null) hashCode = hashCode * 59 + this.NodeCount.GetHashCode();
                 if (this.PoolId != null) hashCode = hashCode * 59 + this.PoolId.GetHashCode();
+                if (this.PoolName != null) hashCode = hashCode * 59 + this.PoolName.GetHashCode();
                 if (this.PoolGroupId != null) hashCode = hashCode * 59 + this.PoolGroupId.GetHashCode();
                 if (this.FlavorDetail != null) hashCode = hashCode * 59 + this.FlavorDetail.GetHashCode();
                 if (this.MainContainerAllocatedResources != null) hashCode = hashCode * 59 + this.MainContainerAllocatedResources.GetHashCode();

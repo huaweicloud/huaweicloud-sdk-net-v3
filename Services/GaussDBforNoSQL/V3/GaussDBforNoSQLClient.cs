@@ -904,6 +904,32 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 查询实例可搭建双活关系的候选实例
+        ///
+        /// 查询实例在目标Region可搭建双活关系的候选实例列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListBiactiveInstanceCandidatesResponse ListBiactiveInstanceCandidates(ListBiactiveInstanceCandidatesRequest listBiactiveInstanceCandidatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listBiactiveInstanceCandidatesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/biactive-instance-candidates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBiactiveInstanceCandidatesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListBiactiveInstanceCandidatesResponse>(response);
+        }
+
+        public SyncInvoker<ListBiactiveInstanceCandidatesResponse> ListBiactiveInstanceCandidatesInvoker(ListBiactiveInstanceCandidatesRequest listBiactiveInstanceCandidatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listBiactiveInstanceCandidatesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/biactive-instance-candidates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBiactiveInstanceCandidatesRequest);
+            return new SyncInvoker<ListBiactiveInstanceCandidatesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListBiactiveInstanceCandidatesResponse>);
+        }
+        
+        /// <summary>
         /// 查询GeminiDB(for Cassandra)数据库慢日志
         ///
         /// 查询GeminiDB(for Cassandra)数据库慢日志信息，支持日志关键字搜索。

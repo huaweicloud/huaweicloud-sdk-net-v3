@@ -29,16 +29,16 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public string Name { get; set; }
 
         /// <summary>
+        /// 参数解释： 服务部署名字。
+        /// </summary>
+        [JsonProperty("deployment_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string DeploymentName { get; set; }
+
+        /// <summary>
         /// 参数解释： 部署id（废弃字段）。 取值范围： 不涉及。
         /// </summary>
         [JsonProperty("infer_name", NullValueHandling = NullValueHandling.Ignore)]
         public string InferName { get; set; }
-
-        /// <summary>
-        /// **参数解释：** 创建时间，根据创建时的当前时间自动生成。 **取值范围：** 毫秒级时间戳，13位数字
-        /// </summary>
-        [JsonProperty("create_at", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? CreateAt { get; set; }
 
         /// <summary>
         /// 参数解释： 描述 取值范围： 不涉及。
@@ -59,58 +59,16 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public string Framework { get; set; }
 
         /// <summary>
-        /// **参数解释：** 服务优先级。 **约束限制：** 不涉及。 **取值范围：** [1, 3]。 **默认取值：** 不涉及。
-        /// </summary>
-        [JsonProperty("priority", NullValueHandling = NullValueHandling.Ignore)]
-        public string Priority { get; set; }
-
-        /// <summary>
-        /// **参数解释：** 凭证类型相关配置，用户可以在此处选择使用的凭证类型（dew，agency） **约束限制：** 不涉及。 **取值范围：** - [dew：DEW密钥。](tag:hws,hws_hk,fcs) - agency：临时委托凭证。 **默认取值：** 不涉及。
-        /// </summary>
-        [JsonProperty("secret_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string SecretType { get; set; }
-
-        /// <summary>
-        /// **参数解释：** 服务部署状态
-        /// </summary>
-        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public string Status { get; set; }
-
-        /// <summary>
-        /// **参数解释：** 服务实例数
-        /// </summary>
-        [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Count { get; set; }
-
-        /// <summary>
-        /// **参数解释：** 高可用开关，开启后不同实例的pod将尽量均匀分布到不同的节点上。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** true
-        /// </summary>
-        [JsonProperty("high_avail_switch", NullValueHandling = NullValueHandling.Ignore)]
-        public string HighAvailSwitch { get; set; }
-
-        /// <summary>
-        /// **参数解释：** 系统日志转储开关。 **约束限制：** 只有NPU资源池有，且逻辑池是没有的 **取值范围：** 不涉及 **默认取值：** false
-        /// </summary>
-        [JsonProperty("system_log_dump_enable", NullValueHandling = NullValueHandling.Ignore)]
-        public string SystemLogDumpEnable { get; set; }
-
-        /// <summary>
-        /// **参数解释：** 实例单元配置。 **约束限制：** 单机推理时，个数只会为1；如果是分布式推理时，根据不同框架，实例单元配置可灵活配置。
-        /// </summary>
-        [JsonProperty("unit_configs", NullValueHandling = NullValueHandling.Ignore)]
-        public List<UnitConfig> UnitConfigs { get; set; }
-
-        /// <summary>
-        /// **参数解释：** 更新时间，根据更新时的当前时间自动生成。 **取值范围：** 毫秒级时间戳，13位数字。
-        /// </summary>
-        [JsonProperty("update_at", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? UpdateAt { get; set; }
-
-        /// <summary>
-        /// **参数解释：** 当前服务版本信息。
+        /// **参数解释：** 当前部署版本信息。
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 版本id，可通过查询version列表查询。 **取值范围：** 不涉及。
+        /// </summary>
+        [JsonProperty("version_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string VersionId { get; set; }
 
         /// <summary>
         /// **参数解释：** 服务版本数量。 **取值范围：** 不涉及。
@@ -119,10 +77,82 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public int? VersionCount { get; set; }
 
         /// <summary>
+        /// **参数解释：** 服务部署实例数。
+        /// </summary>
+        [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Count { get; set; }
+
+        /// <summary>
         /// **参数解释：** 权重百分比，分配到此模型的流量权重，仅当模型部署为在线服务时需要配置。 **约束限制：** 不涉及。 **取值范围：** [0, 100]。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("weight", NullValueHandling = NullValueHandling.Ignore)]
         public int? Weight { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 服务优先级。 **约束限制：** 不涉及。 **取值范围：** [1, 3]。 **默认取值：** 不涉及。
+        /// </summary>
+        [JsonProperty("priority", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Priority { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 凭证类型相关配置，用户可以在此处选择使用的凭证类型（dew，agency） **约束限制：** 不涉及。 **取值范围：** - [dew：DEW密钥。](tag:hws,hws_hk,fcs) - agency：临时委托凭证。 **默认取值：** 不涉及。
+        /// </summary>
+        [JsonProperty("secret_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string SecretType { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 凭证名称，用户使用dew类型凭证时可以在此处选择使用的凭证。 **取值范围：** 1-64个字符，只能包含字母、数字、连字符和下划线。
+        /// </summary>
+        [JsonProperty("secret_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string SecretName { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 服务部署状态
+        /// </summary>
+        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
+        public string Status { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 部署类型。 **取值范围：** - SINGLE：单机单卡。 - MULTI：多机多卡。
+        /// </summary>
+        [JsonProperty("deploy_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string DeployType { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 工作负载类型。 **取值范围：** - LWS - DEPLOYMENT **默认取值：** DEPLOYMENT
+        /// </summary>
+        [JsonProperty("workload_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string WorkloadType { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 高可用开关，开启后不同实例的pod将尽量均匀分布到不同的节点上。 **约束限制：** 不涉及 **取值范围：** - true: 高可用开启。 - false: 高可用关闭。
+        /// </summary>
+        [JsonProperty("high_avail_switch", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? HighAvailSwitch { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 系统日志转储开关。 **约束限制：** 只有NPU资源池有，且逻辑池是没有的 **取值范围：** 不涉及 **默认取值：** false
+        /// </summary>
+        [JsonProperty("system_log_dump_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SystemLogDumpEnable { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 调度策略。 **取值范围：** 不涉及。
+        /// </summary>
+        [JsonProperty("schedule_strategy", NullValueHandling = NullValueHandling.Ignore)]
+        public string ScheduleStrategy { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 实例单元配置。 **约束限制：** 单机推理时，个数只会为1；如果是分布式推理时，根据不同框架，实例单元配置可灵活配置。
+        /// </summary>
+        [JsonProperty("unit_configs", NullValueHandling = NullValueHandling.Ignore)]
+        public List<UnitConfig> UnitConfigs { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("model", NullValueHandling = NullValueHandling.Ignore)]
+        public GroupModel Model { get; set; }
 
         /// <summary>
         /// 
@@ -131,22 +161,58 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public AdvancedConfig AdvancedConfig { get; set; }
 
         /// <summary>
-        /// **参数解释：** 巫山工作流ID。 **取值范围：** 不涉及。
+        /// **参数解释：** 是否开启镜像流量。 **取值范围：** 不涉及。
         /// </summary>
-        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string JobId { get; set; }
+        [JsonProperty("mirror_traffic_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? MirrorTrafficEnable { get; set; }
 
         /// <summary>
-        /// 参数解释： 服务部署名字。
+        /// **参数解释：** 镜像流量权重。 **取值范围：** 不涉及。
         /// </summary>
-        [JsonProperty("deployment_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string DeploymentName { get; set; }
+        [JsonProperty("mirror_traffic_weight", NullValueHandling = NullValueHandling.Ignore)]
+        public int? MirrorTrafficWeight { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 用户名。 **取值范围：** 不涉及。
+        /// </summary>
+        [JsonProperty("user_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string UserName { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 委托名称。 **取值范围：** 不涉及。
+        /// </summary>
+        [JsonProperty("agency_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string AgencyName { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 最后使用时间。 **取值范围：** 不涉及。
+        /// </summary>
+        [JsonProperty("last_used_time", NullValueHandling = NullValueHandling.Ignore)]
+        public DateTime? LastUsedTime { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("deployment_task_limit", NullValueHandling = NullValueHandling.Ignore)]
+        public DeploymentTaskLimit DeploymentTaskLimit { get; set; }
 
         /// <summary>
         /// **参数解释：** 当服务或者部署被冻结时返回的冻结类型信息。
         /// </summary>
         [JsonProperty("frozen_infos", NullValueHandling = NullValueHandling.Ignore)]
         public List<FrozenInfo> FrozenInfos { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 创建时间，根据创建时的当前时间自动生成。 **取值范围：** 毫秒级时间戳，13位数字
+        /// </summary>
+        [JsonProperty("create_at", NullValueHandling = NullValueHandling.Ignore)]
+        public DateTime? CreateAt { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 更新时间，根据更新时的当前时间自动生成。 **取值范围：** 毫秒级时间戳，13位数字。
+        /// </summary>
+        [JsonProperty("update_at", NullValueHandling = NullValueHandling.Ignore)]
+        public DateTime? UpdateAt { get; set; }
 
 
 
@@ -159,26 +225,37 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("class ShowInferDeploymentVersionResponse {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  deploymentName: ").Append(DeploymentName).Append("\n");
             sb.Append("  inferName: ").Append(InferName).Append("\n");
-            sb.Append("  createAt: ").Append(CreateAt).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  poolId: ").Append(PoolId).Append("\n");
             sb.Append("  framework: ").Append(Framework).Append("\n");
+            sb.Append("  version: ").Append(Version).Append("\n");
+            sb.Append("  versionId: ").Append(VersionId).Append("\n");
+            sb.Append("  versionCount: ").Append(VersionCount).Append("\n");
+            sb.Append("  count: ").Append(Count).Append("\n");
+            sb.Append("  weight: ").Append(Weight).Append("\n");
             sb.Append("  priority: ").Append(Priority).Append("\n");
             sb.Append("  secretType: ").Append(SecretType).Append("\n");
+            sb.Append("  secretName: ").Append(SecretName).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
-            sb.Append("  count: ").Append(Count).Append("\n");
+            sb.Append("  deployType: ").Append(DeployType).Append("\n");
+            sb.Append("  workloadType: ").Append(WorkloadType).Append("\n");
             sb.Append("  highAvailSwitch: ").Append(HighAvailSwitch).Append("\n");
             sb.Append("  systemLogDumpEnable: ").Append(SystemLogDumpEnable).Append("\n");
+            sb.Append("  scheduleStrategy: ").Append(ScheduleStrategy).Append("\n");
             sb.Append("  unitConfigs: ").Append(UnitConfigs).Append("\n");
-            sb.Append("  updateAt: ").Append(UpdateAt).Append("\n");
-            sb.Append("  version: ").Append(Version).Append("\n");
-            sb.Append("  versionCount: ").Append(VersionCount).Append("\n");
-            sb.Append("  weight: ").Append(Weight).Append("\n");
+            sb.Append("  model: ").Append(Model).Append("\n");
             sb.Append("  advancedConfig: ").Append(AdvancedConfig).Append("\n");
-            sb.Append("  jobId: ").Append(JobId).Append("\n");
-            sb.Append("  deploymentName: ").Append(DeploymentName).Append("\n");
+            sb.Append("  mirrorTrafficEnable: ").Append(MirrorTrafficEnable).Append("\n");
+            sb.Append("  mirrorTrafficWeight: ").Append(MirrorTrafficWeight).Append("\n");
+            sb.Append("  userName: ").Append(UserName).Append("\n");
+            sb.Append("  agencyName: ").Append(AgencyName).Append("\n");
+            sb.Append("  lastUsedTime: ").Append(LastUsedTime).Append("\n");
+            sb.Append("  deploymentTaskLimit: ").Append(DeploymentTaskLimit).Append("\n");
             sb.Append("  frozenInfos: ").Append(FrozenInfos).Append("\n");
+            sb.Append("  createAt: ").Append(CreateAt).Append("\n");
+            sb.Append("  updateAt: ").Append(UpdateAt).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -199,26 +276,37 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (input == null) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.DeploymentName != input.DeploymentName || (this.DeploymentName != null && !this.DeploymentName.Equals(input.DeploymentName))) return false;
             if (this.InferName != input.InferName || (this.InferName != null && !this.InferName.Equals(input.InferName))) return false;
-            if (this.CreateAt != input.CreateAt || (this.CreateAt != null && !this.CreateAt.Equals(input.CreateAt))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.PoolId != input.PoolId || (this.PoolId != null && !this.PoolId.Equals(input.PoolId))) return false;
             if (this.Framework != input.Framework || (this.Framework != null && !this.Framework.Equals(input.Framework))) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
+            if (this.VersionId != input.VersionId || (this.VersionId != null && !this.VersionId.Equals(input.VersionId))) return false;
+            if (this.VersionCount != input.VersionCount || (this.VersionCount != null && !this.VersionCount.Equals(input.VersionCount))) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.Weight != input.Weight || (this.Weight != null && !this.Weight.Equals(input.Weight))) return false;
             if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
             if (this.SecretType != input.SecretType || (this.SecretType != null && !this.SecretType.Equals(input.SecretType))) return false;
+            if (this.SecretName != input.SecretName || (this.SecretName != null && !this.SecretName.Equals(input.SecretName))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
-            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.DeployType != input.DeployType || (this.DeployType != null && !this.DeployType.Equals(input.DeployType))) return false;
+            if (this.WorkloadType != input.WorkloadType || (this.WorkloadType != null && !this.WorkloadType.Equals(input.WorkloadType))) return false;
             if (this.HighAvailSwitch != input.HighAvailSwitch || (this.HighAvailSwitch != null && !this.HighAvailSwitch.Equals(input.HighAvailSwitch))) return false;
             if (this.SystemLogDumpEnable != input.SystemLogDumpEnable || (this.SystemLogDumpEnable != null && !this.SystemLogDumpEnable.Equals(input.SystemLogDumpEnable))) return false;
+            if (this.ScheduleStrategy != input.ScheduleStrategy || (this.ScheduleStrategy != null && !this.ScheduleStrategy.Equals(input.ScheduleStrategy))) return false;
             if (this.UnitConfigs != input.UnitConfigs || (this.UnitConfigs != null && input.UnitConfigs != null && !this.UnitConfigs.SequenceEqual(input.UnitConfigs))) return false;
-            if (this.UpdateAt != input.UpdateAt || (this.UpdateAt != null && !this.UpdateAt.Equals(input.UpdateAt))) return false;
-            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
-            if (this.VersionCount != input.VersionCount || (this.VersionCount != null && !this.VersionCount.Equals(input.VersionCount))) return false;
-            if (this.Weight != input.Weight || (this.Weight != null && !this.Weight.Equals(input.Weight))) return false;
+            if (this.Model != input.Model || (this.Model != null && !this.Model.Equals(input.Model))) return false;
             if (this.AdvancedConfig != input.AdvancedConfig || (this.AdvancedConfig != null && !this.AdvancedConfig.Equals(input.AdvancedConfig))) return false;
-            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
-            if (this.DeploymentName != input.DeploymentName || (this.DeploymentName != null && !this.DeploymentName.Equals(input.DeploymentName))) return false;
+            if (this.MirrorTrafficEnable != input.MirrorTrafficEnable || (this.MirrorTrafficEnable != null && !this.MirrorTrafficEnable.Equals(input.MirrorTrafficEnable))) return false;
+            if (this.MirrorTrafficWeight != input.MirrorTrafficWeight || (this.MirrorTrafficWeight != null && !this.MirrorTrafficWeight.Equals(input.MirrorTrafficWeight))) return false;
+            if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
+            if (this.AgencyName != input.AgencyName || (this.AgencyName != null && !this.AgencyName.Equals(input.AgencyName))) return false;
+            if (this.LastUsedTime != input.LastUsedTime || (this.LastUsedTime != null && !this.LastUsedTime.Equals(input.LastUsedTime))) return false;
+            if (this.DeploymentTaskLimit != input.DeploymentTaskLimit || (this.DeploymentTaskLimit != null && !this.DeploymentTaskLimit.Equals(input.DeploymentTaskLimit))) return false;
             if (this.FrozenInfos != input.FrozenInfos || (this.FrozenInfos != null && input.FrozenInfos != null && !this.FrozenInfos.SequenceEqual(input.FrozenInfos))) return false;
+            if (this.CreateAt != input.CreateAt || (this.CreateAt != null && !this.CreateAt.Equals(input.CreateAt))) return false;
+            if (this.UpdateAt != input.UpdateAt || (this.UpdateAt != null && !this.UpdateAt.Equals(input.UpdateAt))) return false;
 
             return true;
         }
@@ -233,26 +321,37 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 var hashCode = 41;
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.DeploymentName != null) hashCode = hashCode * 59 + this.DeploymentName.GetHashCode();
                 if (this.InferName != null) hashCode = hashCode * 59 + this.InferName.GetHashCode();
-                if (this.CreateAt != null) hashCode = hashCode * 59 + this.CreateAt.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.PoolId != null) hashCode = hashCode * 59 + this.PoolId.GetHashCode();
                 if (this.Framework != null) hashCode = hashCode * 59 + this.Framework.GetHashCode();
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.VersionId != null) hashCode = hashCode * 59 + this.VersionId.GetHashCode();
+                if (this.VersionCount != null) hashCode = hashCode * 59 + this.VersionCount.GetHashCode();
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.Weight != null) hashCode = hashCode * 59 + this.Weight.GetHashCode();
                 if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
                 if (this.SecretType != null) hashCode = hashCode * 59 + this.SecretType.GetHashCode();
+                if (this.SecretName != null) hashCode = hashCode * 59 + this.SecretName.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.DeployType != null) hashCode = hashCode * 59 + this.DeployType.GetHashCode();
+                if (this.WorkloadType != null) hashCode = hashCode * 59 + this.WorkloadType.GetHashCode();
                 if (this.HighAvailSwitch != null) hashCode = hashCode * 59 + this.HighAvailSwitch.GetHashCode();
                 if (this.SystemLogDumpEnable != null) hashCode = hashCode * 59 + this.SystemLogDumpEnable.GetHashCode();
+                if (this.ScheduleStrategy != null) hashCode = hashCode * 59 + this.ScheduleStrategy.GetHashCode();
                 if (this.UnitConfigs != null) hashCode = hashCode * 59 + this.UnitConfigs.GetHashCode();
-                if (this.UpdateAt != null) hashCode = hashCode * 59 + this.UpdateAt.GetHashCode();
-                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
-                if (this.VersionCount != null) hashCode = hashCode * 59 + this.VersionCount.GetHashCode();
-                if (this.Weight != null) hashCode = hashCode * 59 + this.Weight.GetHashCode();
+                if (this.Model != null) hashCode = hashCode * 59 + this.Model.GetHashCode();
                 if (this.AdvancedConfig != null) hashCode = hashCode * 59 + this.AdvancedConfig.GetHashCode();
-                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.DeploymentName != null) hashCode = hashCode * 59 + this.DeploymentName.GetHashCode();
+                if (this.MirrorTrafficEnable != null) hashCode = hashCode * 59 + this.MirrorTrafficEnable.GetHashCode();
+                if (this.MirrorTrafficWeight != null) hashCode = hashCode * 59 + this.MirrorTrafficWeight.GetHashCode();
+                if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.AgencyName != null) hashCode = hashCode * 59 + this.AgencyName.GetHashCode();
+                if (this.LastUsedTime != null) hashCode = hashCode * 59 + this.LastUsedTime.GetHashCode();
+                if (this.DeploymentTaskLimit != null) hashCode = hashCode * 59 + this.DeploymentTaskLimit.GetHashCode();
                 if (this.FrozenInfos != null) hashCode = hashCode * 59 + this.FrozenInfos.GetHashCode();
+                if (this.CreateAt != null) hashCode = hashCode * 59 + this.CreateAt.GetHashCode();
+                if (this.UpdateAt != null) hashCode = hashCode * 59 + this.UpdateAt.GetHashCode();
                 return hashCode;
             }
         }

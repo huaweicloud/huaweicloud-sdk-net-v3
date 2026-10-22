@@ -161,6 +161,12 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         [JsonProperty("create_type", NullValueHandling = NullValueHandling.Ignore)]
         public CreateTypeEnum CreateType { get; set; }
         /// <summary>
+        /// 分组id
+        /// </summary>
+        [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string GroupId { get; set; }
+
+        /// <summary>
         /// 自定义slave资源池id
         /// </summary>
         [JsonProperty("slave_cluster_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -178,6 +184,24 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         [JsonProperty("arrange_infos", NullValueHandling = NullValueHandling.Ignore)]
         public List<UpdateTaskV2RequestBody> ArrangeInfos { get; set; }
 
+        /// <summary>
+        /// 委托URN
+        /// </summary>
+        [JsonProperty("agency_urn", NullValueHandling = NullValueHandling.Ignore)]
+        public string AgencyUrn { get; set; }
+
+        /// <summary>
+        /// 资源池类型
+        /// </summary>
+        [JsonProperty("slave_resource_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string SlaveResourceType { get; set; }
+
+        /// <summary>
+        /// 任务执行超时时间
+        /// </summary>
+        [JsonProperty("timeout", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Timeout { get; set; }
+
 
 
         /// <summary>
@@ -193,9 +217,13 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  isDraft: ").Append(IsDraft).Append("\n");
             sb.Append("  createType: ").Append(CreateType).Append("\n");
+            sb.Append("  groupId: ").Append(GroupId).Append("\n");
             sb.Append("  slaveClusterId: ").Append(SlaveClusterId).Append("\n");
             sb.Append("  trigger: ").Append(Trigger).Append("\n");
             sb.Append("  arrangeInfos: ").Append(ArrangeInfos).Append("\n");
+            sb.Append("  agencyUrn: ").Append(AgencyUrn).Append("\n");
+            sb.Append("  slaveResourceType: ").Append(SlaveResourceType).Append("\n");
+            sb.Append("  timeout: ").Append(Timeout).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -220,9 +248,13 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.IsDraft != input.IsDraft || (this.IsDraft != null && !this.IsDraft.Equals(input.IsDraft))) return false;
             if (this.CreateType != input.CreateType) return false;
+            if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
             if (this.SlaveClusterId != input.SlaveClusterId || (this.SlaveClusterId != null && !this.SlaveClusterId.Equals(input.SlaveClusterId))) return false;
             if (this.Trigger != input.Trigger || (this.Trigger != null && !this.Trigger.Equals(input.Trigger))) return false;
             if (this.ArrangeInfos != input.ArrangeInfos || (this.ArrangeInfos != null && input.ArrangeInfos != null && !this.ArrangeInfos.SequenceEqual(input.ArrangeInfos))) return false;
+            if (this.AgencyUrn != input.AgencyUrn || (this.AgencyUrn != null && !this.AgencyUrn.Equals(input.AgencyUrn))) return false;
+            if (this.SlaveResourceType != input.SlaveResourceType || (this.SlaveResourceType != null && !this.SlaveResourceType.Equals(input.SlaveResourceType))) return false;
+            if (this.Timeout != input.Timeout || (this.Timeout != null && !this.Timeout.Equals(input.Timeout))) return false;
 
             return true;
         }
@@ -241,9 +273,13 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.IsDraft != null) hashCode = hashCode * 59 + this.IsDraft.GetHashCode();
                 hashCode = hashCode * 59 + this.CreateType.GetHashCode();
+                if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
                 if (this.SlaveClusterId != null) hashCode = hashCode * 59 + this.SlaveClusterId.GetHashCode();
                 if (this.Trigger != null) hashCode = hashCode * 59 + this.Trigger.GetHashCode();
                 if (this.ArrangeInfos != null) hashCode = hashCode * 59 + this.ArrangeInfos.GetHashCode();
+                if (this.AgencyUrn != null) hashCode = hashCode * 59 + this.AgencyUrn.GetHashCode();
+                if (this.SlaveResourceType != null) hashCode = hashCode * 59 + this.SlaveResourceType.GetHashCode();
+                if (this.Timeout != null) hashCode = hashCode * 59 + this.Timeout.GetHashCode();
                 return hashCode;
             }
         }

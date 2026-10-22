@@ -8,19 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.ModelArts.V1.Model
+namespace HuaweiCloud.SDK.Evs.V2.Model
 {
     /// <summary>
-    /// 训练作业描述。
+    /// 创建快照一致性组的请求体。
     /// </summary>
-    public class JobDescription 
+    public class CreateSnapshotGroupRequestBody 
     {
 
         /// <summary>
-        /// 对训练作业的描述，默认为“NULL”，字符串的长度限制为[0, 256]。
+        /// 
         /// </summary>
-        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
-        public string Description { get; set; }
+        [JsonProperty("snapshot_group", NullValueHandling = NullValueHandling.Ignore)]
+        public SnapshotGroup SnapshotGroup { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class JobDescription {\n");
-            sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("class CreateSnapshotGroupRequestBody {\n");
+            sb.Append("  snapshotGroup: ").Append(SnapshotGroup).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,16 +41,16 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as JobDescription);
+            return this.Equals(input as CreateSnapshotGroupRequestBody);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(JobDescription input)
+        public bool Equals(CreateSnapshotGroupRequestBody input)
         {
             if (input == null) return false;
-            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.SnapshotGroup != input.SnapshotGroup || (this.SnapshotGroup != null && !this.SnapshotGroup.Equals(input.SnapshotGroup))) return false;
 
             return true;
         }
@@ -63,7 +63,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.SnapshotGroup != null) hashCode = hashCode * 59 + this.SnapshotGroup.GetHashCode();
                 return hashCode;
             }
         }

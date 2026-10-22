@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         [JsonProperty("allowed_address_pairs", NullValueHandling = NullValueHandling.Ignore)]
         public List<AllowedAddressPairs> AllowedAddressPairs { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("hyper_group", NullValueHandling = NullValueHandling.Ignore)]
+        public HyperGroup HyperGroup { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  vpcId: ").Append(VpcId).Append("\n");
             sb.Append("  hyperCluster: ").Append(HyperCluster).Append("\n");
             sb.Append("  allowedAddressPairs: ").Append(AllowedAddressPairs).Append("\n");
+            sb.Append("  hyperGroup: ").Append(HyperGroup).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,6 +106,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.VpcId != input.VpcId || (this.VpcId != null && !this.VpcId.Equals(input.VpcId))) return false;
             if (this.HyperCluster != input.HyperCluster || (this.HyperCluster != null && !this.HyperCluster.Equals(input.HyperCluster))) return false;
             if (this.AllowedAddressPairs != input.AllowedAddressPairs || (this.AllowedAddressPairs != null && input.AllowedAddressPairs != null && !this.AllowedAddressPairs.SequenceEqual(input.AllowedAddressPairs))) return false;
+            if (this.HyperGroup != input.HyperGroup || (this.HyperGroup != null && !this.HyperGroup.Equals(input.HyperGroup))) return false;
 
             return true;
         }
@@ -118,6 +126,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
                 if (this.HyperCluster != null) hashCode = hashCode * 59 + this.HyperCluster.GetHashCode();
                 if (this.AllowedAddressPairs != null) hashCode = hashCode * 59 + this.AllowedAddressPairs.GetHashCode();
+                if (this.HyperGroup != null) hashCode = hashCode * 59 + this.HyperGroup.GetHashCode();
                 return hashCode;
             }
         }

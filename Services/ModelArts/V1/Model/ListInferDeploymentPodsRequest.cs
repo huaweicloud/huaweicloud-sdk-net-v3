@@ -86,6 +86,13 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         [JsonProperty("pod_node_name", NullValueHandling = NullValueHandling.Ignore)]
         public string PodNodeName { get; set; }
 
+        /// <summary>
+        /// **参数解释：** pod所属单元名称。 **取值范围：** 不涉及。
+        /// </summary>
+        [SDKProperty("pod_role_name", IsQuery = true)]
+        [JsonProperty("pod_role_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string PodRoleName { get; set; }
+
 
 
         /// <summary>
@@ -105,6 +112,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  podId: ").Append(PodId).Append("\n");
             sb.Append("  podNodeIp: ").Append(PodNodeIp).Append("\n");
             sb.Append("  podNodeName: ").Append(PodNodeName).Append("\n");
+            sb.Append("  podRoleName: ").Append(PodRoleName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -133,6 +141,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.PodId != input.PodId || (this.PodId != null && !this.PodId.Equals(input.PodId))) return false;
             if (this.PodNodeIp != input.PodNodeIp || (this.PodNodeIp != null && !this.PodNodeIp.Equals(input.PodNodeIp))) return false;
             if (this.PodNodeName != input.PodNodeName || (this.PodNodeName != null && !this.PodNodeName.Equals(input.PodNodeName))) return false;
+            if (this.PodRoleName != input.PodRoleName || (this.PodRoleName != null && !this.PodRoleName.Equals(input.PodRoleName))) return false;
 
             return true;
         }
@@ -155,6 +164,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 if (this.PodId != null) hashCode = hashCode * 59 + this.PodId.GetHashCode();
                 if (this.PodNodeIp != null) hashCode = hashCode * 59 + this.PodNodeIp.GetHashCode();
                 if (this.PodNodeName != null) hashCode = hashCode * 59 + this.PodNodeName.GetHashCode();
+                if (this.PodRoleName != null) hashCode = hashCode * 59 + this.PodRoleName.GetHashCode();
                 return hashCode;
             }
         }

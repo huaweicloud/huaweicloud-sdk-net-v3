@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         [JsonProperty("update_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? UpdateTime { get; set; }
 
+        /// <summary>
+        /// **参数解释：** pod所属单元名称。 **取值范围：** 不涉及。
+        /// </summary>
+        [JsonProperty("pod_role_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string PodRoleName { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  podRole: ").Append(PodRole).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
+            sb.Append("  podRoleName: ").Append(PodRoleName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,6 +106,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.PodRole != input.PodRole || (this.PodRole != null && !this.PodRole.Equals(input.PodRole))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.PodRoleName != input.PodRoleName || (this.PodRoleName != null && !this.PodRoleName.Equals(input.PodRoleName))) return false;
 
             return true;
         }
@@ -118,6 +126,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 if (this.PodRole != null) hashCode = hashCode * 59 + this.PodRole.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.PodRoleName != null) hashCode = hashCode * 59 + this.PodRoleName.GetHashCode();
                 return hashCode;
             }
         }

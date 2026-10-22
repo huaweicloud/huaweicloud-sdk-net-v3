@@ -83,6 +83,12 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public int? Count { get; set; }
 
         /// <summary>
+        /// **参数解释：** 表示是否启用绑核加速。 **取值范围：** - true：启用绑核加速。 - false：不启用绑核加速。
+        /// </summary>
+        [JsonProperty("cpu_affinity", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? CpuAffinity { get; set; }
+
+        /// <summary>
         /// **参数解释：** 单元副本数，当部署类型deploy_type为SINGLE或工作负载类型workload_type为DEPLOYMENT时，该参数无效。 **取值范围：** [1, 100] 或者为空。 **默认取值：** 默认值为1。
         /// </summary>
         [JsonProperty("group_count", NullValueHandling = NullValueHandling.Ignore)]
@@ -166,6 +172,12 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         [JsonProperty("pool_resource_flavor", NullValueHandling = NullValueHandling.Ignore)]
         public string PoolResourceFlavor { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("group_policy", NullValueHandling = NullValueHandling.Ignore)]
+        public UnitGroupPolicyResponse GroupPolicy { get; set; }
+
 
 
         /// <summary>
@@ -186,6 +198,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  codes: ").Append(Codes).Append("\n");
             sb.Append("  dumps: ").Append(Dumps).Append("\n");
             sb.Append("  count: ").Append(Count).Append("\n");
+            sb.Append("  cpuAffinity: ").Append(CpuAffinity).Append("\n");
             sb.Append("  groupCount: ").Append(GroupCount).Append("\n");
             sb.Append("  cmd: ").Append(Cmd).Append("\n");
             sb.Append("  envs: ").Append(Envs).Append("\n");
@@ -200,6 +213,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  terminationGrace: ").Append(TerminationGrace).Append("\n");
             sb.Append("  securityConfig: ").Append(SecurityConfig).Append("\n");
             sb.Append("  poolResourceFlavor: ").Append(PoolResourceFlavor).Append("\n");
+            sb.Append("  groupPolicy: ").Append(GroupPolicy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -229,6 +243,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.Codes != input.Codes || (this.Codes != null && input.Codes != null && !this.Codes.SequenceEqual(input.Codes))) return false;
             if (this.Dumps != input.Dumps || (this.Dumps != null && input.Dumps != null && !this.Dumps.SequenceEqual(input.Dumps))) return false;
             if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.CpuAffinity != input.CpuAffinity || (this.CpuAffinity != null && !this.CpuAffinity.Equals(input.CpuAffinity))) return false;
             if (this.GroupCount != input.GroupCount || (this.GroupCount != null && !this.GroupCount.Equals(input.GroupCount))) return false;
             if (this.Cmd != input.Cmd || (this.Cmd != null && !this.Cmd.Equals(input.Cmd))) return false;
             if (this.Envs != input.Envs || (this.Envs != null && input.Envs != null && !this.Envs.SequenceEqual(input.Envs))) return false;
@@ -243,6 +258,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.TerminationGrace != input.TerminationGrace || (this.TerminationGrace != null && !this.TerminationGrace.Equals(input.TerminationGrace))) return false;
             if (this.SecurityConfig != input.SecurityConfig || (this.SecurityConfig != null && !this.SecurityConfig.Equals(input.SecurityConfig))) return false;
             if (this.PoolResourceFlavor != input.PoolResourceFlavor || (this.PoolResourceFlavor != null && !this.PoolResourceFlavor.Equals(input.PoolResourceFlavor))) return false;
+            if (this.GroupPolicy != input.GroupPolicy || (this.GroupPolicy != null && !this.GroupPolicy.Equals(input.GroupPolicy))) return false;
 
             return true;
         }
@@ -266,6 +282,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 if (this.Codes != null) hashCode = hashCode * 59 + this.Codes.GetHashCode();
                 if (this.Dumps != null) hashCode = hashCode * 59 + this.Dumps.GetHashCode();
                 if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.CpuAffinity != null) hashCode = hashCode * 59 + this.CpuAffinity.GetHashCode();
                 if (this.GroupCount != null) hashCode = hashCode * 59 + this.GroupCount.GetHashCode();
                 if (this.Cmd != null) hashCode = hashCode * 59 + this.Cmd.GetHashCode();
                 if (this.Envs != null) hashCode = hashCode * 59 + this.Envs.GetHashCode();
@@ -280,6 +297,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 if (this.TerminationGrace != null) hashCode = hashCode * 59 + this.TerminationGrace.GetHashCode();
                 if (this.SecurityConfig != null) hashCode = hashCode * 59 + this.SecurityConfig.GetHashCode();
                 if (this.PoolResourceFlavor != null) hashCode = hashCode * 59 + this.PoolResourceFlavor.GetHashCode();
+                if (this.GroupPolicy != null) hashCode = hashCode * 59 + this.GroupPolicy.GetHashCode();
                 return hashCode;
             }
         }

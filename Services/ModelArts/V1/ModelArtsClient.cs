@@ -773,7 +773,8 @@ namespace HuaweiCloud.SDK.ModelArts.V1
         /// <summary>
         /// 更新训练作业描述
         ///
-        /// 更新训练作业描述。
+        /// 更新训练作业接口用于修改已存在的训练作业的描述、事件通知、作业优先级、允许被抢占等信息。
+        /// 该接口适用于以下场景：当用户需要更新训练作业的描述、事件通知、作业优先级、允许被抢占等信息时，可以通过此接口进行修改。使用该接口的前提条件是训练作业已存在且用户具有相应的权限。更新操作完成后，训练作业的描述、事件通知、作业优先级、允许被抢占等信息将被更新。若训练作业不存在或用户无权限操作，接口将返回相应的错误信息。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1013,6 +1014,30 @@ namespace HuaweiCloud.SDK.ModelArts.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dev-servers/hyper-clusters", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createHyperClusterRequest);
             return new SyncInvoker<CreateHyperClusterResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateHyperClusterResponse>);
+        }
+        
+        /// <summary>
+        /// 创建hyperinstance-group
+        ///
+        /// 创建Hyper Group接口用于在系统中创建一个新的Hyper Group。该接口适用于以下场景：当用户需要使用超平面网络时，可以通过此接口创建Hyper Group。使用该接口的前提条件是用户已登录并具有创建Hyper Group的权限，且系统中已配置了必要的资源。创建操作完成后，将生成一个新的超平面网络，并返回超平面网络的详细信息，包括ID、名称、参数面网络ID。若用户无权限操作、系统中缺少必要的资源或配置参数无效，接口将返回相应的错误信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateHyperinstanceGroupResponse CreateHyperinstanceGroup(CreateHyperinstanceGroupRequest createHyperinstanceGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dev-servers/hyperinstance/groups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createHyperinstanceGroupRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateHyperinstanceGroupResponse>(response);
+        }
+
+        public SyncInvoker<CreateHyperinstanceGroupResponse> CreateHyperinstanceGroupInvoker(CreateHyperinstanceGroupRequest createHyperinstanceGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dev-servers/hyperinstance/groups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createHyperinstanceGroupRequest);
+            return new SyncInvoker<CreateHyperinstanceGroupResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateHyperinstanceGroupResponse>);
         }
         
         /// <summary>
@@ -1649,6 +1674,32 @@ namespace HuaweiCloud.SDK.ModelArts.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dev-servers/hyperinstance/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteHyperinstanceRequest);
             return new SyncInvoker<DeleteHyperinstanceResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteHyperinstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 删除hyperinstance-group
+        ///
+        /// 删除hyperinstance-group
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteHyperinstanceGroupResponse DeleteHyperinstanceGroup(DeleteHyperinstanceGroupRequest deleteHyperinstanceGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteHyperinstanceGroupRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dev-servers/hyperinstance/groups/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteHyperinstanceGroupRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteHyperinstanceGroupResponse>(response);
+        }
+
+        public SyncInvoker<DeleteHyperinstanceGroupResponse> DeleteHyperinstanceGroupInvoker(DeleteHyperinstanceGroupRequest deleteHyperinstanceGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteHyperinstanceGroupRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dev-servers/hyperinstance/groups/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteHyperinstanceGroupRequest);
+            return new SyncInvoker<DeleteHyperinstanceGroupResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteHyperinstanceGroupResponse>);
         }
         
         /// <summary>
@@ -2384,6 +2435,32 @@ namespace HuaweiCloud.SDK.ModelArts.V1
         }
         
         /// <summary>
+        /// 查询hyperinstance-group详情
+        ///
+        /// 查询HyperGroup详情接口用于在系统中查询Hyper Group详情。该接口适用于以下场景：当用户需要查询Hyper Group详情，可以通过此接口完成。使用该接口的前提条件是用户已登录并具有查询Hyper Group的权限，且系统中已配置了必要的资源。查询会返回超平面网络的详细信息，包括ID、名称、参数面网络ID等。若用户无权限操作、系统中缺少必要的资源或配置参数无效，接口将返回相应的错误信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public GetHyperinstanceGroupResponse GetHyperinstanceGroup(GetHyperinstanceGroupRequest getHyperinstanceGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(getHyperinstanceGroupRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dev-servers/hyperinstance/groups/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getHyperinstanceGroupRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<GetHyperinstanceGroupResponse>(response);
+        }
+
+        public SyncInvoker<GetHyperinstanceGroupResponse> GetHyperinstanceGroupInvoker(GetHyperinstanceGroupRequest getHyperinstanceGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(getHyperinstanceGroupRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dev-servers/hyperinstance/groups/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getHyperinstanceGroupRequest);
+            return new SyncInvoker<GetHyperinstanceGroupResponse>(this, "GET", request, JsonUtils.DeSerialize<GetHyperinstanceGroupResponse>);
+        }
+        
+        /// <summary>
         /// 查询超节点Operation详情
         ///
         /// 查询Operation详情接口用于获取指定Operation的详细信息。该接口适用于以下场景：当用户需要了解某个Operation的具体执行情况和状态，以便进行故障排查或操作审计时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询Operation详情的权限，且指定的Operation已存在。查询操作完成后，接口将返回指定Operation的详细信息，包括Operation ID、操作类型、执行状态、开始时间、结束时间、操作结果等。若用户无权限操作、指定的Operation不存在或Operation ID无效，接口将返回相应的错误信息。
@@ -2827,6 +2904,80 @@ namespace HuaweiCloud.SDK.ModelArts.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dev-servers/hyperinstance/cluster-capacity-evaluations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listHyperinstanceClustersCapacityRequest);
             return new SyncInvoker<ListHyperinstanceClustersCapacityResponse>(this, "POST", request, JsonUtils.DeSerialize<ListHyperinstanceClustersCapacityResponse>);
+        }
+        
+        /// <summary>
+        /// 查询hyperinstance-group详情列表
+        ///
+        /// 查询hyperinstance-group详情列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListHyperinstanceGroupResponse ListHyperinstanceGroup(ListHyperinstanceGroupRequest listHyperinstanceGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dev-servers/hyperinstance/groups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHyperinstanceGroupRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListHyperinstanceGroupResponse>(response);
+        }
+
+        public SyncInvoker<ListHyperinstanceGroupResponse> ListHyperinstanceGroupInvoker(ListHyperinstanceGroupRequest listHyperinstanceGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dev-servers/hyperinstance/groups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHyperinstanceGroupRequest);
+            return new SyncInvoker<ListHyperinstanceGroupResponse>(this, "GET", request, JsonUtils.DeSerialize<ListHyperinstanceGroupResponse>);
+        }
+        
+        /// <summary>
+        /// 查询超节点hyperinstance-groups容量测算结果
+        ///
+        /// 查询超节点hyperinstance-groups容量测算结果
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListHyperinstanceGroupsCapacityResponse ListHyperinstanceGroupsCapacity(ListHyperinstanceGroupsCapacityRequest listHyperinstanceGroupsCapacityRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dev-servers/hyperinstance/group-capacity-evaluations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listHyperinstanceGroupsCapacityRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ListHyperinstanceGroupsCapacityResponse>(response);
+        }
+
+        public SyncInvoker<ListHyperinstanceGroupsCapacityResponse> ListHyperinstanceGroupsCapacityInvoker(ListHyperinstanceGroupsCapacityRequest listHyperinstanceGroupsCapacityRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dev-servers/hyperinstance/group-capacity-evaluations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listHyperinstanceGroupsCapacityRequest);
+            return new SyncInvoker<ListHyperinstanceGroupsCapacityResponse>(this, "POST", request, JsonUtils.DeSerialize<ListHyperinstanceGroupsCapacityResponse>);
+        }
+        
+        /// <summary>
+        /// 查询超节点的所有子节点
+        ///
+        /// 查询指定超节点下的所有节点实例列表接口用于获取用户名下指定超节点所有Lite Server实例的详细信息。该接口适用于以下场景：用户需要查看其指定超节点下的所有Lite Server实例的状态、配置等信息，以便进行资源管理。使用该接口的前提条件是用户已登录且具有查询指定超节点下的所有节点实例列表接口的权限。调用此接口后，系统将返回指定超节点下所有Lite Server实例的列表，包括实例ID、名称、状态、创建时间等信息。若用户无权限或未登录，接口将返回相应的错误信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListHyperinstanceServersResponse ListHyperinstanceServers(ListHyperinstanceServersRequest listHyperinstanceServersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listHyperinstanceServersRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dev-servers/hyperinstance/{id}/servers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHyperinstanceServersRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListHyperinstanceServersResponse>(response);
+        }
+
+        public SyncInvoker<ListHyperinstanceServersResponse> ListHyperinstanceServersInvoker(ListHyperinstanceServersRequest listHyperinstanceServersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listHyperinstanceServersRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dev-servers/hyperinstance/{id}/servers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHyperinstanceServersRequest);
+            return new SyncInvoker<ListHyperinstanceServersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListHyperinstanceServersResponse>);
         }
         
         /// <summary>
@@ -5776,6 +5927,34 @@ namespace HuaweiCloud.SDK.ModelArts.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/images/{image_id}/sync", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", syncImageRequest);
             return new SyncInvoker<SyncImageResponse>(this, "POST", request, JsonUtils.DeSerialize<SyncImageResponse>);
+        }
+        
+        /// <summary>
+        /// Lite Server解绑EIP
+        ///
+        /// Lite Server解绑EIP
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UnbindDevServerPublicIPResponse UnbindDevServerPublicIP(UnbindDevServerPublicIPRequest unbindDevServerPublicIPRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(unbindDevServerPublicIPRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            if (StringUtils.TryConvertToNonEmptyString(unbindDevServerPublicIPRequest.PublicipId, out var valueOfPublicipId)) urlParam.Add("publicip_id", valueOfPublicipId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dev-servers/{id}/publicips/{publicip_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", unbindDevServerPublicIPRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<UnbindDevServerPublicIPResponse>(response);
+        }
+
+        public SyncInvoker<UnbindDevServerPublicIPResponse> UnbindDevServerPublicIPInvoker(UnbindDevServerPublicIPRequest unbindDevServerPublicIPRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(unbindDevServerPublicIPRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            if (StringUtils.TryConvertToNonEmptyString(unbindDevServerPublicIPRequest.PublicipId, out var valueOfPublicipId)) urlParam.Add("publicip_id", valueOfPublicipId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dev-servers/{id}/publicips/{publicip_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", unbindDevServerPublicIPRequest);
+            return new SyncInvoker<UnbindDevServerPublicIPResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<UnbindDevServerPublicIPResponse>);
         }
         
         /// <summary>

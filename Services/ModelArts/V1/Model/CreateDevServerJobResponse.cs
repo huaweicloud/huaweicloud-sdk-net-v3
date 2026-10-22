@@ -20,13 +20,13 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         /// **参数解释**：创建时间。 **取值范围**：不涉及。
         /// </summary>
         [JsonProperty("create_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string CreateAt { get; set; }
+        public long? CreateAt { get; set; }
 
         /// <summary>
         /// **参数解释**：更新时间。 **取值范围**：不涉及。
         /// </summary>
         [JsonProperty("update_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string UpdateAt { get; set; }
+        public long? UpdateAt { get; set; }
 
         /// <summary>
         /// **参数解释**：任务ID。 **取值范围**：不涉及。

@@ -290,6 +290,12 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public string ProjectId { get; set; }
 
         /// <summary>
+        /// 检索关键字，应用名称模糊匹配
+        /// </summary>
+        [JsonProperty("search", NullValueHandling = NullValueHandling.Ignore)]
+        public string Search { get; set; }
+
+        /// <summary>
         /// 分页页码， 表示从此页开始查询， page大于等于1
         /// </summary>
         [JsonProperty("page", NullValueHandling = NullValueHandling.Ignore)]
@@ -333,6 +339,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ListAllAppRequestBody {\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
+            sb.Append("  search: ").Append(Search).Append("\n");
             sb.Append("  page: ").Append(Page).Append("\n");
             sb.Append("  size: ").Append(Size).Append("\n");
             sb.Append("  sortName: ").Append(SortName).Append("\n");
@@ -358,6 +365,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             if (input == null) return false;
             if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.Search != input.Search || (this.Search != null && !this.Search.Equals(input.Search))) return false;
             if (this.Page != input.Page || (this.Page != null && !this.Page.Equals(input.Page))) return false;
             if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
             if (this.SortName != input.SortName) return false;
@@ -377,6 +385,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
             {
                 var hashCode = 41;
                 if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.Search != null) hashCode = hashCode * 59 + this.Search.GetHashCode();
                 if (this.Page != null) hashCode = hashCode * 59 + this.Page.GetHashCode();
                 if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
                 hashCode = hashCode * 59 + this.SortName.GetHashCode();

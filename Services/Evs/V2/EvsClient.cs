@@ -15,6 +15,84 @@ namespace HuaweiCloud.SDK.Evs.V2
 
         
         /// <summary>
+        /// 绑定自动快照策略
+        ///
+        /// 绑定自动快照策略。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public AssociateAutoSnapshotPolicyResponse AssociateAutoSnapshotPolicy(AssociateAutoSnapshotPolicyRequest associateAutoSnapshotPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(associateAutoSnapshotPolicyRequest.SnapshotPolicyId, out var valueOfSnapshotPolicyId)) urlParam.Add("snapshot_policy_id", valueOfSnapshotPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-policies/{snapshot_policy_id}/associate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", associateAutoSnapshotPolicyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<AssociateAutoSnapshotPolicyResponse>(response);
+        }
+
+        public SyncInvoker<AssociateAutoSnapshotPolicyResponse> AssociateAutoSnapshotPolicyInvoker(AssociateAutoSnapshotPolicyRequest associateAutoSnapshotPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(associateAutoSnapshotPolicyRequest.SnapshotPolicyId, out var valueOfSnapshotPolicyId)) urlParam.Add("snapshot_policy_id", valueOfSnapshotPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-policies/{snapshot_policy_id}/associate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", associateAutoSnapshotPolicyRequest);
+            return new SyncInvoker<AssociateAutoSnapshotPolicyResponse>(this, "POST", request, JsonUtils.DeSerializeNull<AssociateAutoSnapshotPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 为指定快照组添加标签
+        ///
+        /// 为指定快照组添加标签。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchCreateSnapshotGroupTagResponse BatchCreateSnapshotGroupTag(BatchCreateSnapshotGroupTagRequest batchCreateSnapshotGroupTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateSnapshotGroupTagRequest.SnapshotGroupId, out var valueOfSnapshotGroupId)) urlParam.Add("snapshot_group_id", valueOfSnapshotGroupId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-groups/{snapshot_group_id}/tags/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateSnapshotGroupTagRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<BatchCreateSnapshotGroupTagResponse>(response);
+        }
+
+        public SyncInvoker<BatchCreateSnapshotGroupTagResponse> BatchCreateSnapshotGroupTagInvoker(BatchCreateSnapshotGroupTagRequest batchCreateSnapshotGroupTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateSnapshotGroupTagRequest.SnapshotGroupId, out var valueOfSnapshotGroupId)) urlParam.Add("snapshot_group_id", valueOfSnapshotGroupId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-groups/{snapshot_group_id}/tags/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateSnapshotGroupTagRequest);
+            return new SyncInvoker<BatchCreateSnapshotGroupTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateSnapshotGroupTagResponse>);
+        }
+        
+        /// <summary>
+        /// 为指定快照添加标签
+        ///
+        /// 为指定快照添加标签。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchCreateSnapshotTagsResponse BatchCreateSnapshotTags(BatchCreateSnapshotTagsRequest batchCreateSnapshotTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateSnapshotTagsRequest.SnapshotId, out var valueOfSnapshotId)) urlParam.Add("snapshot_id", valueOfSnapshotId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshots/{snapshot_id}/tags/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateSnapshotTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<BatchCreateSnapshotTagsResponse>(response);
+        }
+
+        public SyncInvoker<BatchCreateSnapshotTagsResponse> BatchCreateSnapshotTagsInvoker(BatchCreateSnapshotTagsRequest batchCreateSnapshotTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateSnapshotTagsRequest.SnapshotId, out var valueOfSnapshotId)) urlParam.Add("snapshot_id", valueOfSnapshotId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshots/{snapshot_id}/tags/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateSnapshotTagsRequest);
+            return new SyncInvoker<BatchCreateSnapshotTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateSnapshotTagsResponse>);
+        }
+        
+        /// <summary>
         /// 为指定云硬盘批量添加标签
         ///
         /// 为指定云硬盘批量添加标签。
@@ -41,6 +119,58 @@ namespace HuaweiCloud.SDK.Evs.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateVolumeTagsRequest);
             return new SyncInvoker<BatchCreateVolumeTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateVolumeTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 为指定快照组删除标签
+        ///
+        /// 为指定快照组删除标签。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchDeleteSnapshotGroupTagResponse BatchDeleteSnapshotGroupTag(BatchDeleteSnapshotGroupTagRequest batchDeleteSnapshotGroupTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteSnapshotGroupTagRequest.SnapshotGroupId, out var valueOfSnapshotGroupId)) urlParam.Add("snapshot_group_id", valueOfSnapshotGroupId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-groups/{snapshot_group_id}/tags/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteSnapshotGroupTagRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<BatchDeleteSnapshotGroupTagResponse>(response);
+        }
+
+        public SyncInvoker<BatchDeleteSnapshotGroupTagResponse> BatchDeleteSnapshotGroupTagInvoker(BatchDeleteSnapshotGroupTagRequest batchDeleteSnapshotGroupTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteSnapshotGroupTagRequest.SnapshotGroupId, out var valueOfSnapshotGroupId)) urlParam.Add("snapshot_group_id", valueOfSnapshotGroupId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-groups/{snapshot_group_id}/tags/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteSnapshotGroupTagRequest);
+            return new SyncInvoker<BatchDeleteSnapshotGroupTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteSnapshotGroupTagResponse>);
+        }
+        
+        /// <summary>
+        /// 为指定快照删除标签
+        ///
+        /// 为指定快照删除标签。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchDeleteSnapshotTagsResponse BatchDeleteSnapshotTags(BatchDeleteSnapshotTagsRequest batchDeleteSnapshotTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteSnapshotTagsRequest.SnapshotId, out var valueOfSnapshotId)) urlParam.Add("snapshot_id", valueOfSnapshotId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshots/{snapshot_id}/tags/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteSnapshotTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<BatchDeleteSnapshotTagsResponse>(response);
+        }
+
+        public SyncInvoker<BatchDeleteSnapshotTagsResponse> BatchDeleteSnapshotTagsInvoker(BatchDeleteSnapshotTagsRequest batchDeleteSnapshotTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteSnapshotTagsRequest.SnapshotId, out var valueOfSnapshotId)) urlParam.Add("snapshot_id", valueOfSnapshotId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshots/{snapshot_id}/tags/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteSnapshotTagsRequest);
+            return new SyncInvoker<BatchDeleteSnapshotTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteSnapshotTagsResponse>);
         }
         
         /// <summary>
@@ -323,6 +453,126 @@ namespace HuaweiCloud.SDK.Evs.V2
         }
         
         /// <summary>
+        /// 查询自动快照策略总数
+        ///
+        /// 查询自动快照策略总数。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CountAutoSnapshotPoliciesResponse CountAutoSnapshotPolicies(CountAutoSnapshotPoliciesRequest countAutoSnapshotPoliciesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-policies/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", countAutoSnapshotPoliciesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<CountAutoSnapshotPoliciesResponse>(response);
+        }
+
+        public SyncInvoker<CountAutoSnapshotPoliciesResponse> CountAutoSnapshotPoliciesInvoker(CountAutoSnapshotPoliciesRequest countAutoSnapshotPoliciesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-policies/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", countAutoSnapshotPoliciesRequest);
+            return new SyncInvoker<CountAutoSnapshotPoliciesResponse>(this, "GET", request, JsonUtils.DeSerialize<CountAutoSnapshotPoliciesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询快照链个数
+        ///
+        /// 查询快照链个数。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CountSnapshotChainsResponse CountSnapshotChains(CountSnapshotChainsRequest countSnapshotChainsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-chains/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", countSnapshotChainsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<CountSnapshotChainsResponse>(response);
+        }
+
+        public SyncInvoker<CountSnapshotChainsResponse> CountSnapshotChainsInvoker(CountSnapshotChainsRequest countSnapshotChainsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-chains/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", countSnapshotChainsRequest);
+            return new SyncInvoker<CountSnapshotChainsResponse>(this, "GET", request, JsonUtils.DeSerialize<CountSnapshotChainsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询快照个数
+        ///
+        /// 查询快照个数。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CountSnapshotsResponse CountSnapshots(CountSnapshotsRequest countSnapshotsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshots/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", countSnapshotsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<CountSnapshotsResponse>(response);
+        }
+
+        public SyncInvoker<CountSnapshotsResponse> CountSnapshotsInvoker(CountSnapshotsRequest countSnapshotsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshots/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", countSnapshotsRequest);
+            return new SyncInvoker<CountSnapshotsResponse>(this, "GET", request, JsonUtils.DeSerialize<CountSnapshotsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询快照一致性组个数
+        ///
+        /// 查询快照一致性组个数。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CountSnapshotsGroupResponse CountSnapshotsGroup(CountSnapshotsGroupRequest countSnapshotsGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-groups/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", countSnapshotsGroupRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<CountSnapshotsGroupResponse>(response);
+        }
+
+        public SyncInvoker<CountSnapshotsGroupResponse> CountSnapshotsGroupInvoker(CountSnapshotsGroupRequest countSnapshotsGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-groups/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", countSnapshotsGroupRequest);
+            return new SyncInvoker<CountSnapshotsGroupResponse>(this, "GET", request, JsonUtils.DeSerialize<CountSnapshotsGroupResponse>);
+        }
+        
+        /// <summary>
+        /// 创建自动快照策略
+        ///
+        /// 创建自动快照策略。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateAutoSnapshotPolicyResponse CreateAutoSnapshotPolicy(CreateAutoSnapshotPolicyRequest createAutoSnapshotPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createAutoSnapshotPolicyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateAutoSnapshotPolicyResponse>(response);
+        }
+
+        public SyncInvoker<CreateAutoSnapshotPolicyResponse> CreateAutoSnapshotPolicyInvoker(CreateAutoSnapshotPolicyRequest createAutoSnapshotPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createAutoSnapshotPolicyRequest);
+            return new SyncInvoker<CreateAutoSnapshotPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAutoSnapshotPolicyResponse>);
+        }
+        
+        /// <summary>
         /// 创建云硬盘快照
         ///
         /// 创建云硬盘快照。
@@ -344,6 +594,54 @@ namespace HuaweiCloud.SDK.Evs.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSnapshotRequest);
             return new SyncInvoker<CreateSnapshotResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateSnapshotResponse>);
+        }
+        
+        /// <summary>
+        /// 创建快照一致性组
+        ///
+        /// 创建快照一致性组。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateSnapshotGroupResponse CreateSnapshotGroup(CreateSnapshotGroupRequest createSnapshotGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-groups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSnapshotGroupRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateSnapshotGroupResponse>(response);
+        }
+
+        public SyncInvoker<CreateSnapshotGroupResponse> CreateSnapshotGroupInvoker(CreateSnapshotGroupRequest createSnapshotGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-groups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSnapshotGroupRequest);
+            return new SyncInvoker<CreateSnapshotGroupResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateSnapshotGroupResponse>);
+        }
+        
+        /// <summary>
+        /// 创建快照
+        ///
+        /// 创建标准快照。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateStandardSnapshotResponse CreateStandardSnapshot(CreateStandardSnapshotRequest createStandardSnapshotRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshots", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createStandardSnapshotRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateStandardSnapshotResponse>(response);
+        }
+
+        public SyncInvoker<CreateStandardSnapshotResponse> CreateStandardSnapshotInvoker(CreateStandardSnapshotRequest createStandardSnapshotRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshots", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createStandardSnapshotRequest);
+            return new SyncInvoker<CreateStandardSnapshotResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateStandardSnapshotResponse>);
         }
         
         /// <summary>
@@ -376,6 +674,32 @@ namespace HuaweiCloud.SDK.Evs.V2
         }
         
         /// <summary>
+        /// 删除单个自动快照策略
+        ///
+        /// 删除单个自动快照策略。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteAutoSnapshotPolicyResponse DeleteAutoSnapshotPolicy(DeleteAutoSnapshotPolicyRequest deleteAutoSnapshotPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteAutoSnapshotPolicyRequest.SnapshotPolicyId, out var valueOfSnapshotPolicyId)) urlParam.Add("snapshot_policy_id", valueOfSnapshotPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-policies/{snapshot_policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAutoSnapshotPolicyRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteAutoSnapshotPolicyResponse>(response);
+        }
+
+        public SyncInvoker<DeleteAutoSnapshotPolicyResponse> DeleteAutoSnapshotPolicyInvoker(DeleteAutoSnapshotPolicyRequest deleteAutoSnapshotPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteAutoSnapshotPolicyRequest.SnapshotPolicyId, out var valueOfSnapshotPolicyId)) urlParam.Add("snapshot_policy_id", valueOfSnapshotPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-policies/{snapshot_policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAutoSnapshotPolicyRequest);
+            return new SyncInvoker<DeleteAutoSnapshotPolicyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteAutoSnapshotPolicyResponse>);
+        }
+        
+        /// <summary>
         /// 删除云硬盘快照
         ///
         /// 删除云硬盘快照。
@@ -399,6 +723,58 @@ namespace HuaweiCloud.SDK.Evs.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots/{snapshot_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSnapshotRequest);
             return new SyncInvoker<DeleteSnapshotResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSnapshotResponse>);
+        }
+        
+        /// <summary>
+        /// 删除快照一致性组
+        ///
+        /// 删除快照一致性组。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteSnapshotGroupResponse DeleteSnapshotGroup(DeleteSnapshotGroupRequest deleteSnapshotGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteSnapshotGroupRequest.SnapshotGroupId, out var valueOfSnapshotGroupId)) urlParam.Add("snapshot_group_id", valueOfSnapshotGroupId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-groups/{snapshot_group_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSnapshotGroupRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteSnapshotGroupResponse>(response);
+        }
+
+        public SyncInvoker<DeleteSnapshotGroupResponse> DeleteSnapshotGroupInvoker(DeleteSnapshotGroupRequest deleteSnapshotGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteSnapshotGroupRequest.SnapshotGroupId, out var valueOfSnapshotGroupId)) urlParam.Add("snapshot_group_id", valueOfSnapshotGroupId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-groups/{snapshot_group_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSnapshotGroupRequest);
+            return new SyncInvoker<DeleteSnapshotGroupResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteSnapshotGroupResponse>);
+        }
+        
+        /// <summary>
+        /// 删除快照
+        ///
+        /// 删除快照。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteStandardSnapshotResponse DeleteStandardSnapshot(DeleteStandardSnapshotRequest deleteStandardSnapshotRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteStandardSnapshotRequest.SnapshotId, out var valueOfSnapshotId)) urlParam.Add("snapshot_id", valueOfSnapshotId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshots/{snapshot_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStandardSnapshotRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteStandardSnapshotResponse>(response);
+        }
+
+        public SyncInvoker<DeleteStandardSnapshotResponse> DeleteStandardSnapshotInvoker(DeleteStandardSnapshotRequest deleteStandardSnapshotRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteStandardSnapshotRequest.SnapshotId, out var valueOfSnapshotId)) urlParam.Add("snapshot_id", valueOfSnapshotId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshots/{snapshot_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStandardSnapshotRequest);
+            return new SyncInvoker<DeleteStandardSnapshotResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteStandardSnapshotResponse>);
         }
         
         /// <summary>
@@ -454,6 +830,152 @@ namespace HuaweiCloud.SDK.Evs.V2
         }
         
         /// <summary>
+        /// 解绑自动快照策略
+        ///
+        /// 解绑自动快照策略。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DisassociateAutoSnapshotPolicyResponse DisassociateAutoSnapshotPolicy(DisassociateAutoSnapshotPolicyRequest disassociateAutoSnapshotPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(disassociateAutoSnapshotPolicyRequest.SnapshotPolicyId, out var valueOfSnapshotPolicyId)) urlParam.Add("snapshot_policy_id", valueOfSnapshotPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-policies/{snapshot_policy_id}/disassociate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", disassociateAutoSnapshotPolicyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<DisassociateAutoSnapshotPolicyResponse>(response);
+        }
+
+        public SyncInvoker<DisassociateAutoSnapshotPolicyResponse> DisassociateAutoSnapshotPolicyInvoker(DisassociateAutoSnapshotPolicyRequest disassociateAutoSnapshotPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(disassociateAutoSnapshotPolicyRequest.SnapshotPolicyId, out var valueOfSnapshotPolicyId)) urlParam.Add("snapshot_policy_id", valueOfSnapshotPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-policies/{snapshot_policy_id}/disassociate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", disassociateAutoSnapshotPolicyRequest);
+            return new SyncInvoker<DisassociateAutoSnapshotPolicyResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DisassociateAutoSnapshotPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 查询自动快照策略
+        ///
+        /// 查询自动快照策略。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListAutoSnapshotPolicyResponse ListAutoSnapshotPolicy(ListAutoSnapshotPolicyRequest listAutoSnapshotPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAutoSnapshotPolicyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListAutoSnapshotPolicyResponse>(response);
+        }
+
+        public SyncInvoker<ListAutoSnapshotPolicyResponse> ListAutoSnapshotPolicyInvoker(ListAutoSnapshotPolicyRequest listAutoSnapshotPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAutoSnapshotPolicyRequest);
+            return new SyncInvoker<ListAutoSnapshotPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAutoSnapshotPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 查询快照链列表
+        ///
+        /// 查询快照链的列表。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListSnapshotChainsResponse ListSnapshotChains(ListSnapshotChainsRequest listSnapshotChainsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-chains", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSnapshotChainsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListSnapshotChainsResponse>(response);
+        }
+
+        public SyncInvoker<ListSnapshotChainsResponse> ListSnapshotChainsInvoker(ListSnapshotChainsRequest listSnapshotChainsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-chains", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSnapshotChainsRequest);
+            return new SyncInvoker<ListSnapshotChainsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSnapshotChainsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询快照一致性组列表
+        ///
+        /// 查询快照一致性组列表。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListSnapshotGroupResponse ListSnapshotGroup(ListSnapshotGroupRequest listSnapshotGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-groups/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSnapshotGroupRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListSnapshotGroupResponse>(response);
+        }
+
+        public SyncInvoker<ListSnapshotGroupResponse> ListSnapshotGroupInvoker(ListSnapshotGroupRequest listSnapshotGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-groups/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSnapshotGroupRequest);
+            return new SyncInvoker<ListSnapshotGroupResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSnapshotGroupResponse>);
+        }
+        
+        /// <summary>
+        /// 查询快照组的所有标签
+        ///
+        /// 查询快照组的所有标签。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListSnapshotGroupTagsResponse ListSnapshotGroupTags(ListSnapshotGroupTagsRequest listSnapshotGroupTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-groups/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSnapshotGroupTagsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListSnapshotGroupTagsResponse>(response);
+        }
+
+        public SyncInvoker<ListSnapshotGroupTagsResponse> ListSnapshotGroupTagsInvoker(ListSnapshotGroupTagsRequest listSnapshotGroupTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-groups/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSnapshotGroupTagsRequest);
+            return new SyncInvoker<ListSnapshotGroupTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSnapshotGroupTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询快照资源的所有标签
+        ///
+        /// 查询快照资源的所有标签。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListSnapshotTagsResponse ListSnapshotTags(ListSnapshotTagsRequest listSnapshotTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshots/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSnapshotTagsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListSnapshotTagsResponse>(response);
+        }
+
+        public SyncInvoker<ListSnapshotTagsResponse> ListSnapshotTagsInvoker(ListSnapshotTagsRequest listSnapshotTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshots/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSnapshotTagsRequest);
+            return new SyncInvoker<ListSnapshotTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSnapshotTagsResponse>);
+        }
+        
+        /// <summary>
         /// 查询云硬盘快照详情列表
         ///
         /// 查询云硬盘快照详细列表信息。
@@ -475,6 +997,30 @@ namespace HuaweiCloud.SDK.Evs.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots/detail", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSnapshotsRequest);
             return new SyncInvoker<ListSnapshotsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSnapshotsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询快照详情列表
+        ///
+        /// 查询快照详情列表。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListSnapshotsDetailsResponse ListSnapshotsDetails(ListSnapshotsDetailsRequest listSnapshotsDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshots/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSnapshotsDetailsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListSnapshotsDetailsResponse>(response);
+        }
+
+        public SyncInvoker<ListSnapshotsDetailsResponse> ListSnapshotsDetailsInvoker(ListSnapshotsDetailsRequest listSnapshotsDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshots/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSnapshotsDetailsRequest);
+            return new SyncInvoker<ListSnapshotsDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSnapshotsDetailsResponse>);
         }
         
         /// <summary>
@@ -714,6 +1260,58 @@ namespace HuaweiCloud.SDK.Evs.V2
         }
         
         /// <summary>
+        /// 快照回滚
+        ///
+        /// 将快照数据回滚到云硬盘。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RollbackStandardSnapshotResponse RollbackStandardSnapshot(RollbackStandardSnapshotRequest rollbackStandardSnapshotRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(rollbackStandardSnapshotRequest.SnapshotId, out var valueOfSnapshotId)) urlParam.Add("snapshot_id", valueOfSnapshotId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshots/{snapshot_id}/rollback", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", rollbackStandardSnapshotRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<RollbackStandardSnapshotResponse>(response);
+        }
+
+        public SyncInvoker<RollbackStandardSnapshotResponse> RollbackStandardSnapshotInvoker(RollbackStandardSnapshotRequest rollbackStandardSnapshotRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(rollbackStandardSnapshotRequest.SnapshotId, out var valueOfSnapshotId)) urlParam.Add("snapshot_id", valueOfSnapshotId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshots/{snapshot_id}/rollback", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", rollbackStandardSnapshotRequest);
+            return new SyncInvoker<RollbackStandardSnapshotResponse>(this, "POST", request, JsonUtils.DeSerialize<RollbackStandardSnapshotResponse>);
+        }
+        
+        /// <summary>
+        /// 查询单个自动快照策略
+        ///
+        /// 查询单个自动快照策略。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowAutoSnapshotPolicyResponse ShowAutoSnapshotPolicy(ShowAutoSnapshotPolicyRequest showAutoSnapshotPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showAutoSnapshotPolicyRequest.SnapshotPolicyId, out var valueOfSnapshotPolicyId)) urlParam.Add("snapshot_policy_id", valueOfSnapshotPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-policies/{snapshot_policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoSnapshotPolicyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowAutoSnapshotPolicyResponse>(response);
+        }
+
+        public SyncInvoker<ShowAutoSnapshotPolicyResponse> ShowAutoSnapshotPolicyInvoker(ShowAutoSnapshotPolicyRequest showAutoSnapshotPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showAutoSnapshotPolicyRequest.SnapshotPolicyId, out var valueOfSnapshotPolicyId)) urlParam.Add("snapshot_policy_id", valueOfSnapshotPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-policies/{snapshot_policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoSnapshotPolicyRequest);
+            return new SyncInvoker<ShowAutoSnapshotPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutoSnapshotPolicyResponse>);
+        }
+        
+        /// <summary>
         /// 查询job的状态
         ///
         /// 查询Job的执行状态。
@@ -788,6 +1386,58 @@ namespace HuaweiCloud.SDK.Evs.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots/{snapshot_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSnapshotRequest);
             return new SyncInvoker<ShowSnapshotResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSnapshotResponse>);
+        }
+        
+        /// <summary>
+        /// 查询单个快照一致性组
+        ///
+        /// 查询单个快照一致性组。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowSnapshotGroupResponse ShowSnapshotGroup(ShowSnapshotGroupRequest showSnapshotGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showSnapshotGroupRequest.SnapshotGroupId, out var valueOfSnapshotGroupId)) urlParam.Add("snapshot_group_id", valueOfSnapshotGroupId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-groups/{snapshot_group_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSnapshotGroupRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowSnapshotGroupResponse>(response);
+        }
+
+        public SyncInvoker<ShowSnapshotGroupResponse> ShowSnapshotGroupInvoker(ShowSnapshotGroupRequest showSnapshotGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showSnapshotGroupRequest.SnapshotGroupId, out var valueOfSnapshotGroupId)) urlParam.Add("snapshot_group_id", valueOfSnapshotGroupId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-groups/{snapshot_group_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSnapshotGroupRequest);
+            return new SyncInvoker<ShowSnapshotGroupResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSnapshotGroupResponse>);
+        }
+        
+        /// <summary>
+        /// 查询单个快照信息
+        ///
+        /// 查询单个快照信息。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowStandardSnapshotResponse ShowStandardSnapshot(ShowStandardSnapshotRequest showStandardSnapshotRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showStandardSnapshotRequest.SnapshotId, out var valueOfSnapshotId)) urlParam.Add("snapshot_id", valueOfSnapshotId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshots/{snapshot_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStandardSnapshotRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowStandardSnapshotResponse>(response);
+        }
+
+        public SyncInvoker<ShowStandardSnapshotResponse> ShowStandardSnapshotInvoker(ShowStandardSnapshotRequest showStandardSnapshotRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showStandardSnapshotRequest.SnapshotId, out var valueOfSnapshotId)) urlParam.Add("snapshot_id", valueOfSnapshotId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshots/{snapshot_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStandardSnapshotRequest);
+            return new SyncInvoker<ShowStandardSnapshotResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowStandardSnapshotResponse>);
         }
         
         /// <summary>
@@ -895,6 +1545,32 @@ namespace HuaweiCloud.SDK.Evs.V2
         }
         
         /// <summary>
+        /// 更新自动快照策略
+        ///
+        /// 更新自动快照策略。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateAutoSnapshotPolicyResponse UpdateAutoSnapshotPolicy(UpdateAutoSnapshotPolicyRequest updateAutoSnapshotPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateAutoSnapshotPolicyRequest.SnapshotPolicyId, out var valueOfSnapshotPolicyId)) urlParam.Add("snapshot_policy_id", valueOfSnapshotPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-policies/{snapshot_policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateAutoSnapshotPolicyRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateAutoSnapshotPolicyResponse>(response);
+        }
+
+        public SyncInvoker<UpdateAutoSnapshotPolicyResponse> UpdateAutoSnapshotPolicyInvoker(UpdateAutoSnapshotPolicyRequest updateAutoSnapshotPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateAutoSnapshotPolicyRequest.SnapshotPolicyId, out var valueOfSnapshotPolicyId)) urlParam.Add("snapshot_policy_id", valueOfSnapshotPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-policies/{snapshot_policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateAutoSnapshotPolicyRequest);
+            return new SyncInvoker<UpdateAutoSnapshotPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAutoSnapshotPolicyResponse>);
+        }
+        
+        /// <summary>
         /// 更新回收站策略
         ///
         /// 更新回收站策略。
@@ -942,6 +1618,58 @@ namespace HuaweiCloud.SDK.Evs.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots/{snapshot_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSnapshotRequest);
             return new SyncInvoker<UpdateSnapshotResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSnapshotResponse>);
+        }
+        
+        /// <summary>
+        /// 更新快照一致性组
+        ///
+        /// 更新快照一致性组。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateSnapshotGroupResponse UpdateSnapshotGroup(UpdateSnapshotGroupRequest updateSnapshotGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateSnapshotGroupRequest.SnapshotGroupId, out var valueOfSnapshotGroupId)) urlParam.Add("snapshot_group_id", valueOfSnapshotGroupId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-groups/{snapshot_group_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSnapshotGroupRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateSnapshotGroupResponse>(response);
+        }
+
+        public SyncInvoker<UpdateSnapshotGroupResponse> UpdateSnapshotGroupInvoker(UpdateSnapshotGroupRequest updateSnapshotGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateSnapshotGroupRequest.SnapshotGroupId, out var valueOfSnapshotGroupId)) urlParam.Add("snapshot_group_id", valueOfSnapshotGroupId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshot-groups/{snapshot_group_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSnapshotGroupRequest);
+            return new SyncInvoker<UpdateSnapshotGroupResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSnapshotGroupResponse>);
+        }
+        
+        /// <summary>
+        /// 更新快照信息
+        ///
+        /// 更新快照信息。标准快照当前只在部分区域支持，具体的区域列表请通过控制台查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateStandardSnapshotResponse UpdateStandardSnapshot(UpdateStandardSnapshotRequest updateStandardSnapshotRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateStandardSnapshotRequest.SnapshotId, out var valueOfSnapshotId)) urlParam.Add("snapshot_id", valueOfSnapshotId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshots/{snapshot_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateStandardSnapshotRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateStandardSnapshotResponse>(response);
+        }
+
+        public SyncInvoker<UpdateStandardSnapshotResponse> UpdateStandardSnapshotInvoker(UpdateStandardSnapshotRequest updateStandardSnapshotRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateStandardSnapshotRequest.SnapshotId, out var valueOfSnapshotId)) urlParam.Add("snapshot_id", valueOfSnapshotId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/snapshots/{snapshot_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateStandardSnapshotRequest);
+            return new SyncInvoker<UpdateStandardSnapshotResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateStandardSnapshotResponse>);
         }
         
         /// <summary>

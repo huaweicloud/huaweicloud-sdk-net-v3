@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
     {
 
         /// <summary>
-        /// 冻结场景。可选值如下： - ARREAR：欠费冻结 - POLICE：公安冻结 - ILLEGAL：违规冻结
+        /// **参数解释：**冻结场景。可选值如下： - ARREAR：欠费冻结 - POLICE：公安冻结 - ILLEGAL：违规冻结
         /// </summary>
         [JsonProperty("scene", NullValueHandling = NullValueHandling.Ignore)]
         public string Scene { get; set; }
 
         /// <summary>
-        /// 冻结后的影响。可选值如下： - 1：冻结后可释放 - 2：冻结后不可释放
+        /// **参数解释：**冻结后的影响。可选值如下： - 1：冻结后可释放 - 2：冻结后不可释放
         /// </summary>
         [JsonProperty("effect", NullValueHandling = NullValueHandling.Ignore)]
         public int? Effect { get; set; }

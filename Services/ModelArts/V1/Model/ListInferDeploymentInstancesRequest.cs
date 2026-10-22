@@ -52,11 +52,11 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public string Offset { get; set; }
 
         /// <summary>
-        /// **参数解释：** pod名字。 **取值范围：** 不涉及。
+        /// **参数解释：** 服务实例名字。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
-        [SDKProperty("pod_name", IsQuery = true)]
-        [JsonProperty("pod_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string PodName { get; set; }
+        [SDKProperty("instance_name", IsQuery = true)]
+        [JsonProperty("instance_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceName { get; set; }
 
 
 
@@ -72,7 +72,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
-            sb.Append("  podName: ").Append(PodName).Append("\n");
+            sb.Append("  instanceName: ").Append(InstanceName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -96,7 +96,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.Status != input.Status || (this.Status != null && input.Status != null && !this.Status.SequenceEqual(input.Status))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
-            if (this.PodName != input.PodName || (this.PodName != null && !this.PodName.Equals(input.PodName))) return false;
+            if (this.InstanceName != input.InstanceName || (this.InstanceName != null && !this.InstanceName.Equals(input.InstanceName))) return false;
 
             return true;
         }
@@ -114,7 +114,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.PodName != null) hashCode = hashCode * 59 + this.PodName.GetHashCode();
+                if (this.InstanceName != null) hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
                 return hashCode;
             }
         }

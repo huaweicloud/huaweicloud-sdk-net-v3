@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 训练作业高级功能配置，可选取值如下： - \&quot;job_template\&quot;: \&quot;Template RL\&quot;（异构作业）。 - \&quot;fault-tolerance/job-retry-num\&quot;: \&quot;3\&quot;（故障自动重启次数）。 - \&quot;jupyter-lab/enable\&quot;: \&quot;true\&quot;（JupyterLab训练应用程序）
+        /// **参数解释**：训练作业高级功能配置。可选取值如下：   - \&quot;job_template\&quot;: \&quot;Template RL\&quot;（异构作业）   - \&quot;fault-tolerance/job-retry-num\&quot;: \&quot;3\&quot;（故障自动重启次数）   - \&quot;fault-tolerance/job-unconditional-retry\&quot;: \&quot;true\&quot;（无条件重启）   - \&quot;fault-tolerance/hang-retry\&quot;: \&quot;true\&quot;（卡死重启）   - \&quot;jupyter-lab/enable\&quot;: \&quot;true\&quot;（JupyterLab训练应用程序）   - \&quot;tensorboard/enable\&quot;: \&quot;true\&quot;（TensorBoard训练应用程序）   - \&quot;mindstudio-insight/enable\&quot;: \&quot;true\&quot;（MindStudio Insight训练应用程序）   - \&quot;fault-tolerance/hccl_op_retry\&quot;:\&quot;true\&quot;（算子重执行）   - \&quot;performance_diagnosis_enabled\&quot;:\&quot;true\&quot;（性能诊断功能）   - \&quot;record/code-dir\&quot;: \&quot;obs dir\&quot;（代码备份功能）   - \&quot;fault-tolerance/pod-retry-num\&quot;: \&quot;3\&quot;（Pod级故障自动重启次数） **约束限制**：不涉及。
         /// </summary>
         [JsonProperty("annotations", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, string> Annotations { get; set; }

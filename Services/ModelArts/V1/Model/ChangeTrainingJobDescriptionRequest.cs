@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public JobDescription Body { get; set; }
+        public JobUpdateRequestBody Body { get; set; }
 
 
 

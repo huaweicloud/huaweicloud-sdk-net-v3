@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
     /// <summary>
     /// **参数解释：** 日志配置。 **约束限制：** 不涉及。
     /// </summary>
-    public class LtsConfiguration 
+    public class LtsConfigurationV2 
     {
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class LtsConfiguration {\n");
+            sb.Append("class LtsConfigurationV2 {\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  logGroupId: ").Append(LogGroupId).Append("\n");
@@ -69,13 +69,13 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as LtsConfiguration);
+            return this.Equals(input as LtsConfigurationV2);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(LtsConfiguration input)
+        public bool Equals(LtsConfigurationV2 input)
         {
             if (input == null) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;

@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         /// **参数解释：** 部署超时时间
         /// </summary>
         [JsonProperty("deploy_timeout_minutes", NullValueHandling = NullValueHandling.Ignore)]
-        public string DeployTimeoutMinutes { get; set; }
+        public int? DeployTimeoutMinutes { get; set; }
 
         /// <summary>
         /// 
@@ -77,6 +77,12 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public string CustomMetricsPath { get; set; }
 
         /// <summary>
+        /// **参数解释：** Mooncake缓存开关。 **约束限制：** 不涉及。 **取值范围：** - true：开启Mooncake缓存开关。 - false：关闭Mooncake缓存开关。 **默认取值：** false
+        /// </summary>
+        [JsonProperty("mooncake_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? MooncakeEnable { get; set; }
+
+        /// <summary>
         /// **参数解释：** 容器端口
         /// </summary>
         [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
@@ -107,6 +113,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  metricApiPort: ").Append(MetricApiPort).Append("\n");
             sb.Append("  metricApiPath: ").Append(MetricApiPath).Append("\n");
             sb.Append("  customMetricsPath: ").Append(CustomMetricsPath).Append("\n");
+            sb.Append("  mooncakeEnable: ").Append(MooncakeEnable).Append("\n");
             sb.Append("  port: ").Append(Port).Append("\n");
             sb.Append("  protocol: ").Append(Protocol).Append("\n");
             sb.Append("}\n");
@@ -137,6 +144,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.MetricApiPort != input.MetricApiPort || (this.MetricApiPort != null && !this.MetricApiPort.Equals(input.MetricApiPort))) return false;
             if (this.MetricApiPath != input.MetricApiPath || (this.MetricApiPath != null && !this.MetricApiPath.Equals(input.MetricApiPath))) return false;
             if (this.CustomMetricsPath != input.CustomMetricsPath || (this.CustomMetricsPath != null && !this.CustomMetricsPath.Equals(input.CustomMetricsPath))) return false;
+            if (this.MooncakeEnable != input.MooncakeEnable || (this.MooncakeEnable != null && !this.MooncakeEnable.Equals(input.MooncakeEnable))) return false;
             if (this.Port != input.Port || (this.Port != null && !this.Port.Equals(input.Port))) return false;
             if (this.Protocol != input.Protocol || (this.Protocol != null && !this.Protocol.Equals(input.Protocol))) return false;
 
@@ -161,6 +169,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 if (this.MetricApiPort != null) hashCode = hashCode * 59 + this.MetricApiPort.GetHashCode();
                 if (this.MetricApiPath != null) hashCode = hashCode * 59 + this.MetricApiPath.GetHashCode();
                 if (this.CustomMetricsPath != null) hashCode = hashCode * 59 + this.CustomMetricsPath.GetHashCode();
+                if (this.MooncakeEnable != null) hashCode = hashCode * 59 + this.MooncakeEnable.GetHashCode();
                 if (this.Port != null) hashCode = hashCode * 59 + this.Port.GetHashCode();
                 if (this.Protocol != null) hashCode = hashCode * 59 + this.Protocol.GetHashCode();
                 return hashCode;

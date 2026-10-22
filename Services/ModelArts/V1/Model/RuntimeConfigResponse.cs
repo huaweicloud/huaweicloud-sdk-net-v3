@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         [JsonProperty("server_task_limit", NullValueHandling = NullValueHandling.Ignore)]
         public ServerTaskLimit ServerTaskLimit { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 智能分流开启字段。 **取值范围：** [true, false]。
+        /// </summary>
+        [JsonProperty("smart_routing_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SmartRoutingEnable { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  serviceLimit: ").Append(ServiceLimit).Append("\n");
             sb.Append("  serviceSecret: ").Append(ServiceSecret).Append("\n");
             sb.Append("  serverTaskLimit: ").Append(ServerTaskLimit).Append("\n");
+            sb.Append("  smartRoutingEnable: ").Append(SmartRoutingEnable).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,6 +82,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.ServiceLimit != input.ServiceLimit || (this.ServiceLimit != null && !this.ServiceLimit.Equals(input.ServiceLimit))) return false;
             if (this.ServiceSecret != input.ServiceSecret || (this.ServiceSecret != null && !this.ServiceSecret.Equals(input.ServiceSecret))) return false;
             if (this.ServerTaskLimit != input.ServerTaskLimit || (this.ServerTaskLimit != null && !this.ServerTaskLimit.Equals(input.ServerTaskLimit))) return false;
+            if (this.SmartRoutingEnable != input.SmartRoutingEnable || (this.SmartRoutingEnable != null && !this.SmartRoutingEnable.Equals(input.SmartRoutingEnable))) return false;
 
             return true;
         }
@@ -91,6 +99,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 if (this.ServiceLimit != null) hashCode = hashCode * 59 + this.ServiceLimit.GetHashCode();
                 if (this.ServiceSecret != null) hashCode = hashCode * 59 + this.ServiceSecret.GetHashCode();
                 if (this.ServerTaskLimit != null) hashCode = hashCode * 59 + this.ServerTaskLimit.GetHashCode();
+                if (this.SmartRoutingEnable != null) hashCode = hashCode * 59 + this.SmartRoutingEnable.GetHashCode();
                 return hashCode;
             }
         }
