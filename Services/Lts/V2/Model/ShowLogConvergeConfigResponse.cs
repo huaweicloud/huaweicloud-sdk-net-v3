@@ -185,12 +185,6 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         public string ManagementProjectId { get; set; }
 
         /// <summary>
-        /// 版本
-        /// </summary>
-        [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
-        public string Version { get; set; }
-
-        /// <summary>
         /// 日志汇聚配置
         /// </summary>
         [JsonProperty("log_mapping_config", NullValueHandling = NullValueHandling.Ignore)]
@@ -214,7 +208,6 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  organizationId: ").Append(OrganizationId).Append("\n");
             sb.Append("  managementAccountId: ").Append(ManagementAccountId).Append("\n");
             sb.Append("  managementProjectId: ").Append(ManagementProjectId).Append("\n");
-            sb.Append("  version: ").Append(Version).Append("\n");
             sb.Append("  logMappingConfig: ").Append(LogMappingConfig).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -243,7 +236,6 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.OrganizationId != input.OrganizationId || (this.OrganizationId != null && !this.OrganizationId.Equals(input.OrganizationId))) return false;
             if (this.ManagementAccountId != input.ManagementAccountId || (this.ManagementAccountId != null && !this.ManagementAccountId.Equals(input.ManagementAccountId))) return false;
             if (this.ManagementProjectId != input.ManagementProjectId || (this.ManagementProjectId != null && !this.ManagementProjectId.Equals(input.ManagementProjectId))) return false;
-            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
             if (this.LogMappingConfig != input.LogMappingConfig || (this.LogMappingConfig != null && input.LogMappingConfig != null && !this.LogMappingConfig.SequenceEqual(input.LogMappingConfig))) return false;
 
             return true;
@@ -266,7 +258,6 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.OrganizationId != null) hashCode = hashCode * 59 + this.OrganizationId.GetHashCode();
                 if (this.ManagementAccountId != null) hashCode = hashCode * 59 + this.ManagementAccountId.GetHashCode();
                 if (this.ManagementProjectId != null) hashCode = hashCode * 59 + this.ManagementProjectId.GetHashCode();
-                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
                 if (this.LogMappingConfig != null) hashCode = hashCode * 59 + this.LogMappingConfig.GetHashCode();
                 return hashCode;
             }

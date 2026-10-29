@@ -11,61 +11,61 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
 {
     /// <summary>
-    /// 
+    /// **参数解释：** 检查参数配置信息。
     /// </summary>
     public class CheckConfigInfo 
     {
 
         /// <summary>
-        /// 检查参数名称
+        /// **参数解释：** 检查参数名称。 **取值范围:** 不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 检查参数对应的key值
+        /// **参数解释：** 检查参数对应的Key值。 **取值范围:** 不涉及。
         /// </summary>
         [JsonProperty("cfg_key", NullValueHandling = NullValueHandling.Ignore)]
         public string CfgKey { get; set; }
 
         /// <summary>
-        /// 检查参数默认值
+        /// **参数解释：** 检查参数默认值。 **取值范围:** 不涉及。
         /// </summary>
         [JsonProperty("default_value", NullValueHandling = NullValueHandling.Ignore)]
         public string DefaultValue { get; set; }
 
         /// <summary>
-        /// 检查参数可选项
+        /// **参数解释：** 检查参数可选项。 **取值范围:** 不涉及。
         /// </summary>
         [JsonProperty("option_value", NullValueHandling = NullValueHandling.Ignore)]
         public string OptionValue { get; set; }
 
         /// <summary>
-        /// 0：非必填，1：必填
+        /// **参数解释：** 是否必填参数。 **取值范围:** - 0：非必填。 - 1：必填。
         /// </summary>
         [JsonProperty("is_required", NullValueHandling = NullValueHandling.Ignore)]
         public int? IsRequired { get; set; }
 
         /// <summary>
-        /// 检查参数说明
+        /// **参数解释：** 检查参数说明。 **取值范围:** 不涉及。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 参数类型，0：文本，2：有可选项
+        /// **参数解释：** 参数类型。 **取值范围:** - 0：文本。 - 2：有可选项。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public int? Type { get; set; }
 
         /// <summary>
-        /// 参数状态，on：启用，off：未启用
+        /// **参数解释：** 参数状态。 **取值范围:** - on：启用。 - off：未启用。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 检查参数值
+        /// **参数解释：** 检查参数值。 **取值范围:** 不涉及。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

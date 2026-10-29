@@ -42,6 +42,30 @@ namespace HuaweiCloud.SDK.Csms.V1
         }
         
         /// <summary>
+        /// 批量查询明文凭据值
+        ///
+        /// 批量查询明文凭据值，仅获取latest凭据值，即仅获取凭据版本状态为\&quot;SYSCURRENT\&quot;的凭据版本值。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchGetSecretValueResponse> BatchGetSecretValueAsync(BatchGetSecretValueRequest batchGetSecretValueRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/batch-get-secret-value", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchGetSecretValueRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<BatchGetSecretValueResponse>(response);
+        }
+
+        public AsyncInvoker<BatchGetSecretValueResponse> BatchGetSecretValueAsyncInvoker(BatchGetSecretValueRequest batchGetSecretValueRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/batch-get-secret-value", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchGetSecretValueRequest);
+            return new AsyncInvoker<BatchGetSecretValueResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchGetSecretValueResponse>);
+        }
+        
+        /// <summary>
         /// 批量导入凭据
         ///
         /// 批量导入凭据。

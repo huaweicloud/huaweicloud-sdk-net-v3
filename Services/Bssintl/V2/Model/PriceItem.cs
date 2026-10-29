@@ -58,6 +58,24 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
         [JsonProperty("billing_usage_factor", NullValueHandling = NullValueHandling.Ignore)]
         public string BillingUsageFactor { get; set; }
 
+        /// <summary>
+        /// 定价策略模式，SIMPLE：简单定价、DIVISION：阶梯定价、CONDITION：条件选择定价
+        /// </summary>
+        [JsonProperty("policy_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string PolicyMode { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("division_pattern", NullValueHandling = NullValueHandling.Ignore)]
+        public DivisionPattern DivisionPattern { get; set; }
+
+        /// <summary>
+        /// 条件选择定价结构，policy_mode&#x3D;CONDITION 时有效
+        /// </summary>
+        [JsonProperty("condition_nodes", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ConditionSelectPattern> ConditionNodes { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +92,9 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
             sb.Append("  periodType: ").Append(PeriodType).Append("\n");
             sb.Append("  periodNums: ").Append(PeriodNums).Append("\n");
             sb.Append("  billingUsageFactor: ").Append(BillingUsageFactor).Append("\n");
+            sb.Append("  policyMode: ").Append(PolicyMode).Append("\n");
+            sb.Append("  divisionPattern: ").Append(DivisionPattern).Append("\n");
+            sb.Append("  conditionNodes: ").Append(ConditionNodes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,6 +120,9 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
             if (this.PeriodType != input.PeriodType || (this.PeriodType != null && !this.PeriodType.Equals(input.PeriodType))) return false;
             if (this.PeriodNums != input.PeriodNums || (this.PeriodNums != null && input.PeriodNums != null && !this.PeriodNums.SequenceEqual(input.PeriodNums))) return false;
             if (this.BillingUsageFactor != input.BillingUsageFactor || (this.BillingUsageFactor != null && !this.BillingUsageFactor.Equals(input.BillingUsageFactor))) return false;
+            if (this.PolicyMode != input.PolicyMode || (this.PolicyMode != null && !this.PolicyMode.Equals(input.PolicyMode))) return false;
+            if (this.DivisionPattern != input.DivisionPattern || (this.DivisionPattern != null && !this.DivisionPattern.Equals(input.DivisionPattern))) return false;
+            if (this.ConditionNodes != input.ConditionNodes || (this.ConditionNodes != null && input.ConditionNodes != null && !this.ConditionNodes.SequenceEqual(input.ConditionNodes))) return false;
 
             return true;
         }
@@ -118,6 +142,9 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
                 if (this.PeriodType != null) hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
                 if (this.PeriodNums != null) hashCode = hashCode * 59 + this.PeriodNums.GetHashCode();
                 if (this.BillingUsageFactor != null) hashCode = hashCode * 59 + this.BillingUsageFactor.GetHashCode();
+                if (this.PolicyMode != null) hashCode = hashCode * 59 + this.PolicyMode.GetHashCode();
+                if (this.DivisionPattern != null) hashCode = hashCode * 59 + this.DivisionPattern.GetHashCode();
+                if (this.ConditionNodes != null) hashCode = hashCode * 59 + this.ConditionNodes.GetHashCode();
                 return hashCode;
             }
         }

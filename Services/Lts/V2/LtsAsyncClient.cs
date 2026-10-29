@@ -353,6 +353,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<CreateStructTemplateResponse> CreateStructTemplateAsync(CreateStructTemplateRequest createStructTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -362,6 +363,7 @@ namespace HuaweiCloud.SDK.Lts.V2
             return JsonUtils.DeSerializeNull<CreateStructTemplateResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<CreateStructTemplateResponse> CreateStructTemplateAsyncInvoker(CreateStructTemplateRequest createStructTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1317,6 +1319,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<ListQueryStructuredLogsResponse> ListQueryStructuredLogsAsync(ListQueryStructuredLogsRequest listQueryStructuredLogsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1328,6 +1331,7 @@ namespace HuaweiCloud.SDK.Lts.V2
             return JsonUtils.DeSerialize<ListQueryStructuredLogsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<ListQueryStructuredLogsResponse> ListQueryStructuredLogsAsyncInvoker(ListQueryStructuredLogsRequest listQueryStructuredLogsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1369,6 +1373,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<ListStructuredLogsWithTimeRangeResponse> ListStructuredLogsWithTimeRangeAsync(ListStructuredLogsWithTimeRangeRequest listStructuredLogsWithTimeRangeRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1379,6 +1384,7 @@ namespace HuaweiCloud.SDK.Lts.V2
             return JsonUtils.DeSerializeNull<ListStructuredLogsWithTimeRangeResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<ListStructuredLogsWithTimeRangeResponse> ListStructuredLogsWithTimeRangeAsyncInvoker(ListStructuredLogsWithTimeRangeRequest listStructuredLogsWithTimeRangeRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1819,6 +1825,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<UpdateStructTemplateResponse> UpdateStructTemplateAsync(UpdateStructTemplateRequest updateStructTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1828,6 +1835,7 @@ namespace HuaweiCloud.SDK.Lts.V2
             return JsonUtils.DeSerializeNull<UpdateStructTemplateResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<UpdateStructTemplateResponse> UpdateStructTemplateAsyncInvoker(UpdateStructTemplateRequest updateStructTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();

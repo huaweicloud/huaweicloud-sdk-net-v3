@@ -250,6 +250,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("recursive_depth", NullValueHandling = NullValueHandling.Ignore)]
         public int? RecursiveDepth { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 是否对结构化上报方式中labels字段中非内置字段添加__labels__.前缀的行为进行禁用。 **约束限制：** 不涉及。 **取值范围：** - true：禁用，不添加__labels__.前缀。 - false：不禁用，即添加__labels__.前缀。 **默认取值：** 不涉及。
+        /// </summary>
+        [JsonProperty("disable_labels_prefix", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DisableLabelsPrefix { get; set; }
+
 
 
         /// <summary>
@@ -279,6 +285,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  componentId: ").Append(ComponentId).Append("\n");
             sb.Append("  accessConfigTypeSource: ").Append(AccessConfigTypeSource).Append("\n");
             sb.Append("  recursiveDepth: ").Append(RecursiveDepth).Append("\n");
+            sb.Append("  disableLabelsPrefix: ").Append(DisableLabelsPrefix).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -317,6 +324,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.ComponentId != input.ComponentId || (this.ComponentId != null && input.ComponentId != null && !this.ComponentId.SequenceEqual(input.ComponentId))) return false;
             if (this.AccessConfigTypeSource != input.AccessConfigTypeSource || (this.AccessConfigTypeSource != null && !this.AccessConfigTypeSource.Equals(input.AccessConfigTypeSource))) return false;
             if (this.RecursiveDepth != input.RecursiveDepth || (this.RecursiveDepth != null && !this.RecursiveDepth.Equals(input.RecursiveDepth))) return false;
+            if (this.DisableLabelsPrefix != input.DisableLabelsPrefix || (this.DisableLabelsPrefix != null && !this.DisableLabelsPrefix.Equals(input.DisableLabelsPrefix))) return false;
 
             return true;
         }
@@ -349,6 +357,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.ComponentId != null) hashCode = hashCode * 59 + this.ComponentId.GetHashCode();
                 if (this.AccessConfigTypeSource != null) hashCode = hashCode * 59 + this.AccessConfigTypeSource.GetHashCode();
                 if (this.RecursiveDepth != null) hashCode = hashCode * 59 + this.RecursiveDepth.GetHashCode();
+                if (this.DisableLabelsPrefix != null) hashCode = hashCode * 59 + this.DisableLabelsPrefix.GetHashCode();
                 return hashCode;
             }
         }

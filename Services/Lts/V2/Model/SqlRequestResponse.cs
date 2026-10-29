@@ -76,6 +76,18 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("is_time_range_relative", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsTimeRangeRelative { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 日志组别名。 **约束限制：** 不涉及。
+        /// </summary>
+        [JsonProperty("log_group_name_alias", NullValueHandling = NullValueHandling.Ignore)]
+        public string LogGroupNameAlias { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 日志流别名。 **约束限制：** 不涉及。
+        /// </summary>
+        [JsonProperty("log_stream_name_alias", NullValueHandling = NullValueHandling.Ignore)]
+        public string LogStreamNameAlias { get; set; }
+
 
 
         /// <summary>
@@ -95,6 +107,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  searchTimeRangeUnit: ").Append(SearchTimeRangeUnit).Append("\n");
             sb.Append("  customDate: ").Append(CustomDate).Append("\n");
             sb.Append("  isTimeRangeRelative: ").Append(IsTimeRangeRelative).Append("\n");
+            sb.Append("  logGroupNameAlias: ").Append(LogGroupNameAlias).Append("\n");
+            sb.Append("  logStreamNameAlias: ").Append(LogStreamNameAlias).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -123,6 +137,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.SearchTimeRangeUnit != input.SearchTimeRangeUnit || (this.SearchTimeRangeUnit != null && !this.SearchTimeRangeUnit.Equals(input.SearchTimeRangeUnit))) return false;
             if (this.CustomDate != input.CustomDate || (this.CustomDate != null && !this.CustomDate.Equals(input.CustomDate))) return false;
             if (this.IsTimeRangeRelative != input.IsTimeRangeRelative || (this.IsTimeRangeRelative != null && !this.IsTimeRangeRelative.Equals(input.IsTimeRangeRelative))) return false;
+            if (this.LogGroupNameAlias != input.LogGroupNameAlias || (this.LogGroupNameAlias != null && !this.LogGroupNameAlias.Equals(input.LogGroupNameAlias))) return false;
+            if (this.LogStreamNameAlias != input.LogStreamNameAlias || (this.LogStreamNameAlias != null && !this.LogStreamNameAlias.Equals(input.LogStreamNameAlias))) return false;
 
             return true;
         }
@@ -145,6 +161,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.SearchTimeRangeUnit != null) hashCode = hashCode * 59 + this.SearchTimeRangeUnit.GetHashCode();
                 if (this.CustomDate != null) hashCode = hashCode * 59 + this.CustomDate.GetHashCode();
                 if (this.IsTimeRangeRelative != null) hashCode = hashCode * 59 + this.IsTimeRangeRelative.GetHashCode();
+                if (this.LogGroupNameAlias != null) hashCode = hashCode * 59 + this.LogGroupNameAlias.GetHashCode();
+                if (this.LogStreamNameAlias != null) hashCode = hashCode * 59 + this.LogStreamNameAlias.GetHashCode();
                 return hashCode;
             }
         }

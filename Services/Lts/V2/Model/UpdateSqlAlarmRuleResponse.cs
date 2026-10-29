@@ -406,6 +406,24 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<TagsResBody> Tags { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 告警规则创建的时间，毫秒级的时间戳。 **取值范围** 不涉及。
+        /// </summary>
+        [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
+        public long? CreateTime { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 告警规则最后一次修改的时间，毫秒级的时间戳。 **取值范围：** 不涉及。
+        /// </summary>
+        [JsonProperty("update_time", NullValueHandling = NullValueHandling.Ignore)]
+        public long? UpdateTime { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 支持根据不同条件触发不同级别的告警。当使用该参数时，将优先使用该参数中的条件触发告警，无视condition_expression、sql_alarm_level参数。 **约束限制：** 不涉及。
+        /// </summary>
+        [JsonProperty("condition_expressions", NullValueHandling = NullValueHandling.Ignore)]
+        public List<AlarmCondition> ConditionExpressions { get; set; }
+
 
 
         /// <summary>
@@ -434,6 +452,9 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  whetherRecoveryPolicy: ").Append(WhetherRecoveryPolicy).Append("\n");
             sb.Append("  recoveryPolicy: ").Append(RecoveryPolicy).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  createTime: ").Append(CreateTime).Append("\n");
+            sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
+            sb.Append("  conditionExpressions: ").Append(ConditionExpressions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -471,6 +492,9 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.WhetherRecoveryPolicy != input.WhetherRecoveryPolicy || (this.WhetherRecoveryPolicy != null && !this.WhetherRecoveryPolicy.Equals(input.WhetherRecoveryPolicy))) return false;
             if (this.RecoveryPolicy != input.RecoveryPolicy || (this.RecoveryPolicy != null && !this.RecoveryPolicy.Equals(input.RecoveryPolicy))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.ConditionExpressions != input.ConditionExpressions || (this.ConditionExpressions != null && input.ConditionExpressions != null && !this.ConditionExpressions.SequenceEqual(input.ConditionExpressions))) return false;
 
             return true;
         }
@@ -502,6 +526,9 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.WhetherRecoveryPolicy != null) hashCode = hashCode * 59 + this.WhetherRecoveryPolicy.GetHashCode();
                 if (this.RecoveryPolicy != null) hashCode = hashCode * 59 + this.RecoveryPolicy.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.ConditionExpressions != null) hashCode = hashCode * 59 + this.ConditionExpressions.GetHashCode();
                 return hashCode;
             }
         }

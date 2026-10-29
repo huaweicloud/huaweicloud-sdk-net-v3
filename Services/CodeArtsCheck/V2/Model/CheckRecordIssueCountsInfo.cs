@@ -17,25 +17,25 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
     {
 
         /// <summary>
-        /// 致命问题
+        /// **参数解释：** 致命问题数量。不包括已忽略和已修复问题。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("critical", NullValueHandling = NullValueHandling.Ignore)]
         public int? Critical { get; set; }
 
         /// <summary>
-        /// 严重问题
+        /// **参数解释：** 严重问题数量。不包括已忽略和已修复问题。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("serious", NullValueHandling = NullValueHandling.Ignore)]
         public int? Serious { get; set; }
 
         /// <summary>
-        /// 常规问题
+        /// **参数解释：** 一般问题数量。不包括已忽略和已修复问题。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("normal", NullValueHandling = NullValueHandling.Ignore)]
         public int? Normal { get; set; }
 
         /// <summary>
-        /// 提示问题
+        /// **参数解释：** 提示问题数量。不包括已忽略和已修复问题。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("prompt", NullValueHandling = NullValueHandling.Ignore)]
         public int? Prompt { get; set; }

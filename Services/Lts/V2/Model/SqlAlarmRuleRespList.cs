@@ -532,6 +532,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<TagsResBody> Tags { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 支持根据不同条件触发不同级别的告警。当使用该参数时，将优先使用该参数中的条件触发告警，无视condition_expression、sql_alarm_level参数。
+        /// </summary>
+        [JsonProperty("condition_expressions", NullValueHandling = NullValueHandling.Ignore)]
+        public List<AlarmCondition> ConditionExpressions { get; set; }
+
 
 
         /// <summary>
@@ -562,6 +568,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  notificationFrequency: ").Append(NotificationFrequency).Append("\n");
             sb.Append("  alarmActionRuleName: ").Append(AlarmActionRuleName).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  conditionExpressions: ").Append(ConditionExpressions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -601,6 +608,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.NotificationFrequency != input.NotificationFrequency) return false;
             if (this.AlarmActionRuleName != input.AlarmActionRuleName || (this.AlarmActionRuleName != null && !this.AlarmActionRuleName.Equals(input.AlarmActionRuleName))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.ConditionExpressions != input.ConditionExpressions || (this.ConditionExpressions != null && input.ConditionExpressions != null && !this.ConditionExpressions.SequenceEqual(input.ConditionExpressions))) return false;
 
             return true;
         }
@@ -634,6 +642,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 hashCode = hashCode * 59 + this.NotificationFrequency.GetHashCode();
                 if (this.AlarmActionRuleName != null) hashCode = hashCode * 59 + this.AlarmActionRuleName.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.ConditionExpressions != null) hashCode = hashCode * 59 + this.ConditionExpressions.GetHashCode();
                 return hashCode;
             }
         }

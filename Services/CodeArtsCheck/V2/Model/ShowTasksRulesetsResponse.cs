@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
     {
 
         /// <summary>
-        /// 规则集信息
+        /// **参数解释：** 规则集信息。
         /// </summary>
-        [JsonProperty("info", NullValueHandling = NullValueHandling.Ignore)]
-        public List<TaskRulesetInfo> Info { get; set; }
+        [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
+        public List<TaskRulesetInfo> Data { get; set; }
 
         /// <summary>
-        /// 总数
+        /// **参数解释：** 总数。 **取值范围:** 不涉及。
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }
@@ -37,7 +37,7 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShowTasksRulesetsResponse {\n");
-            sb.Append("  info: ").Append(Info).Append("\n");
+            sb.Append("  data: ").Append(Data).Append("\n");
             sb.Append("  total: ").Append(Total).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -57,7 +57,7 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
         public bool Equals(ShowTasksRulesetsResponse input)
         {
             if (input == null) return false;
-            if (this.Info != input.Info || (this.Info != null && input.Info != null && !this.Info.SequenceEqual(input.Info))) return false;
+            if (this.Data != input.Data || (this.Data != null && input.Data != null && !this.Data.SequenceEqual(input.Data))) return false;
             if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
 
             return true;
@@ -71,7 +71,7 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Info != null) hashCode = hashCode * 59 + this.Info.GetHashCode();
+                if (this.Data != null) hashCode = hashCode * 59 + this.Data.GetHashCode();
                 if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
                 return hashCode;
             }

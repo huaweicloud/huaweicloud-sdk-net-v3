@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
 {
     /// <summary>
-    /// 任务配置高级选项的请求信息
+    /// **参数解释：** 高级配置参数的相关信息，数组不能为空。 **约束限制：** 不涉及。
     /// </summary>
     public class UpdateTaskSettingsRequestBody 
     {
 
         /// <summary>
-        /// 高级选项参数的相关信息
+        /// **参数解释：** 高级配置参数的相关信息，数组不能为空。 **约束限制：** 不涉及。
         /// </summary>
         [JsonProperty("task_advanced_settings", NullValueHandling = NullValueHandling.Ignore)]
         public List<TaskAdvancedSettingsItem> TaskAdvancedSettings { get; set; }

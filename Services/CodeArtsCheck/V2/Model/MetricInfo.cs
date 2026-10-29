@@ -11,265 +11,265 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
 {
     /// <summary>
-    /// 度量项
+    /// 
     /// </summary>
     public class MetricInfo 
     {
 
         /// <summary>
-        /// 代码规模
+        /// **参数解释：** 有效代码行数，不包含空行和注释行。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("code_size", NullValueHandling = NullValueHandling.Ignore)]
         public string CodeSize { get; set; }
 
         /// <summary>
-        /// 原始代码行数
+        /// **参数解释：** 原始代码行数，包含空行和注释行。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("raw_lines", NullValueHandling = NullValueHandling.Ignore)]
         public string RawLines { get; set; }
 
         /// <summary>
-        /// 函数总数
+        /// **参数解释：** 函数总数。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("methods_total", NullValueHandling = NullValueHandling.Ignore)]
         public string MethodsTotal { get; set; }
 
         /// <summary>
-        /// 圈复杂度总数
+        /// **参数解释：** 圈复杂度总数。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("cyclomatic_complexity_total", NullValueHandling = NullValueHandling.Ignore)]
         public string CyclomaticComplexityTotal { get; set; }
 
         /// <summary>
-        /// 平均圈复杂度
+        /// **参数解释：** 平均圈复杂度。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("cyclomatic_complexity_per_method", NullValueHandling = NullValueHandling.Ignore)]
         public string CyclomaticComplexityPerMethod { get; set; }
 
         /// <summary>
-        /// 最大圈复杂度
+        /// **参数解释：** 最大圈复杂度。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("maximum_cyclomatic_complexity", NullValueHandling = NullValueHandling.Ignore)]
         public string MaximumCyclomaticComplexity { get; set; }
 
         /// <summary>
-        /// 超大圈复杂度数
+        /// **参数解释：** 超大圈复杂度函数总数。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("huge_cyclomatic_complexity_total", NullValueHandling = NullValueHandling.Ignore)]
         public string HugeCyclomaticComplexityTotal { get; set; }
 
         /// <summary>
-        /// 超大圈复杂度比例
+        /// **参数解释：** 超大圈复杂度函数占比。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("huge_cyclomatic_complexity_ratio", NullValueHandling = NullValueHandling.Ignore)]
         public string HugeCyclomaticComplexityRatio { get; set; }
 
         /// <summary>
-        /// cca圈复杂度总数
+        /// **参数解释：** CCA圈复杂度总数。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("cca_cyclomatic_complexity_total", NullValueHandling = NullValueHandling.Ignore)]
         public string CcaCyclomaticComplexityTotal { get; set; }
 
         /// <summary>
-        /// cca平均圈复杂度
+        /// **参数解释：** CCA平均圈复杂度。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("cca_cyclomatic_complexity_per_method", NullValueHandling = NullValueHandling.Ignore)]
         public string CcaCyclomaticComplexityPerMethod { get; set; }
 
         /// <summary>
-        /// cca最大圈复杂度
+        /// **参数解释：** CCA最大圈复杂度。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("maximum_cca_cyclomatic_complexity", NullValueHandling = NullValueHandling.Ignore)]
         public string MaximumCcaCyclomaticComplexity { get; set; }
 
         /// <summary>
-        /// 超大圈复杂度函数总数
+        /// **参数解释：** 超大CCA圈复杂度函数总数。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("huge_cca_cyclomatic_complexity_total", NullValueHandling = NullValueHandling.Ignore)]
         public string HugeCcaCyclomaticComplexityTotal { get; set; }
 
         /// <summary>
-        /// 圈复杂度满足度
+        /// **参数解释：** 圈复杂度阈值遵从度。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("cyclomatic_complexity_adequacy", NullValueHandling = NullValueHandling.Ignore)]
         public string CyclomaticComplexityAdequacy { get; set; }
 
         /// <summary>
-        /// 最大深度
+        /// **参数解释：** 最大深度。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("maximum_depth", NullValueHandling = NullValueHandling.Ignore)]
         public string MaximumDepth { get; set; }
 
         /// <summary>
-        /// 超大深度数
+        /// **参数解释：** 超大深度个数。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("huge_depth_total", NullValueHandling = NullValueHandling.Ignore)]
         public string HugeDepthTotal { get; set; }
 
         /// <summary>
-        /// 超大深度占比
+        /// **参数解释：** 超大深度占比。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("huge_depth_ratio", NullValueHandling = NullValueHandling.Ignore)]
         public string HugeDepthRatio { get; set; }
 
         /// <summary>
-        /// 函数总行数
+        /// **参数解释：** 函数总行数。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("method_lines", NullValueHandling = NullValueHandling.Ignore)]
         public string MethodLines { get; set; }
 
         /// <summary>
-        /// 函数平均代码行
+        /// **参数解释：** 平均函数代码行。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("lines_per_method", NullValueHandling = NullValueHandling.Ignore)]
         public string LinesPerMethod { get; set; }
 
         /// <summary>
-        /// 超大函数数
+        /// **参数解释：** 超大代码行函数数。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("huge_method_total", NullValueHandling = NullValueHandling.Ignore)]
         public string HugeMethodTotal { get; set; }
 
         /// <summary>
-        /// 超大函数占比
+        /// **参数解释：** 超大代码行函数占比。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("huge_method_ratio", NullValueHandling = NullValueHandling.Ignore)]
         public string HugeMethodRatio { get; set; }
 
         /// <summary>
-        /// 文件总数
+        /// **参数解释：** 文件总数。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("files_total", NullValueHandling = NullValueHandling.Ignore)]
         public string FilesTotal { get; set; }
 
         /// <summary>
-        /// 目录总数
+        /// **参数解释：** 目录总数。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("folders_total", NullValueHandling = NullValueHandling.Ignore)]
         public string FoldersTotal { get; set; }
 
         /// <summary>
-        /// 文件平均代码行
+        /// **参数解释：** 平均文件代码行。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("lines_per_file", NullValueHandling = NullValueHandling.Ignore)]
         public string LinesPerFile { get; set; }
 
         /// <summary>
-        /// 超大头文件数
+        /// **参数解释：** 超大头文件数。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("huge_headerfile_total", NullValueHandling = NullValueHandling.Ignore)]
         public string HugeHeaderfileTotal { get; set; }
 
         /// <summary>
-        /// 超大头文件占比
+        /// **参数解释：** 超大头文件占比。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("huge_headerfile_ratio", NullValueHandling = NullValueHandling.Ignore)]
         public string HugeHeaderfileRatio { get; set; }
 
         /// <summary>
-        /// 超大源文件数
+        /// **参数解释：** 超大源文件数。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("huge_non_headerfile_total", NullValueHandling = NullValueHandling.Ignore)]
         public string HugeNonHeaderfileTotal { get; set; }
 
         /// <summary>
-        /// 超大源文件占比
+        /// **参数解释：** 超大源文件占比。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("huge_non_headerfile_ratio", NullValueHandling = NullValueHandling.Ignore)]
         public string HugeNonHeaderfileRatio { get; set; }
 
         /// <summary>
-        /// 超大目录数
+        /// **参数解释：** 超大目录数。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("huge_folder_total", NullValueHandling = NullValueHandling.Ignore)]
         public string HugeFolderTotal { get; set; }
 
         /// <summary>
-        /// 超大目录占比
+        /// **参数解释：** 超大目录占比。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("huge_folder_ratio", NullValueHandling = NullValueHandling.Ignore)]
         public string HugeFolderRatio { get; set; }
 
         /// <summary>
-        /// 重复文件数
+        /// **参数解释：** 重复文件数。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("file_duplication_total", NullValueHandling = NullValueHandling.Ignore)]
         public string FileDuplicationTotal { get; set; }
 
         /// <summary>
-        /// 文件重复率
+        /// **参数解释：** 文件重复率。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("file_duplication_ratio", NullValueHandling = NullValueHandling.Ignore)]
         public string FileDuplicationRatio { get; set; }
 
         /// <summary>
-        /// 重复源文件数
+        /// **参数解释：** 重复源文件数。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("non_hfile_duplication_total", NullValueHandling = NullValueHandling.Ignore)]
         public string NonHfileDuplicationTotal { get; set; }
 
         /// <summary>
-        /// 源文件重复率
+        /// **参数解释：** 源文件重复率。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("non_hfile_duplication_ratio", NullValueHandling = NullValueHandling.Ignore)]
         public string NonHfileDuplicationRatio { get; set; }
 
         /// <summary>
-        /// 代码重复数
+        /// **参数解释：** 代码重复数。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("code_duplication_total", NullValueHandling = NullValueHandling.Ignore)]
         public string CodeDuplicationTotal { get; set; }
 
         /// <summary>
-        /// 代码重复率
+        /// **参数解释：** 代码重复率。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("code_duplication_ratio", NullValueHandling = NullValueHandling.Ignore)]
         public string CodeDuplicationRatio { get; set; }
 
         /// <summary>
-        /// 源文件代码重复数
+        /// **参数解释：** 源文件代码重复数。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("non_hfile_code_duplication_total", NullValueHandling = NullValueHandling.Ignore)]
         public string NonHfileCodeDuplicationTotal { get; set; }
 
         /// <summary>
-        /// 源文件代码重复率
+        /// **参数解释：** 源文件代码重复率。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("non_hfile_code_duplication_ratio", NullValueHandling = NullValueHandling.Ignore)]
         public string NonHfileCodeDuplicationRatio { get; set; }
 
         /// <summary>
-        /// 危险函数总数
+        /// **参数解释：** 危险函数总数。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("unsafe_functions_total", NullValueHandling = NullValueHandling.Ignore)]
         public string UnsafeFunctionsTotal { get; set; }
 
         /// <summary>
-        /// 危险函数密度
+        /// **参数解释：** 危险函数密度。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("unsafe_functions_kloc", NullValueHandling = NullValueHandling.Ignore)]
         public string UnsafeFunctionsKloc { get; set; }
 
         /// <summary>
-        /// 冗余代码数
+        /// **参数解释：** 冗余代码数。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("redundant_code_total", NullValueHandling = NullValueHandling.Ignore)]
         public string RedundantCodeTotal { get; set; }
 
         /// <summary>
-        /// 冗余代码块密度
+        /// **参数解释：** 冗余代码密度。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("redundant_code_kloc", NullValueHandling = NullValueHandling.Ignore)]
         public string RedundantCodeKloc { get; set; }
 
         /// <summary>
-        /// 抑制告警数
+        /// **参数解释：** 抑制告警数。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("warning_suppression_total", NullValueHandling = NullValueHandling.Ignore)]
         public string WarningSuppressionTotal { get; set; }
 
         /// <summary>
-        /// 抑制告警密度
+        /// **参数解释：** 抑制告警密度。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("warning_suppression_kloc", NullValueHandling = NullValueHandling.Ignore)]
         public string WarningSuppressionKloc { get; set; }

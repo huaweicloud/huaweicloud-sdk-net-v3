@@ -54,9 +54,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// <summary>
         /// 资源类型
         /// </summary>
-        [SDKProperty("objcet_type", IsQuery = true)]
-        [JsonProperty("objcet_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string ObjcetType { get; set; }
+        [SDKProperty("object_type", IsQuery = true)]
+        [JsonProperty("object_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string ObjectType { get; set; }
 
         /// <summary>
         /// [云类型。取值为public和hybrid。](tag:hws,hws_hk) [云类型。取值为public。](tag:g42,hk-g42,sbc,dt,fcs_vm,ctc,ocb,tm,tlf,cmcc,hcso_dt)
@@ -86,7 +86,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  protectType: ").Append(ProtectType).Append("\n");
             sb.Append("  regionId: ").Append(RegionId).Append("\n");
-            sb.Append("  objcetType: ").Append(ObjcetType).Append("\n");
+            sb.Append("  objectType: ").Append(ObjectType).Append("\n");
             sb.Append("  cloudType: ").Append(CloudType).Append("\n");
             sb.Append("  vaultId: ").Append(VaultId).Append("\n");
             sb.Append("}\n");
@@ -112,7 +112,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.ProtectType != input.ProtectType || (this.ProtectType != null && !this.ProtectType.Equals(input.ProtectType))) return false;
             if (this.RegionId != input.RegionId || (this.RegionId != null && !this.RegionId.Equals(input.RegionId))) return false;
-            if (this.ObjcetType != input.ObjcetType || (this.ObjcetType != null && !this.ObjcetType.Equals(input.ObjcetType))) return false;
+            if (this.ObjectType != input.ObjectType || (this.ObjectType != null && !this.ObjectType.Equals(input.ObjectType))) return false;
             if (this.CloudType != input.CloudType || (this.CloudType != null && !this.CloudType.Equals(input.CloudType))) return false;
             if (this.VaultId != input.VaultId || (this.VaultId != null && !this.VaultId.Equals(input.VaultId))) return false;
 
@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.ProtectType != null) hashCode = hashCode * 59 + this.ProtectType.GetHashCode();
                 if (this.RegionId != null) hashCode = hashCode * 59 + this.RegionId.GetHashCode();
-                if (this.ObjcetType != null) hashCode = hashCode * 59 + this.ObjcetType.GetHashCode();
+                if (this.ObjectType != null) hashCode = hashCode * 59 + this.ObjectType.GetHashCode();
                 if (this.CloudType != null) hashCode = hashCode * 59 + this.CloudType.GetHashCode();
                 if (this.VaultId != null) hashCode = hashCode * 59 + this.VaultId.GetHashCode();
                 return hashCode;

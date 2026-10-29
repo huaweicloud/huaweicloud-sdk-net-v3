@@ -44,6 +44,13 @@ namespace HuaweiCloud.SDK.Iam.V5.Model
         [JsonProperty("access_key_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AccessKeyId { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 服务专属凭证的标识符 ID。  **约束限制**： 不涉及。  **取值范围**： 长度固定为20，格式为HSSC + 16位随机字符，只能包含大小写字母和数字。  **默认取值**： 不涉及。 
+        /// </summary>
+        [SDKProperty("service_specific_credential_id", IsQuery = true)]
+        [JsonProperty("service_specific_credential_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ServiceSpecificCredentialId { get; set; }
+
 
 
         /// <summary>
@@ -57,6 +64,7 @@ namespace HuaweiCloud.SDK.Iam.V5.Model
             sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("  groupId: ").Append(GroupId).Append("\n");
             sb.Append("  accessKeyId: ").Append(AccessKeyId).Append("\n");
+            sb.Append("  serviceSpecificCredentialId: ").Append(ServiceSpecificCredentialId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -79,6 +87,7 @@ namespace HuaweiCloud.SDK.Iam.V5.Model
             if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
             if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
             if (this.AccessKeyId != input.AccessKeyId || (this.AccessKeyId != null && !this.AccessKeyId.Equals(input.AccessKeyId))) return false;
+            if (this.ServiceSpecificCredentialId != input.ServiceSpecificCredentialId || (this.ServiceSpecificCredentialId != null && !this.ServiceSpecificCredentialId.Equals(input.ServiceSpecificCredentialId))) return false;
 
             return true;
         }
@@ -95,6 +104,7 @@ namespace HuaweiCloud.SDK.Iam.V5.Model
                 if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
                 if (this.AccessKeyId != null) hashCode = hashCode * 59 + this.AccessKeyId.GetHashCode();
+                if (this.ServiceSpecificCredentialId != null) hashCode = hashCode * 59 + this.ServiceSpecificCredentialId.GetHashCode();
                 return hashCode;
             }
         }

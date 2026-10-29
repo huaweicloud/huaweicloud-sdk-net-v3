@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
     {
 
         /// <summary>
-        /// 高级选项对应的名称
+        /// **参数解释：** 高级配置对应的名称。 **约束限制：** 不涉及。 **取值范围：** - customImage：自定义镜像。 - includePaths：检查目录。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
         /// <summary>
-        /// 高级选项对应的取值
+        /// **参数解释：** 高级配置对应的取值。 **约束限制：** 不涉及。 **取值范围：** 长度为[1~1000]个字符。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

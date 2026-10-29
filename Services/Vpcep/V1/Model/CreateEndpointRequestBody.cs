@@ -130,6 +130,121 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             }
         }
 
+        /// <summary>
+        /// 终端节点的商用类型。 - profession：专业版 - basic：基础版 不传时默认为基础版。
+        /// </summary>
+        /// <value>终端节点的商用类型。 - profession：专业版 - basic：基础版 不传时默认为基础版。</value>
+        [JsonConverter(typeof(EnumClassConverter<EditionEnum>))]
+        public class EditionEnum
+        {
+            /// <summary>
+            /// Enum PROFESSION for value: profession
+            /// </summary>
+            public static readonly EditionEnum PROFESSION = new EditionEnum("profession");
+
+            /// <summary>
+            /// Enum BASIC for value: basic
+            /// </summary>
+            public static readonly EditionEnum BASIC = new EditionEnum("basic");
+
+            private static readonly Dictionary<string, EditionEnum> StaticFields =
+            new Dictionary<string, EditionEnum>()
+            {
+                { "profession", PROFESSION },
+                { "basic", BASIC },
+            };
+
+            private string _value;
+
+            public EditionEnum()
+            {
+
+            }
+
+            public EditionEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static EditionEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as EditionEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(EditionEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(EditionEnum a, EditionEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(EditionEnum a, EditionEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 创建连接Interface类型终端节点服务的终端节点时，此参数必选。 需要指定vpc_id对应VPC下已创建的网络（network）的ID，UUID格式。 说明： - VPC的子网网段不能与198.19.128.0/17重叠 - VPC路由表中自定义路由的目的地址不能与198.19.128.0/17重叠
@@ -214,6 +329,11 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         [JsonProperty("ipv6_address", NullValueHandling = NullValueHandling.Ignore)]
         public string Ipv6Address { get; set; }
 
+        /// <summary>
+        /// 终端节点的商用类型。 - profession：专业版 - basic：基础版 不传时默认为基础版。
+        /// </summary>
+        [JsonProperty("edition", NullValueHandling = NullValueHandling.Ignore)]
+        public EditionEnum Edition { get; set; }
 
 
         /// <summary>
@@ -237,6 +357,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             sb.Append("  policyDocument: ").Append(PolicyDocument).Append("\n");
             sb.Append("  ipVersion: ").Append(IpVersion).Append("\n");
             sb.Append("  ipv6Address: ").Append(Ipv6Address).Append("\n");
+            sb.Append("  edition: ").Append(Edition).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -269,6 +390,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             if (this.PolicyDocument != input.PolicyDocument || (this.PolicyDocument != null && !this.PolicyDocument.Equals(input.PolicyDocument))) return false;
             if (this.IpVersion != input.IpVersion) return false;
             if (this.Ipv6Address != input.Ipv6Address || (this.Ipv6Address != null && !this.Ipv6Address.Equals(input.Ipv6Address))) return false;
+            if (this.Edition != input.Edition) return false;
 
             return true;
         }
@@ -295,6 +417,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                 if (this.PolicyDocument != null) hashCode = hashCode * 59 + this.PolicyDocument.GetHashCode();
                 hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
                 if (this.Ipv6Address != null) hashCode = hashCode * 59 + this.Ipv6Address.GetHashCode();
+                hashCode = hashCode * 59 + this.Edition.GetHashCode();
                 return hashCode;
             }
         }

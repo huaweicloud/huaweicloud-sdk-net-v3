@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
     {
 
         /// <summary>
-        /// 规则集ID
+        /// **参数解释:** 规则集ID。 **取值范围:** 32位UUID。
         /// </summary>
         [JsonProperty("template_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TemplateId { get; set; }

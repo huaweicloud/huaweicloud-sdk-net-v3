@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
     {
 
         /// <summary>
-        /// 执行id
+        /// **参数解释:** 1次代码检查对应的执行记录ID。 **取值范围:** 32位UUID。
         /// </summary>
         [JsonProperty("exec_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ExecId { get; set; }

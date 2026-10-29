@@ -17,22 +17,34 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
     {
 
         /// <summary>
-        /// 未解决
+        /// **参数解释：** [待处理问题数。](tag:hws,hws_hk)[待处理和重新打开（需打开忽略审核开关）问题数。](tag:fcs,hcs,hcs_sm,hcs_site,hcs_sitesm) **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("unresolved", NullValueHandling = NullValueHandling.Ignore)]
         public int? Unresolved { get; set; }
 
         /// <summary>
-        /// 已解决
+        /// **参数解释：** 已解决和已修复问题数。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("resolved", NullValueHandling = NullValueHandling.Ignore)]
         public int? Resolved { get; set; }
 
         /// <summary>
-        /// 已忽略
+        /// **参数解释：** 已忽略问题数。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("dismissed", NullValueHandling = NullValueHandling.Ignore)]
         public int? Dismissed { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 已修复问题数。 **取值范围：** 不涉及。
+        /// </summary>
+        [JsonProperty("fixed", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Fixed { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 已解决问题数。 **取值范围：** 不涉及。
+        /// </summary>
+        [JsonProperty("solved", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Solved { get; set; }
 
 
 
@@ -46,6 +58,8 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
             sb.Append("  unresolved: ").Append(Unresolved).Append("\n");
             sb.Append("  resolved: ").Append(Resolved).Append("\n");
             sb.Append("  dismissed: ").Append(Dismissed).Append("\n");
+            sb.Append("  Fixed: ").Append(Fixed).Append("\n");
+            sb.Append("  solved: ").Append(Solved).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +81,8 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
             if (this.Unresolved != input.Unresolved || (this.Unresolved != null && !this.Unresolved.Equals(input.Unresolved))) return false;
             if (this.Resolved != input.Resolved || (this.Resolved != null && !this.Resolved.Equals(input.Resolved))) return false;
             if (this.Dismissed != input.Dismissed || (this.Dismissed != null && !this.Dismissed.Equals(input.Dismissed))) return false;
+            if (this.Fixed != input.Fixed || (this.Fixed != null && !this.Fixed.Equals(input.Fixed))) return false;
+            if (this.Solved != input.Solved || (this.Solved != null && !this.Solved.Equals(input.Solved))) return false;
 
             return true;
         }
@@ -82,6 +98,8 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
                 if (this.Unresolved != null) hashCode = hashCode * 59 + this.Unresolved.GetHashCode();
                 if (this.Resolved != null) hashCode = hashCode * 59 + this.Resolved.GetHashCode();
                 if (this.Dismissed != null) hashCode = hashCode * 59 + this.Dismissed.GetHashCode();
+                if (this.Fixed != null) hashCode = hashCode * 59 + this.Fixed.GetHashCode();
+                if (this.Solved != null) hashCode = hashCode * 59 + this.Solved.GetHashCode();
                 return hashCode;
             }
         }

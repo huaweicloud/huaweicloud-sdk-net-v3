@@ -131,6 +131,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("agency_access_type", NullValueHandling = NullValueHandling.Ignore)]
         public AgencyAccessTypeEnum AgencyAccessType { get; set; }
         /// <summary>
+        /// 跨账号日志接入配置id
+        /// </summary>
+        [JsonProperty("agency_accessConfig_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string AgencyAccessConfigId { get; set; }
+
+        /// <summary>
         /// 跨账号日志接入配置名称
         /// </summary>
         [JsonProperty("agency_log_access", NullValueHandling = NullValueHandling.Ignore)]
@@ -218,6 +224,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             var sb = new StringBuilder();
             sb.Append("class PreviewAgencyLogAccessReqBody {\n");
             sb.Append("  agencyAccessType: ").Append(AgencyAccessType).Append("\n");
+            sb.Append("  agencyAccessConfigId: ").Append(AgencyAccessConfigId).Append("\n");
             sb.Append("  agencyLogAccess: ").Append(AgencyLogAccess).Append("\n");
             sb.Append("  logAgencyStreamName: ").Append(LogAgencyStreamName).Append("\n");
             sb.Append("  logAgencyStreamId: ").Append(LogAgencyStreamId).Append("\n");
@@ -250,6 +257,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             if (input == null) return false;
             if (this.AgencyAccessType != input.AgencyAccessType) return false;
+            if (this.AgencyAccessConfigId != input.AgencyAccessConfigId || (this.AgencyAccessConfigId != null && !this.AgencyAccessConfigId.Equals(input.AgencyAccessConfigId))) return false;
             if (this.AgencyLogAccess != input.AgencyLogAccess || (this.AgencyLogAccess != null && !this.AgencyLogAccess.Equals(input.AgencyLogAccess))) return false;
             if (this.LogAgencyStreamName != input.LogAgencyStreamName || (this.LogAgencyStreamName != null && !this.LogAgencyStreamName.Equals(input.LogAgencyStreamName))) return false;
             if (this.LogAgencyStreamId != input.LogAgencyStreamId || (this.LogAgencyStreamId != null && !this.LogAgencyStreamId.Equals(input.LogAgencyStreamId))) return false;
@@ -276,6 +284,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             {
                 var hashCode = 41;
                 hashCode = hashCode * 59 + this.AgencyAccessType.GetHashCode();
+                if (this.AgencyAccessConfigId != null) hashCode = hashCode * 59 + this.AgencyAccessConfigId.GetHashCode();
                 if (this.AgencyLogAccess != null) hashCode = hashCode * 59 + this.AgencyLogAccess.GetHashCode();
                 if (this.LogAgencyStreamName != null) hashCode = hashCode * 59 + this.LogAgencyStreamName.GetHashCode();
                 if (this.LogAgencyStreamId != null) hashCode = hashCode * 59 + this.LogAgencyStreamId.GetHashCode();

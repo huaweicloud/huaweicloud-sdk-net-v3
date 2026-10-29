@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
     {
 
         /// <summary>
-        /// 高级选项的相关信息
+        /// **参数解释：** 高级配置的相关信息。
         /// </summary>
         [JsonProperty("info", NullValueHandling = NullValueHandling.Ignore)]
         public List<TaskAdvancedSettings> Info { get; set; }
 
         /// <summary>
-        /// 总数
+        /// **参数解释：** 总数。 **取值范围：** ≥0
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }

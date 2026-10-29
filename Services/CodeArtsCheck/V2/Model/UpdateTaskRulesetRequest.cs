@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
         public string TaskId { get; set; }
 
         /// <summary>
-        /// 修改任务规则集
+        /// **参数解释：** 规则集信息。 **约束限制：** 不涉及。
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]

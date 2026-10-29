@@ -17,67 +17,67 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
     {
 
         /// <summary>
-        /// 规则集id
+        /// **参数解释:** 规则集ID。 **取值范围:** 32位UUID。
         /// </summary>
         [JsonProperty("template_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TemplateId { get; set; }
 
         /// <summary>
-        /// 规则集语言
+        /// **参数解释:** 规则集语言。 **取值范围:** 当前支持的语言有： - ARKTS - C# - CANGJIE - C++ - CSS - GO - HTML - JAVA - JAVASCRIPT - KOTLIN - LUA - PHP - PYTHON - RUST - SCALA - SHELL - SQL - TERRAFORM - TYPESCRIPT - AZURERESOURCEMANAGER - DOCKER - KUBERNETES
         /// </summary>
         [JsonProperty("language", NullValueHandling = NullValueHandling.Ignore)]
         public string Language { get; set; }
 
         /// <summary>
-        /// 规则集名称
+        /// **参数解释:** 规则集语言。 **取值范围:** 任意中英文，数字，点，连字符-及下划线_。长度为[1~128]个字符。
         /// </summary>
         [JsonProperty("template_name", NullValueHandling = NullValueHandling.Ignore)]
         public string TemplateName { get; set; }
 
         /// <summary>
-        /// 创建人ID
+        /// **参数解释:** 创建者的user_id，值来源于IAM的用户ID。 **取值范围:** 32位UUID。
         /// </summary>
         [JsonProperty("creator_id", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatorId { get; set; }
 
         /// <summary>
-        /// 创建人名称
+        /// **参数解释:** 创建人名称，值来源于IAM用户名称。 **取值范围:** IAM用户名称。
         /// </summary>
         [JsonProperty("creator_name", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatorName { get; set; }
 
         /// <summary>
-        /// 创建人时间
+        /// **参数解释:** 创建时间，时区统一为0时区。 **取值范围:** 0时区时间。
         /// </summary>
         [JsonProperty("template_create_time", NullValueHandling = NullValueHandling.Ignore)]
         public string TemplateCreateTime { get; set; }
 
         /// <summary>
-        /// 使用状态1使用中，0空闲中
+        /// **参数解释:** 使用状态。 **取值范围:** - 0：空闲中。 - 1：使用中。
         /// </summary>
         [JsonProperty("is_used", NullValueHandling = NullValueHandling.Ignore)]
         public string IsUsed { get; set; }
 
         /// <summary>
-        /// 规则集包含的规则id
+        /// **参数解释:** 规则集包含的规则ID，每条规则都有唯一的规则ID。 **取值范围:** 32位UUID列表，多个UUID以英文逗号分隔。
         /// </summary>
         [JsonProperty("rule_ids", NullValueHandling = NullValueHandling.Ignore)]
         public string RuleIds { get; set; }
 
         /// <summary>
-        /// 是否该语言默认规则集，0不是，1是
+        /// **参数解释:** 规则集是否是该语言默认规则集。 **取值范围:** - 0：不是。 - 1：是。
         /// </summary>
         [JsonProperty("is_default", NullValueHandling = NullValueHandling.Ignore)]
         public string IsDefault { get; set; }
 
         /// <summary>
-        /// 是否是项目下语言默认规则集，0不是，1是
+        /// **参数解释:** 规则集是否是项目下该语言默认规则集。 **取值范围:** - 0：不是。 - 1：是。
         /// </summary>
         [JsonProperty("is_devcloud_project_default", NullValueHandling = NullValueHandling.Ignore)]
         public string IsDevcloudProjectDefault { get; set; }
 
         /// <summary>
-        /// 是否是系统规则集，0不是，1是
+        /// **参数解释:** 规则集是否是系统规则集。 **取值范围:** - 0：不是。 - 1：是。
         /// </summary>
         [JsonProperty("is_default_template", NullValueHandling = NullValueHandling.Ignore)]
         public string IsDefaultTemplate { get; set; }

@@ -17,46 +17,46 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
     {
 
         /// <summary>
-        /// 规则id
+        /// **参数解释:** 规则ID。 **取值范围:** 32位ID。
         /// </summary>
         [JsonProperty("rule_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RuleId { get; set; }
 
         /// <summary>
-        /// 规则所属语言
+        /// **参数解释:** 规则所属语言。 **取值范围:** 当前支持的语言有： - ARKTS - C# - CANGJIE - C++ - CSS - GO - HTML - JAVA - JAVASCRIPT - KOTLIN - LUA - PHP - PYTHON - RUST - SCALA - SHELL - SQL - TERRAFORM - TYPESCRIPT - AZURERESOURCEMANAGER - DOCKER - KUBERNETES
         /// </summary>
         [JsonProperty("rule_language", NullValueHandling = NullValueHandling.Ignore)]
         public string RuleLanguage { get; set; }
 
         /// <summary>
-        /// 规则名称
+        /// **参数解释:** 规则名称。 **取值范围:** 不涉及。
         /// </summary>
         [JsonProperty("rule_name", NullValueHandling = NullValueHandling.Ignore)]
         public string RuleName { get; set; }
 
         /// <summary>
-        /// 规则问题级别
+        /// **参数解释:** 规则问题级别。 **取值范围：** - 0：致命。 - 1：严重。 - 2：一般。 - 3：提示。
         /// </summary>
         [JsonProperty("rule_severity", NullValueHandling = NullValueHandling.Ignore)]
         public string RuleSeverity { get; set; }
 
         /// <summary>
-        /// 规则标签
+        /// **参数解释:** 规则标签。 **取值范围:** - huawei - iso5055 - cert - cwe - top10 - top25 - misra - GJB - autosar - PCI DSS
         /// </summary>
         [JsonProperty("rule_tages", NullValueHandling = NullValueHandling.Ignore)]
         public string RuleTages { get; set; }
 
         /// <summary>
-        /// 规则状态0：未启用，1：已启用
+        /// **参数解释:** 规则状态。 **取值范围:** - 0：未启用。 - 1：已启用。
         /// </summary>
         [JsonProperty("checked", NullValueHandling = NullValueHandling.Ignore)]
         public string Checked { get; set; }
 
         /// <summary>
-        /// 规则配置参数阈值相关信息
+        /// **参数解释:** 规则配置参数阈值相关信息。
         /// </summary>
         [JsonProperty("rule_config_list", NullValueHandling = NullValueHandling.Ignore)]
-        public List<RuleConfig> RuleConfigList { get; set; }
+        public List<RuleConfigParam> RuleConfigList { get; set; }
 
 
 

@@ -801,6 +801,13 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("incremental", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Incremental { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 是否查询按数量保留或永久保留自动备份 **约束限制：** 不涉及 **取值范围：** - true：返回按数量保留或永久保留自动备份  - false：返回按时间保留自动备份 **默认取值：** 不涉及
+        /// </summary>
+        [SDKProperty("existed_quantity_based_retention_backups", IsQuery = true)]
+        [JsonProperty("existed_quantity_based_retention_backups", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ExistedQuantityBasedRetentionBackups { get; set; }
+
 
 
         /// <summary>
@@ -833,6 +840,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  usedPercent: ").Append(UsedPercent).Append("\n");
             sb.Append("  showReplication: ").Append(ShowReplication).Append("\n");
             sb.Append("  incremental: ").Append(Incremental).Append("\n");
+            sb.Append("  existedQuantityBasedRetentionBackups: ").Append(ExistedQuantityBasedRetentionBackups).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -874,6 +882,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             if (this.UsedPercent != input.UsedPercent || (this.UsedPercent != null && !this.UsedPercent.Equals(input.UsedPercent))) return false;
             if (this.ShowReplication != input.ShowReplication || (this.ShowReplication != null && !this.ShowReplication.Equals(input.ShowReplication))) return false;
             if (this.Incremental != input.Incremental || (this.Incremental != null && !this.Incremental.Equals(input.Incremental))) return false;
+            if (this.ExistedQuantityBasedRetentionBackups != input.ExistedQuantityBasedRetentionBackups || (this.ExistedQuantityBasedRetentionBackups != null && !this.ExistedQuantityBasedRetentionBackups.Equals(input.ExistedQuantityBasedRetentionBackups))) return false;
 
             return true;
         }
@@ -909,6 +918,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 if (this.UsedPercent != null) hashCode = hashCode * 59 + this.UsedPercent.GetHashCode();
                 if (this.ShowReplication != null) hashCode = hashCode * 59 + this.ShowReplication.GetHashCode();
                 if (this.Incremental != null) hashCode = hashCode * 59 + this.Incremental.GetHashCode();
+                if (this.ExistedQuantityBasedRetentionBackups != null) hashCode = hashCode * 59 + this.ExistedQuantityBasedRetentionBackups.GetHashCode();
                 return hashCode;
             }
         }

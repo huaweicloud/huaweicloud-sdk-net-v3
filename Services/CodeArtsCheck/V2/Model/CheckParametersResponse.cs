@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
         /// 
         /// </summary>
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public List<TaskCheckParamters> Body { get; set; }
+        public List<TaskCheckParameters> Body { get; set; }
 
 
 

@@ -17,25 +17,25 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
     {
 
         /// <summary>
-        /// 规则集语言
+        /// **参数解释：** 检查语言，支持的语言请关注服务更新特性文档。 **约束限制:** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("language", NullValueHandling = NullValueHandling.Ignore)]
         public string Language { get; set; }
 
         /// <summary>
-        /// 规则集ID,通过调用ListTaskRuleset接口，根据响应参数中的template_id获得
+        /// **参数解释：** 规则集ID。 **约束限制:** 长度为[1~32]个字符。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("rule_set_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RuleSetId { get; set; }
 
         /// <summary>
-        /// 任务语言和规则集的关系是否启用，1是启用，0是未启用
+        /// **参数解释：** 是否启用。 **约束限制:** 不涉及。 **取值范围：** - 0：不启用。 - 1：启用。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("if_use", NullValueHandling = NullValueHandling.Ignore)]
         public string IfUse { get; set; }
 
         /// <summary>
-        /// 新/老数据表示，默认1
+        /// **参数解释：** 新/老数据。 **约束限制:** 不涉及。 **取值范围：** 1 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }

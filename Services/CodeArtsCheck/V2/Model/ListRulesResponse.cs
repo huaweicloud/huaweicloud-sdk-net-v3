@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
     {
 
         /// <summary>
-        /// 规则信息
+        /// **参数解释：** 规则信息。
         /// </summary>
         [JsonProperty("info", NullValueHandling = NullValueHandling.Ignore)]
         public List<RuleListItem> Info { get; set; }
 
         /// <summary>
-        /// 总数
+        /// **参数解释：** 总数。 **取值范围：** ≥0
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }

@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
     {
 
         /// <summary>
-        /// 直方图结果
+        /// **参数解释：** 直方图结果。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("histogram", NullValueHandling = NullValueHandling.Ignore)]
-        public string Histogram { get; set; }
+        public List<LogCounts> Histogram { get; set; }
 
         /// <summary>
         /// 日志条数
@@ -64,7 +64,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         public bool Equals(ListLogHistogramResponse input)
         {
             if (input == null) return false;
-            if (this.Histogram != input.Histogram || (this.Histogram != null && !this.Histogram.Equals(input.Histogram))) return false;
+            if (this.Histogram != input.Histogram || (this.Histogram != null && input.Histogram != null && !this.Histogram.SequenceEqual(input.Histogram))) return false;
             if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
             if (this.IsQueryComplete != input.IsQueryComplete || (this.IsQueryComplete != null && !this.IsQueryComplete.Equals(input.IsQueryComplete))) return false;
 

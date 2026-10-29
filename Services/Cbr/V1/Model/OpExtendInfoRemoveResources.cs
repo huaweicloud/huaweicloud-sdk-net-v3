@@ -32,7 +32,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// 
         /// </summary>
         [JsonProperty("resources", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Resource> Resources { get; set; }
+        public List<OpResourceResp> Resources { get; set; }
 
 
 

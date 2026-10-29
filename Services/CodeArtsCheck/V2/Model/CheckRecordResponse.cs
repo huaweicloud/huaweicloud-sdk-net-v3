@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
     {
 
         /// <summary>
-        /// 历史记录数据
+        /// **参数解释：** 每次扫描的各个问题级别的问题数量。
         /// </summary>
         [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
         public List<CheckRecordDataInfo> Data { get; set; }
 
         /// <summary>
-        /// 总数
+        /// **参数解释：** 扫描次数总数。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }

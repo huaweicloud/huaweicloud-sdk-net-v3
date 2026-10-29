@@ -321,6 +321,13 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("resource_ids", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceIds { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 存储库可用区信息 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+        /// </summary>
+        [SDKProperty("availability_zone", IsQuery = true)]
+        [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
+        public string AvailabilityZone { get; set; }
+
 
 
         /// <summary>
@@ -341,6 +348,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  policyId: ").Append(PolicyId).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  resourceIds: ").Append(ResourceIds).Append("\n");
+            sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -370,6 +378,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             if (this.PolicyId != input.PolicyId || (this.PolicyId != null && !this.PolicyId.Equals(input.PolicyId))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.ResourceIds != input.ResourceIds || (this.ResourceIds != null && !this.ResourceIds.Equals(input.ResourceIds))) return false;
+            if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
 
             return true;
         }
@@ -393,6 +402,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 if (this.PolicyId != null) hashCode = hashCode * 59 + this.PolicyId.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.ResourceIds != null) hashCode = hashCode * 59 + this.ResourceIds.GetHashCode();
+                if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
                 return hashCode;
             }
         }

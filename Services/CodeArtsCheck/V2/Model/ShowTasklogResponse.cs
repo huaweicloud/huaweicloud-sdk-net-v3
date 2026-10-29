@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
         public ParamInfo ParamInfo { get; set; }
 
         /// <summary>
-        /// 日志信息
+        /// **参数解释：** 失败日志详情。
         /// </summary>
         [JsonProperty("log_info", NullValueHandling = NullValueHandling.Ignore)]
         public List<LogInfo> LogInfo { get; set; }

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
     public class PortList 
     {
         /// <summary>
-        /// 端口映射协议，支持TCP。
+        /// 端口映射协议，支持TCP、UDP。
         /// </summary>
-        /// <value>端口映射协议，支持TCP。</value>
+        /// <value>端口映射协议，支持TCP、UDP。</value>
         [JsonConverter(typeof(EnumClassConverter<ProtocolEnum>))]
         public class ProtocolEnum
         {
@@ -27,10 +27,16 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             /// </summary>
             public static readonly ProtocolEnum TCP = new ProtocolEnum("TCP");
 
+            /// <summary>
+            /// Enum UDP for value: UDP
+            /// </summary>
+            public static readonly ProtocolEnum UDP = new ProtocolEnum("UDP");
+
             private static readonly Dictionary<string, ProtocolEnum> StaticFields =
             new Dictionary<string, ProtocolEnum>()
             {
                 { "TCP", TCP },
+                { "UDP", UDP },
             };
 
             private string _value;
@@ -138,7 +144,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public int? ServerPort { get; set; }
 
         /// <summary>
-        /// 端口映射协议，支持TCP。
+        /// 端口映射协议，支持TCP、UDP。
         /// </summary>
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
         public ProtocolEnum Protocol { get; set; }

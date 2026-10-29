@@ -1820,6 +1820,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<UpdateOrderResponse> UpdateOrderAsync(UpdateOrderRequest updateOrderRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1830,6 +1831,7 @@ namespace HuaweiCloud.SDK.Cbr.V1
             return JsonUtils.DeSerialize<UpdateOrderResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<UpdateOrderResponse> UpdateOrderAsyncInvoker(UpdateOrderRequest updateOrderRequest)
         {
             var urlParam = new Dictionary<string, string>();

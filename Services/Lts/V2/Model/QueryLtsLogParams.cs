@@ -220,6 +220,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("is_analysis_query", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsAnalysisQuery { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 查询时区。 当开启管道符语句查询功能时，将会按照sql_timezone中的时区信息对时间算子进行处理。 **约束限制：** 不涉及。 **取值范围：** 标准时区值 **默认取值：** UTC
+        /// </summary>
+        [JsonProperty("sql_timezone", NullValueHandling = NullValueHandling.Ignore)]
+        public string SqlTimezone { get; set; }
+
 
 
         /// <summary>
@@ -244,6 +250,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  isIterative: ").Append(IsIterative).Append("\n");
             sb.Append("  query: ").Append(Query).Append("\n");
             sb.Append("  isAnalysisQuery: ").Append(IsAnalysisQuery).Append("\n");
+            sb.Append("  sqlTimezone: ").Append(SqlTimezone).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -277,6 +284,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.IsIterative != input.IsIterative || (this.IsIterative != null && !this.IsIterative.Equals(input.IsIterative))) return false;
             if (this.Query != input.Query || (this.Query != null && !this.Query.Equals(input.Query))) return false;
             if (this.IsAnalysisQuery != input.IsAnalysisQuery || (this.IsAnalysisQuery != null && !this.IsAnalysisQuery.Equals(input.IsAnalysisQuery))) return false;
+            if (this.SqlTimezone != input.SqlTimezone || (this.SqlTimezone != null && !this.SqlTimezone.Equals(input.SqlTimezone))) return false;
 
             return true;
         }
@@ -304,6 +312,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.IsIterative != null) hashCode = hashCode * 59 + this.IsIterative.GetHashCode();
                 if (this.Query != null) hashCode = hashCode * 59 + this.Query.GetHashCode();
                 if (this.IsAnalysisQuery != null) hashCode = hashCode * 59 + this.IsAnalysisQuery.GetHashCode();
+                if (this.SqlTimezone != null) hashCode = hashCode * 59 + this.SqlTimezone.GetHashCode();
                 return hashCode;
             }
         }

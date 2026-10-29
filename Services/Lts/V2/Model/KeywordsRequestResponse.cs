@@ -82,6 +82,36 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("is_time_range_relative", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsTimeRangeRelative { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 支持根据不同条件触发不同级别的告警。当使用该参数时，将优先使用该参数中的条件触发告警，无视keywords_alarm_level参数以及keywords_requests中的condition、number参数。 **约束限制：** 不涉及。
+        /// </summary>
+        [JsonProperty("conditions", NullValueHandling = NullValueHandling.Ignore)]
+        public List<KeywordsAlarmConditions> Conditions { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 日志组别名。 **取值范围：** 不涉及。
+        /// </summary>
+        [JsonProperty("log_group_name_alias", NullValueHandling = NullValueHandling.Ignore)]
+        public string LogGroupNameAlias { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 日志流别名。 **取值范围：** 不涉及。
+        /// </summary>
+        [JsonProperty("log_stream_name_alias", NullValueHandling = NullValueHandling.Ignore)]
+        public string LogStreamNameAlias { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 企业项目ID。 **取值范围：** 不涉及。
+        /// </summary>
+        [JsonProperty("eps_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EpsId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("time_range", NullValueHandling = NullValueHandling.Ignore)]
+        public TimeRange TimeRange { get; set; }
+
 
 
         /// <summary>
@@ -102,6 +132,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  searchTimeRangeUnit: ").Append(SearchTimeRangeUnit).Append("\n");
             sb.Append("  customDate: ").Append(CustomDate).Append("\n");
             sb.Append("  isTimeRangeRelative: ").Append(IsTimeRangeRelative).Append("\n");
+            sb.Append("  conditions: ").Append(Conditions).Append("\n");
+            sb.Append("  logGroupNameAlias: ").Append(LogGroupNameAlias).Append("\n");
+            sb.Append("  logStreamNameAlias: ").Append(LogStreamNameAlias).Append("\n");
+            sb.Append("  epsId: ").Append(EpsId).Append("\n");
+            sb.Append("  timeRange: ").Append(TimeRange).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -131,6 +166,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.SearchTimeRangeUnit != input.SearchTimeRangeUnit || (this.SearchTimeRangeUnit != null && !this.SearchTimeRangeUnit.Equals(input.SearchTimeRangeUnit))) return false;
             if (this.CustomDate != input.CustomDate || (this.CustomDate != null && !this.CustomDate.Equals(input.CustomDate))) return false;
             if (this.IsTimeRangeRelative != input.IsTimeRangeRelative || (this.IsTimeRangeRelative != null && !this.IsTimeRangeRelative.Equals(input.IsTimeRangeRelative))) return false;
+            if (this.Conditions != input.Conditions || (this.Conditions != null && input.Conditions != null && !this.Conditions.SequenceEqual(input.Conditions))) return false;
+            if (this.LogGroupNameAlias != input.LogGroupNameAlias || (this.LogGroupNameAlias != null && !this.LogGroupNameAlias.Equals(input.LogGroupNameAlias))) return false;
+            if (this.LogStreamNameAlias != input.LogStreamNameAlias || (this.LogStreamNameAlias != null && !this.LogStreamNameAlias.Equals(input.LogStreamNameAlias))) return false;
+            if (this.EpsId != input.EpsId || (this.EpsId != null && !this.EpsId.Equals(input.EpsId))) return false;
+            if (this.TimeRange != input.TimeRange || (this.TimeRange != null && !this.TimeRange.Equals(input.TimeRange))) return false;
 
             return true;
         }
@@ -154,6 +194,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.SearchTimeRangeUnit != null) hashCode = hashCode * 59 + this.SearchTimeRangeUnit.GetHashCode();
                 if (this.CustomDate != null) hashCode = hashCode * 59 + this.CustomDate.GetHashCode();
                 if (this.IsTimeRangeRelative != null) hashCode = hashCode * 59 + this.IsTimeRangeRelative.GetHashCode();
+                if (this.Conditions != null) hashCode = hashCode * 59 + this.Conditions.GetHashCode();
+                if (this.LogGroupNameAlias != null) hashCode = hashCode * 59 + this.LogGroupNameAlias.GetHashCode();
+                if (this.LogStreamNameAlias != null) hashCode = hashCode * 59 + this.LogStreamNameAlias.GetHashCode();
+                if (this.EpsId != null) hashCode = hashCode * 59 + this.EpsId.GetHashCode();
+                if (this.TimeRange != null) hashCode = hashCode * 59 + this.TimeRange.GetHashCode();
                 return hashCode;
             }
         }

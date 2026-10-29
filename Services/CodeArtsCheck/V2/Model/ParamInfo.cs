@@ -11,49 +11,49 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
 {
     /// <summary>
-    /// 任务详情
+    /// **参数解释：** 任务基本信息。
     /// </summary>
     public class ParamInfo 
     {
 
         /// <summary>
-        /// 仓库地址
+        /// **参数解释：** 代码仓地址。 **取值范围:** 不涉及。
         /// </summary>
         [JsonProperty("url", NullValueHandling = NullValueHandling.Ignore)]
         public string Url { get; set; }
 
         /// <summary>
-        /// 仓库分支
+        /// **参数解释：** 任务本次扫描的代码仓分支。 **取值范围:** 不涉及。
         /// </summary>
         [JsonProperty("branch", NullValueHandling = NullValueHandling.Ignore)]
         public string Branch { get; set; }
 
         /// <summary>
-        /// 仓库语言
+        /// **参数解释：** 任务本次扫描的规则语言。 **取值范围:** 不涉及。
         /// </summary>
         [JsonProperty("language", NullValueHandling = NullValueHandling.Ignore)]
         public string Language { get; set; }
 
         /// <summary>
-        /// 排除的目录
+        /// **参数解释：** 任务配置的排除目录信息。 **取值范围:** 不涉及。
         /// </summary>
         [JsonProperty("exclude_dir", NullValueHandling = NullValueHandling.Ignore)]
         public string ExcludeDir { get; set; }
 
         /// <summary>
-        /// 编码格式
+        /// **参数解释：** 废弃字段。 **取值范围:** 不涉及。
         /// </summary>
         [JsonProperty("encode", NullValueHandling = NullValueHandling.Ignore)]
         public string Encode { get; set; }
 
         /// <summary>
-        /// 编译配置信息
+        /// **参数解释：** 任务的部分检查参数json格式信息。 **取值范围:** 不涉及。
         /// </summary>
         [JsonProperty("compile_config", NullValueHandling = NullValueHandling.Ignore)]
         public string CompileConfig { get; set; }
 
         /// <summary>
-        /// g规则集名称
+        /// **参数解释：** 废弃字段。 **取值范围:** 不涉及。
         /// </summary>
         [JsonProperty("rule_template", NullValueHandling = NullValueHandling.Ignore)]
         public string RuleTemplate { get; set; }

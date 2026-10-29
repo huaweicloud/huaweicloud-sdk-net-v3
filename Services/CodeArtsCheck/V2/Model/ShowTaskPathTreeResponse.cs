@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
     {
 
         /// <summary>
-        /// 任务的目录树信息
+        /// **参数解释:** 任务的目录树信息。
         /// </summary>
         [JsonProperty("info", NullValueHandling = NullValueHandling.Ignore)]
         public List<TreeNode> Info { get; set; }
 
         /// <summary>
-        /// 数目
+        /// **参数解释:** 数目。 **取值范围:** ≥0
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }

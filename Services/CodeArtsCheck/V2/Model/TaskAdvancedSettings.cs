@@ -17,25 +17,25 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
     {
 
         /// <summary>
-        /// 高级选项对应的名称
+        /// **参数解释：** 高级配置对应的名称。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
         /// <summary>
-        /// 高级选项对应的取值
+        /// **参数解释：** 高级配置对应的取值。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }
 
         /// <summary>
-        /// 高级选项对应的可选项
+        /// **参数解释：** 高级配置对应的可选项。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("option_value", NullValueHandling = NullValueHandling.Ignore)]
         public string OptionValue { get; set; }
 
         /// <summary>
-        /// 高级选项对应的中文描述
+        /// **参数解释：** 高级配置对应的中文描述。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }

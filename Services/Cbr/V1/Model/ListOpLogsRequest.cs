@@ -388,6 +388,20 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 复制的目标区域 [获取方法请参见\&quot;[地区和终端节点查询](https://console.huaweicloud.com/apiexplorer/#/endpoint/CBR)\&quot;。 ](tag:hws) [获取方法请参见\&quot;[地区和终端节点查询](https://console-intl.huaweicloud.com/apiexplorer/#/endpoint/CBR)\&quot;。](tag:hws_hk) **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+        /// </summary>
+        [SDKProperty("destination_region", IsQuery = true)]
+        [JsonProperty("destination_region", NullValueHandling = NullValueHandling.Ignore)]
+        public string DestinationRegion { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 复制的目标区域项目ID，获取方法请参见[获取项目ID](cbr_04_0022.xml) **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+        /// </summary>
+        [SDKProperty("destination_project_id", IsQuery = true)]
+        [JsonProperty("destination_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DestinationProjectId { get; set; }
+
 
 
         /// <summary>
@@ -409,6 +423,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  vaultId: ").Append(VaultId).Append("\n");
             sb.Append("  vaultName: ").Append(VaultName).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  destinationRegion: ").Append(DestinationRegion).Append("\n");
+            sb.Append("  destinationProjectId: ").Append(DestinationProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -439,6 +455,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             if (this.VaultId != input.VaultId || (this.VaultId != null && !this.VaultId.Equals(input.VaultId))) return false;
             if (this.VaultName != input.VaultName || (this.VaultName != null && !this.VaultName.Equals(input.VaultName))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.DestinationRegion != input.DestinationRegion || (this.DestinationRegion != null && !this.DestinationRegion.Equals(input.DestinationRegion))) return false;
+            if (this.DestinationProjectId != input.DestinationProjectId || (this.DestinationProjectId != null && !this.DestinationProjectId.Equals(input.DestinationProjectId))) return false;
 
             return true;
         }
@@ -463,6 +481,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 if (this.VaultId != null) hashCode = hashCode * 59 + this.VaultId.GetHashCode();
                 if (this.VaultName != null) hashCode = hashCode * 59 + this.VaultName.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.DestinationRegion != null) hashCode = hashCode * 59 + this.DestinationRegion.GetHashCode();
+                if (this.DestinationProjectId != null) hashCode = hashCode * 59 + this.DestinationProjectId.GetHashCode();
                 return hashCode;
             }
         }

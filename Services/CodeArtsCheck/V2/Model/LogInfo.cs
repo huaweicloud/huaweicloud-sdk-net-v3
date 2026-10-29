@@ -17,31 +17,31 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
     {
 
         /// <summary>
-        /// 日志标题
+        /// **参数解释：** 检查日志页面所显示的子任务阶段名称。 **取值范围:** 不涉及。
         /// </summary>
         [JsonProperty("display_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DisplayName { get; set; }
 
         /// <summary>
-        /// 日志内容
+        /// **参数解释：** 扫描日志内容。 **取值范围:** 不涉及。
         /// </summary>
         [JsonProperty("log", NullValueHandling = NullValueHandling.Ignore)]
         public string Log { get; set; }
 
         /// <summary>
-        /// 日志级别
+        /// **参数解释：** 废弃字段。 **取值范围:** 不涉及。
         /// </summary>
         [JsonProperty("level", NullValueHandling = NullValueHandling.Ignore)]
         public string Level { get; set; }
 
         /// <summary>
-        /// 日志分析
+        /// **参数解释：** 任务失败的简要原因。 **取值范围:** 不涉及。
         /// </summary>
         [JsonProperty("analysis", NullValueHandling = NullValueHandling.Ignore)]
         public string Analysis { get; set; }
 
         /// <summary>
-        /// 常见问题解答
+        /// **参数解释：** 废弃字段。 **取值范围:** 不涉及。
         /// </summary>
         [JsonProperty("faq", NullValueHandling = NullValueHandling.Ignore)]
         public string Faq { get; set; }

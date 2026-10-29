@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkParametersRequest);
             var response = DoHttpRequestSync("GET", request);
             var checkParametersResponse = JsonUtils.DeSerializeNull<CheckParametersResponse>(response);
-            checkParametersResponse.Body = JsonUtils.DeSerializeList<TaskCheckParamters>(response);
+            checkParametersResponse.Body = JsonUtils.DeSerializeList<TaskCheckParameters>(response);
             return checkParametersResponse;
         }
 
@@ -46,7 +46,7 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2
             return new SyncInvoker<CheckParametersResponse>(this, "GET", request, response =>
             {
                 var checkParametersResponse = JsonUtils.DeSerializeNull<CheckParametersResponse>(response);
-                checkParametersResponse.Body = JsonUtils.DeSerializeList<TaskCheckParamters>(response);
+                checkParametersResponse.Body = JsonUtils.DeSerializeList<TaskCheckParameters>(response);
                 return checkParametersResponse;
             });
         }
@@ -211,6 +211,30 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTaskRequest);
             return new SyncInvoker<DeleteTaskResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 根据语言查询规则集
+        ///
+        /// 该API用于查询项目下某一语言的规则集列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListCriterionSetsByLanguageResponse ListCriterionSetsByLanguage(ListCriterionSetsByLanguageRequest listCriterionSetsByLanguageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/criterionsets/language", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCriterionSetsByLanguageRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListCriterionSetsByLanguageResponse>(response);
+        }
+
+        public SyncInvoker<ListCriterionSetsByLanguageResponse> ListCriterionSetsByLanguageInvoker(ListCriterionSetsByLanguageRequest listCriterionSetsByLanguageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/criterionsets/language", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCriterionSetsByLanguageRequest);
+            return new SyncInvoker<ListCriterionSetsByLanguageResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCriterionSetsByLanguageResponse>);
         }
         
         /// <summary>
@@ -543,6 +567,32 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2
         }
         
         /// <summary>
+        /// 根据任务ID查询检查任务
+        ///
+        /// 根据任务ID查询代码检查任务的基本信息，返回任务ID、任务名、项目ID、项目名、代码仓地址、分支和配置模板ID等信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowTaskInfoByIdResponse ShowTaskInfoById(ShowTaskInfoByIdRequest showTaskInfoByIdRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTaskInfoByIdRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/task/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTaskInfoByIdRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowTaskInfoByIdResponse>(response);
+        }
+
+        public SyncInvoker<ShowTaskInfoByIdResponse> ShowTaskInfoByIdInvoker(ShowTaskInfoByIdRequest showTaskInfoByIdRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTaskInfoByIdRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/task/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTaskInfoByIdRequest);
+            return new SyncInvoker<ShowTaskInfoByIdResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTaskInfoByIdResponse>);
+        }
+        
+        /// <summary>
         /// 查询任务列表
         ///
         /// 根据DEVCLOUD_PROJECT_UUID查询该项目下的任务列表。
@@ -653,6 +703,30 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2
         }
         
         /// <summary>
+        /// 查询任务列表
+        ///
+        /// 根据项目ID、需要搜索的任务名、任务分组ID和任务执行状态分页查询项目下的代码检查任务，返回任务名称、代码仓地址、分支、配置模板ID和规则集等信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowTasksListResponse ShowTasksList(ShowTasksListRequest showTasksListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTasksListRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowTasksListResponse>(response);
+        }
+
+        public SyncInvoker<ShowTasksListResponse> ShowTasksListInvoker(ShowTasksListRequest showTasksListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTasksListRequest);
+            return new SyncInvoker<ShowTasksListResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTasksListResponse>);
+        }
+        
+        /// <summary>
         /// 查询任务的已选规则集列表
         ///
         /// 查询任务的已选规则集列表。
@@ -704,6 +778,30 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/tasks/{task_id}/stop", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopTaskByIdRequest);
             return new SyncInvoker<StopTaskByIdResponse>(this, "POST", request, JsonUtils.DeSerializeNull<StopTaskByIdResponse>);
+        }
+        
+        /// <summary>
+        /// 更新门禁配置
+        ///
+        /// 根据任务ID设置任务的致命问题数、严重问题数、一般问题数和提示问题数的质量门禁，在检查完成后，超过门禁阈值将提示门禁结果为Failed。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateCodeGateResponse UpdateCodeGate(UpdateCodeGateRequest updateCodeGateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/task/code-gate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateCodeGateRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateCodeGateResponse>(response);
+        }
+
+        public SyncInvoker<UpdateCodeGateResponse> UpdateCodeGateInvoker(UpdateCodeGateRequest updateCodeGateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/task/code-gate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateCodeGateRequest);
+            return new SyncInvoker<UpdateCodeGateResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateCodeGateResponse>);
         }
         
         /// <summary>

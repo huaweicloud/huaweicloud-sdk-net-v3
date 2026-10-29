@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
     {
 
         /// <summary>
-        /// 缺陷详情信息
+        /// **参数解释：** 缺陷详情列表，注意这里和入参中的limit数据不一定一致，服务会重新对响应数据拆分。
         /// </summary>
         [JsonProperty("defects", NullValueHandling = NullValueHandling.Ignore)]
         public List<DefectInfoV2> Defects { get; set; }
 
         /// <summary>
-        /// 总数
+        /// **参数解释：** 缺陷详情总数。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }

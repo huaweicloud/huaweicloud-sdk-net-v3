@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
     {
 
         /// <summary>
-        /// 检查任务id
+        /// **参数解释：** 任务ID。 **取值范围：** 全量任务为32位UUID，MR增量任务为\&quot;MR_\&quot;+32位UUID。
         /// </summary>
         [JsonProperty("task_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TaskId { get; set; }

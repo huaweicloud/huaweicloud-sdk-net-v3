@@ -11,25 +11,25 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
 {
     /// <summary>
-    /// 
+    /// **参数解释：** 任务规则集的检查参数。
     /// </summary>
-    public class TaskCheckParamters 
+    public class TaskCheckParameters 
     {
 
         /// <summary>
-        /// 检查工具ID
+        /// **参数解释：** 检查工具ID。 **取值范围:** ≥0
         /// </summary>
         [JsonProperty("check_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? CheckId { get; set; }
 
         /// <summary>
-        /// 编译参数名称
+        /// **参数解释：** 编译参数名称。 **取值范围:** 不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 检查参数配置信息
+        /// **参数解释：** 检查参数配置信息。
         /// </summary>
         [JsonProperty("checker_configs", NullValueHandling = NullValueHandling.Ignore)]
         public List<CheckConfigInfo> CheckerConfigs { get; set; }
@@ -42,7 +42,7 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class TaskCheckParamters {\n");
+            sb.Append("class TaskCheckParameters {\n");
             sb.Append("  checkId: ").Append(CheckId).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  checkerConfigs: ").Append(CheckerConfigs).Append("\n");
@@ -55,13 +55,13 @@ namespace HuaweiCloud.SDK.CodeArtsCheck.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TaskCheckParamters);
+            return this.Equals(input as TaskCheckParameters);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(TaskCheckParamters input)
+        public bool Equals(TaskCheckParameters input)
         {
             if (input == null) return false;
             if (this.CheckId != input.CheckId || (this.CheckId != null && !this.CheckId.Equals(input.CheckId))) return false;
