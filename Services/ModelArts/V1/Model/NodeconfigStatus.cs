@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
     public class NodeconfigStatus 
     {
         /// <summary>
-        /// **参数解释**： 插件实例的状态。 **取值范围**： 可选值如下： - Pending：安装中，表示插件正在安装中。 - Running：运行中，表示插件全部实例状态都在运行中，插件正常使用。 - Updating：升级中，表示插件正在更新中。 - Abnormal：不可用，表示插件状态异常，插件不可使用。可单击状态查看失败原因。 - Deleting：删除中，表示插件正在删除中。
+        /// **参数解释**： 节点配置的执行状态。 **约束限制**：不涉及。 **取值范围**： 可选值如下： - Pending：安装中，表示插件正在安装中。 - Running：运行中，表示插件全部实例状态都在运行中，插件正常使用。 - Updating：升级中，表示插件正在更新中。 - Abnormal：不可用，表示插件状态异常，插件不可使用。可单击状态查看失败原因。 - Deleting：删除中，表示插件正在删除中。 **默认取值**：不涉及。
         /// </summary>
-        /// <value>**参数解释**： 插件实例的状态。 **取值范围**： 可选值如下： - Pending：安装中，表示插件正在安装中。 - Running：运行中，表示插件全部实例状态都在运行中，插件正常使用。 - Updating：升级中，表示插件正在更新中。 - Abnormal：不可用，表示插件状态异常，插件不可使用。可单击状态查看失败原因。 - Deleting：删除中，表示插件正在删除中。</value>
+        /// <value>**参数解释**： 节点配置的执行状态。 **约束限制**：不涉及。 **取值范围**： 可选值如下： - Pending：安装中，表示插件正在安装中。 - Running：运行中，表示插件全部实例状态都在运行中，插件正常使用。 - Updating：升级中，表示插件正在更新中。 - Abnormal：不可用，表示插件状态异常，插件不可使用。可单击状态查看失败原因。 - Deleting：删除中，表示插件正在删除中。 **默认取值**：不涉及。</value>
         [JsonConverter(typeof(EnumClassConverter<PhaseEnum>))]
         public class PhaseEnum
         {
@@ -150,10 +150,16 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
 
 
         /// <summary>
-        /// **参数解释**： 插件实例的状态。 **取值范围**： 可选值如下： - Pending：安装中，表示插件正在安装中。 - Running：运行中，表示插件全部实例状态都在运行中，插件正常使用。 - Updating：升级中，表示插件正在更新中。 - Abnormal：不可用，表示插件状态异常，插件不可使用。可单击状态查看失败原因。 - Deleting：删除中，表示插件正在删除中。
+        /// **参数解释**： 节点配置的执行状态。 **约束限制**：不涉及。 **取值范围**： 可选值如下： - Pending：安装中，表示插件正在安装中。 - Running：运行中，表示插件全部实例状态都在运行中，插件正常使用。 - Updating：升级中，表示插件正在更新中。 - Abnormal：不可用，表示插件状态异常，插件不可使用。可单击状态查看失败原因。 - Deleting：删除中，表示插件正在删除中。 **默认取值**：不涉及。
         /// </summary>
         [JsonProperty("phase", NullValueHandling = NullValueHandling.Ignore)]
         public PhaseEnum Phase { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("configsStatus", NullValueHandling = NullValueHandling.Ignore)]
+        public NodeconfigStatusConfigsStatus ConfigsStatus { get; set; }
+
 
 
         /// <summary>
@@ -164,6 +170,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             var sb = new StringBuilder();
             sb.Append("class NodeconfigStatus {\n");
             sb.Append("  phase: ").Append(Phase).Append("\n");
+            sb.Append("  configsStatus: ").Append(ConfigsStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -183,6 +190,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         {
             if (input == null) return false;
             if (this.Phase != input.Phase) return false;
+            if (this.ConfigsStatus != input.ConfigsStatus || (this.ConfigsStatus != null && !this.ConfigsStatus.Equals(input.ConfigsStatus))) return false;
 
             return true;
         }
@@ -196,6 +204,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             {
                 var hashCode = 41;
                 hashCode = hashCode * 59 + this.Phase.GetHashCode();
+                if (this.ConfigsStatus != null) hashCode = hashCode * 59 + this.ConfigsStatus.GetHashCode();
                 return hashCode;
             }
         }

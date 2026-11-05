@@ -23,10 +23,16 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 功能说明：子网描述 取值范围：0-255个字符，不能包含“&lt;”和“&gt;”。
+        /// 功能说明：子网描述 取值范围：0-255个字符，不能包含\&quot;&lt;\&quot;和\&quot;&gt;\&quot;。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
+
+        /// <summary>
+        /// 功能说明：子网关联的DNS服务器信息。
+        /// </summary>
+        [JsonProperty("dns_nameservers", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> DnsNameservers { get; set; }
 
 
 
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             sb.Append("class UpdateClouddcnSubnetOption {\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  dnsNameservers: ").Append(DnsNameservers).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             if (input == null) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.DnsNameservers != input.DnsNameservers || (this.DnsNameservers != null && input.DnsNameservers != null && !this.DnsNameservers.SequenceEqual(input.DnsNameservers))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                 var hashCode = 41;
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.DnsNameservers != null) hashCode = hashCode * 59 + this.DnsNameservers.GetHashCode();
                 return hashCode;
             }
         }

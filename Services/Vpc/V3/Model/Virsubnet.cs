@@ -89,6 +89,18 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         public List<SubnetExtraDhcpOpt> ExtraDhcpOpts { get; set; }
 
         /// <summary>
+        /// **参数解释**： 是否开启当前子网的IPv4地址使用量指标监控。 **取值范围**： true：开启。 false：不开启。
+        /// </summary>
+        [JsonProperty("enable_network_address_usage_metrics", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableNetworkAddressUsageMetrics { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 子网内剩余可用的IPv4地址数量。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("available_ip_address_count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? AvailableIpAddressCount { get; set; }
+
+        /// <summary>
         /// **参数解释**： 子网的创建时间。 **取值范围**： UTC时间格式，yyyy-MM-ddTHH:mm:ss。
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
@@ -121,6 +133,8 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             sb.Append("  subnetCidrs: ").Append(SubnetCidrs).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  extraDhcpOpts: ").Append(ExtraDhcpOpts).Append("\n");
+            sb.Append("  enableNetworkAddressUsageMetrics: ").Append(EnableNetworkAddressUsageMetrics).Append("\n");
+            sb.Append("  availableIpAddressCount: ").Append(AvailableIpAddressCount).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("}\n");
@@ -153,6 +167,8 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             if (this.SubnetCidrs != input.SubnetCidrs || (this.SubnetCidrs != null && input.SubnetCidrs != null && !this.SubnetCidrs.SequenceEqual(input.SubnetCidrs))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
             if (this.ExtraDhcpOpts != input.ExtraDhcpOpts || (this.ExtraDhcpOpts != null && input.ExtraDhcpOpts != null && !this.ExtraDhcpOpts.SequenceEqual(input.ExtraDhcpOpts))) return false;
+            if (this.EnableNetworkAddressUsageMetrics != input.EnableNetworkAddressUsageMetrics || (this.EnableNetworkAddressUsageMetrics != null && !this.EnableNetworkAddressUsageMetrics.Equals(input.EnableNetworkAddressUsageMetrics))) return false;
+            if (this.AvailableIpAddressCount != input.AvailableIpAddressCount || (this.AvailableIpAddressCount != null && !this.AvailableIpAddressCount.Equals(input.AvailableIpAddressCount))) return false;
             if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
             if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
 
@@ -179,6 +195,8 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                 if (this.SubnetCidrs != null) hashCode = hashCode * 59 + this.SubnetCidrs.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.ExtraDhcpOpts != null) hashCode = hashCode * 59 + this.ExtraDhcpOpts.GetHashCode();
+                if (this.EnableNetworkAddressUsageMetrics != null) hashCode = hashCode * 59 + this.EnableNetworkAddressUsageMetrics.GetHashCode();
+                if (this.AvailableIpAddressCount != null) hashCode = hashCode * 59 + this.AvailableIpAddressCount.GetHashCode();
                 if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 return hashCode;

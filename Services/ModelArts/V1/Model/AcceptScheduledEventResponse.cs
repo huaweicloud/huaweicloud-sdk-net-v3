@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
     public class AcceptScheduledEventResponse : SdkResponse
     {
         /// <summary>
-        /// **参数解释**：事件分类。 **取值范围**：可选值如下： - hardware：硬件维修。 - software：软件维修。
+        /// **参数解释**：事件分类。 **取值范围**：不涉及。
         /// </summary>
-        /// <value>**参数解释**：事件分类。 **取值范围**：可选值如下： - hardware：硬件维修。 - software：软件维修。</value>
+        /// <value>**参数解释**：事件分类。 **取值范围**：不涉及。</value>
         [JsonConverter(typeof(EnumClassConverter<CatalogEnum>))]
         public class CatalogEnum
         {
@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         }
 
         /// <summary>
-        /// **参数解释**：事件类型。 **取值范围**：可选值如下： - system-maintenance：系统维护 - localdisk-recovery：本地盘恢复 - node_reboot：节点重启 - operation-request：运维授权 - node_maintenance：超节点维护 - node_redeploy：超节点重部署 - node_localdisk_recovery 超节点本地盘恢复。
+        /// **参数解释**：事件类型。 **取值范围**：可选值如下： - system-maintenance：系统维护 - localdisk-recovery：本地盘恢复 - node_reboot：节点重启 - operation-request：运维授权 - node_maintenance：超节点维护 - node_redeploy：超节点重部署 - node_localdisk_recovery 超节点本地盘恢复
         /// </summary>
-        /// <value>**参数解释**：事件类型。 **取值范围**：可选值如下： - system-maintenance：系统维护 - localdisk-recovery：本地盘恢复 - node_reboot：节点重启 - operation-request：运维授权 - node_maintenance：超节点维护 - node_redeploy：超节点重部署 - node_localdisk_recovery 超节点本地盘恢复。</value>
+        /// <value>**参数解释**：事件类型。 **取值范围**：可选值如下： - system-maintenance：系统维护 - localdisk-recovery：本地盘恢复 - node_reboot：节点重启 - operation-request：运维授权 - node_maintenance：超节点维护 - node_redeploy：超节点重部署 - node_localdisk_recovery 超节点本地盘恢复</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -276,9 +276,9 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         }
 
         /// <summary>
-        /// **参数解释**：事件状态。 **取值范围**：可选择值如下： - inquiring: 待授权, - scheduled: 待执行, - executing: 执行中, - completed: 执行成功 - failed: 执行失败 - canceled: 取消
+        /// **参数解释**：事件状态。 **取值范围**：可选择值如下： - inquiring: 待授权 - scheduled: 待执行 - executing: 执行中 - completed: 执行成功 - failed: 执行失败 - canceled: 取消 - part-completed: 部分成功
         /// </summary>
-        /// <value>**参数解释**：事件状态。 **取值范围**：可选择值如下： - inquiring: 待授权, - scheduled: 待执行, - executing: 执行中, - completed: 执行成功 - failed: 执行失败 - canceled: 取消</value>
+        /// <value>**参数解释**：事件状态。 **取值范围**：可选择值如下： - inquiring: 待授权 - scheduled: 待执行 - executing: 执行中 - completed: 执行成功 - failed: 执行失败 - canceled: 取消 - part-completed: 部分成功</value>
         [JsonConverter(typeof(EnumClassConverter<StateEnum>))]
         public class StateEnum
         {
@@ -312,6 +312,11 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             /// </summary>
             public static readonly StateEnum CANCELED = new StateEnum("canceled");
 
+            /// <summary>
+            /// Enum PART_COMPLETED for value: part-completed
+            /// </summary>
+            public static readonly StateEnum PART_COMPLETED = new StateEnum("part-completed");
+
             private static readonly Dictionary<string, StateEnum> StaticFields =
             new Dictionary<string, StateEnum>()
             {
@@ -321,6 +326,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 { "completed", COMPLETED },
                 { "failed", FAILED },
                 { "canceled", CANCELED },
+                { "part-completed", PART_COMPLETED },
             };
 
             private string _value;
@@ -415,9 +421,9 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         }
 
         /// <summary>
-        /// **参数解释**：节点类型归属。 **取值范围**可选择值如下： - devserver：lite-server节点 - lite-cluster lite池 - standard 标准池
+        /// **参数解释**：节点类型归属。 **取值范围**可选择值如下： - devserver：lite-server节点  - lite-cluster lite池  - standard 标准池 **约束限制**：待废弃: 请使用 nodes[0].instanceType。
         /// </summary>
-        /// <value>**参数解释**：节点类型归属。 **取值范围**可选择值如下： - devserver：lite-server节点 - lite-cluster lite池 - standard 标准池</value>
+        /// <value>**参数解释**：节点类型归属。 **取值范围**可选择值如下： - devserver：lite-server节点  - lite-cluster lite池  - standard 标准池 **约束限制**：待废弃: 请使用 nodes[0].instanceType。</value>
         [JsonConverter(typeof(EnumClassConverter<InstanceTypeEnum>))]
         public class InstanceTypeEnum
         {
@@ -543,12 +549,18 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// **参数解释**：事件分类。 **取值范围**：可选值如下： - hardware：硬件维修。 - software：软件维修。
+        /// **参数解释**：事件分类。 **取值范围**：不涉及。
         /// </summary>
         [JsonProperty("catalog", NullValueHandling = NullValueHandling.Ignore)]
         public CatalogEnum Catalog { get; set; }
         /// <summary>
-        /// **参数解释**：事件类型。 **取值范围**：可选值如下： - system-maintenance：系统维护 - localdisk-recovery：本地盘恢复 - node_reboot：节点重启 - operation-request：运维授权 - node_maintenance：超节点维护 - node_redeploy：超节点重部署 - node_localdisk_recovery 超节点本地盘恢复。
+        /// **参数解释**：超节点标识。 **约束限制**：不涉及。 **取值范围**：true / false **默认取值**：false
+        /// </summary>
+        [JsonProperty("isHyperNode", NullValueHandling = NullValueHandling.Ignore)]
+        public string IsHyperNode { get; set; }
+
+        /// <summary>
+        /// **参数解释**：事件类型。 **取值范围**：可选值如下： - system-maintenance：系统维护 - localdisk-recovery：本地盘恢复 - node_reboot：节点重启 - operation-request：运维授权 - node_maintenance：超节点维护 - node_redeploy：超节点重部署 - node_localdisk_recovery 超节点本地盘恢复
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
@@ -559,86 +571,110 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// **参数解释**：事件状态。 **取值范围**：可选择值如下： - inquiring: 待授权, - scheduled: 待执行, - executing: 执行中, - completed: 执行成功 - failed: 执行失败 - canceled: 取消
+        /// **参数解释**：事件状态。 **取值范围**：可选择值如下： - inquiring: 待授权 - scheduled: 待执行 - executing: 执行中 - completed: 执行成功 - failed: 执行失败 - canceled: 取消 - part-completed: 部分成功
         /// </summary>
         [JsonProperty("state", NullValueHandling = NullValueHandling.Ignore)]
         public StateEnum State { get; set; }
         /// <summary>
-        /// **参数解释**：节点类型归属。 **取值范围**可选择值如下： - devserver：lite-server节点 - lite-cluster lite池 - standard 标准池
-        /// </summary>
-        [JsonProperty("instanceType", NullValueHandling = NullValueHandling.Ignore)]
-        public InstanceTypeEnum InstanceType { get; set; }
-        /// <summary>
-        /// **参数解释**：服务器ID。计算服务系统自动生成的实例ID，长度小于63。 **取值范围**：不涉及。
-        /// </summary>
-        [JsonProperty("instanceId", NullValueHandling = NullValueHandling.Ignore)]
-        public string InstanceId { get; set; }
-
-        /// <summary>
-        /// **参数解释**：节点名称，取值自节点详情的metadata.name字段。系统自动生成，只能以小写字母开头，数字、中划线组成，不能以中划线结尾，小于63个字符。 **取值范围**：不涉及。
-        /// </summary>
-        [JsonProperty("nodeName", NullValueHandling = NullValueHandling.Ignore)]
-        public string NodeName { get; set; }
-
-        /// <summary>
-        /// **参数解释**：资源池名称, lite-cluster、standard才具有，取值自资源池详情的metadata.name字段。系统自动生成，只能以小写字母开头，数字、中划线组成，不能以中划线结尾，小于63个字符。 **取值范围**：不涉及。
-        /// </summary>
-        [JsonProperty("poolName", NullValueHandling = NullValueHandling.Ignore)]
-        public string PoolName { get; set; }
-
-        /// <summary>
-        /// **参数解释**：资源池对外显示的名称, lite-cluster、standard才具有，取值自资源池详情的metadata.name字段。只能以小写字母开头，数字、中划线组成，不能以中划线结尾，且长度为[36-63]个字符。 **取值范围**：不涉及。
-        /// </summary>
-        [JsonProperty("poolDisplayName", NullValueHandling = NullValueHandling.Ignore)]
-        public string PoolDisplayName { get; set; }
-
-        /// <summary>
-        /// **参数解释**：事件发布时间。 **约束限制**：格式为UTC时间字符串：2025-09-15T07:02:30Z。 **取值范围**：不涉及。 **默认取值**：不涉及。
+        /// **参数解释**：事件发布时间。 **取值范围**：不涉及。
         /// </summary>
         [JsonProperty("publishTime", NullValueHandling = NullValueHandling.Ignore)]
         public string PublishTime { get; set; }
 
         /// <summary>
-        /// **参数解释**：事件开始时间。 **约束限制**：格式为UTC时间字符串：2025-09-15T07:02:30Z。 **取值范围**：不涉及。 **默认取值**：不涉及。
+        /// **参数解释**：事件开始时间。 **取值范围**：不涉及。
         /// </summary>
         [JsonProperty("startTime", NullValueHandling = NullValueHandling.Ignore)]
         public string StartTime { get; set; }
 
         /// <summary>
-        /// **参数解释**：事件完成时间。 **约束限制**：格式为UTC时间字符串：2025-09-15T07:02:30Z。 **取值范围**：不涉及。 **默认取值**：不涉及。
+        /// **参数解释**：事件完成时间。 **取值范围**：不涉及。
         /// </summary>
         [JsonProperty("finishTime", NullValueHandling = NullValueHandling.Ignore)]
         public string FinishTime { get; set; }
 
         /// <summary>
-        /// **参数解释**：事件计划执行开始时间，格式为UTC时间字符串：2025-09-15T07:02:30Z。 **约束限制**：大于当前时间。 **取值范围**：不涉及。 **默认取值**：不填表示立即执行。
+        /// **参数解释**：事件计划执行开始时间，格式为UTC时间字符串：2025-09-15T07:02:30Z。 **取值范围**：不涉及。
         /// </summary>
         [JsonProperty("notBefore", NullValueHandling = NullValueHandling.Ignore)]
         public string NotBefore { get; set; }
 
         /// <summary>
-        /// **参数解释**：提示信息。 **约束限制**：系统自动生成，只能以小写字母开头，数字、中划线组成，不能以中划线结尾，长度小于63字符。 **取值范围**：不涉及。 **默认取值**：不涉及。
+        /// **参数解释**：提示信息。 **取值范围**：不涉及。
         /// </summary>
         [JsonProperty("probeMsg", NullValueHandling = NullValueHandling.Ignore)]
         public string ProbeMsg { get; set; }
 
         /// <summary>
-        /// **参数解释**：计划事件执行的实时进度信息，系统自动生成。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
+        /// 
         /// </summary>
-        [JsonProperty("jobProgress", NullValueHandling = NullValueHandling.Ignore)]
-        public string JobProgress { get; set; }
+        [JsonProperty("executeOptions", NullValueHandling = NullValueHandling.Ignore)]
+        public ExecuteOptions ExecuteOptions { get; set; }
 
         /// <summary>
-        /// **参数解释**：节点的重部署类型。 **约束限制**：不涉及。 **取值范围**：可选值如下：- HARD：表示支持强制重部署, - SOFT：表示支持重部署 **默认取值**：不涉及。
+        /// **参数解释**：节点重部署类型列表，标识该计划事件支持的重部署方式。 **约束限制**：不涉及。 **取值范围**：可选值如下： - SOFT：表示支持重部署 - HARD：表示支持强制重部署 **默认取值**：不涉及。
         /// </summary>
         [JsonProperty("redeployType", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> RedeployType { get; set; }
 
         /// <summary>
-        /// **参数解释**：snt9b23 场景对应ECS服务器ID。计算服务系统自动生成的实例ID，长度小于63。  **取值范围**：snt9b23 涉及, snt9b 不涉及。
+        /// **参数解释**：事件系统自动授权执行时间，格式为UTC时间字符串：2025-09-15T07:02:30Z。 **取值范围**：不涉及。
+        /// </summary>
+        [JsonProperty("autoRecoveryCheckTime", NullValueHandling = NullValueHandling.Ignore)]
+        public string AutoRecoveryCheckTime { get; set; }
+
+        /// <summary>
+        /// **参数解释**：事件关联节点信息列表。 **取值范围**：不涉及。
+        /// </summary>
+        [JsonProperty("nodes", NullValueHandling = NullValueHandling.Ignore)]
+        public List<NodeEvent> Nodes { get; set; }
+
+        /// <summary>
+        /// **参数解释**：节点ID。计算服务系统自动生成的实例ID，长度小于63。 **取值范围**：不涉及。 **约束限制**：待废弃: 请使用 nodes[0].InstanceId。
+        /// </summary>
+        [JsonProperty("instanceId", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceId { get; set; }
+
+        /// <summary>
+        /// **参数解释**：节点名称，取值自节点详情的metadata.name字段。系统自动生成，只能以小写字母开头，数字、中划线组成，不能以中划线结尾，小于63个字符。 **取值范围**：不涉及。 **约束限制**：待废弃: 请使用 nodes[0].nodeName。
+        /// </summary>
+        [JsonProperty("nodeName", NullValueHandling = NullValueHandling.Ignore)]
+        public string NodeName { get; set; }
+
+        /// <summary>
+        /// **参数解释**：节点类型归属。 **取值范围**可选择值如下： - devserver：lite-server节点  - lite-cluster lite池  - standard 标准池 **约束限制**：待废弃: 请使用 nodes[0].instanceType。
+        /// </summary>
+        [JsonProperty("instanceType", NullValueHandling = NullValueHandling.Ignore)]
+        public InstanceTypeEnum InstanceType { get; set; }
+        /// <summary>
+        /// **参数解释**：超节点场景对应ECS服务器ID。计算服务系统自动生成的实例ID，长度小于63。  **取值范围**：超节点涉及, snt9b 不涉及。 **约束限制**：待废弃: 请使用 nodes[0].underLyingInstanceId。
         /// </summary>
         [JsonProperty("underLyingInstanceId", NullValueHandling = NullValueHandling.Ignore)]
         public string UnderLyingInstanceId { get; set; }
+
+        /// <summary>
+        /// **参数解释**：规格是否支持重部署。 **取值范围**：true/false。 **约束限制**：待废弃: 请使用 nodes[0].flavorSupportRedeploy。
+        /// </summary>
+        [JsonProperty("flavorSupportRedeploy", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? FlavorSupportRedeploy { get; set; }
+
+        /// <summary>
+        /// **参数解释**：资源池名称, lite-cluster、standard才具有，取值自资源池详情的metadata.name字段。系统自动生成，只能以小写字母开头，数字、中划线组成，不能以中划线结尾，小于63个字符。 **取值范围**：不涉及。 **约束限制**：待废弃: 请使用 nodes[0].poolName。
+        /// </summary>
+        [JsonProperty("poolName", NullValueHandling = NullValueHandling.Ignore)]
+        public string PoolName { get; set; }
+
+        /// <summary>
+        /// **参数解释**：资源池对外显示的名称, lite-cluster、standard才具有，取值自资源池详情的metadata.labels字段。只能以小写字母开头，数字、中划线组成，不能以中划线结尾，且长度为[36-63]个字符。 **取值范围**：不涉及。 **约束限制**：待废弃: 请使用 nodes[0].poolDisplayName。
+        /// </summary>
+        [JsonProperty("poolDisplayName", NullValueHandling = NullValueHandling.Ignore)]
+        public string PoolDisplayName { get; set; }
+
+        /// <summary>
+        /// **参数解释**：重部署执行的实时进度信息，系统自动生成。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。 **约束限制**：待废弃: 请使用 nodes[0].jobProgress。
+        /// </summary>
+        [JsonProperty("jobProgress", NullValueHandling = NullValueHandling.Ignore)]
+        public string JobProgress { get; set; }
 
         /// <summary>
         /// 
@@ -658,22 +694,27 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("class AcceptScheduledEventResponse {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  catalog: ").Append(Catalog).Append("\n");
+            sb.Append("  isHyperNode: ").Append(IsHyperNode).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  state: ").Append(State).Append("\n");
-            sb.Append("  instanceType: ").Append(InstanceType).Append("\n");
-            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
-            sb.Append("  nodeName: ").Append(NodeName).Append("\n");
-            sb.Append("  poolName: ").Append(PoolName).Append("\n");
-            sb.Append("  poolDisplayName: ").Append(PoolDisplayName).Append("\n");
             sb.Append("  publishTime: ").Append(PublishTime).Append("\n");
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  finishTime: ").Append(FinishTime).Append("\n");
             sb.Append("  notBefore: ").Append(NotBefore).Append("\n");
             sb.Append("  probeMsg: ").Append(ProbeMsg).Append("\n");
-            sb.Append("  jobProgress: ").Append(JobProgress).Append("\n");
+            sb.Append("  executeOptions: ").Append(ExecuteOptions).Append("\n");
             sb.Append("  redeployType: ").Append(RedeployType).Append("\n");
+            sb.Append("  autoRecoveryCheckTime: ").Append(AutoRecoveryCheckTime).Append("\n");
+            sb.Append("  nodes: ").Append(Nodes).Append("\n");
+            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
+            sb.Append("  nodeName: ").Append(NodeName).Append("\n");
+            sb.Append("  instanceType: ").Append(InstanceType).Append("\n");
             sb.Append("  underLyingInstanceId: ").Append(UnderLyingInstanceId).Append("\n");
+            sb.Append("  flavorSupportRedeploy: ").Append(FlavorSupportRedeploy).Append("\n");
+            sb.Append("  poolName: ").Append(PoolName).Append("\n");
+            sb.Append("  poolDisplayName: ").Append(PoolDisplayName).Append("\n");
+            sb.Append("  jobProgress: ").Append(JobProgress).Append("\n");
             sb.Append("  xRequestId: ").Append(XRequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -695,22 +736,27 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (input == null) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Catalog != input.Catalog) return false;
+            if (this.IsHyperNode != input.IsHyperNode || (this.IsHyperNode != null && !this.IsHyperNode.Equals(input.IsHyperNode))) return false;
             if (this.Type != input.Type) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.State != input.State) return false;
-            if (this.InstanceType != input.InstanceType) return false;
-            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
-            if (this.NodeName != input.NodeName || (this.NodeName != null && !this.NodeName.Equals(input.NodeName))) return false;
-            if (this.PoolName != input.PoolName || (this.PoolName != null && !this.PoolName.Equals(input.PoolName))) return false;
-            if (this.PoolDisplayName != input.PoolDisplayName || (this.PoolDisplayName != null && !this.PoolDisplayName.Equals(input.PoolDisplayName))) return false;
             if (this.PublishTime != input.PublishTime || (this.PublishTime != null && !this.PublishTime.Equals(input.PublishTime))) return false;
             if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
             if (this.FinishTime != input.FinishTime || (this.FinishTime != null && !this.FinishTime.Equals(input.FinishTime))) return false;
             if (this.NotBefore != input.NotBefore || (this.NotBefore != null && !this.NotBefore.Equals(input.NotBefore))) return false;
             if (this.ProbeMsg != input.ProbeMsg || (this.ProbeMsg != null && !this.ProbeMsg.Equals(input.ProbeMsg))) return false;
-            if (this.JobProgress != input.JobProgress || (this.JobProgress != null && !this.JobProgress.Equals(input.JobProgress))) return false;
+            if (this.ExecuteOptions != input.ExecuteOptions || (this.ExecuteOptions != null && !this.ExecuteOptions.Equals(input.ExecuteOptions))) return false;
             if (this.RedeployType != input.RedeployType || (this.RedeployType != null && input.RedeployType != null && !this.RedeployType.SequenceEqual(input.RedeployType))) return false;
+            if (this.AutoRecoveryCheckTime != input.AutoRecoveryCheckTime || (this.AutoRecoveryCheckTime != null && !this.AutoRecoveryCheckTime.Equals(input.AutoRecoveryCheckTime))) return false;
+            if (this.Nodes != input.Nodes || (this.Nodes != null && input.Nodes != null && !this.Nodes.SequenceEqual(input.Nodes))) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.NodeName != input.NodeName || (this.NodeName != null && !this.NodeName.Equals(input.NodeName))) return false;
+            if (this.InstanceType != input.InstanceType) return false;
             if (this.UnderLyingInstanceId != input.UnderLyingInstanceId || (this.UnderLyingInstanceId != null && !this.UnderLyingInstanceId.Equals(input.UnderLyingInstanceId))) return false;
+            if (this.FlavorSupportRedeploy != input.FlavorSupportRedeploy || (this.FlavorSupportRedeploy != null && !this.FlavorSupportRedeploy.Equals(input.FlavorSupportRedeploy))) return false;
+            if (this.PoolName != input.PoolName || (this.PoolName != null && !this.PoolName.Equals(input.PoolName))) return false;
+            if (this.PoolDisplayName != input.PoolDisplayName || (this.PoolDisplayName != null && !this.PoolDisplayName.Equals(input.PoolDisplayName))) return false;
+            if (this.JobProgress != input.JobProgress || (this.JobProgress != null && !this.JobProgress.Equals(input.JobProgress))) return false;
             if (this.XRequestId != input.XRequestId || (this.XRequestId != null && !this.XRequestId.Equals(input.XRequestId))) return false;
 
             return true;
@@ -726,22 +772,27 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 var hashCode = 41;
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 hashCode = hashCode * 59 + this.Catalog.GetHashCode();
+                if (this.IsHyperNode != null) hashCode = hashCode * 59 + this.IsHyperNode.GetHashCode();
                 hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 hashCode = hashCode * 59 + this.State.GetHashCode();
-                hashCode = hashCode * 59 + this.InstanceType.GetHashCode();
-                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.NodeName != null) hashCode = hashCode * 59 + this.NodeName.GetHashCode();
-                if (this.PoolName != null) hashCode = hashCode * 59 + this.PoolName.GetHashCode();
-                if (this.PoolDisplayName != null) hashCode = hashCode * 59 + this.PoolDisplayName.GetHashCode();
                 if (this.PublishTime != null) hashCode = hashCode * 59 + this.PublishTime.GetHashCode();
                 if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.FinishTime != null) hashCode = hashCode * 59 + this.FinishTime.GetHashCode();
                 if (this.NotBefore != null) hashCode = hashCode * 59 + this.NotBefore.GetHashCode();
                 if (this.ProbeMsg != null) hashCode = hashCode * 59 + this.ProbeMsg.GetHashCode();
-                if (this.JobProgress != null) hashCode = hashCode * 59 + this.JobProgress.GetHashCode();
+                if (this.ExecuteOptions != null) hashCode = hashCode * 59 + this.ExecuteOptions.GetHashCode();
                 if (this.RedeployType != null) hashCode = hashCode * 59 + this.RedeployType.GetHashCode();
+                if (this.AutoRecoveryCheckTime != null) hashCode = hashCode * 59 + this.AutoRecoveryCheckTime.GetHashCode();
+                if (this.Nodes != null) hashCode = hashCode * 59 + this.Nodes.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.NodeName != null) hashCode = hashCode * 59 + this.NodeName.GetHashCode();
+                hashCode = hashCode * 59 + this.InstanceType.GetHashCode();
                 if (this.UnderLyingInstanceId != null) hashCode = hashCode * 59 + this.UnderLyingInstanceId.GetHashCode();
+                if (this.FlavorSupportRedeploy != null) hashCode = hashCode * 59 + this.FlavorSupportRedeploy.GetHashCode();
+                if (this.PoolName != null) hashCode = hashCode * 59 + this.PoolName.GetHashCode();
+                if (this.PoolDisplayName != null) hashCode = hashCode * 59 + this.PoolDisplayName.GetHashCode();
+                if (this.JobProgress != null) hashCode = hashCode * 59 + this.JobProgress.GetHashCode();
                 if (this.XRequestId != null) hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }

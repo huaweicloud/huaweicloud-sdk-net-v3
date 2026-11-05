@@ -29,6 +29,12 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public string CreationTimestamp { get; set; }
 
         /// <summary>
+        /// **参数解释**：网络的删除时间。例如\&quot;2025-12-01T03:49:41Z\&quot;。 **取值范围**：不涉及。
+        /// </summary>
+        [JsonProperty("deletionTimestamp", NullValueHandling = NullValueHandling.Ignore)]
+        public string DeletionTimestamp { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("labels", NullValueHandling = NullValueHandling.Ignore)]
@@ -51,6 +57,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("class NetworkMetadata {\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  creationTimestamp: ").Append(CreationTimestamp).Append("\n");
+            sb.Append("  deletionTimestamp: ").Append(DeletionTimestamp).Append("\n");
             sb.Append("  labels: ").Append(Labels).Append("\n");
             sb.Append("  annotations: ").Append(Annotations).Append("\n");
             sb.Append("}\n");
@@ -73,6 +80,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (input == null) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.CreationTimestamp != input.CreationTimestamp || (this.CreationTimestamp != null && !this.CreationTimestamp.Equals(input.CreationTimestamp))) return false;
+            if (this.DeletionTimestamp != input.DeletionTimestamp || (this.DeletionTimestamp != null && !this.DeletionTimestamp.Equals(input.DeletionTimestamp))) return false;
             if (this.Labels != input.Labels || (this.Labels != null && !this.Labels.Equals(input.Labels))) return false;
             if (this.Annotations != input.Annotations || (this.Annotations != null && !this.Annotations.Equals(input.Annotations))) return false;
 
@@ -89,6 +97,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 var hashCode = 41;
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.CreationTimestamp != null) hashCode = hashCode * 59 + this.CreationTimestamp.GetHashCode();
+                if (this.DeletionTimestamp != null) hashCode = hashCode * 59 + this.DeletionTimestamp.GetHashCode();
                 if (this.Labels != null) hashCode = hashCode * 59 + this.Labels.GetHashCode();
                 if (this.Annotations != null) hashCode = hashCode * 59 + this.Annotations.GetHashCode();
                 return hashCode;

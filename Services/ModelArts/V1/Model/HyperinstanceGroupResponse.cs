@@ -32,13 +32,13 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         /// **参数解释**：npu数量限制。 **默认取值**：不涉及。
         /// </summary>
         [JsonProperty("npu_count_limit", NullValueHandling = NullValueHandling.Ignore)]
-        public string NpuCountLimit { get; set; }
+        public int? NpuCountLimit { get; set; }
 
         /// <summary>
         /// **参数解释**：npu数量。 **默认取值**：不涉及。
         /// </summary>
         [JsonProperty("npu_count", NullValueHandling = NullValueHandling.Ignore)]
-        public string NpuCount { get; set; }
+        public int? NpuCount { get; set; }
 
         /// <summary>
         /// **参数解释**：超节点集群ID。 **默认取值**：不涉及。

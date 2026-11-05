@@ -163,7 +163,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public string WorkspaceId { get; set; }
 
         /// <summary>
-        /// **参数解释**：事件状态。 **约束限制**：不涉及。 **取值范围**：可选择值如下： - inquiring: 待授权, - scheduled: 待执行 - executing: 执行中 - completed: 执行成功 - failed: 执行失败 - canceled: 取消 **默认取值**：不涉及。
+        /// **参数解释**：事件状态。 **约束限制**：不涉及。 **取值范围**：可选择值如下： - inquiring: 待授权 - scheduled: 待执行 - executing: 执行中 - completed: 执行成功 - failed: 执行失败 - canceled: 取消 **默认取值**：不涉及。
         /// </summary>
         [SDKProperty("state", IsQuery = true)]
         [JsonProperty("state", NullValueHandling = NullValueHandling.Ignore)]
@@ -176,11 +176,11 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public List<string> Type { get; set; }
 
         /// <summary>
-        /// **参数解释**：计划事件ID，取值查询计划事件列表接口的event_id字段。 **约束限制**：系统自动生成，只能以小写字母开头，数字、中划线组成，不能以中划线结尾，长度小于63。 **取值范围**：不涉及。 **默认取值**：不涉及。
+        /// **参数解释**：计划事件ID，取值查询计划事件列表接口的event_id字段。 支持批量筛选，批量筛选时传递多个参数，且最多支持100个。 **约束限制**：系统自动生成，只能以小写字母开头，数字、中划线组成，不能以中划线结尾，长度小于63。 **取值范围**：不涉及。 **默认取值**：不涉及。
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
-        public string Id { get; set; }
+        public List<string> Id { get; set; }
 
         /// <summary>
         /// **参数解释**：节点名称，取值自节点详情的metadata.name字段。 **约束限制**：系统自动生成，只能以小写字母开头，数字、中划线组成，不能以中划线结尾，小于63个字符。 **取值范围**：不涉及。 **默认取值**：不涉及。
@@ -264,7 +264,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.WorkspaceId != input.WorkspaceId || (this.WorkspaceId != null && !this.WorkspaceId.Equals(input.WorkspaceId))) return false;
             if (this.State != input.State || (this.State != null && input.State != null && !this.State.SequenceEqual(input.State))) return false;
             if (this.Type != input.Type || (this.Type != null && input.Type != null && !this.Type.SequenceEqual(input.Type))) return false;
-            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Id != input.Id || (this.Id != null && input.Id != null && !this.Id.SequenceEqual(input.Id))) return false;
             if (this.NodeName != input.NodeName || (this.NodeName != null && !this.NodeName.Equals(input.NodeName))) return false;
             if (this.PoolName != input.PoolName || (this.PoolName != null && !this.PoolName.Equals(input.PoolName))) return false;
             if (this.PublishStartTime != input.PublishStartTime || (this.PublishStartTime != null && !this.PublishStartTime.Equals(input.PublishStartTime))) return false;

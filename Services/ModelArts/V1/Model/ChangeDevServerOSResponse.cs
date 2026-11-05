@@ -493,12 +493,6 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public CloudServer CloudServer { get; set; }
 
         /// <summary>
-        /// **参数解释**：实例私有IP信息。
-        /// </summary>
-        [JsonProperty("endpoints_response", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Endpoints> EndpointsResponse { get; set; }
-
-        /// <summary>
         /// **参数解释**：实例规格名称。 **取值范围**：^.{1,128}$。
         /// </summary>
         [JsonProperty("flavor", NullValueHandling = NullValueHandling.Ignore)]
@@ -594,7 +588,6 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  updateAt: ").Append(UpdateAt).Append("\n");
             sb.Append("  chargingMode: ").Append(ChargingMode).Append("\n");
             sb.Append("  cloudServer: ").Append(CloudServer).Append("\n");
-            sb.Append("  endpointsResponse: ").Append(EndpointsResponse).Append("\n");
             sb.Append("  flavor: ").Append(Flavor).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  keyPairName: ").Append(KeyPairName).Append("\n");
@@ -631,7 +624,6 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.UpdateAt != input.UpdateAt || (this.UpdateAt != null && !this.UpdateAt.Equals(input.UpdateAt))) return false;
             if (this.ChargingMode != input.ChargingMode) return false;
             if (this.CloudServer != input.CloudServer || (this.CloudServer != null && !this.CloudServer.Equals(input.CloudServer))) return false;
-            if (this.EndpointsResponse != input.EndpointsResponse || (this.EndpointsResponse != null && input.EndpointsResponse != null && !this.EndpointsResponse.SequenceEqual(input.EndpointsResponse))) return false;
             if (this.Flavor != input.Flavor || (this.Flavor != null && !this.Flavor.Equals(input.Flavor))) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.KeyPairName != input.KeyPairName || (this.KeyPairName != null && !this.KeyPairName.Equals(input.KeyPairName))) return false;
@@ -662,7 +654,6 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 if (this.UpdateAt != null) hashCode = hashCode * 59 + this.UpdateAt.GetHashCode();
                 hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
                 if (this.CloudServer != null) hashCode = hashCode * 59 + this.CloudServer.GetHashCode();
-                if (this.EndpointsResponse != null) hashCode = hashCode * 59 + this.EndpointsResponse.GetHashCode();
                 if (this.Flavor != null) hashCode = hashCode * 59 + this.Flavor.GetHashCode();
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.KeyPairName != null) hashCode = hashCode * 59 + this.KeyPairName.GetHashCode();

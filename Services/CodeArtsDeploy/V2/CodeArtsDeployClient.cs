@@ -1733,5 +1733,33 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
             return new SyncInvoker<ShowProjectSuccessRateResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowProjectSuccessRateResponse>);
         }
         
+        /// <summary>
+        /// 查询部署记录的执行日志
+        ///
+        /// 查询部署记录的执行日志。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowTaskLogsResponse ShowTaskLogs(ShowTaskLogsRequest showTaskLogsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTaskLogsRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
+            if (StringUtils.TryConvertToNonEmptyString(showTaskLogsRequest.RecordId, out var valueOfRecordId)) urlParam.Add("record_id", valueOfRecordId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/applications/{app_id}/records/{record_id}/logs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTaskLogsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowTaskLogsResponse>(response);
+        }
+
+        public SyncInvoker<ShowTaskLogsResponse> ShowTaskLogsInvoker(ShowTaskLogsRequest showTaskLogsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTaskLogsRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
+            if (StringUtils.TryConvertToNonEmptyString(showTaskLogsRequest.RecordId, out var valueOfRecordId)) urlParam.Add("record_id", valueOfRecordId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/applications/{app_id}/records/{record_id}/logs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTaskLogsRequest);
+            return new SyncInvoker<ShowTaskLogsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTaskLogsResponse>);
+        }
+        
     }
 }

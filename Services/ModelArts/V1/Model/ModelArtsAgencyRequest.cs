@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         [JsonProperty("agency_name_suffix", NullValueHandling = NullValueHandling.Ignore)]
         public string AgencyNameSuffix { get; set; }
 
+        /// <summary>
+        /// **参数解释**：细粒度权限列表。
+        /// </summary>
+        [JsonProperty("agency_services", NullValueHandling = NullValueHandling.Ignore)]
+        public List<AgencyServices> AgencyServices { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             var sb = new StringBuilder();
             sb.Append("class ModelArtsAgencyRequest {\n");
             sb.Append("  agencyNameSuffix: ").Append(AgencyNameSuffix).Append("\n");
+            sb.Append("  agencyServices: ").Append(AgencyServices).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         {
             if (input == null) return false;
             if (this.AgencyNameSuffix != input.AgencyNameSuffix || (this.AgencyNameSuffix != null && !this.AgencyNameSuffix.Equals(input.AgencyNameSuffix))) return false;
+            if (this.AgencyServices != input.AgencyServices || (this.AgencyServices != null && input.AgencyServices != null && !this.AgencyServices.SequenceEqual(input.AgencyServices))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             {
                 var hashCode = 41;
                 if (this.AgencyNameSuffix != null) hashCode = hashCode * 59 + this.AgencyNameSuffix.GetHashCode();
+                if (this.AgencyServices != null) hashCode = hashCode * 59 + this.AgencyServices.GetHashCode();
                 return hashCode;
             }
         }

@@ -1734,5 +1734,33 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
             return new AsyncInvoker<ShowProjectSuccessRateResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowProjectSuccessRateResponse>);
         }
         
+        /// <summary>
+        /// 查询部署记录的执行日志
+        ///
+        /// 查询部署记录的执行日志。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowTaskLogsResponse> ShowTaskLogsAsync(ShowTaskLogsRequest showTaskLogsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTaskLogsRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
+            if (StringUtils.TryConvertToNonEmptyString(showTaskLogsRequest.RecordId, out var valueOfRecordId)) urlParam.Add("record_id", valueOfRecordId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/applications/{app_id}/records/{record_id}/logs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTaskLogsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowTaskLogsResponse>(response);
+        }
+
+        public AsyncInvoker<ShowTaskLogsResponse> ShowTaskLogsAsyncInvoker(ShowTaskLogsRequest showTaskLogsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTaskLogsRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
+            if (StringUtils.TryConvertToNonEmptyString(showTaskLogsRequest.RecordId, out var valueOfRecordId)) urlParam.Add("record_id", valueOfRecordId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/applications/{app_id}/records/{record_id}/logs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTaskLogsRequest);
+            return new AsyncInvoker<ShowTaskLogsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTaskLogsResponse>);
+        }
+        
     }
 }

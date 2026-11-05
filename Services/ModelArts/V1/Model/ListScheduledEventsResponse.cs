@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
     {
 
         /// <summary>
-        /// **参数解释**：计划事件列表
+        /// &#39;**参数解释**：计划事件列表&#39;。
         /// </summary>
         [JsonProperty("events", NullValueHandling = NullValueHandling.Ignore)]
         public List<ScheduledEvent> Events { get; set; }

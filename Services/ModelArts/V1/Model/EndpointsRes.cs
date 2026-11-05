@@ -154,6 +154,12 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         [JsonProperty("key_pair_names", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> KeyPairNames { get; set; }
 
+        /// <summary>
+        /// **参数解释**：通过应用专属URL直接打开应用进入远程开发模式。包含应用的各种扩展配置。key表示扩展配置名称，value表示扩展配置值。
+        /// </summary>
+        [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
+        public Dictionary<string, string> Extensions { get; set; }
+
 
 
         /// <summary>
@@ -167,6 +173,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  service: ").Append(Service).Append("\n");
             sb.Append("  uri: ").Append(Uri).Append("\n");
             sb.Append("  keyPairNames: ").Append(KeyPairNames).Append("\n");
+            sb.Append("  extensions: ").Append(Extensions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -189,6 +196,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.Service != input.Service) return false;
             if (this.Uri != input.Uri || (this.Uri != null && !this.Uri.Equals(input.Uri))) return false;
             if (this.KeyPairNames != input.KeyPairNames || (this.KeyPairNames != null && input.KeyPairNames != null && !this.KeyPairNames.SequenceEqual(input.KeyPairNames))) return false;
+            if (this.Extensions != input.Extensions || (this.Extensions != null && input.Extensions != null && !this.Extensions.SequenceEqual(input.Extensions))) return false;
 
             return true;
         }
@@ -205,6 +213,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 hashCode = hashCode * 59 + this.Service.GetHashCode();
                 if (this.Uri != null) hashCode = hashCode * 59 + this.Uri.GetHashCode();
                 if (this.KeyPairNames != null) hashCode = hashCode * 59 + this.KeyPairNames.GetHashCode();
+                if (this.Extensions != null) hashCode = hashCode * 59 + this.Extensions.GetHashCode();
                 return hashCode;
             }
         }

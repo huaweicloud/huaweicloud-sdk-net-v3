@@ -77,10 +77,16 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public string OsModelartsTmsTags { get; set; }
 
         /// <summary>
-        /// **参数解释**：资源池调度队列的策略，用于定义任务调度的规则。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
+        /// **参数解释**：资源池调度队列的策略，用于定义任务调度的规则。 **取值范围**：枚举：FIFO、Range、Step、Rank。
         /// </summary>
         [JsonProperty("os.modelarts.pool/scheduler.queue.strategy", NullValueHandling = NullValueHandling.Ignore)]
         public string OsModelartsPoolSchedulerQueueStrategy { get; set; }
+
+        /// <summary>
+        /// **参数解释**：资源池的调度策略配置。 **约束限制**：仅当调度策略为Step或Rank时生效。 **取值范围**：Json字符串，自行配置，示例如下： - Step: {\&quot;step_config\&quot;:{\&quot;timeout\&quot;:300}} - Rank: {\&quot;rank_config\&quot;:[{\&quot;max_priority\&quot;:3,\&quot;min_priority\&quot;:3,\&quot;rank_strategy\&quot;:\&quot;Step\&quot;,\&quot;step_config\&quot;:{\&quot;timeout\&quot;:300}},{\&quot;max_priority\&quot;:2,\&quot;min_priority\&quot;:1,\&quot;rank_strategy\&quot;:\&quot;Range\&quot;}]} **默认取值**：不涉及。
+        /// </summary>
+        [JsonProperty("os.modelarts.pool/scheduler.queue.strategy.config", NullValueHandling = NullValueHandling.Ignore)]
+        public string OsModelartsPoolSchedulerQueueStrategyConfig { get; set; }
 
         /// <summary>
         /// **参数解释**：资源池包含的逻辑子池的数量。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
@@ -120,6 +126,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             sb.Append("  osModelartsFlavorResourceIds: ").Append(OsModelartsFlavorResourceIds).Append("\n");
             sb.Append("  osModelartsTmsTags: ").Append(OsModelartsTmsTags).Append("\n");
             sb.Append("  osModelartsPoolSchedulerQueueStrategy: ").Append(OsModelartsPoolSchedulerQueueStrategy).Append("\n");
+            sb.Append("  osModelartsPoolSchedulerQueueStrategyConfig: ").Append(OsModelartsPoolSchedulerQueueStrategyConfig).Append("\n");
             sb.Append("  osModelartsPoolSubpoolsCount: ").Append(OsModelartsPoolSubpoolsCount).Append("\n");
             sb.Append("  osModelartsTenantDomainName: ").Append(OsModelartsTenantDomainName).Append("\n");
             sb.Append("  osModelartsPoolScopeExternalDependencyTrain: ").Append(OsModelartsPoolScopeExternalDependencyTrain).Append("\n");
@@ -152,6 +159,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
             if (this.OsModelartsFlavorResourceIds != input.OsModelartsFlavorResourceIds || (this.OsModelartsFlavorResourceIds != null && !this.OsModelartsFlavorResourceIds.Equals(input.OsModelartsFlavorResourceIds))) return false;
             if (this.OsModelartsTmsTags != input.OsModelartsTmsTags || (this.OsModelartsTmsTags != null && !this.OsModelartsTmsTags.Equals(input.OsModelartsTmsTags))) return false;
             if (this.OsModelartsPoolSchedulerQueueStrategy != input.OsModelartsPoolSchedulerQueueStrategy || (this.OsModelartsPoolSchedulerQueueStrategy != null && !this.OsModelartsPoolSchedulerQueueStrategy.Equals(input.OsModelartsPoolSchedulerQueueStrategy))) return false;
+            if (this.OsModelartsPoolSchedulerQueueStrategyConfig != input.OsModelartsPoolSchedulerQueueStrategyConfig || (this.OsModelartsPoolSchedulerQueueStrategyConfig != null && !this.OsModelartsPoolSchedulerQueueStrategyConfig.Equals(input.OsModelartsPoolSchedulerQueueStrategyConfig))) return false;
             if (this.OsModelartsPoolSubpoolsCount != input.OsModelartsPoolSubpoolsCount || (this.OsModelartsPoolSubpoolsCount != null && !this.OsModelartsPoolSubpoolsCount.Equals(input.OsModelartsPoolSubpoolsCount))) return false;
             if (this.OsModelartsTenantDomainName != input.OsModelartsTenantDomainName || (this.OsModelartsTenantDomainName != null && !this.OsModelartsTenantDomainName.Equals(input.OsModelartsTenantDomainName))) return false;
             if (this.OsModelartsPoolScopeExternalDependencyTrain != input.OsModelartsPoolScopeExternalDependencyTrain || (this.OsModelartsPoolScopeExternalDependencyTrain != null && !this.OsModelartsPoolScopeExternalDependencyTrain.Equals(input.OsModelartsPoolScopeExternalDependencyTrain))) return false;
@@ -178,6 +186,7 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
                 if (this.OsModelartsFlavorResourceIds != null) hashCode = hashCode * 59 + this.OsModelartsFlavorResourceIds.GetHashCode();
                 if (this.OsModelartsTmsTags != null) hashCode = hashCode * 59 + this.OsModelartsTmsTags.GetHashCode();
                 if (this.OsModelartsPoolSchedulerQueueStrategy != null) hashCode = hashCode * 59 + this.OsModelartsPoolSchedulerQueueStrategy.GetHashCode();
+                if (this.OsModelartsPoolSchedulerQueueStrategyConfig != null) hashCode = hashCode * 59 + this.OsModelartsPoolSchedulerQueueStrategyConfig.GetHashCode();
                 if (this.OsModelartsPoolSubpoolsCount != null) hashCode = hashCode * 59 + this.OsModelartsPoolSubpoolsCount.GetHashCode();
                 if (this.OsModelartsTenantDomainName != null) hashCode = hashCode * 59 + this.OsModelartsTenantDomainName.GetHashCode();
                 if (this.OsModelartsPoolScopeExternalDependencyTrain != null) hashCode = hashCode * 59 + this.OsModelartsPoolScopeExternalDependencyTrain.GetHashCode();

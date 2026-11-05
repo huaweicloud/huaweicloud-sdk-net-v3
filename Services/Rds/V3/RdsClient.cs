@@ -9262,6 +9262,456 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 创建Supabase应用
+        ///
+        /// 创建Supabase应用。支持两类路径：
+        /// 1) 同时创建托管的PostgreSQL实例（manage_type&#x3D;newly_instance）；
+        /// 2) 关联已有PostgreSQL实例（manage_type&#x3D;existed_instance）。
+        /// 异步接口，返回job_id（按需）或order_id（包周期）。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateSupabaseApplicationResponse CreateSupabaseApplication(CreateSupabaseApplicationRequest createSupabaseApplicationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/supabases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSupabaseApplicationRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateSupabaseApplicationResponse>(response);
+        }
+
+        public SyncInvoker<CreateSupabaseApplicationResponse> CreateSupabaseApplicationInvoker(CreateSupabaseApplicationRequest createSupabaseApplicationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/supabases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSupabaseApplicationRequest);
+            return new SyncInvoker<CreateSupabaseApplicationResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateSupabaseApplicationResponse>);
+        }
+        
+        /// <summary>
+        /// 删除Supabase应用
+        ///
+        /// 删除Supabase应用。仅删除应用本身，保留底层PG实例及关联关系。
+        /// 注：HTTP无请求体，delete_instance字段不对外暴露，恒为仅删应用。
+        /// PG级联删除为反向触发（PG删→自动删关联Supabase）。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteSupabaseApplicationResponse DeleteSupabaseApplication(DeleteSupabaseApplicationRequest deleteSupabaseApplicationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteSupabaseApplicationRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/{application_id}/supabase", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSupabaseApplicationRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteSupabaseApplicationResponse>(response);
+        }
+
+        public SyncInvoker<DeleteSupabaseApplicationResponse> DeleteSupabaseApplicationInvoker(DeleteSupabaseApplicationRequest deleteSupabaseApplicationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteSupabaseApplicationRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/{application_id}/supabase", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSupabaseApplicationRequest);
+            return new SyncInvoker<DeleteSupabaseApplicationResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteSupabaseApplicationResponse>);
+        }
+        
+        /// <summary>
+        /// 查询AI应用列表
+        ///
+        /// 查询AI应用列表，含应用状态和关联PG实例信息。删除应用前通常先调此接口定位目标。支持按type过滤Supabase应用。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListAiApplicationsResponse ListAiApplications(ListAiApplicationsRequest listAiApplicationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/applications", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAiApplicationsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListAiApplicationsResponse>(response);
+        }
+
+        public SyncInvoker<ListAiApplicationsResponse> ListAiApplicationsInvoker(ListAiApplicationsRequest listAiApplicationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/applications", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAiApplicationsRequest);
+            return new SyncInvoker<ListAiApplicationsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAiApplicationsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询Supabase应用ApiKey列表
+        ///
+        /// 分页查询ApiKey元数据。列表不含明文。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListSupabaseApplicationApiKeysResponse ListSupabaseApplicationApiKeys(ListSupabaseApplicationApiKeysRequest listSupabaseApplicationApiKeysRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listSupabaseApplicationApiKeysRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/{application_id}/supabase/api-keys", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSupabaseApplicationApiKeysRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListSupabaseApplicationApiKeysResponse>(response);
+        }
+
+        public SyncInvoker<ListSupabaseApplicationApiKeysResponse> ListSupabaseApplicationApiKeysInvoker(ListSupabaseApplicationApiKeysRequest listSupabaseApplicationApiKeysRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listSupabaseApplicationApiKeysRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/{application_id}/supabase/api-keys", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSupabaseApplicationApiKeysRequest);
+            return new SyncInvoker<ListSupabaseApplicationApiKeysResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSupabaseApplicationApiKeysResponse>);
+        }
+        
+        /// <summary>
+        /// 查询Supabase应用规格列表
+        ///
+        /// 查询可用规格，含每个AZ的可售状态和支持版本。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListSupabaseApplicationFlavorsResponse ListSupabaseApplicationFlavors(ListSupabaseApplicationFlavorsRequest listSupabaseApplicationFlavorsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/supabase/flavors", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSupabaseApplicationFlavorsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListSupabaseApplicationFlavorsResponse>(response);
+        }
+
+        public SyncInvoker<ListSupabaseApplicationFlavorsResponse> ListSupabaseApplicationFlavorsInvoker(ListSupabaseApplicationFlavorsRequest listSupabaseApplicationFlavorsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/supabase/flavors", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSupabaseApplicationFlavorsRequest);
+            return new SyncInvoker<ListSupabaseApplicationFlavorsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSupabaseApplicationFlavorsResponse>);
+        }
+        
+        /// <summary>
+        /// 修改Supabase应用Auth配置
+        ///
+        /// 部分更新：仅更新传入的非空字段，省略字段保留原值（@JsonInclude NON_EMPTY）。
+        /// enable_github&#x3D;false时清空github子字段；enable_email_sign_up&#x3D;false时清空smtp_config子字段。
+        /// 秘密字段（smtp_pwd、oauth_client_secret）需通过受控方式输入，show不返回故不会回显覆盖。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ModifySupabaseApplicationAuthConfigResponse ModifySupabaseApplicationAuthConfig(ModifySupabaseApplicationAuthConfigRequest modifySupabaseApplicationAuthConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(modifySupabaseApplicationAuthConfigRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/{application_id}/supabase/auth-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifySupabaseApplicationAuthConfigRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<ModifySupabaseApplicationAuthConfigResponse>(response);
+        }
+
+        public SyncInvoker<ModifySupabaseApplicationAuthConfigResponse> ModifySupabaseApplicationAuthConfigInvoker(ModifySupabaseApplicationAuthConfigRequest modifySupabaseApplicationAuthConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(modifySupabaseApplicationAuthConfigRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/{application_id}/supabase/auth-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifySupabaseApplicationAuthConfigRequest);
+            return new SyncInvoker<ModifySupabaseApplicationAuthConfigResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifySupabaseApplicationAuthConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 修改Supabase应用密码
+        ///
+        /// 可单独修改应用密码或实例密码，但不能同时为空。不修改底层PG其他账号。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ModifySupabaseApplicationPasswordResponse ModifySupabaseApplicationPassword(ModifySupabaseApplicationPasswordRequest modifySupabaseApplicationPasswordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(modifySupabaseApplicationPasswordRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/{application_id}/supabase/password", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifySupabaseApplicationPasswordRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<ModifySupabaseApplicationPasswordResponse>(response);
+        }
+
+        public SyncInvoker<ModifySupabaseApplicationPasswordResponse> ModifySupabaseApplicationPasswordInvoker(ModifySupabaseApplicationPasswordRequest modifySupabaseApplicationPasswordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(modifySupabaseApplicationPasswordRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/{application_id}/supabase/password", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifySupabaseApplicationPasswordRequest);
+            return new SyncInvoker<ModifySupabaseApplicationPasswordResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifySupabaseApplicationPasswordResponse>);
+        }
+        
+        /// <summary>
+        /// 修改Supabase应用Storage配置
+        ///
+        /// enabled&#x3D;false时bucket_name/ak/sk必须全空；enabled&#x3D;true时全必填。
+        /// show不返回sk，故部分更新省略sk即保留。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ModifySupabaseApplicationStorageResponse ModifySupabaseApplicationStorage(ModifySupabaseApplicationStorageRequest modifySupabaseApplicationStorageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(modifySupabaseApplicationStorageRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/{application_id}/supabase/storage", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifySupabaseApplicationStorageRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<ModifySupabaseApplicationStorageResponse>(response);
+        }
+
+        public SyncInvoker<ModifySupabaseApplicationStorageResponse> ModifySupabaseApplicationStorageInvoker(ModifySupabaseApplicationStorageRequest modifySupabaseApplicationStorageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(modifySupabaseApplicationStorageRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/{application_id}/supabase/storage", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifySupabaseApplicationStorageRequest);
+            return new SyncInvoker<ModifySupabaseApplicationStorageResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifySupabaseApplicationStorageResponse>);
+        }
+        
+        /// <summary>
+        /// 重置Supabase应用ApiKey
+        ///
+        /// 异步重置ApiKey。agent异步动作成功后，旧Key置deleted、新Key置normal，同事务原子切换。
+        /// 新Key不沿用旧Key ID。返回job_id，需轮询list_job_info。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ResetSupabaseApplicationApiKeyResponse ResetSupabaseApplicationApiKey(ResetSupabaseApplicationApiKeyRequest resetSupabaseApplicationApiKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(resetSupabaseApplicationApiKeyRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            if (StringUtils.TryConvertToNonEmptyString(resetSupabaseApplicationApiKeyRequest.KeyId, out var valueOfKeyId)) urlParam.Add("key_id", valueOfKeyId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/{application_id}/supabase/api-key/{key_id}/reset", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetSupabaseApplicationApiKeyRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<ResetSupabaseApplicationApiKeyResponse>(response);
+        }
+
+        public SyncInvoker<ResetSupabaseApplicationApiKeyResponse> ResetSupabaseApplicationApiKeyInvoker(ResetSupabaseApplicationApiKeyRequest resetSupabaseApplicationApiKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(resetSupabaseApplicationApiKeyRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            if (StringUtils.TryConvertToNonEmptyString(resetSupabaseApplicationApiKeyRequest.KeyId, out var valueOfKeyId)) urlParam.Add("key_id", valueOfKeyId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/{application_id}/supabase/api-key/{key_id}/reset", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetSupabaseApplicationApiKeyRequest);
+            return new SyncInvoker<ResetSupabaseApplicationApiKeyResponse>(this, "PUT", request, JsonUtils.DeSerialize<ResetSupabaseApplicationApiKeyResponse>);
+        }
+        
+        /// <summary>
+        /// 重启Supabase应用
+        ///
+        /// 异步重启Supabase应用。返回job_id，需轮询list_job_info。无requestBody。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RestartSupabaseApplicationResponse RestartSupabaseApplication(RestartSupabaseApplicationRequest restartSupabaseApplicationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(restartSupabaseApplicationRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/{application_id}/restart", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartSupabaseApplicationRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<RestartSupabaseApplicationResponse>(response);
+        }
+
+        public SyncInvoker<RestartSupabaseApplicationResponse> RestartSupabaseApplicationInvoker(RestartSupabaseApplicationRequest restartSupabaseApplicationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(restartSupabaseApplicationRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/{application_id}/restart", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartSupabaseApplicationRequest);
+            return new SyncInvoker<RestartSupabaseApplicationResponse>(this, "POST", request, JsonUtils.DeSerialize<RestartSupabaseApplicationResponse>);
+        }
+        
+        /// <summary>
+        /// 查询Supabase应用详情
+        ///
+        /// 查询Supabase应用详情，含运行状态、关联PG、SSL/EIP/Storage配置等。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowSupabaseApplicationResponse ShowSupabaseApplication(ShowSupabaseApplicationRequest showSupabaseApplicationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showSupabaseApplicationRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/{application_id}/supabase", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSupabaseApplicationRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowSupabaseApplicationResponse>(response);
+        }
+
+        public SyncInvoker<ShowSupabaseApplicationResponse> ShowSupabaseApplicationInvoker(ShowSupabaseApplicationRequest showSupabaseApplicationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showSupabaseApplicationRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/{application_id}/supabase", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSupabaseApplicationRequest);
+            return new SyncInvoker<ShowSupabaseApplicationResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSupabaseApplicationResponse>);
+        }
+        
+        /// <summary>
+        /// 查询Supabase应用ApiKey明文值
+        ///
+        /// 受控查看指定ApiKey的明文值。敏感操作，需明确授权。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowSupabaseApplicationApiKeyValueResponse ShowSupabaseApplicationApiKeyValue(ShowSupabaseApplicationApiKeyValueRequest showSupabaseApplicationApiKeyValueRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showSupabaseApplicationApiKeyValueRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            if (StringUtils.TryConvertToNonEmptyString(showSupabaseApplicationApiKeyValueRequest.KeyId, out var valueOfKeyId)) urlParam.Add("key_id", valueOfKeyId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/{application_id}/supabase/api-key/{key_id}/value", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSupabaseApplicationApiKeyValueRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowSupabaseApplicationApiKeyValueResponse>(response);
+        }
+
+        public SyncInvoker<ShowSupabaseApplicationApiKeyValueResponse> ShowSupabaseApplicationApiKeyValueInvoker(ShowSupabaseApplicationApiKeyValueRequest showSupabaseApplicationApiKeyValueRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showSupabaseApplicationApiKeyValueRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            if (StringUtils.TryConvertToNonEmptyString(showSupabaseApplicationApiKeyValueRequest.KeyId, out var valueOfKeyId)) urlParam.Add("key_id", valueOfKeyId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/{application_id}/supabase/api-key/{key_id}/value", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSupabaseApplicationApiKeyValueRequest);
+            return new SyncInvoker<ShowSupabaseApplicationApiKeyValueResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSupabaseApplicationApiKeyValueResponse>);
+        }
+        
+        /// <summary>
+        /// 查询Supabase应用Auth配置
+        ///
+        /// 查询Auth配置。敏感秘密（smtp_pwd、oauth_client_secret）在响应中省略，非脱敏占位。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowSupabaseApplicationAuthConfigResponse ShowSupabaseApplicationAuthConfig(ShowSupabaseApplicationAuthConfigRequest showSupabaseApplicationAuthConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showSupabaseApplicationAuthConfigRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/{application_id}/supabase/auth-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSupabaseApplicationAuthConfigRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowSupabaseApplicationAuthConfigResponse>(response);
+        }
+
+        public SyncInvoker<ShowSupabaseApplicationAuthConfigResponse> ShowSupabaseApplicationAuthConfigInvoker(ShowSupabaseApplicationAuthConfigRequest showSupabaseApplicationAuthConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showSupabaseApplicationAuthConfigRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/{application_id}/supabase/auth-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSupabaseApplicationAuthConfigRequest);
+            return new SyncInvoker<ShowSupabaseApplicationAuthConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSupabaseApplicationAuthConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 启动Supabase应用
+        ///
+        /// 异步启动Supabase应用。返回job_id，需轮询list_job_info。无requestBody。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public StartSupabaseApplicationResponse StartSupabaseApplication(StartSupabaseApplicationRequest startSupabaseApplicationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(startSupabaseApplicationRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/{application_id}/start", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startSupabaseApplicationRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<StartSupabaseApplicationResponse>(response);
+        }
+
+        public SyncInvoker<StartSupabaseApplicationResponse> StartSupabaseApplicationInvoker(StartSupabaseApplicationRequest startSupabaseApplicationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(startSupabaseApplicationRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/{application_id}/start", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startSupabaseApplicationRequest);
+            return new SyncInvoker<StartSupabaseApplicationResponse>(this, "POST", request, JsonUtils.DeSerialize<StartSupabaseApplicationResponse>);
+        }
+        
+        /// <summary>
+        /// 停止Supabase应用
+        ///
+        /// 异步停止Supabase应用。返回job_id，需轮询list_job_info。无requestBody。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public StopSupabaseApplicationResponse StopSupabaseApplication(StopSupabaseApplicationRequest stopSupabaseApplicationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(stopSupabaseApplicationRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/{application_id}/stop", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopSupabaseApplicationRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<StopSupabaseApplicationResponse>(response);
+        }
+
+        public SyncInvoker<StopSupabaseApplicationResponse> StopSupabaseApplicationInvoker(StopSupabaseApplicationRequest stopSupabaseApplicationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(stopSupabaseApplicationRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/{application_id}/stop", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopSupabaseApplicationRequest);
+            return new SyncInvoker<StopSupabaseApplicationResponse>(this, "POST", request, JsonUtils.DeSerialize<StopSupabaseApplicationResponse>);
+        }
+        
+        /// <summary>
+        /// 绑定或解绑Supabase应用EIP
+        ///
+        /// 异步绑定/解绑EIP。is_bind&#x3D;true时public_ip_id和public_ip_address必填。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SwitchSupabaseApplicationEipBindResponse SwitchSupabaseApplicationEipBind(SwitchSupabaseApplicationEipBindRequest switchSupabaseApplicationEipBindRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(switchSupabaseApplicationEipBindRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/{application_id}/supabase/public-eip", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchSupabaseApplicationEipBindRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<SwitchSupabaseApplicationEipBindResponse>(response);
+        }
+
+        public SyncInvoker<SwitchSupabaseApplicationEipBindResponse> SwitchSupabaseApplicationEipBindInvoker(SwitchSupabaseApplicationEipBindRequest switchSupabaseApplicationEipBindRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(switchSupabaseApplicationEipBindRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/{application_id}/supabase/public-eip", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchSupabaseApplicationEipBindRequest);
+            return new SyncInvoker<SwitchSupabaseApplicationEipBindResponse>(this, "PUT", request, JsonUtils.DeSerialize<SwitchSupabaseApplicationEipBindResponse>);
+        }
+        
+        /// <summary>
+        /// 开启或关闭Supabase应用SSL
+        ///
+        /// 异步开关SSL。enable_ssl&#x3D;false时cert_id必须为空；enable_ssl&#x3D;true时cert_id必填。
+        /// SSL切换后需手动同步Auth相关URL协议（http&lt;-&gt;https），否则认证可能故障。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SwitchSupabaseApplicationSslResponse SwitchSupabaseApplicationSsl(SwitchSupabaseApplicationSslRequest switchSupabaseApplicationSslRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(switchSupabaseApplicationSslRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/{application_id}/supabase/switch-ssl", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchSupabaseApplicationSslRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<SwitchSupabaseApplicationSslResponse>(response);
+        }
+
+        public SyncInvoker<SwitchSupabaseApplicationSslResponse> SwitchSupabaseApplicationSslInvoker(SwitchSupabaseApplicationSslRequest switchSupabaseApplicationSslRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(switchSupabaseApplicationSslRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ai-application/{application_id}/supabase/switch-ssl", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchSupabaseApplicationSslRequest);
+            return new SyncInvoker<SwitchSupabaseApplicationSslResponse>(this, "POST", request, JsonUtils.DeSerialize<SwitchSupabaseApplicationSslResponse>);
+        }
+        
+        /// <summary>
         /// 根据实例ID和管理网子网信息，返回可用的数据子网
         ///
         /// 根据实例ID和管理网子网信息，返回可用的数据子网。
