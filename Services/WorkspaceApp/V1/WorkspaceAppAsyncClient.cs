@@ -960,6 +960,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<ShowSessionTypesResponse> ShowSessionTypesAsync(ShowSessionTypesRequest showSessionTypesRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -969,6 +970,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1
             return JsonUtils.DeSerialize<ShowSessionTypesResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<ShowSessionTypesResponse> ShowSessionTypesAsyncInvoker(ShowSessionTypesRequest showSessionTypesRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -2013,6 +2015,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<ShowJobResponse> ShowJobAsync(ShowJobRequest showJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -2023,6 +2026,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1
             return JsonUtils.DeSerialize<ShowJobResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<ShowJobResponse> ShowJobAsyncInvoker(ShowJobRequest showJobRequest)
         {
             var urlParam = new Dictionary<string, string>();

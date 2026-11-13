@@ -1,3 +1,79 @@
+# 3.1.218 2026-11-12
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateSupabaseApplication**
+    - changes of request param
+      - `- mode: enum value [Ha]`
+      - `- managed_instance.ha`
+
+### HuaweiCloud SDK VPC
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the API `ListVpcPeeringInfos`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK VPC
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `ListResourceAssociations`, `BatchCreateTrafficMirrorFilterRules`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK Workspace
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Deprecate the APIs `ExportUserLoginInfoNew`, `ListDesktopByTags`
+
+### HuaweiCloud SDK WorkspaceApp
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Deprecate the APIs `ShowSessionTypes`, `ShowJob`
+  - **ListSubJobs**
+    - changes of response param
+      - `- items.job_resource_info.cloud_service_type`
+      - `- items.job_resource_info.resource_type`
+      - `- items.job_resource_info.resource_spec_code`
+      - `- items.job_resource_info.spec_type`
+      - `- items.job_resource_info.spec_size`
+      - `- items.job_resource_info.measure`
+      - `- items.job_resource_info.processed_time`
+      - `- items.job_resource_info.is_main_resource`
+      - `- items.job_resource_info.main_resources`
+      - `- items.job_resource_info.extend_params`
+      - `- items.job_resource_info.old_resource_id`
+      - `- items.job_resource_info.old_cloud_service_type`
+      - `- items.job_resource_info.old_resource_type`
+      - `* items.job_resource_info: object<JobResourceInfo> -> object<ApsJobResourceInfo>`
+
 # 3.1.217 2026-11-05
 
 ### HuaweiCloud SDK CodeArtsDeploy

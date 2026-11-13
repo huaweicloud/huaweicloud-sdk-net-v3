@@ -1908,6 +1908,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<ExportUserLoginInfoNewResponse> ExportUserLoginInfoNewAsync(ExportUserLoginInfoNewRequest exportUserLoginInfoNewRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1917,6 +1918,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
             return JsonUtils.DeSerializeNull<ExportUserLoginInfoNewResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<ExportUserLoginInfoNewResponse> ExportUserLoginInfoNewAsyncInvoker(ExportUserLoginInfoNewRequest exportUserLoginInfoNewRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -3830,6 +3832,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<ListDesktopByTagsResponse> ListDesktopByTagsAsync(ListDesktopByTagsRequest listDesktopByTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -3839,6 +3842,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
             return JsonUtils.DeSerialize<ListDesktopByTagsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<ListDesktopByTagsResponse> ListDesktopByTagsAsyncInvoker(ListDesktopByTagsRequest listDesktopByTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();

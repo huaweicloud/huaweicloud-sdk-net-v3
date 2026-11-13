@@ -41,16 +41,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public SupabaseVolumeConfig Volume { get; set; }
 
         /// <summary>
-        /// 可用区，≤2个逗号分隔，首个&#x3D;顶层主AZ。
+        /// 可用区，Single模式下为1个，需与顶层主AZ一致。
         /// </summary>
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string AvailabilityZone { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("ha", NullValueHandling = NullValueHandling.Ignore)]
-        public SupabaseHaConfig Ha { get; set; }
 
         /// <summary>
         /// 参数模板ID（可选）。
@@ -108,7 +102,6 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("  flavorRef: ").Append(FlavorRef).Append("\n");
             sb.Append("  volume: ").Append(Volume).Append("\n");
             sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
-            sb.Append("  ha: ").Append(Ha).Append("\n");
             sb.Append("  configurationId: ").Append(ConfigurationId).Append("\n");
             sb.Append("  port: ").Append(Port).Append("\n");
             sb.Append("  securityGroupId: ").Append(SecurityGroupId).Append("\n");
@@ -139,7 +132,6 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             if (this.FlavorRef != input.FlavorRef || (this.FlavorRef != null && !this.FlavorRef.Equals(input.FlavorRef))) return false;
             if (this.Volume != input.Volume || (this.Volume != null && !this.Volume.Equals(input.Volume))) return false;
             if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
-            if (this.Ha != input.Ha || (this.Ha != null && !this.Ha.Equals(input.Ha))) return false;
             if (this.ConfigurationId != input.ConfigurationId || (this.ConfigurationId != null && !this.ConfigurationId.Equals(input.ConfigurationId))) return false;
             if (this.Port != input.Port || (this.Port != null && !this.Port.Equals(input.Port))) return false;
             if (this.SecurityGroupId != input.SecurityGroupId || (this.SecurityGroupId != null && !this.SecurityGroupId.Equals(input.SecurityGroupId))) return false;
@@ -164,7 +156,6 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                 if (this.FlavorRef != null) hashCode = hashCode * 59 + this.FlavorRef.GetHashCode();
                 if (this.Volume != null) hashCode = hashCode * 59 + this.Volume.GetHashCode();
                 if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
-                if (this.Ha != null) hashCode = hashCode * 59 + this.Ha.GetHashCode();
                 if (this.ConfigurationId != null) hashCode = hashCode * 59 + this.ConfigurationId.GetHashCode();
                 if (this.Port != null) hashCode = hashCode * 59 + this.Port.GetHashCode();
                 if (this.SecurityGroupId != null) hashCode = hashCode * 59 + this.SecurityGroupId.GetHashCode();

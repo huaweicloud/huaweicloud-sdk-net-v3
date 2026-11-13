@@ -909,6 +909,30 @@ namespace HuaweiCloud.SDK.Vpc.V2
         }
         
         /// <summary>
+        /// 查询对等连接信息列表
+        ///
+        /// 当您的对等连接创建成功后，您可以通过该接口查询所有对等连接信息，包括对等连接的名称、两端vpc的信息等
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListVpcPeeringInfosResponse> ListVpcPeeringInfosAsync(ListVpcPeeringInfosRequest listVpcPeeringInfosRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peering-infos", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVpcPeeringInfosRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListVpcPeeringInfosResponse>(response);
+        }
+
+        public AsyncInvoker<ListVpcPeeringInfosResponse> ListVpcPeeringInfosAsyncInvoker(ListVpcPeeringInfosRequest listVpcPeeringInfosRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.0/vpc/peering-infos", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVpcPeeringInfosRequest);
+            return new AsyncInvoker<ListVpcPeeringInfosResponse>(this, "GET", request, JsonUtils.DeSerialize<ListVpcPeeringInfosResponse>);
+        }
+        
+        /// <summary>
         /// 查询对等连接列表
         ///
         /// 查询提交请求的租户的所有对等连接。根据过滤条件进行过滤。

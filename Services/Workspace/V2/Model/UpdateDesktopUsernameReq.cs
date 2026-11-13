@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string NewUserDomain { get; set; }
 
         /// <summary>
-        /// 桌面关联新用户名后是否重启虚拟机，默认不重启。
+        /// 桌面关联新用户名后是否重启虚拟机，默认为true，表示需要重启虚拟机。若用户此前已登录过云桌面，建议设置为true，以确保会话资源彻底释放、避免旧会话残留占用，并保障用户名修改后能正常接入新桌面。
         /// </summary>
         [JsonProperty("is_reboot", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsReboot { get; set; }

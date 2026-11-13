@@ -196,6 +196,32 @@ namespace HuaweiCloud.SDK.Vpc.V3
         }
         
         /// <summary>
+        /// 批量创建流量镜像筛选规则
+        ///
+        /// 批量创建流量镜像筛选规则
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchCreateTrafficMirrorFilterRulesResponse BatchCreateTrafficMirrorFilterRules(BatchCreateTrafficMirrorFilterRulesRequest batchCreateTrafficMirrorFilterRulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateTrafficMirrorFilterRulesRequest.TrafficMirrorFilterId, out var valueOfTrafficMirrorFilterId)) urlParam.Add("traffic_mirror_filter_id", valueOfTrafficMirrorFilterId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-filters/{traffic_mirror_filter_id}/traffic-mirror-filter-rules/batch-create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateTrafficMirrorFilterRulesRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<BatchCreateTrafficMirrorFilterRulesResponse>(response);
+        }
+
+        public SyncInvoker<BatchCreateTrafficMirrorFilterRulesResponse> BatchCreateTrafficMirrorFilterRulesInvoker(BatchCreateTrafficMirrorFilterRulesRequest batchCreateTrafficMirrorFilterRulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateTrafficMirrorFilterRulesRequest.TrafficMirrorFilterId, out var valueOfTrafficMirrorFilterId)) urlParam.Add("traffic_mirror_filter_id", valueOfTrafficMirrorFilterId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-filters/{traffic_mirror_filter_id}/traffic-mirror-filter-rules/batch-create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateTrafficMirrorFilterRulesRequest);
+            return new SyncInvoker<BatchCreateTrafficMirrorFilterRulesResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchCreateTrafficMirrorFilterRulesResponse>);
+        }
+        
+        /// <summary>
         /// 批量删除端口资源标签
         ///
         /// 为指定的端口资源实例批量删除标签。
@@ -855,6 +881,30 @@ namespace HuaweiCloud.SDK.Vpc.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/resource-instances/filter", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPortsByTagsRequest);
             return new SyncInvoker<ListPortsByTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListPortsByTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询资源关联的实例信息列表
+        ///
+        /// 网卡等资源可以关联高阶服务的资源实例，如ELB，您可以通过此接口查询资源关联的实例信息列表，包括资源和实例的类型、ID和所属的项目ID。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListResourceAssociationsResponse ListResourceAssociations(ListResourceAssociationsRequest listResourceAssociationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/resource-associations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listResourceAssociationsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListResourceAssociationsResponse>(response);
+        }
+
+        public SyncInvoker<ListResourceAssociationsResponse> ListResourceAssociationsInvoker(ListResourceAssociationsRequest listResourceAssociationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/resource-associations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listResourceAssociationsRequest);
+            return new SyncInvoker<ListResourceAssociationsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListResourceAssociationsResponse>);
         }
         
         /// <summary>

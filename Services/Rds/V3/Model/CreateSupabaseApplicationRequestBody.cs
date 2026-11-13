@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
     public class CreateSupabaseApplicationRequestBody 
     {
         /// <summary>
-        /// 部署模式。
+        /// 部署模式。当前仅支持Single。
         /// </summary>
-        /// <value>部署模式。</value>
+        /// <value>部署模式。当前仅支持Single。</value>
         [JsonConverter(typeof(EnumClassConverter<ModeEnum>))]
         public class ModeEnum
         {
@@ -27,16 +27,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             /// </summary>
             public static readonly ModeEnum SINGLE = new ModeEnum("Single");
 
-            /// <summary>
-            /// Enum HA for value: Ha
-            /// </summary>
-            public static readonly ModeEnum HA = new ModeEnum("Ha");
-
             private static readonly Dictionary<string, ModeEnum> StaticFields =
             new Dictionary<string, ModeEnum>()
             {
                 { "Single", SINGLE },
-                { "Ha", HA },
             };
 
             private string _value;
@@ -265,18 +259,18 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public string Version { get; set; }
 
         /// <summary>
-        /// 部署模式。
+        /// 部署模式。当前仅支持Single。
         /// </summary>
         [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
         public ModeEnum Mode { get; set; }
         /// <summary>
-        /// 规格码，格式 rds.supabase.{...}。Ha模式必须以.ha结尾，Single不得以.ha结尾。
+        /// 规格码，格式 rds.supabase.{...}。
         /// </summary>
         [JsonProperty("flavor_ref", NullValueHandling = NullValueHandling.Ignore)]
         public string FlavorRef { get; set; }
 
         /// <summary>
-        /// 可用区ID。Single&#x3D;1个，Ha&#x3D;2个逗号分隔。
+        /// 可用区ID。Single模式下为1个可用区。
         /// </summary>
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string AvailabilityZone { get; set; }

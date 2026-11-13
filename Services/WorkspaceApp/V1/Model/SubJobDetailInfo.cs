@@ -32,7 +32,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("job_resource_info", NullValueHandling = NullValueHandling.Ignore)]
-        public JobResourceInfo JobResourceInfo { get; set; }
+        public ApsJobResourceInfo JobResourceInfo { get; set; }
 
         /// <summary>
         /// 任务创建时间。

@@ -4682,7 +4682,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         {
             var urlParam = new Dictionary<string, string>();
             if (StringUtils.TryConvertToNonEmptyString(switchLoggerReplicaAvailabilityZonesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/switch-logger-replica/availability_zones", urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/switch-logger-replica/availability-zones", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchLoggerReplicaAvailabilityZonesRequest);
             var response = DoHttpRequestSync("GET", request);
             return JsonUtils.DeSerialize<SwitchLoggerReplicaAvailabilityZonesResponse>(response);
@@ -4692,7 +4692,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         {
             var urlParam = new Dictionary<string, string>();
             if (StringUtils.TryConvertToNonEmptyString(switchLoggerReplicaAvailabilityZonesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/switch-logger-replica/availability_zones", urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/switch-logger-replica/availability-zones", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchLoggerReplicaAvailabilityZonesRequest);
             return new SyncInvoker<SwitchLoggerReplicaAvailabilityZonesResponse>(this, "GET", request, JsonUtils.DeSerialize<SwitchLoggerReplicaAvailabilityZonesResponse>);
         }
