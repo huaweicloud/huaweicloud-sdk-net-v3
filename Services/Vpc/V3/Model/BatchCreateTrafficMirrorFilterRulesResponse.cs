@@ -17,19 +17,13 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
     {
 
         /// <summary>
-        /// 流量镜像筛选条件规则对象
+        /// **参数解释**： 流量镜像筛选规则列表的响应体。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("traffic_mirror_filter_rules", NullValueHandling = NullValueHandling.Ignore)]
         public List<TrafficMirrorFilterRule> TrafficMirrorFilterRules { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("page_info", NullValueHandling = NullValueHandling.Ignore)]
-        public PageInfo PageInfo { get; set; }
-
-        /// <summary>
-        /// 请求ID
+        /// **参数解释**： 请求ID。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("request_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RequestId { get; set; }
@@ -44,7 +38,6 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             var sb = new StringBuilder();
             sb.Append("class BatchCreateTrafficMirrorFilterRulesResponse {\n");
             sb.Append("  trafficMirrorFilterRules: ").Append(TrafficMirrorFilterRules).Append("\n");
-            sb.Append("  pageInfo: ").Append(PageInfo).Append("\n");
             sb.Append("  requestId: ").Append(RequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -65,7 +58,6 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             if (input == null) return false;
             if (this.TrafficMirrorFilterRules != input.TrafficMirrorFilterRules || (this.TrafficMirrorFilterRules != null && input.TrafficMirrorFilterRules != null && !this.TrafficMirrorFilterRules.SequenceEqual(input.TrafficMirrorFilterRules))) return false;
-            if (this.PageInfo != input.PageInfo || (this.PageInfo != null && !this.PageInfo.Equals(input.PageInfo))) return false;
             if (this.RequestId != input.RequestId || (this.RequestId != null && !this.RequestId.Equals(input.RequestId))) return false;
 
             return true;
@@ -80,7 +72,6 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             {
                 var hashCode = 41;
                 if (this.TrafficMirrorFilterRules != null) hashCode = hashCode * 59 + this.TrafficMirrorFilterRules.GetHashCode();
-                if (this.PageInfo != null) hashCode = hashCode * 59 + this.PageInfo.GetHashCode();
                 if (this.RequestId != null) hashCode = hashCode * 59 + this.RequestId.GetHashCode();
                 return hashCode;
             }

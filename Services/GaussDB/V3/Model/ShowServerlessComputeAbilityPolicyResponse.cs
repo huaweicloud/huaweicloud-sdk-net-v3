@@ -47,10 +47,28 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public int? MaxReadonlyNodeCount { get; set; }
 
         /// <summary>
-        /// **参数解释**：  最小只读节点个数。  **取值范围**：  ≥1。    
+        /// **参数解释**：  最小只读节点个数。  **取值范围**：  ≥1。
         /// </summary>
         [JsonProperty("min_readonly_node_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? MinReadonlyNodeCount { get; set; }
+
+        /// <summary>
+        /// **参数解释**：  Scale to Zero开关。  **取值范围**： - true: 开启Scale to Zero。 - false: 关闭Scale to Zero。
+        /// </summary>
+        [JsonProperty("scale_to_zero", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ScaleToZero { get; set; }
+
+        /// <summary>
+        /// **参数解释**：  空闲持续时长阈值，单位是秒。  所有节点活跃连接数为0且持续达到该阈值时触发Scale to Zero（停止计算计费）。  **取值范围**：  300-3600。
+        /// </summary>
+        [JsonProperty("idle_duration_seconds", NullValueHandling = NullValueHandling.Ignore)]
+        public int? IdleDurationSeconds { get; set; }
+
+        /// <summary>
+        /// **参数解释**：  Scale to Zero开启后实例的运行状态。  **取值范围**： - ACTIVE：实例已唤醒，正常计费。 - SCALED_TO_ZERO：计算资源停止计费。
+        /// </summary>
+        [JsonProperty("scale_to_zero_status", NullValueHandling = NullValueHandling.Ignore)]
+        public string ScaleToZeroStatus { get; set; }
 
 
 
@@ -67,6 +85,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  scaleOutSwitch: ").Append(ScaleOutSwitch).Append("\n");
             sb.Append("  maxReadonlyNodeCount: ").Append(MaxReadonlyNodeCount).Append("\n");
             sb.Append("  minReadonlyNodeCount: ").Append(MinReadonlyNodeCount).Append("\n");
+            sb.Append("  scaleToZero: ").Append(ScaleToZero).Append("\n");
+            sb.Append("  idleDurationSeconds: ").Append(IdleDurationSeconds).Append("\n");
+            sb.Append("  scaleToZeroStatus: ").Append(ScaleToZeroStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +112,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (this.ScaleOutSwitch != input.ScaleOutSwitch || (this.ScaleOutSwitch != null && !this.ScaleOutSwitch.Equals(input.ScaleOutSwitch))) return false;
             if (this.MaxReadonlyNodeCount != input.MaxReadonlyNodeCount || (this.MaxReadonlyNodeCount != null && !this.MaxReadonlyNodeCount.Equals(input.MaxReadonlyNodeCount))) return false;
             if (this.MinReadonlyNodeCount != input.MinReadonlyNodeCount || (this.MinReadonlyNodeCount != null && !this.MinReadonlyNodeCount.Equals(input.MinReadonlyNodeCount))) return false;
+            if (this.ScaleToZero != input.ScaleToZero || (this.ScaleToZero != null && !this.ScaleToZero.Equals(input.ScaleToZero))) return false;
+            if (this.IdleDurationSeconds != input.IdleDurationSeconds || (this.IdleDurationSeconds != null && !this.IdleDurationSeconds.Equals(input.IdleDurationSeconds))) return false;
+            if (this.ScaleToZeroStatus != input.ScaleToZeroStatus || (this.ScaleToZeroStatus != null && !this.ScaleToZeroStatus.Equals(input.ScaleToZeroStatus))) return false;
 
             return true;
         }
@@ -109,6 +133,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 if (this.ScaleOutSwitch != null) hashCode = hashCode * 59 + this.ScaleOutSwitch.GetHashCode();
                 if (this.MaxReadonlyNodeCount != null) hashCode = hashCode * 59 + this.MaxReadonlyNodeCount.GetHashCode();
                 if (this.MinReadonlyNodeCount != null) hashCode = hashCode * 59 + this.MinReadonlyNodeCount.GetHashCode();
+                if (this.ScaleToZero != null) hashCode = hashCode * 59 + this.ScaleToZero.GetHashCode();
+                if (this.IdleDurationSeconds != null) hashCode = hashCode * 59 + this.IdleDurationSeconds.GetHashCode();
+                if (this.ScaleToZeroStatus != null) hashCode = hashCode * 59 + this.ScaleToZeroStatus.GetHashCode();
                 return hashCode;
             }
         }

@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("node_id", NullValueHandling = NullValueHandling.Ignore)]
         public string NodeId { get; set; }
 
+        /// <summary>
+        /// **参数解释**：  是否进行强制倒换。强制倒换将导致主节点重启，未提交的事务会被中断，请在业务低峰期执行该操作。  **约束限制**：  不涉及。  **取值范围**：  - true：强制倒换。 - false：普通倒换。  **默认取值**：  false。
+        /// </summary>
+        [JsonProperty("force", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Force { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             var sb = new StringBuilder();
             sb.Append("class TaurusSwitchoverRequest {\n");
             sb.Append("  nodeId: ").Append(NodeId).Append("\n");
+            sb.Append("  force: ").Append(Force).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             if (input == null) return false;
             if (this.NodeId != input.NodeId || (this.NodeId != null && !this.NodeId.Equals(input.NodeId))) return false;
+            if (this.Force != input.Force || (this.Force != null && !this.Force.Equals(input.Force))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             {
                 var hashCode = 41;
                 if (this.NodeId != null) hashCode = hashCode * 59 + this.NodeId.GetHashCode();
+                if (this.Force != null) hashCode = hashCode * 59 + this.Force.GetHashCode();
                 return hashCode;
             }
         }

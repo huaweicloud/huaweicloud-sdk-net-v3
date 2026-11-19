@@ -58,6 +58,20 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         [JsonProperty("instance_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceProjectId { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 每页返回的个数。 **取值范围**： 0-2000。
+        /// </summary>
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Limit { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 分页查询起始的资源ID，为空时查询第一页。 **取值范围**： 带“-”的标准UUID格式。
+        /// </summary>
+        [SDKProperty("marker", IsQuery = true)]
+        [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
+        public string Marker { get; set; }
+
 
 
         /// <summary>
@@ -73,6 +87,8 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  instanceType: ").Append(InstanceType).Append("\n");
             sb.Append("  instanceProjectId: ").Append(InstanceProjectId).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -97,6 +113,8 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && input.InstanceId != null && !this.InstanceId.SequenceEqual(input.InstanceId))) return false;
             if (this.InstanceType != input.InstanceType || (this.InstanceType != null && input.InstanceType != null && !this.InstanceType.SequenceEqual(input.InstanceType))) return false;
             if (this.InstanceProjectId != input.InstanceProjectId || (this.InstanceProjectId != null && !this.InstanceProjectId.Equals(input.InstanceProjectId))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
 
             return true;
         }
@@ -115,6 +133,8 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.InstanceType != null) hashCode = hashCode * 59 + this.InstanceType.GetHashCode();
                 if (this.InstanceProjectId != null) hashCode = hashCode * 59 + this.InstanceProjectId.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 return hashCode;
             }
         }

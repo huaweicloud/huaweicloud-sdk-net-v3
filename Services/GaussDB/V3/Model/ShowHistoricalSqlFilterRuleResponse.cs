@@ -17,6 +17,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
     {
 
         /// <summary>
+        /// **参数解释**：  总记录数。  **取值范围**：  大于等于0。
+        /// </summary>
+        [JsonProperty("total_count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? TotalCount { get; set; }
+
+        /// <summary>
         /// **参数解释**：  历史SQL限流规则。
         /// </summary>
         [JsonProperty("sql_filter_rules", NullValueHandling = NullValueHandling.Ignore)]
@@ -31,6 +37,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShowHistoricalSqlFilterRuleResponse {\n");
+            sb.Append("  totalCount: ").Append(TotalCount).Append("\n");
             sb.Append("  sqlFilterRules: ").Append(SqlFilterRules).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -50,6 +57,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public bool Equals(ShowHistoricalSqlFilterRuleResponse input)
         {
             if (input == null) return false;
+            if (this.TotalCount != input.TotalCount || (this.TotalCount != null && !this.TotalCount.Equals(input.TotalCount))) return false;
             if (this.SqlFilterRules != input.SqlFilterRules || (this.SqlFilterRules != null && input.SqlFilterRules != null && !this.SqlFilterRules.SequenceEqual(input.SqlFilterRules))) return false;
 
             return true;
@@ -63,6 +71,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.TotalCount != null) hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
                 if (this.SqlFilterRules != null) hashCode = hashCode * 59 + this.SqlFilterRules.GetHashCode();
                 return hashCode;
             }

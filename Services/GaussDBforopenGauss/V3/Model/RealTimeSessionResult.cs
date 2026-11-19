@@ -143,6 +143,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public string ClientPort { get; set; }
 
         /// <summary>
+        /// **参数解释**： 服务端用于通讯的TCP端口号，如果使用Unix套接字，则为-1。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("server_port", NullValueHandling = NullValueHandling.Ignore)]
+        public string ServerPort { get; set; }
+
+        /// <summary>
         /// **参数解释**： 会话执行的sql数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("query_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -262,6 +268,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("  rollbackNum: ").Append(RollbackNum).Append("\n");
             sb.Append("  sqlNum: ").Append(SqlNum).Append("\n");
             sb.Append("  clientPort: ").Append(ClientPort).Append("\n");
+            sb.Append("  serverPort: ").Append(ServerPort).Append("\n");
             sb.Append("  queryId: ").Append(QueryId).Append("\n");
             sb.Append("  transactionTimeCost: ").Append(TransactionTimeCost).Append("\n");
             sb.Append("  traceId: ").Append(TraceId).Append("\n");
@@ -316,6 +323,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             if (this.RollbackNum != input.RollbackNum || (this.RollbackNum != null && !this.RollbackNum.Equals(input.RollbackNum))) return false;
             if (this.SqlNum != input.SqlNum || (this.SqlNum != null && !this.SqlNum.Equals(input.SqlNum))) return false;
             if (this.ClientPort != input.ClientPort || (this.ClientPort != null && !this.ClientPort.Equals(input.ClientPort))) return false;
+            if (this.ServerPort != input.ServerPort || (this.ServerPort != null && !this.ServerPort.Equals(input.ServerPort))) return false;
             if (this.QueryId != input.QueryId || (this.QueryId != null && !this.QueryId.Equals(input.QueryId))) return false;
             if (this.TransactionTimeCost != input.TransactionTimeCost || (this.TransactionTimeCost != null && !this.TransactionTimeCost.Equals(input.TransactionTimeCost))) return false;
             if (this.TraceId != input.TraceId || (this.TraceId != null && !this.TraceId.Equals(input.TraceId))) return false;
@@ -364,6 +372,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                 if (this.RollbackNum != null) hashCode = hashCode * 59 + this.RollbackNum.GetHashCode();
                 if (this.SqlNum != null) hashCode = hashCode * 59 + this.SqlNum.GetHashCode();
                 if (this.ClientPort != null) hashCode = hashCode * 59 + this.ClientPort.GetHashCode();
+                if (this.ServerPort != null) hashCode = hashCode * 59 + this.ServerPort.GetHashCode();
                 if (this.QueryId != null) hashCode = hashCode * 59 + this.QueryId.GetHashCode();
                 if (this.TransactionTimeCost != null) hashCode = hashCode * 59 + this.TransactionTimeCost.GetHashCode();
                 if (this.TraceId != null) hashCode = hashCode * 59 + this.TraceId.GetHashCode();

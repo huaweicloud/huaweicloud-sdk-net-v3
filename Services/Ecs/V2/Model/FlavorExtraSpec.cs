@@ -262,6 +262,18 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("info:features", NullValueHandling = NullValueHandling.Ignore)]
         public string Infofeatures { get; set; }
 
+        /// <summary>
+        /// 规格的CPU资源绑定策略。（该字段是否返回根据云服务器规格而定）  - dedicated，CPU资源独占绑定。
+        /// </summary>
+        [JsonProperty("hw:cpu_policy", NullValueHandling = NullValueHandling.Ignore)]
+        public string HwcpuPolicy { get; set; }
+
+        /// <summary>
+        /// 规格的CPU超线程数（每核线程数）。（该字段是否返回根据云服务器规格而定）  - 1，每核1线程，未开启超线程。 - 2，每核2线程，开启超线程。
+        /// </summary>
+        [JsonProperty("hw:cpu_threads", NullValueHandling = NullValueHandling.Ignore)]
+        public string HwcpuThreads { get; set; }
+
 
 
         /// <summary>
@@ -312,6 +324,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  infogpus: ").Append(Infogpus).Append("\n");
             sb.Append("  infoasicAccelerators: ").Append(InfoasicAccelerators).Append("\n");
             sb.Append("  infofeatures: ").Append(Infofeatures).Append("\n");
+            sb.Append("  hwcpuPolicy: ").Append(HwcpuPolicy).Append("\n");
+            sb.Append("  hwcpuThreads: ").Append(HwcpuThreads).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -371,6 +385,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             if (this.Infogpus != input.Infogpus || (this.Infogpus != null && !this.Infogpus.Equals(input.Infogpus))) return false;
             if (this.InfoasicAccelerators != input.InfoasicAccelerators || (this.InfoasicAccelerators != null && !this.InfoasicAccelerators.Equals(input.InfoasicAccelerators))) return false;
             if (this.Infofeatures != input.Infofeatures || (this.Infofeatures != null && !this.Infofeatures.Equals(input.Infofeatures))) return false;
+            if (this.HwcpuPolicy != input.HwcpuPolicy || (this.HwcpuPolicy != null && !this.HwcpuPolicy.Equals(input.HwcpuPolicy))) return false;
+            if (this.HwcpuThreads != input.HwcpuThreads || (this.HwcpuThreads != null && !this.HwcpuThreads.Equals(input.HwcpuThreads))) return false;
 
             return true;
         }
@@ -424,6 +440,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                 if (this.Infogpus != null) hashCode = hashCode * 59 + this.Infogpus.GetHashCode();
                 if (this.InfoasicAccelerators != null) hashCode = hashCode * 59 + this.InfoasicAccelerators.GetHashCode();
                 if (this.Infofeatures != null) hashCode = hashCode * 59 + this.Infofeatures.GetHashCode();
+                if (this.HwcpuPolicy != null) hashCode = hashCode * 59 + this.HwcpuPolicy.GetHashCode();
+                if (this.HwcpuThreads != null) hashCode = hashCode * 59 + this.HwcpuThreads.GetHashCode();
                 return hashCode;
             }
         }

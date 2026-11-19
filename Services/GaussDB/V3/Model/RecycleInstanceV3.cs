@@ -65,18 +65,6 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public long? DeletedAt { get; set; }
 
         /// <summary>
-        /// 磁盘类型。
-        /// </summary>
-        [JsonProperty("volume_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string VolumeType { get; set; }
-
-        /// <summary>
-        /// 磁盘大小。
-        /// </summary>
-        [JsonProperty("volume_size", NullValueHandling = NullValueHandling.Ignore)]
-        public string VolumeSize { get; set; }
-
-        /// <summary>
         /// 数据面VIP。
         /// </summary>
         [JsonProperty("data_vip", NullValueHandling = NullValueHandling.Ignore)]
@@ -119,6 +107,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public string RecycleStatus { get; set; }
 
         /// <summary>
+        /// **参数解释**：  回收站备份剩余保留天数。由总保留天数减去实例删除后已过天数得出，为0表示即将清理。  **取值范围**：  - 0：回收站备份即将被清理。 - -1：永久保留（retain_all 策略，不主动清理）。 - 其他值：剩余保留天数。  **默认取值**： 不涉及。
+        /// </summary>
+        [JsonProperty("retention_days", NullValueHandling = NullValueHandling.Ignore)]
+        public int? RetentionDays { get; set; }
+
+        /// <summary>
         /// **参数解释**：  实例所有的回收站备份列表。
         /// </summary>
         [JsonProperty("recycle_backups", NullValueHandling = NullValueHandling.Ignore)]
@@ -141,8 +135,6 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  payModel: ").Append(PayModel).Append("\n");
             sb.Append("  createAt: ").Append(CreateAt).Append("\n");
             sb.Append("  deletedAt: ").Append(DeletedAt).Append("\n");
-            sb.Append("  volumeType: ").Append(VolumeType).Append("\n");
-            sb.Append("  volumeSize: ").Append(VolumeSize).Append("\n");
             sb.Append("  dataVip: ").Append(DataVip).Append("\n");
             sb.Append("  dataVipIpv6: ").Append(DataVipIpv6).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
@@ -150,6 +142,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  backupLevel: ").Append(BackupLevel).Append("\n");
             sb.Append("  recycleBackupId: ").Append(RecycleBackupId).Append("\n");
             sb.Append("  recycleStatus: ").Append(RecycleStatus).Append("\n");
+            sb.Append("  retentionDays: ").Append(RetentionDays).Append("\n");
             sb.Append("  recycleBackups: ").Append(RecycleBackups).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -177,8 +170,6 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (this.PayModel != input.PayModel || (this.PayModel != null && !this.PayModel.Equals(input.PayModel))) return false;
             if (this.CreateAt != input.CreateAt || (this.CreateAt != null && !this.CreateAt.Equals(input.CreateAt))) return false;
             if (this.DeletedAt != input.DeletedAt || (this.DeletedAt != null && !this.DeletedAt.Equals(input.DeletedAt))) return false;
-            if (this.VolumeType != input.VolumeType || (this.VolumeType != null && !this.VolumeType.Equals(input.VolumeType))) return false;
-            if (this.VolumeSize != input.VolumeSize || (this.VolumeSize != null && !this.VolumeSize.Equals(input.VolumeSize))) return false;
             if (this.DataVip != input.DataVip || (this.DataVip != null && !this.DataVip.Equals(input.DataVip))) return false;
             if (this.DataVipIpv6 != input.DataVipIpv6 || (this.DataVipIpv6 != null && !this.DataVipIpv6.Equals(input.DataVipIpv6))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
@@ -186,6 +177,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (this.BackupLevel != input.BackupLevel || (this.BackupLevel != null && !this.BackupLevel.Equals(input.BackupLevel))) return false;
             if (this.RecycleBackupId != input.RecycleBackupId || (this.RecycleBackupId != null && !this.RecycleBackupId.Equals(input.RecycleBackupId))) return false;
             if (this.RecycleStatus != input.RecycleStatus || (this.RecycleStatus != null && !this.RecycleStatus.Equals(input.RecycleStatus))) return false;
+            if (this.RetentionDays != input.RetentionDays || (this.RetentionDays != null && !this.RetentionDays.Equals(input.RetentionDays))) return false;
             if (this.RecycleBackups != input.RecycleBackups || (this.RecycleBackups != null && input.RecycleBackups != null && !this.RecycleBackups.SequenceEqual(input.RecycleBackups))) return false;
 
             return true;
@@ -207,8 +199,6 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 if (this.PayModel != null) hashCode = hashCode * 59 + this.PayModel.GetHashCode();
                 if (this.CreateAt != null) hashCode = hashCode * 59 + this.CreateAt.GetHashCode();
                 if (this.DeletedAt != null) hashCode = hashCode * 59 + this.DeletedAt.GetHashCode();
-                if (this.VolumeType != null) hashCode = hashCode * 59 + this.VolumeType.GetHashCode();
-                if (this.VolumeSize != null) hashCode = hashCode * 59 + this.VolumeSize.GetHashCode();
                 if (this.DataVip != null) hashCode = hashCode * 59 + this.DataVip.GetHashCode();
                 if (this.DataVipIpv6 != null) hashCode = hashCode * 59 + this.DataVipIpv6.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
@@ -216,6 +206,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 if (this.BackupLevel != null) hashCode = hashCode * 59 + this.BackupLevel.GetHashCode();
                 if (this.RecycleBackupId != null) hashCode = hashCode * 59 + this.RecycleBackupId.GetHashCode();
                 if (this.RecycleStatus != null) hashCode = hashCode * 59 + this.RecycleStatus.GetHashCode();
+                if (this.RetentionDays != null) hashCode = hashCode * 59 + this.RetentionDays.GetHashCode();
                 if (this.RecycleBackups != null) hashCode = hashCode * 59 + this.RecycleBackups.GetHashCode();
                 return hashCode;
             }

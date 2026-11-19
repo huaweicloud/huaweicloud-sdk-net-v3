@@ -515,6 +515,30 @@ namespace HuaweiCloud.SDK.Kms.V2
         }
         
         /// <summary>
+        /// 创建密钥空间
+        ///
+        /// 用于创建密钥空间
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateTrustedKeySpaceResponse CreateTrustedKeySpace(CreateTrustedKeySpaceRequest createTrustedKeySpaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/key-spaces", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createTrustedKeySpaceRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateTrustedKeySpaceResponse>(response);
+        }
+
+        public SyncInvoker<CreateTrustedKeySpaceResponse> CreateTrustedKeySpaceInvoker(CreateTrustedKeySpaceRequest createTrustedKeySpaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/key-spaces", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createTrustedKeySpaceRequest);
+            return new SyncInvoker<CreateTrustedKeySpaceResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateTrustedKeySpaceResponse>);
+        }
+        
+        /// <summary>
         /// 解密数据
         ///
         /// - 功能介绍：解密数据。
@@ -762,6 +786,32 @@ namespace HuaweiCloud.SDK.Kms.V2
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/{key_id}/tags/{key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTagRequest);
             return new SyncInvoker<DeleteTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTagResponse>);
+        }
+        
+        /// <summary>
+        /// 删除密钥空间
+        ///
+        /// 用于删除密钥空间
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteTrustedKeySpaceResponse DeleteTrustedKeySpace(DeleteTrustedKeySpaceRequest deleteTrustedKeySpaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteTrustedKeySpaceRequest.KeyspaceId, out var valueOfKeyspaceId)) urlParam.Add("keyspace_id", valueOfKeyspaceId);
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/key-spaces/{keyspace_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTrustedKeySpaceRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteTrustedKeySpaceResponse>(response);
+        }
+
+        public SyncInvoker<DeleteTrustedKeySpaceResponse> DeleteTrustedKeySpaceInvoker(DeleteTrustedKeySpaceRequest deleteTrustedKeySpaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteTrustedKeySpaceRequest.KeyspaceId, out var valueOfKeyspaceId)) urlParam.Add("keyspace_id", valueOfKeyspaceId);
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/key-spaces/{keyspace_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTrustedKeySpaceRequest);
+            return new SyncInvoker<DeleteTrustedKeySpaceResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTrustedKeySpaceResponse>);
         }
         
         /// <summary>
@@ -1389,6 +1439,30 @@ namespace HuaweiCloud.SDK.Kms.V2
         }
         
         /// <summary>
+        /// 查询密钥空间列表
+        ///
+        /// 用于查询密钥空间列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListTrustedKeySpaceResponse ListTrustedKeySpace(ListTrustedKeySpaceRequest listTrustedKeySpaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/key-spaces", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTrustedKeySpaceRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListTrustedKeySpaceResponse>(response);
+        }
+
+        public SyncInvoker<ListTrustedKeySpaceResponse> ListTrustedKeySpaceInvoker(ListTrustedKeySpaceRequest listTrustedKeySpaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/key-spaces", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTrustedKeySpaceRequest);
+            return new SyncInvoker<ListTrustedKeySpaceResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTrustedKeySpaceResponse>);
+        }
+        
+        /// <summary>
         /// 重加密
         ///
         /// 将密文使用源密钥解密后，再使用指定的新密钥加密。
@@ -1541,6 +1615,33 @@ namespace HuaweiCloud.SDK.Kms.V2
         }
         
         /// <summary>
+        /// 查询密钥使用流
+        ///
+        /// 查询指定密钥空间下指定密钥的使用流关系图，返回节点和边的图结构。
+        /// - 节点按类型分组：vpc（VPC节点，含ECS、CCE子节点）、custom（接入点节点）、modelarts（ModelArts节点）、policy（策略节点）、unknown_node（未知起点节点）、key（密钥节点）。
+        /// - 边表示使用流关系：起点节点到策略节点、策略节点到密钥节点。
+        /// - 该接口仅支持查询已记录使用流关系的密钥，若密钥不存在使用流记录，则返回空的节点和边。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowKeyUsageFlowResponse ShowKeyUsageFlow(ShowKeyUsageFlowRequest showKeyUsageFlowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/key-spaces/usage-flow", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKeyUsageFlowRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowKeyUsageFlowResponse>(response);
+        }
+
+        public SyncInvoker<ShowKeyUsageFlowResponse> ShowKeyUsageFlowInvoker(ShowKeyUsageFlowRequest showKeyUsageFlowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/key-spaces/usage-flow", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKeyUsageFlowRequest);
+            return new SyncInvoker<ShowKeyUsageFlowResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowKeyUsageFlowResponse>);
+        }
+        
+        /// <summary>
         /// 查询密钥标签
         ///
         /// - 功能介绍：查询密钥标签。
@@ -1663,6 +1764,31 @@ namespace HuaweiCloud.SDK.Kms.V2
         }
         
         /// <summary>
+        /// 转移密钥
+        ///
+        /// 用于将密钥从一个密钥空间转移到另一个密钥空间
+        /// - ASSIGN：将密钥分配给目标密钥空间，仅支持对称密钥，且密钥必须未属于任何密钥空间。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public TransferKeyResponse TransferKey(TransferKeyRequest transferKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/key-spaces/transfer-key", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", transferKeyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<TransferKeyResponse>(response);
+        }
+
+        public SyncInvoker<TransferKeyResponse> TransferKeyInvoker(TransferKeyRequest transferKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/key-spaces/transfer-key", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", transferKeyRequest);
+            return new SyncInvoker<TransferKeyResponse>(this, "POST", request, JsonUtils.DeSerialize<TransferKeyResponse>);
+        }
+        
+        /// <summary>
         /// 修改密钥别名
         ///
         /// - 功能介绍：修改用户主密钥别名。
@@ -1764,6 +1890,32 @@ namespace HuaweiCloud.SDK.Kms.V2
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/update-key-rotation-interval", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateKeyRotationIntervalRequest);
             return new SyncInvoker<UpdateKeyRotationIntervalResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateKeyRotationIntervalResponse>);
+        }
+        
+        /// <summary>
+        /// 更新专属密钥库
+        ///
+        /// 仅XKS类型的密钥库支持更新访问凭证信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateKeyStoreResponse UpdateKeyStore(UpdateKeyStoreRequest updateKeyStoreRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateKeyStoreRequest.KeystoreId, out var valueOfKeystoreId)) urlParam.Add("keystore_id", valueOfKeystoreId);
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/keystores/{keystore_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateKeyStoreRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateKeyStoreResponse>(response);
+        }
+
+        public SyncInvoker<UpdateKeyStoreResponse> UpdateKeyStoreInvoker(UpdateKeyStoreRequest updateKeyStoreRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateKeyStoreRequest.KeystoreId, out var valueOfKeystoreId)) urlParam.Add("keystore_id", valueOfKeystoreId);
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/keystores/{keystore_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateKeyStoreRequest);
+            return new SyncInvoker<UpdateKeyStoreResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateKeyStoreResponse>);
         }
         
         /// <summary>

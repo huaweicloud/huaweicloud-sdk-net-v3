@@ -29,6 +29,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public string ComponentId { get; set; }
 
         /// <summary>
+        /// **参数解释**： 是否展示本地会话。 **约束限制**： 不涉及。 **取值范围**： - true：展示本地会话 - false：不展示本地会话  **默认取值**: false。
+        /// </summary>
+        [JsonProperty("support_local", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SupportLocal { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("query_info", NullValueHandling = NullValueHandling.Ignore)]
@@ -45,6 +51,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("class ListRealTimeSessionsRequestBody {\n");
             sb.Append("  nodeId: ").Append(NodeId).Append("\n");
             sb.Append("  componentId: ").Append(ComponentId).Append("\n");
+            sb.Append("  supportLocal: ").Append(SupportLocal).Append("\n");
             sb.Append("  queryInfo: ").Append(QueryInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -66,6 +73,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             if (input == null) return false;
             if (this.NodeId != input.NodeId || (this.NodeId != null && !this.NodeId.Equals(input.NodeId))) return false;
             if (this.ComponentId != input.ComponentId || (this.ComponentId != null && !this.ComponentId.Equals(input.ComponentId))) return false;
+            if (this.SupportLocal != input.SupportLocal || (this.SupportLocal != null && !this.SupportLocal.Equals(input.SupportLocal))) return false;
             if (this.QueryInfo != input.QueryInfo || (this.QueryInfo != null && !this.QueryInfo.Equals(input.QueryInfo))) return false;
 
             return true;
@@ -81,6 +89,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                 var hashCode = 41;
                 if (this.NodeId != null) hashCode = hashCode * 59 + this.NodeId.GetHashCode();
                 if (this.ComponentId != null) hashCode = hashCode * 59 + this.ComponentId.GetHashCode();
+                if (this.SupportLocal != null) hashCode = hashCode * 59 + this.SupportLocal.GetHashCode();
                 if (this.QueryInfo != null) hashCode = hashCode * 59 + this.QueryInfo.GetHashCode();
                 return hashCode;
             }

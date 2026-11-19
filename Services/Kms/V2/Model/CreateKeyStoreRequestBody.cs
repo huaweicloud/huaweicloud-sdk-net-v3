@@ -37,12 +37,18 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
             /// </summary>
             public static readonly KeystoreTypeEnum CDMS = new KeystoreTypeEnum("CDMS");
 
+            /// <summary>
+            /// Enum XKS for value: XKS
+            /// </summary>
+            public static readonly KeystoreTypeEnum XKS = new KeystoreTypeEnum("XKS");
+
             private static readonly Dictionary<string, KeystoreTypeEnum> StaticFields =
             new Dictionary<string, KeystoreTypeEnum>()
             {
                 { "DEFAULT", DEFAULT },
                 { "DHSM", DHSM },
                 { "CDMS", CDMS },
+                { "XKS", XKS },
             };
 
             private string _value;
@@ -166,6 +172,42 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         /// </summary>
         [JsonProperty("keystore_type", NullValueHandling = NullValueHandling.Ignore)]
         public KeystoreTypeEnum KeystoreType { get; set; }
+        /// <summary>
+        /// **参数解释：** 仅XKS类型的密钥库支持；可选，表示Xks-Proxy的域名信息 **约束限制：** ^https://[^\\s]+ **取值范围：** 不涉及 **默认取值：** 不涉及
+        /// </summary>
+        [JsonProperty("proxy_uri_endpoint", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProxyUriEndpoint { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 仅XKS类型的密钥库支持；必选，Xks-Proxy的路径前缀 **约束限制：** ^/(?:[a-zA-Z0-9/_-]{0,127})$ **取值范围：** 不涉及 **默认取值：** 不涉及
+        /// </summary>
+        [JsonProperty("proxy_uri_path", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProxyUriPath { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 仅XKS类型的密钥库支持；必选，访问XKS-Proxy的凭据ID **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+        /// </summary>
+        [JsonProperty("proxy_access_key_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProxyAccessKeyId { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 仅XKS类型的密钥库支持；必选，访问XKS-Proxy的凭据Key **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+        /// </summary>
+        [JsonProperty("proxy_secret_access_key", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProxySecretAccessKey { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 仅XKS类型的密钥库支持；必选，Xks-Proxy的终端节点服务名称 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+        /// </summary>
+        [JsonProperty("proxy_vpc_endpoint_service_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProxyVpcEndpointServiceName { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 仅XKS类型的密钥库支持；必选，终端节点服务所属账号 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+        /// </summary>
+        [JsonProperty("proxy_vpc_endpoint_service_owner", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProxyVpcEndpointServiceOwner { get; set; }
+
 
 
         /// <summary>
@@ -180,6 +222,12 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
             sb.Append("  hsmCaCert: ").Append(HsmCaCert).Append("\n");
             sb.Append("  clusterId: ").Append(ClusterId).Append("\n");
             sb.Append("  keystoreType: ").Append(KeystoreType).Append("\n");
+            sb.Append("  proxyUriEndpoint: ").Append(ProxyUriEndpoint).Append("\n");
+            sb.Append("  proxyUriPath: ").Append(ProxyUriPath).Append("\n");
+            sb.Append("  proxyAccessKeyId: ").Append(ProxyAccessKeyId).Append("\n");
+            sb.Append("  proxySecretAccessKey: ").Append(ProxySecretAccessKey).Append("\n");
+            sb.Append("  proxyVpcEndpointServiceName: ").Append(ProxyVpcEndpointServiceName).Append("\n");
+            sb.Append("  proxyVpcEndpointServiceOwner: ").Append(ProxyVpcEndpointServiceOwner).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -203,6 +251,12 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
             if (this.HsmCaCert != input.HsmCaCert || (this.HsmCaCert != null && !this.HsmCaCert.Equals(input.HsmCaCert))) return false;
             if (this.ClusterId != input.ClusterId || (this.ClusterId != null && !this.ClusterId.Equals(input.ClusterId))) return false;
             if (this.KeystoreType != input.KeystoreType) return false;
+            if (this.ProxyUriEndpoint != input.ProxyUriEndpoint || (this.ProxyUriEndpoint != null && !this.ProxyUriEndpoint.Equals(input.ProxyUriEndpoint))) return false;
+            if (this.ProxyUriPath != input.ProxyUriPath || (this.ProxyUriPath != null && !this.ProxyUriPath.Equals(input.ProxyUriPath))) return false;
+            if (this.ProxyAccessKeyId != input.ProxyAccessKeyId || (this.ProxyAccessKeyId != null && !this.ProxyAccessKeyId.Equals(input.ProxyAccessKeyId))) return false;
+            if (this.ProxySecretAccessKey != input.ProxySecretAccessKey || (this.ProxySecretAccessKey != null && !this.ProxySecretAccessKey.Equals(input.ProxySecretAccessKey))) return false;
+            if (this.ProxyVpcEndpointServiceName != input.ProxyVpcEndpointServiceName || (this.ProxyVpcEndpointServiceName != null && !this.ProxyVpcEndpointServiceName.Equals(input.ProxyVpcEndpointServiceName))) return false;
+            if (this.ProxyVpcEndpointServiceOwner != input.ProxyVpcEndpointServiceOwner || (this.ProxyVpcEndpointServiceOwner != null && !this.ProxyVpcEndpointServiceOwner.Equals(input.ProxyVpcEndpointServiceOwner))) return false;
 
             return true;
         }
@@ -220,6 +274,12 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
                 if (this.HsmCaCert != null) hashCode = hashCode * 59 + this.HsmCaCert.GetHashCode();
                 if (this.ClusterId != null) hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
                 hashCode = hashCode * 59 + this.KeystoreType.GetHashCode();
+                if (this.ProxyUriEndpoint != null) hashCode = hashCode * 59 + this.ProxyUriEndpoint.GetHashCode();
+                if (this.ProxyUriPath != null) hashCode = hashCode * 59 + this.ProxyUriPath.GetHashCode();
+                if (this.ProxyAccessKeyId != null) hashCode = hashCode * 59 + this.ProxyAccessKeyId.GetHashCode();
+                if (this.ProxySecretAccessKey != null) hashCode = hashCode * 59 + this.ProxySecretAccessKey.GetHashCode();
+                if (this.ProxyVpcEndpointServiceName != null) hashCode = hashCode * 59 + this.ProxyVpcEndpointServiceName.GetHashCode();
+                if (this.ProxyVpcEndpointServiceOwner != null) hashCode = hashCode * 59 + this.ProxyVpcEndpointServiceOwner.GetHashCode();
                 return hashCode;
             }
         }

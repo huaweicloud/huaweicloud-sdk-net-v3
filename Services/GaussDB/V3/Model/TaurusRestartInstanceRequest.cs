@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("delay", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Delay { get; set; }
 
+        /// <summary>
+        /// **参数解释**：  实例重启后生效的max_connections内核参数配置值。max_connections用于设置允许同时连接到数据库实例的最大客户端连接数。  **约束限制**：  不涉及。  **取值范围**： 30-100000。  **默认取值**： 不涉及。
+        /// </summary>
+        [JsonProperty("max_connections", NullValueHandling = NullValueHandling.Ignore)]
+        public int? MaxConnections { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             var sb = new StringBuilder();
             sb.Append("class TaurusRestartInstanceRequest {\n");
             sb.Append("  delay: ").Append(Delay).Append("\n");
+            sb.Append("  maxConnections: ").Append(MaxConnections).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             if (input == null) return false;
             if (this.Delay != input.Delay || (this.Delay != null && !this.Delay.Equals(input.Delay))) return false;
+            if (this.MaxConnections != input.MaxConnections || (this.MaxConnections != null && !this.MaxConnections.Equals(input.MaxConnections))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             {
                 var hashCode = 41;
                 if (this.Delay != null) hashCode = hashCode * 59 + this.Delay.GetHashCode();
+                if (this.MaxConnections != null) hashCode = hashCode * 59 + this.MaxConnections.GetHashCode();
                 return hashCode;
             }
         }

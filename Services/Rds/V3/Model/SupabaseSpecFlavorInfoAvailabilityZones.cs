@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Rds.V3.Model
 {
     /// <summary>
-    /// 
+    /// **约束限制**  不涉及  **取值范围**  不涉及。  **默认取值**  不涉及。
     /// </summary>
     public class SupabaseSpecFlavorInfoAvailabilityZones 
     {

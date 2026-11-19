@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         [JsonProperty("show_recent_login_info", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ShowRecentLoginInfo { get; set; }
 
+        /// <summary>
+        /// 是否允许账号短信登录。
+        /// </summary>
+        [JsonProperty("allow_sms_login", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? AllowSmsLogin { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             sb.Append("  periodWithLoginFailures: ").Append(PeriodWithLoginFailures).Append("\n");
             sb.Append("  sessionTimeout: ").Append(SessionTimeout).Append("\n");
             sb.Append("  showRecentLoginInfo: ").Append(ShowRecentLoginInfo).Append("\n");
+            sb.Append("  allowSmsLogin: ").Append(AllowSmsLogin).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,6 +106,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             if (this.PeriodWithLoginFailures != input.PeriodWithLoginFailures || (this.PeriodWithLoginFailures != null && !this.PeriodWithLoginFailures.Equals(input.PeriodWithLoginFailures))) return false;
             if (this.SessionTimeout != input.SessionTimeout || (this.SessionTimeout != null && !this.SessionTimeout.Equals(input.SessionTimeout))) return false;
             if (this.ShowRecentLoginInfo != input.ShowRecentLoginInfo || (this.ShowRecentLoginInfo != null && !this.ShowRecentLoginInfo.Equals(input.ShowRecentLoginInfo))) return false;
+            if (this.AllowSmsLogin != input.AllowSmsLogin || (this.AllowSmsLogin != null && !this.AllowSmsLogin.Equals(input.AllowSmsLogin))) return false;
 
             return true;
         }
@@ -118,6 +126,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                 if (this.PeriodWithLoginFailures != null) hashCode = hashCode * 59 + this.PeriodWithLoginFailures.GetHashCode();
                 if (this.SessionTimeout != null) hashCode = hashCode * 59 + this.SessionTimeout.GetHashCode();
                 if (this.ShowRecentLoginInfo != null) hashCode = hashCode * 59 + this.ShowRecentLoginInfo.GetHashCode();
+                if (this.AllowSmsLogin != null) hashCode = hashCode * 59 + this.AllowSmsLogin.GetHashCode();
                 return hashCode;
             }
         }

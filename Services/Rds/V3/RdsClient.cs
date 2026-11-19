@@ -5812,6 +5812,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 数据库小版本升级后最后确认操作
+        ///
+        /// 数据库小版本升级后最后确认操作
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpgradeDbVersionFinalConfirmResponse UpgradeDbVersionFinalConfirm(UpgradeDbVersionFinalConfirmRequest upgradeDbVersionFinalConfirmRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(upgradeDbVersionFinalConfirmRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-upgrade/operation", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeDbVersionFinalConfirmRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<UpgradeDbVersionFinalConfirmResponse>(response);
+        }
+
+        public SyncInvoker<UpgradeDbVersionFinalConfirmResponse> UpgradeDbVersionFinalConfirmInvoker(UpgradeDbVersionFinalConfirmRequest upgradeDbVersionFinalConfirmRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(upgradeDbVersionFinalConfirmRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-upgrade/operation", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeDbVersionFinalConfirmRequest);
+            return new SyncInvoker<UpgradeDbVersionFinalConfirmResponse>(this, "POST", request, JsonUtils.DeSerialize<UpgradeDbVersionFinalConfirmResponse>);
+        }
+        
+        /// <summary>
         /// 升级内核小版本
         ///
         /// 对实例进行小版本升级。

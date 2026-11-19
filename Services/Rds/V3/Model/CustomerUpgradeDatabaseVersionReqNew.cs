@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         [JsonProperty("second_switch", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SecondSwitch { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 是否支持升级成功后能够回滚。  **约束限制**： 该配置仅对RDS for MySQL 8.0 和5.7实例生效。  **取值范围**： - true：支持小版本升级成功后回滚，小版本升级时长会增加。升级完成后实例会进入观察状态，期间数据库可以正常读写。如果确认无误，需要确认完成。如果出现问题，可以回滚，恢复到原始小版本。 - false：小版本升级后不支持回滚。  **默认取值**： false
+        /// </summary>
+        [JsonProperty("support_rollback", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SupportRollback { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("class CustomerUpgradeDatabaseVersionReqNew {\n");
             sb.Append("  isDelayed: ").Append(IsDelayed).Append("\n");
             sb.Append("  secondSwitch: ").Append(SecondSwitch).Append("\n");
+            sb.Append("  supportRollback: ").Append(SupportRollback).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             if (input == null) return false;
             if (this.IsDelayed != input.IsDelayed || (this.IsDelayed != null && !this.IsDelayed.Equals(input.IsDelayed))) return false;
             if (this.SecondSwitch != input.SecondSwitch || (this.SecondSwitch != null && !this.SecondSwitch.Equals(input.SecondSwitch))) return false;
+            if (this.SupportRollback != input.SupportRollback || (this.SupportRollback != null && !this.SupportRollback.Equals(input.SupportRollback))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                 var hashCode = 41;
                 if (this.IsDelayed != null) hashCode = hashCode * 59 + this.IsDelayed.GetHashCode();
                 if (this.SecondSwitch != null) hashCode = hashCode * 59 + this.SecondSwitch.GetHashCode();
+                if (this.SupportRollback != null) hashCode = hashCode * 59 + this.SupportRollback.GetHashCode();
                 return hashCode;
             }
         }
