@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// **参数解释**：  所需查询的日期。  **约束限制**：  不涉及。  **取值范围**：  yyyy-mm-dd字符串格式，时区为UTC。  **默认取值**：  不涉及。
+        /// 所需查询的日志，为yyyy-mm-dd字符串格式，时区为UTC。
         /// </summary>
         [SDKProperty("date", IsQuery = true)]
         [JsonProperty("date", NullValueHandling = NullValueHandling.Ignore)]

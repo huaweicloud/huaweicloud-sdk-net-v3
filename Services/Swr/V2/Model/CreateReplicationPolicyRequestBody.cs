@@ -47,6 +47,12 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public string DestNamespace { get; set; }
 
         /// <summary>
+        /// 在镜像复制过程中，针对多路径镜像名称，可通过设置替换层级来优化仓库目录结构。支持的值为-1,0,1,2,3。dest_namespace_replace_count不传值，则默认为-1。假设原始镜像路径为 a/b/c/d/img，其中a为原始镜像的命名空间名称，目标命名空间为 ns，不同替换级别的效果如下： -1：替换所有级：&#39;a/b/c/d/img&#39; -&gt; &#39;ns/img&#39; 0：无替换：&#39;a/b/c/d/img&#39; -&gt; &#39;ns/a/b/c/d/img&#39; 1：替换1级：&#39;a/b/c/d/img&#39; -&gt; &#39;ns/b/c/d/img&#39; 2：替换2级：&#39;a/b/c/d/img&#39; -&gt; &#39;ns/c/d/img&#39; 3：替换3级：&#39;a/b/c/d/img&#39; -&gt; &#39;ns/d/img&#39;
+        /// </summary>
+        [JsonProperty("dest_namespace_replace_count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? DestNamespaceReplaceCount { get; set; }
+
+        /// <summary>
         /// 过滤器（目前只支持harbor类型的仓库）
         /// </summary>
         [JsonProperty("filters", NullValueHandling = NullValueHandling.Ignore)]
@@ -90,6 +96,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("  srcRegistry: ").Append(SrcRegistry).Append("\n");
             sb.Append("  destRegistry: ").Append(DestRegistry).Append("\n");
             sb.Append("  destNamespace: ").Append(DestNamespace).Append("\n");
+            sb.Append("  destNamespaceReplaceCount: ").Append(DestNamespaceReplaceCount).Append("\n");
             sb.Append("  filters: ").Append(Filters).Append("\n");
             sb.Append("  repoScopeMode: ").Append(RepoScopeMode).Append("\n");
             sb.Append("  trigger: ").Append(Trigger).Append("\n");
@@ -118,6 +125,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             if (this.SrcRegistry != input.SrcRegistry || (this.SrcRegistry != null && !this.SrcRegistry.Equals(input.SrcRegistry))) return false;
             if (this.DestRegistry != input.DestRegistry || (this.DestRegistry != null && !this.DestRegistry.Equals(input.DestRegistry))) return false;
             if (this.DestNamespace != input.DestNamespace || (this.DestNamespace != null && !this.DestNamespace.Equals(input.DestNamespace))) return false;
+            if (this.DestNamespaceReplaceCount != input.DestNamespaceReplaceCount || (this.DestNamespaceReplaceCount != null && !this.DestNamespaceReplaceCount.Equals(input.DestNamespaceReplaceCount))) return false;
             if (this.Filters != input.Filters || (this.Filters != null && input.Filters != null && !this.Filters.SequenceEqual(input.Filters))) return false;
             if (this.RepoScopeMode != input.RepoScopeMode || (this.RepoScopeMode != null && !this.RepoScopeMode.Equals(input.RepoScopeMode))) return false;
             if (this.Trigger != input.Trigger || (this.Trigger != null && !this.Trigger.Equals(input.Trigger))) return false;
@@ -140,6 +148,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 if (this.SrcRegistry != null) hashCode = hashCode * 59 + this.SrcRegistry.GetHashCode();
                 if (this.DestRegistry != null) hashCode = hashCode * 59 + this.DestRegistry.GetHashCode();
                 if (this.DestNamespace != null) hashCode = hashCode * 59 + this.DestNamespace.GetHashCode();
+                if (this.DestNamespaceReplaceCount != null) hashCode = hashCode * 59 + this.DestNamespaceReplaceCount.GetHashCode();
                 if (this.Filters != null) hashCode = hashCode * 59 + this.Filters.GetHashCode();
                 if (this.RepoScopeMode != null) hashCode = hashCode * 59 + this.RepoScopeMode.GetHashCode();
                 if (this.Trigger != null) hashCode = hashCode * 59 + this.Trigger.GetHashCode();

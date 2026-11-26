@@ -101,7 +101,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public string Deleted { get; set; }
 
         /// <summary>
-        /// 帐号ID
+        /// 账号ID
         /// </summary>
         [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainId { get; set; }

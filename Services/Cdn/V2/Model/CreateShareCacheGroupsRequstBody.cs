@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// **参数解释：** 共享缓存组名称 **约束限制：** 不涉及 **取值范围：** - 1-128个字符 - 不支持特殊字符“%”、“&amp;”、“&#x3D;”、“?”、“$”\&quot;、“\&quot;”、“&lt;”、“&gt;”  **默认取值：** 不涉及
+        /// **参数解释：** 共享缓存组名称 **约束限制：** 不涉及 **取值范围：** - 1-128个字符 - 不支持特殊字符“%”、“&amp;”、“&#x3D;”、“?”、“$”、“\&quot;”、“&lt;”、“&gt;” **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("group_name", NullValueHandling = NullValueHandling.Ignore)]
         public string GroupName { get; set; }
 
         /// <summary>
-        /// **参数解释：** 主域名 **约束限制：** 只能有一个主域名 **取值范围：** 不涉及 **默认取值：** 不涉及
+        /// **参数解释：** 共享缓存组的主域名，作为缓存共享的核心域名，关联域名将共享主域名缓存。 **约束限制：** 只能有一个主域名 **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("primary_domain", NullValueHandling = NullValueHandling.Ignore)]
         public string PrimaryDomain { get; set; }

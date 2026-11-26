@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// **参数解释：** 此条规则的优先级，数值越大，优先级越高 **约束限制：** 优先级不能相同 **取值范围：** 1-100 **默认取值：** 不涉及
+        /// **参数解释：** 此条规则的优先级，数值越大，优先级越高 **约束限制：** 优先级不能相同 **取值范围：** 1-1000 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("priority", NullValueHandling = NullValueHandling.Ignore)]
         public int? Priority { get; set; }

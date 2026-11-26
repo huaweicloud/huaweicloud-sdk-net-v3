@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public string Updated { get; set; }
 
         /// <summary>
-        /// 若该版本API 支持微版本，则填支持的最小微版本号， 如果不支持微版本，则填空。
+        /// 若该版本API 支持微版本，则填支持的最小微版本号。当前版本为2.0。
         /// </summary>
         [JsonProperty("min_version", NullValueHandling = NullValueHandling.Ignore)]
         public string MinVersion { get; set; }

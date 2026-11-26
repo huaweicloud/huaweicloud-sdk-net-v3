@@ -286,6 +286,34 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         [JsonProperty("namespace_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? NamespaceId { get; set; }
 
+        /// <summary>
+        /// 根据仓库名称或命名空间名称进行模糊查询
+        /// </summary>
+        [SDKProperty("name", IsQuery = true)]
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// 是否返回仓库的标签
+        /// </summary>
+        [SDKProperty("with_tag", IsQuery = true)]
+        [JsonProperty("with_tag", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? WithTag { get; set; }
+
+        /// <summary>
+        /// 根据标签过滤，多个标签以英文逗号隔开，最多支持20个标签同时过滤查询。格式为key1&#x3D;value1,key2&#x3D;value2。如果标签的key/value值中有特殊字符&#x3D;，请先把 &#x3D; 替换成 %3D 再进行请求。注意：使用curl命令请求，需要把 &#x3D; 替换成 %253D(即 %3D 的 %25 被编码为 %25)再次请求。
+        /// </summary>
+        [SDKProperty("tags", IsQuery = true)]
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public string Tags { get; set; }
+
+        /// <summary>
+        /// 支持按多个所属命名空间ID过滤，多个ID之间用英文逗号分隔。注意：namespace_id与namespace_ids不支持同时传参。
+        /// </summary>
+        [SDKProperty("namespace_ids", IsQuery = true)]
+        [JsonProperty("namespace_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public string NamespaceIds { get; set; }
+
 
 
         /// <summary>
@@ -301,6 +329,10 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("  orderColumn: ").Append(OrderColumn).Append("\n");
             sb.Append("  orderType: ").Append(OrderType).Append("\n");
             sb.Append("  namespaceId: ").Append(NamespaceId).Append("\n");
+            sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  withTag: ").Append(WithTag).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  namespaceIds: ").Append(NamespaceIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -325,6 +357,10 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             if (this.OrderColumn != input.OrderColumn) return false;
             if (this.OrderType != input.OrderType) return false;
             if (this.NamespaceId != input.NamespaceId || (this.NamespaceId != null && !this.NamespaceId.Equals(input.NamespaceId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.WithTag != input.WithTag || (this.WithTag != null && !this.WithTag.Equals(input.WithTag))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && !this.Tags.Equals(input.Tags))) return false;
+            if (this.NamespaceIds != input.NamespaceIds || (this.NamespaceIds != null && !this.NamespaceIds.Equals(input.NamespaceIds))) return false;
 
             return true;
         }
@@ -343,6 +379,10 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 hashCode = hashCode * 59 + this.OrderColumn.GetHashCode();
                 hashCode = hashCode * 59 + this.OrderType.GetHashCode();
                 if (this.NamespaceId != null) hashCode = hashCode * 59 + this.NamespaceId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.WithTag != null) hashCode = hashCode * 59 + this.WithTag.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.NamespaceIds != null) hashCode = hashCode * 59 + this.NamespaceIds.GetHashCode();
                 return hashCode;
             }
         }

@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string RuleId { get; set; }
 
         /// <summary>
-        /// **参数解释：** 规则名称 **约束限制：** 不涉及 **取值范围：** 1-50个字符 **默认取值：** 不涉及
+        /// **参数解释：** 规则名称 **约束限制：** 不涉及 **取值范围：** - 1-50个字符 - 由中文字符、英文字母、数字及“-”、“_”组成  **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// **参数解释：** 规则的优先级，数值越大，优先级越高 **约束限制：** 优先级不能重复 **取值范围：** 1-100 **默认取值：** 不涉及
+        /// **参数解释：** 规则的优先级，数值越大，优先级越高 **约束限制：** 优先级不能重复 **取值范围：** 1-1000 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("priority", NullValueHandling = NullValueHandling.Ignore)]
         public int? Priority { get; set; }

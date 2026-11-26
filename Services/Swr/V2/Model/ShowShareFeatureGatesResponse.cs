@@ -88,6 +88,30 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         [JsonProperty("enable_image_quota", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableImageQuota { get; set; }
 
+        /// <summary>
+        /// 是否支持展示镜像签名关系
+        /// </summary>
+        [JsonProperty("enable_cosign_signature", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableCosignSignature { get; set; }
+
+        /// <summary>
+        /// 是否支持展示跳转到企业版的链接
+        /// </summary>
+        [JsonProperty("enable_enterprise_edition_link", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableEnterpriseEditionLink { get; set; }
+
+        /// <summary>
+        /// 是否支持自定义有效期
+        /// </summary>
+        [JsonProperty("enable_customize_validity_period", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableCustomizeValidityPeriod { get; set; }
+
+        /// <summary>
+        /// swr-utils工具下载链接地址
+        /// </summary>
+        [JsonProperty("swr_util_download_url", NullValueHandling = NullValueHandling.Ignore)]
+        public string SwrUtilDownloadUrl { get; set; }
+
 
 
         /// <summary>
@@ -109,6 +133,10 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("  enableResource: ").Append(EnableResource).Append("\n");
             sb.Append("  enableListV3: ").Append(EnableListV3).Append("\n");
             sb.Append("  enableImageQuota: ").Append(EnableImageQuota).Append("\n");
+            sb.Append("  enableCosignSignature: ").Append(EnableCosignSignature).Append("\n");
+            sb.Append("  enableEnterpriseEditionLink: ").Append(EnableEnterpriseEditionLink).Append("\n");
+            sb.Append("  enableCustomizeValidityPeriod: ").Append(EnableCustomizeValidityPeriod).Append("\n");
+            sb.Append("  swrUtilDownloadUrl: ").Append(SwrUtilDownloadUrl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -139,6 +167,10 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             if (this.EnableResource != input.EnableResource || (this.EnableResource != null && !this.EnableResource.Equals(input.EnableResource))) return false;
             if (this.EnableListV3 != input.EnableListV3 || (this.EnableListV3 != null && !this.EnableListV3.Equals(input.EnableListV3))) return false;
             if (this.EnableImageQuota != input.EnableImageQuota || (this.EnableImageQuota != null && !this.EnableImageQuota.Equals(input.EnableImageQuota))) return false;
+            if (this.EnableCosignSignature != input.EnableCosignSignature || (this.EnableCosignSignature != null && !this.EnableCosignSignature.Equals(input.EnableCosignSignature))) return false;
+            if (this.EnableEnterpriseEditionLink != input.EnableEnterpriseEditionLink || (this.EnableEnterpriseEditionLink != null && !this.EnableEnterpriseEditionLink.Equals(input.EnableEnterpriseEditionLink))) return false;
+            if (this.EnableCustomizeValidityPeriod != input.EnableCustomizeValidityPeriod || (this.EnableCustomizeValidityPeriod != null && !this.EnableCustomizeValidityPeriod.Equals(input.EnableCustomizeValidityPeriod))) return false;
+            if (this.SwrUtilDownloadUrl != input.SwrUtilDownloadUrl || (this.SwrUtilDownloadUrl != null && !this.SwrUtilDownloadUrl.Equals(input.SwrUtilDownloadUrl))) return false;
 
             return true;
         }
@@ -163,6 +195,10 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 if (this.EnableResource != null) hashCode = hashCode * 59 + this.EnableResource.GetHashCode();
                 if (this.EnableListV3 != null) hashCode = hashCode * 59 + this.EnableListV3.GetHashCode();
                 if (this.EnableImageQuota != null) hashCode = hashCode * 59 + this.EnableImageQuota.GetHashCode();
+                if (this.EnableCosignSignature != null) hashCode = hashCode * 59 + this.EnableCosignSignature.GetHashCode();
+                if (this.EnableEnterpriseEditionLink != null) hashCode = hashCode * 59 + this.EnableEnterpriseEditionLink.GetHashCode();
+                if (this.EnableCustomizeValidityPeriod != null) hashCode = hashCode * 59 + this.EnableCustomizeValidityPeriod.GetHashCode();
+                if (this.SwrUtilDownloadUrl != null) hashCode = hashCode * 59 + this.SwrUtilDownloadUrl.GetHashCode();
                 return hashCode;
             }
         }

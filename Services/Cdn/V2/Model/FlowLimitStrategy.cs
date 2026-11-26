@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string ItemType { get; set; }
 
         /// <summary>
-        /// **参数解释：** 用量封顶阈值，域名用量达到该阈值后，将会停用域名 **约束限制：** 不涉及 **取值范围：** 必须为正整数 **默认取值：** 不涉及
+        /// **参数解释：** 用量封顶阈值，域名用量达到该阈值后，将会停用域名 **约束限制：** 不涉及 **取值范围：** 1000000-10000000000000 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("limit_value", NullValueHandling = NullValueHandling.Ignore)]
         public long? LimitValue { get; set; }

@@ -1,3 +1,262 @@
+# 3.1.220 2026-11-26
+
+### HuaweiCloud SDK CDN
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **VerifyDomainOwner**
+    - changes of response param
+      - `+ status`
+  - **ListAccessControlTask**
+    - changes of request param
+      - `+ task_id`
+  - **UpdateDomainMultiCertificates**
+    - changes of request param
+      - `+ https.certificates`
+    - changes of response param
+      - `+ https.certificate_category`
+      - `+ https.certificates`
+  - **ShowCertificatesHttpsInfo**
+    - changes of response param
+      - `+ https.certificates`
+  - **ListDomains**
+    - changes of response param
+      - `+ domains.origin_protocol`
+  - **CreateDomain**
+    - changes of request param
+      - `+ domain.origin_protocol`
+      - `+ domain.configs`
+      - `+ domain.sources.priority`
+      - `+ domain.sources.weight`
+      - `+ domain.sources.host_name`
+  - **DeleteDomain**
+    - changes of response param
+      - `+ domain.cnames`
+      - `+ domain.tags`
+      - `+ domain.sources.weight`
+  - **EnableDomain**
+    - changes of response param
+      - `+ domain.cnames`
+      - `+ domain.tags`
+      - `+ domain.sources.weight`
+  - **DisableDomain**
+    - changes of response param
+      - `+ domain.cnames`
+      - `+ domain.tags`
+      - `+ domain.sources.weight`
+  - **UpdateRuleNew**
+    - changes of request param
+      - `+ actions.request_url_rewrite.rewrite_type`
+      - `+ actions.request_url_rewrite.source_url`
+      - `+ actions.request_url_rewrite.inherit_param`
+  - **UpdateDomainTemplate**
+    - changes of request param
+      - `+ configs.origin_request_header`
+      - `+ configs.https`
+      - `+ configs.quic`
+      - `+ configs.force_redirect`
+      - `+ configs.https_tls_version`
+      - `+ configs.access_area_filter`
+      - `+ configs.url_auth`
+      - `+ configs.rules`
+      - `+ configs.cache_rules.stale_while_revalidate`
+  - **ShowDomainFullConfig**
+    - changes of response param
+      - `+ configs.bandwidth_alarm_strategy`
+      - `+ configs.cache_rules.stale_while_revalidate`
+      - `+ configs.client_cert.trusted_certs`
+      - `+ configs.client_cert.sm_trusted_certs`
+      - `+ configs.client_cert.sm_cert_hosts`
+      - `+ configs.flexible_origin.back_sources.origin_protocol`
+      - `+ configs.flexible_origin.back_sources.host_name`
+  - **UpdateDomainFullConfig**
+    - changes of request param
+      - `+ configs.bandwidth_alarm_strategy`
+      - `+ configs.cache_rules.stale_while_revalidate`
+      - `+ configs.client_cert.trusted_certs`
+      - `+ configs.client_cert.sm_trusted_certs`
+      - `+ configs.client_cert.sm_cert_hosts`
+      - `+ configs.flexible_origin.back_sources.origin_protocol`
+      - `+ configs.flexible_origin.back_sources.host_name`
+  - **CreateRuleNew**
+    - changes of request param
+      - `+ actions.request_url_rewrite.rewrite_type`
+      - `+ actions.request_url_rewrite.source_url`
+      - `+ actions.request_url_rewrite.inherit_param`
+  - **ListRuleDetails**
+    - changes of response param
+      - `+ rules.actions.request_url_rewrite.rewrite_type`
+      - `+ rules.actions.request_url_rewrite.source_url`
+      - `+ rules.actions.request_url_rewrite.inherit_param`
+  - **UpdateFullRule**
+    - changes of request param
+      - `+ rules.actions.request_url_rewrite.rewrite_type`
+      - `+ rules.actions.request_url_rewrite.source_url`
+      - `+ rules.actions.request_url_rewrite.inherit_param`
+  - **CreateDomainTemplate**
+    - changes of request param
+      - `+ configs.origin_request_header`
+      - `+ configs.https`
+      - `+ configs.quic`
+      - `+ configs.force_redirect`
+      - `+ configs.https_tls_version`
+      - `+ configs.access_area_filter`
+      - `+ configs.url_auth`
+      - `+ configs.rules`
+      - `+ configs.cache_rules.stale_while_revalidate`
+  - **ShowDomainTemplate**
+    - changes of response param
+      - `+ templates.configs.origin_request_header`
+      - `+ templates.configs.https`
+      - `+ templates.configs.quic`
+      - `+ templates.configs.force_redirect`
+      - `+ templates.configs.https_tls_version`
+      - `+ templates.configs.access_area_filter`
+      - `+ templates.configs.url_auth`
+      - `+ templates.configs.rules`
+      - `+ templates.configs.cache_rules.stale_while_revalidate`
+  - **ShowAppliedTemplateRecord**
+    - changes of response param
+      - `+ elements.configs.origin_request_header`
+      - `+ elements.configs.https`
+      - `+ elements.configs.quic`
+      - `+ elements.configs.force_redirect`
+      - `+ elements.configs.https_tls_version`
+      - `+ elements.configs.access_area_filter`
+      - `+ elements.configs.url_auth`
+      - `+ elements.configs.rules`
+      - `+ elements.configs.cache_rules.stale_while_revalidate`
+
+### HuaweiCloud SDK GaussDB
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the API `ShowMigrateInfo`
+  - **ShowBackupRestoreTime**
+    - changes of request param
+      - `- date`
+
+### HuaweiCloud SDK IAM
+
+- _API Version_
+  - V5
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListPoliciesV5**
+    - changes of response param
+      - `- policies.tags`
+  - **CreatePolicyV5**
+    - changes of response param
+      - `- policy.tags`
+  - **GetPolicyV5**
+    - changes of response param
+      - `* policy: object<Policy> -> object<PolicyWithTags>`
+
+### HuaweiCloud SDK SWR
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the APIs `ShowRepoTagConfig`, `ListResourcesTagsByProjectId`, `ShowInstanceArtifactManifest`, `ShowInstanceTag`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowShareFeatureGates**
+    - changes of response param
+      - `+ enable_customize_validity_period`
+      - `+ enable_cosign_signature`
+      - `+ enable_enterprise_edition_link`
+      - `+ swr_util_download_url`
+  - **ShowInstance**
+    - changes of response param
+      - `+ tags`
+      - `+ status: enum value [Frozen,DeploymentAbnormal,PartiallyUnavailable,CoreDialFailed]`
+  - **ShowInstanceRepository**
+    - changes of response param
+      - `+ tags`
+  - **ListFeatureGates**
+    - changes of response param
+      - `+ enableArtifactMetadata`
+      - `+ enableNamespaceTag`
+      - `+ enableRepositoryTag`
+  - **ListGlobalFeatureGates**
+    - changes of response param
+      - `+ enableV5CustomAgency`
+      - `+ enableConsoleAgency`
+      - `+ agencyName`
+  - **ListInstance**
+    - changes of request param
+      - `+ status: enum value [Frozen,DeploymentAbnormal,PartiallyUnavailable,CoreDialFailed]`
+    - changes of response param
+      - `+ tags`
+      - `+ instances.tags`
+      - `+ instances.status: enum value [Frozen,DeploymentAbnormal,PartiallyUnavailable,CoreDialFailed]`
+  - **ListInstanceRepositories**
+    - changes of request param
+      - `+ name`
+      - `+ with_tag`
+      - `+ tags`
+      - `+ namespace_ids`
+    - changes of response param
+      - `+ tags`
+      - `+ repositories.tags`
+  - **ListNamespaceRepositories**
+    - changes of response param
+      - `+ tags`
+      - `+ repositories.tags`
+  - **ListAllInstanceRepositories**
+    - changes of response param
+      - `+ tags`
+      - `+ repositories.tags`
+  - **ListInstanceRetentionPolicyExecSubTasks**
+    - changes of response param
+      - `* sub_tasks.job_id: int32 -> string`
+  - **ShowInstanceNamespace**
+    - changes of response param
+      - `+ tags`
+  - **ShowInstanceReplicationPolicy**
+    - changes of response param
+      - `+ dest_namespace_replace_count`
+  - **ListInstanceArtifacts**
+    - changes of response param
+      - `+ artifacts.extra_attrs`
+      - `+ artifacts.references`
+  - **ListInstanceAllArtifacts**
+    - changes of response param
+      - `+ artifacts.extra_attrs`
+      - `+ artifacts.references`
+  - **CreateInstanceNamespace**
+    - changes of request param
+      - `+ tags`
+  - **ListInstanceNamespaces**
+    - changes of response param
+      - `+ tags`
+      - `+ namespaces.tags`
+  - **CreateInstanceReplicationPolicy**
+    - changes of request param
+      - `+ dest_namespace_replace_count`
+  - **ListInstanceReplicationPolicies**
+    - changes of response param
+      - `+ dest_namespace_replace_count`
+      - `+ policies.dest_namespace_replace_count`
+  - **ShowInstanceArtifact**
+    - changes of response param
+      - `+ references`
+      - `+ extra_attrs`
+
 # 3.1.219 2026-11-19
 
 ### HuaweiCloud SDK ECS

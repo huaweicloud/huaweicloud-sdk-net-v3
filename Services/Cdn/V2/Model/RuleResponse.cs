@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// 规则id
+        /// **参数解释：** 规则id **约束限制：** 不涉及 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("rule_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RuleId { get; set; }
 
         /// <summary>
-        /// 规则名称
+        /// **参数解释：** 规则名称 **约束限制：** 不涉及 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// 此条规则的优先级，数值越大，优先级越高。
+        /// **参数解释：** 此条规则的优先级，数值越大，优先级越高。 **约束限制：** 不涉及 **取值范围：** 1-1000
         /// </summary>
         [JsonProperty("priority", NullValueHandling = NullValueHandling.Ignore)]
         public int? Priority { get; set; }

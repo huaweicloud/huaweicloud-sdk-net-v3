@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string CacheType { get; set; }
 
         /// <summary>
-        /// **参数解释：** 缓存过期时间 **约束限制：** - 最大支持365天 - 当缓存生效类型为ttl时必填 **取值范围：** 不涉及 **默认取值：** 不涉及
+        /// **参数解释：** 缓存过期时间 **约束限制：** - 最大支持365天 - 当缓存生效类型为ttl时必填  **取值范围：** 不涉及 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("ttl", NullValueHandling = NullValueHandling.Ignore)]
         public int? Ttl { get; set; }

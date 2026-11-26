@@ -40,6 +40,24 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         [JsonProperty("enableIntranetAccessSwitch", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableIntranetAccessSwitch { get; set; }
 
+        /// <summary>
+        /// 是否支持Console侧的一键委托
+        /// </summary>
+        [JsonProperty("enableConsoleAgency", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableConsoleAgency { get; set; }
+
+        /// <summary>
+        /// 是否支持IAM新平面的信任委托
+        /// </summary>
+        [JsonProperty("enableV5CustomAgency", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableV5CustomAgency { get; set; }
+
+        /// <summary>
+        /// 委托名称
+        /// </summary>
+        [JsonProperty("agencyName", NullValueHandling = NullValueHandling.Ignore)]
+        public string AgencyName { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +71,9 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("  enableEnterprise: ").Append(EnableEnterprise).Append("\n");
             sb.Append("  cerAvailable: ").Append(CerAvailable).Append("\n");
             sb.Append("  enableIntranetAccessSwitch: ").Append(EnableIntranetAccessSwitch).Append("\n");
+            sb.Append("  enableConsoleAgency: ").Append(EnableConsoleAgency).Append("\n");
+            sb.Append("  enableV5CustomAgency: ").Append(EnableV5CustomAgency).Append("\n");
+            sb.Append("  agencyName: ").Append(AgencyName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,6 +96,9 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             if (this.EnableEnterprise != input.EnableEnterprise || (this.EnableEnterprise != null && !this.EnableEnterprise.Equals(input.EnableEnterprise))) return false;
             if (this.CerAvailable != input.CerAvailable || (this.CerAvailable != null && !this.CerAvailable.Equals(input.CerAvailable))) return false;
             if (this.EnableIntranetAccessSwitch != input.EnableIntranetAccessSwitch || (this.EnableIntranetAccessSwitch != null && !this.EnableIntranetAccessSwitch.Equals(input.EnableIntranetAccessSwitch))) return false;
+            if (this.EnableConsoleAgency != input.EnableConsoleAgency || (this.EnableConsoleAgency != null && !this.EnableConsoleAgency.Equals(input.EnableConsoleAgency))) return false;
+            if (this.EnableV5CustomAgency != input.EnableV5CustomAgency || (this.EnableV5CustomAgency != null && !this.EnableV5CustomAgency.Equals(input.EnableV5CustomAgency))) return false;
+            if (this.AgencyName != input.AgencyName || (this.AgencyName != null && !this.AgencyName.Equals(input.AgencyName))) return false;
 
             return true;
         }
@@ -91,6 +115,9 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 if (this.EnableEnterprise != null) hashCode = hashCode * 59 + this.EnableEnterprise.GetHashCode();
                 if (this.CerAvailable != null) hashCode = hashCode * 59 + this.CerAvailable.GetHashCode();
                 if (this.EnableIntranetAccessSwitch != null) hashCode = hashCode * 59 + this.EnableIntranetAccessSwitch.GetHashCode();
+                if (this.EnableConsoleAgency != null) hashCode = hashCode * 59 + this.EnableConsoleAgency.GetHashCode();
+                if (this.EnableV5CustomAgency != null) hashCode = hashCode * 59 + this.EnableV5CustomAgency.GetHashCode();
+                if (this.AgencyName != null) hashCode = hashCode * 59 + this.AgencyName.GetHashCode();
                 return hashCode;
             }
         }

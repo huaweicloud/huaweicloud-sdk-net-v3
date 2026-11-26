@@ -77,6 +77,12 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public string UpdatedAt { get; set; }
 
         /// <summary>
+        /// 标签列表
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ResourceTag> Tags { get; set; }
+
+        /// <summary>
         /// 企业仓库实例ID
         /// </summary>
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -113,6 +119,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  instanceName: ").Append(InstanceName).Append("\n");
             sb.Append("  resourceUrn: ").Append(ResourceUrn).Append("\n");
@@ -144,6 +151,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
             if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
             if (this.InstanceName != input.InstanceName || (this.InstanceName != null && !this.InstanceName.Equals(input.InstanceName))) return false;
             if (this.ResourceUrn != input.ResourceUrn || (this.ResourceUrn != null && !this.ResourceUrn.Equals(input.ResourceUrn))) return false;
@@ -169,6 +177,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.InstanceName != null) hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
                 if (this.ResourceUrn != null) hashCode = hashCode * 59 + this.ResourceUrn.GetHashCode();

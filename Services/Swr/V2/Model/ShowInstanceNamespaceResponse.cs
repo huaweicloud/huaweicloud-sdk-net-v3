@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         [JsonProperty("cve_allowlist", NullValueHandling = NullValueHandling.Ignore)]
         public CVEAllowlist CveAllowlist { get; set; }
 
+        /// <summary>
+        /// 标签列表
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ResourceTag> Tags { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  repoCount: ").Append(RepoCount).Append("\n");
             sb.Append("  cveAllowlist: ").Append(CveAllowlist).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,6 +106,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
             if (this.RepoCount != input.RepoCount || (this.RepoCount != null && !this.RepoCount.Equals(input.RepoCount))) return false;
             if (this.CveAllowlist != input.CveAllowlist || (this.CveAllowlist != null && !this.CveAllowlist.Equals(input.CveAllowlist))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
 
             return true;
         }
@@ -118,6 +126,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 if (this.RepoCount != null) hashCode = hashCode * 59 + this.RepoCount.GetHashCode();
                 if (this.CveAllowlist != null) hashCode = hashCode * 59 + this.CveAllowlist.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

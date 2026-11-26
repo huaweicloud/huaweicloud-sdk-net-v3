@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// **参数解释：** HTTP响应头，CDN节点响应客户端时，根据HTTP响应头配置操作响应的HTTP头部信息 **约束限制：** - 调用接口修改响应头时，将覆盖原先已配置的响应头，因此，在使用此接口时，请上传全量头部信息
         /// </summary>
         [JsonProperty("http_response_header", NullValueHandling = NullValueHandling.Ignore)]
         public List<HttpResponseHeader> HttpResponseHeader { get; set; }
 
         /// <summary>
-        /// 
+        /// **参数解释：** 设置源站资源在CDN节点的缓存时长 **约束限制：** 必须存在一条所有文件类型的规则
         /// </summary>
         [JsonProperty("cache_rules", NullValueHandling = NullValueHandling.Ignore)]
         public List<CacheRules> CacheRules { get; set; }
@@ -70,6 +70,54 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         [JsonProperty("flow_limit_strategy", NullValueHandling = NullValueHandling.Ignore)]
         public List<FlowLimitStrategy> FlowLimitStrategy { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 回源请求头，CDN节点回源时，在请求源站时添加指定的HTTP请求头信息 **约束限制：** - 调用接口修改回源请求头时，将覆盖原先已配置的回源请求头
+        /// </summary>
+        [JsonProperty("origin_request_header", NullValueHandling = NullValueHandling.Ignore)]
+        public List<OriginRequestHeader> OriginRequestHeader { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("https", NullValueHandling = NullValueHandling.Ignore)]
+        public HttpTemplateBody Https { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("quic", NullValueHandling = NullValueHandling.Ignore)]
+        public Quic Quic { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("force_redirect", NullValueHandling = NullValueHandling.Ignore)]
+        public ForceRedirectConfig ForceRedirect { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("https_tls_version", NullValueHandling = NullValueHandling.Ignore)]
+        public HttpsTlsVersion HttpsTlsVersion { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 区域访问控制，通过配置访问控制规则限制客户端所在地区，实现只允许或只禁止特定地区的用户访问资源 **约束限制：** - 不涉及
+        /// </summary>
+        [JsonProperty("access_area_filter", NullValueHandling = NullValueHandling.Ignore)]
+        public List<AccessAreaFilter> AccessAreaFilter { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("url_auth", NullValueHandling = NullValueHandling.Ignore)]
+        public UrlAuth UrlAuth { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 规则引擎，通过配置规则来对请求和响应进行自定义控制 **约束限制：** 不涉及
+        /// </summary>
+        [JsonProperty("rules", NullValueHandling = NullValueHandling.Ignore)]
+        public List<RuleResponse> Rules { get; set; }
+
 
 
         /// <summary>
@@ -88,6 +136,14 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  referer: ").Append(Referer).Append("\n");
             sb.Append("  userAgentFilter: ").Append(UserAgentFilter).Append("\n");
             sb.Append("  flowLimitStrategy: ").Append(FlowLimitStrategy).Append("\n");
+            sb.Append("  originRequestHeader: ").Append(OriginRequestHeader).Append("\n");
+            sb.Append("  https: ").Append(Https).Append("\n");
+            sb.Append("  quic: ").Append(Quic).Append("\n");
+            sb.Append("  forceRedirect: ").Append(ForceRedirect).Append("\n");
+            sb.Append("  httpsTlsVersion: ").Append(HttpsTlsVersion).Append("\n");
+            sb.Append("  accessAreaFilter: ").Append(AccessAreaFilter).Append("\n");
+            sb.Append("  urlAuth: ").Append(UrlAuth).Append("\n");
+            sb.Append("  rules: ").Append(Rules).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,6 +171,14 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             if (this.Referer != input.Referer || (this.Referer != null && !this.Referer.Equals(input.Referer))) return false;
             if (this.UserAgentFilter != input.UserAgentFilter || (this.UserAgentFilter != null && !this.UserAgentFilter.Equals(input.UserAgentFilter))) return false;
             if (this.FlowLimitStrategy != input.FlowLimitStrategy || (this.FlowLimitStrategy != null && input.FlowLimitStrategy != null && !this.FlowLimitStrategy.SequenceEqual(input.FlowLimitStrategy))) return false;
+            if (this.OriginRequestHeader != input.OriginRequestHeader || (this.OriginRequestHeader != null && input.OriginRequestHeader != null && !this.OriginRequestHeader.SequenceEqual(input.OriginRequestHeader))) return false;
+            if (this.Https != input.Https || (this.Https != null && !this.Https.Equals(input.Https))) return false;
+            if (this.Quic != input.Quic || (this.Quic != null && !this.Quic.Equals(input.Quic))) return false;
+            if (this.ForceRedirect != input.ForceRedirect || (this.ForceRedirect != null && !this.ForceRedirect.Equals(input.ForceRedirect))) return false;
+            if (this.HttpsTlsVersion != input.HttpsTlsVersion || (this.HttpsTlsVersion != null && !this.HttpsTlsVersion.Equals(input.HttpsTlsVersion))) return false;
+            if (this.AccessAreaFilter != input.AccessAreaFilter || (this.AccessAreaFilter != null && input.AccessAreaFilter != null && !this.AccessAreaFilter.SequenceEqual(input.AccessAreaFilter))) return false;
+            if (this.UrlAuth != input.UrlAuth || (this.UrlAuth != null && !this.UrlAuth.Equals(input.UrlAuth))) return false;
+            if (this.Rules != input.Rules || (this.Rules != null && input.Rules != null && !this.Rules.SequenceEqual(input.Rules))) return false;
 
             return true;
         }
@@ -136,6 +200,14 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                 if (this.Referer != null) hashCode = hashCode * 59 + this.Referer.GetHashCode();
                 if (this.UserAgentFilter != null) hashCode = hashCode * 59 + this.UserAgentFilter.GetHashCode();
                 if (this.FlowLimitStrategy != null) hashCode = hashCode * 59 + this.FlowLimitStrategy.GetHashCode();
+                if (this.OriginRequestHeader != null) hashCode = hashCode * 59 + this.OriginRequestHeader.GetHashCode();
+                if (this.Https != null) hashCode = hashCode * 59 + this.Https.GetHashCode();
+                if (this.Quic != null) hashCode = hashCode * 59 + this.Quic.GetHashCode();
+                if (this.ForceRedirect != null) hashCode = hashCode * 59 + this.ForceRedirect.GetHashCode();
+                if (this.HttpsTlsVersion != null) hashCode = hashCode * 59 + this.HttpsTlsVersion.GetHashCode();
+                if (this.AccessAreaFilter != null) hashCode = hashCode * 59 + this.AccessAreaFilter.GetHashCode();
+                if (this.UrlAuth != null) hashCode = hashCode * 59 + this.UrlAuth.GetHashCode();
+                if (this.Rules != null) hashCode = hashCode * 59 + this.Rules.GetHashCode();
                 return hashCode;
             }
         }

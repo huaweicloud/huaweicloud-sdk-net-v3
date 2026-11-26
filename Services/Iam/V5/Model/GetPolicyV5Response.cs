@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Iam.V5.Model
         /// 
         /// </summary>
         [JsonProperty("policy", NullValueHandling = NullValueHandling.Ignore)]
-        public Policy Policy { get; set; }
+        public PolicyWithTags Policy { get; set; }
 
 
 

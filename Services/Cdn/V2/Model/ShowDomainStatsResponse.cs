@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string Action { get; set; }
 
         /// <summary>
-        /// **参数解释：** 查询时间粒度 **取值范围：** - 300：采样时间间隔为5分钟，单位：秒 - 3600：采样时间间隔为1小时，单位：秒 - 86400：采样时间间隔为1天，单位：秒 **默认取值：** 默认取对应时间跨度的最小间隔 &gt; 时间跨度小于等于7天，最小时间间隔为300；时间跨度大于7天，最小时间间隔为3600
+        /// **参数解释：** 查询时间粒度 **取值范围：** - 300：采样时间间隔为5分钟，单位：秒 - 3600：采样时间间隔为1小时，单位：秒 - 86400：采样时间间隔为1天，单位：秒  **默认取值：** 默认取对应时间跨度的最小间隔 &gt; 时间跨度小于等于7天，最小时间间隔为300；时间跨度大于7天，最小时间间隔为3600
         /// </summary>
         [JsonProperty("interval", NullValueHandling = NullValueHandling.Ignore)]
         public long? Interval { get; set; }

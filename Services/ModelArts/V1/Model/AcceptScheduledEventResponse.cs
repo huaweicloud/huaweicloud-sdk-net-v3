@@ -421,9 +421,9 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         }
 
         /// <summary>
-        /// **参数解释**：节点类型归属。 **取值范围**可选择值如下： - devserver：lite-server节点  - lite-cluster lite池  - standard 标准池 **约束限制**：待废弃: 请使用 nodes[0].instanceType。
+        /// **参数解释**：节点类型归属。 **取值范围**可选择值如下： - devserver：lite-server节点 - lite-cluster lite池 - standard 标准池 **约束限制**：待废弃: 请使用 nodes[0].instanceType。
         /// </summary>
-        /// <value>**参数解释**：节点类型归属。 **取值范围**可选择值如下： - devserver：lite-server节点  - lite-cluster lite池  - standard 标准池 **约束限制**：待废弃: 请使用 nodes[0].instanceType。</value>
+        /// <value>**参数解释**：节点类型归属。 **取值范围**可选择值如下： - devserver：lite-server节点 - lite-cluster lite池 - standard 标准池 **约束限制**：待废弃: 请使用 nodes[0].instanceType。</value>
         [JsonConverter(typeof(EnumClassConverter<InstanceTypeEnum>))]
         public class InstanceTypeEnum
         {
@@ -642,12 +642,12 @@ namespace HuaweiCloud.SDK.ModelArts.V1.Model
         public string NodeName { get; set; }
 
         /// <summary>
-        /// **参数解释**：节点类型归属。 **取值范围**可选择值如下： - devserver：lite-server节点  - lite-cluster lite池  - standard 标准池 **约束限制**：待废弃: 请使用 nodes[0].instanceType。
+        /// **参数解释**：节点类型归属。 **取值范围**可选择值如下： - devserver：lite-server节点 - lite-cluster lite池 - standard 标准池 **约束限制**：待废弃: 请使用 nodes[0].instanceType。
         /// </summary>
         [JsonProperty("instanceType", NullValueHandling = NullValueHandling.Ignore)]
         public InstanceTypeEnum InstanceType { get; set; }
         /// <summary>
-        /// **参数解释**：超节点场景对应ECS服务器ID。计算服务系统自动生成的实例ID，长度小于63。  **取值范围**：超节点涉及, snt9b 不涉及。 **约束限制**：待废弃: 请使用 nodes[0].underLyingInstanceId。
+        /// **参数解释**：超节点场景对应ECS服务器ID。计算服务系统自动生成的实例ID，长度小于63。 **取值范围**：超节点涉及, snt9b 不涉及。 **约束限制**：待废弃: 请使用 nodes[0].underLyingInstanceId。
         /// </summary>
         [JsonProperty("underLyingInstanceId", NullValueHandling = NullValueHandling.Ignore)]
         public string UnderLyingInstanceId { get; set; }

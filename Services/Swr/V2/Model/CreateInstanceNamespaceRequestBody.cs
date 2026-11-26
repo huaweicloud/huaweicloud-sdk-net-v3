@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
         public NamespaceMetadata Metadata { get; set; }
 
+        /// <summary>
+        /// 资源标签, 最多支持20个标签
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ResourceTag> Tags { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("class CreateInstanceNamespaceRequestBody {\n");
             sb.Append("  namespaceName: ").Append(NamespaceName).Append("\n");
             sb.Append("  metadata: ").Append(Metadata).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             if (input == null) return false;
             if (this.NamespaceName != input.NamespaceName || (this.NamespaceName != null && !this.NamespaceName.Equals(input.NamespaceName))) return false;
             if (this.Metadata != input.Metadata || (this.Metadata != null && !this.Metadata.Equals(input.Metadata))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 var hashCode = 41;
                 if (this.NamespaceName != null) hashCode = hashCode * 59 + this.NamespaceName.GetHashCode();
                 if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// **参数解释：** 订阅任务类型 **约束限制：** 不涉及 **取值范围：** - 0：日报 - 1：周报 - 2：月报 **默认取值：** 不涉及
+        /// **参数解释：** 订阅任务类型 **约束限制：** 不涉及 **取值范围：** - 0：日报 - 1：周报 - 2：月报  **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("period_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? PeriodType { get; set; }
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string Emails { get; set; }
 
         /// <summary>
-        /// **参数解释：** 订阅的域名列表 &gt; 支持同时输入多个域名  **约束限制：** 不涉及 **取值范围：** - 多个域名用半角逗号（,）分隔 - 如果该参数为all，则为账号下的所有域名订阅运营报表 **默认取值：** 不涉及
+        /// **参数解释：** 订阅的域名列表 &gt; 支持同时输入多个域名  **约束限制：** 不涉及 **取值范围：** - 多个域名用半角逗号（,）分隔 - 如果该参数为all，则为账号下的所有域名订阅运营报表  **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainName { get; set; }

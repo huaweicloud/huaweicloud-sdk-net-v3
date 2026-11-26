@@ -17,31 +17,31 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// 域名id。
+        /// **参数解释：** 域名id。 **约束限制：** 不涉及 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainId { get; set; }
 
         /// <summary>
-        /// 绑定该证书的域名。
+        /// **参数解释：** 绑定该证书的域名。 **约束限制：** 不涉及 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainName { get; set; }
 
         /// <summary>
-        /// 证书名字。
+        /// **参数解释：** 证书名字。 **约束限制：** 不涉及 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("cert_name", NullValueHandling = NullValueHandling.Ignore)]
         public string CertName { get; set; }
 
         /// <summary>
-        /// 证书内容。
+        /// **参数解释：** 证书内容。 **约束限制：** 不涉及 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("certificate", NullValueHandling = NullValueHandling.Ignore)]
         public string Certificate { get; set; }
 
         /// <summary>
-        /// 私钥内容。
+        /// **参数解释：** 私钥内容。 **约束限制：** 不涉及 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("private_key", NullValueHandling = NullValueHandling.Ignore)]
         public string PrivateKey { get; set; }
@@ -53,7 +53,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public int? CertificateType { get; set; }
 
         /// <summary>
-        /// 证书过期时间。
+        /// **参数解释：** 证书过期时间，Unix时间戳格式，单位为毫秒。 **约束限制：** 不涉及 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("expiration_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? ExpirationTime { get; set; }
@@ -82,6 +82,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         [JsonProperty("http2", NullValueHandling = NullValueHandling.Ignore)]
         public int? Http2 { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 证书列表，配置双证书场景下包含国际证书和国密证书两项 **约束限制：** 不涉及
+        /// </summary>
+        [JsonProperty("certificates", NullValueHandling = NullValueHandling.Ignore)]
+        public List<HttpsDetailCertificates> Certificates { get; set; }
+
 
 
         /// <summary>
@@ -102,6 +108,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  forceRedirectHttps: ").Append(ForceRedirectHttps).Append("\n");
             sb.Append("  forceRedirectConfig: ").Append(ForceRedirectConfig).Append("\n");
             sb.Append("  http2: ").Append(Http2).Append("\n");
+            sb.Append("  certificates: ").Append(Certificates).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -131,6 +138,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             if (this.ForceRedirectHttps != input.ForceRedirectHttps || (this.ForceRedirectHttps != null && !this.ForceRedirectHttps.Equals(input.ForceRedirectHttps))) return false;
             if (this.ForceRedirectConfig != input.ForceRedirectConfig || (this.ForceRedirectConfig != null && !this.ForceRedirectConfig.Equals(input.ForceRedirectConfig))) return false;
             if (this.Http2 != input.Http2 || (this.Http2 != null && !this.Http2.Equals(input.Http2))) return false;
+            if (this.Certificates != input.Certificates || (this.Certificates != null && input.Certificates != null && !this.Certificates.SequenceEqual(input.Certificates))) return false;
 
             return true;
         }
@@ -154,6 +162,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                 if (this.ForceRedirectHttps != null) hashCode = hashCode * 59 + this.ForceRedirectHttps.GetHashCode();
                 if (this.ForceRedirectConfig != null) hashCode = hashCode * 59 + this.ForceRedirectConfig.GetHashCode();
                 if (this.Http2 != null) hashCode = hashCode * 59 + this.Http2.GetHashCode();
+                if (this.Certificates != null) hashCode = hashCode * 59 + this.Certificates.GetHashCode();
                 return hashCode;
             }
         }

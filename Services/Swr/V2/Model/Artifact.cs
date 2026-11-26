@@ -88,6 +88,18 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<ArtifactTag> Tags { get; set; }
 
+        /// <summary>
+        /// 制品的一些额外属性，比如制品的构建时间(created)、支持的操作系统(os)、支持CPU架构(architecture)等信息。
+        /// </summary>
+        [JsonProperty("extra_attrs", NullValueHandling = NullValueHandling.Ignore)]
+        public Dictionary<string, Object> ExtraAttrs { get; set; }
+
+        /// <summary>
+        /// 当制品为多架构镜像索引时，显示其引用的所有子制品。
+        /// </summary>
+        [JsonProperty("references", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Reference> References { get; set; }
+
 
 
         /// <summary>
@@ -109,6 +121,8 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("  pushTime: ").Append(PushTime).Append("\n");
             sb.Append("  size: ").Append(Size).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  extraAttrs: ").Append(ExtraAttrs).Append("\n");
+            sb.Append("  references: ").Append(References).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -139,6 +153,8 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             if (this.PushTime != input.PushTime || (this.PushTime != null && !this.PushTime.Equals(input.PushTime))) return false;
             if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.ExtraAttrs != input.ExtraAttrs || (this.ExtraAttrs != null && input.ExtraAttrs != null && !this.ExtraAttrs.SequenceEqual(input.ExtraAttrs))) return false;
+            if (this.References != input.References || (this.References != null && input.References != null && !this.References.SequenceEqual(input.References))) return false;
 
             return true;
         }
@@ -163,6 +179,8 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 if (this.PushTime != null) hashCode = hashCode * 59 + this.PushTime.GetHashCode();
                 if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.ExtraAttrs != null) hashCode = hashCode * 59 + this.ExtraAttrs.GetHashCode();
+                if (this.References != null) hashCode = hashCode * 59 + this.References.GetHashCode();
                 return hashCode;
             }
         }

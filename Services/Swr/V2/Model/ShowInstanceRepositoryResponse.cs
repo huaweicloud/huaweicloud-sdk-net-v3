@@ -76,6 +76,12 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdatedAt { get; set; }
 
+        /// <summary>
+        /// 标签列表
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ResourceTag> Tags { get; set; }
+
 
 
         /// <summary>
@@ -95,6 +101,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -123,6 +130,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
             if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
 
             return true;
         }
@@ -145,6 +153,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

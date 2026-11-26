@@ -17,6 +17,13 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
+        /// **参数解释：** 封禁/解禁任务ID **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+        /// </summary>
+        [SDKProperty("task_id", IsQuery = true)]
+        [JsonProperty("task_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string TaskId { get; set; }
+
+        /// <summary>
         /// 查询起始时间戳（毫秒），不传默认为当前时间，需与结束时间戳同时指定，时间跨度不能超过7天。
         /// </summary>
         [SDKProperty("start_time", IsQuery = true)]
@@ -60,6 +67,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListAccessControlTaskRequest {\n");
+            sb.Append("  taskId: ").Append(TaskId).Append("\n");
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
@@ -83,6 +91,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public bool Equals(ListAccessControlTaskRequest input)
         {
             if (input == null) return false;
+            if (this.TaskId != input.TaskId || (this.TaskId != null && !this.TaskId.Equals(input.TaskId))) return false;
             if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
@@ -100,6 +109,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.TaskId != null) hashCode = hashCode * 59 + this.TaskId.GetHashCode();
                 if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();

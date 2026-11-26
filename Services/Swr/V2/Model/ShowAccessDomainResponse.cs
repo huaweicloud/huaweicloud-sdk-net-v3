@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public string Repository { get; set; }
 
         /// <summary>
-        /// 共享帐号名
+        /// 共享账号名
         /// </summary>
         [JsonProperty("access_domain", NullValueHandling = NullValueHandling.Ignore)]
         public string AccessDomain { get; set; }

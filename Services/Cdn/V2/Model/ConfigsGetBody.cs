@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cdn.V2.Model
 {
     /// <summary>
-    /// 配置项。
+    /// **参数解释：** 域名配置项，包含业务类型、服务范围、源站配置、缓存规则、HTTPS证书等配置信息 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
     /// </summary>
     public class ConfigsGetBody 
     {
@@ -29,19 +29,19 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string ServiceArea { get; set; }
 
         /// <summary>
-        /// 域名备注。
+        /// **参数解释：** 域名备注。 **约束限制：** 不涉及 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("remark", NullValueHandling = NullValueHandling.Ignore)]
         public string Remark { get; set; }
 
         /// <summary>
-        /// 回源请求头配置
+        /// 回源请求头配置。
         /// </summary>
         [JsonProperty("origin_request_header", NullValueHandling = NullValueHandling.Ignore)]
         public List<OriginRequestHeader> OriginRequestHeader { get; set; }
 
         /// <summary>
-        /// http header配置
+        /// http header配置。
         /// </summary>
         [JsonProperty("http_response_header", NullValueHandling = NullValueHandling.Ignore)]
         public List<HttpResponseHeader> HttpResponseHeader { get; set; }
@@ -155,7 +155,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string SliceEtagStatus { get; set; }
 
         /// <summary>
-        /// 回源超时时间，单位：秒。
+        /// **参数解释：** 回源超时时间，单位：秒。 **约束限制：** 不涉及 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("origin_receive_timeout", NullValueHandling = NullValueHandling.Ignore)]
         public int? OriginReceiveTimeout { get; set; }
@@ -179,7 +179,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public VideoSeek VideoSeek { get; set; }
 
         /// <summary>
-        /// 请求限速。
+        /// 
         /// </summary>
         [JsonProperty("request_limit_rules", NullValueHandling = NullValueHandling.Ignore)]
         public List<RequestLimitRules> RequestLimitRules { get; set; }
@@ -250,6 +250,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         [JsonProperty("flow_limit_strategy", NullValueHandling = NullValueHandling.Ignore)]
         public List<FlowLimitStrategy> FlowLimitStrategy { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("bandwidth_alarm_strategy", NullValueHandling = NullValueHandling.Ignore)]
+        public BandwidthAlarmStrategy BandwidthAlarmStrategy { get; set; }
+
 
 
         /// <summary>
@@ -298,6 +304,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  clientCert: ").Append(ClientCert).Append("\n");
             sb.Append("  httpsTlsVersion: ").Append(HttpsTlsVersion).Append("\n");
             sb.Append("  flowLimitStrategy: ").Append(FlowLimitStrategy).Append("\n");
+            sb.Append("  bandwidthAlarmStrategy: ").Append(BandwidthAlarmStrategy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -355,6 +362,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             if (this.ClientCert != input.ClientCert || (this.ClientCert != null && !this.ClientCert.Equals(input.ClientCert))) return false;
             if (this.HttpsTlsVersion != input.HttpsTlsVersion || (this.HttpsTlsVersion != null && !this.HttpsTlsVersion.Equals(input.HttpsTlsVersion))) return false;
             if (this.FlowLimitStrategy != input.FlowLimitStrategy || (this.FlowLimitStrategy != null && input.FlowLimitStrategy != null && !this.FlowLimitStrategy.SequenceEqual(input.FlowLimitStrategy))) return false;
+            if (this.BandwidthAlarmStrategy != input.BandwidthAlarmStrategy || (this.BandwidthAlarmStrategy != null && !this.BandwidthAlarmStrategy.Equals(input.BandwidthAlarmStrategy))) return false;
 
             return true;
         }
@@ -406,6 +414,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                 if (this.ClientCert != null) hashCode = hashCode * 59 + this.ClientCert.GetHashCode();
                 if (this.HttpsTlsVersion != null) hashCode = hashCode * 59 + this.HttpsTlsVersion.GetHashCode();
                 if (this.FlowLimitStrategy != null) hashCode = hashCode * 59 + this.FlowLimitStrategy.GetHashCode();
+                if (this.BandwidthAlarmStrategy != null) hashCode = hashCode * 59 + this.BandwidthAlarmStrategy.GetHashCode();
                 return hashCode;
             }
         }

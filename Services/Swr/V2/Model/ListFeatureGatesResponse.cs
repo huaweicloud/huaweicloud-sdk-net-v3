@@ -40,6 +40,24 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         [JsonProperty("enableArtifactGc", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableArtifactGc { get; set; }
 
+        /// <summary>
+        /// 仓库是否支持标签
+        /// </summary>
+        [JsonProperty("enableRepositoryTag", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableRepositoryTag { get; set; }
+
+        /// <summary>
+        /// 创建命名空间时是否支持传入标签以及查询命名空间列表是否支持根据标签过滤
+        /// </summary>
+        [JsonProperty("enableNamespaceTag", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableNamespaceTag { get; set; }
+
+        /// <summary>
+        /// 是否支持查询制品的Manifest信息
+        /// </summary>
+        [JsonProperty("enableArtifactMetadata", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableArtifactMetadata { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +71,9 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("  enableCombinationRetention: ").Append(EnableCombinationRetention).Append("\n");
             sb.Append("  enableArtifactScanning: ").Append(EnableArtifactScanning).Append("\n");
             sb.Append("  enableArtifactGc: ").Append(EnableArtifactGc).Append("\n");
+            sb.Append("  enableRepositoryTag: ").Append(EnableRepositoryTag).Append("\n");
+            sb.Append("  enableNamespaceTag: ").Append(EnableNamespaceTag).Append("\n");
+            sb.Append("  enableArtifactMetadata: ").Append(EnableArtifactMetadata).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,6 +96,9 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             if (this.EnableCombinationRetention != input.EnableCombinationRetention || (this.EnableCombinationRetention != null && !this.EnableCombinationRetention.Equals(input.EnableCombinationRetention))) return false;
             if (this.EnableArtifactScanning != input.EnableArtifactScanning || (this.EnableArtifactScanning != null && !this.EnableArtifactScanning.Equals(input.EnableArtifactScanning))) return false;
             if (this.EnableArtifactGc != input.EnableArtifactGc || (this.EnableArtifactGc != null && !this.EnableArtifactGc.Equals(input.EnableArtifactGc))) return false;
+            if (this.EnableRepositoryTag != input.EnableRepositoryTag || (this.EnableRepositoryTag != null && !this.EnableRepositoryTag.Equals(input.EnableRepositoryTag))) return false;
+            if (this.EnableNamespaceTag != input.EnableNamespaceTag || (this.EnableNamespaceTag != null && !this.EnableNamespaceTag.Equals(input.EnableNamespaceTag))) return false;
+            if (this.EnableArtifactMetadata != input.EnableArtifactMetadata || (this.EnableArtifactMetadata != null && !this.EnableArtifactMetadata.Equals(input.EnableArtifactMetadata))) return false;
 
             return true;
         }
@@ -91,6 +115,9 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 if (this.EnableCombinationRetention != null) hashCode = hashCode * 59 + this.EnableCombinationRetention.GetHashCode();
                 if (this.EnableArtifactScanning != null) hashCode = hashCode * 59 + this.EnableArtifactScanning.GetHashCode();
                 if (this.EnableArtifactGc != null) hashCode = hashCode * 59 + this.EnableArtifactGc.GetHashCode();
+                if (this.EnableRepositoryTag != null) hashCode = hashCode * 59 + this.EnableRepositoryTag.GetHashCode();
+                if (this.EnableNamespaceTag != null) hashCode = hashCode * 59 + this.EnableNamespaceTag.GetHashCode();
+                if (this.EnableArtifactMetadata != null) hashCode = hashCode * 59 + this.EnableArtifactMetadata.GetHashCode();
                 return hashCode;
             }
         }

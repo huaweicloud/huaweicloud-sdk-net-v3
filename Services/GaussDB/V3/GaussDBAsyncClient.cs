@@ -4333,32 +4333,6 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
-        /// 查询一键迁移信息
-        ///
-        /// 查询一键迁移到TaurusDB企业版的迁移信息。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowMigrateInfoResponse> ShowMigrateInfoAsync(ShowMigrateInfoRequest showMigrateInfoRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(showMigrateInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/migration/{instance_id}/info", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMigrateInfoRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ShowMigrateInfoResponse>(response);
-        }
-
-        public AsyncInvoker<ShowMigrateInfoResponse> ShowMigrateInfoAsyncInvoker(ShowMigrateInfoRequest showMigrateInfoRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(showMigrateInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/migration/{instance_id}/info", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMigrateInfoRequest);
-            return new AsyncInvoker<ShowMigrateInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowMigrateInfoResponse>);
-        }
-        
-        /// <summary>
         /// 查询多租特性开关状态
         ///
         /// 查询多租特性开关状态。

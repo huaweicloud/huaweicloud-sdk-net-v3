@@ -138,13 +138,13 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
 
 
         /// <summary>
-        /// 加速域名ID。
+        /// **参数解释：** 加速域名ID。 **约束限制：** 不涉及 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 加速域名。
+        /// **参数解释：** 加速域名。 **约束限制：** 不涉及 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainName { get; set; }
@@ -162,7 +162,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string DomainStatus { get; set; }
 
         /// <summary>
-        /// 加速域名对应的CNAME。
+        /// **参数解释：** 加速域名对应的CNAME。 **约束限制：** 不涉及 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("cname", NullValueHandling = NullValueHandling.Ignore)]
         public string Cname { get; set; }
@@ -186,13 +186,13 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public int? HttpsStatus { get; set; }
 
         /// <summary>
-        /// 域名创建时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
+        /// **参数解释：** 域名创建时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。 **约束限制：** 不涉及 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? CreateTime { get; set; }
 
         /// <summary>
-        /// 域名修改时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
+        /// **参数解释：** 域名修改时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。 **约束限制：** 不涉及 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("modify_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? ModifyTime { get; set; }
@@ -239,19 +239,19 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string OriginStatus { get; set; }
 
         /// <summary>
-        /// 域名禁用原因。
+        /// **参数解释：** 域名禁用原因。 **约束限制：** 不涉及 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("banned_reason", NullValueHandling = NullValueHandling.Ignore)]
         public string BannedReason { get; set; }
 
         /// <summary>
-        /// 域名锁定原因。
+        /// **参数解释：** 域名锁定原因。 **约束限制：** 不涉及 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("locked_reason", NullValueHandling = NullValueHandling.Ignore)]
         public string LockedReason { get; set; }
 
         /// <summary>
-        /// 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，不传表示查询默认项目。注意：当使用子帐号调用接口时，该参数必传。  您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id。
+        /// **参数解释：** 企业项目ID。 您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id。 **约束限制：** 不涉及 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
@@ -261,6 +261,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<EpResourceTag> Tags { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 指定CDN回源时的请求协议 **约束限制：** 不涉及 **取值范围：** - follow: 协议跟随 - http: http协议 - https: https协议  **默认取值：** http: http协议
+        /// </summary>
+        [JsonProperty("origin_protocol", NullValueHandling = NullValueHandling.Ignore)]
+        public string OriginProtocol { get; set; }
 
 
 
@@ -292,6 +298,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  lockedReason: ").Append(LockedReason).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  originProtocol: ").Append(OriginProtocol).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -331,6 +338,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             if (this.LockedReason != input.LockedReason || (this.LockedReason != null && !this.LockedReason.Equals(input.LockedReason))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.OriginProtocol != input.OriginProtocol || (this.OriginProtocol != null && !this.OriginProtocol.Equals(input.OriginProtocol))) return false;
 
             return true;
         }
@@ -364,6 +372,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                 if (this.LockedReason != null) hashCode = hashCode * 59 + this.LockedReason.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.OriginProtocol != null) hashCode = hashCode * 59 + this.OriginProtocol.GetHashCode();
                 return hashCode;
             }
         }

@@ -125,9 +125,9 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         }
 
         /// <summary>
-        /// 实例状态
+        /// 实例状态 取值范围： - Initial：初始化 - Creating：创建中 - Running：运行中 - Unavailable：不可用 - Frozen：已冻结 - DeploymentAbnormal：部署异常 - PartiallyUnavailable：部分不可用 - CoreDialFailed：核心拨测失败
         /// </summary>
-        /// <value>实例状态</value>
+        /// <value>实例状态 取值范围： - Initial：初始化 - Creating：创建中 - Running：运行中 - Unavailable：不可用 - Frozen：已冻结 - DeploymentAbnormal：部署异常 - PartiallyUnavailable：部分不可用 - CoreDialFailed：核心拨测失败</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -151,6 +151,26 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             /// </summary>
             public static readonly StatusEnum UNAVAILABLE = new StatusEnum("Unavailable");
 
+            /// <summary>
+            /// Enum FROZEN for value: Frozen
+            /// </summary>
+            public static readonly StatusEnum FROZEN = new StatusEnum("Frozen");
+
+            /// <summary>
+            /// Enum DEPLOYMENTABNORMAL for value: DeploymentAbnormal
+            /// </summary>
+            public static readonly StatusEnum DEPLOYMENTABNORMAL = new StatusEnum("DeploymentAbnormal");
+
+            /// <summary>
+            /// Enum PARTIALLYUNAVAILABLE for value: PartiallyUnavailable
+            /// </summary>
+            public static readonly StatusEnum PARTIALLYUNAVAILABLE = new StatusEnum("PartiallyUnavailable");
+
+            /// <summary>
+            /// Enum COREDIALFAILED for value: CoreDialFailed
+            /// </summary>
+            public static readonly StatusEnum COREDIALFAILED = new StatusEnum("CoreDialFailed");
+
             private static readonly Dictionary<string, StatusEnum> StaticFields =
             new Dictionary<string, StatusEnum>()
             {
@@ -158,6 +178,10 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 { "Creating", CREATING },
                 { "Running", RUNNING },
                 { "Unavailable", UNAVAILABLE },
+                { "Frozen", FROZEN },
+                { "DeploymentAbnormal", DEPLOYMENTABNORMAL },
+                { "PartiallyUnavailable", PARTIALLYUNAVAILABLE },
+                { "CoreDialFailed", COREDIALFAILED },
             };
 
             private string _value;
@@ -324,7 +348,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public string ExpiresAt { get; set; }
 
         /// <summary>
-        /// 实例状态
+        /// 实例状态 取值范围： - Initial：初始化 - Creating：创建中 - Running：运行中 - Unavailable：不可用 - Frozen：已冻结 - DeploymentAbnormal：部署异常 - PartiallyUnavailable：部分不可用 - CoreDialFailed：核心拨测失败
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
@@ -394,6 +418,12 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         [JsonProperty("vpcep_service_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VpcepServiceId { get; set; }
 
+        /// <summary>
+        /// 标签列表
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ResourceTag> Tags { get; set; }
+
 
 
         /// <summary>
@@ -427,6 +457,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("  subnetName: ").Append(SubnetName).Append("\n");
             sb.Append("  subnetCidr: ").Append(SubnetCidr).Append("\n");
             sb.Append("  vpcepServiceId: ").Append(VpcepServiceId).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -469,6 +500,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             if (this.SubnetName != input.SubnetName || (this.SubnetName != null && !this.SubnetName.Equals(input.SubnetName))) return false;
             if (this.SubnetCidr != input.SubnetCidr || (this.SubnetCidr != null && !this.SubnetCidr.Equals(input.SubnetCidr))) return false;
             if (this.VpcepServiceId != input.VpcepServiceId || (this.VpcepServiceId != null && !this.VpcepServiceId.Equals(input.VpcepServiceId))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
 
             return true;
         }
@@ -505,6 +537,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 if (this.SubnetName != null) hashCode = hashCode * 59 + this.SubnetName.GetHashCode();
                 if (this.SubnetCidr != null) hashCode = hashCode * 59 + this.SubnetCidr.GetHashCode();
                 if (this.VpcepServiceId != null) hashCode = hashCode * 59 + this.VpcepServiceId.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

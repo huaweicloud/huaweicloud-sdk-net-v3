@@ -23,6 +23,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public bool? Result { get; set; }
 
         /// <summary>
+        /// **参数解释：** 域名校验状态，表示当前账号下是否存在该域名 **约束限制：** 不涉及 **取值范围：** - DomainExist: 该域名已存在 - DomainNotExist: 该域名不存在  **默认取值：** 不涉及
+        /// </summary>
+        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
+        public string Status { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [SDKProperty("X-Request-Id", IsHeader = true)]
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             var sb = new StringBuilder();
             sb.Append("class VerifyDomainOwnerResponse {\n");
             sb.Append("  result: ").Append(Result).Append("\n");
+            sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  xRequestId: ").Append(XRequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             if (input == null) return false;
             if (this.Result != input.Result || (this.Result != null && !this.Result.Equals(input.Result))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.XRequestId != input.XRequestId || (this.XRequestId != null && !this.XRequestId.Equals(input.XRequestId))) return false;
 
             return true;
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             {
                 var hashCode = 41;
                 if (this.Result != null) hashCode = hashCode * 59 + this.Result.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.XRequestId != null) hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }

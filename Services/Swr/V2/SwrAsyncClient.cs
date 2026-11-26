@@ -227,9 +227,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         }
         
         /// <summary>
-        /// 创建共享帐号
+        /// 创建共享账号
         ///
-        /// 创建共享帐号。镜像上传后，您可以共享私有镜像给其他帐号，并授予下载该镜像的权限。
+        /// 创建共享账号。镜像上传后，您可以共享私有镜像给其他账号，并授予下载该镜像的权限。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -499,9 +499,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         }
         
         /// <summary>
-        /// 删除共享帐号
+        /// 删除共享账号
         ///
-        /// 删除共享帐号
+        /// 删除共享账号
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -814,9 +814,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         }
         
         /// <summary>
-        /// 获取共享帐号列表
+        /// 获取共享账号列表
         ///
-        /// 获取共享帐号列表
+        /// 获取共享账号列表
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1127,7 +1127,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         }
         
         /// <summary>
-        /// 判断共享帐号是否存在
+        /// 判断共享账号是否存在
         ///
         /// 判断共享租户是否存在
         /// 
@@ -1295,6 +1295,36 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/tags/{tag}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRepoTagRequest);
             return new AsyncInvoker<ShowRepoTagResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRepoTagResponse>);
+        }
+        
+        /// <summary>
+        /// 获取镜像的Config信息
+        ///
+        /// 获取镜像的Config信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowRepoTagConfigResponse> ShowRepoTagConfigAsync(ShowRepoTagConfigRequest showRepoTagConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showRepoTagConfigRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(showRepoTagConfigRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
+            if (StringUtils.TryConvertToNonEmptyString(showRepoTagConfigRequest.Tag, out var valueOfTag)) urlParam.Add("tag", valueOfTag);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/tags/{tag}/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRepoTagConfigRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerializeNull<ShowRepoTagConfigResponse>(response);
+        }
+
+        public AsyncInvoker<ShowRepoTagConfigResponse> ShowRepoTagConfigAsyncInvoker(ShowRepoTagConfigRequest showRepoTagConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showRepoTagConfigRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(showRepoTagConfigRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
+            if (StringUtils.TryConvertToNonEmptyString(showRepoTagConfigRequest.Tag, out var valueOfTag)) urlParam.Add("tag", valueOfTag);
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/tags/{tag}/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRepoTagConfigRequest);
+            return new AsyncInvoker<ShowRepoTagConfigResponse>(this, "GET", request, JsonUtils.DeSerializeNull<ShowRepoTagConfigResponse>);
         }
         
         /// <summary>
@@ -1527,9 +1557,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         }
         
         /// <summary>
-        /// 更新共享帐号
+        /// 更新共享账号
         ///
-        /// 更新共享帐号
+        /// 更新共享账号
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -3838,6 +3868,32 @@ namespace HuaweiCloud.SDK.Swr.V2
         }
         
         /// <summary>
+        /// 查询某种资源类型的标签列表
+        ///
+        /// 查询某种资源类型的标签列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListResourcesTagsByProjectIdResponse> ListResourcesTagsByProjectIdAsync(ListResourcesTagsByProjectIdRequest listResourcesTagsByProjectIdRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listResourcesTagsByProjectIdRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listResourcesTagsByProjectIdRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListResourcesTagsByProjectIdResponse>(response);
+        }
+
+        public AsyncInvoker<ListResourcesTagsByProjectIdResponse> ListResourcesTagsByProjectIdAsyncInvoker(ListResourcesTagsByProjectIdRequest listResourcesTagsByProjectIdRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listResourcesTagsByProjectIdRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listResourcesTagsByProjectIdRequest);
+            return new AsyncInvoker<ListResourcesTagsByProjectIdResponse>(this, "GET", request, JsonUtils.DeSerialize<ListResourcesTagsByProjectIdResponse>);
+        }
+        
+        /// <summary>
         /// 按照标签检索子资源列表
         ///
         /// 按照标签检索子资源列表
@@ -4043,6 +4099,38 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts/{reference}/additions/{addition}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceArtifactAdditionRequest);
             return new AsyncInvoker<ShowInstanceArtifactAdditionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceArtifactAdditionResponse>);
+        }
+        
+        /// <summary>
+        /// 获取制品Manifest信息
+        ///
+        /// 获取制品的Manifest信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowInstanceArtifactManifestResponse> ShowInstanceArtifactManifestAsync(ShowInstanceArtifactManifestRequest showInstanceArtifactManifestRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceArtifactManifestRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceArtifactManifestRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceArtifactManifestRequest.RepositoryName, out var valueOfRepositoryName)) urlParam.Add("repository_name", valueOfRepositoryName);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceArtifactManifestRequest.Reference, out var valueOfReference)) urlParam.Add("reference", valueOfReference);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts/{reference}/manifest", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceArtifactManifestRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerializeNull<ShowInstanceArtifactManifestResponse>(response);
+        }
+
+        public AsyncInvoker<ShowInstanceArtifactManifestResponse> ShowInstanceArtifactManifestAsyncInvoker(ShowInstanceArtifactManifestRequest showInstanceArtifactManifestRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceArtifactManifestRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceArtifactManifestRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceArtifactManifestRequest.RepositoryName, out var valueOfRepositoryName)) urlParam.Add("repository_name", valueOfRepositoryName);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceArtifactManifestRequest.Reference, out var valueOfReference)) urlParam.Add("reference", valueOfReference);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts/{reference}/manifest", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceArtifactManifestRequest);
+            return new AsyncInvoker<ShowInstanceArtifactManifestResponse>(this, "GET", request, JsonUtils.DeSerializeNull<ShowInstanceArtifactManifestResponse>);
         }
         
         /// <summary>
@@ -4349,6 +4437,38 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceSignPolicyRequest);
             return new AsyncInvoker<ShowInstanceSignPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceSignPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 获取制品的Tag信息
+        ///
+        /// 获取制品的Tag信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowInstanceTagResponse> ShowInstanceTagAsync(ShowInstanceTagRequest showInstanceTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceTagRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceTagRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceTagRequest.RepositoryName, out var valueOfRepositoryName)) urlParam.Add("repository_name", valueOfRepositoryName);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceTagRequest.TagName, out var valueOfTagName)) urlParam.Add("tag_name", valueOfTagName);
+            var urlPath = HttpUtils.AddUrlPath("/v2/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/tags/{tag_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceTagRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowInstanceTagResponse>(response);
+        }
+
+        public AsyncInvoker<ShowInstanceTagResponse> ShowInstanceTagAsyncInvoker(ShowInstanceTagRequest showInstanceTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceTagRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceTagRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceTagRequest.RepositoryName, out var valueOfRepositoryName)) urlParam.Add("repository_name", valueOfRepositoryName);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceTagRequest.TagName, out var valueOfTagName)) urlParam.Add("tag_name", valueOfTagName);
+            var urlPath = HttpUtils.AddUrlPath("/v2/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/tags/{tag_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceTagRequest);
+            return new AsyncInvoker<ShowInstanceTagResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceTagResponse>);
         }
         
         /// <summary>

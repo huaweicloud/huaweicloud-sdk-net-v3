@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string TaskName { get; set; }
 
         /// <summary>
-        /// **参数解释：** 任务状态 **约束限制：** 不涉及 **取值范围：** - success: 成功 - fail: 失败 **默认取值：** 不涉及
+        /// **参数解释：** 任务状态 **约束限制：** 不涉及 **取值范围：** - success: 成功 - fail: 失败  **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }

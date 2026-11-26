@@ -138,13 +138,13 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
 
 
         /// <summary>
-        /// 加速域名ID。
+        /// **参数解释：** 加速域名ID。 **约束限制：** 不涉及 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 加速域名。
+        /// **参数解释：** 加速域名。 **约束限制：** 不涉及 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainName { get; set; }
@@ -156,7 +156,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string BusinessType { get; set; }
 
         /// <summary>
-        /// 域名所属用户的domain_id。
+        /// **参数解释：** 域名所属用户的domain_id。 **约束限制：** 不涉及 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("user_domain_id", NullValueHandling = NullValueHandling.Ignore)]
         public string UserDomainId { get; set; }
@@ -168,13 +168,13 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string DomainStatus { get; set; }
 
         /// <summary>
-        /// 加速域名对应的CNAME。
+        /// **参数解释：** 加速域名对应的CNAME。 **约束限制：** 不涉及 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("cname", NullValueHandling = NullValueHandling.Ignore)]
         public string Cname { get; set; }
 
         /// <summary>
-        /// 源站配置。
+        /// **参数解释：** 域名的源站，包含源站类型、端口等信息。 **约束限制：** 不涉及
         /// </summary>
         [JsonProperty("sources", NullValueHandling = NullValueHandling.Ignore)]
         public List<SourceWithPort> Sources { get; set; }
@@ -192,13 +192,13 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public int? HttpsStatus { get; set; }
 
         /// <summary>
-        /// 域名创建时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
+        /// **参数解释：** 域名创建时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。 **约束限制：** 不涉及 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? CreateTime { get; set; }
 
         /// <summary>
-        /// 域名修改时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
+        /// **参数解释：** 域名修改时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。 **约束限制：** 不涉及 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("modify_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? ModifyTime { get; set; }
@@ -251,16 +251,28 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string BannedReason { get; set; }
 
         /// <summary>
-        /// 域名锁定原因（Changing the config, please wait）。
+        /// **参数解释：** 域名锁定原因（Changing the config, please wait）。 **约束限制：** 不涉及 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("locked_reason", NullValueHandling = NullValueHandling.Ignore)]
         public string LockedReason { get; set; }
 
         /// <summary>
-        /// 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，不传表示查询默认项目。注意：当使用子帐号调用接口时，该参数必传。  您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id。
+        /// **参数解释：** 企业项目ID。 您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id。 **约束限制：** 不涉及 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 加速域名对应的CNAME，多个CNAME以英文逗号分隔 **约束限制：** 不涉及 **取值范围：** 不涉及
+        /// </summary>
+        [JsonProperty("cnames", NullValueHandling = NullValueHandling.Ignore)]
+        public string Cnames { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 标签信息 **约束限制：** 不涉及
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<EpResourceTag> Tags { get; set; }
 
 
 
@@ -292,6 +304,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  bannedReason: ").Append(BannedReason).Append("\n");
             sb.Append("  lockedReason: ").Append(LockedReason).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  cnames: ").Append(Cnames).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -331,6 +345,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             if (this.BannedReason != input.BannedReason || (this.BannedReason != null && !this.BannedReason.Equals(input.BannedReason))) return false;
             if (this.LockedReason != input.LockedReason || (this.LockedReason != null && !this.LockedReason.Equals(input.LockedReason))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.Cnames != input.Cnames || (this.Cnames != null && !this.Cnames.Equals(input.Cnames))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
 
             return true;
         }
@@ -364,6 +380,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                 if (this.BannedReason != null) hashCode = hashCode * 59 + this.BannedReason.GetHashCode();
                 if (this.LockedReason != null) hashCode = hashCode * 59 + this.LockedReason.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.Cnames != null) hashCode = hashCode * 59 + this.Cnames.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

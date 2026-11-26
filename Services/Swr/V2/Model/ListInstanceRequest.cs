@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
     public class ListInstanceRequest 
     {
         /// <summary>
-        /// 实例状态, Initial, Creating, Running, Unavailable
+        /// 实例状态 取值范围： - Initial：初始化 - Creating：创建中 - Running：运行中 - Unavailable：不可用 - Frozen：已冻结 - DeploymentAbnormal：部署异常 - PartiallyUnavailable：部分不可用 - CoreDialFailed：核心拨测失败
         /// </summary>
-        /// <value>实例状态, Initial, Creating, Running, Unavailable</value>
+        /// <value>实例状态 取值范围： - Initial：初始化 - Creating：创建中 - Running：运行中 - Unavailable：不可用 - Frozen：已冻结 - DeploymentAbnormal：部署异常 - PartiallyUnavailable：部分不可用 - CoreDialFailed：核心拨测失败</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -42,6 +42,26 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             /// </summary>
             public static readonly StatusEnum UNAVAILABLE = new StatusEnum("Unavailable");
 
+            /// <summary>
+            /// Enum FROZEN for value: Frozen
+            /// </summary>
+            public static readonly StatusEnum FROZEN = new StatusEnum("Frozen");
+
+            /// <summary>
+            /// Enum DEPLOYMENTABNORMAL for value: DeploymentAbnormal
+            /// </summary>
+            public static readonly StatusEnum DEPLOYMENTABNORMAL = new StatusEnum("DeploymentAbnormal");
+
+            /// <summary>
+            /// Enum PARTIALLYUNAVAILABLE for value: PartiallyUnavailable
+            /// </summary>
+            public static readonly StatusEnum PARTIALLYUNAVAILABLE = new StatusEnum("PartiallyUnavailable");
+
+            /// <summary>
+            /// Enum COREDIALFAILED for value: CoreDialFailed
+            /// </summary>
+            public static readonly StatusEnum COREDIALFAILED = new StatusEnum("CoreDialFailed");
+
             private static readonly Dictionary<string, StatusEnum> StaticFields =
             new Dictionary<string, StatusEnum>()
             {
@@ -49,6 +69,10 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 { "Creating", CREATING },
                 { "Running", RUNNING },
                 { "Unavailable", UNAVAILABLE },
+                { "Frozen", FROZEN },
+                { "DeploymentAbnormal", DEPLOYMENTABNORMAL },
+                { "PartiallyUnavailable", PARTIALLYUNAVAILABLE },
+                { "CoreDialFailed", COREDIALFAILED },
             };
 
             private string _value;
@@ -158,7 +182,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 实例状态, Initial, Creating, Running, Unavailable
+        /// 实例状态 取值范围： - Initial：初始化 - Creating：创建中 - Running：运行中 - Unavailable：不可用 - Frozen：已冻结 - DeploymentAbnormal：部署异常 - PartiallyUnavailable：部分不可用 - CoreDialFailed：核心拨测失败
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]

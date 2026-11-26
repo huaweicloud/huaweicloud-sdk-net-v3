@@ -31,21 +31,21 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public long? EndTime { get; set; }
 
         /// <summary>
-        /// **参数解释：** 域名列表 &gt; 如果域名在查询时间段内无数据，结果将不返回该域名的信息  **约束限制：** 仅支持查询已经在CDN创建成功的域名 **取值范围：** - all表示查询名下全部域名 - 多个域名以逗号（半角）分隔，如：www.test1.com,www.test2.com **默认取值：** 不涉及
+        /// **参数解释：** 域名列表 &gt; 如果域名在查询时间段内无数据，结果将不返回该域名的信息  **约束限制：** 仅支持查询已经在CDN创建成功的域名 **取值范围：** - all表示查询名下全部域名 - 多个域名以逗号（半角）分隔，如：www.test1.com,www.test2.com  **默认取值：** 不涉及
         /// </summary>
         [SDKProperty("domain_name", IsQuery = true)]
         [JsonProperty("domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainName { get; set; }
 
         /// <summary>
-        /// **参数解释：** 统计指标类型 **约束限制：** 不涉及 **取值范围：** - flux：流量 - req_num：请求数 **默认取值：** 不涉及
+        /// **参数解释：** 统计指标类型 **约束限制：** 不涉及 **取值范围：** - flux：流量 - req_num：请求数  **默认取值：** 不涉及
         /// </summary>
         [SDKProperty("stat_type", IsQuery = true)]
         [JsonProperty("stat_type", NullValueHandling = NullValueHandling.Ignore)]
         public string StatType { get; set; }
 
         /// <summary>
-        /// **参数解释：** 服务范围 **约束限制：** 不涉及 **取值范围：** - mainland_china：中国大陆 - outside_mainland_china：中国大陆境外 - global：全球 **默认取值：** global：全球
+        /// **参数解释：** 服务范围 **约束限制：** 不涉及 **取值范围：** - mainland_china：中国大陆 - outside_mainland_china：中国大陆境外 - global：全球  **默认取值：** global：全球
         /// </summary>
         [SDKProperty("service_area", IsQuery = true)]
         [JsonProperty("service_area", NullValueHandling = NullValueHandling.Ignore)]
